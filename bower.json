@@ -1,0 +1,16 @@
+{
+  "name": "uqlibrary-elements",
+  "version": "0.0.1",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "uqlibrary-elements.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.4.0"
+  },
+  "devDependencies": {
+    "polymer-test-tools": "Polymer/web-component-tester#^1.3.0"
+  }
+}
