@@ -4,10 +4,10 @@
   "private": true,
   "main": "uqlibrary-elements.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.4.0",
-    "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#^0.0.1"
+    "polymer": "Polymer/polymer#^0.4.2",
+    "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#^0.0.2"
   },
   "devDependencies": {
-    "polymer-test-tools": "Polymer/web-component-tester#^1.3.0"
+    "polymer-test-tools": "Polymer/web-component-tester#^0.7.3"
   }
 }
