@@ -1,14 +1,11 @@
 {
   "name": "uqlibrary-elements",
-  "version": "0.0.1",
-  "keywords": [
-    "seed",
-    "polymer",
-    "web-components"
-  ],
+  "description": "Aggregate of elements created by the Library",
+  "private": true,
   "main": "uqlibrary-elements.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.4.0"
+    "polymer": "Polymer/polymer#^0.4.0",
+    "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#^0.0.1"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/web-component-tester#^1.3.0"
