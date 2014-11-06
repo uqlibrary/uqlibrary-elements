@@ -1,0 +1,9 @@
+@import "roboto";
+@import "variables";
+
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none;
+}
