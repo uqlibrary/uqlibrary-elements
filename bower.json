@@ -1,8 +1,14 @@
 {
   "name": "uqlibrary-elements",
   "description": "Aggregate of elements created by the Library",
-  "private": true,
   "main": "uqlibrary-elements.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-timeline/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#^0.0.5"
