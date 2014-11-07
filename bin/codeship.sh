@@ -1,5 +1,8 @@
 #!/bin/bash
 
+basedir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../ && pwd )
+cd $basedir
+
 bower install
 
 # Get a list of uplibrary-* components (excluding this one)
