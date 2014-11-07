@@ -2,9 +2,7 @@
 
 set -xe
 
-basedir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../ && pwd )
-cd $basedir
-cd ./../src/github.com/uqlibrary/uqlibrary-elements/
+cd ~/src/github.com/uqlibrary/uqlibrary-elements/
 bower install
 cd ..
 
