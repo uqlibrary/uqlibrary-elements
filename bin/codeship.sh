@@ -14,4 +14,5 @@ for component in ${components[@]}; do
   cd $component
   #wct
   cd ..
+  cp -R $component "${component/uqlibrary-/}"
 done
