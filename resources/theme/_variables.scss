@@ -31,6 +31,11 @@ $green-A200: #5af158;
 $green-A400: #14e715;
 $green-A700: #12c700;
 
+$grey-A100: #F5F5F5;
+$grey-A200: #EEEEEE;
+$grey-A400: #BDBDBD;
+$grey-A700: #616161;
+
 $uq-green-A700: #8CB800;
 $uq-green-A100: rgba($uq-green-A700, .25);
 $uq-green-A200: rgba($uq-green-A700, .50);
@@ -61,3 +66,6 @@ $divider-inverse:        rgba($white, .12);
 $hint-text-inverse:      rgba($white, .26);
 $secondary-text-inverse: rgba($white, .54);
 $text-inverse:           rgba($white, .87);
+
+$dropdown-background: $grey-A200;
+$dropdown-background-hover: $grey-A400;
