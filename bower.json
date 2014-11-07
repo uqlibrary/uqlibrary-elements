@@ -4,14 +4,15 @@
   "main": "uqlibrary-elements.html",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/uqlibrary/uqlibrary-timeline/",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-elements/",
   "ignore": [
     "/.*",
     "/tests/"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
-    "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#^0.0.5"
+    "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
+    "uqlibrary-booking": "uqlibrary/uqlibrary-booking#master"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/web-component-tester#^0.7.3"
