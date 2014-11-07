@@ -15,5 +15,3 @@ for component in ${components[@]}; do
   #wct
   cd ..
 done
-
-ls -la
