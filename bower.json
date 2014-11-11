@@ -13,7 +13,8 @@
     "polymer": "Polymer/polymer#^0.4.2",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
     "uqlibrary-booking": "uqlibrary/uqlibrary-booking#master",
-    "uqlibrary-fbs-filter-form": "uqlibrary/uqlibrary-fbs-filter-form#master"
+    "uqlibrary-fbs-filter-form": "uqlibrary/uqlibrary-fbs-filter-form#master",
+    "uqlibrary-fbs-booking-form": "uqlibrary/uqlibrary-fbs-filter-form#master"
   },
   "devDependencies": {
     "polymer-test-tools": "Polymer/web-component-tester#^0.7.3"
