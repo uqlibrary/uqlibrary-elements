@@ -12,9 +12,9 @@ components=$(ls -d */ | grep uqlibrary | grep -v elements)
 # Run the tests for each component
 for component in ${components[@]}; do
   cd $component
-  if [ -d "test" ]; then
-    wct
-  fi
+  #if [ -d "test" ]; then
+  #  wct
+  #fi
   cd ..
   cp -R $component "${component/uqlibrary-/}"
 done
