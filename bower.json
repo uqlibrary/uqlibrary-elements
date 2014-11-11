@@ -10,7 +10,7 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.4.2",
+    "polymer": "Polymer/polymer#^0.5.0",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
     "uqlibrary-booking": "uqlibrary/uqlibrary-booking#master",
     "uqlibrary-fbs-filter-form": "uqlibrary/uqlibrary-fbs-filter-form#master",
