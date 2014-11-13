@@ -1,0 +1,7 @@
+{
+  "AWSAccessKeyId": "<AWSAccessKeyId>",
+  "AWSSecretKey": "<AWSSecretKey>",
+  "AWSRegion": "<AWSRegion>",
+  "S3Bucket": "<S3Bucket>",
+  "CFDistribution": "<CFDistribution>"
+}
