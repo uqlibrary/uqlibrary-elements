@@ -27,11 +27,11 @@ done
 # Use env vars to set AWS config
 set +x
 awsconfig="${src}/aws.json"
-sed -e s/"<AWSAccessKeyId>"/"${AWSSecretKey}"/g -i ${awsconfig} >/dev/null
-sed -e s/"<AWSSecretKey>"/"${AWSSecretKey}"/g -i ${awsconfig} >/dev/null
-sed -e s/"<S3Bucket>"/"${S3Bucket}"/g -i ${awsconfig} >/dev/null
-sed -e s/"<CFDistribution>"/"${CFDistribution}"/g -i ${awsconfig} >/dev/null
-sed -e s/"<AWSRegion>"/"${AWSRegion}"/g -i ${awsconfig} >/dev/null
+sed -i -e "s/<AWSAccessKeyId>/${AWSSecretKey}/g" ${awsconfig}
+sed -i -e "s#<AWSSecretKey>#${AWSSecretKey}#g" ${awsconfig}
+sed -i -e "s/<S3Bucket>/${S3Bucket}/g" ${awsconfig}
+sed -i -e "s/<CFDistribution>/${CFDistribution}/g" ${awsconfig}
+sed -i -e "s/<AWSRegion>/${AWSRegion}/g" ${awsconfig}
 set -x
 
 # Gzip the files prior to uploading
