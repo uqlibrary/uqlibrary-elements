@@ -8,10 +8,8 @@ cd ${src}
 bower install
 cd ..
 
-# Get a list of uplibrary-* components (excluding this one)
+# Get a list of uplibrary-* components (excluding this one), run the tests and vulcanize
 components=$(ls -d */ | grep uqlibrary | grep -v elements)
-
-# Run the tests for each component and vulcanize the index page
 for component in ${components[@]}; do
   cd ${component}
   #if [ -d "test" ]; then
@@ -24,6 +22,14 @@ for component in ${components[@]}; do
   cp -R ${component} "${component/uqlibrary-/}"
 done
 
+# Gzip component files
+components=$(ls -d */ | grep -v uqlibrary-elements)
+for component in ${components[@]}; do
+  cd ${component}
+  find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
+  cd ..
+done
+
 # Use env vars to set AWS config
 set +x
 awsconfig="${src}/aws.json"
@@ -33,14 +39,7 @@ sed -i -e 's#<S3Bucket>#${S3Bucket}#g' ${awsconfig}
 sed -i -e 's#<CFDistribution>#${CFDistribution}#g' ${awsconfig}
 sed -i -e 's#<AWSRegion>#${AWSRegion}#g' ${awsconfig}
 
-# Gzip the files prior to uploading
-find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
-
-set -x
-
 cd ${src}
-ls -la
-echo $(which grunt)
 grunt deploy
 
 set -x
