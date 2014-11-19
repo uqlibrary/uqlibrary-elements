@@ -30,6 +30,7 @@ for component in ${components[@]}; do
   find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
   cd ..
 done
+find ${src}/resources -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 
 # Use env vars to set AWS config
 awsconfig="${src}/aws.json"
