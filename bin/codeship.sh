@@ -23,6 +23,7 @@ for component in ${components[@]}; do
 done
 
 # Gzip component files
+set +x
 components=$(ls -d */ | grep -v uqlibrary-elements)
 for component in ${components[@]}; do
   cd ${component}
@@ -31,7 +32,6 @@ for component in ${components[@]}; do
 done
 
 # Use env vars to set AWS config
-set +x
 awsconfig="${src}/aws.json"
 sed -i -e 's#<AWSAccessKeyId>#${AWSSecretKey}#g' ${awsconfig}
 sed -i -e 's#<AWSSecretKey>#${AWSSecretKey}#g' ${awsconfig}
@@ -40,12 +40,9 @@ sed -i -e 's#<CFDistribution>#${CFDistribution}#g' ${awsconfig}
 sed -i -e 's#<AWSRegion>#${AWSRegion}#g' ${awsconfig}
 set -x
 
-mv ${src}/node_modules .
-mv ${src}/aws.json .
-mv ${src}/Gruntfile.js .
-
+cd ${src}
 ls -la
-
+which grunt
 grunt deploy
 
 rm -f ${awsconfig}
