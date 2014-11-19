@@ -38,10 +38,14 @@ sed -i -e 's#<AWSSecretKey>#${AWSSecretKey}#g' ${awsconfig}
 sed -i -e 's#<S3Bucket>#${S3Bucket}#g' ${awsconfig}
 sed -i -e 's#<CFDistribution>#${CFDistribution}#g' ${awsconfig}
 sed -i -e 's#<AWSRegion>#${AWSRegion}#g' ${awsconfig}
-
-cd ${src}
-grunt deploy
-
 set -x
+
+mv ${src}/node_modules .
+mv ${src}/aws.json .
+mv ${src}/Gruntfile.js .
+
+ls -la
+
+grunt deploy
 
 rm -f ${awsconfig}
