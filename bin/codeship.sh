@@ -33,7 +33,7 @@ done
 
 # Use env vars to set AWS config
 awsconfig="${src}/aws.json"
-sed -i -e "s#<AWSAccessKeyId>#${AWSSecretKey}#g" ${awsconfig}
+sed -i -e "s#<AWSAccessKeyId>#${AWSAccessKeyId}#g" ${awsconfig}
 sed -i -e "s#<AWSSecretKey>#${AWSSecretKey}#g" ${awsconfig}
 sed -i -e "s#<S3Bucket>#${S3Bucket}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
