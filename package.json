@@ -4,6 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "0.4.1",
+    "matchdep": "~0.1.1",
     "grunt-aws-s3": "0.7.0",
     "grunt-invalidate-cloudfront": "0.1.1"
   },
