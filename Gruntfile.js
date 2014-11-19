@@ -41,7 +41,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: '../',
-            src: ['**', '!**/uqlibrary-elements/**'],
+            src: ['**', '!**/node_modules/**'],
             dest: ''
           }
         ]
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('deploy', [
-    'aws_s3:production',
-    'invalidate_cloudfront'
+    'aws_s3:production'//,
+    //'invalidate_cloudfront'
   ]);
 };
