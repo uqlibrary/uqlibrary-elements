@@ -36,7 +36,11 @@ sed -i -e 's#<AWSRegion>#${AWSRegion}#g' ${awsconfig}
 # Gzip the files prior to uploading
 find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 
+set -x
+
 cd ${src}
+ls -la
+echo $(which grunt)
 grunt deploy
 
 set -x
