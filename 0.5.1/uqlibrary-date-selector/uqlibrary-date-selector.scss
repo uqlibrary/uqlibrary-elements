@@ -1,0 +1,20 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+paper-tabs {
+  background-color: $fbs-unselected-date;
+  margin-bottom: 10px;
+}
+
+paper-tab {
+  text-align: center;
+  min-width: 100px;
+
+  &.core-selected {
+    background-color: $fbs-selected-date;
+    color: $white;
+  }
+}
+

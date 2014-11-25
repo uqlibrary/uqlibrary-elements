@@ -1,0 +1,28 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+  display: block;
+  position: relative;
+  background-color: white;
+  padding: 16pt;
+  border-bottom: 1pt solid $divider;
+}
+.card-header {
+  margin-bottom: 10px;
+  font-size: 14pt;
+  color: $teal-500;
+  font-weight: normal;
+
+  core-icon {
+    position: absolute;
+    left: 16pt;
+  }
+  .group-label {
+    padding-left: 24pt;
+
+  }
+}
+.group-content {
+  padding-left: 24pt;
+}
+

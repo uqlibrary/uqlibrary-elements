@@ -1,7 +1,7 @@
 {
   "name": "uqlibrary-elements",
   "description": "Aggregate of elements created by the Library",
-  "main": "uqlibrary-elements.html",
+  "main": "index.html",
   "license": "MIT",
   "private": true,
   "homepage": "https://github.com/uqlibrary/uqlibrary-elements/",
@@ -10,14 +10,13 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.1",
+    "polymer": "Polymer/polymer#0.5.1",
+    "core-elements": "Polymer/core-elements#0.5.1",
+    "paper-elements": "Polymer/paper-elements#0.5.1",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
-    "uqlibrary-booking": "uqlibrary/uqlibrary-booking#master",
     "uqlibrary-fbs-filter-form": "uqlibrary/uqlibrary-fbs-filter-form#master",
     "uqlibrary-fbs-booking-form": "uqlibrary/uqlibrary-fbs-booking-form#master",
-    "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#master"
-  },
-  "devDependencies": {
-    "polymer-test-tools": "Polymer/web-component-tester#1.6.1"
+    "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#master",
+    "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-fbs-booking-form Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+
+  <link rel="import" href="uqlibrary-fbs-booking-form.html">
+
+  <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
+
+  <style>
+    body {
+      font-size: 16px;
+      font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+      font-weight: 300;
+      line-height: 1.1em;
+      margin: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+  </style>
+
+</head>
+<body unresolved>
+
+  <uqlibrary-fbs-booking-form></uqlibrary-fbs-booking-form>
+
+  <script>
+    (function () {
+
+      window.addEventListener('polymer-ready', function() {
+
+        var bookingForm = document.querySelector('uqlibrary-fbs-booking-form');
+
+        bookingForm.roomDetails = {
+          id:   1,
+          room: "Group Room 3",
+          level: "Level 3",
+          building: "Biological Sciences Library",
+          campus: "St Lucia",
+          summary: "6 chairs, 1 table, PC, Large Screen, whiteboard. The PC is temporarily out of order.",
+          image: "images/image.jpg",
+          imageLarge: "images/image.jpg",
+
+          timeslotLength: 30,     //in minutes
+          maxBookingLength: 120,  //in minutes
+          minBookingLength: 30    //in minutes
+        };
+
+        var searchDate = new Date();
+        searchDate.setHours(10,30,0,0);
+
+        bookingForm.maxBookingDate = new Date(searchDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+        bookingForm.searchDate = new Date(searchDate.getTime() + 5 * 24 * 60 * 60 * 1000);
+        bookingForm.searchDuration = 90;  //in minutes
+      });
+    }());
+  </script>
+
+</body>
+</html>

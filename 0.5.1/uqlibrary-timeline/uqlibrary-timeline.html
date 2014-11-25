@@ -1,0 +1,190 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-collapse/core-collapse.html">
+
+<!--
+Element providing a simple timeline.
+
+##### Example
+
+    <uqlibrary-timeline></uqlibrary-timeline>
+
+    <script>
+      (function () {
+
+        window.addEventListener('polymer-ready', function() {
+          var timeline = document.querySelector('uqlibrary-timeline');
+          timeline.events = [
+            {
+              date: new Date().setHours(0, 0, 0, 0),
+              title: "Item title",
+              subtitle: "Second line",
+              text: "Third line"
+            },
+            {
+              date: new Date().setHours(24, 0, 0, 0),
+              title: "Item title",
+              subtitle: "Second line",
+              text: "Third line"
+            },
+            {
+              date: new Date().setHours(72, 0, 0, 0),
+              title: "Item title",
+              subtitle: "Second line",
+              text: "Third line"
+            }
+          ];
+        });
+
+      }());
+    </script>
+
+@element uqlibrary-timeline
+@blurb Element providing a simple timeline.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-timeline
+-->
+<polymer-element name="uqlibrary-timeline" attributes="events">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-timeline.css">
+
+    <div id="timeline">
+      <template repeat="{{event, idx in processedEvents}}">
+
+        <template if="{{!event.isDivider}}">
+
+          <core-collapse opened="{{event.opened}}">
+            <div id="{{event.id}}" class="{{event.class}}">
+              <div horizontal layout class="timeline-item-inner">
+                <div class="date" vertical layout>
+                  <div class="day">
+                    {{event.day}}
+                  </div>
+                  <div class="day-text">
+                    {{event.dayText}}
+                  </div>
+                </div>
+                <div flex class="item">
+                  <div class="item-inner">
+                    <div class="title">{{event.title}}</div>
+                    <div>{{event.subtitle}}</div>
+                    <div>{{event.text}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </core-collapse>
+
+        </template>
+
+        <template if="{{event.isDivider}}">
+          <p class="timeline-divider">&nbsp;</p>
+        </template>
+
+      </template>
+    </div>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-timeline', {
+        /**
+         * The `events` attribute is an array of events to display on the timeline.
+         *
+         * @property events
+         * @type array
+         */
+
+        /**
+         * Time period
+         */
+        timePeriod: '',
+
+        created: function () {
+          this.events = [];
+          this.processedEvents = [];
+          this.dayNames = [
+            'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
+          ];
+        },
+
+        processedEventsChanged: function () {
+          this.async(function () {
+            Array.prototype.slice.call(this.$.timeline.querySelectorAll('core-collapse')).forEach(function(element) {
+              if (element.opened === false) {
+                element.opened = true;
+              }
+            });
+          }, null, 100);
+          this.async(function () {
+            Array.prototype.slice.call(this.$.timeline.querySelectorAll('.event-item-hidden')).forEach(function(element) {
+              element.className = 'event-item';
+            });
+          }, null, 100);
+        },
+
+        eventsChanged: function (val) {
+          var events = JSON.parse(JSON.stringify(this.events));
+          var processed = [];
+
+          for (var i = 0; i < events.length; i++) {
+            if (val.length) {
+              events[val[0].index].opened = false;
+            }
+          }
+
+          // Sort by date (ascending)
+          events.sort(function (a, b) {
+            var aDate = new Date(a.date).getTime();
+            var bDate = new Date(b.date).getTime();
+            if (aDate > bDate) {
+              return 1;
+            }
+            if (aDate < bDate) {
+              return -1;
+            }
+            return 0;
+          });
+
+          var haveDivider = false;
+
+          for (var i = 0; i < events.length; i++) {
+            events[i].id = 'event-' + i;
+            events[i].date = new Date(events[i].date);
+            events[i].time = events[i].date.getTime();
+            events[i].day = events[i].date.getDate();
+            events[i].dayText = this.dayNames[events[i].date.getDay()];
+            events[i].class = 'event-item';
+
+            if (! events[i].hasOwnProperty('opened')) {
+              events[i].opened = true;
+            } else {
+              events[i].class = 'event-item event-item-hidden';
+            }
+
+            if (i > 0 && events[i].date.getDay() === events[(i-1)].date.getDay()) {
+              events[i].day = '';
+              events[i].dayText = '';
+            }
+
+            if (i > 0 && events[i].date.getDay() !== events[(i-1)].date.getDay() && !haveDivider) {
+              events[(i-1)].class = 'last';
+              haveDivider = true;
+              processed.push({
+                isDivider: true
+              });
+            }
+            processed.push(events[i]);
+          }
+
+          if (processed.length > 0) {
+            processed[0].class = 'first';
+          }
+          this.processedEvents = processed;
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-date-selector Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="uqlibrary-date-selector.html">
+    <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
+    <style>
+        body {
+            font-size: 16px;
+            font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+            font-weight: 300;
+            line-height: 1.1em;
+            margin: 0;
+        }
+    </style>
+</head>
+<body unresolved>
+<h1> Demo Time Selector: </h1>
+
+  <uqlibrary-date-selector>
+  </uqlibrary-date-selector>
+
+<script>
+
+    (function(){
+        window.addEventListener('polymer-ready', function(){
+          var date_selector = document.querySelector('uqlibrary-date-selector');
+
+          date_selector.searchDate = new Date(new Date().getTime() - 100 * 24 * 60 * 60 * 1000);
+          date_selector.maxBookingDate = new Date(new Date().getTime() - 93 * 24 * 60 * 60 * 1000);
+          date_selector.maxBookingLength = 5;
+
+          var bookingTimeslots = [
+            {
+              startTime : new Date('Fri Nov 21 2014 00:00:00 GMT+1000 (AEST)'),
+              endTime : new Date('Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)'),
+              selectable: true,
+              selected: false
+            },
+            {
+              startTime : new Date('Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)'),
+              endTime : new Date('Fri Nov 21 2014 01:00:00 GMT+1000 (AEST)'),
+              selectable: true,
+              selected: true
+            },
+            {
+              startTime : new Date('Fri Nov 21 2014 01:00:00 GMT+1000 (AEST)'),
+              endTime : new Date('Fri Nov 21 2014 01:30:00 GMT+1000 (AEST)'),
+              selectable: true,
+              selected: true
+            },
+            {
+              startTime : new Date('Fri Nov 21 2014 01:30:00 GMT+1000 (AEST)'),
+              endTime : new Date('Fri Nov 21 2014 02:00:00 GMT+1000 (AEST)'),
+              selectable: true,
+              selected: false
+            },
+            {
+              startTime : new Date('Fri Nov 21 2014 02:00:00 GMT+1000 (AEST)'),
+              endTime : new Date('Fri Nov 21 2014 02:30:00 GMT+1000 (AEST)'),
+              selectable: false,
+              selected: false
+            }
+          ];
+
+          date_selector.bookingTimeslots = bookingTimeslots;
+        })
+    })()
+</script>
+</body>
+</html>

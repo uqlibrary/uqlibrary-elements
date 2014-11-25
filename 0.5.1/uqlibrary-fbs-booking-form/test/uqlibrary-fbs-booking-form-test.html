@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-fbs-booking-form</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <link rel="import" href="../uqlibrary-fbs-booking-form.html">
+</head>
+<body>
+
+  <uqlibrary-fbs-booking-form></uqlibrary-fbs-booking-form>
+
+  <script>
+    window.addEventListener('polymer-ready', function() {
+      var element = document.querySelector('uqlibrary-fbs-booking-form');
+      var roomDetails = {
+        id:       1,
+        room:     "Group Room 3",
+        level:    "Level 3",
+        building: "Biological Sciences Library",
+        campus:   "St Lucia",
+        summary:  "6 chairs, 1 table, PC, Large Screen, whiteboard.",
+        image:    "image-thumb.jpg",
+        imageLarge:    "image-large.jpg",
+
+        timeslotLength: 30,     //in minutes
+        maxBookingLength: 120,  //in minutes
+        minBookingLength: 30    //in minutes
+      };
+
+      var searchDate = new Date(2014, 0, 1, 11, 0, 0, 0);
+      var maxBookingDate = new Date(2014, 0, 7, 11, 0, 0);
+      var searchDuration = 60;
+
+      suite('uqlibrary-fbs-booking-form', function() {
+
+        before(function () {
+          element = document.querySelector('uqlibrary-fbs-booking-form');
+
+          element.roomDetails = roomDetails;
+
+          element.searchDate = searchDate;          //search date and time
+          element.searchDuration = searchDuration;  //in minutes
+          element.maxBookingDate = maxBookingDate;
+        });
+
+        //properties unit tests
+        test('defines roomDetails property', function () {
+          assert.equal(roomDetails.id, element.roomDetails.id);
+        });
+
+        test('defines searchDate property', function () {
+          assert.equal(searchDate.valueOf(), element.searchDate.valueOf());
+        });
+
+        test('defines maxBookingDate property', function () {
+          assert.equal(maxBookingDate.valueOf(), element.maxBookingDate.valueOf());
+        });
+
+        test('defines searchDuration property', function () {
+          assert.equal(searchDuration, element.searchDuration);
+        });
+
+        //methods unit tests
+        test('createTimeslots - mock generate empty available time slots for search date', function () {
+          var setRandomAvailability = false;
+          var timeslots = element.createTimeslots(setRandomAvailability);
+          assert.equal(timeslots.length, parseInt(24 * 60 / roomDetails.timeslotLength));
+        });
+
+        test('selectTimeslots - selects time slots defined by search duration', function () {
+          var setRandomAvailability = false;
+
+          element.bookingTimeslots = element.createTimeslots(setRandomAvailability);
+          element.selectTimeslots();
+
+          var selectedTimeslots = element.bookingTimeslots.filter(function(item) { return item.selected; });
+
+          assert.equal(2, selectedTimeslots.length);
+        });
+
+        test('createRoomBooking - submits currently selected time slots, fires booking-created event if booking was successful', function(){
+          var setRandomAvailability = false;
+
+          element.bookingTimeslots = element.createTimeslots(setRandomAvailability);
+          element.selectTimeslots();
+          element.addEventListener('booking-created', function(event) {
+            assert.equal(event.detail.bookingRoomId, roomDetails.id);
+          });
+
+          element.createRoomBooking();
+        });
+
+
+//        createRoomBooking fires booking-created if success error messages displayed if not
+
+
+      });
+    });
+  </script>
+
+</body>
+</html>
