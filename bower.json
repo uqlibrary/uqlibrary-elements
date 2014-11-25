@@ -14,7 +14,6 @@
     "core-elements": "Polymer/core-elements#0.5.1",
     "paper-elements": "Polymer/paper-elements#0.5.1",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
-    "uqlibrary-fbs-filter-form": "uqlibrary/uqlibrary-fbs-filter-form#master",
     "uqlibrary-fbs-booking-form": "uqlibrary/uqlibrary-fbs-booking-form#master",
     "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"

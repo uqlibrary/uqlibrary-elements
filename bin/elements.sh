@@ -7,6 +7,7 @@ echo "{
   \"directory\": \"${polymer}\"
 }
 " > .bowerrc
+rm -Rf ${polymer}
 
 bower install
 mkdir ${polymer}/lib

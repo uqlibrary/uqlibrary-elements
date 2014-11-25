@@ -11,16 +11,17 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.1",
-    "paper-fab": "Polymer/paper-fab#^0.5.1"
+    "paper-fab": "Polymer/paper-fab#^0.5.1",
+    "paper-toast": "Polymer/paper-toast#0.5.1"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^1.6.1"
   },
-  "_release": "fe7ec4c311",
+  "_release": "0f14edb79a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "fe7ec4c311574a8bdbbefe917bb661bde565c606"
+    "commit": "0f14edb79a1d8935b17cec6e24c53056c756fda5"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-fbs-booking-form.git",
   "_target": "master",

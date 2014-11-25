@@ -1,5 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-fab/paper-fab.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+
 <link rel="import" href="../uqlibrary-date-selector/uqlibrary-date-selector.html">
 
 <!--
@@ -74,6 +76,8 @@ Element providing a simple timeline.
       <span class="hint-box unavailable"></span> - unavailable time slot
     </p>
 
+    <paper-toast id="infoToast" flex></paper-toast>
+
     <paper-fab
             id="createRoomBooking"
             icon="check"
@@ -121,7 +125,7 @@ Element providing a simple timeline.
           //TODO: get timeslots for new search date from api for this room/date
 
           //generate mock time slots if mock data is used
-          this.bookingTimeslots = this.createTimeslots(true);
+          this.bookingTimeslots = this.createTimeslots(false);
           this.selectTimeslots();
         },
 
@@ -137,16 +141,49 @@ Element providing a simple timeline.
           this.addEventListener('submit-form', this.createRoomBooking);
         },
 
-        createRoomBooking : function () {
+        showInfoToast: function(text) {
+          this.$.infoToast.text = text;
+          this.$.infoToast.show();
+        },
 
+        validateSelection : function(selectedTimeslots) {
+          var validation = {
+            valid : true,
+            message: 'Your booking was successfully created.'
+          };
+
+          if (selectedTimeslots.length == 0) {
+            validation.valid = false;
+            validation.message = "Please, make a valid selection.";
+          } else if (selectedTimeslots.length > this.maxBookingLength / this.roomDetails.timeslotLength) {
+            validation.valid = false;
+            validation.message = "Current selection exceeds maximum booking duration. Please, make a valid selection.";
+          }
+          else if (!selectedTimeslots.every(function(element, index) {
+                    return !(index < selectedTimeslots.length - 1 && element.endTime.valueOf() !== selectedTimeslots[index+1].startTime.valueOf());
+                  })) {
+            validation.valid = false;
+            validation.message = "Current selection is not available. Please, make another selection.";
+          }
+
+          return validation;
+          },
+
+        createRoomBooking : function () {
           // get currently selected elements
           var selectedTimeslots = this.bookingTimeslots.filter(function(item) { return item.selected; });
+          var validation = this.validateSelection(selectedTimeslots);
 
-          if (selectedTimeslots.length > 0) {
+          if (!validation.valid){
+            this.showInfoToast(validation.message);
+          } else {
+
             console.log("Creating booking on " + this.searchDate.toDateString() + " for time slots from " + selectedTimeslots[0].startTime + " to " + selectedTimeslots[selectedTimeslots.length-1].endTime);
 
             //TODO: validate data via API
             //TODO: save booking via API
+
+            this.showInfoToast(validation.message);
 
             //if booking is successful, fire event to indicate booking is done and move on to other page
             this.fire('booking-created',
@@ -157,9 +194,6 @@ Element providing a simple timeline.
                       bookingTitle: this.roomDetails.name,
                       bookingLocation: this.formatLocation(this.roomDetails)
                     });
-
-            //TODO: if not successful, display error as a toast
-
           }
         },
 

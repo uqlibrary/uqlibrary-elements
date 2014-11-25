@@ -10,6 +10,8 @@ build script for deploying applications.
 
 To add a component, edit the bower.json file, and add the component as a dependency.
 
+Edit the index.html file in the root of the repo and include the component so it will be vulcanized.
+
 Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that 
 can be included in your app:
 
