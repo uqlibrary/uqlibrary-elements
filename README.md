@@ -1,8 +1,26 @@
 uqlibrary-elements
 ================
 
-See the [component page](http://uqlibrary.github.io/uqlibrary-elements) for more information.
+An aggregate of components used in apps, combining the components into a vulcanized file, and contains the 
+build script for deploying applications.
 
 ## Getting Started
 
-We've put together a [guide for uqlibrary-elements](http://www.polymer-project.org/docs/start/reusableelements.html) to help get you rolling.
+### Adding a component
+
+To add a component, edit the bower.json file, and add the component as a dependency.
+
+Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that 
+can be included in your app:
+
+    $ cd /path/to/repo
+    $ bin/elements.sh
+
+The script uses the Polymer version in bower.json to determine the directory components are installed into.
+
+Once the script completes, commit this repo with the updated components.
+
+### Deploying
+
+Each app is deployed using codeship.io. The script bin/codeship.sh is run on codeship.io to gzip the 
+application, and to upload the application to S3.
