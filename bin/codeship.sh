@@ -6,13 +6,10 @@ src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 #tag=$(git describe --exact-match --tags HEAD)
 
-cd ../uqlibrary-elements
-bower install
-
 # Gzip component files
 find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 find ../uqlibrary-elements/resources -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
-find ../uqlibrary-elements -type d -regex "../uqlibrary-elements/[0-9].*" ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
+find ../uqlibrary-elements -type f -regex "../uqlibrary-elements/[0-9].*" ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 cd ..
 cp -R ${base} "${base/uqlibrary-/}"
 
