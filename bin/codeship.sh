@@ -6,6 +6,7 @@ src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 #tag=$(git describe --exact-match --tags HEAD)
 
+cd ../uqlibrary-elements
 bower install
 
 # Gzip component files
