@@ -4,7 +4,7 @@ set -xe
 
 src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
-tag=$(git describe --exact-match --tags HEAD)
+#tag=$(git describe --exact-match --tags HEAD)
 
 bower install
 
