@@ -11,16 +11,17 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.1",
-    "core-collapse": "Polymer/core-collapse#0.5.1"
+    "core-collapse": "Polymer/core-collapse#0.5.1",
+    "moment": "~2.8.4"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "956b3717ea",
+  "_release": "b227aa159f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "956b3717eab3a96330c2b44d108f31812fc5b4f3"
+    "commit": "b227aa159febdd1aed8a3fa3c502e3d9271daee3"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-timeline.git",
   "_target": "master",

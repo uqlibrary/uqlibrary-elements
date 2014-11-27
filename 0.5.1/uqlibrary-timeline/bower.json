@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.1",
-    "core-collapse": "Polymer/core-collapse#0.5.1"
+    "core-collapse": "Polymer/core-collapse#0.5.1",
+    "moment": "~2.8.4"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"

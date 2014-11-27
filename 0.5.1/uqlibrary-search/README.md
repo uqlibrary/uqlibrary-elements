@@ -1,7 +1,7 @@
-uqlibrary-fbs-booking-form
-==================
+uqlibrary-search
+================
 
-See the [component page](https://uqlibrary.github.io/uqlibrary-fbs-booking-form) for more information.
+See the [component page](https://uqlibrary.github.io/uqlibrary-search) for more information.
 
 ## Testing Your Element
 

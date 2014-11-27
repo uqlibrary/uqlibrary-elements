@@ -26,43 +26,55 @@
     (function () {
 
       window.addEventListener('polymer-ready', function() {
+
         var timeline = document.querySelector('uqlibrary-timeline');
+
+        timeline.addEventListener('event-selected', function(event, data, source){
+          alert("Event: " + event.detail.title);
+        });
+
         timeline.events = [
           {
-            date: new Date().setHours(0, 0, 0, 0),
-            title: "Item title",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       1,
+            startDate:new Date(new Date().setHours(0, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(0, 30, 0, 0)),
+            title:    "Item title 1",
+            subtitle: "Second line"
           },
           {
-            date: new Date().setHours(4, 0, 0, 0),
-            title: "Item title",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       2,
+            startDate:new Date(new Date().setHours(4, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(4, 30, 0, 0)),
+            title:    "Item title 2",
+            subtitle: "Second line"
           },
           {
-            date: new Date().setHours(24, 0, 0, 0),
-            title: "A long item title A long item title A long item title A long item title A long item title ",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       3,
+            startDate:new Date(new Date().setHours(26, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(27, 0, 0, 0)),
+            title:    "A long item title A long item title A long item title A long item title A long item title ",
+            subtitle: "Second line"
           },
           {
-            date: new Date().setHours(25, 0, 0, 0),
-            title: "Item title",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       4,
+            startDate:new Date(new Date().setHours(27, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(28, 30, 0, 0)),
+            title:    "Item title 4",
+            subtitle: "Second line"
           },
           {
-            date: new Date().setHours(26, 0, 0, 0),
-            title: "Item title",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       5,
+            startDate:new Date(new Date().setHours(29, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(30, 0, 0, 0)),
+            title:    "Item title 5",
+            subtitle: "Second line"
           },
           {
-            date: new Date().setHours(72, 0, 0, 0),
-            title: "Item title",
-            subtitle: "Second line",
-            text: "Third line"
+            id:       6,
+            startDate:new Date(new Date().setHours(72, 0, 0, 0)),
+            endDate:  new Date(new Date().setHours(73, 30, 0, 0)),
+            title:    "Item title 6",
+            subtitle: "Second line"
           }
         ];
       });
@@ -70,22 +82,24 @@
       setTimeout(function () {
         var timeline = document.querySelector('uqlibrary-timeline');
         timeline.events.push({
-          date: new Date().setHours(2, 0, 0, 0),
-          title: "Item title 2",
-          subtitle: "Second line",
-          text: "Third line"
+          id:       7,
+          startDate:new Date(new Date().setHours(49, 0, 0, 0)),
+          endDate:  new Date(new Date().setHours(50, 0, 0, 0)),
+          title:    "New Item title",
+          subtitle: "Second line"
         });
       }, 1000);
 
       setTimeout(function () {
         var timeline = document.querySelector('uqlibrary-timeline');
         timeline.events.push({
-          date: new Date().setHours(3, 0, 0, 0),
-          title: "Item title 3",
-          subtitle: "Second line",
-          text: "Third line"
+          id:       8,
+          startDate:new Date(new Date().setHours(24, 0, 0, 0)),
+          endDate:  new Date(new Date().setHours(25, 30, 0, 0)),
+          title:    "Newer Item title",
+          subtitle: "Second line"
         });
-      }, 2000);
+      }, 3000);
 
     }());
   </script>

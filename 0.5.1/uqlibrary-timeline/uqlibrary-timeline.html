@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-collapse/core-collapse.html">
+<script src="../moment/moment.js"></script>
 
 <!--
 Element providing a simple timeline.
@@ -15,22 +16,11 @@ Element providing a simple timeline.
           var timeline = document.querySelector('uqlibrary-timeline');
           timeline.events = [
             {
-              date: new Date().setHours(0, 0, 0, 0),
-              title: "Item title",
-              subtitle: "Second line",
-              text: "Third line"
-            },
-            {
-              date: new Date().setHours(24, 0, 0, 0),
-              title: "Item title",
-              subtitle: "Second line",
-              text: "Third line"
-            },
-            {
-              date: new Date().setHours(72, 0, 0, 0),
-              title: "Item title",
-              subtitle: "Second line",
-              text: "Third line"
+              id:       1,
+              startDate:new Date(new Date().setHours(0, 0, 0, 0)),
+              endDate:  new Date(new Date().setHours(0, 30, 0, 0)),
+              title:    "Item title 1",
+              subtitle: "Second line"
             }
           ];
         });
@@ -54,7 +44,7 @@ Element providing a simple timeline.
         <template if="{{!event.isDivider}}">
 
           <core-collapse opened="{{event.opened}}">
-            <div id="{{event.id}}" class="{{event.class}}">
+            <div id="event-{{event.id}}" class="{{event.class}}">
               <div horizontal layout class="timeline-item-inner">
                 <div class="date" vertical layout>
                   <div class="day">
@@ -64,11 +54,11 @@ Element providing a simple timeline.
                     {{event.dayText}}
                   </div>
                 </div>
-                <div flex class="item">
+                <div flex class="item" on-tap="{{eventSelected}}" data-event-id="{{event.id}}">
                   <div class="item-inner">
                     <div class="title">{{event.title}}</div>
                     <div>{{event.subtitle}}</div>
-                    <div>{{event.text}}</div>
+                    <div>{{event.timeText}}</div>
                   </div>
                 </div>
               </div>
@@ -96,20 +86,24 @@ Element providing a simple timeline.
          * @type array
          */
 
-        /**
-         * Time period
-         */
-        timePeriod: '',
-
         created: function () {
           this.events = [];
           this.processedEvents = [];
-          this.dayNames = [
-            'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'
-          ];
         },
 
-        processedEventsChanged: function () {
+        /**
+         * The 'event-selected' event is fired when a user taps on an event in timeline,
+         * object containing event details is returned
+         * @event event-selected
+         */
+        eventSelected: function(event, data, source) {
+          var eventId = source.getAttribute('data-event-id');
+          var selectedEvent = this.events.filter(function(event){ return event.id == eventId; });
+          this.fire('event-selected', selectedEvent.length ? selectedEvent[0] : undefined);
+        },
+
+        processedEventsChanged: function (changeValue) {
+
           this.async(function () {
             Array.prototype.slice.call(this.$.timeline.querySelectorAll('core-collapse')).forEach(function(element) {
               if (element.opened === false) {
@@ -117,27 +111,32 @@ Element providing a simple timeline.
               }
             });
           }, null, 100);
+
           this.async(function () {
             Array.prototype.slice.call(this.$.timeline.querySelectorAll('.event-item-hidden')).forEach(function(element) {
               element.className = 'event-item';
             });
           }, null, 100);
+
         },
 
-        eventsChanged: function (val) {
+        eventsChanged: function (changeValue) {
           var events = JSON.parse(JSON.stringify(this.events));
           var processed = [];
 
-          for (var i = 0; i < events.length; i++) {
-            if (val.length) {
-              events[val[0].index].opened = false;
+          if(changeValue.length){
+            if(changeValue[0].addedCount == 1){
+              //if one new element is added, set its opened property to false
+              events[changeValue[0].index].opened = false;
+            } else if(changeValue[0].removed.length > 0){
+              //event has been removed from the list
             }
           }
 
           // Sort by date (ascending)
           events.sort(function (a, b) {
-            var aDate = new Date(a.date).getTime();
-            var bDate = new Date(b.date).getTime();
+            var aDate = new Date(a.startDate).getTime();
+            var bDate = new Date(b.startDate).getTime();
             if (aDate > bDate) {
               return 1;
             }
@@ -149,12 +148,18 @@ Element providing a simple timeline.
 
           var haveDivider = false;
 
+          //build processed events lists for display in timeline
           for (var i = 0; i < events.length; i++) {
-            events[i].id = 'event-' + i;
-            events[i].date = new Date(events[i].date);
-            events[i].time = events[i].date.getTime();
-            events[i].day = events[i].date.getDate();
-            events[i].dayText = this.dayNames[events[i].date.getDay()];
+
+            events[i].startDate = new Date(events[i].startDate);
+            events[i].endDate = new Date(events[i].endDate);
+
+            events[i].day = events[i].startDate.getDate();
+            events[i].dayText = moment(events[i].startDate).format('ddd');
+
+            var startFormat = moment(events[i].startDate).format('a') == moment(events[i].endDate).format('a') ? 'h:mm' : 'h:mm a';
+            events[i].timeText = moment(events[i].startDate).format(startFormat) + " - " + moment(events[i].endDate).format('h:mm a');
+
             events[i].class = 'event-item';
 
             if (! events[i].hasOwnProperty('opened')) {
@@ -163,24 +168,26 @@ Element providing a simple timeline.
               events[i].class = 'event-item event-item-hidden';
             }
 
-            if (i > 0 && events[i].date.getDay() === events[(i-1)].date.getDay()) {
+            if (i > 0 && events[i].startDate.getDay() === events[(i-1)].startDate.getDay()) {
               events[i].day = '';
               events[i].dayText = '';
             }
 
-            if (i > 0 && events[i].date.getDay() !== events[(i-1)].date.getDay() && !haveDivider) {
+            if (i > 0 && events[i].startDate.getDay() !== events[(i-1)].startDate.getDay() && !haveDivider) {
               events[(i-1)].class = 'last';
               haveDivider = true;
               processed.push({
                 isDivider: true
               });
             }
+
             processed.push(events[i]);
           }
 
           if (processed.length > 0) {
             processed[0].class = 'first';
           }
+
           this.processedEvents = processed;
         }
       });
