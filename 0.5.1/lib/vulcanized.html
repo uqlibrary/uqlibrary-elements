@@ -970,13 +970,12 @@
       <uqlibrary-time-selector id="timeSelector" maxbookinglength="{{ maxBookingLength}} "></uqlibrary-time-selector>
     </div>
 
-  </template></polymer-element><polymer-element name="uqlibrary-search" assetpath="../uqlibrary-search/"><template>
+  </template></polymer-element><polymer-element name="polymer-jsonp" attributes="url response auto bustCache" assetpath="../uqlibrary-search/"></polymer-element><polymer-element name="uqlibrary-search" assetpath="../uqlibrary-search/"><template>
     <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-search/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-search/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-search/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-search/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}:host{color:rgba(0,0,0,.54)}paper-dropdown{min-width:150px}paper-dropdown::shadow #scroller{width:100%!important}.card{background:#fff;box-sizing:border-box;padding:6px}#searchIcon core-icon{margin-left:-10px}#search{margin-left:10px}#searchInput{width:100%}#autosuggest,#filters{top:55px;left:0;right:0;width:100%}#filters{top:71px}#filters paper-item{padding-left:0;border-bottom:1px solid rgba(0,0,0,.12)}#filters paper-item.last{border-bottom:none}#filters paper-item.core-selected{color:rgba(0,0,0,.87)}.truncate{width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}</style>
 
     <core-a11y-keys target="{{$.search}}" keys="up down enter esc" on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
 
-    <core-ajax id="ajax" url="{{ajaxQuery}}" on-core-response="{{ajaxQuerySuggestionsLoaded}}" handleas="json">
-    </core-ajax>
+    <polymer-jsonp id="jsonp" url="{{jsonpQuery}}"></polymer-jsonp>
 
     <paper-shadow id="searchWrapper" class="card" z="1" horizontal="" layout="" center="">
 

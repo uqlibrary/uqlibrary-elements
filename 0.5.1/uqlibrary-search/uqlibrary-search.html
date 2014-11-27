@@ -11,7 +11,8 @@
 <link rel="import" href="../core-selector/core-selector.html">
 <link rel="import" href="../core-input/core-input.html">
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
-<link rel="import" href="../core-ajax/core-ajax.html">
+
+<link rel="import" href="polymer-jsonp.html">
 
 <!--
 Element providing library search.
@@ -34,11 +35,7 @@ Element providing library search.
                     keys="up down enter esc"
                     on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
 
-    <core-ajax id="ajax"
-               url="{{ajaxQuery}}"
-               on-core-response="{{ajaxQuerySuggestionsLoaded}}"
-               handleAs="json">
-    </core-ajax>
+    <polymer-jsonp id="jsonp" url="{{jsonpQuery}}"></polymer-jsonp>
 
     <paper-shadow id="searchWrapper" class="card" z="1" horizontal layout center>
 
@@ -101,7 +98,7 @@ Element providing library search.
   <script>
     (function() {
       Polymer('uqlibrary-search', {
-        ajaxQuery: '',
+        jsonpQuery: '',
         selectedFilter: 0,
         selectedSuggestion: 0,
         selectedSuggestionName: '',
@@ -185,22 +182,23 @@ Element providing library search.
         },
 
         ready: function () {
+          this.addEventListener('polymer-response', this.jsonpQuerySuggestionsLoaded);
           if (this.attributes.getNamedItem('focused')) {
             this.$.filters.opened = true;
             this.$.searchInput.focus();
           }
         },
 
-        ajaxQueryChanged: function () {
+        jsonpQueryChanged: function () {
           this.selectedSuggestion = -1;
-          if (! this.$.ajax.loading) {
-            this.$.ajax.go();
+          if (! this.$.jsonp.loading) {
+            this.$.jsonp.go();
           }
         },
 
-        ajaxQuerySuggestionsLoaded: function () {
+        jsonpQuerySuggestionsLoaded: function (e) {
           try {
-            this.suggestions = this.processSuggestions(this.$.ajax.response);
+            this.suggestions = this.processSuggestions(e.detail.response);
             this.async(function () {
               if (this.suggestions.length > 1 && !this.searching) {
                 this.$.autosuggest.opened = true;
@@ -259,7 +257,6 @@ Element providing library search.
         searchTextChanged: function () {
           if (this.searching) {
             this.$.autosuggest.opened = false;
-            //this.$.filters.opened = false;
           }
           else if (! this.searchText.length) {
             this.$.autosuggest.opened = false;
@@ -274,9 +271,9 @@ Element providing library search.
             this.$.filters.opened = false;
             var filter = this.filters[this.selectedFilter];
             if (filter.autoSuggest) {
-              this.ajaxQuery = filter.api +
+              this.jsonpQuery = filter.api +
                 ((filter.api.indexOf('?') === -1) ? '?' : '&') +
-                'prefix=' + encodeURIComponent(this.searchText);
+                'prefix=' + encodeURIComponent(this.searchText) + '&callback=';
             }
           }
         },
