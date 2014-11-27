@@ -99,12 +99,16 @@ Element providing library search.
     (function() {
       Polymer('uqlibrary-search', {
         jsonpQuery: '',
+
         selectedFilter: 0,
         selectedSuggestion: 0,
         selectedSuggestionName: '',
+
         searchText: '',
         searchTextOrig: '',
+
         searching: false,
+
         previousKey: '',
 
         summonApi: 'https://d3nm82zk9ronst.cloudfront.net/metadata/suggest/suggest',
@@ -216,6 +220,7 @@ Element providing library search.
 
           if (api === this.summonApi) {
             suggestions.result.forEach(function (s) {
+              s.origName = s.name;
               processed.push(s);
             });
           }
@@ -290,14 +295,17 @@ Element providing library search.
             }
           }
           else if (ev.detail.key === 'enter') {
-            if (this.selectedSuggestion >= 0 &&
+            if (
+              this.selectedSuggestion >= 0 &&
               this.previousKey &&
               (this.previousKey === 'up' || this.previousKey === 'down')
             ) {
-              this.updateSearchTextFromSuggestion();
-              this.selectedSuggestion = -1;
+              this.async(function () {
+                this.suggestionSearch();
+              }, 100);
+            } else {
+              this.search();
             }
-            this.search();
           }
           else if (ev.detail.key === 'esc') {
             this.selectedSuggestion = -1;
@@ -307,12 +315,11 @@ Element providing library search.
           this.previousKey = ev.detail.key;
         },
 
-        updateSearchTextFromSuggestion: function () {
+        suggestionSearch: function () {
           var suggestion = this.suggestions[this.selectedSuggestion];
           this.searchText = suggestion.name;
-          if (suggestion.origName) {
-            this.searchTextOrig = suggestion.origName;
-          }
+          this.searchTextOrig = suggestion.origName;
+          this.search();
         },
 
         onTapShowFilters: function () {
@@ -324,14 +331,14 @@ Element providing library search.
 
         onTapSuggestion: function () {
           this.async(function () {
-            this.updateSearchTextFromSuggestion();
-            this.search();
+            this.suggestionSearch();
           }, 100);
         },
 
         onTapClearSearch: function () {
           this.selectedSuggestion = -1;
           this.searchText = '';
+          this.searchTextOrig = '';
         },
 
         onTapSearchIcon: function () {
@@ -346,23 +353,35 @@ Element providing library search.
           if (this.$.autosuggest.opened) {
             this.$.autosuggest.opened = false;
           }
+
           var filter = this.filters[this.selectedFilter];
           var search = this.searchTextOrig ? this.searchTextOrig : this.searchText;
+          var url = '';
 
-          if (filter.api === this.lrApi || filter.api === this.examsApi) {
-            var s = search.split(" ");
-            search = s[0];
-          }
-          if (filter.type === 'catalogue') {
-            search = this.cleanSearchQuery(search);
+          if (
+            this.selectedSuggestion >= 0 &&
+            (filter.type === 'databases' || filter.type === 'learning_resources')
+          ) {
+            var suggestion = this.suggestions[this.selectedSuggestion];
+
+            if (filter.type === 'databases' || filter.type === 'learning_resources') {
+              url = suggestion.url;
+            }
           }
 
-          var url = filter.url + encodeURIComponent(search);
-          if (filter.urlAppend) {
-            url += filter.urlAppend;
+          if (! url) {
+            if (filter.type === 'learning_resources' || filter.type === 'exam_papers') {
+              var s = search.split(" ");
+              search = s[0];
+            }
+            else if (filter.type === 'catalogue') {
+              search = this.cleanSearchQuery(search);
+            }
+            url = filter.url + encodeURIComponent(search);
+            if (filter.urlAppend) {
+              url += filter.urlAppend;
+            }
           }
-          //console.log('Searching: ' + search);
-          //console.log('URL: ' + url);
           document.location.href = url;
         },
 
