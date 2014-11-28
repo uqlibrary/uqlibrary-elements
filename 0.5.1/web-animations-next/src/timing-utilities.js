@@ -46,7 +46,7 @@
             return;
           }
           if (property == 'playbackRate') {
-            shared.deprecated('AnimationTiming.playbackRate', '2014-11-28', 'Use AnimationPlayer.playbackRate instead.');
+            //shared.deprecated('AnimationTiming.playbackRate', '2014-11-28', 'Use AnimationPlayer.playbackRate instead.');
           }
           timing[property] = timingInput[property];
         }
