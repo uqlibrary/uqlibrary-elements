@@ -22,7 +22,7 @@
     }
     background: $white;
 
-    .imageWrapper {
+    .imageWrapper { 
       border-radius: 50%;
       background-position: center;
       background-repeat: no-repeat;
@@ -41,7 +41,6 @@
     core-icon {
       width: 12px;
       height: 12px;
-      display: none;
       &:hover {
         color: $grey-A700;
 
@@ -49,15 +48,6 @@
 
     }
 
-  }
-  &:hover {
-      .markAsRead {
-        core-icon {
-          &#markAsReadIcon {
-            display: inline-block;
-          }
-        }
-      }
   }
 
 }

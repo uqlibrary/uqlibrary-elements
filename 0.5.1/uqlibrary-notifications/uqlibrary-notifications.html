@@ -21,7 +21,7 @@
       <div id="iconWrapper" on-click="{{togglePopup}}" >
         <paper-icon-button id="notificationIcon" icon="{{ items.length == 0 ? 'social:notifications-none' : 'social:notifications' }}"></paper-icon-button>
         <div id="newMessagesCount" hidden?="{{newMessagesCount == 0}}">{{newMessagesCount}}</div>
-        <paper-ripple fit class="circle"></paper-ripple>
+
       </div>
 
       <core-overlay id="notificationsPopup" class="arrow" hidden?={{items.length == 0}}>
@@ -50,7 +50,7 @@
           this.items = [{
             text: 'You have new booking',
             image: 'images/notification.png',
-            link: 'http://localhost:7000/uqlibrary-booking',
+            link: 'https://app.library.uq.edu.au/v1/booking',
             isNew: true
           },
             {
@@ -60,7 +60,7 @@
             },
             {
               text: 'New e-journal have been released',
-              link: 'https://app.library.uq.edu.au/v1/booking',
+              link: '',
               isNew: false
             }];
         },

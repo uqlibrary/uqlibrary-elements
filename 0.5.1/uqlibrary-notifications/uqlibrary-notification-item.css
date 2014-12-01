@@ -55,9 +55,6 @@
     cursor: pointer; }
     .wrapper .markAsRead core-icon {
       width: 12px;
-      height: 12px;
-      display: none; }
+      height: 12px; }
       .wrapper .markAsRead core-icon:hover {
         color: #616161; }
-  .wrapper:hover .markAsRead core-icon#markAsReadIcon {
-    display: inline-block; }

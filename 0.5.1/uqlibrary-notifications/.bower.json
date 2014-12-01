@@ -22,11 +22,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "f3b0180324",
+  "_release": "752ef72f77",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f3b01803249913ca874041aeeda6b67364f1fa37"
+    "commit": "752ef72f77853b32a27e6385fd751ae65fb2fe08"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-notifications.git",
   "_target": "master",
