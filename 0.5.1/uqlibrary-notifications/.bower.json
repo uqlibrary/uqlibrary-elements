@@ -10,16 +10,23 @@
     "/tests/"
   ],
   "dependencies": {
-    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+    "polymer": "Polymer/polymer#^0.5.1",
+    "paper-icon-button": "Polymer/paper-icon-button#^0.5.1",
+    "paper-ripple": "Polymer/paper-ripple#^0.5.1",
+    "core-overlay": "Polymer/core-overlay#^0.5.1",
+    "paper-shadow": "Polymer/paper-shadow#^0.5.1",
+    "core-selector": "Polymer/core-selector#^0.5.1",
+    "core-icons": "Polymer/core-icons#^0.5.1",
+    "paper-item": "Polymer/paper-item#^0.5.1"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "5e00373a8a",
+  "_release": "f3b0180324",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "5e00373a8aabb59b7e2e4cf66cb14b53b5690ece"
+    "commit": "f3b01803249913ca874041aeeda6b67364f1fa37"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-notifications.git",
   "_target": "master",

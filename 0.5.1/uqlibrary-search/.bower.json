@@ -18,16 +18,17 @@
     "paper-icon-button": "Polymer/paper-icon-button#0.5.1",
     "core-selector": "Polymer/core-selector#0.5.1",
     "core-input": "Polymer/core-input#0.5.1",
-    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.1"
+    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.1",
+    "core-localstorage": "Polymer/core-localstorage#0.5.1"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "fb56d2c8e9",
+  "_release": "8d82e2a1a2",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "fb56d2c8e9c00fc21596dbc73caa827cb7897383"
+    "commit": "8d82e2a1a2edd113fe3ec8109bc3c5b35be7c387"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
   "_target": "master",

@@ -11,6 +11,7 @@
 <link rel="import" href="../core-selector/core-selector.html">
 <link rel="import" href="../core-input/core-input.html">
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../core-localstorage/core-localstorage.html">
 
 <link rel="import" href="polymer-jsonp.html">
 
@@ -36,6 +37,11 @@ Element providing library search.
                     on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
 
     <polymer-jsonp id="jsonp" url="{{jsonpQuery}}"></polymer-jsonp>
+
+    <core-localstorage name="uqlibrary-search-storage"
+                       id="localstorage"
+                       value="{{recent}}"
+                       autoSaveDisabled="true"></core-localstorage>
 
     <paper-shadow id="searchWrapper" class="card" z="1" horizontal layout center>
 
@@ -63,7 +69,9 @@ Element providing library search.
                          selectedAttribute=""
                          id="suggestionSelector">
             <template repeat="{{suggestions}}">
-              <paper-item on-tap="{{onTapSuggestion}}"><div class="truncate">{{name}}</div></paper-item>
+              <paper-item on-tap="{{onTapSuggestion}}">
+                <div class="{{type + ' truncate' + (recent ? ' recent' : '')}}">{{name}}</div>
+              </paper-item>
             </template>
           </core-selector>
         </paper-dropdown>
@@ -108,6 +116,9 @@ Element providing library search.
         searchTextOrig: '',
 
         searching: false,
+
+        maxRecentSearches: 10,
+        maxRecentSuggestions: 2,
 
         previousKey: '',
 
@@ -186,6 +197,7 @@ Element providing library search.
         },
 
         ready: function () {
+          this.addEventListener('core-localstorage-load', this.localStorageLoaded);
           this.addEventListener('polymer-response', this.jsonpQuerySuggestionsLoaded);
           if (this.attributes.getNamedItem('focused')) {
             this.$.filters.opened = true;
@@ -200,33 +212,35 @@ Element providing library search.
           }
         },
 
+        localStorageLoaded: function (e) {
+          if (this.recent && this.recent.lastSelectedFilter) {
+            this.selectedFilter = this.recent.lastSelectedFilter;
+          }
+        },
+
         jsonpQuerySuggestionsLoaded: function (e) {
           try {
             this.suggestions = this.processSuggestions(e.detail.response);
-            this.async(function () {
-              if (this.suggestions.length > 1 && !this.searching) {
-                this.$.autosuggest.opened = true;
-              }
-              else if (this.$.autosuggest.opened) {
-                this.$.autosuggest.opened = false;
-              }
-            }, 100);
+            this.showSuggestions();
           } catch (e) {}
         },
 
         processSuggestions: function (suggestions) {
           var processed = [];
           var api = this.filters[this.selectedFilter].api;
+          var type = this.filters[this.selectedFilter].type;
 
           if (api === this.summonApi) {
             suggestions.result.forEach(function (s) {
               s.origName = s.name;
+              s.type = type;
               processed.push(s);
             });
           }
           else if (api === this.lrApi) {
             suggestions.forEach(function (s) {
               s.origName = s.name;
+              s.type = type;
               s.name = s.name + ' (' + (s.course_title ? (s.course_title + '|') : '')  +
                 (s.campus ? s.campus + ', ' : '') +
                 (s.period ? s.period.toLowerCase() : '') +')';
@@ -236,6 +250,7 @@ Element providing library search.
           else if (api === this.examsApi) {
             suggestions.forEach(function (s) {
               s.origName = s.name;
+              s.type = type;
               s.name = s.name +' ('+ (s.course_title ? (s.course_title) : '') + ')';
               processed.push(s);
             });
@@ -243,12 +258,23 @@ Element providing library search.
           else if (api === this.databaseApi) {
             suggestions.forEach(function (s) {
               s.origName = s.name;
+              s.type = type;
               s.name = s.name + ' (' + (s.type == 'database' ? 'Database' : 'Subject Area')+')';
               processed.push(s);
             });
           }
 
-          return processed;
+          var result = this.recentSuggestions();
+          processed.forEach(function (p) {
+            var exists = result.filter(function (v) {
+              return (v.name === p.name);
+            });
+            if (! exists.length) {
+              result.push(p);
+            }
+          });
+
+          return result;
         },
 
         selectedFilterChanged: function () {
@@ -273,14 +299,56 @@ Element providing library search.
             this.$.filters.opened = false;
           }
           else {
-            this.$.filters.opened = false;
             var filter = this.filters[this.selectedFilter];
+            var coursePattern = new RegExp(/^[a-z]{4}[0-9]{1}/i);
+
+            if (
+              filter.type !== 'exam_papers' &&
+              filter.type !== 'learning_resources' &&
+              coursePattern.test(this.searchText)
+            ) {
+              // course code detected, switch to past exam papers search
+              for (var i = 0; i < this.filters.length; i++) {
+                if (this.filters[i].type === 'exam_papers') {
+                  this.selectedFilter = i;
+                  filter = this.filters[this.selectedFilter];
+                }
+              }
+            }
+
+            this.$.filters.opened = false;
             if (filter.autoSuggest) {
               this.jsonpQuery = filter.api +
-                ((filter.api.indexOf('?') === -1) ? '?' : '&') +
-                'prefix=' + encodeURIComponent(this.searchText) + '&callback=';
+              ((filter.api.indexOf('?') === -1) ? '?' : '&') +
+              'prefix=' + encodeURIComponent(this.searchText) + '&callback=';
+            } else {
+              this.suggestions = [];
             }
           }
+        },
+
+        recentSuggestions: function () {
+          var recent = [];
+          var that = this;
+          if (this.recent && this.recent.searches && this.recent.searches.hasOwnProperty(this.selectedFilter)) {
+            recent = this.recent.searches[this.selectedFilter].filter(function (v) {
+              return (v.name.toLowerCase().indexOf(that.searchText.toLowerCase()) !== -1);
+            });
+          }
+          return recent.sort(function (a, b) {
+            return a.name.length - b.name.length;
+          }).slice(0, this.maxRecentSuggestions);
+        },
+
+        showSuggestions: function () {
+          this.async(function () {
+            if (this.suggestions.length > 1 && !this.searching) {
+              this.$.autosuggest.opened = true;
+            }
+            else if (this.$.autosuggest.opened) {
+              this.$.autosuggest.opened = false;
+            }
+          }, 100);
         },
 
         onSearchKeys: function (ev) {
@@ -369,6 +437,8 @@ Element providing library search.
             }
           }
 
+          var recent = {name: this.searchText, origName: this.searchTextOrig, type: filter.type, recent: true};
+
           if (! url) {
             if (filter.type === 'learning_resources' || filter.type === 'exam_papers') {
               var s = search.split(" ");
@@ -381,13 +451,45 @@ Element providing library search.
             if (filter.urlAppend) {
               url += filter.urlAppend;
             }
+          } else {
+            recent.url = url;
           }
-          document.location.href = url;
+
+          if (this.selectedSuggestion >= 0) {
+            this.saveRecentSearch(recent);
+          }
+
+          this.async(function () {
+            document.location.href = url;
+          }, 100);
         },
 
         cleanSearchQuery: function (query) {
           // remove non-alphanumerical characters and multiple whitespaces
           return  query.replace( new RegExp( '[^a-zA-Z0-9 @]' , 'gi' ), " ").replace(new RegExp( "\\s+" , 'gi' ), " ");
+        },
+
+        saveRecentSearch: function (recent) {
+          if (!this.recent || !this.recent.searches) {
+            this.recent = {searches: {}};
+          }
+          if (
+            this.recent.searches.hasOwnProperty(this.selectedFilter)
+          ) {
+            var exists = this.recent.searches[this.selectedFilter].filter(function (v) {
+              return (v.name === recent.name);
+            });
+            if (! exists.length) {
+              this.recent.searches[this.selectedFilter].unshift(recent);
+              if (this.recent.searches[this.selectedFilter].length >= this.maxRecentSearches) {
+                this.recent.searches[this.selectedFilter].pop();
+              }
+            }
+          } else {
+            this.recent.searches[this.selectedFilter] = [recent];
+          }
+          this.recent.lastSelectedFilter = this.selectedFilter;
+          this.$.localstorage.save();
         }
 
       });
