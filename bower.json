@@ -16,6 +16,7 @@
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#master",
     "uqlibrary-search": "uqlibrary/uqlibrary-search#master",
     "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#master",
+    "uqlibrary-notifications": "uqlibrary/uqlibrary-notifications#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }
