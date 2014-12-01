@@ -1,0 +1,27 @@
+{
+  "name": "uqlibrary-notifications",
+  "description": "A simple home app",
+  "main": "uqlibrary-notifications.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-notifications/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "5e00373a8a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5e00373a8aabb59b7e2e4cf66cb14b53b5690ece"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-notifications.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-notifications"
+}

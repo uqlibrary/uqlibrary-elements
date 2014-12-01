@@ -1,0 +1,18 @@
+{
+  "name": "uqlibrary-notifications",
+  "description": "A simple home app",
+  "main": "uqlibrary-notifications.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-notifications/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  }
+}

@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  src: url("Roboto-Light.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url("Roboto-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url("Roboto-Bold.woff") format("woff"); }
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none; }
+
+:host {
+  position: relative; }
+
+.wrapper {
+  position: relative; }
+  .wrapper paper-item {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 12px;
+    border-bottom: 1px solid #bdbdbd;
+    max-height: 55px;
+    position: relative;
+    background: white; }
+    .wrapper paper-item:hover {
+      background: whitesmoke; }
+    .wrapper paper-item.new {
+      background: whitesmoke; }
+    .wrapper paper-item .imageWrapper {
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px; }
+  .wrapper .markAsRead {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    color: #bdbdbd;
+    cursor: pointer; }
+    .wrapper .markAsRead core-icon {
+      width: 12px;
+      height: 12px;
+      display: none; }
+      .wrapper .markAsRead core-icon:hover {
+        color: #616161; }
+  .wrapper:hover .markAsRead core-icon#markAsReadIcon {
+    display: inline-block; }

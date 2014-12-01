@@ -1,0 +1,63 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+
+  paper-item {
+    color: $text;
+    font-size: 12px;
+    border-bottom: 1px solid $grey-A400;
+    max-height: 55px;
+    position: relative;
+
+    &:hover {
+      background: $grey-A100;
+    }
+    &.new {
+      background: $grey-A100;
+    }
+    background: $white;
+
+    .imageWrapper {
+      border-radius: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+    }
+  }
+  .markAsRead {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    color: $grey-A400;
+    cursor: pointer;
+    core-icon {
+      width: 12px;
+      height: 12px;
+      display: none;
+      &:hover {
+        color: $grey-A700;
+
+      }
+
+    }
+
+  }
+  &:hover {
+      .markAsRead {
+        core-icon {
+          &#markAsReadIcon {
+            display: inline-block;
+          }
+        }
+      }
+  }
+
+}
