@@ -1,0 +1,77 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing access to a user account.
+
+##### Example
+
+    <uqlibrary-api-account></uqlibrary-api-account>
+
+    <script>
+    (function () {
+
+      window.addEventListener('polymer-ready', function() {
+
+        var account = document.querySelector('uqlibrary-api-account');
+
+        account.addEventListener('uqlibrary-api-account-loaded', function(e) {
+          if (e.detail.hasSession) {
+            alert('Logged in as ' + e.detail.id);
+          } else {
+            alert('Not logged in');
+          }
+        });
+      });
+
+    }());
+  </script>
+
+@element uqlibrary-account
+@blurb Element providing access to a user account.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-account" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="account" uri="/account"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-account', {
+        /**
+         * Fired when the user account object has loaded.
+         *
+         * @event uqlibrary-api-account-loaded
+         */
+        created: function () {
+          this.account = {
+            hasSession: false
+          };
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.account.addEventListener('uqlibrary-api', function(e) {
+            that.account = e.detail;
+            that.fire('uqlibrary-api-account-loaded', that.account);
+          });
+        },
+
+        /**
+         * Gets the user account.
+         *
+         * @method get
+         */
+        get: function () {
+          this.$.account.get();
+        }
+
+      });
+    })();
+  </script>
+
+</polymer-element>

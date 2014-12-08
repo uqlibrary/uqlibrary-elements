@@ -1,10 +1,10 @@
 {
-  "name": "uqlibrary-account",
-  "description": "Element providing access to a user account.",
-  "main": "uqlibrary-account.html",
+  "name": "uqlibrary-api",
+  "description": "Elements providing access to a UQ Library's API.",
+  "main": "uqlibrary-api.html",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/uqlibrary/uqlibrary-account/",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-api/",
   "ignore": [
     "/.*",
     "/tests/"

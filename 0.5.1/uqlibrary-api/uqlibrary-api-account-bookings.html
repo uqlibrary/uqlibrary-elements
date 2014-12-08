@@ -1,0 +1,57 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing access to a user's account bookings.
+
+##### Example
+
+    <uqlibrary-api-account-bookings></uqlibrary-api-account-bookings>
+
+@element uqlibrary-account
+@blurb Element providing access to a user's account bookings.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-account-bookings" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="bookings" uri="/account/facilites_bookings"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-account-bookings', {
+        /**
+         * Fired when the user account object has loaded.
+         *
+         * @event uqlibrary-api-account-loaded
+         */
+        created: function () {
+          this.account = {
+            hasSession: false
+          };
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.bookings.addEventListener('uqlibrary-api', function(e) {
+            that.bookings = e.detail;
+            that.fire('uqlibrary-api-account-bookings-loaded', that.bookings);
+          });
+        },
+
+        /**
+         * Gets the user account.
+         *
+         * @method get
+         */
+        get: function () {
+          this.$.bookings.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

@@ -2,48 +2,34 @@
 <link rel="import" href="../core-ajax/core-ajax.html">
 
 <!--
-Element providing access to a user's account bookings.
+Element providing access to UQ Library's API.
 
 ##### Example
 
-    <uqlibrary-account-bookings></uqlibrary-account-bookings>
+    <uqlibrary-api></uqlibrary-api>
 
-@element uqlibrary-account
-@blurb Element providing access to a user's account bookings.
+@element uqlibrary-api
+@blurb Element providing access to UQ Library's API.
 @status alpha
-@homepage https://github.com/uqlibrary/uqlibrary-account-bookings
+@homepage https://github.com/uqlibrary/uqlibrary-api
 -->
-<polymer-element name="uqlibrary-account-bookings">
+<polymer-element name="uqlibrary-api" attributes="uri">
 
   <template>
     <core-ajax
       id="ajax"
-      url="https://app.library.uq.edu.au/api/account/facilities_bookings"
+      url="{{url}}"
       headers="{{headers}}"
       handleAs="json"
       on-core-response="{{handleResponse}}"></core-ajax>
-
   </template>
 
   <script>
     (function() {
-      Polymer('uqlibrary-account-bookings', {
-        /**
-         * Fired when the user bookings object has loaded.
-         *
-         * @event uqlibrary-account-bookings-loaded
-         */
-        created: function () {
-
-        },
-
-        ready: function () {
-          this.setHeaders();
-        },
+      Polymer('uqlibrary-api', {
 
         handleResponse: function (e) {
-          this.bookings = this.$.ajax.response;
-          this.fire('uqlibrary-account-bookings-loaded', this.bookings);
+          this.fire('uqlibrary-api', this.$.ajax.response);
         },
 
         /**
@@ -53,6 +39,7 @@ Element providing access to a user's account bookings.
          */
         get: function () {
           this.setHeaders();
+          this.url = 'https://app.library.uq.edu.au/api' + this.uri;
           this.$.ajax.go();
         },
 

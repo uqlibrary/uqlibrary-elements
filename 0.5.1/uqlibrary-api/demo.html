@@ -6,7 +6,7 @@
   <title>uqlibrary-account Demo</title>
 
   <script src="../webcomponentsjs/webcomponents.min.js"></script>
-  <link rel="import" href="uqlibrary-account.html">
+  <link rel="import" href="uqlibrary-api-account.html">
   <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
   <style>
     body {
@@ -19,22 +19,22 @@
 </head>
 <body unresolved>
 
-  <uqlibrary-account></uqlibrary-account>
+  <uqlibrary-api-account></uqlibrary-api-account>
 
   <script>
     (function () {
 
       window.addEventListener('polymer-ready', function() {
 
-        var account = document.querySelector('uqlibrary-account');
-
-        account.addEventListener('uqlibrary-account-loaded', function(e) {
+        var account = document.querySelector('uqlibrary-api-account');
+        account.addEventListener('uqlibrary-api-account-loaded', function(e) {
           if (e.detail.hasSession) {
-            alert('Logged in as ' + e.detail.id);
+            console.log('Logged in as ' + e.detail.id);
           } else {
-            alert('Not logged in');
+            console.log('Not logged in');
           }
         });
+        account.get();
       });
 
     }());
