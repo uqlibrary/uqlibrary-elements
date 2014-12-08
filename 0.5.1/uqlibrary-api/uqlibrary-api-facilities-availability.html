@@ -1,0 +1,54 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing facilities availability.
+
+##### Example
+
+    <uqlibrary-api-facilities-availability></uqlibrary-api-facilities-availability>
+
+@element uqlibrary-api-facilities-availability
+@blurb Element providing facilities availability.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-facilities-availability" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="facilities" uri="/facilities_availability"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-facilities-availability', {
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-facilities-availability-loaded
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.facilities.addEventListener('uqlibrary-api', function(e) {
+            that.facilities = e.detail;
+            that.fire('uqlibrary-api-facilities-availability-loaded', that.facilities);
+          });
+        },
+
+        /**
+         * Gets the user account.
+         *
+         * @method get
+         */
+        get: function () {
+          this.$.bookings.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
