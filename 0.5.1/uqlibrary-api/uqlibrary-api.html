@@ -21,7 +21,8 @@ Element providing access to UQ Library's API.
       url="{{url}}"
       headers="{{headers}}"
       handleAs="json"
-      on-core-response="{{handleResponse}}"></core-ajax>
+      on-core-response="{{handleResponse}}"
+      on-core-error="{{handleError}}"></core-ajax>
   </template>
 
   <script>
@@ -29,6 +30,10 @@ Element providing access to UQ Library's API.
       Polymer('uqlibrary-api', {
 
         handleResponse: function (e) {
+          this.fire('uqlibrary-api', this.$.ajax.response);
+        },
+
+        handleError: function (e) {
           this.fire('uqlibrary-api', this.$.ajax.response);
         },
 
