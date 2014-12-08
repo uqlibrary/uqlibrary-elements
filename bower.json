@@ -19,6 +19,7 @@
     "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#master",
     "uqlibrary-notifications": "uqlibrary/uqlibrary-notifications#master",
     "uqlibrary-ga": "uqlibrary/uqlibrary-ga#master",
+    "uqlibrary-account": "uqlibrary/uqlibrary-account#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }

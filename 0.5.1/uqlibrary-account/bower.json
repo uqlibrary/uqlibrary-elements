@@ -1,0 +1,19 @@
+{
+  "name": "uqlibrary-account",
+  "description": "Element providing access to a user account.",
+  "main": "uqlibrary-account.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-account/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.1",
+    "core-ajax": "Polymer/core-ajax#0.5.1"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  }
+}

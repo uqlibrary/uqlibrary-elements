@@ -1,0 +1,109 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Element providing access to a user account.
+
+##### Example
+
+    <uqlibrary-account></uqlibrary-account>
+
+    <script>
+    (function () {
+
+      window.addEventListener('polymer-ready', function() {
+
+        var account = document.querySelector('uqlibrary-account');
+
+        account.addEventListener('uqlibrary-account-loaded', function(e) {
+          if (e.detail.hasSession) {
+            alert('Logged in as ' + e.detail.id);
+          } else {
+            alert('Not logged in');
+          }
+        });
+      });
+
+    }());
+  </script>
+
+@element uqlibrary-account
+@blurb Element providing access to a user account.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-account
+-->
+<polymer-element name="uqlibrary-account">
+
+  <template>
+    <core-ajax
+      id="ajax"
+      auto
+      url="https://app.library.uq.edu.au/api/account"
+      headers="{{headers}}"
+      handleAs="json"
+      on-core-response="{{handleResponse}}"></core-ajax>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-account', {
+        /**
+         * Fired when the user account object has loaded.
+         *
+         * @event uqlibrary-account-loaded
+         */
+        created: function () {
+          this.user = {
+            hasSession: false
+          };
+        },
+
+        ready: function () {
+          this.setHeaders();
+        },
+
+        handleResponse: function (e) {
+          this.user = this.$.ajax.response;
+          this.fire('uqlibrary-account-loaded', this.user);
+        },
+
+        /**
+         * Gets the user account.
+         *
+         * @method get
+         */
+        get: function () {
+          this.setHeaders();
+          this.$.ajax.go();
+        },
+
+        /**
+         * Sets the headers for the API request.
+         */
+        setHeaders: function () {
+          var cookie = this.getCookie('UQLID');
+          if (cookie !== "undefined") {
+            this.headers = {
+              "X-Uql-Token": cookie
+            };
+          } else {
+            return '';
+          }
+        },
+
+        /**
+         * Gets a cookie by name
+         * @param name the name of the cookie to return
+         * @returns {String}
+         */
+        getCookie: function (name) {
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
