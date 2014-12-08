@@ -68,8 +68,16 @@ Element providing access to a user account.
          */
         get: function () {
           this.$.account.get();
-        }
+        },
 
+        /**
+         * Redirect to login with a URL to return to.
+         *
+         * @param url
+         */
+        login: function (url) {
+          document.location.href = "https://www.library.uq.edu.au/uqlais/login?return=" + window.btoa(url);
+        }
       });
     })();
   </script>
