@@ -1,0 +1,54 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing computer availability.
+
+##### Example
+
+    <uqlibrary-api-computer-availability></uqlibrary-api-computer-availability>
+
+@element uqlibrary-api-computer-availability
+@blurb Element providing computer availability.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-computer-availability" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="computers" uri="/computer_availability"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-computer-availability', {
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-computer-availability-loaded
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.computers.addEventListener('uqlibrary-api', function(e) {
+            that.computers = e.detail;
+            that.fire('uqlibrary-api-computer-availability-loaded', that.computers);
+          });
+        },
+
+        /**
+         * Gets the computer availability.
+         *
+         * @method get
+         */
+        get: function () {
+          this.$.computers.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
