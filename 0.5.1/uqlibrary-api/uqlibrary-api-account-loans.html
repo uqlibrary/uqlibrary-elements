@@ -35,7 +35,7 @@ Element providing account loans.
           var that = this;
           this.$.loans.addEventListener('uqlibrary-api', function(e) {
             that.loans = e.detail;
-            that.fire('uqlibrary-api-account-loans', that.loans);
+            that.fire('uqlibrary-api-account-loans-loaded', that.loans);
           });
         },
 
