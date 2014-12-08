@@ -1,0 +1,87 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Element providing access to a user's account bookings.
+
+##### Example
+
+    <uqlibrary-account-bookings></uqlibrary-account-bookings>
+
+@element uqlibrary-account
+@blurb Element providing access to a user's account bookings.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-account-bookings
+-->
+<polymer-element name="uqlibrary-account-bookings">
+
+  <template>
+    <core-ajax
+      id="ajax"
+      url="https://app.library.uq.edu.au/api/account/facilities_bookings"
+      headers="{{headers}}"
+      handleAs="json"
+      on-core-response="{{handleResponse}}"></core-ajax>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-account-bookings', {
+        /**
+         * Fired when the user bookings object has loaded.
+         *
+         * @event uqlibrary-account-bookings-loaded
+         */
+        created: function () {
+
+        },
+
+        ready: function () {
+          this.setHeaders();
+        },
+
+        handleResponse: function (e) {
+          this.bookings = this.$.ajax.response;
+          this.fire('uqlibrary-account-bookings-loaded', this.bookings);
+        },
+
+        /**
+         * Gets the user account.
+         *
+         * @method get
+         */
+        get: function () {
+          this.setHeaders();
+          this.$.ajax.go();
+        },
+
+        /**
+         * Sets the headers for the API request.
+         */
+        setHeaders: function () {
+          var cookie = this.getCookie('UQLID');
+          if (cookie !== "undefined") {
+            this.headers = {
+              "X-Uql-Token": cookie
+            };
+          } else {
+            return '';
+          }
+        },
+
+        /**
+         * Gets a cookie by name
+         * @param name the name of the cookie to return
+         * @returns {String}
+         */
+        getCookie: function (name) {
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
