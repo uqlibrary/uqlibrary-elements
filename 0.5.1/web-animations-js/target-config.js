@@ -53,7 +53,9 @@
 
   var sharedSrc = [
       'src/timing-utilities.js',
-      'src/normalize-keyframes.js'];
+      'src/normalize-keyframes.js',
+      'src/deprecation.js',
+  ];
 
   var maxifillSrc = [
       'src/timeline.js',

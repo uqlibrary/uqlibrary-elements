@@ -1,3 +1,14 @@
+### 1.0.4 - *December 8 2014*
+
+  * Fix a critical bug where deprecation logic wasn't being loaded
+    when `web-animations-next` and `web-animations-next-lite` were
+    executed on top of a native `element.animate`.
+
+### 1.0.3 - *December 4 2014*
+
+  * Fix a critical bug on iOS 7 and Safari <= 6. Due to limitations,
+    inline style patching is not supported on these platforms.
+
 ### 1.0.2 - *November 28 2014*
 
   * Deprecated `AnimationTiming.playbackRate`.

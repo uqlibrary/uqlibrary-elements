@@ -13,6 +13,8 @@
     "polymer": "Polymer/polymer#^0.5.1",
     "paper-tabs": "Polymer/paper-tabs#^0.5.1",
     "paper-button": "Polymer/paper-button#^0.5.1",
+    "core-animation": "Polymer/core-animation#^0.5.1",
+    "web-animations-js": "web-animations/web-animations-js",
     "moment": "~2.8.4"
   },
   "devDependencies": {
