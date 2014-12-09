@@ -1125,4 +1125,41 @@
     <uqlibrary-api id="computers" uri="/computer_availability"></uqlibrary-api>
   </template></polymer-element><polymer-element name="uqlibrary-api-facilities-availability" extends="uqlibrary-api" assetpath="../uqlibrary-api/"><template>
     <uqlibrary-api id="facilities" uri="/facilities_availability"></uqlibrary-api>
+  </template></polymer-element><polymer-element name="uqlibrary-menu" attributes="account" assetpath="../uqlibrary-menu/"><template>
+    <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-menu/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-menu/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-menu/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-menu/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}core-menu{padding:8px 0;margin:0}core-menu.divider{border-bottom:1px solid #F5F5F5}paper-item{font-size:.875em;color:rgba(0,0,0,.87)}paper-item core-icon{margin-right:2em}paper-item a{text-decoration:none;color:rgba(0,0,0,.87)!important}#account{padding:8px;font-size:.875em;color:rgba(255,255,255,.87);background-color:#49075E;border-bottom:1px solid #F5F5F5}#account core-icon{height:64px;width:64px}#account #details{padding:14px}#account #name{font-weight:400;margin-bottom:2px}</style>
+
+    <template if="{{account.hasSession}}">
+      <div horizontal="" layout="" id="account">
+        <div id="icon"><core-icon icon="account-circle"></core-icon></div>
+        <div id="details" flex="">
+          <div>
+            <div id="name">{{account.name}}</div>
+            <div id="mail">{{account.mail}}</div>
+          </div>
+        </div>
+      </div>
+
+      <core-menu selectedattribute="" class="divider">
+        <paper-item>
+          <a href="https://app.library.uq.edu.au/v1/home">
+            <core-icon icon="dashboard"></core-icon> Dashboard
+          </a></paper-item>
+        <paper-item>
+          <a href="https://www.library.uq.edu.au/logout">
+          <core-icon icon="lock"></core-icon> Logout
+          </a></paper-item>
+      </core-menu>
+    </template>
+
+    <core-menu selectedattribute="">
+      <paper-item><a href="https://www.library.uq.edu.au/">Home</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/search">Search</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/using-library">Using the library</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/help">Help</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/research-support">Research support</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/teaching-support">Teaching support</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/services-for">Services for</a></paper-item>
+      <paper-item><a href="https://www.library.uq.edu.au/about-us/contact-us">Contact us</a></paper-item>
+    </core-menu>
+
   </template></polymer-element></div><script src="vulcanized.js"></script></body></html>

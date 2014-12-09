@@ -20,6 +20,7 @@
     "uqlibrary-notifications": "uqlibrary/uqlibrary-notifications#master",
     "uqlibrary-ga": "uqlibrary/uqlibrary-ga#master",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
+    "uqlibrary-menu": "uqlibrary/uqlibrary-menu#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }
