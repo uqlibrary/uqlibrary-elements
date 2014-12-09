@@ -6,6 +6,37 @@ build script for deploying applications.
 
 ## Getting Started
 
+### Install requirements
+
+Follow the quick start guide for UQLApp described here to ensure you have the required command line tools: https://github.com/uqlibrary/uqlapp/blob/master/docs/quick_start/readme.md
+
+Continue the quick start guide onto the frontend development guide to ensure you have the required package management tools:
+https://github.com/uqlibrary/uqlapp/blob/master/docs/quick_start/frontend.md
+
+### Frontend development
+
+If this is your first time using Polymer, be sure to start with these guides:
+https://www.polymer-project.org/docs/start/tutorial/intro.html
+https://www.polymer-project.org/docs/start/reusableelements.html
+
+Before pulling anything from this repo, you'll first want to create a folder in your main directory that will contain all the required component folders. You probably don't want to use your top-level development folder as it will quickly fill up with all sorts of web components. Instead, use something like:
+
+    $ /path/to/development/uqlibrary
+    $ cd /path/to/development/uqlibrary
+
+Once in your chosen directory, you should pull the individual components that you want to work with (e.g. uqlibrary-booking) into this directory. Then do the following:
+
+    $ cd /path/to/development/uqlibrary/uqlibrary-{component-name}
+    $ bower install
+    
+Be sure to also pull any related components that are used by the component you want to work on. For example, uqlibrary-booking uses uqlibrary-timeline. If you experience any errors at this stage, check that the dependencies in the bower.json file are correct.
+
+Finally, you should install vulcanize:
+
+    $ npm install -g vulcanize
+
+and polymer-tools (https://github.com/Polymer/tools) so that you can add your changes to this aggregate uqlibrary-elements repository as well as the individual web component demo page, which helps others to understand and use them.
+
 ### Adding a component
 
 To add a component, edit the bower.json file, and add the component as a dependency.
