@@ -28,6 +28,8 @@ Element providing facilities availability.
          *
          * @event uqlibrary-api-facilities-availability-loaded
          */
+        baseUri : '/facilities_availability',
+
         created: function () {
         },
 
@@ -40,11 +42,23 @@ Element providing facilities availability.
         },
 
         /**
-         * Gets the user account.
+         * Gets facilities availability.
+         * args is optional parameter (as per facilities availability API):
+         *  date - specify availability date DD-MM-YYYY
+         *  id - specify user id, ptype - specify user type
          *
          * @method get
          */
-        get: function () {
+        get: function (args) {
+
+          if (args && args.date){
+            this.$.facilities.uri = this.baseUri + "?date=" + args.date;
+          } else if (args && args.id && args.ptype) {
+            this.$.facilities.uri = this.baseUri + "?id=" + args.id + "&ptype=" + args.ptype;
+          } else {
+            this.$.facilities.uri = this.baseUri;
+          }
+
           this.$.facilities.get();
         }
       });
