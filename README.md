@@ -17,6 +17,7 @@ https://github.com/uqlibrary/uqlapp/blob/master/docs/quick_start/frontend.md
 
 If this is your first time using Polymer, be sure to start with these guides:
 https://www.polymer-project.org/docs/start/tutorial/intro.html
+
 https://www.polymer-project.org/docs/start/reusableelements.html
 
 Before pulling anything from this repo, you'll first want to create a folder in your main directory that will contain all the required component folders. You probably don't want to use your top-level development folder as it will quickly fill up with all sorts of web components. Instead, use something like:
@@ -31,11 +32,15 @@ Once in your chosen directory, you should pull the individual components that yo
     
 Be sure to also pull any related components that are used by the component you want to work on. For example, uqlibrary-booking uses uqlibrary-timeline. If you experience any errors at this stage, check that the dependencies in the bower.json file are correct.
 
-Finally, you should install vulcanize:
+Finally, you should install vulcanizer so that you can add your changes to this aggregate uqlibrary-elements repository:
 
     $ npm install -g vulcanize
 
-and polymer-tools (https://github.com/Polymer/tools) so that you can add your changes to this aggregate uqlibrary-elements repository as well as the individual web component demo page, which helps others to understand and use them.
+and polymer-tools
+
+https://github.com/Polymer/tools
+
+so you can update individual web component demo pages, thus helping others to understand and use them.
 
 ### Adding a component
 
