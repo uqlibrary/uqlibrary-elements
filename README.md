@@ -16,6 +16,7 @@ https://github.com/uqlibrary/uqlapp/blob/master/docs/quick_start/frontend.md
 ### Frontend development
 
 If this is your first time using Polymer, be sure to start with these guides:
+
 https://www.polymer-project.org/docs/start/tutorial/intro.html
 
 https://www.polymer-project.org/docs/start/reusableelements.html
