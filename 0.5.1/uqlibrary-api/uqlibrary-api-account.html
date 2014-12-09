@@ -42,6 +42,8 @@ Element providing access to a user account.
   <script>
     (function() {
       Polymer('uqlibrary-api-account', {
+        uri: '',
+
         /**
          * Fired when the user account object has loaded.
          *
@@ -51,6 +53,8 @@ Element providing access to a user account.
           this.account = {
             hasSession: false
           };
+          var now = new Date().getTime();
+          this.uri = '/account?' + now;
         },
 
         ready: function () {
