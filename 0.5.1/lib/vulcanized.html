@@ -1116,7 +1116,7 @@
   </template></polymer-element><polymer-element name="uqlibrary-ga" attributes="webPropertyId isLocal appName" assetpath="../uqlibrary-ga/"></polymer-element><polymer-element name="uqlibrary-api" attributes="uri" assetpath="../uqlibrary-api/"><template>
     <core-ajax id="ajax" url="{{url}}" headers="{{headers}}" handleas="json" on-core-response="{{handleResponse}}" on-core-error="{{handleError}}"></core-ajax>
   </template></polymer-element><polymer-element name="uqlibrary-api-account" extends="uqlibrary-api" assetpath="../uqlibrary-api/"><template>
-    <uqlibrary-api id="account" uri="/account"></uqlibrary-api>
+    <uqlibrary-api id="account" uri="{{uri}}"></uqlibrary-api>
   </template></polymer-element><polymer-element name="uqlibrary-api-account-bookings" extends="uqlibrary-api" assetpath="../uqlibrary-api/"><template>
     <uqlibrary-api id="bookings" uri="/account/facilities_bookings"></uqlibrary-api>
   </template></polymer-element><polymer-element name="uqlibrary-api-account-loans" extends="uqlibrary-api" assetpath="../uqlibrary-api/"><template>
