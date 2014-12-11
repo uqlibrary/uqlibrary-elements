@@ -980,7 +980,7 @@
         </div>
     </template></polymer-element><polymer-element name="core-animation" constructor="CoreAnimation" attributes="target keyframes customEffect composite duration fill easing iterationStart iterationCount delay direction autoplay targetSelector" assetpath="../core-animation/"></polymer-element><polymer-element name="core-animation-keyframe" attributes="offset" assetpath="../core-animation/"></polymer-element><polymer-element name="core-animation-prop" attributes="name value" assetpath="../core-animation/"></polymer-element><polymer-element name="uqlibrary-time-selector" attributes="bookingTimeslots maxBookingLength" assetpath="../uqlibrary-date-selector/"><template>
 
-    <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-date-selector/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-date-selector/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-date-selector/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-date-selector/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}.items{margin:0 40px;list-style-type:none;font-size:0;line-height:0}.item{text-align:center;display:inline-block;margin:1px;min-width:80px;padding:15px 5px;font-size:13px;line-height:1.1;text-transform:uppercase;background-color:#EEE}.item.occupied-true{background-color:#BDBDBD;color:#fff}.item.selected-true{background-color:#009688;color:#fff}</style>
+    <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-date-selector/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-date-selector/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-date-selector/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-date-selector/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}.items{margin:0 10px;list-style-type:none;font-size:0;line-height:0}.item{text-align:center;display:inline-block;margin:1px;min-width:30px;padding:15px 1px;font-size:13px;line-height:1.1;text-transform:uppercase;background-color:#EEE}.item.occupied-true{background-color:#BDBDBD;color:#fff}.item.selected-true{background-color:#009688;color:#fff}</style>
 
     <div class="items">
       <template repeat="{{timeslot, index in bookingTimeslots}}">
@@ -995,21 +995,26 @@
     </div>
   </template></polymer-element><polymer-element name="uqlibrary-date-selector" attributes="searchDate maxBookingDate bookingTimeslots maxBookingLength" assetpath="../uqlibrary-date-selector/"><template>
 
-    <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-date-selector/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-date-selector/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-date-selector/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-date-selector/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}paper-tabs{background-color:#EEE;margin-bottom:10px}paper-tab{text-align:center;min-width:100px}paper-tab.core-selected{background-color:#009688;color:#fff}</style>
+    <style>@font-face{font-family:Roboto;font-style:normal;font-weight:200;src:url(../uqlibrary-date-selector/Roboto-Light.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:400;src:url(../uqlibrary-date-selector/Roboto-Regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:500;src:url(../uqlibrary-date-selector/Roboto-Medium.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:700;src:url(../uqlibrary-date-selector/Roboto-Bold.woff) format("woff")}:host,:host *,::content *{box-sizing:border-box;outline:0}.selectedDate{text-align:center;font-size:16px;font-weight:700;padding:10px 0}paper-tabs{background-color:#fff;height:60px}paper-tab{text-align:center;margin:0;padding:0}paper-tab .dayOfWeek{width:40px}paper-tab .date{height:40px;width:40px;font-size:16px;text-align:center;border-radius:50%;padding-top:12px}paper-tab.core-selected .date{background-color:#009688;color:#fff}</style>
 
-    <paper-tabs id="items" selected="{{ selectedDateIndex }}" on-core-select="{{ dateSelected }}" scrollable="">
+    <paper-tabs id="items" selected="{{ selectedDateIndex }}" on-core-select="{{ dateSelected }}" scrollable="" nobar="" horizontal="" center="" layout="">
       <template repeat="{{date, index in dates}}">
 
         <paper-tab class="item" data-index="{{ index }}" data-value=" {{ date }}">
-          {{  date  | dayOfWeek  }},<br>
-          {{  date  | formatDate  }}
+
+          <div vertical="" layout="">
+            <div class="dayOfWeek">{{  date  | dayOfWeek  }}</div>
+            <div class="date">{{  date  | formatDate  }}</div>
+          </div>
+
         </paper-tab>
 
       </template>
     </paper-tabs>
 
-    <core-animation id="fadein" duration="600">
+    <div class="selectedDate">{{ searchDate | formatFullDate }} </div>
 
+    <core-animation id="fadein" duration="600">
       <core-animation-keyframe>
         <core-animation-prop name="opacity" value="0">
         </core-animation-prop>

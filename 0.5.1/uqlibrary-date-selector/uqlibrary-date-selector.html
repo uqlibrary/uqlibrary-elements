@@ -2,6 +2,7 @@
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../web-animations-next/web-animations.html">
 <link rel="import" href="../web-animations-js/web-animations.html">
+
 <link rel="import" href="uqlibrary-time-selector.html">
 
 
@@ -53,19 +54,24 @@ Custom web element displays a provided date and time schedule with ability to se
 
     <link rel="stylesheet" href="uqlibrary-date-selector.css">
 
-    <paper-tabs id="items" selected="{{ selectedDateIndex }}" on-core-select = "{{ dateSelected }}" scrollable>
+    <paper-tabs id="items" selected="{{ selectedDateIndex }}" on-core-select = "{{ dateSelected }}" scrollable nobar horizontal center layout>
       <template repeat="{{date, index in dates}}">
 
         <paper-tab class="item" data-index="{{ index }}" data-value=" {{ date }}">
-          {{  date  | dayOfWeek  }},<br/>
-          {{  date  | formatDate  }}
+
+          <div vertical layout>
+            <div class="dayOfWeek">{{  date  | dayOfWeek  }}</div>
+            <div class="date">{{  date  | formatDate  }}</div>
+          </div>
+
         </paper-tab>
 
       </template>
     </paper-tabs>
 
-    <core-animation id="fadein" duration="600">
+    <div class="selectedDate">{{ searchDate | formatFullDate }} </div>
 
+    <core-animation id="fadein" duration="600">
       <core-animation-keyframe>
         <core-animation-prop name="opacity" value="0">
         </core-animation-prop>
@@ -118,11 +124,16 @@ Custom web element displays a provided date and time schedule with ability to se
 
 
       formatDate : function (date) {
-        return moment(date).format('D MMM');
+        return moment(date).format('D');
+      },
+
+
+      formatFullDate : function (date) {
+        return moment(date).format('dddd MMM DD, YYYY');
       },
 
       dayOfWeek : function (date) {
-        return moment(date).format('ddd');
+        return moment(date).format('ddd')[0];
       },
 
       maxBookingDateChanged : function (oldValue, newValue) {
