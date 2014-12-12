@@ -64,6 +64,12 @@
     position: relative;
     text-align: center;
 }
+
+.digit#amPm {
+    font-size: 32px;
+    padding: 5px;
+}
+
 #button_bar{
     font-size: 14px;
 }
@@ -71,6 +77,8 @@
     color: #4285f4;
 }
 #done_button,
-#clear_button{
+#clear_button,
+#amPm_button
+{
     margin: 5px;
 }
