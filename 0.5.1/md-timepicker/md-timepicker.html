@@ -169,8 +169,12 @@ Element that let the user input a time easily.
                 this.disableKeys(4);
             }
             else {
-              if(key == 1)
+              if(key == 1){
                 this.disableKeys(3);
+                //enable "0" to make possible to enter number 10
+                this.keys[0].enabled = true;
+              }
+
             }
             // if first HOUR digit is 0 or 1 or 2 we clear the second
             // digit to 0 to show user which digit is focused next
@@ -221,6 +225,17 @@ Element that let the user input a time easily.
           }
         }
       },
+
+      currentSelectorChanged: function() {
+        if(this.currentSelector != this.selector.HOUR) {
+          this.keys[0].enabled = true;
+        }
+        if(this.currentSelector == this.selector.HOUR && this.timeFormat == '12h') {
+          this.keys[0].enabled = false;
+        }
+
+      },
+
       /**
        * Disables keys from `startKey` to `9` (both included)
        *

@@ -22,11 +22,11 @@
     "paper-button": "Polymer/paper-button#0.5.1",
     "paper-shadow": "Polymer/paper-shadow#0.5.1"
   },
-  "_release": "6e9658d6db",
+  "_release": "1945f3674b",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "6e9658d6db730f9ebe0ae0df6823cc783369a4bb"
+    "commit": "1945f3674bc695666a11d5feaadf6782eb6718cf"
   },
   "_source": "git://github.com/uqlibrary/md-timepicker.git",
   "_target": "master",
