@@ -1,0 +1,107 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+.empty-events {
+  line-height: 48px;
+  color: $secondary-text;
+  text-align: center;
+}
+
+#timeline {
+  margin: 16px;
+}
+
+.timeline-item-inner {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.timeline-divider {
+  line-height: 0.625em;
+  border-bottom: 1px solid $primary-500;
+  margin: 0 0 9px 52px;
+}
+
+.timeline-divider:before {
+  content: '\2022';
+  font-size: 3.1em;
+  color: $primary-500;
+  margin: 0 0 0 -12px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 0px;
+}
+
+.date {
+  width: 60px;
+  font-weight: 400;
+}
+
+.day {
+  margin-top: 2px;
+  font-size: 2.125em;
+  line-height: 1.1em;
+  color: $primary-700;
+}
+
+.day-text {
+  font-size: 0.875em;
+  line-height: 1.1em;
+  color: $secondary-text;
+}
+
+.first .day {
+  color: $primary-500;
+}
+
+.item {
+  background-color: $accent-A400;
+  color: $text-inverse;
+  border-radius: 2px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.item-inner {
+  font-size: 0.875em;
+
+  div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 1em;
+  }
+}
+
+.item-inner div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.item-inner .title {
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.last {
+  .item,
+  .item-inner {
+    margin-bottom: 0;
+  }
+}
+
+.event-item {
+  transition: opacity 2000ms;
+}
+
+.event-item-hidden {
+  opacity: 0;
+}

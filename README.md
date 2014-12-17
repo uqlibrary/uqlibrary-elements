@@ -1,7 +1,7 @@
 uqlibrary-elements
 ================
 
-An aggregate of components used in apps, combining the components into a vulcanized file, and contains the 
+An aggregate of components used in apps, combining the components into a vulcanized file, and contains the
 build script for deploying applications.
 
 ## Getting Started
@@ -30,7 +30,7 @@ Once in your chosen directory, you should pull the individual components that yo
 
     $ cd /path/to/development/uqlibrary/uqlibrary-{component-name}
     $ bower install
-    
+
 Be sure to also pull any related components that are used by the component you want to work on. For example, uqlibrary-booking uses uqlibrary-timeline. If you experience any errors at this stage, check that the dependencies in the bower.json file are correct.
 
 Finally, you should install vulcanizer so that you can add your changes to this aggregate uqlibrary-elements repository:
@@ -49,7 +49,7 @@ To add a component, edit the bower.json file, and add the component as a depende
 
 Edit the index.html file in the root of the repo and include the component so it will be vulcanized.
 
-Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that 
+Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that
 can be included in your app:
 
     $ cd /path/to/repo
@@ -61,5 +61,12 @@ Once the script completes, commit this repo with the updated components.
 
 ### Deploying
 
-Each app is deployed using codeship.io. The script bin/codeship.sh is run on codeship.io to gzip the 
+Each app is deployed using codeship.io. The script bin/codeship.sh is run on codeship.io to gzip the
 application, and to upload the application to S3.
+
+### Styling Guidelines
+
+
+
+### Styling Implementation Guidelines
+
