@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-account Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="uqlibrary-api-account.html">
+  <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
+  <style>
+    body {
+      font-size: 16px;
+      font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+      font-weight: 400;
+      line-height: 1.1em;
+    }
+  </style>
+</head>
+<body unresolved>
+
+  <uqlibrary-api-account></uqlibrary-api-account>
+
+  <script>
+    (function () {
+
+      window.addEventListener('polymer-ready', function() {
+
+        var account = document.querySelector('uqlibrary-api-account');
+        account.addEventListener('uqlibrary-api-account-loaded', function(e) {
+          if (e.detail.hasSession) {
+            console.log('Logged in as ' + e.detail.id);
+          } else {
+            console.log('Not logged in');
+          }
+        });
+        account.get();
+      });
+
+    }());
+  </script>
+</body>
+</html>

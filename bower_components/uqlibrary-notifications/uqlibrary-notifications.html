@@ -1,0 +1,136 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-ripple/paper-ripple.html">
+<link rel="import" href="../core-overlay/core-overlay.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../core-icons/social-icons.html">
+
+<link rel="import" href="uqlibrary-notification-item.html">
+
+<polymer-element name="uqlibrary-notifications" attributes="items view maxItemsCount">
+
+  <template>
+
+    <core-signals on-core-signal-uqlibrary-notification-add="{{addItemHandler}}"></core-signals>
+
+    <link rel="stylesheet" href="uqlibrary-notifications.css">
+
+    <div id="iconPopupView" hidden?="{{view != 'icon-popup'}}">
+      <div id="iconWrapper" on-click="{{togglePopup}}" >
+        <paper-icon-button id="notificationIcon" icon="{{ items.length == 0 ? 'social:notifications-none' : 'social:notifications' }}"></paper-icon-button>
+        <div id="newMessagesCount" hidden?="{{newMessagesCount == 0}}">{{newMessagesCount}}</div>
+
+      </div>
+
+      <core-overlay id="notificationsPopup" class="arrow" hidden?={{items.length == 0}}>
+        <paper-shadow>
+          <core-selector>
+            <template repeat="{{item in items}}">
+              <uqlibrary-notification-item item="{{item}}"></uqlibrary-notification-item>
+            </template>
+          </core-selector>
+        </paper-shadow>
+      </core-overlay>
+    </div>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-notifications', {
+
+        publish: {
+          view: 'icon-popup',
+          maxItemsCount: 5
+        },
+        items: [],
+        created: function () {
+          this.items = [{
+            text: 'You have new booking',
+            image: 'images/notification.png',
+            link: 'https://app.library.uq.edu.au/v1/booking',
+            isNew: true
+          },
+            {
+              text: 'You 2 loans overdue',
+              link: '',
+              isNew: true
+            },
+            {
+              text: 'New e-journal have been released',
+              link: '',
+              isNew: false
+            }];
+        },
+
+        ready: function() {
+          this.calculateUnreadMessages();
+          this.checkItemsCount();
+
+          this.addEventListener('item-marked-as-read', function(e) {
+            if(this.newMessagesCount > 0) {
+              this.newMessagesCount--;
+            }
+          });
+
+          this.addEventListener('uqlibrary-notification-add', this.addItemHandler);
+
+        },
+
+        calculateUnreadMessages: function() {
+          this.newMessagesCount = 0;
+          if(this.items.length > 0) {
+            for(var i=0; i < this.items.length; i++ ) {
+              var _item = this.items[i];
+              var newMessages = 0;
+              if(_item.isNew) {
+                this.newMessagesCount++;
+              }
+            }
+          }
+        },
+
+        checkItemsCount: function() {
+          if(this.items.length > this.maxItemsCount) {
+            this.items.splice(this.maxItemsCount, this.items.length - this.maxItemsCount);
+          }
+        },
+
+        togglePopup: function() {
+          var _width = this.$.iconWrapper.offsetWidth;
+          var _left = this.$.iconPopupView.offsetLeft;
+          var _top = this.$.iconPopupView.offsetTop;
+          if(_left <= 200) {
+            this.$.notificationsPopup.style.top = _top + _width - 5 + 'px';
+            this.$.notificationsPopup.style.left = _left  + 'px';
+            this.$.notificationsPopup.className = this.$.notificationsPopup.className + " left-arrow";
+          }
+          else {
+            this.$.notificationsPopup.style.top = this.$.iconPopupView.offsetTop + _width - 5 +'px';
+            this.$.notificationsPopup.style.left = this.$.iconPopupView.offsetLeft - 150 - _width +'px';
+            this.$.notificationsPopup.className = this.$.notificationsPopup.className + " right-arrow";
+          }
+          this.$.notificationsPopup.toggle();
+        },
+
+        itemsChanged: function(oldValue, newValue) {
+          this.calculateUnreadMessages();
+        },
+
+        addItemHandler: function(e) {
+          if(e.detail.item) {
+            this.addItem(e.detail.item);
+          }
+        },
+
+        addItem: function(item) {
+          this.items.unshift(item);
+          this.checkItemsCount();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

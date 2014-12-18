@@ -1,0 +1,18 @@
+{
+  "name": "uqlibrary-ga",
+  "description": "Element for Google Analytics",
+  "main": "uqlibrary-ga.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-ga/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^1.6.1"
+  }
+}

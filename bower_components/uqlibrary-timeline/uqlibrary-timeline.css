@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  src: url("Roboto-Light.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url("Roboto-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url("Roboto-Bold.woff") format("woff"); }
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none; }
+
+.empty-events {
+  line-height: 48px;
+  color: rgba(0, 0, 0, 0.54);
+  text-align: center; }
+
+#timeline {
+  margin: 16px; }
+
+.timeline-item-inner {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.timeline-divider {
+  line-height: 0.625em;
+  border-bottom: 1px solid #49075E;
+  margin: 0 0 9px 52px; }
+
+.timeline-divider:before {
+  content: '\2022';
+  font-size: 3.1em;
+  color: #49075E;
+  margin: 0 0 0 -12px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 0px; }
+
+.date {
+  width: 60px;
+  font-weight: 400; }
+
+.day {
+  margin-top: 2px;
+  font-size: 2.125em;
+  line-height: 1.1em;
+  color: #49075E; }
+
+.day-text {
+  font-size: 0.875em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54); }
+
+.first .day {
+  color: #49075E; }
+
+.item {
+  background-color: #00bfa5;
+  color: rgba(255, 255, 255, 0.87);
+  border-radius: 2px;
+  padding: 16px;
+  margin-bottom: 8px; }
+
+.item-inner {
+  font-size: 0.875em; }
+  .item-inner div {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  .item-inner .title {
+    font-weight: 500;
+    font-size: 1em; }
+
+.item-inner div {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.item-inner .title {
+  font-weight: 500;
+  font-size: 1em; }
+
+.last .item,
+.last .item-inner {
+  margin-bottom: 0; }
+
+.event-item {
+  transition: opacity 2000ms; }
+
+.event-item-hidden {
+  opacity: 0; }
+
+/*# sourceMappingURL=uqlibrary-timeline.css.map */

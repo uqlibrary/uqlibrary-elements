@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  src: url("Roboto-Light.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url("Roboto-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url("Roboto-Bold.woff") format("woff"); }
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none; }
+
+.selectedDate {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0; }
+
+paper-tabs {
+  background-color: #ffffff;
+  height: 60px; }
+
+paper-tab {
+  text-align: center;
+  margin: 0px;
+  padding: 0px; }
+  paper-tab .dayOfWeek {
+    width: 40px; }
+  paper-tab .date {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 12px; }
+  paper-tab.core-selected .date {
+    background-color: #009688;
+    color: #ffffff; }
+
+/*# sourceMappingURL=uqlibrary-date-selector.css.map */

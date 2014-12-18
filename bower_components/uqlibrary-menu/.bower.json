@@ -1,0 +1,27 @@
+{
+  "name": "uqlibrary-menu",
+  "description": "Element providing a the library main apps menu.",
+  "main": "uqlibrary-menu.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-menu/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "8664e671d3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8664e671d3f123918a387f50b33f3d1ccfdd7899"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-menu"
+}

@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 200;
+  src: url("Roboto-Light.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url("Roboto-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url("Roboto-Bold.woff") format("woff"); }
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none; }
+
+core-menu {
+  padding: 8px 0;
+  margin: 0; }
+  core-menu.divider {
+    border-bottom: 1px solid #F5F5F5; }
+
+paper-item {
+  font-size: 0.875em;
+  color: rgba(0, 0, 0, 0.87); }
+  paper-item core-icon {
+    margin-right: 2em; }
+  paper-item a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87) !important; }
+
+#account {
+  padding: 8px;
+  font-size: 0.875em;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #49075E;
+  border-bottom: 1px solid #F5F5F5; }
+  #account core-icon {
+    height: 64px;
+    width: 64px; }
+  #account #details {
+    padding: 14px; }
+  #account #name {
+    font-weight: 400;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  #account #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+/*# sourceMappingURL=uqlibrary-menu.css.map */

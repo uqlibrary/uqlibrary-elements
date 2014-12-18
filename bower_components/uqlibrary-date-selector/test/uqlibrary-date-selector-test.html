@@ -1,0 +1,86 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-time-selector</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../uqlibrary-date-selector.html">
+</head>
+<body>
+
+  <!-- You use the document as a place to set up your fixtures. -->
+  <uqlibrary-date-selector></uqlibrary-date-selector>
+
+  <script>
+    window.addEventListener('polymer-ready', function() {
+
+      var date_selector = document.querySelector('uqlibrary-date-selector');
+
+      var bookingDate = new Date(2014, 0, 1, 11, 0, 0, 0);
+      var maxBookingDate = new Date(2014, 0, 7, 11, 0, 0, 0);
+      var maxBookingLength = 3;
+
+      suite('uqlibrary-date-selector', function() {
+
+        before(function () {
+          date_selector = document.querySelector('uqlibrary-date-selector');
+
+          date_selector.searchDate = new Date(bookingDate.valueOf());
+          date_selector.maxBookingDate = new Date(maxBookingDate.valueOf());
+          date_selector.maxBookingLength = maxBookingLength;
+        });
+
+        //properties unit tests
+        test('defines bookingDate property', function () {
+          assert.equal(date_selector.searchDate.valueOf(), bookingDate.valueOf());
+        });
+
+        test('defines maxBookingDate property', function () {
+          assert.equal(date_selector.maxBookingDate.valueOf(), maxBookingDate.valueOf());
+        });
+
+        test('defines maxBookingLength property', function () {
+          assert.equal(date_selector.maxBookingLength, maxBookingLength);
+        });
+
+        //methods unit tests
+        test('generateDates produces correct number of dates', function () {
+          var ticksInADay = 60 * 60 * 24 * 1000;
+          var daysDifference = parseInt((maxBookingDate.valueOf() - bookingDate.valueOf())/ticksInADay);
+
+          date_selector.generateDates();
+
+          assert.equal(date_selector.dates.length, daysDifference);
+        });
+
+
+//        TODO: investigate how to test/access DOM
+//        test('is correct number of dates displayed', function () {
+//          //can't access DOM or Shadow DOM
+//          //date_selector.children.length is 0
+//          var ticksInADay = 60 * 60 * 24 * 1000;
+//          var daysDifference = parseInt((maxBookingDate.valueOf() - bookingDate.valueOf())/ticksInADay);
+//          //always fails
+//          assert.isTrue(date_selector.children.length === daysDifference);
+//        });
+
+      });
+    });
+  </script>
+
+</body>
+</html>
