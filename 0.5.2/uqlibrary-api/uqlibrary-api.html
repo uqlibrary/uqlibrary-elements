@@ -13,13 +13,15 @@ Element providing access to UQ Library's API.
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-api
 -->
-<polymer-element name="uqlibrary-api" attributes="uri">
+<polymer-element name="uqlibrary-api" attributes="uri method auto">
 
   <template>
     <core-ajax
       id="ajax"
       url="{{url}}"
       headers="{{headers}}"
+      auto="{{auto}}"
+      method="{{method}}"
       handleAs="json"
       on-core-response="{{handleResponse}}"
       on-core-error="{{handleError}}"></core-ajax>
@@ -29,18 +31,23 @@ Element providing access to UQ Library's API.
     (function() {
       Polymer('uqlibrary-api', {
 
+        method: 'GET',
+        auto: false,
+
         handleResponse: function (e) {
           this.fire('uqlibrary-api', this.$.ajax.response);
         },
 
-        handleError: function (e) {
-          this.fire('uqlibrary-api', this.$.ajax.response);
+        handleError: function (event, object, sender) {
+          this.fire('uqlibrary-api', object.xhr);
         },
 
         /**
-         * Gets the user account.
+         * Submits request
+         * args - optional parameters
          * args = {
          *  addTimestamp : true //to avoid browser cache
+         *  body: {} //data to be passed in the body as json (not form data)
          * }
          * @method get
          */
@@ -51,6 +58,11 @@ Element providing access to UQ Library's API.
           if (args && args.addTimestamp) {
             url += (url.indexOf('?') >= 0 ? '&' : '?');
             url += "timestamp=" + (new Date()).getTime();
+          }
+
+          if (args && args.body) {
+            this.$.ajax.contentType="application/json";
+            this.$.ajax.body = JSON.stringify(args.body);
           }
 
           this.url = url;
@@ -64,7 +76,7 @@ Element providing access to UQ Library's API.
           var cookie = this.getCookie('UQLID');
           if (cookie !== "undefined") {
             this.headers = {
-              "X-Uql-Token": cookie
+              "X-Uql-Token":  cookie
             };
           } else {
             return '';

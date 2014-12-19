@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>uqlibrary-account Demo</title>
+  <title>uqlibrary-api Demo</title>
 
   <script src="../webcomponentsjs/webcomponents.min.js"></script>
   <link rel="import" href="uqlibrary-api-account.html">
+  <link rel="import" href="uqlibrary-api-facilities-availability.html">
+  <link rel="import" href="uqlibrary-api-facilities-booking.html">
   <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
   <style>
     body {
@@ -20,6 +22,13 @@
 <body unresolved>
 
   <uqlibrary-api-account></uqlibrary-api-account>
+  <div id="accountLog"></div>
+
+  <uqlibrary-api-facilities-availability></uqlibrary-api-facilities-availability>
+  <div id="availabilityLog"></div>
+
+  <uqlibrary-api-facilities-booking></uqlibrary-api-facilities-booking>
+  <div id="bookingLog"></div>
 
   <script>
     (function () {
@@ -30,11 +39,53 @@
         account.addEventListener('uqlibrary-api-account-loaded', function(e) {
           if (e.detail.hasSession) {
             console.log('Logged in as ' + e.detail.id);
+            document.getElementById('accountLog').innerText = "Account: " + 'Logged in as ' + e.detail.id;
+
           } else {
             console.log('Not logged in');
+            document.getElementById('accountLog').innerText = "Account: Not logged in";
+
           }
         });
         account.get();
+
+        var availability = document.querySelector('uqlibrary-api-facilities-availability');
+        availability.addEventListener('uqlibrary-api-facilities-availability-loaded', function(e) {
+            console.log(e);
+            document.getElementById('availabilityLog').innerText = "Facilities availability: " + e.detail.length;
+        });
+        availability.get();
+
+        var booking = document.querySelector('uqlibrary-api-facilities-booking');
+        booking.addEventListener('uqlibrary-api-facilities-booking-executed', function(e) {
+
+          console.log(e);
+
+          if (e.detail.status) {
+            document.getElementById('bookingLog').innerText += "Booking : " + e.detail.response + " / ";
+          } else {
+            document.getElementById('bookingLog').innerText += "Booking : " + e.detail + " / ";
+          }
+
+        });
+
+        //test create/update booking
+        booking.post({ booking: {
+          date: "12/21/2014",
+          endtime: 1440,
+          machid: "",
+          scheduleid: "",
+          starttime: 1410
+          //resid: '' //to modify existing booking
+          }
+        });
+
+        //test delete booking
+        booking.delete({ booking: {
+          resid: ''
+          }
+        });
+
       });
 
     }());

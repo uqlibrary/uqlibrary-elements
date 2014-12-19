@@ -1,7 +1,7 @@
-uqlibrary-account
+uqlibrary-api
 ================
 
-See the [component page](https://uqlibrary.github.io/uqlibrary-account) for more information.
+Web components for UQ Library API
 
 ## Testing Your Element
 
