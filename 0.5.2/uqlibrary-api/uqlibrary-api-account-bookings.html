@@ -46,13 +46,20 @@ Element providing access to a user's account bookings.
 
         /**
          * Gets the user account.
-         *
+         * args is optional parameter (as per facilities availability API):
+         *  nocache - set to true to avoid using cached data
          * @method get
          */
-        get: function () {
-          var currentTime = (new Date()).getTime();
-          this.$.bookings.uri = this.baseUri + "?timestamp=" + currentTime;
-          this.$.bookings.get();
+        get: function (args) {
+          var url = this.baseUri;
+
+          if (args && args.nocache) {
+            url += (url.indexOf('?') >= 0 ? '&' : '?');
+            url += 'nocache=true';
+          }
+          this.$.bookings.uri = url;
+
+          this.$.bookings.get({ addTimestamp: args && args.nocache });
         }
       });
     })();

@@ -8,6 +8,7 @@
   <script src="../webcomponentsjs/webcomponents.min.js"></script>
   <link rel="import" href="uqlibrary-api-account.html">
   <link rel="import" href="uqlibrary-api-facilities-availability.html">
+  <link rel="import" href="uqlibrary-api-account-bookings.html">
   <link rel="import" href="uqlibrary-api-facilities-booking.html">
   <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
   <style>
@@ -29,6 +30,9 @@
 
   <uqlibrary-api-facilities-booking></uqlibrary-api-facilities-booking>
   <div id="bookingLog"></div>
+
+  <uqlibrary-api-account-bookings></uqlibrary-api-account-bookings>
+  <div id="accountBookingsLog"></div>
 
   <script>
     (function () {
@@ -54,7 +58,7 @@
             console.log(e);
             document.getElementById('availabilityLog').innerText = "Facilities availability: " + e.detail.length;
         });
-        availability.get();
+        availability.get({ nocache : true });
 
         var booking = document.querySelector('uqlibrary-api-facilities-booking');
         booking.addEventListener('uqlibrary-api-facilities-booking-executed', function(e) {
@@ -85,6 +89,13 @@
           resid: ''
           }
         });
+
+        var accountBookings = document.querySelector('uqlibrary-api-account-bookings');
+        accountBookings.addEventListener('uqlibrary-api-account-bookings-loaded', function(e) {
+          console.log(e);
+          document.getElementById('accountBookingsLog').innerText = "Account Bookings: " + e.detail;
+        });
+        accountBookings.get({ nocache : true });
 
       });
 
