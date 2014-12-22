@@ -154,12 +154,14 @@ Custom web element displays a provided date and time schedule with ability to se
 
 
       bookingTimeslotsChanged : function(oldValue, newValue){
-
-        this.$.timeSelectorContainer.style.opacity = 0;
-
-        var animation = this.$.fadein;
-        animation.target = this.$.timeSelectorContainer;
-        animation.play();
+        try {
+          this.$.timeSelectorContainer.style.opacity = 0;
+          var animation = this.$.fadein;
+          animation.target = this.$.timeSelectorContainer;
+          animation.play();
+        } catch (e) {
+          this.$.timeSelectorContainer.style.opacity = 1;
+        }
 
         this.$.timeSelector.bookingTimeslots = this.bookingTimeslots;
       },
