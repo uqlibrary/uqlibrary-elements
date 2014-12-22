@@ -1,0 +1,27 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+.persistentFooter {
+  position: fixed;
+  height: 44px;
+  bottom: 0px;
+  background-color: $white;
+  width: 100%;
+  border-top: 1px solid $grey-A200;
+
+  .contentWrapper{
+    padding: 16px;
+  }
+
+  .actionButtonsWrapper{
+    padding-right: 16px;
+  }
+
+  .footerActionButton {
+    color: $text;
+
+  }
+
+}
