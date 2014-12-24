@@ -162,16 +162,20 @@ h4.inverse {
   box-sizing: border-box;
   outline: none; }
 
-.persistentFooter {
-  position: fixed;
-  height: 44px;
-  bottom: 0px;
-  background-color: white;
-  width: 100%;
-  border-top: 1px solid #eeeeee; }
-  .persistentFooter .contentWrapper {
-    padding: 12px; }
-  .persistentFooter .actionButtonsWrapper {
-    padding-right: 16px; }
-  .persistentFooter .footerActionButton {
-    color: rgba(0, 0, 0, 0.87); }
+paper-tabs {
+  height: 64px !important;
+  background-color: #009688;
+  color: rgba(255, 255, 255, 0.87); }
+  paper-tabs::shadow #selectionBar {
+    background-color: #49075e; }
+  paper-tabs paper-tab .tabTitleNumber {
+    font-size: 2em;
+    margin-bottom: 5px; }
+  paper-tabs paper-tab .tabTitle {
+    font-size: 1em; }
+
+.footer-info {
+  font-size: 0.750em;
+  color: rgba(0, 0, 0, 0.54); }
+  .footer-info core-icon {
+    width: 16px; }

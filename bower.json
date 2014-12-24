@@ -22,6 +22,7 @@
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#master",
     "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#master",
+    "uqlibrary-borrowing": "uqlibrary/uqlibrary-borrowing#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }

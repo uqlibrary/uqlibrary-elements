@@ -1,0 +1,98 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
+
+<link rel="import" href="uqlibrary-holds.html">
+<link rel="import" href="uqlibrary-loans.html">
+<link rel="import" href="uqlibrary-fines.html">
+
+
+<polymer-element name="uqlibrary-borrowing" layout center attributes="data">
+  <template>
+    <link rel="stylesheet" href="uqlibrary-borrowing.css">
+    <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}">
+      <paper-tab name="loans" id="loans">
+          <div layout vertical center>
+            <span class="tabTitleNumber">{{ data.checkedOut.length }}</span>
+            <span class="tabTitle">Loans</span>
+          </div>
+      </paper-tab>
+
+
+      <paper-tab name="holds" id="holds">
+        <div layout vertical center>
+          <span class="tabTitleNumber">{{ data.holds.length }}</span>
+          <span class="tabTitle">Holds</span>
+        </div>
+
+      </paper-tab>
+      <paper-tab name="fines" id="fines">
+        <div layout vertical center>
+          <span class="tabTitleNumber">{{ sumFines }}</span>
+          <span class="tabTitle">Overdue Charges</span>
+        </div>
+
+      </paper-tab>
+    </paper-tabs>
+
+    <div class="infoWrapper">
+      <core-animated-pages id="animatedPages" transitions="slide-from-right" block selected="{{selectedTab}}"
+                           on-core-animated-pages-transition-prepare="{{transitionPrepareHandler}}"
+                           on-core-animated-pages-transition-end="{{transitionEndHandler}}"
+        >
+
+        <section id="loans" name="loans" class="loans" hidden?="{{ selectedTab != 'loans' }}">
+          <uqlibrary-loans loans="{{ data.checkedOut }}"></uqlibrary-loans>
+        </section>
+
+        <section id="holds" name="holds" class="holds" hidden?="{{ selectedTab != 'holds' }}">
+          <uqlibrary-holds holds="{{ data.holds }}"></uqlibrary-holds>
+        </section>
+
+        <section id="fines" name="fines" class="fines" hidden?="{{ selectedTab != 'fines' }}">
+          <uqlibrary-fines id="finesElement" fines="{{ data.fines }}"></uqlibrary-fines>
+        </section>
+
+     </core-animated-pages>
+     </div>
+  </template>
+
+  <script>
+    Polymer('uqlibrary-borrowing', {
+
+      publish: {
+        data : {
+          holds: [],
+          loans: [],
+          fines: []
+        }
+      },
+      sumFines : 0,
+      selectedTab : 'loans',
+
+      ready: function() {
+      },
+
+      dataChanged: function() {
+        this.processData();
+      },
+
+      processData: function () {
+        this.sumFines = this.$.finesElement.moneyFormat(this.$.finesElement.calculateFines(this.data.fines));
+      },
+
+      transitionPrepareHandler: function() {
+        this.transitioning = true;
+        this.fire('core-signal', {name: "transitioning-change", data: {transitioning: this.transitioning}});
+      },
+      transitionEndHandler: function() {
+        this.transitioning = false;
+        this.fire('core-signal', {name: "transitioning-change", data: {transitioning: this.transitioning}});
+      }
+
+    });
+  </script>
+
+</polymer-element>
