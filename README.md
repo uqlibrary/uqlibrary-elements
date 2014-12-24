@@ -70,7 +70,10 @@ application, and to upload the application to S3.
 
 ### Styling Guidelines
 
-
+See the styling example here: https://uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/styles.html
 
 ### Styling Implementation Guidelines
 
+Do's
+
+Don'ts
