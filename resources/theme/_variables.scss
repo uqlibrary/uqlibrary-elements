@@ -46,8 +46,24 @@ $uq-green-A400: rgba($uq-green-A700, .75);
 $white: #ffffff;
 $black: #000000;
 
-// Colour palette for the application
+$_gmd-alphas: (
+  dividers: .12,
+  hint-text: .26,
+  secondary-text: .54,
+  icons: .54,
+  text: .87,
+  opaque: 1
+);
 
+@function gmd-alpha-color($color, $type) {
+  @if map-has-key($_gmd-alphas, $type) {
+    @return rgba($color, map-get($_gmd-alphas, $type));
+  }
+  @warn "invalid alpha type, using default 100%";
+  @return rgba($color, 1);
+}
+
+// Colour palette for the application
 // Primary colours
 $primary-100: $uq-purple-100;
 $primary-500: $uq-purple-1000;
@@ -68,6 +84,8 @@ $divider-inverse:        rgba($white, .12);
 $hint-text-inverse:      rgba($white, .26);
 $secondary-text-inverse: rgba($white, .54);
 $text-inverse:           rgba($white, .87);
+
+
 
 $dropdown-background: $grey-A200;
 $dropdown-background-hover: $grey-A400;
