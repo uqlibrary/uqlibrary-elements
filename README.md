@@ -43,6 +43,10 @@ https://github.com/Polymer/tools
 
 so you can update individual web component demo pages, thus helping others to understand and use them.
 
+    $ mkdir temp && cd temp && ../../tools/bin/gp.sh uqlibrary uqlibrary-ELEMENT_NAME && cd .. && rm -rf temp
+
+this will create a new gh-pages branch on the repo and let you link to its component page, and its demo page.
+
 ### Adding a component
 
 To add a component, edit the bower.json file, and add the component as a dependency.
