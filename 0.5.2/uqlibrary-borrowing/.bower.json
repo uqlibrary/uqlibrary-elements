@@ -8,14 +8,21 @@
   "private": true,
   "main": "uqlibrary-borrowing.html",
   "dependencies": {
-    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+    "polymer": "Polymer/polymer#^0.5.2",
+    "paper-tabs": "Polymer/paper-tabs#0.5.2",
+    "core-animated-pages": "Polymer/core-animated-pages#0.5.2",
+    "core-icon": "Polymer/core-icon#0.5.2",
+    "core-signals": "Polymer/core-signals#0.5.2",
+    "paper-button": "Polymer/paper-button#0.5.2",
+    "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#master",
+    "moment": "~2.8.4"
   },
   "homepage": "https://github.com/uqlibrary/uqlibrary-borrowing",
-  "_release": "550869b3dc",
+  "_release": "85d45eac84",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "550869b3dcf31a2b5dbb45f22d1c1b9b66309784"
+    "commit": "85d45eac84d8a7625bf2f0fd4ae949dd84c60720"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-borrowing.git",
   "_target": "master",

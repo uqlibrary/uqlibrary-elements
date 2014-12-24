@@ -9,6 +9,13 @@
   "private": true,
   "main": "uqlibrary-borrowing.html",
   "dependencies": {
-    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+    "polymer": "Polymer/polymer#^0.5.2",
+    "paper-tabs": "Polymer/paper-tabs#0.5.2",
+    "core-animated-pages": "Polymer/core-animated-pages#0.5.2",
+    "core-icon": "Polymer/core-icon#0.5.2",
+    "core-signals": "Polymer/core-signals#0.5.2",
+    "paper-button": "Polymer/paper-button#0.5.2",
+    "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#master",
+    "moment": "~2.8.4"
   }
 }

@@ -1,6 +1,76 @@
+<!--
+Element providing an overview for loans, holds and fines.
+
+##### Example
+
+    <uqlibrary-borrowing></uqlibrary-borrowing>
+
+    <script>
+      window.addEventListener('polymer-ready', function() {
+
+        var borrowing = document.querySelector('uqlibrary-borrowing');
+
+        borrowing.data = {
+          "checkedOut": [
+            {
+              "title": "Pharmaceutics : the science of dosage form design",
+              "dueDate": "2014-12-06T04:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i3349004"
+            },
+          ],
+          "holds": [
+            {
+              "title": "Regression analysis of count data",
+              "datePlaced": "2014-11-22T14:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i2673780",
+              "status": 'onHold'
+            },
+            {
+              "title": "Regression analysis of count data. Part 2",
+              "datePlaced": "2014-02-12T14:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i2673780",
+              "pickupLocation": 'BSL - Level 3',
+              "status": 'itemReady'
+            },
+          ],
+          "fines": [
+            {
+              "title": "1. Human physiology : from cells to systems \/ Lauralee Sherwood.",
+              "fineAmount": 840,
+              "dueDate": "2014-04-08T04:00:00+10:00",
+              "dateReturned": "2014-04-14T14:02:05+10:00",
+              "dateAssessed": "2014-04-15T14:02:05+10:00",
+              "description": "Book loan overdue",
+              "fineType": "overdue",
+              "url": "http:\/\/library.uq.edu.au\/record=i3698283"
+            },
+            {
+              "title": "2. Human physiology : from cells to systems \/ Lauralee Sherwood.",
+              "fineAmount": 160,
+              "dueDate": "2013-04-22T04:00:00+10:00",
+              "dateReturned": "2013-04-24T14:44:15+10:00",
+              "dateAssessed": "2013-04-25T14:02:05+10:00",
+              "description": "Book loan overdue and slight damage",
+              "fineType": "overdue",
+              "url": "http:\/\/library.uq.edu.au\/record=i3704585"
+            },
+          ],
+        };
+
+      });
+    }());
+    </script>
+
+@element uqlibrary-borrowing
+@blurb Element providing an overview for loans, holds and fines.
+@status alpha
+@homepage http://uqlibrary.github.io/uqlibrary-borrowing
+-->
+
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../core-signals/core-signals.html">
 <link rel="import" href="../core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
 
@@ -61,6 +131,13 @@
 
   <script>
     Polymer('uqlibrary-borrowing', {
+
+      /**
+       * The `data` attribute contains information about loans, holds and fines
+       *
+       * @property data
+       * @type Object
+       */
 
       publish: {
         data : {

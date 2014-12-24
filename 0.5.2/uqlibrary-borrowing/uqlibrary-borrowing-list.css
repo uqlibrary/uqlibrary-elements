@@ -230,7 +230,7 @@ h4.inverse {
     overflow: hidden; }
   .item .item-inner .title {
     font-weight: 500;
-    font-size: 1.125em; }
+    font-size: 1em; }
 
 .last .item,
 .last .item-inner {
