@@ -136,11 +136,11 @@ Element providing a simple timeline.
           var events = JSON.parse(JSON.stringify(this.events));
           var processed = [];
 
-          if(changeValue.length){
-            if(changeValue[0].addedCount == 1){
+          if(changeValue && changeValue.length){
+            if(changeValue && changeValue[0].addedCount == 1){
               //if one new element is added, set its opened property to false
               events[changeValue[0].index].opened = false;
-            } else if(changeValue[0].removed.length > 0){
+            } else if(changeValue[0].removed && changeValue[0].removed.length > 0){
               //event has been removed from the list
             }
           }
