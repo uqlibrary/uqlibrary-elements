@@ -60,14 +60,14 @@ $_gmd-type-styles: (
         menu: (
                 font-family: "Roboto medium",
                 font-size: 1em,
-                color: rgba(black, .87),
+                color: $text,
                 line-height: 1.1em,
         ),
         button: (
                 font-family: "Roboto medium",
                 font-size: 1em,
                 text-transform: uppercase,
-                color: rgba(black, .87),
+                color: $text,
                 line-height: 1.1em,
         )
 );
