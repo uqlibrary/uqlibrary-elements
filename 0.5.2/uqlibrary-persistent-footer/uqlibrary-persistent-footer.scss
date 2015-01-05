@@ -5,7 +5,7 @@
 
 .persistentFooter {
   position: fixed;
-  height: 44px;
+  height: $persistent-footer-height;
   bottom: 0px;
   background-color: $white;
   width: 100%;

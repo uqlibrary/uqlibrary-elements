@@ -79,7 +79,7 @@ Element providing a persistent footer with set of action buttons
         buttonClicked: function(e){
           var button = e.target.templateInstance.model.button;
 
-          this.fire('action-button-clicked', {button: button});
+          this.fire('uqlibrary-persistent-footer-action-button-clicked', {button: button});
 
           if(button.hasOwnProperty('url') && button.url) {
             window.location.href = button.url;
