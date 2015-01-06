@@ -84,11 +84,11 @@ $_gmd-type-styles: (
 }
 
 a {
-  @include gmd-type-style(link, gmd-alpha-color($black, opaque));
+  @include gmd-type-style(link, gmd-alpha-color($black, text));
 }
 
 .inverse a {
-  @include gmd-type-style(link, gmd-alpha-color($white, opaque));
+  @include gmd-type-style(link, gmd-alpha-color($white, text));
 }
 
 h1 {
