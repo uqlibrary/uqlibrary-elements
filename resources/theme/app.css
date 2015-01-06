@@ -18,6 +18,14 @@
   font-style: normal;
   font-weight: 700;
   src: url("Roboto-Bold.woff") format("woff"); }
+a {
+  text-decoration: none;
+  color: black; }
+
+.inverse a {
+  text-decoration: none;
+  color: white; }
+
 h1 {
   font-family: "Roboto light";
   font-size: 8em;

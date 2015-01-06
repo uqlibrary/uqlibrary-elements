@@ -69,6 +69,9 @@ $_gmd-type-styles: (
                 text-transform: uppercase,
                 color: $text,
                 line-height: 1.1em,
+        ),
+        link: (
+                text-decoration: none,
         )
 );
 
@@ -80,6 +83,13 @@ $_gmd-type-styles: (
   color: $color;
 }
 
+a {
+  @include gmd-type-style(link, gmd-alpha-color($black, opaque));
+}
+
+.inverse a {
+  @include gmd-type-style(link, gmd-alpha-color($white, opaque));
+}
 
 h1 {
   @include gmd-type-style(display4, gmd-alpha-color($black, secondary-text));
