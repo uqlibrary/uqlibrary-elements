@@ -1,3 +1,19 @@
+// Official UQ Palette v0.1
+//
+// Based on official UQ hex values and Material Design for
+// instances where UQ colours fail accessibility, or do not provide guidance
+
+$dark-primary:          #49075E; // Official UQ purple
+$highlight-primary:     #7B1FA2; // Official light purple from UQ banner gradient
+$highlight-secondary:   #8BC34A; // Tweaked green from UQ palette is now accessible
+$text-primary:          #212121; // Based on Material Design
+$text-secondary:        #727272; // Based on Material Design
+$link:                  #2962FF; // Based on Material Design
+$divider:               #CCCCCC; // Based on Material Design
+$background-primary:    #BDBDBD; // Based on Material Design
+$background-secondary:  #FAFAFA; // Based on Material Design
+
+// Colours from Material Design specifications
 $deep-purple-50:   #ede7f6;
 $deep-purple-100:  #d1c4e9;
 $deep-purple-200:  #b39ddb;
@@ -42,9 +58,11 @@ $uq-green-A700: #8CB800;
 $uq-green-A100: rgba($uq-green-A700, .25);
 $uq-green-A200: rgba($uq-green-A700, .50);
 $uq-green-A400: rgba($uq-green-A700, .75);
+// End of Material Design specification colours
 
 $white: #ffffff;
 $black: #000000;
+
 
 $_gmd-alphas: (
   dividers: .12,
