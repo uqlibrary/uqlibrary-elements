@@ -8,10 +8,11 @@ $highlight-primary:     #7B1FA2; // Official light purple from UQ banner gradien
 $highlight-secondary:   #8BC34A; // Tweaked green from UQ palette is now accessible
 $text-primary:          #212121; // Based on Material Design
 $text-secondary:        #727272; // Based on Material Design
-$link:                  #2962FF; // Based on Material Design
-$divider:               #CCCCCC; // Based on Material Design
-$background-primary:    #E0E0E0; // Based on Material Design
-$background-secondary:  #FAFAFA; // Based on Material Design
+$link:                  $blue-A700;
+$divider:               #CCCCCC;
+$background-primary:    $grey-A200;
+$background-secondary:  $grey-50;
+
 
 // Colours from Material Design specifications
 $deep-purple-50:   #ede7f6;
@@ -37,6 +38,11 @@ $uq-purple-700:  rgba($uq-purple-1000, .70);
 $uq-purple-800:  rgba($uq-purple-1000, .80);
 $uq-purple-900:  rgba($uq-purple-1000, .90);
 
+$blue-A100: #82B1FF;
+$blue-A200: #448AFF;
+$blue-A400: #2979FF;
+$blue-A700: #2962FF;
+
 $teal-500: #009688;
 $teal-A100: #a7ffeb;
 $teal-A200: #64ffda;
@@ -49,6 +55,7 @@ $green-A200: #5af158;
 $green-A400: #14e715;
 $green-A700: #12c700;
 
+$grey-50:   #FAFAFA;
 $grey-A100: #F5F5F5;
 $grey-A200: #EEEEEE;
 $grey-A400: #BDBDBD;
@@ -102,7 +109,6 @@ $divider-inverse:        rgba($white, .12);
 $hint-text-inverse:      rgba($white, .26);
 $secondary-text-inverse: rgba($white, .54);
 $text-inverse:           rgba($white, .87);
-
 
 
 $dropdown-background: $grey-A200;
