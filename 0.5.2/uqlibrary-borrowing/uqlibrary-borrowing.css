@@ -1,10 +1,10 @@
 a {
   text-decoration: none;
-  color: black; }
+  color: rgba(0, 0, 0, 0.87); }
 
 .inverse a {
   text-decoration: none;
-  color: white; }
+  color: rgba(255, 255, 255, 0.87); }
 
 h1 {
   font-family: "Roboto light";
@@ -171,7 +171,7 @@ h4.inverse {
   outline: none; }
 
 paper-tabs {
-  color: #212121; }
+  color: rgba(0, 0, 0, 0.87); }
   paper-tabs::shadow #selectionBar {
     background-color: #8bc34a; }
   paper-tabs paper-tab .tabTitleNumber {

@@ -1,10 +1,10 @@
 a {
   text-decoration: none;
-  color: black; }
+  color: rgba(0, 0, 0, 0.87); }
 
 .inverse a {
   text-decoration: none;
-  color: white; }
+  color: rgba(255, 255, 255, 0.87); }
 
 h1 {
   font-family: "Roboto light";
@@ -182,4 +182,4 @@ h4.inverse {
   .persistentFooter .actionButtonsWrapper {
     padding-right: 16px; }
   .persistentFooter .footerActionButton {
-    color: #212121; }
+    color: rgba(0, 0, 0, 0.87); }
