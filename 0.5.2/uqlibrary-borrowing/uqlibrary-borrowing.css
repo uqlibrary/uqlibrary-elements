@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+  color: black; }
+
+.inverse a {
+  text-decoration: none;
+  color: white; }
+
 h1 {
   font-family: "Roboto light";
   font-size: 8em;
@@ -163,19 +171,15 @@ h4.inverse {
   outline: none; }
 
 paper-tabs {
-  height: 64px !important;
-  background-color: #009688;
-  color: rgba(255, 255, 255, 0.87); }
+  height: 64px;
+  background-color: #009688; }
   paper-tabs::shadow #selectionBar {
     background-color: #49075e; }
   paper-tabs paper-tab .tabTitleNumber {
-    font-size: 2em;
-    margin-bottom: 5px; }
-  paper-tabs paper-tab .tabTitle {
-    font-size: 1em; }
+    margin-bottom: 4px; }
 
-.footer-info {
-  font-size: 0.750em;
-  color: rgba(0, 0, 0, 0.54); }
-  .footer-info core-icon {
-    width: 16px; }
+.footer-info core-icon {
+  width: 16px; }
+
+.with-persistent-footer {
+  margin-bottom: 44px; }

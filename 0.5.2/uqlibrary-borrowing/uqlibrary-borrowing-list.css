@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+  color: black; }
+
+.inverse a {
+  text-decoration: none;
+  color: white; }
+
 h1 {
   font-family: "Roboto light";
   font-size: 8em;
@@ -162,6 +170,9 @@ h4.inverse {
   box-sizing: border-box;
   outline: none; }
 
+#timeline {
+  margin: 16px; }
+
 .empty-items {
   line-height: 48px;
   color: rgba(0, 0, 0, 0.54);
@@ -190,29 +201,7 @@ h4.inverse {
   height: 0px; }
 
 .date {
-  width: 64px;
-  font-weight: 400; }
-
-.day {
-  margin-top: 2px;
-  font-size: 2.125em;
-  line-height: 1.1em;
-  color: #49075e; }
-
-.day-text {
-  font-size: 0.875em;
-  line-height: 1.1em;
-  color: rgba(0, 0, 0, 0.54); }
-
-.fine-item .date .day {
-  font-size: 1.25em; }
-
-.hold-item .date .day-text, .hold-item .date .day {
-  font-size: 1em;
-  color: #49075e; }
-
-.first .day {
-  color: #49075e; }
+  width: 64px; }
 
 .item {
   background-color: #00bfa5;
@@ -228,9 +217,6 @@ h4.inverse {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
-  .item .item-inner .title {
-    font-weight: 500;
-    font-size: 1em; }
 
 .last .item,
 .last .item-inner {
@@ -255,8 +241,6 @@ h4.inverse {
     height: 24px; }
 
 .tooltip {
-  font-size: 0.875em;
-  color: rgba(0, 0, 0, 0.54);
   margin-right: 4px;
   overflow: hidden;
   white-space: nowrap;

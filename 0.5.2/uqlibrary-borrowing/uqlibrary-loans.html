@@ -3,16 +3,16 @@
 <link rel="import" href="../core-signals/core-signals.html">
 <link rel="import" href="uqlibrary-borrowing-list.html">
 
-<polymer-element name="uqlibrary-loans" attributes="loans" extends="uqlibrary-borrowing-list">
+<polymer-element name="uqlibrary-loans" attributes="loans actionButtons" extends="uqlibrary-borrowing-list">
 
   <template>
     <link rel="stylesheet" href="uqlibrary-borrowing.css">
     <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
-    <section name="list">
+    <section name="list" class="with-persistent-footer">
       <uqlibrary-borrowing-list id="loansTimeline" items="{{loans}}">
       </uqlibrary-borrowing-list>
     </section>
-    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}"></uqlibrary-persistent-footer>
+    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}" hidden?="{{ actionButtons.length == 0 }}"></uqlibrary-persistent-footer>
 
   </template>
 
@@ -23,20 +23,13 @@
         loans: {
           value : [],
           reflect : true
-        }
+        },
+        actionButtons: []
       },
       transitioning: false,
-      actionButtons: [],
 
       ready: function(){
         this.$.loansTimeline.noItemsMessage = "No loans";
-        this.actionButtons.push(
-          {
-            id: 'renewLoans',
-            title: 'Renew Loans',
-            url: 'http://www.library.uq.edu.au'
-          }
-        );
       },
 
       loansChanged: function(){

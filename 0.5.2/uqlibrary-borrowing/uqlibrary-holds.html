@@ -4,16 +4,16 @@
 
 <link rel="import" href="uqlibrary-borrowing-list.html">
 
-<polymer-element name="uqlibrary-holds" attributes="holds" extends="uqlibrary-borrowing-list">
+<polymer-element name="uqlibrary-holds" attributes="holds actionButtons" extends="uqlibrary-borrowing-list">
 
   <template>
     <link rel="stylesheet" href="uqlibrary-borrowing.css">
     <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
-    <section name="list">
-      <uqlibrary-borrowing-list id="holdsTimeline" items="{{holds}}">
+    <section name="list" class="with-persistent-footer">
+      <uqlibrary-borrowing-list id="holdsTimeline" items="{{holds}}" class="with-persistent-footer">
       </uqlibrary-borrowing-list>
     </section>
-    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}"></uqlibrary-persistent-footer>
+    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}" hidden?="{{ actionButtons.length == 0 }}"></uqlibrary-persistent-footer>
 
   </template>
 
@@ -31,13 +31,6 @@
 
       ready: function(){
         this.$.holdsTimeline.noItemsMessage = "No current holds";
-        this.actionButtons.push(
-          {
-            id: 'cancelHolds',
-            title: 'Cancel Holds',
-            url: 'http://www.library.uq.edu.au'
-          }
-        );
         this.$.holdsTimeline.showEachDate = true;
         this.$.holdsTimeline.sortByDate = false; // we don't care about placed date, so disable sorting by date
       },
@@ -57,20 +50,20 @@
           _hold.id = i;
           _hold.date = new Date(_hold.datePlaced);
           _hold.dateText = _hold.date.getDate() + '/' + (_hold.date.getMonth() + 1) + '/' + _hold.date.getFullYear();
-          _hold.actions = [];
+          //_hold.actions = [];
 
           if(_hold.status == 'bibReady' || _hold.status == 'itemReady') {
             _hold.dayPrefixText = 'Ready';
-            _hold.day = 'for';
-            _hold.daySuffixText = 'pickup';
+            _hold.day = '';
+            _hold.daySuffixText = 'for pickup';
             if(_hold.pickupLocation){
               _hold.subtitle = 'Pickup location: ' + _hold.pickupLocation;
             }
           } else if (_hold.status == 'itemTransit') {
 
             _hold.dayPrefixText = 'Transit';
-            _hold.day = 'for';
-            _hold.daySuffixText = 'pickup';
+            _hold.day = '';
+            _hold.daySuffixText = 'for pickup';
             _hold.subtitle = '';
             if(_hold.pickupLocation){
               _hold.secondaryText = 'Pickup location: ' + _hold.pickupLocation;

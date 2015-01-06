@@ -3,16 +3,16 @@
 <link rel="import" href="../uqlibrary-persistent-footer/uqlibrary-persistent-footer.html">
 <link rel="import" href="uqlibrary-borrowing-list.html">
 
-<polymer-element name="uqlibrary-fines" attributes="fines" extends="uqlibrary-borrowing-list">
+<polymer-element name="uqlibrary-fines" attributes="fines actionButtons" extends="uqlibrary-borrowing-list">
 
   <template>
     <link rel="stylesheet" href="uqlibrary-borrowing.css">
     <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
-    <section name="list">
+    <section name="list" class="with-persistent-footer">
       <uqlibrary-borrowing-list id="finesList" items="{{fines}}">
       </uqlibrary-borrowing-list>
     </section>
-    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}">
+    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}" hidden?="{{finesSum == 0}}">
       <div layout horizontal>
         <div flex> <b>Total</b>: {{finesSum | moneyFormat}} </div>
         <div class="footer-info" end-justified hidden?="{{ finesSum > fineMinimumPayableAmount }}"><core-icon icon="info-outline"></core-icon> No need to pay unless you reach {{fineMinimumPayableAmount | moneyFormat}}</div>
@@ -42,15 +42,8 @@
 
       finesChanged: function(){
         this.processData();
-        this.actionButtons = [];
-        if(this.finesSum >= this.fineMinimumPayableAmount) {
-          this.actionButtons.push(
-            {
-              id: 'payFines',
-              title: 'Pay fines',
-              url: 'http://www.library.uq.edu.au'
-            }
-          );
+        if(this.finesSum < this.fineMinimumPayableAmount) {
+          this.actionButtons = [];
         }
 
       },

@@ -84,7 +84,7 @@ Element providing an overview for loans, holds and fines.
     <link rel="stylesheet" href="uqlibrary-borrowing.css">
     <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}">
       <paper-tab name="loans" id="loans">
-          <div layout vertical center>
+          <div layout vertical center class="title inverse">
             <span class="tabTitleNumber">{{ data.checkedOut.length }}</span>
             <span class="tabTitle">Loans</span>
           </div>
@@ -92,14 +92,14 @@ Element providing an overview for loans, holds and fines.
 
 
       <paper-tab name="holds" id="holds">
-        <div layout vertical center>
+        <div layout vertical center class="title inverse">
           <span class="tabTitleNumber">{{ data.holds.length }}</span>
           <span class="tabTitle">Holds</span>
         </div>
 
       </paper-tab>
       <paper-tab name="fines" id="fines">
-        <div layout vertical center>
+        <div layout vertical center class="title inverse">
           <span class="tabTitleNumber">{{ sumFines }}</span>
           <span class="tabTitle">Overdue Charges</span>
         </div>
@@ -114,15 +114,15 @@ Element providing an overview for loans, holds and fines.
         >
 
         <section id="loans" name="loans" class="loans" hidden?="{{ selectedTab != 'loans' }}">
-          <uqlibrary-loans loans="{{ data.checkedOut }}"></uqlibrary-loans>
+          <uqlibrary-loans id="loans" loans="{{ data.checkedOut }}"></uqlibrary-loans>
         </section>
 
         <section id="holds" name="holds" class="holds" hidden?="{{ selectedTab != 'holds' }}">
-          <uqlibrary-holds holds="{{ data.holds }}"></uqlibrary-holds>
+          <uqlibrary-holds id="holds" holds="{{ data.holds }}"></uqlibrary-holds>
         </section>
 
         <section id="fines" name="fines" class="fines" hidden?="{{ selectedTab != 'fines' }}">
-          <uqlibrary-fines id="finesElement" fines="{{ data.fines }}"></uqlibrary-fines>
+          <uqlibrary-fines id="fines" fines="{{ data.fines }}"></uqlibrary-fines>
         </section>
 
      </core-animated-pages>
@@ -148,16 +148,30 @@ Element providing an overview for loans, holds and fines.
       },
       sumFines : 0,
       selectedTab : 'loans',
+      patronNumber: '',
 
       ready: function() {
       },
 
       dataChanged: function() {
         this.processData();
+
       },
 
       processData: function () {
-        this.sumFines = this.$.finesElement.moneyFormat(this.$.finesElement.calculateFines(this.data.fines));
+        this.sumFines = this.$.fines.moneyFormat(this.$.fines.calculateFines(this.data.fines));
+        var patronNumber = this.data.recordNumber;
+
+        if(this.data.checkedOut.length > 0){
+          this.$.loans.actionButtons = [{title: 'Renew Loans', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/items'}];
+        }
+        if(this.data.holds.length > 0){
+          this.$.holds.actionButtons = [{title: 'Cancel Holds', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/holds'}];
+        }
+        if(this.data.fines.length > 0){
+          this.$.fines.actionButtons = [{title: 'Pay fines', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/overdues'}];
+        }
+
       },
 
       transitionPrepareHandler: function() {
