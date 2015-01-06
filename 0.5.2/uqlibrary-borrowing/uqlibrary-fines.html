@@ -74,9 +74,9 @@
           if(_fine.dueDateText && _fine.dateReturnedText) {
             _fine.subtitle = "Due date: " + _fine.dueDateText;
             _fine.secondaryText = "Date Returned: " + _fine.dateReturnedText;
-            if(_fine.description) {
-              _fine.attentionIcon = {icon: "warning", text: _fine.description, type: 'warning'};
-            }
+            //if(_fine.description) {
+              //_fine.attentionIcon = {icon: "warning", text: _fine.description, type: 'warning'};
+            //}
           }
 
           this.finesSum = this.calculateFines(this.fines);

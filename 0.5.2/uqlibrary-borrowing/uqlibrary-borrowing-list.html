@@ -21,7 +21,7 @@
               <div class="caption">
                 {{item.dayPrefixText}}
               </div>
-              <div class="title">
+              <div class="subhead">
                 {{item.day}}
               </div>
               <div class="caption">
@@ -30,9 +30,9 @@
             </div>
             <div flex layout horizontal class="item" on-tap="{{itemSelected}}" data-item-id="{{item.id}}">
               <div flex class="item-inner">
-                <div class="title inverse">{{item.title}}</div>
-                <div class="subtitle inverse">{{item.subtitle}}</div>
-                <div class="subtitle inverse">{{item.secondaryText}}</div>
+                <div class="body1 inverse">{{item.title}}</div>
+                <div class="caption inverse">{{item.subtitle}}</div>
+                <div class="caption inverse">{{item.secondaryText}}</div>
               </div>
               <div layout vertical>
                 <template repeat="{{action in item.actions}}">

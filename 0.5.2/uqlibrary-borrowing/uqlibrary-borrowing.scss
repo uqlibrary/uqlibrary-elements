@@ -1,24 +1,15 @@
 @import "../uqlibrary-elements/resources/theme/element";
 
 paper-tabs {
-  height: 64px;
-  background-color: $teal-500;
+  //height: 64px;
+  color: $text-primary;
   &::shadow #selectionBar {
-    background-color: $uq-purple-1000;
+    background-color: $highlight-secondary;
   }
   paper-tab {
     .tabTitleNumber {
       margin-bottom: 4px;
     }
-
-    .tabTitle {
-    }
-
-  }
-}
-.footer-info {
-  core-icon {
-    width :16px;
   }
 }
 

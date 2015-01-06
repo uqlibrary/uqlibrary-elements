@@ -204,16 +204,14 @@ h4.inverse {
   width: 64px; }
 
 .item {
-  background-color: #00bfa5;
-  color: rgba(255, 255, 255, 0.87);
+  background-color: #7b1fa2;
   border-radius: 2px;
   padding: 16px;
   padding-bottom: 20px;
   margin-bottom: 8px;
   height: 88px;
-  font-size: 0.875em;
   position: relative; }
-  .item .item-inner div.title, .item .item-inner div.subtitle, .item .item-inner div.secondaryText {
+  .item .item-inner div.body1, .item .item-inner div.caption {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }

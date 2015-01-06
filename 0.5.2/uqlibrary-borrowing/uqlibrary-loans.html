@@ -52,14 +52,14 @@
           _loan.daysRemain = -1;
           if(overdue < 0) {
             _loan.isOverdue = true;
-            _loan.attentionIcon = {icon: "warning", text: "This item is "+ Math.abs(overdue) + " day(s) overdue", type: 'warning'};
-            _loan.class += ' warning';
+            //_loan.attentionIcon = {icon: "warning", text: "This item is "+ Math.abs(overdue) + " day(s) overdue", type: 'warning'};
+            //_loan.class += ' warning';
             //_loan.daysOverdue = Math.abs(overdue);
             //this.data.loansOverdue ++;
           }
           else if(overdue >= 0 && overdue < 5 ) {
             _loan.daysRemain = overdue;
-            _loan.attentionIcon = {icon: "warning", text: (overdue == 0 ? 'Last day of the loan' : "This item is due in "+ overdue + " day(s)"), type: 'warning'};
+            //_loan.attentionIcon = {icon: "warning", text: (overdue == 0 ? 'Last day of the loan' : "This item is due in "+ overdue + " day(s)"), type: 'warning'};
             //this.data.dueSoon ++;
           }
         }

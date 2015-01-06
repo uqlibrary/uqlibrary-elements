@@ -42,18 +42,16 @@
 }
 
 .item {
-  background-color: $accent-A400;
-  color: $text-inverse;
+  background-color: $highlight-primary;
   border-radius: 2px;
   padding: 16px ;
   padding-bottom: 20px;
   margin-bottom: 8px;
   height: 88px;
-  font-size: 0.875em;
   position: relative;
 
   .item-inner {
-    div.title, div.subtitle, div.secondaryText {
+    div.body1, div.caption {
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
