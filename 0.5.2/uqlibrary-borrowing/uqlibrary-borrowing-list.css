@@ -170,9 +170,6 @@ h4.inverse {
   box-sizing: border-box;
   outline: none; }
 
-#timeline {
-  margin: 16px; }
-
 .empty-items {
   line-height: 48px;
   color: rgba(0, 0, 0, 0.54);
