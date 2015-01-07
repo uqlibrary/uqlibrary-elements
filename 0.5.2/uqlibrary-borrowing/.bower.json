@@ -18,11 +18,11 @@
     "moment": "~2.8.4"
   },
   "homepage": "https://github.com/uqlibrary/uqlibrary-borrowing",
-  "_release": "6222361895",
+  "_release": "0a66a67423",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "622236189590c87df7fa6b7cae9061ed8925143f"
+    "commit": "0a66a6742358e1303bd67b2cfe1d9902c13745a9"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-borrowing.git",
   "_target": "master",
