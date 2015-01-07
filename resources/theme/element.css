@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87); }
+
+.inverse a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87); }
+
 h1 {
   font-family: "Roboto light";
   font-size: 8em;

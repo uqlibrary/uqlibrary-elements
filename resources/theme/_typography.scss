@@ -83,6 +83,7 @@ $_gmd-type-styles: (
   color: $color;
 }
 
+
 a {
   @include gmd-type-style(link, gmd-alpha-color($black, text));
 }

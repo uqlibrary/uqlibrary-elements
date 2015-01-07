@@ -1,0 +1,92 @@
+@import "margins";
+
+.single-line-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .gap {
+    padding: 0;
+    height: $list-item-gap;
+  }
+
+  .list-item {
+
+    height: $single-line-list-item-height;
+    padding-left: $single-line-list-item-padding-left;
+    padding-right: $single-line-list-item-padding-right;
+
+    @include gmd-type-style(body1, gmd-alpha-color($black, text));
+
+    .content {
+      padding-top: $single-line-list-item-padding-top;
+      padding-bottom: $single-line-list-item-padding-bottom;
+    }
+
+    &.header {
+      @include gmd-type-style(caption, gmd-alpha-color($black, secondary-text));
+    }
+
+    &:last-child {
+      padding-bottom: $single-line-list-item-padding-bottom + $list-item-gap;
+    }
+  }
+}
+
+.single-line-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  .gap {
+    height: $list-item-gap;
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
+  }
+
+  .list-item {
+
+    height: $single-line-list-icon-item-height;
+    padding-left: $single-line-list-icon-item-icon-padding-left;
+    padding-right: $single-line-list-item-padding-right;
+
+    @include gmd-type-style(body1, gmd-alpha-color($black, text));
+
+    &.header {
+      @include gmd-type-style(caption, gmd-alpha-color($black, secondary-text));
+    }
+
+    &:last-child {
+      padding-bottom: $single-line-list-icon-item-padding-bottom + $list-item-gap;
+    }
+
+    .avatar {
+      margin-top: $list-item-gap;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      height: $single-line-list-avatar-size;
+      width: $single-line-list-avatar-size;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+
+    .content {
+      padding-top: $single-line-list-icon-item-padding-top;
+      padding-bottom: $single-line-list-icon-item-padding-bottom;
+
+      margin-left: $single-line-list-icon-item-text-padding-left - $single-line-list-icon-item-icon-padding-left;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-right: $single-line-list-right-icon-padding;
+    }
+
+
+    .icon {
+      width: $single-line-list-icon-size;
+      padding-left: $single-line-list-right-icon-padding;
+      float: right;
+    }
+  }
+}

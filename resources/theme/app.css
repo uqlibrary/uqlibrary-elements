@@ -184,6 +184,77 @@ h4.inverse {
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
+.single-line-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .single-line-list .gap {
+    padding: 0;
+    height: 8px; }
+  .single-line-list .list-item {
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: "Roboto regular";
+    font-size: 1em;
+    line-height: 1.1em;
+    color: rgba(0, 0, 0, 0.87); }
+    .single-line-list .list-item .content {
+      padding-top: 16px;
+      padding-bottom: 20px; }
+    .single-line-list .list-item.header {
+      font-family: "Roboto regular";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54); }
+    .single-line-list .list-item:last-child {
+      padding-bottom: 28px; }
+
+.single-line-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .single-line-icon-list .gap {
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .single-line-icon-list .list-item {
+    height: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: "Roboto regular";
+    font-size: 1em;
+    line-height: 1.1em;
+    color: rgba(0, 0, 0, 0.87); }
+    .single-line-icon-list .list-item.header {
+      font-family: "Roboto regular";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54); }
+    .single-line-icon-list .list-item:last-child {
+      padding-bottom: 32px; }
+    .single-line-icon-list .list-item .avatar {
+      margin-top: 8px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%; }
+    .single-line-icon-list .list-item .content {
+      padding-top: 20px;
+      padding-bottom: 24px;
+      margin-left: 56px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-right: 16px; }
+    .single-line-icon-list .list-item .icon {
+      width: 28px;
+      padding-left: 16px;
+      float: right; }
+
 body {
   font-size: 16px;
   font-family: "Roboto",Arial,sans-serif;
