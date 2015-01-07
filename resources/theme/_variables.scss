@@ -102,13 +102,16 @@ $divider:        rgba($black, .12);
 $hint-text:      rgba($black, .26);
 $secondary-text: rgba($black, .54);
 $text:           rgba($black, .87);
+$active-icon:    rgba($black, .54);
+$inactive-icon:  rgba($black, .26);
 
 // Inverse text / icons / dividers
 $divider-inverse:        rgba($white, .12);
 $hint-text-inverse:      rgba($white, .26);
 $secondary-text-inverse: rgba($white, .54);
 $text-inverse:           rgba($white, .87);
-
+$active-icon-inverse:    rgba($white, 1);
+$inactive-icon-inverse:  rgba($white, .30);
 
 $dropdown-background: $grey-A200;
 $dropdown-background-hover: $grey-A400;
