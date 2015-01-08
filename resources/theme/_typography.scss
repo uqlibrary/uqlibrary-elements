@@ -57,6 +57,11 @@ $_gmd-type-styles: (
                 font-size: .85714286em,
                 line-height: 1.1em,
         ),
+        list-title: (
+                font-family: "Roboto bold",
+                font-size: .85714286em,
+                line-height: 1.1em,
+        ),
         menu: (
                 font-family: "Roboto medium",
                 font-size: 1em,
@@ -76,6 +81,7 @@ $_gmd-type-styles: (
 );
 
 @mixin gmd-type-style($type, $color) {
+
   $style: map-get($_gmd-type-styles, $type);
   @each $property, $value in $style {
     #{$property}: $value;
