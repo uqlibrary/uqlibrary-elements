@@ -14,16 +14,13 @@ core-menu {
 
 paper-item {
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
-  core-icon {
-    margin-right: 2em;
-  }
 }
 
 #account {
   padding: 8px;
   font-size: 0.875em;
   color: $text-inverse;
-  background-color: $highlight-primary;
+  background-color: $primary;
   border-bottom: 1px solid $grey-A100;
 
   core-icon {

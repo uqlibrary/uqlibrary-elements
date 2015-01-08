@@ -23,8 +23,8 @@ Element providing a the library main apps menu
 
     <template if="{{account.hasSession}}">
       <div horizontal layout id="account">
-        <div id="icon"><core-icon icon="account-circle"></core-icon></div>
-        <div id="details" flex>
+        <div id="icon"><core-icon icon="account-circle" class="active-inverse"></core-icon></div>
+        <div id="details" class="body1.inverse" flex>
           <div>
             <div id="name">{{account.name}}</div>
             <div id="mail">{{account.mail}}</div>

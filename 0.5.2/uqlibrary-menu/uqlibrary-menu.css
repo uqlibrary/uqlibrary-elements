@@ -164,6 +164,16 @@ h4.inverse {
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
+core-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 2em; }
+  core-icon.inactive {
+    color: rgba(0, 0, 0, 0.26); }
+  core-icon.active-inverse {
+    color: white; }
+  core-icon.inactive-inverse {
+    color: rgba(255, 255, 255, 0.3); }
+
 :host,
 :host *,
 ::content * {
@@ -174,7 +184,7 @@ core-menu {
   padding: 8px 0;
   margin: 0; }
   core-menu.divider {
-    border-bottom: 1px solid whitesmoke; }
+    border-bottom: 1px solid #F5F5F5; }
 
 paper-item {
   font-family: "Roboto medium";
@@ -182,15 +192,13 @@ paper-item {
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
-  paper-item core-icon {
-    margin-right: 2em; }
 
 #account {
   padding: 8px;
   font-size: 0.875em;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #7b1fa2;
-  border-bottom: 1px solid whitesmoke; }
+  background-color: #7b0c9d;
+  border-bottom: 1px solid #F5F5F5; }
   #account core-icon {
     height: 64px;
     width: 64px; }
@@ -206,3 +214,5 @@ paper-item {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
+
+/*# sourceMappingURL=uqlibrary-menu.css.map */
