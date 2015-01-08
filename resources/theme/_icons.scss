@@ -1,0 +1,17 @@
+@import "variables";
+
+core-icon {
+  color: $active-icon;
+
+  margin-right: 2em;
+  &.inactive {
+    color: $inactive-icon;
+  }
+  &.active-inverse {
+    color: $active-icon-inverse;
+  }
+  &.inactive-inverse {
+    color: $inactive-icon-inverse;
+  }
+
+}

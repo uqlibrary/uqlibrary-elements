@@ -164,10 +164,18 @@ h4.inverse {
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
+core-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 2em; }
+  core-icon.inactive {
+    color: rgba(0, 0, 0, 0.26); }
+  core-icon.active-inverse {
+    color: white; }
+  core-icon.inactive-inverse {
+    color: rgba(255, 255, 255, 0.3); }
+
 :host,
 :host *,
 ::content * {
   box-sizing: border-box;
   outline: none; }
-
-/*# sourceMappingURL=element.css.map */

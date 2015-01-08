@@ -255,6 +255,16 @@ h4.inverse {
       padding-left: 16px;
       float: right; }
 
+core-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 2em; }
+  core-icon.inactive {
+    color: rgba(0, 0, 0, 0.26); }
+  core-icon.active-inverse {
+    color: white; }
+  core-icon.inactive-inverse {
+    color: rgba(255, 255, 255, 0.3); }
+
 body {
   font-size: 16px;
   font-family: "Roboto",Arial,sans-serif;
