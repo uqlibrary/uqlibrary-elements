@@ -70,6 +70,11 @@ $baseline-uq-green: hsl(74, 100%, 0%);
 $dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
 $primary:               lighten($baseline-uq-purple,33%);
 $accent:                lighten($baseline-uq-green, 36%);
+// repeated for quick looks at real colours in phpstorm by commenting in/out
+//$dark-primary:          hsl(286, 86%, 20%); // Official UQ purple
+//$primary:               hsl(286, 86%, 33%);
+//$accent:                hsl(74, 100%, 36%);
+
 $dark-accent:           hsl(113, 49%, 35%);
 $link:                  hsl(192, 100%, 31%);
 $link-secondary:        hsl(0, 0%, 91%);
@@ -142,10 +147,10 @@ $uq-fbs-room-header-bg:   $white;
 $uq-fbs-room-title-color: $white;
 $uq-fbs-room-title-bg:    $uq-purple-600;
 
-$fbs-selected-date:       $teal-500;
+$fbs-selected-date:       $uq-blue;
 $fbs-unselected-date:     $grey-A200;
 
-$fbs-selected-time:       $teal-500;
+$fbs-selected-time:       $uq-blue;
 $fbs-available-time:      $grey-A200;
 $fbs-unavailable-time:    $grey-A400;
 
