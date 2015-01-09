@@ -75,17 +75,15 @@ $link:                  hsl(192, 100%, 31%);
 $link-secondary:        hsl(0, 0%, 91%);
 $background-primary:    $grey-50;
 $background-secondary:  $white;
-// these are consistent with UQ, but we must decide whether to go with
-// these or material design's spec for text and dividers
-//$text-primary:          #333333;
-//$text-secondary:        #757575;
-//$divider:               #CCCCCC;
-$uq-red: hsl(337, 100%, 33%);
-$uq-blue: hsl(214, 69%, 50%);
-$uq-emerald: hsl(113, 49%, 35%);
-$uq-warm-red: hsl(11, 68%, 48%);
-$uq-gold: hsl(45, 46%, 52%);
-$uq-gold-alt: hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
+$uq-text-primary:       hsl(0, 0%, 20%);
+$uq-text-secondary:     hsl(0, 0%, 46%);
+$uq-divider:            hsl(0, 0%, 80%);
+$uq-red:                hsl(337, 100%, 33%);
+$uq-blue:               hsl(214, 69%, 50%);
+$uq-emerald:            hsl(113, 49%, 35%);
+$uq-warm-red:           hsl(11, 68%, 48%);
+$uq-gold:               hsl(45, 46%, 52%);
+$uq-gold-alt:           hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
 
 
 
