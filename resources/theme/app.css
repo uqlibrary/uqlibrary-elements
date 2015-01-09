@@ -190,7 +190,9 @@ h4.inverse {
   padding: 0; }
   .single-line-list .gap {
     padding: 0;
-    height: 8px; }
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .single-line-list .list-item {
     height: 48px;
     padding-left: 16px;
@@ -201,12 +203,17 @@ h4.inverse {
     color: rgba(0, 0, 0, 0.87); }
     .single-line-list .list-item .content {
       padding-top: 16px;
-      padding-bottom: 20px; }
+      padding-bottom: 20px;
+      margin-right: 16px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis; }
     .single-line-list .list-item.header {
-      font-family: "Roboto regular";
+      font-family: "Roboto bold";
       font-size: 0.85714em;
       line-height: 1.1em;
-      color: rgba(0, 0, 0, 0.54); }
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
     .single-line-list .list-item:last-child {
       padding-bottom: 28px; }
 
@@ -215,6 +222,7 @@ h4.inverse {
   margin: 0;
   padding: 0; }
   .single-line-icon-list .gap {
+    padding: 0;
     height: 8px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-width: 0 0 1px 0; }
@@ -227,14 +235,15 @@ h4.inverse {
     line-height: 1.1em;
     color: rgba(0, 0, 0, 0.87); }
     .single-line-icon-list .list-item.header {
-      font-family: "Roboto regular";
+      font-family: "Roboto bold";
       font-size: 0.85714em;
       line-height: 1.1em;
-      color: rgba(0, 0, 0, 0.54); }
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
     .single-line-icon-list .list-item:last-child {
       padding-bottom: 32px; }
     .single-line-icon-list .list-item .avatar {
-      margin-top: 8px;
+      margin-top: 5.5px;
       border-radius: 50%;
       background-repeat: no-repeat;
       height: 45px;
@@ -248,12 +257,325 @@ h4.inverse {
       margin-left: 56px;
       overflow: hidden;
       white-space: nowrap;
-      text-overflow: ellipsis;
-      margin-right: 16px; }
+      text-overflow: ellipsis; }
     .single-line-icon-list .list-item .icon {
       width: 28px;
       padding-left: 16px;
       float: right; }
+
+.two-line-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .two-line-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .two-line-list .list-item {
+    height: 72px;
+    padding-left: 16px;
+    padding-right: 16px; }
+    .two-line-list .list-item .content {
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .two-line-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .two-line-list .list-item .content .line2 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .two-line-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .two-line-list .list-item:last-child {
+      padding-bottom: 28px; }
+
+.two-line-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .two-line-icon-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .two-line-icon-list .list-item {
+    height: 72px;
+    padding-left: 16px;
+    padding-right: 16px; }
+    .two-line-icon-list .list-item .avatar {
+      margin-top: 13.5px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%; }
+    .two-line-icon-list .list-item .icon {
+      width: 28px;
+      padding-left: 16px;
+      margin-top: -52px;
+      float: right; }
+    .two-line-icon-list .list-item .content {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-left: 56px; }
+      .two-line-icon-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .two-line-icon-list .list-item .content .line2 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .two-line-icon-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .two-line-icon-list .list-item:last-child {
+      padding-bottom: 28px; }
+
+.three-line-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .three-line-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .three-line-list .list-item {
+    height: 72px;
+    padding-left: 16px;
+    padding-right: 16px; }
+    .three-line-list .list-item .content {
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .three-line-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-list .list-item .content .line2 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-list .list-item .content .line3 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .three-line-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .three-line-list .list-item:last-child {
+      padding-bottom: 28px; }
+
+.three-line-text-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .three-line-text-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .three-line-text-list .list-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 88px;
+    padding-left: 16px;
+    padding-right: 16px; }
+    .three-line-text-list .list-item .content {
+      height: 48px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .three-line-text-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-text-list .list-item .content .text {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54); }
+    .three-line-text-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .three-line-text-list .list-item:last-child {
+      padding-bottom: 28px; }
+
+.three-line-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .three-line-icon-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .three-line-icon-list .list-item {
+    height: 88px;
+    padding-left: 16px;
+    padding-right: 16px; }
+    .three-line-icon-list .list-item .avatar {
+      margin-top: 21.5px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin-top: 16px; }
+    .three-line-icon-list .list-item .icon {
+      width: 28px;
+      padding-left: 16px;
+      margin-top: -72px;
+      float: right; }
+    .three-line-icon-list .list-item .content {
+      padding-top: 16px;
+      padding-bottom: 20px;
+      margin-left: 56px; }
+      .three-line-icon-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-icon-list .list-item .content .line2 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-icon-list .list-item .content .line3 {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .three-line-icon-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .three-line-icon-list .list-item:last-child {
+      padding-bottom: 32px; }
+
+.three-line-text-icon-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .three-line-text-icon-list .gap {
+    padding: 0;
+    height: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
+  .three-line-text-icon-list .list-item {
+    height: 88px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .three-line-text-icon-list .list-item .avatar {
+      margin-top: 21.5px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      height: 45px;
+      width: 45px;
+      float: left;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin-top: 16px; }
+    .three-line-text-icon-list .list-item .icon {
+      width: 28px;
+      padding-left: 16px;
+      margin-top: -72px;
+      float: right; }
+    .three-line-text-icon-list .list-item .content {
+      height: 48px;
+      margin-left: 56px;
+      margin-right: 16px;
+      margin-top: 16px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .three-line-text-icon-list .list-item .content .line1 {
+        font-family: "Roboto regular";
+        font-size: 1em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.87);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+      .three-line-text-icon-list .list-item .content .text {
+        font-family: "Roboto regular";
+        font-size: 0.85714em;
+        line-height: 1.1em;
+        color: rgba(0, 0, 0, 0.54); }
+    .three-line-text-icon-list .list-item.header {
+      font-family: "Roboto bold";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(0, 0, 0, 0.54);
+      padding-top: 16px; }
+    .three-line-text-icon-list .list-item:last-child {
+      padding-bottom: 28px; }
 
 core-icon {
   color: rgba(0, 0, 0, 0.54);
