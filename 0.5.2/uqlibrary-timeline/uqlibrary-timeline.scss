@@ -21,14 +21,14 @@
 
 .timeline-divider {
   line-height: 0.625em;
-  border-bottom: 1px solid $primary-500;
+  border-bottom: 1px solid $uq-divider;
   margin: 0 0 9px 52px;
 }
 
 .timeline-divider:before {
   content: '\2022';
   font-size: 3.1em;
-  color: $primary-500;
+  color: $dark-accent;
   margin: 0 0 0 -12px;
   vertical-align: middle;
   display: inline-block;
@@ -58,8 +58,8 @@
 }
 
 .item {
-  background-color: $accent-A400;
-  color: $text-inverse;
+  background-color: $link-secondary;
+  color: $text;
   border-radius: 2px;
   padding: 16px;
   margin-bottom: 8px;
