@@ -55,25 +55,37 @@ $uq-green-A400: rgba($uq-green-A700, .75);
 $white: #ffffff;
 $black: #000000;
 
-// Official UQ Palette v0.1
+// Official UQ Palette v0.3
 //
-// Based on official UQ hex values and Material Design for
-// instances where UQ colours fail accessibility, or do not provide guidance
+// The following all pass WCAG 2.0 accessibility standards
+//
+// Based on official UQ pantone values and
+// tweaked where UQ colours fail accessibility
 
-$baseline-uq-purple: hsl(286, 86, 0);
-$baseline-uq-green: hsl(74, 100, 0);
+
+$baseline-uq-purple: hsl(286, 86%, 0%);
+$baseline-uq-green: hsl(74, 100%, 0%);
 
 //$dark-primary:          #49075E; // Official UQ purple
-$dark-primary:          lighten($baseline-uq-purple,20%);
+$dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
 $primary:               lighten($baseline-uq-purple,33%);
 $accent:                lighten($baseline-uq-green, 36%);
-$dark-accent:           lighten(adjust-hue($accent,23deg),25%);
-$link:                  $blue-A700;
+$dark-accent:           hsl(113, 49%, 35%);
+$link:                  hsl(192, 100%, 31%);
+$link-secondary:        hsl(0, 0%, 91%);
 $background-primary:    $grey-50;
 $background-secondary:  $white;
+// these are consistent with UQ, but we must decide whether to go with
+// these or material design's spec for text and dividers
 //$text-primary:          #333333;
 //$text-secondary:        #757575;
 //$divider:               #CCCCCC;
+$uq-red: hsl(337, 100%, 33%);
+$uq-blue: hsl(214, 69%, 50%);
+$uq-emerald: hsl(113, 49%, 35%);
+$uq-warm-red: hsl(11, 68%, 48%);
+$uq-gold: hsl(45, 46%, 52%);
+$uq-gold-alt: hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
 
 
 
