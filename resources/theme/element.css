@@ -164,6 +164,10 @@ h4.inverse {
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
+.link {
+  text-decoration: none;
+  color: rgba(0, 126, 158, 0.87); }
+
 core-icon {
   color: rgba(0, 0, 0, 0.54);
   margin-right: 2em; }
@@ -451,6 +455,18 @@ core-icon {
     height: 8px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-width: 0 0 1px 0; }
+  .three-line-icon-list .list-divider.timeline .line:before {
+    content: '\2022';
+    font-size: 3.1em;
+    margin: 0 0 0 -12px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 0px;
+    color: #7b0c9d; }
+  .three-line-icon-list .list-divider.timeline .line {
+    line-height: 0.625em;
+    border-bottom: 1px solid #7b0c9d;
+    margin: -9px 0 9px 66px; }
   .three-line-icon-list .list-item {
     height: 88px;
     padding-left: 16px;
@@ -470,6 +486,16 @@ core-icon {
       padding-left: 16px;
       margin-top: -72px;
       float: right; }
+    .three-line-icon-list .list-item.timeline .date {
+      height: 45px;
+      width: 45px;
+      float: left; }
+      .three-line-icon-list .list-item.timeline .date .title {
+        color: #7b0c9d; }
+    .three-line-icon-list .list-item.timeline .content {
+      background-color: #e8e8e8;
+      border-radius: 2px;
+      padding-left: 16px; }
     .three-line-icon-list .list-item .content {
       padding-top: 16px;
       padding-bottom: 20px;
@@ -568,10 +594,25 @@ core-icon {
       padding-bottom: 28px; }
 
 paper-fab {
-  background-color: #2874d7; }
+  background-color: #007e9e; }
+
+.card {
+  display: block;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: auto;
+  background: #ffffff;
+  width: 320px;
+  margin: 16px auto; }
+  .card .cardSection {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    display: block; }
 
 :host,
 :host *,
 ::content * {
   box-sizing: border-box;
   outline: none; }
+
+/*# sourceMappingURL=element.css.map */

@@ -293,6 +293,24 @@
     @include list-gap();
   }
 
+  .list-divider.timeline {
+    .line:before {
+      content: '\2022';
+      font-size: 3.1em;
+      margin: 0 0 0 -12px;
+      vertical-align: middle;
+      display: inline-block;
+      height: 0px;
+      color: $primary;
+    }
+
+    .line {
+      line-height: 0.625em;
+      border-bottom: 1px solid $primary;
+      margin: -9px 0 9px 66px;
+    }
+  }
+
   .list-item {
 
     height: $three-line-list-icon-item-height;
@@ -310,6 +328,23 @@
       margin-top: -($three-line-list-icon-item-height - $three-line-list-icon-item-padding-top);
       float: right;
     }
+
+    &.timeline .date {
+      height: $list-avatar-size;
+      width: $list-avatar-size;
+      float: left;
+
+      .title {
+        color: $primary;
+      }
+    }
+
+    &.timeline .content {
+      background-color: #e8e8e8;
+      border-radius: 2px;
+      padding-left: $three-line-list-icon-item-icon-padding-left;
+    }
+
     .content {
       padding-top: $three-line-list-icon-item-padding-top;
       padding-bottom: $three-line-list-icon-item-padding-bottom;
