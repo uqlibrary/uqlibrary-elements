@@ -77,6 +77,7 @@ $accent:                lighten($baseline-uq-green, 36%);
 
 $dark-accent:           hsl(113, 49%, 35%);
 $link:                  hsl(192, 100%, 31%);
+$button:                $link;
 $link-secondary:        hsl(0, 0%, 91%);
 $background-primary:    $grey-50;
 $background-secondary:  $white;
@@ -84,7 +85,8 @@ $uq-text-primary:       hsl(0, 0%, 20%);
 $uq-text-secondary:     hsl(0, 0%, 46%);
 $uq-divider:            hsl(0, 0%, 80%);
 $uq-red:                hsl(337, 100%, 33%);
-$uq-blue:               hsl(214, 69%, 50%);
+//$uq-blue:               hsl(214, 69%, 50%); Buttons & links should be UQ-Aqua
+$uq-blue:               $link;
 $uq-emerald:            hsl(113, 49%, 35%);
 $uq-warm-red:           hsl(11, 68%, 48%);
 $uq-gold:               hsl(45, 46%, 52%);
