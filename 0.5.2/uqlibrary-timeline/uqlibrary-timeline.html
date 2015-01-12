@@ -38,45 +38,33 @@ Element providing a simple timeline.
   <template>
     <link rel="stylesheet" href="uqlibrary-timeline.css">
 
-    <div id="timeline">
+    <div class="message-box caption" hidden?="{{processedEvents.length > 0}}"> {{ noEventsMessage }} </div>
 
-      <div class="empty-events" hidden?="{{processedEvents.length > 0}}"> {{ noEventsMessage }} </div>
+    <ul id="timeline" class="three-line-icon-list">
 
       <template repeat="{{event, idx in processedEvents}}">
-
         <template if="{{!event.isDivider}}">
-
           <core-collapse opened="{{event.opened}}">
-            <div id="event-{{event.id}}" class="{{event.class}}">
-              <div horizontal layout class="timeline-item-inner">
-                <div class="date" vertical layout>
-                  <div class="day">
-                    {{event.day}}
-                  </div>
-                  <div class="day-text">
-                    {{event.dayText}}
-                  </div>
-                </div>
-                <div flex class="item" on-tap="{{eventSelected}}" data-event-id="{{event.id}}">
-                  <div class="item-inner">
-                    <div class="title">{{event.title}}</div>
-                    <div>{{event.subtitle}}</div>
-                    <div>{{event.timeText}}</div>
-                  </div>
-                </div>
+            <li class="list-item timeline" id="event-{{event.id}}">
+              <div class="date">
+                <div class="title">{{event.day}}</div>
+                <div class="caption">{{event.dayText}}</div>
               </div>
-            </div>
+              <div class="content" on-tap="{{eventSelected}}" data-event-id="{{event.id}}">
+                <div class="line1">{{event.title}}</div>
+                <div class="line2">{{event.subtitle}}</div>
+                <div class="line3">{{event.timeText}}</div>
+              </div>
+            </li>
           </core-collapse>
-
+          <template if="{{event.isDivider}}">
+            <li class="list-divider timeline">
+              <div class="line"></div>
+            </li>
+          </template>
         </template>
-
-        <template if="{{event.isDivider}}">
-          <p class="timeline-divider">&nbsp;</p>
-        </template>
-
       </template>
-    </div>
-
+    </ul>
   </template>
 
   <script>
