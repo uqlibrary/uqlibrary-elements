@@ -6,9 +6,23 @@
   <template>
     <link rel="stylesheet" href="uqlibrary-courses.css">
 
-    <div id="readingList" hidden?="{{readingList.length == 0}}">
+    <div id="readingList">
       <paper-shadow class="card" z="1">
-        <div class="subhead cardSection cardTitle">{{course.learning_resources.reading_lists.length}}Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
+        <div class="subhead cardSection cardTitle">Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
+
+          <div class="body1 cardSection" hidden?="{{readingList.length > 0}}">
+            <div class="caption listItemSection listItemNoResultsMessage">
+              No reading lists for this course
+            </div>
+          </div>
+          <a class="link" href="{{readingListsSearchUrl}}" target="_blank" hidden?="{{readingList.length >0}}">
+          <div class="cardSection">
+            <div class="link listItemLink">
+              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Search other reading lists
+            </div>
+          </div>
+          </a>
+
           <template repeat="{{item in readingList }}">
             <a href="{{item.itemLink}}" target="_blank">
               <div class="body1 cardSection">
@@ -75,16 +89,16 @@
       <div class="subhead cardSection cardTitle">Library Guides ({{course.library_guides.length}})</div>
 
       <div class="body1 cardSection" hidden?="{{libGuides.length > 0}}">
-      <div class="caption listItemSection listItemNoResultsMessage">
-        No Library guides for this course
-      </div>
-      </div>
-      <a class="link" href="{{libGuidesBrowseUrl}}" target="_blank" hidden?="{{libGuides.length >0}}">
-      <div class="cardSection">
-        <div class="link listItemLink">
-          <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Browse other library guides
+        <div class="caption listItemSection listItemNoResultsMessage">
+          No Library guides for this course
         </div>
       </div>
+      <a class="link" href="{{libGuidesBrowseUrl}}" target="_blank" hidden?="{{libGuides.length >0}}">
+        <div class="cardSection">
+          <div class="link listItemLink">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Browse other library guides
+          </div>
+        </div>
       </a>
 
       <template repeat="{{ guide in libGuides }}">
@@ -175,6 +189,11 @@
 
       publish: {
         course: {
+          learning_resources: {
+            reading_lists: [],
+            exam_papers: []
+          },
+          library_guides: []
         }
       },
       observe: {
@@ -197,13 +216,14 @@
       ecpLinkUrl: 'http://www.uq.edu.au/study/course.html?course_code=',
       libGuidesLinkUrl: 'http://guides.library.uq.edu.au/search.php?iid=4053&gid=0&c=0&search=',
       libGuidesBrowseUrl: 'http://guides.library.uq.edu.au/browse.php',
+      readingListsSearchUrl: 'http://lr.library.uq.edu.au/index.html',
 
 
       ready: function() {
         this.course.moreItemsCount = {
           readingLists: 0,
           examPapers: 0,
-          libGuides: 0,
+          libGuides: 0
         };
       },
 
@@ -256,7 +276,7 @@
       libraryGuidesChanged: function(oldValue, newValue) {
         if(newValue) {
           // slice reading list array to show limited number items
-          if(this.visibleItemsCount.libGuides && this.visibleItemsCount.libGuides > 0 && newValue.length >= this.visibleItemsCount.libGuides) {
+          if(this.visibleItemsCount.libGuides && this.visibleItemsCount.libGuides > 0 && newValue.length > this.visibleItemsCount.libGuides) {
             this.libGuides = newValue.slice(0, this.visibleItemsCount.libGuides);
             this.course.moreItemsCount.libGuides = newValue.length - this.visibleItemsCount.libGuides;
           }

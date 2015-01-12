@@ -138,7 +138,7 @@ Element providing an overview for student's courses
 
         this.$.learning_resources.addEventListener('uqlibrary-api-learning-resources', function(e) {
           if(e.detail.length > 0) {
-            for(var i=0; i < that.courses.length; i++) {
+            for(var i = 0; i < that.courses.length; i++) {
               if(that.courses[i].courseId == e.detail[0].title) {
                 that.courses[i]['learning_resources'] = e.detail[0];
                 that.filterReadingLists(that.courses[i]);
@@ -149,9 +149,15 @@ Element providing an overview for student's courses
                   courseIndex = i;
                   that.$.reading_list.get( {code: readingListId} );
                 }
-
-                that.$.library_guides.get( {code: that.courses[i].SUBJECT})
-
+              }
+            }
+          }
+          else {
+            if(that.selectedTab) {
+              for(var i = 0; i < that.courses.length; i++) {
+                if(that.courses[i].courseId == that.selectedTab) {
+                  that.courses[i]['learning_resources'] = {reading_lists : {items: []}, exam_papers: []};
+                }
               }
             }
           }
@@ -187,25 +193,32 @@ Element providing an overview for student's courses
         });
 
         this.$.library_guides.addEventListener('uqlibrary-api-library-guides', function(e) {
-          if(courseIndex != null) {
-            that.courses[courseIndex].library_guides = e.detail;
+          for(var i=0; i < that.courses.length; i++) {
+            if(that.courses[i].courseId == that.selectedTab) {
+              that.courses[i].library_guides = e.detail;
+            }
           }
         });
-        courseIndex = null;
+
       },
 
       get: function(code) {
         if(code) {
           for(var i=0; i < this.courses.length; i++) {
-            if(this.courses[i].courseId == code && !this.courses[i].hasOwnProperty('learning_resources')) {
-              this.$.learning_resources.get( {code:  code });
+            if(this.courses[i].courseId == code) {
+              if( !this.courses[i].hasOwnProperty('learning_resources') ){
+                this.$.learning_resources.get( {code:  code });
+              }
+              this.$.library_guides.get( {code: this.courses[i].SUBJECT});
             }
           }
         }
         else {
           if(this.courses.length > 0) {
-            this.$.learning_resources.get( {code: this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR} );
-            this.selectedTab = this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR;
+            var _code = this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR;
+            this.$.learning_resources.get( {code: _code} );
+            this.selectedTab = _code;
+            this.$.library_guides.get( {code: this.courses[0].SUBJECT});
           }
         }
 
