@@ -3,15 +3,69 @@
 @import "typography";
 @import "lists";
 @import "icons";
-
 body {
-  font-size: 16px;
-  font-family: "Roboto",Arial,sans-serif;
-  font-weight: 300;
-  color: $text;
-  line-height: 1.1em;
-  margin: 0;
-  background-color: #fafafa;
+    font-size: 16px;
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 300;
+    color: $text;
+    line-height: 1.1em;
+    margin: 0;
+    background-color: #fafafa;
 }
-
-
+.sg-colors {
+    padding: 16px;
+    margin: 16px;
+    height: 300px;
+    li {
+        list-style: none;
+        float: left;
+        border: 1px solid #dddddd;
+        padding: 16px;
+        margin: 16px;
+    }
+}
+#primary-alt {
+    background-color: $dark-primary;
+}
+#primary {
+    background-color: $primary;
+}
+#accent-alt {
+    background-color: $dark-accent;
+}
+#accent {
+    background-color: $accent;
+}
+#uq-gold {
+    background-color: $uq-gold;
+}
+#uq-gold-alt {
+    background-color: $uq-gold-alt;
+}
+#uq-red {
+    background-color: $uq-red;
+}
+#uq-warm-red {
+    background-color: $uq-warm-red;
+}
+#link {
+    background-color: $link;
+}
+#link-alt {
+    background-color: $link-secondary;
+}
+#text {
+    background-color: $uq-text-primary;
+}
+#text-alt {
+    background-color: $uq-text-secondary;
+}
+#divider {
+    background-color: $uq-divider
+}
+#background {
+    background-color: $background-primary;
+}
+#background-alt {
+    background-color: $background-secondary;
+}
