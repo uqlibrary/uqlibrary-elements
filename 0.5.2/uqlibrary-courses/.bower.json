@@ -18,11 +18,11 @@
     "moment": "~2.8.4"
   },
   "homepage": "https://github.com/uqlibrary/uqlibrary-courses",
-  "_release": "bdae61116e",
+  "_release": "7bd5b76e3a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "bdae61116e1227e58ac02b7778421b4e1735d663"
+    "commit": "7bd5b76e3abd5aee24c680c87be08c26d9632b01"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-courses.git",
   "_target": "master",

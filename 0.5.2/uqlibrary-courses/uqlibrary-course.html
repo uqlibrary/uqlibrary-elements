@@ -1,4 +1,3 @@
-
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 <link rel="import" href="../core-image/core-image.html">
@@ -7,12 +6,11 @@
   <template>
     <link rel="stylesheet" href="uqlibrary-courses.css">
 
-
     <div id="readingList" hidden?="{{readingList.length == 0}}">
       <paper-shadow class="card" z="1">
         <div class="subhead cardSection cardTitle">{{course.learning_resources.reading_lists.length}} Reading List for {{course.courseId}}</div>
           <template repeat="{{item in readingList }}">
-            <a href="{{item.itemLink}}">
+            <a href="{{item.itemLink}}" target="_blank">
               <div class="body1 cardSection">
                 <div class="link listItemSection listItemTitle">{{item.title}}</div>
                 <div class="caption listItemSection listItemAuthor" hidden?="{{!item.author}}">
@@ -28,10 +26,10 @@
               </div>
             </a>
           </template>
-          <div class="cardSection" hidden?="{{moreItemsCount.readingLists == 0}}">
+          <div class="cardSection" hidden?="{{course.moreItemsCount.readingLists == 0}}">
             <div class="link listItemLink">
-              <a class="link" href="{{course.learning_resources.reading_lists.url}}">
-                <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{moreItemsCount.readingLists}} more {{moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
+              <a class="link" href="{{course.learning_resources.reading_lists.url}}" target="_blank">
+                <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.readingLists}} more {{course.moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
               </a>
             </div>
           </div>
@@ -41,19 +39,36 @@
 
     <paper-shadow class="card" z="1">
       <div class="subhead cardSection cardTitle">Past Exam Papers</div>
-      <template repeat="{{paper in examPapers }}">
+
+      <div class="body1 cardSection" hidden?="{{examPapers.length > 0}}">
+        <div class="caption listItemSection listItemNotes">
+          No Past Exam Papers for this course
+        </div>
+      </div>
+      <template repeat="{{ paper in examPapers }}">
         <div class="cardSection" >
           <div class="link listItemLink">
-            <a class="link" href="{{paper.url}}">
+            <a class="link" href="{{paper.url}}" target="_blank">
               {{paper.period}} ({{paper.url | extractExtension}})
             </a>
           </div>
         </div>
       </template>
-      <div class="cardSection" >
+      <div class="cardSection" hidden?="{{examPapers.length == 0}}">
         <div class="link listItemLink">
-          <a class="link" href="{{examPapersSearchUrl + course.courseId}}">
-            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{moreItemsCount.examPapers}} more past exam {{moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+          <a class="link" href="{{examPapersSearchUrl + course.courseId}}" target="_blank">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.examPapers}} more past exam {{course.moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+          </a>
+        </div>
+      </div>
+    </paper-shadow>
+
+    <paper-shadow class="card" z="1">
+      <div class="subhead cardSection cardTitle">Electronic Course Profile</div>
+      <div class="cardSection">
+        <div class="link listItemLink">
+          <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Link to ECP
           </a>
         </div>
       </div>
@@ -88,14 +103,12 @@
         readingLists: 2,
         examPapers: 2
       },
-      moreItemsCount: {
-        readingLists: 0,
-        examPapers: 0
-      },
       examPapersSearchUrl: 'https://www.library.uq.edu.au/exams/papers.php?stub=',
+      ecpLinkUrl: 'http://www.uq.edu.au/study/course.html?course_code=',
 
 
       ready: function() {
+        this.course.moreItemsCount = {readingLists: 0, examPapers: 0};
       },
 
       created: function() {
@@ -121,11 +134,11 @@
           // slice reading list array to show limited number items
           if(this.visibleItemsCount.readingLists && this.visibleItemsCount.readingLists > 0 && newValue.length >= this.visibleItemsCount.readingLists) {
             this.readingList = newValue.slice(0, this.visibleItemsCount.readingLists);
-            this.moreItemsCount.readingLists = newValue.length - this.visibleItemsCount.readingLists;
+            this.course.moreItemsCount.readingLists = newValue.length - this.visibleItemsCount.readingLists;
           }
           else{
             this.readingList = newValue;
-            this.moreItemsCount.readingLists = 0;
+            this.course.moreItemsCount.readingLists = 0;
           }
         }
       },
@@ -135,11 +148,11 @@
           // slice reading list array to show limited number items
           if(this.visibleItemsCount.examPapers && this.visibleItemsCount.examPapers > 0 && newValue.length >= this.visibleItemsCount.examPapers) {
             this.examPapers = newValue.slice(0, this.visibleItemsCount.examPapers);
-            this.moreItemsCount.examPapers = newValue.length - this.visibleItemsCount.examPapers;
+            this.course.moreItemsCount.examPapers = newValue.length - this.visibleItemsCount.examPapers;
           }
           else{
             this.examPapers = newValue;
-            this.moreItemsCount.examPapers = 0;
+            this.course.moreItemsCount.examPapers = 0;
           }
         }
       }
