@@ -37,6 +37,9 @@ paper-tabs {
     font-style: italic;
     padding-bottom: $single-line-list-item-padding-top;
   }
+  &.listItemNoResultsMessage {
+    font-style: italic;
+  }
 
 }
 .listItemLink {

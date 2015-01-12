@@ -572,7 +572,7 @@ core-icon {
       padding-bottom: 28px; }
 
 paper-fab {
-  background-color: #2874d7; }
+  background-color: #007e9e; }
 
 .card {
   display: block;
@@ -615,6 +615,8 @@ paper-tabs {
 .listItemSection.listItemNotes {
   font-style: italic;
   padding-bottom: 16px; }
+.listItemSection.listItemNoResultsMessage {
+  font-style: italic; }
 
 .listItemLink core-icon {
   margin-right: 0px; }
