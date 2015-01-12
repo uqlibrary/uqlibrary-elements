@@ -193,3 +193,7 @@ h4.inverse {
 .button.inverse {
   @include gmd-type-style(button, gmd-alpha-color($white, text));
 }
+
+.link {
+  @include gmd-type-style(link, gmd-alpha-color($link, text));
+}
