@@ -77,6 +77,7 @@ Element providing an overview for student's courses
 <link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-learning-resources.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-course-reading-list.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-library-guides.html">
 
 <link rel="import" href="uqlibrary-course.html">
 
@@ -88,6 +89,7 @@ Element providing an overview for student's courses
     <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}" hidden?="{{courses.length == 0}}">
     <uqlibrary-api-learning-resources id="learning_resources"></uqlibrary-api-learning-resources>
     <uqlibrary-api-course-reading-list id="reading_list"></uqlibrary-api-course-reading-list>
+    <uqlibrary-api-library-guides id="library_guides"></uqlibrary-api-library-guides>
 
     <template repeat="{{ course in courses }}">
       <paper-tab name="{{ course.courseId }}" id="loans">
@@ -125,7 +127,8 @@ Element providing an overview for student's courses
        */
 
       publish: {
-        courses: []
+        courses: [],
+        auto: false
       },
       selectedTab: '',
       learningResources: {},
@@ -133,6 +136,7 @@ Element providing an overview for student's courses
       ready: function() {
         var that = this;
         var courseIndex = null;
+
         this.$.learning_resources.addEventListener('uqlibrary-api-learning-resources', function(e) {
           if(e.detail.length > 0) {
             for(var i=0; i < that.courses.length; i++) {
@@ -146,6 +150,9 @@ Element providing an overview for student's courses
                   courseIndex = i;
                   that.$.reading_list.get( {code: readingListId} );
                 }
+
+                that.$.library_guides.get( {code: that.courses[i].SUBJECT})
+
               }
             }
           }
@@ -157,28 +164,51 @@ Element providing an overview for student's courses
             // sort list by item importance
             var importanceList = {'Required': 0, 'Recommended' : 1, 'Further' : 2}
             list.sort(function(a, b){
-                // Item with defined importance should be higher
-                if(a.hasOwnProperty('importance') && !b.hasOwnProperty('importance')) {
-                  return -1;
-                }
-                // Item with defined importance should be higher
-                if(!a.hasOwnProperty('importance') && b.hasOwnProperty('importance')) {
-                  return 1;
-                }
-                if(!a.hasOwnProperty('importance') && !b.hasOwnProperty('importance')) {
-                  return 0;
-                }
+              // Item with defined importance should be higher
+              if(a.hasOwnProperty('importance') && !b.hasOwnProperty('importance')) {
+                return -1;
+              }
+              // Item with defined importance should be higher
+              if(!a.hasOwnProperty('importance') && b.hasOwnProperty('importance')) {
+                return 1;
+              }
+              if(!a.hasOwnProperty('importance') && !b.hasOwnProperty('importance')) {
+                return 0;
+              }
 
-                var impA = (importanceList.hasOwnProperty(a.importance) ? importanceList[a.importance] : 999);
-                var impB = (importanceList.hasOwnProperty(b.importance) ? importanceList[b.importance] : 999);
-                return b-a;
+              var impA = (importanceList.hasOwnProperty(a.importance) ? importanceList[a.importance] : 999);
+              var impB = (importanceList.hasOwnProperty(b.importance) ? importanceList[b.importance] : 999);
+              return b-a;
             });
             if(that.courses[courseIndex]['learning_resources']['reading_lists']){
               that.courses[courseIndex]['learning_resources']['reading_lists']['items'] = e.detail;
             }
-            courseIndex = null;
+
           }
         });
+
+        this.$.library_guides.addEventListener('uqlibrary-api-library-guides', function(e) {
+          if(courseIndex != null) {
+            that.courses[courseIndex].library_guides = e.detail;
+          }
+        });
+        courseIndex = null;
+      },
+
+      get: function(code) {
+        if(code) {
+          for(var i=0; i < this.courses.length; i++) {
+            if(this.courses[i].courseId == code && !this.courses[i].hasOwnProperty('learning_resources')) {
+              this.$.learning_resources.get( {code:  code });
+            }
+          }
+        }
+        else {
+          if(this.courses.length > 0) {
+            this.$.learning_resources.get( {code: this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR} );
+            this.selectedTab = this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR;
+          }
+        }
 
       },
 
@@ -187,7 +217,6 @@ Element providing an overview for student's courses
           for(var i=0; i < this.courses.length; i++) {
             this.courses[i].courseId = this.courses[i].SUBJECT+this.courses[i].CATALOG_NBR;
           }
-          this.selectedTab = this.courses[0].courseId;
         }
       },
 
@@ -196,13 +225,9 @@ Element providing an overview for student's courses
       },
 
       selectedTabChanged: function(oldValue, newValue) {
-
         if(newValue != '') {
-          for(var i=0; i < this.courses.length; i++) {
-            if(this.courses[i].courseId == newValue && !this.courses[i].hasOwnProperty('learning_resources')) {
-              this.$.learning_resources.get( {code:  newValue });
-            }
-          }
+          this.get(newValue);
+
         }
       },
 

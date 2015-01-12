@@ -26,13 +26,13 @@
               </div>
             </a>
           </template>
-          <div class="cardSection" hidden?="{{course.moreItemsCount.readingLists == 0}}">
-            <div class="link listItemLink">
-              <a class="link" href="{{course.learning_resources.reading_lists.url}}" target="_blank">
-                <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.readingLists}} more {{course.moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
-              </a>
+          <a class="link" href="{{course.learning_resources.reading_lists.url}}" target="_blank" hidden?="{{course.moreItemsCount.readingLists == 0}}">
+            <div class="cardSection">
+              <div class="link listItemLink">
+                  <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.readingLists}} more {{course.moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
+              </div>
             </div>
-          </div>
+          </a>
       </paper-shadow>
     </div>
 
@@ -46,18 +46,38 @@
         </div>
       </div>
       <template repeat="{{ paper in examPapers }}">
-        <div class="cardSection" >
+        <a class="link" href="{{paper.url}}" target="_blank">
+          <div class="cardSection" >
+            <div class="link listItemLink">
+                {{paper.period}} ({{paper.url | extractExtension}})
+            </div>
+          </div>
+        </a>
+      </template>
+      <a class="link" href="{{examPapersSearchUrl + course.courseId}}" target="_blank" hidden?="{{examPapers.length == 0}}">
+        <div class="cardSection">
           <div class="link listItemLink">
-            <a class="link" href="{{paper.url}}" target="_blank">
-              {{paper.period}} ({{paper.url | extractExtension}})
-            </a>
+              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.examPapers}} more past exam {{course.moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
           </div>
         </div>
+      </a>
+    </paper-shadow>
+
+    <paper-shadow class="card" z="1">
+      <div class="subhead cardSection cardTitle">Library Guides</div>
+      <template repeat="{{ guide in libGuides }}">
+        <a class="link" href="{{guide.url}}" target="_blank">
+          <div class="cardSection" >
+            <div class="link listItemLink">
+              {{guide.title}}
+            </div>
+          </div>
+        </a>
       </template>
-      <div class="cardSection" hidden?="{{examPapers.length == 0}}">
+      <div class="cardSection" hidden?="{{course.moreItemsCount.libGuides == 0}}">
         <div class="link listItemLink">
-          <a class="link" href="{{examPapersSearchUrl + course.courseId}}" target="_blank">
-            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.examPapers}} more past exam {{course.moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+          <a class="link" href="{{libGuidesLinkUrl + course.SUBJECT}}" target="_blank">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.libGuides}} more library {{course.moreItemsCount.libGuides == 1 ? 'guide' : 'guides'}}
           </a>
         </div>
       </div>
@@ -65,13 +85,57 @@
 
     <paper-shadow class="card" z="1">
       <div class="subhead cardSection cardTitle">Electronic Course Profile</div>
-      <div class="cardSection">
-        <div class="link listItemLink">
-          <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
-            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Link to ECP
-          </a>
+      <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Link to ECP
+          </div>
         </div>
-      </div>
+      </a>
+    </paper-shadow>
+
+
+    <paper-shadow class="card" z="1">
+      <div class="subhead cardSection cardTitle">Study Help</div>
+      <a class="link" href="http://guides.library.uq.edu.au/" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" src="icons/sign.svg" id="sign-icon"></core-icon> All Library Subject Guides
+          </div>
+        </div>
+      </a>
+
+      <a class="link" href="https://learn.uq.edu.au/webapps/login/?new_loc=%2Fwebapps%2Fblackboard%2Fexecute%2FenrollCourse%3Fcontext%3DCourse%26course_id%3D_13002_1" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" icon="extension" id="extension-icon"></core-icon> Library 101
+          </div>
+        </div>
+      </a>
+
+      <a class="link" href="https://www.library.uq.edu.au/services/assign/indexmail_tab2.phtml" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" icon="description" id="description-icon"></core-icon> Assignment Planner
+          </div>
+        </div>
+      </a>
+
+      <a class="link" href="https://learn.uq.edu.au/" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" src="icons/bb.svg" id="bb-icon"></core-icon> Learn.UQ
+          </div>
+        </div>
+      </a>
+
+      <a class="link" href="https://my.uq.edu.au/my_login_screen.html?id=396" target="_blank">
+        <div class="cardSection">
+          <div class="link listItemLink">
+              <core-icon class="link" icon="event" id="event-icon"></core-icon> Exam Schedule
+          </div>
+        </div>
+      </a>
     </paper-shadow>
 
 
@@ -93,22 +157,31 @@
       },
       observe: {
         'course.learning_resources.reading_lists.items': 'courseReadingListItemsChanged',
-        'course.learning_resources.exam_papers': 'courseExamPapersChanged'
+        'course.learning_resources.exam_papers': 'courseExamPapersChanged',
+        'course.library_guides': 'libraryGuidesChanged'
       },
 
       readingList:[],
       examPapers:[],
+      libGuides: [],
+
       notesTrimLength: 90,
       visibleItemsCount: {
         readingLists: 2,
-        examPapers: 2
+        examPapers: 2,
+        libGuides: 2
       },
       examPapersSearchUrl: 'https://www.library.uq.edu.au/exams/papers.php?stub=',
       ecpLinkUrl: 'http://www.uq.edu.au/study/course.html?course_code=',
+      libGuidesLinkUrl: 'http://guides.library.uq.edu.au/search.php?iid=4053&gid=0&c=0&search=',
 
 
       ready: function() {
-        this.course.moreItemsCount = {readingLists: 0, examPapers: 0};
+        this.course.moreItemsCount = {
+          readingLists: 0,
+          examPapers: 0,
+          libGuides: 0,
+        };
       },
 
       created: function() {
@@ -153,6 +226,20 @@
           else{
             this.examPapers = newValue;
             this.course.moreItemsCount.examPapers = 0;
+          }
+        }
+      },
+
+      libraryGuidesChanged: function(oldValue, newValue) {
+        if(newValue) {
+          // slice reading list array to show limited number items
+          if(this.visibleItemsCount.libGuides && this.visibleItemsCount.libGuides > 0 && newValue.length >= this.visibleItemsCount.libGuides) {
+            this.libGuides = newValue.slice(0, this.visibleItemsCount.libGuides);
+            this.course.moreItemsCount.libGuides = newValue.length - this.visibleItemsCount.libGuides;
+          }
+          else{
+            this.libGuides = newValue;
+            this.course.moreItemsCount.libGuides = 0;
           }
         }
       }
