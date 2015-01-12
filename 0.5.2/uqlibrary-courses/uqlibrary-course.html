@@ -1,0 +1,150 @@
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../core-image/core-image.html">
+
+<polymer-element name="uqlibrary-course" layout center attributes="course">
+  <template>
+    <link rel="stylesheet" href="uqlibrary-courses.css">
+
+
+    <div id="readingList" hidden?="{{readingList.length == 0}}">
+      <paper-shadow class="card" z="1">
+        <div class="subhead cardSection cardTitle">{{course.learning_resources.reading_lists.length}} Reading List for {{course.courseId}}</div>
+          <template repeat="{{item in readingList }}">
+            <a href="{{item.itemLink}}">
+              <div class="body1 cardSection">
+                <div class="link listItemSection listItemTitle">{{item.title}}</div>
+                <div class="caption listItemSection listItemAuthor" hidden?="{{!item.author}}">
+                  <i>{{item.author}} {{item.year}} </i>
+                </div>
+
+                <div class="caption listItemSection listItemNotes" hidden?="{{!item.notes && (!item.startPage || !item.endPage)}}">
+                  <span hidden?="{{!item.startPage || !item.endPage}}">Pages from {{item.startPage}} to {{item.endPage}}<br></span>
+                  {{item.notes | trimNotes}}
+                </div>
+
+                <div class="caption listItemSection listItemType">{{item.referenceType}} <span hidden?="{{!item.importance}}">- {{item.importance}}</span></div>
+              </div>
+            </a>
+          </template>
+          <div class="cardSection" hidden?="{{moreItemsCount.readingLists == 0}}">
+            <div class="link listItemLink">
+              <a class="link" href="{{course.learning_resources.reading_lists.url}}">
+                <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{moreItemsCount.readingLists}} more {{moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
+              </a>
+            </div>
+          </div>
+      </paper-shadow>
+    </div>
+
+
+    <paper-shadow class="card" z="1">
+      <div class="subhead cardSection cardTitle">Past Exam Papers</div>
+      <template repeat="{{paper in examPapers }}">
+        <div class="cardSection" >
+          <div class="link listItemLink">
+            <a class="link" href="{{paper.url}}">
+              {{paper.period}} ({{paper.url | extractExtension}})
+            </a>
+          </div>
+        </div>
+      </template>
+      <div class="cardSection" >
+        <div class="link listItemLink">
+          <a class="link" href="{{examPapersSearchUrl + course.courseId}}">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{moreItemsCount.examPapers}} more past exam {{moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+          </a>
+        </div>
+      </div>
+    </paper-shadow>
+
+
+  </template>
+
+  <script>
+    Polymer('uqlibrary-course', {
+
+      /**
+       * The `courses` attribute contains information about courses
+       *
+       * @property data
+       * @type Object
+       */
+
+      publish: {
+        course: {
+        }
+      },
+      observe: {
+        'course.learning_resources.reading_lists.items': 'courseReadingListItemsChanged',
+        'course.learning_resources.exam_papers': 'courseExamPapersChanged'
+      },
+
+      readingList:[],
+      examPapers:[],
+      notesTrimLength: 90,
+      visibleItemsCount: {
+        readingLists: 2,
+        examPapers: 2
+      },
+      moreItemsCount: {
+        readingLists: 0,
+        examPapers: 0
+      },
+      examPapersSearchUrl: 'https://www.library.uq.edu.au/exams/papers.php?stub=',
+
+
+      ready: function() {
+      },
+
+      created: function() {
+      },
+
+      extractExtension: function(url) {
+        return url.substring(url.lastIndexOf('.')+1);
+      },
+
+      trimNotes: function(value) {
+        if(value && value.length > this.notesTrimLength) {
+          var _trimmed = value.substring(0, this.notesTrimLength);
+          // trim on word boundary
+          _trimmed = _trimmed.substring(0, _trimmed.lastIndexOf(' '));
+          return (_trimmed + '...');
+        }
+        else
+          return value;
+      },
+
+      courseReadingListItemsChanged: function(oldValue, newValue) {
+        if(newValue) {
+          // slice reading list array to show limited number items
+          if(this.visibleItemsCount.readingLists && this.visibleItemsCount.readingLists > 0 && newValue.length >= this.visibleItemsCount.readingLists) {
+            this.readingList = newValue.slice(0, this.visibleItemsCount.readingLists);
+            this.moreItemsCount.readingLists = newValue.length - this.visibleItemsCount.readingLists;
+          }
+          else{
+            this.readingList = newValue;
+            this.moreItemsCount.readingLists = 0;
+          }
+        }
+      },
+
+      courseExamPapersChanged: function(oldValue, newValue) {
+        if(newValue) {
+          // slice reading list array to show limited number items
+          if(this.visibleItemsCount.examPapers && this.visibleItemsCount.examPapers > 0 && newValue.length >= this.visibleItemsCount.examPapers) {
+            this.examPapers = newValue.slice(0, this.visibleItemsCount.examPapers);
+            this.moreItemsCount.examPapers = newValue.length - this.visibleItemsCount.examPapers;
+          }
+          else{
+            this.examPapers = newValue;
+            this.moreItemsCount.examPapers = 0;
+          }
+        }
+      }
+
+    });
+  </script>
+
+</polymer-element>

@@ -1,0 +1,30 @@
+{
+  "name": "uqlibrary-courses",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "private": true,
+  "main": "uqlibrary-courses.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "paper-tabs": "Polymer/paper-tabs#0.5.2",
+    "paper-shadow": "Polymer/paper-shadow#0.5.2",
+    "core-animated-pages": "Polymer/core-animated-pages#0.5.2",
+    "core-icon": "Polymer/core-icon#0.5.2",
+    "core-image": "Polymer/core-image#0.5.2",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
+    "moment": "~2.8.4"
+  },
+  "homepage": "https://github.com/uqlibrary/uqlibrary-courses",
+  "_release": "bdae61116e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bdae61116e1227e58ac02b7778421b4e1735d663"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-courses.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-courses"
+}

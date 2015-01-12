@@ -1,17 +1,17 @@
 /*
 Syntax error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/element.
-              Load path: /Users/uqybarta/Sites/uqlibrary-polymer/uqlibrary-elements/0.5.2/uqlibrary-borrowing (DEPRECATED)
-        on line 1 of uqlibrary-borrowing-list.scss
+              Load path: /Users/uqybarta/Sites/uqlibrary-polymer/uqlibrary-elements/0.5.2/uqlibrary-courses (DEPRECATED)
+        on line 1 of uqlibrary-courses.scss
 
 1: @import "../uqlibrary-elements/resources/theme/element";
 2: 
-3: :host {
-4: }
-5: 
-6: .empty-items {
+3: paper-tabs {
+4:   //height: 64px;
+5:   color: $text;
+6:   background-color: $white;
 
 Backtrace:
-uqlibrary-borrowing-list.scss:1
+uqlibrary-courses.scss:1
 /Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/import_node.rb:66:in `rescue in import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/import_node.rb:45:in `import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -53,4 +53,4 @@ uqlibrary-borrowing-list.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/element.\A               Load path: /Users/uqybarta/Sites/uqlibrary-polymer/uqlibrary-elements/0.5.2/uqlibrary-borrowing (DEPRECATED)\A         on line 1 of uqlibrary-borrowing-list.scss\A \A 1: @import \"../uqlibrary-elements/resources/theme/element\";\A 2: \A 3: :host {\A 4: }\A 5: \A 6: .empty-items {"; }
+  content: "Syntax error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/element.\A               Load path: /Users/uqybarta/Sites/uqlibrary-polymer/uqlibrary-elements/0.5.2/uqlibrary-courses (DEPRECATED)\A         on line 1 of uqlibrary-courses.scss\A \A 1: @import \"../uqlibrary-elements/resources/theme/element\";\A 2: \A 3: paper-tabs {\A 4:   //height: 64px;\A 5:   color: $text;\A 6:   background-color: $white;"; }
