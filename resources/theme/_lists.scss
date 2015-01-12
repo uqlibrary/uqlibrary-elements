@@ -14,8 +14,11 @@
 @mixin list-gap(){
   padding: 0;
   height: $list-item-gap;
-  border: 1px solid $divider;
-  border-width: 0 0 1px 0;
+
+  &.border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
+  }
 }
 
 @mixin list-reset(){
