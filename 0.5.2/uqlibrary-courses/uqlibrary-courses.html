@@ -127,8 +127,7 @@ Element providing an overview for student's courses
        */
 
       publish: {
-        courses: [],
-        auto: false
+        courses: []
       },
       selectedTab: '',
       learningResources: {},
@@ -225,9 +224,9 @@ Element providing an overview for student's courses
       },
 
       selectedTabChanged: function(oldValue, newValue) {
-        if(newValue != '') {
+        // check oldValue to prevent load on init
+        if(oldValue!= '' && newValue != '') {
           this.get(newValue);
-
         }
       },
 

@@ -8,7 +8,7 @@
 
     <div id="readingList" hidden?="{{readingList.length == 0}}">
       <paper-shadow class="card" z="1">
-        <div class="subhead cardSection cardTitle">{{course.learning_resources.reading_lists.length}} Reading List for {{course.courseId}}</div>
+        <div class="subhead cardSection cardTitle">{{course.learning_resources.reading_lists.length}}Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
           <template repeat="{{item in readingList }}">
             <a href="{{item.itemLink}}" target="_blank">
               <div class="body1 cardSection">
@@ -38,7 +38,7 @@
 
 
     <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Past Exam Papers</div>
+      <div class="subhead cardSection cardTitle">Past Exam Papers ({{course.learning_resources.exam_papers.length}})</div>
 
       <div class="body1 cardSection" hidden?="{{examPapers.length > 0}}">
         <div class="caption listItemSection listItemNotes">
@@ -64,7 +64,7 @@
     </paper-shadow>
 
     <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Library Guides</div>
+      <div class="subhead cardSection cardTitle">Library Guides ({{course.library_guides.length}})</div>
       <template repeat="{{ guide in libGuides }}">
         <a class="link" href="{{guide.url}}" target="_blank">
           <div class="cardSection" >
