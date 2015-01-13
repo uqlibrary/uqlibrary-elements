@@ -219,16 +219,22 @@ Element providing an overview for student's courses
               if( !this.processedCourses[i].hasOwnProperty('learning_resources') ){
                 this.$.learning_resources.get( {code:  code });
               }
-              this.$.library_guides.get( {code: this.processedCourses[i].SUBJECT});
+              if( !this.processedCourses[i].hasOwnProperty('library_guides') ){
+                this.$.library_guides.get( {code: this.processedCourses[i].SUBJECT});
+              }
             }
           }
         }
         else {
           if(this.processedCourses.length > 0) {
             var _code = this.processedCourses[0].courseId;
-            this.$.learning_resources.get( {code: _code} );
             this.selectedTab = _code;
-            this.$.library_guides.get( {code: this.processedCourses[0].SUBJECT});
+            if( !this.processedCourses[0].hasOwnProperty('learning_resources') ){
+              this.$.learning_resources.get( {code: _code} );
+            }
+            if( !this.processedCourses[0].hasOwnProperty('library_guides') ){
+              this.$.library_guides.get( {code: this.processedCourses[0].SUBJECT});
+            }
           }
         }
 
