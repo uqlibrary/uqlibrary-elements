@@ -185,9 +185,9 @@ core-icon {
   .single-line-list .gap {
     padding: 0;
     height: 8px; }
-    .single-line-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .single-line-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .single-line-list .list-item {
     height: 48px;
     padding-left: 16px;
@@ -219,9 +219,9 @@ core-icon {
   .single-line-icon-list .gap {
     padding: 0;
     height: 8px; }
-    .single-line-icon-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .single-line-icon-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .single-line-icon-list .list-item {
     height: 56px;
     padding-left: 16px;
@@ -266,9 +266,9 @@ core-icon {
   .two-line-list .gap {
     padding: 0;
     height: 8px; }
-    .two-line-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .two-line-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .two-line-list .list-item {
     height: 72px;
     padding-left: 16px;
@@ -308,9 +308,9 @@ core-icon {
   .two-line-icon-list .gap {
     padding: 0;
     height: 8px; }
-    .two-line-icon-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .two-line-icon-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .two-line-icon-list .list-item {
     height: 72px;
     padding-left: 16px;
@@ -365,9 +365,9 @@ core-icon {
   .three-line-list .gap {
     padding: 0;
     height: 8px; }
-    .three-line-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .three-line-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .three-line-list .list-item {
     height: 72px;
     padding-left: 16px;
@@ -415,9 +415,9 @@ core-icon {
   .three-line-text-list .gap {
     padding: 0;
     height: 8px; }
-    .three-line-text-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .three-line-text-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .three-line-text-list .list-item {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -459,9 +459,9 @@ core-icon {
   .three-line-icon-list .gap {
     padding: 0;
     height: 8px; }
-    .three-line-icon-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .three-line-icon-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .three-line-icon-list .list-divider.timeline .line:before {
     content: '\2022';
     font-size: 3.1em;
@@ -547,9 +547,9 @@ core-icon {
   .three-line-text-icon-list .gap {
     padding: 0;
     height: 8px; }
-    .three-line-text-icon-list .gap.border {
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-width: 0 0 1px 0; }
+  .three-line-text-icon-list .border {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-width: 0 0 1px 0; }
   .three-line-text-icon-list .list-item {
     height: 88px;
     padding-left: 16px;

@@ -14,11 +14,6 @@
 @mixin list-gap(){
   padding: 0;
   height: $list-item-gap;
-
-  &.border {
-    border: 1px solid $divider;
-    border-width: 0 0 1px 0;
-  }
 }
 
 @mixin list-reset(){
@@ -43,6 +38,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-item {
@@ -76,6 +76,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-item {
@@ -123,6 +128,11 @@
     @include list-gap();
   }
 
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
+  }
+
   .list-item {
     height: $two-line-list-item-height;
     padding-left: $two-line-list-item-padding-left;
@@ -158,6 +168,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-item {
@@ -210,6 +225,11 @@
     @include list-gap();
   }
 
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
+  }
+
   .list-item {
     height: $two-line-list-item-height;
     padding-left: $two-line-list-item-padding-left;
@@ -250,6 +270,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-item {
@@ -294,6 +319,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-divider.timeline {
@@ -385,6 +415,11 @@
 
   .gap {
     @include list-gap();
+  }
+
+  .border {
+    border: 1px solid $divider;
+    border-width: 0 0 1px 0;
   }
 
   .list-item {
