@@ -621,6 +621,55 @@ core-icon {
   core-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
 
+.card {
+  display: block;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: auto;
+  background: #ffffff;
+  width: 320px;
+  margin: 16px auto; }
+  .card .cardSection {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 16px;
+    display: block; }
+
+.image-header {
+  background-color: #7b0c9d;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-top: 150px; }
+  .image-header .title-container {
+    background-color: rgba(123, 12, 157, 0.7);
+    padding: 16px; }
+
+.text-container {
+  padding: 16px; }
+
+.persistent-footer {
+  position: fixed;
+  height: 48px;
+  bottom: 0px;
+  background-color: #ffffff;
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  .persistent-footer .text-container {
+    padding: 16px;
+    padding-right: 0px;
+    font-family: "Roboto regular";
+    font-size: 0.85714em;
+    line-height: 1.1em;
+    color: rgba(0, 0, 0, 0.54); }
+  .persistent-footer .buttons-container {
+    padding-right: 16px; }
+  .persistent-footer.inverse {
+    background-color: #7b0c9d; }
+    .persistent-footer.inverse .text-container {
+      font-family: "Roboto regular";
+      font-size: 0.85714em;
+      line-height: 1.1em;
+      color: rgba(255, 255, 255, 0.54); }
+
 body {
   font-size: 16px;
   font-family: "Roboto", Arial, sans-serif;

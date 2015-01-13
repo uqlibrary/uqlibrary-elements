@@ -69,6 +69,7 @@ $baseline-uq-green: hsl(74, 100%, 0%);
 //$dark-primary:          #49075E; // Official UQ purple
 $dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
 $primary:               lighten($baseline-uq-purple,33%);
+$alpha-primary:         transparentize($primary, .3);
 $accent:                lighten($baseline-uq-green, 36%);
 // repeated for quick looks at real colours in phpstorm by commenting in/out
 //$dark-primary:          hsl(286, 86%, 20%); // Official UQ purple
@@ -113,10 +114,7 @@ $_gmd-alphas: (
 }
 
 // Colour palette for the application
-// Primary colours
-$primary-100: $uq-purple-100;
-$primary-500: $uq-purple-1000;
-$primary-700: $uq-purple-1000;
+
 
 // Accents
 $accent-A200: $teal-A400;
@@ -156,4 +154,3 @@ $fbs-selected-time:       $uq-blue;
 $fbs-available-time:      $grey-A200;
 $fbs-unavailable-time:    $grey-A400;
 
-$persistent-footer-height: 44px;

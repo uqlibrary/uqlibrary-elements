@@ -1,0 +1,46 @@
+@import "variables";
+@import "margins";
+
+.image-header {
+  background-color: $primary;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding-top: $image-header-top-padding;
+
+  .title-container {
+    background-color: $alpha-primary;
+    padding: $text-padding;
+  }
+}
+
+.text-container {
+  padding: $text-padding;
+}
+
+.persistent-footer {
+  position: fixed;
+  height: $persistent-footer-height;
+  bottom: 0px;
+  background-color: $white;
+  width: 100%;
+  border-top: 1px solid $divider;
+
+  .text-container{
+    padding: $persistent-footer-padding;
+    padding-right: 0px;
+    @include gmd-type-style(caption, gmd-alpha-color($black, secondary-text));
+  }
+
+  .buttons-container{
+    padding-right: $persistent-footer-padding;
+  }
+
+  &.inverse {
+    background-color: $primary;
+
+    .text-container {
+      @include gmd-type-style(caption, gmd-alpha-color($white, secondary-text));
+    }
+
+  }
+}
