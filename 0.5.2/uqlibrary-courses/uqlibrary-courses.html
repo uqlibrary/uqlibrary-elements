@@ -73,11 +73,13 @@ Element providing an overview for student's courses
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-tabs/paper-tab.html">
 <link rel="import" href="../core-animated-pages/core-animated-pages.html">
+<script type="text/javascript" src="../moment/moment.js"></script>
 
 <link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-learning-resources.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-course-reading-list.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-library-guides.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-term-dates.html">
 
 <link rel="import" href="uqlibrary-course.html">
 
@@ -90,9 +92,10 @@ Element providing an overview for student's courses
     <uqlibrary-api-learning-resources id="learning_resources"></uqlibrary-api-learning-resources>
     <uqlibrary-api-course-reading-list id="reading_list"></uqlibrary-api-course-reading-list>
     <uqlibrary-api-library-guides id="library_guides"></uqlibrary-api-library-guides>
+    <uqlibrary-api-term-dates id="term_dates"></uqlibrary-api-term-dates>
 
-    <template repeat="{{ course in courses }}">
-      <paper-tab name="{{ course.courseId }}" id="loans">
+    <template repeat="{{ processedCourses as course }}">
+      <paper-tab name="{{ course.courseId }}">
         <div layout vertical center class="menu">
           <span class="tabTitle">{{ course.SUBJECT }}</span>
           <span class="tabTitle">{{ course.CATALOG_NBR }}</span>
@@ -107,7 +110,7 @@ Element providing an overview for student's courses
                            on-core-animated-pages-transition-end="{{transitionEndHandler}}"
         >
 
-        <template repeat="{{ course in courses }}">
+        <template repeat="{{ processedCourses as course }}">
           <section id="{{ course.courseId }}" name="{{ course.courseId }}">
             <uqlibrary-course course="{{course}}"></uqlibrary-course>
           </section>
@@ -131,6 +134,14 @@ Element providing an overview for student's courses
       },
       selectedTab: '',
       learningResources: {},
+      processedCourses: [],
+      termDates: {},
+
+      // Extend search dates for courses
+      termExtendWeeksRange: {
+        before: 3,
+        after: 1
+      },
 
       ready: function() {
         var that = this;
@@ -199,41 +210,72 @@ Element providing an overview for student's courses
             }
           }
         });
-
       },
 
       get: function(code) {
         if(code) {
-          for(var i=0; i < this.courses.length; i++) {
-            if(this.courses[i].courseId == code) {
-              if( !this.courses[i].hasOwnProperty('learning_resources') ){
+          for(var i=0; i < this.processedCourses.length; i++) {
+            if(this.processedCourses[i].courseId == code) {
+              if( !this.processedCourses[i].hasOwnProperty('learning_resources') ){
                 this.$.learning_resources.get( {code:  code });
               }
-              this.$.library_guides.get( {code: this.courses[i].SUBJECT});
+              this.$.library_guides.get( {code: this.processedCourses[i].SUBJECT});
             }
           }
         }
         else {
-          if(this.courses.length > 0) {
-            var _code = this.courses[0].SUBJECT+this.courses[0].CATALOG_NBR;
+          if(this.processedCourses.length > 0) {
+            var _code = this.processedCourses[0].courseId;
             this.$.learning_resources.get( {code: _code} );
             this.selectedTab = _code;
-            this.$.library_guides.get( {code: this.courses[0].SUBJECT});
+            this.$.library_guides.get( {code: this.processedCourses[0].SUBJECT});
           }
         }
 
       },
 
-      coursesChanged: function() {
-        if(this.courses.length > 0) {
-          for(var i=0; i < this.courses.length; i++) {
-            this.courses[i].courseId = this.courses[i].SUBJECT+this.courses[i].CATALOG_NBR;
+      coursesChanged: function(oldValue, newValue) {
+        if(newValue) {
+          if(this.courses.length > 0) {
+            var termCodes = [];
+            for(var i=0; i < this.courses.length; i++) {
+              this.courses[i].courseId = this.courses[i].SUBJECT+this.courses[i].CATALOG_NBR;
+              if(termCodes.indexOf(this.courses[i].STRM) === -1) {
+                termCodes.push(this.courses[i].STRM);
+              }
+            }
+
+            //sort courses by term
+            this.courses.sort(function(a, b) {
+              return a.STRM - b.STRM;
+            });
+
+            //filter courses to show only current
+            var that = this;
+            if(termCodes.length > 0) {
+              this.$.term_dates.addEventListener('uqlibrary-api-term-dates', function(e) {
+                that.termDates = e.detail;
+                that.processData() ;
+              });
+              this.$.term_dates.get({codes: termCodes});
+            }
           }
         }
       },
 
       processData: function () {
-
+        this.processedCourses = this.filterCoursesByTerm();
+        //Check if there are 2 or more courses with the same code. If found - remove all but the first course
+        var _codes = [];
+        for( var i=0; i < this.processedCourses.length; i++) {
+          if(_codes.indexOf(this.processedCourses[i].courseId) === -1) {
+            _codes.push(this.processedCourses[i].courseId);
+          }
+          else {
+            this.processedCourses.splice(i,1);
+          }
+        }
+        this.fire('uqlibrary-courses-loaded');
       },
 
       selectedTabChanged: function(oldValue, newValue) {
@@ -264,18 +306,8 @@ Element providing an overview for student's courses
         }
 
         // Filter reading lists to show only list for course semester
-        var term = course.STRM;
-        var year = 2000 + parseInt(((parseInt(term) - 5000 + '').substring(0,2))); // i.e. 6520 - semester 1 year 2015, 6480 - semester 3 year 2014,
-        var semester = 1;
-        var semesterCode = parseInt(term.substr(-2));
-        if(semesterCode >= 50 && semesterCode <= 79) {
-          semester = 2;
-        }
-        if(semesterCode >= 80) {
-          semester = 3;
-        }
-
-        var semesterString = 'Semester ' + semester + ' ' + year;
+        var term = this.getYearSemesterByCode(course.STRM);
+        var semesterString = 'Semester ' + term.semester + ' ' + term.year;
         var found = '';
 
         for(var i=0; i < course.learning_resources.reading_lists.length; i++) {
@@ -302,6 +334,24 @@ Element providing an overview for student's courses
         }
       },
 
+      filterCoursesByTerm: function(course) {
+        if(this.termDates){
+          var today = moment();
+          var that = this;
+          return this.courses.filter(function(course) {
+            if(that.termDates.hasOwnProperty(course.STRM)){
+              var startDate = moment(that.termDates[course.STRM].begin);
+              var endDate = moment(that.termDates[course.STRM].end);
+              // show current courses plus courses that starts  in 3 weeks or ended 1 week before
+              startDate.subtract(that.termExtendWeeksRange.before, 'weeks');
+              endDate.add(that.termExtendWeeksRange.after, 'weeks');
+              return (today.isAfter(startDate) && today.isBefore(endDate));
+            }
+            else return true;
+          });
+        }
+      },
+
       getReadingListId: function(reading_list) {
         var id = '';
         if(reading_list.hasOwnProperty('url')) {
@@ -312,6 +362,20 @@ Element providing an overview for student's courses
           }
         }
         return id;
+      },
+
+      getYearSemesterByCode: function(code) {
+        var term = code;
+        var year = 2000 + parseInt(((parseInt(term) - 5000 + '').substring(0,2))); // i.e. 6520 - semester 1 year 2015, 6480 - semester 3 year 2014,
+        var semester = 1;
+        var semesterCode = parseInt(term.substr(-2));
+        if(semesterCode >= 50 && semesterCode <= 79) {
+          semester = 2;
+        }
+        if(semesterCode >= 80) {
+          semester = 3;
+        }
+        return {year: year, semester: semester};
       }
 
     });

@@ -73,9 +73,42 @@
               "INSTRUCTION_MODE": "IN",
               "ACAD_GROUP": "BEL",
               "STRM":"6520"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Full-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9000",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM":"6475"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Full-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9000",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM":"6505"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Full-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9000",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM":"6525"
             }
           ];
-        courses.get();
+        courses.addEventListener('uqlibrary-courses-loaded', function(){
+          courses.get();
+        });
+
       });
     }());
   </script>
