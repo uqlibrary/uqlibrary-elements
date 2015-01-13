@@ -114,7 +114,10 @@ $_gmd-alphas: (
 }
 
 // Colour palette for the application
-
+//still used by lots of styles, clean up as you go
+$primary-100: $uq-purple-100;
+$primary-500: $uq-purple-1000;
+$primary-700: $uq-purple-1000;
 
 // Accents
 $accent-A200: $teal-A400;

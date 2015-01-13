@@ -691,48 +691,63 @@ body {
     margin: 16px; }
 
 #primary-alt {
-  background-color: #4a075f; }
+  background-color: #4a075f;
+  padding: 20px; }
 
 #primary {
-  background-color: #7b0c9d; }
+  background-color: #7b0c9d;
+  padding: 20px; }
 
 #accent-alt {
-  background-color: #38852e; }
+  background-color: #38852e;
+  padding: 20px; }
 
 #accent {
-  background-color: #8db800; }
+  background-color: #8db800;
+  padding: 20px; }
 
 #uq-gold {
-  background-color: #bda14c; }
+  background-color: #bda14c;
+  padding: 20px; }
 
 #uq-gold-alt {
-  background-color: #8a7433; }
+  background-color: #8a7433;
+  padding: 20px; }
 
 #uq-red {
-  background-color: #a80041; }
+  background-color: #a80041;
+  padding: 20px; }
 
 #uq-warm-red {
-  background-color: #ce4627; }
+  background-color: #ce4627;
+  padding: 20px; }
 
 #link {
-  background-color: #007e9e; }
+  background-color: #007e9e;
+  padding: 20px; }
 
 #link-alt {
-  background-color: #e8e8e8; }
+  background-color: #e8e8e8;
+  padding: 20px; }
 
 #text {
+  padding: 20px;
   background-color: #333333; }
 
 #text-alt {
+  padding: 20px;
   background-color: #757575; }
 
 #divider {
+  padding: 20px;
   background-color: #cccccc; }
 
 #background {
+  padding: 20px;
   background-color: #FAFAFA; }
 
 #background-alt {
+  padding: 20px;
   background-color: #ffffff; }
 
 /*# sourceMappingURL=app.css.map */
