@@ -41,7 +41,7 @@ Element providing a simple timeline.
     <div class="message-box caption" hidden?="{{processedEvents.length > 0}}"> {{ noEventsMessage }} </div>
 
     <ul id="timeline" class="three-line-icon-list">
-
+      <li class="gap"></li>
       <template repeat="{{event, idx in processedEvents}}">
         <template if="{{!event.isDivider}}">
           <core-collapse opened="{{event.opened}}">
@@ -57,11 +57,11 @@ Element providing a simple timeline.
               </div>
             </li>
           </core-collapse>
-          <template if="{{event.isDivider}}">
-            <li class="list-divider timeline">
-              <div class="line"></div>
-            </li>
-          </template>
+        </template>
+        <template if="{{event.isDivider}}">
+          <li class="list-divider timeline">
+            <div class="line"></div>
+          </li>
         </template>
       </template>
     </ul>
@@ -128,7 +128,7 @@ Element providing a simple timeline.
             if(changeValue && changeValue[0].addedCount == 1){
               //if one new element is added, set its opened property to false
               events[changeValue[0].index].opened = false;
-            } else if(changeValue[0].removed && changeValue[0].removed.length > 0){
+            } else if(changeValue[0] && changeValue[0].removed && changeValue[0].removed.length > 0){
               //event has been removed from the list
             }
           }

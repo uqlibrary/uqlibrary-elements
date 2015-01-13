@@ -43,23 +43,23 @@
 
         publish: {
           view: 'icon-popup',
-          maxItemsCount: 5
+          maxItemsCount: 3
         },
         items: [],
         created: function () {
           this.items = [{
-            text: 'You have new booking',
+            text: 'Reminder: You have a room booked at 10am tomorrow',
             image: 'images/notification.png',
             link: 'https://app.library.uq.edu.au/v1/booking',
             isNew: true
           },
             {
-              text: 'You 2 loans overdue',
+              text: 'You have 2 loans overdue',
               link: '',
               isNew: true
             },
             {
-              text: 'New e-journal have been released',
+              text: 'New e-journal has been released',
               link: '',
               isNew: false
             }];
