@@ -44,3 +44,27 @@
 
   }
 }
+
+.body-footer-container {
+  margin-bottom: $persistent-footer-height;
+}
+
+.hint-box {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border: 1px solid $divider;
+  vertical-align: middle;
+
+  &.selected {
+    background-color: $fbs-selected-time;
+  }
+
+  &.available {
+    background-color: $fbs-available-time;
+  }
+
+  &.unavailable {
+    background-color: $fbs-unavailable-time;
+  }
+}
