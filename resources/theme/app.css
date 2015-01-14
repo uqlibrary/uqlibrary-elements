@@ -634,6 +634,18 @@ core-icon {
     padding: 16px;
     display: block; }
 
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-nowrap {
+  white-space: nowrap; }
+
 .image-header {
   background-color: #7b0c9d;
   background-size: cover;
