@@ -63,38 +63,35 @@ $black: #000000;
 // tweaked where UQ colours fail accessibility
 
 
-$baseline-uq-purple: hsl(286, 86%, 0%);
-$baseline-uq-green: hsl(74, 100%, 0%);
+$baseline-uq-purple:    hsl(286, 86%, 0%);
+$baseline-uq-green:     hsl(74, 100%, 0%);
+$uq-red:                hsl(337, 100%, 33%);
+$uq-blue:               hsl(214,69%,50%);
+$uq-aqua:               hsl(192, 100%, 31%);
+$uq-emerald:            hsl(113, 49%, 35%);
+$uq-warm-red:           hsl(11, 68%, 48%);
+$uq-gold:               hsl(45, 46%, 52%);
+$uq-gold-alt:           hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
 
-//$dark-primary:          #49075E; // Official UQ purple
 $dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
 $primary:               lighten($baseline-uq-purple,33%);
 $alpha-primary:         transparentize($primary, .3);
 $accent:                lighten($baseline-uq-green, 36%);
+
 // repeated for quick looks at real colours in phpstorm by commenting in/out
 //$dark-primary:          hsl(286, 86%, 20%); // Official UQ purple
 //$primary:               hsl(286, 86%, 33%);
 //$accent:                hsl(74, 100%, 36%);
 
-$dark-accent:           hsl(113, 49%, 35%);
-$link:                  hsl(192, 100%, 31%);
-$button:                $link;
+$dark-accent:           $uq-emerald;
+$link:                  $uq-blue;
+$button:                $uq-aqua;
 $link-secondary:        hsl(0, 0%, 91%);
 $background-primary:    $grey-50;
 $background-secondary:  $white;
 $uq-text-primary:       hsl(0, 0%, 20%);
 $uq-text-secondary:     hsl(0, 0%, 46%);
 $uq-divider:            hsl(0, 0%, 80%);
-$uq-red:                hsl(337, 100%, 33%);
-//$uq-blue:               hsl(214, 69%, 50%); Buttons & links should be UQ-Aqua
-$uq-blue:               $link;
-$uq-emerald:            hsl(113, 49%, 35%);
-$uq-warm-red:           hsl(11, 68%, 48%);
-$uq-gold:               hsl(45, 46%, 52%);
-$uq-gold-alt:           hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
-
-
-
 
 $_gmd-alphas: (
   dividers: .12,
@@ -125,7 +122,8 @@ $accent-A200: $teal-A400;
 $accent-A400: $teal-A700;
 
 // Text / icons / dividers
-$divider:        rgba($black, .12);
+$divider:        $uq-divider;
+
 $hint-text:      rgba($black, .26);
 $secondary-text: rgba($black, .54);
 $text:           rgba($black, .87);
@@ -145,16 +143,15 @@ $dropdown-background-hover: $grey-A400;
 
 $error-color: #F44336;
 
-
 // FBS Room details
 $uq-fbs-room-header-bg:   $white;
 $uq-fbs-room-title-color: $white;
 $uq-fbs-room-title-bg:    $uq-purple-600;
 
-$fbs-selected-date:       $uq-blue;
+$fbs-selected-date:       $button;
 $fbs-unselected-date:     $grey-A200;
 
-$fbs-selected-time:       $uq-blue;
+$fbs-selected-time:       $button;
 $fbs-available-time:      $grey-A200;
 $fbs-unavailable-time:    $grey-A400;
 
