@@ -1,0 +1,43 @@
+@import "variables";
+
+core-icon {
+  color: $active-icon;
+
+  &.inactive {
+    color: $inactive-icon;
+  }
+  &.active-inverse {
+    color: $active-icon-inverse;
+  }
+  &.inactive-inverse {
+    color: $inactive-icon-inverse;
+  }
+}
+
+core-menu {
+  core-icon {
+    margin-right: 2em;
+  }
+}
+
+core-toolbar {
+  background-color: $white;
+
+  core-icon {
+    color: $white;
+  }
+}
+
+core-drawer-panel {
+  background-color: $white;
+}
+
+core-toolbar {
+  background-color: $primary;
+  border-bottom: 1px solid $primary-700;
+  color: $text-inverse;
+}
+
+core-menu {
+  margin: 0;
+}

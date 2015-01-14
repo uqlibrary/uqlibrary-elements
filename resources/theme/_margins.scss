@@ -65,3 +65,11 @@ $image-header-top-padding: 150px * ($dpi / $dp2px);
 //persistent footer
 $persistent-footer-height: 48px * ($dpi / $dp2px);
 $persistent-footer-padding: 16px * ($dpi / $dp2px);
+
+//paper fab action buttons
+$action-button-padding: 16px * ($dpi / $dp2px);
+
+//form with icon padding
+$form-icon-size: 24px;
+$form-padding: 16px * ($dpi / $dp2px);
+$form-icon-padding-left: 72px * ($dpi / $dp2px);

@@ -1,5 +1,17 @@
 @import "variables";
+@import "margins";
 
 paper-fab {
-  background-color: $uq-blue;
+
+  background-color: $button;
+
+  &.bottom-fixed {
+    bottom: $action-button-padding;
+    position: fixed;
+    right: $action-button-padding;
+  }
+
+  core-icon {
+    color: $white;
+  }
 }

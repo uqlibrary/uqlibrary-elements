@@ -1,6 +1,6 @@
 @import "variables";
 @import "typography";
-@import "icons";
+@import "core";
 @import "lists";
 @import "buttons";
 @import "cards";
@@ -11,5 +11,5 @@
 ::content *
 {
   box-sizing: border-box;
-  outline: none;;
+  outline: none;
 }
