@@ -73,6 +73,8 @@ Element providing an overview for student's courses
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-tabs/paper-tab.html">
 <link rel="import" href="../paper-spinner/paper-spinner.html">
+<link rel="import" href="../core-overlay/core-overlay.html">
+<link rel="import" href="../core-signals/core-signals.html">
 <link rel="import" href="../core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 
@@ -91,7 +93,7 @@ Element providing an overview for student's courses
 <polymer-element name="uqlibrary-courses" layout center attributes="courses">
   <template>
     <link rel="stylesheet" href="uqlibrary-courses.css">
-
+    <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
     <uqlibrary-api-learning-resources id="learning_resources"></uqlibrary-api-learning-resources>
     <uqlibrary-api-course-reading-list id="reading_list"></uqlibrary-api-course-reading-list>
     <uqlibrary-api-library-guides id="library_guides"></uqlibrary-api-library-guides>
@@ -120,7 +122,7 @@ Element providing an overview for student's courses
       <core-overlay id="loadingOverlay"
                     layout
                     horizontal
-                    opened?="{{ processedCourses.length > 0 && (!selectedCourse.learning_resources.reading_lists.items || !selectedCourse.learning_resources.exam_papers || !selectedCourse.library_guides) }}">
+                    opened?="{{!transitioning && processedCourses.length > 0 && (!selectedCourse.learning_resources.reading_lists.items || !selectedCourse.learning_resources.exam_papers || !selectedCourse.library_guides) }}">
         <div flex self-center center-justified layout horizontal>
           <paper-spinner active></paper-spinner>
         </div>
@@ -159,6 +161,7 @@ Element providing an overview for student's courses
       processedCourses: null,
       termDates: {},
       selectedCourse: {},
+      transitioning: false,
 
       // Extend search dates for courses
       termExtendWeeksRange: {
@@ -313,6 +316,10 @@ Element providing an overview for student's courses
         }
       },
 
+      transitioningChangeHandler: function(e) {
+        if(e.detail.hasOwnProperty('transitioning'))
+          this.transitioning = e.detail.transitioning;
+      },
       transitionPrepareHandler: function() {
         this.transitioning = true;
         this.fire('core-signal', {name: "transitioning-change", data: {transitioning: this.transitioning}});
