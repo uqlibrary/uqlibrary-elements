@@ -166,7 +166,7 @@ h4.inverse {
 
 .link {
   text-decoration: none;
-  color: rgba(0, 126, 158, 0.87); }
+  color: rgba(40, 116, 215, 0.87); }
 
 core-icon {
   color: rgba(0, 0, 0, 0.54);
@@ -186,7 +186,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .single-line-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .single-line-list .list-item {
     height: 48px;
@@ -220,7 +220,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .single-line-icon-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .single-line-icon-list .list-item {
     height: 56px;
@@ -267,7 +267,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .two-line-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .two-line-list .list-item {
     height: 72px;
@@ -309,7 +309,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .two-line-icon-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .two-line-icon-list .list-item {
     height: 72px;
@@ -366,7 +366,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .three-line-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .three-line-list .list-item {
     height: 72px;
@@ -416,7 +416,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .three-line-text-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .three-line-text-list .list-item {
     overflow: hidden;
@@ -460,7 +460,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .three-line-icon-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .three-line-icon-list .list-divider.timeline .line:before {
     content: '\2022';
@@ -548,7 +548,7 @@ core-icon {
     padding: 0;
     height: 8px; }
   .three-line-text-icon-list .border {
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    border: 1px solid #cccccc;
     border-width: 0 0 1px 0; }
   .three-line-text-icon-list .list-item {
     height: 88px;
@@ -602,7 +602,7 @@ core-icon {
       padding-bottom: 28px; }
 
 paper-fab {
-  background-color: #007e9e; }
+  background-color: #2874d7; }
 
 .card {
   display: block;
@@ -613,9 +613,21 @@ paper-fab {
   width: 320px;
   margin: 16px auto; }
   .card .cardSection {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid #cccccc;
     padding: 16px;
     display: block; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: right; }
+
+.text-nowrap {
+  white-space: nowrap; }
 
 .image-header {
   background-color: #7b0c9d;
@@ -635,7 +647,7 @@ paper-fab {
   bottom: 0px;
   background-color: white;
   width: 100%;
-  border-top: 1px solid rgba(0, 0, 0, 0.12); }
+  border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
     padding: 16px;
     padding-right: 0px;
@@ -660,7 +672,7 @@ paper-fab {
   display: inline-block;
   height: 20px;
   width: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid #cccccc;
   vertical-align: middle; }
   .hint-box.selected {
     background-color: #007e9e; }
@@ -702,3 +714,11 @@ paper-tabs {
 
 .listItemLink core-icon {
   margin-right: 0px; }
+
+#loadingOverlay {
+  background-color: transparent;
+  width: 56px;
+  height: 56px;
+  border-radius: 25%; }
+  #loadingOverlay paper-spinner::shadow .circle {
+    border-color: #7b0c9d; }

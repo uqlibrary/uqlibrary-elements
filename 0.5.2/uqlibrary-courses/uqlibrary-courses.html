@@ -72,7 +72,10 @@ Element providing an overview for student's courses
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-tabs/paper-tabs.html">
 <link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../paper-spinner/paper-spinner.html">
 <link rel="import" href="../core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+
 <script type="text/javascript" src="../moment/moment.js"></script>
 
 <link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
@@ -82,41 +85,60 @@ Element providing an overview for student's courses
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-term-dates.html">
 
 <link rel="import" href="uqlibrary-course.html">
+<link rel="import" href="uqlibrary-courses-study-links.html">
 
 
 <polymer-element name="uqlibrary-courses" layout center attributes="courses">
   <template>
     <link rel="stylesheet" href="uqlibrary-courses.css">
 
-    <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}" hidden?="{{courses.length == 0}}">
     <uqlibrary-api-learning-resources id="learning_resources"></uqlibrary-api-learning-resources>
     <uqlibrary-api-course-reading-list id="reading_list"></uqlibrary-api-course-reading-list>
     <uqlibrary-api-library-guides id="library_guides"></uqlibrary-api-library-guides>
     <uqlibrary-api-term-dates id="term_dates"></uqlibrary-api-term-dates>
 
-    <template repeat="{{ processedCourses as course }}">
-      <paper-tab name="{{ course.courseId }}">
-        <div layout vertical center class="menu">
-          <span class="tabTitle">{{ course.SUBJECT }}</span>
-          <span class="tabTitle">{{ course.CATALOG_NBR }}</span>
-        </div>
-      </paper-tab>
-    </template>
-    </paper-tabs>
+      <div hidden?="{{ processedCourses == null || processedCourses.length > 0 }}">
+        <paper-shadow class="card" z="1">
+          <div class="subhead cardSection cardTitle">Courses will be shown 3 weeks prior to the start of semester</div>
+          <div class="caption cardSection ">Please check back closer to the next enrollment period</div>
+        </paper-shadow>
+        <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
+      </div>
 
-    <div class="infoWrapper">
+
+      <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}" hidden?="{{processedCourses.length == 0}}">
+        <template repeat="{{ processedCourses as course }}">
+          <paper-tab name="{{ course.courseId }}">
+            <div layout vertical center class="menu">
+              <span class="tabTitle">{{ course.SUBJECT }}</span>
+              <span class="tabTitle">{{ course.CATALOG_NBR }}</span>
+            </div>
+          </paper-tab>
+        </template>
+      </paper-tabs>
+
+      <core-overlay id="loadingOverlay"
+                    layout
+                    horizontal
+                    opened?="{{ processedCourses.length > 0 && (!selectedCourse.learning_resources.reading_lists.items || !selectedCourse.learning_resources.exam_papers || !selectedCourse.library_guides) }}">
+        <div flex self-center center-justified layout horizontal>
+          <paper-spinner active></paper-spinner>
+        </div>
+      </core-overlay>
+
       <core-animated-pages id="animatedPages" transitions="slide-from-right" block selected="{{selectedTab}}"
                            on-core-animated-pages-transition-prepare="{{transitionPrepareHandler}}"
                            on-core-animated-pages-transition-end="{{transitionEndHandler}}"
-        >
+                           hidden?="{{processedCourses.length == 0}}"
+      >
 
-        <template repeat="{{ processedCourses as course }}">
-          <section id="{{ course.courseId }}" name="{{ course.courseId }}">
-            <uqlibrary-course course="{{course}}"></uqlibrary-course>
-          </section>
-        </template>
-     </core-animated-pages>
-     </div>
+      <template repeat="{{ processedCourses as course }}">
+        <section id="{{ course.courseId }}" name="{{ course.courseId }}">
+          <uqlibrary-course course="{{course}}" hidden?="{{!course.learning_resources.reading_lists.items || !course.learning_resources.exam_papers || !course.library_guides}}"></uqlibrary-course>
+        </section>
+      </template>
+      </core-animated-pages>
+
   </template>
 
   <script>
@@ -134,8 +156,9 @@ Element providing an overview for student's courses
       },
       selectedTab: '',
       learningResources: {},
-      processedCourses: [],
+      processedCourses: null,
       termDates: {},
+      selectedCourse: {},
 
       // Extend search dates for courses
       termExtendWeeksRange: {
@@ -213,31 +236,26 @@ Element providing an overview for student's courses
       },
 
       get: function(code) {
+        if((!code || code =='') && this.processedCourses.length > 0) {
+          code = this.processedCourses[0].courseId;
+        }
         if(code) {
           for(var i=0; i < this.processedCourses.length; i++) {
             if(this.processedCourses[i].courseId == code) {
               if( !this.processedCourses[i].hasOwnProperty('learning_resources') ){
+                this.processedCourses[i]['learning_resources'] = {reading_lists:[], exam_papers: []};
                 this.$.learning_resources.get( {code:  code });
               }
               if( !this.processedCourses[i].hasOwnProperty('library_guides') ){
-                this.$.library_guides.get( {code: this.processedCourses[i].SUBJECT});
+                  this.processedCourses[i]['library_guides'] = [];
+                  this.$.library_guides.get( {code: this.processedCourses[i].SUBJECT});
               }
+              this.selectedCourse = this.processedCourses[i];
             }
-          }
-        }
-        else {
-          if(this.processedCourses.length > 0) {
-            var _code = this.processedCourses[0].courseId;
-            this.selectedTab = _code;
-            if( !this.processedCourses[0].hasOwnProperty('learning_resources') ){
-              this.$.learning_resources.get( {code: _code} );
-            }
-            if( !this.processedCourses[0].hasOwnProperty('library_guides') ){
-              this.$.library_guides.get( {code: this.processedCourses[0].SUBJECT});
-            }
-          }
-        }
 
+          }
+          this.selectedTab = code;
+        }
       },
 
       coursesChanged: function(oldValue, newValue) {
@@ -266,6 +284,10 @@ Element providing an overview for student's courses
               this.$.term_dates.get({codes: termCodes});
             }
           }
+          else {
+            this.processedCourses = [];
+          }
+
         }
       },
 

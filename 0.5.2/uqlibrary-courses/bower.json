@@ -12,6 +12,7 @@
     "polymer": "Polymer/polymer#^0.5.2",
     "paper-tabs": "Polymer/paper-tabs#0.5.2",
     "paper-shadow": "Polymer/paper-shadow#0.5.2",
+    "paper-spinner": "Polymer/paper-spinner#0.5.2",
     "core-animated-pages": "Polymer/core-animated-pages#0.5.2",
     "core-icon": "Polymer/core-icon#0.5.2",
     "core-image": "Polymer/core-image#0.5.2",

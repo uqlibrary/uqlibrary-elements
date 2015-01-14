@@ -11,6 +11,7 @@
     "polymer": "Polymer/polymer#^0.5.2",
     "paper-tabs": "Polymer/paper-tabs#0.5.2",
     "paper-shadow": "Polymer/paper-shadow#0.5.2",
+    "paper-spinner": "Polymer/paper-spinner#0.5.2",
     "core-animated-pages": "Polymer/core-animated-pages#0.5.2",
     "core-icon": "Polymer/core-icon#0.5.2",
     "core-image": "Polymer/core-image#0.5.2",
@@ -18,11 +19,11 @@
     "moment": "~2.8.4"
   },
   "homepage": "https://github.com/uqlibrary/uqlibrary-courses",
-  "_release": "cda9184584",
+  "_release": "6866724261",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cda9184584684d468bb5cd94dd2c003503cea7db"
+    "commit": "6866724261953f3c7eca7fe4f6ac6db40e41e360"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-courses.git",
   "_target": "master",

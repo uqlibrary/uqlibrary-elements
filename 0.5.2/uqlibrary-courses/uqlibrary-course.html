@@ -1,6 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../paper-spinner/paper-spinner.html">
 <link rel="import" href="../core-image/core-image.html">
+<link rel="import" href="../core-overlay/core-overlay.html">
+<link rel="import" href="uqlibrary-courses-study-links.html">
 
 <polymer-element name="uqlibrary-course" layout center attributes="course">
   <template>
@@ -131,48 +134,7 @@
     </paper-shadow>
 
 
-    <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Study Help</div>
-      <a class="link" href="http://guides.library.uq.edu.au/" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" src="icons/sign.svg" id="sign-icon"></core-icon> All Library Subject Guides
-          </div>
-        </div>
-      </a>
-
-      <a class="link" href="https://learn.uq.edu.au/webapps/login/?new_loc=%2Fwebapps%2Fblackboard%2Fexecute%2FenrollCourse%3Fcontext%3DCourse%26course_id%3D_13002_1" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" icon="extension" id="extension-icon"></core-icon> Library 101
-          </div>
-        </div>
-      </a>
-
-      <a class="link" href="https://www.library.uq.edu.au/services/assign/indexmail_tab2.phtml" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" icon="description" id="description-icon"></core-icon> Assignment Planner
-          </div>
-        </div>
-      </a>
-
-      <a class="link" href="https://learn.uq.edu.au/" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" src="icons/bb.svg" id="bb-icon"></core-icon> Learn.UQ
-          </div>
-        </div>
-      </a>
-
-      <a class="link" href="https://my.uq.edu.au/my_login_screen.html?id=396" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" icon="event" id="event-icon"></core-icon> Exam Schedule
-          </div>
-        </div>
-      </a>
-    </paper-shadow>
+    <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
 
 
   </template>

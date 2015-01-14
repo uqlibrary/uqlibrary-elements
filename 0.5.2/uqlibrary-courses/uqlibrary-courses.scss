@@ -48,5 +48,19 @@ paper-tabs {
   }
 }
 
+#loadingOverlay {
+  //background-color: $primary;
+  background-color: transparent;
+  width: 56px;
+  height: 56px;
+  border-radius: 25%;
+
+  paper-spinner{
+    &::shadow .circle {
+      border-color: $primary;
+    }
+  }
+
+}
 
 
