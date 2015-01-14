@@ -889,13 +889,18 @@ core-drawer-panel {
 }
 
 /* line 35, _core.scss */
+core-header-panel {
+  background-color: #ffffff;
+}
+
+/* line 39, _core.scss */
 core-toolbar {
   background-color: #7b0c9d;
   border-bottom: 1px solid #49075E;
   color: rgba(255, 255, 255, 0.87);
 }
 
-/* line 41, _core.scss */
+/* line 45, _core.scss */
 core-menu {
   margin: 0;
 }
