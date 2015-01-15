@@ -2,19 +2,19 @@
 <link rel="import" href="../paper-shadow/paper-shadow.html">
 <link rel="import" href="../core-image/core-image.html">
 <link rel="import" href="uqlibrary-courses-study-links.html">
+<link rel="import" href="../swipeable-card/swipeable-card.html">
 
 <polymer-element name="uqlibrary-course" layout center attributes="course">
   <template>
     <link rel="stylesheet" href="uqlibrary-courses.css">
-
-    <div id="readingList">
-      <paper-shadow class="card" z="1">
-        <div class="subhead cardSection cardTitle">Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
+    <div id="cards">
+      <swipeable-card class="card">
+          <div class="subhead cardSection cardTitle">Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
 
           <div class="body1 cardSection" hidden?="{{readingList.length > 0}}">
-            <div class="caption listItemSection listItemNoResultsMessage">
-              No reading lists for this course
-            </div>
+          <div class="caption listItemSection listItemNoResultsMessage">
+            No reading lists for this course
+          </div>
           </div>
           <a class="link" href="{{readingListsSearchUrl}}" target="_blank" hidden?="{{readingList.length >0}}">
           <div class="cardSection">
@@ -29,112 +29,111 @@
               <div class="body1 cardSection">
                 <div class="link listItemSection listItemTitle">{{item.title}}</div>
                 <div class="caption listItemSection listItemAuthor" hidden?="{{!item.author}}">
-                  <i>{{item.author}} {{item.year}} </i>
-                </div>
+                <i>{{item.author}} {{item.year}} </i>
+              </div>
 
-                <div class="caption listItemSection listItemNotes" hidden?="{{!item.notes && (!item.startPage || !item.endPage)}}">
-                  <span hidden?="{{!item.startPage || !item.endPage}}">Pages from {{item.startPage}} to {{item.endPage}}<br></span>
-                  {{item.notes | trimNotes}}
-                </div>
+              <div class="caption listItemSection listItemNotes" hidden?="{{!item.notes && (!item.startPage || !item.endPage)}}">
+              <span hidden?="{{!item.startPage || !item.endPage}}">Pages from {{item.startPage}} to {{item.endPage}}<br></span>
+              {{item.notes | trimNotes}}
+              </div>
 
-                <div class="caption listItemSection listItemType">{{item.referenceType}} <span hidden?="{{!item.importance}}">- {{item.importance}}</span></div>
+              <div class="caption listItemSection listItemType">{{item.referenceType}} <span hidden?="{{!item.importance}}">- {{item.importance}}</span></div>
               </div>
             </a>
           </template>
           <a class="link" href="{{course.learning_resources.reading_lists.url}}" target="_blank" hidden?="{{course.moreItemsCount.readingLists == 0}}">
-            <div class="cardSection">
-              <div class="link listItemLink">
-                  <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.readingLists}} more {{course.moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
-              </div>
+          <div class="cardSection">
+            <div class="link listItemLink">
+              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.readingLists}} more {{course.moreItemsCount.readingLists == 1 ? 'item' : 'items'}}
             </div>
+          </div>
           </a>
-      </paper-shadow>
-    </div>
+    </swipeable-card>
 
+    <swipeable-card class="card">
+        <div class="subhead cardSection cardTitle">Past Exam Papers ({{course.learning_resources.exam_papers.length}})</div>
 
-    <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Past Exam Papers ({{course.learning_resources.exam_papers.length}})</div>
-
-      <div class="body1 cardSection" hidden?="{{examPapers.length > 0}}">
+        <div class="body1 cardSection" hidden?="{{examPapers.length > 0}}">
         <div class="caption listItemSection listItemNoResultsMessage">
           No Past Exam Papers for this course
         </div>
-      </div>
-      <a class="link" href="{{examPapersSearchUrl}}" target="_blank" hidden?="{{examPapers.length >0}}">
-      <div class="cardSection">
-        <div class="link listItemLink">
-          <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Search for other exam papers
         </div>
-      </div>
-      </a>
-
-      <template repeat="{{ paper in examPapers }}">
-        <a class="link" href="{{paper.url}}" target="_blank">
-          <div class="cardSection" >
-            <div class="link listItemLink">
-                {{paper.period}} ({{paper.url | extractExtension}})
-            </div>
-          </div>
-        </a>
-      </template>
-      <a class="link" href="{{examPapersSearchUrl + course.courseId}}" target="_blank" hidden?="{{examPapers.length == 0}}">
+        <a class="link" href="{{examPapersSearchUrl}}" target="_blank" hidden?="{{examPapers.length >0}}">
         <div class="cardSection">
           <div class="link listItemLink">
-              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.examPapers}} more past exam {{course.moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Search for other exam papers
           </div>
         </div>
-      </a>
-    </paper-shadow>
+        </a>
 
-    <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Library Guides ({{course.library_guides.length}})</div>
+        <template repeat="{{ paper in examPapers }}">
+          <a class="link" href="{{paper.url}}" target="_blank">
+            <div class="cardSection" >
+              <div class="link listItemLink">
+                {{paper.period}} ({{paper.url | extractExtension}})
+              </div>
+            </div>
+          </a>
+        </template>
+        <a class="link" href="{{examPapersSearchUrl + course.courseId}}" target="_blank" hidden?="{{examPapers.length == 0}}">
+        <div class="cardSection">
+          <div class="link listItemLink">
+            <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.examPapers}} more past exam {{course.moreItemsCount.examPapers == 1 ? 'paper' : 'papers'}}
+          </div>
+        </div>
+        </a>
+    </swipeable-card>
 
-      <div class="body1 cardSection" hidden?="{{libGuides.length > 0}}">
+    <swipeable-card class="card">
+        <div class="subhead cardSection cardTitle">Library Guides ({{course.library_guides.length}})</div>
+
+        <div class="body1 cardSection" hidden?="{{libGuides.length > 0}}">
         <div class="caption listItemSection listItemNoResultsMessage">
           No Library guides for this course
         </div>
-      </div>
-      <a class="link" href="{{libGuidesBrowseUrl}}" target="_blank" hidden?="{{libGuides.length >0}}">
+        </div>
+        <a class="link" href="{{libGuidesBrowseUrl}}" target="_blank" hidden?="{{libGuides.length >0}}">
         <div class="cardSection">
           <div class="link listItemLink">
             <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Browse other library guides
           </div>
         </div>
-      </a>
-
-      <template repeat="{{ guide in libGuides }}">
-        <a class="link" href="{{guide.url}}" target="_blank">
-          <div class="cardSection" >
-            <div class="link listItemLink">
-              {{guide.title}}
-            </div>
-          </div>
         </a>
-      </template>
-      <div class="cardSection" hidden?="{{course.moreItemsCount.libGuides == 0}}">
+
+        <template repeat="{{ guide in libGuides }}">
+          <a class="link" href="{{guide.url}}" target="_blank">
+            <div class="cardSection" >
+              <div class="link listItemLink">
+                {{guide.title}}
+              </div>
+            </div>
+          </a>
+        </template>
+        <div class="cardSection" hidden?="{{course.moreItemsCount.libGuides == 0}}">
         <div class="link listItemLink">
           <a class="link" href="{{libGuidesLinkUrl + course.SUBJECT}}" target="_blank">
             <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> {{course.moreItemsCount.libGuides}} more library {{course.moreItemsCount.libGuides == 1 ? 'guide' : 'guides'}}
           </a>
         </div>
-      </div>
-    </paper-shadow>
-
-    <paper-shadow class="card" z="1">
-      <div class="subhead cardSection cardTitle">Electronic Course Profile</div>
-      <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
-        <div class="cardSection">
-          <div class="link listItemLink">
-              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Link to ECP
-          </div>
         </div>
-      </a>
-    </paper-shadow>
+    </swipeable-card>
 
+    <swipeable-card class="card">
+        <div class="subhead cardSection cardTitle">Electronic Course Profile</div>
+        <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
+          <div class="cardSection">
+            <div class="link listItemLink">
+              <core-icon class="link" icon="arrow-forward" id="arrow-icon"></core-icon> Link to ECP
+            </div>
+          </div>
+        </a>
+    </swipeable-card>
 
-    <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
+    <swipeable-card class="card">
+      <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
+    </swipeable-card>
 
-
+    </div>
   </template>
 
   <script>
@@ -185,6 +184,15 @@
           examPapers: 0,
           libGuides: 0
         };
+
+        var that = this;
+        this.$.cards.addEventListener('swipeable-card-swipe-away', function(e) {
+          e.target.parentNode.removeChild(e.target); // removes this card
+          that.$.cards.appendChild(e.target); // adds this card to the end of the set of cards
+          e.target.style.opacity = 1;
+          e.target.style.transform = "translate3d(0px, 0px, 0px) rotate(0deg)";
+          e.target.style.webkitTransform = "translate3d(0px, 0px, 0px) rotate(0deg)";
+        });
       },
 
       created: function() {

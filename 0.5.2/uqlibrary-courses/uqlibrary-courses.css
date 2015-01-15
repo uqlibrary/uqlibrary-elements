@@ -169,14 +169,35 @@ h4.inverse {
   color: rgba(40, 116, 215, 0.87); }
 
 core-icon {
-  color: rgba(0, 0, 0, 0.54);
-  margin-right: 2em; }
+  color: rgba(0, 0, 0, 0.54); }
   core-icon.inactive {
     color: rgba(0, 0, 0, 0.26); }
   core-icon.active-inverse {
     color: white; }
   core-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
+
+core-menu core-icon {
+  margin-right: 2em; }
+
+core-toolbar {
+  background-color: white; }
+  core-toolbar core-icon {
+    color: white; }
+
+core-drawer-panel {
+  background-color: white; }
+
+core-header-panel {
+  background-color: white; }
+
+core-toolbar {
+  background-color: #7b0c9d;
+  border-bottom: 1px solid #49075e;
+  color: rgba(255, 255, 255, 0.87); }
+
+core-menu {
+  margin: 0; }
 
 .single-line-list {
   list-style-type: none;
@@ -602,7 +623,13 @@ core-icon {
       padding-bottom: 28px; }
 
 paper-fab {
-  background-color: #2874d7; }
+  background-color: #007e9e; }
+  paper-fab.bottom-fixed {
+    bottom: 16px;
+    position: fixed;
+    right: 16px; }
+  paper-fab core-icon {
+    color: white; }
 
 .card {
   display: block;
@@ -717,8 +744,7 @@ paper-tabs {
 
 #loadingOverlay {
   background-color: transparent;
-  width: 56px;
-  height: 56px;
-  border-radius: 25%; }
+  width: 64px;
+  height: 64px; }
   #loadingOverlay paper-spinner::shadow .circle {
     border-color: #7b0c9d; }

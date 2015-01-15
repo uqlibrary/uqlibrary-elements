@@ -51,9 +51,8 @@ paper-tabs {
 #loadingOverlay {
   //background-color: $primary;
   background-color: transparent;
-  width: 56px;
-  height: 56px;
-  border-radius: 25%;
+  width: 64px;
+  height: 64px;
 
   paper-spinner{
     &::shadow .circle {
