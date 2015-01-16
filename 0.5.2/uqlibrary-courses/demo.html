@@ -18,97 +18,68 @@
   </div>
   <script>
     (function () {
-
       window.addEventListener('polymer-ready', function() {
 
         var courses = document.querySelector('uqlibrary-courses');
 
         courses.courses = [
-            {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Financial Management",
-              "SUBJECT": "FINM",
-              "CATALOG_NBR": "2401",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "BEL",
-              "STRM":"6460"
-            },
-            {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Elect Commerce Systems Dev",
-              "SUBJECT": "INFS",
-              "CATALOG_NBR": "2244",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "BEL",
-              "STRM":"6460"
-            },
-            {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Working with Groups & Teams",
-              "SUBJECT": "MGTS",
-              "CATALOG_NBR": "2961",
-              "CAMPUS": "GATTN",
-              "INSTRUCTION_MODE": "EX",
-              "ACAD_GROUP": "SCI",
-              "STRM":"6520"
-            },
-            {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Financial Reporting",
-              "SUBJECT": "BIOM",
-              "CATALOG_NBR": "6501",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "BEL",
-              "STRM":"6520"
-            },
-            {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Elect Com Infrastructure Mgmt",
-              "SUBJECT": "MGTS",
-              "CATALOG_NBR": "3204",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "BEL",
-              "STRM":"6520"
-            },
-            {
-              "ACAD_CAREER": "PGRS",
-              "DESCR": "Research Studies (Full-time)",
-              "SUBJECT": "RSCH",
-              "CATALOG_NBR": "9000",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "GRAD",
-              "STRM":"6475"
-            },
-            {
-              "ACAD_CAREER": "PGRS",
-              "DESCR": "Research Studies (Full-time)",
-              "SUBJECT": "RSCH",
-              "CATALOG_NBR": "9000",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "GRAD",
-              "STRM":"6505"
-            },
-            {
-              "ACAD_CAREER": "PGRS",
-              "DESCR": "Research Studies (Full-time)",
-              "SUBJECT": "RSCH",
-              "CATALOG_NBR": "9000",
-              "CAMPUS": "STLUC",
-              "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "GRAD",
-              "STRM":"6525"
-            }
+          {
+            "ACAD_CAREER": "UGRD",
+            "DESCR": "Financial Management",
+            "SUBJECT": "FINM",
+            "CATALOG_NBR": "2401",
+            "CAMPUS": "STLUC",
+            "INSTRUCTION_MODE": "IN",
+            "ACAD_GROUP": "BEL",
+            "STRM":"6460"
+          },
+          {
+            "ACAD_CAREER": "UGRD",
+            "DESCR": "Elect Commerce Systems Dev",
+            "SUBJECT": "INFS",
+            "CATALOG_NBR": "2244",
+            "CAMPUS": "STLUC",
+            "INSTRUCTION_MODE": "IN",
+            "ACAD_GROUP": "BEL",
+            "STRM":"6460"
+          },
+          {
+            "ACAD_CAREER": "UGRD",
+            "DESCR": "Working with Groups & Teams",
+            "SUBJECT": "MGTS",
+            "CATALOG_NBR": "2961",
+            "CAMPUS": "GATTN",
+            "INSTRUCTION_MODE": "EX",
+            "ACAD_GROUP": "SCI",
+            "STRM":"6520"
+          },
+          {
+            "ACAD_CAREER": "UGRD",
+            "DESCR": "Financial Reporting",
+            "SUBJECT": "ACCT",
+            "CATALOG_NBR": "2101",
+            "CAMPUS": "STLUC",
+            "INSTRUCTION_MODE": "IN",
+            "ACAD_GROUP": "BEL",
+            "STRM":"6520"
+          },
+          {
+            "ACAD_CAREER": "UGRD",
+            "DESCR": "Elect Com Infrastructure Mgmt",
+            "SUBJECT": "MGTS",
+            "CATALOG_NBR": "3204",
+            "CAMPUS": "STLUC",
+            "INSTRUCTION_MODE": "IN",
+            "ACAD_GROUP": "BEL",
+            "STRM":"6520"
+          }
           ];
+        //courses.courses = [];
+        courses.useMockData(true);
         courses.addEventListener('uqlibrary-courses-loaded', function(){
           courses.get();
         });
-        courses.termExtendWeeksRange = {before:3, after: 1}
+          courses.termExtendWeeksRange = {before:33, after: 24}
 
       });
     }());

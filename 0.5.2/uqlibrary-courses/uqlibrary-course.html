@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="uqlibrary-courses.css">
     <div id="cards">
       <swipeable-card class="card">
+        <paper-shadow z="1">
           <div class="subhead cardSection cardTitle">Reading List ({{course.learning_resources.reading_lists.items.length}})</div>
 
           <div class="body1 cardSection" hidden?="{{readingList.length > 0}}">
@@ -48,9 +49,11 @@
             </div>
           </div>
           </a>
+      </paper-shadow>
     </swipeable-card>
 
     <swipeable-card class="card">
+      <paper-shadow z="1">
         <div class="subhead cardSection cardTitle">Past Exam Papers ({{course.learning_resources.exam_papers.length}})</div>
 
         <div class="body1 cardSection" hidden?="{{examPapers.length > 0}}">
@@ -82,9 +85,11 @@
           </div>
         </div>
         </a>
+      </paper-shadow>
     </swipeable-card>
 
     <swipeable-card class="card">
+      <paper-shadow z="1">
         <div class="subhead cardSection cardTitle">Library Guides ({{course.library_guides.length}})</div>
 
         <div class="body1 cardSection" hidden?="{{libGuides.length > 0}}">
@@ -116,9 +121,11 @@
           </a>
         </div>
         </div>
+      </paper-shadow>
     </swipeable-card>
 
     <swipeable-card class="card">
+      <paper-shadow z="1">
         <div class="subhead cardSection cardTitle">Electronic Course Profile</div>
         <a class="link" href="{{ecpLinkUrl + course.courseId}}" target="_blank">
           <div class="cardSection">
@@ -127,10 +134,13 @@
             </div>
           </div>
         </a>
+      </paper-shadow>
     </swipeable-card>
 
     <swipeable-card class="card">
-      <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
+      <paper-shadow z="1">
+        <uqlibrary-courses-study-links></uqlibrary-courses-study-links>
+      </paper-shadow>
     </swipeable-card>
 
     </div>
