@@ -13,9 +13,12 @@ Element providing access to UQ Library's API.
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-api
 -->
+
 <polymer-element name="uqlibrary-api" attributes="uri method auto">
 
   <template>
+
+
     <core-ajax
       id="ajax"
       url="{{url}}"
@@ -33,13 +36,29 @@ Element providing access to UQ Library's API.
 
         method: 'GET',
         auto: false,
+        appProductionBaseUrl: 'https://app.library.uq.edu.au',
+        baseApiUrl: 'https://app.library.uq.edu.au/api',
+        mockDataFileUrl: '', // defines what mock data file to load if not on production
+        mock: false,
 
         handleResponse: function (e) {
-          this.fire('uqlibrary-api', this.$.ajax.response);
+          var data = this.$.ajax.response;
+          if(this.mock) {
+            data = {mock : true, data: this.$.ajax.response};
+          }
+          this.fire('uqlibrary-api', data);
         },
 
         handleError: function (event, object, sender) {
           this.fire('uqlibrary-api', object.xhr);
+        },
+
+        ready: function() {
+          // Check if mock data must be loaded
+          if(((window.location.protocol + '//' + window.location.hostname) != this.appProductionBaseUrl) && this.mockDataFileUrl != ''  ) {
+            this.mock = true;
+          }
+
         },
 
         /**
@@ -52,17 +71,24 @@ Element providing access to UQ Library's API.
          * @method get
          */
         get: function (args) {
-          this.setHeaders();
-          var url = 'https://app.library.uq.edu.au/api' + this.uri;
-
-          if (args && args.addTimestamp) {
-            url += (url.indexOf('?') >= 0 ? '&' : '?');
-            url += "timestamp=" + (new Date()).getTime();
+          var url = '';
+          //Check if mock data should be returned
+          if(this.mock) {
+            url = this.resolvePath('mock/' + this.mockDataFileUrl +'.json');
           }
+          else {
+            this.setHeaders();
+            url = this.baseApiUrl + this.uri;
 
-          if (args && args.body) {
-            this.$.ajax.contentType="application/json";
-            this.$.ajax.body = JSON.stringify(args.body);
+            if (args && args.addTimestamp) {
+              url += (url.indexOf('?') >= 0 ? '&' : '?');
+              url += "timestamp=" + (new Date()).getTime();
+            }
+
+            if (args && args.body) {
+              this.$.ajax.contentType="application/json";
+              this.$.ajax.body = JSON.stringify(args.body);
+            }
           }
 
           this.url = url;

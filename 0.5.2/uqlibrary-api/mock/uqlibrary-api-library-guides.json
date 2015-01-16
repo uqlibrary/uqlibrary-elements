@@ -1,0 +1,37 @@
+{
+  "MGTS": [
+    {
+      "title": "Company and Industry Information",
+      "url": "http://guides.library.uq.edu.au/company-information?hs=a"
+    },
+    {
+      "title": "Management",
+      "url": "http://guides.library.uq.edu.au/management?hs=a"
+    }
+  ],
+
+  "FINM": [
+    {
+      "title": "Company and Industry Information",
+      "url": "http://guides.library.uq.edu.au/company-information?hs=a"
+    },
+    {
+      "title": "Finance",
+      "url": "http://guides.library.uq.edu.au/finance?hs=a"
+    }
+  ],
+
+  "INFS" : [],
+
+  "ACCT" : [
+    {
+      "title": "Accounting",
+      "url": "http://guides.library.uq.edu.au/accounting?hs=a"
+    },
+    {
+      "title": "Company and Industry Information",
+      "url": "http://guides.library.uq.edu.au/company-information?hs=a"
+    }
+  ]
+
+}

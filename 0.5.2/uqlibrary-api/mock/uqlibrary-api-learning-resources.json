@@ -1,0 +1,198 @@
+{
+  "FINM2401":
+    [
+      {
+        "title": "FINM2401",
+        "course_title": "Financial Management",
+        "reading_lists": [
+          {
+            "title": "FINM2401 St Lucia",
+            "campus": "St Lucia",
+            "url": "http://lr.library.uq.edu.au/lists/5C8C5165-7429-DD81-2CD4-906E945EC3F2",
+            "period": "Semester 2 2014"
+          }
+        ],
+        "exam_papers": [
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_FINM2401_s.pdf",
+            "period": "Semester 2 2013",
+            "course": "FINM2401"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_FINM2401_s.pdf",
+            "period": "Semester 1 2013",
+            "course": "FINM2401"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_FINM2401_s.pdf",
+            "period": "Semester 1 2012",
+            "course": "FINM2401"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_FINM2401.pdf",
+            "period": "Semester 2 2012",
+            "course": "FINM2401"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/finm2401_st.pdf",
+            "period": "Semester 1 2011",
+            "course": "FINM2401"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/finm2401_ipwst.pdf",
+            "period": "Semester 2 2011",
+            "course": "FINM2401"
+          }
+        ]
+      }
+    ],
+
+  "INFS2244":
+    [
+      {
+        "title": "INFS2244",
+        "course_title": "Electronic Commerce Systems Development",
+        "reading_lists": [
+          {
+            "title": "INFS2244 St Lucia",
+            "campus": "St Lucia",
+            "url": "http://lr.library.uq.edu.au/lists/63839A01-F705-74B7-94CC-15B8477EAD4B",
+            "period": "Semester 2 2014"
+          }
+        ],
+        "exam_papers": [
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_INFS2244_s.pdf",
+            "period": "Semester 2 2013",
+            "course": "INFS2244"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_INFS2244_s.pdf",
+            "period": "Semester 2 2012",
+            "course": "INFS2244"
+          },
+          {
+            "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/infs2244_st.pdf",
+            "period": "Semester 2 2011",
+            "course": "INFS2244"
+          }
+        ]
+      }
+    ],
+
+  "MGTS2961": [
+    {
+      "title": "MGTS2961",
+      "course_title": "Working with Groups & Teams",
+      "reading_lists": [
+        {
+          "title": "MGTS2961 Gatton",
+          "campus": "Gatton",
+          "url": "http://lr.library.uq.edu.au/lists/EF37D3F6-5FEA-0B4F-FC9D-72DA22D242FB",
+          "period": "Semester 1 2015"
+        }
+      ],
+      "exam_papers": [
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1303/2013_3_MGTS2961.pdf",
+          "period": "Semester 3 2013",
+          "course": "MGTS2961"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_MGTS2961.pdf",
+          "period": "Semester 1 2013",
+          "course": "MGTS2961"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201/2012_1_MGTS2961.pdf",
+          "period": "Semester 1 2012",
+          "course": "MGTS2961"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101/mgts2961_gatie.pdf",
+          "period": "Semester 1 2011",
+          "course": "MGTS2961"
+        }
+      ]
+    }
+  ],
+
+  "ACCT2101": [
+    {
+      "title": "ACCT2101",
+      "course_title": "Financial Reporting",
+      "reading_lists": [
+        {
+          "title": "ACCT2101 St Lucia",
+          "campus": "St Lucia",
+          "url": "http://lr.library.uq.edu.au/lists/A97E01A9-741C-818E-0CB2-94B606D08156",
+          "period": "Semester 1 2015"
+        }
+      ],
+      "exam_papers": [
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_ACCT2101_s.pdf",
+          "period": "Semester 2 2013",
+          "course": "ACCT2101"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_ACCT2101_s.pdf",
+          "period": "Semester 1 2013",
+          "course": "ACCT2101"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_ACCT2101_s.pdf",
+          "period": "Semester 2 2012",
+          "course": "ACCT2101"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_ACCT2101_s.pdf",
+          "period": "Semester 1 2012",
+          "course": "ACCT2101"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/acct2101_st.pdf",
+          "period": "Semester 1 2011",
+          "course": "ACCT2101"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/acct2101_ipwst.pdf ",
+          "period": "Semester 2 2011",
+          "course": "ACCT2101"
+        }
+      ]
+    }
+  ],
+
+  "MGTS3204" : [
+    {
+      "title": "MGTS3204",
+      "course_title": "Electronic Commerce Infrastructure Management",
+      "reading_lists": [
+        {
+          "title": "MGTS3204  St Lucia",
+          "campus": "St Lucia",
+          "url": "http://lr.library.uq.edu.au/lists/D2239E2D-82BB-7E7D-E745-BDBFCB369C0E",
+          "period": "Semester 1 2015"
+        }
+      ],
+      "exam_papers": [
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_MGTS3204_s.pdf",
+          "period": "Semester 1 2013",
+          "course": "mgts3204"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_MGTS3204_s.pdf",
+          "period": "Semester 1 2012",
+          "course": "mgts3204"
+        },
+        {
+          "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/mgts3204_st.pdf",
+          "period": "Semester 1 2011",
+          "course": "mgts3204"
+        }
+      ]
+    }
+  ]
+}
