@@ -105,8 +105,13 @@ Custom web element for Google Analytics
        *
        * @method addEvent
        */
-      addEvent: function(action) {
-        ga('send', 'event', this.appName, "/" + this.appName + "/" + action);
+      addEvent: function(action, label) {
+        if(typeof(label) != 'undefined'){
+          ga('send', 'event', this.appName, "/" + this.appName + "/" + action, label);
+        }
+        else {
+          ga('send', 'event', this.appName, "/" + this.appName + "/" + action);
+        }
       }
 
     });

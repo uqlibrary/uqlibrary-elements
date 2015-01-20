@@ -24,7 +24,6 @@
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#master",
     "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#master",
     "uqlibrary-borrowing": "uqlibrary/uqlibrary-borrowing#master",
-    "uqlibrary-courses": "uqlibrary/uqlibrary-courses#master",
     "md-timepicker": "uqlibrary/md-timepicker#master"
   }
 }
