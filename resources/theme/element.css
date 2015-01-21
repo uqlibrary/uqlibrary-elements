@@ -193,7 +193,6 @@ core-header-panel {
 
 core-toolbar {
   background-color: #7b0c9d;
-  border-bottom: 1px solid #49075E;
   color: rgba(255, 255, 255, 0.87); }
 
 core-menu {
@@ -201,6 +200,17 @@ core-menu {
 
 paper-progress #activeProgress {
   background-color: #38852e; }
+
+paper-tabs {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
+  paper-tabs::shadow #selectionBar {
+    background-color: #8db800; }
+  paper-tabs paper-tab .tabTitleNumber {
+    margin-bottom: 4px; }
+  paper-tabs paper-tab::shadow #ink {
+    color: #8db800; }
 
 .single-line-list {
   list-style-type: none;
