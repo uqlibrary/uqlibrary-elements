@@ -37,18 +37,7 @@ Element that gets term dates
 
         ready: function () {
           var that = this;
-          this.$.list.mockDataFileUrl = this.tagName.toLowerCase();
-
           this.$.list.addEventListener('uqlibrary-api', function(e) {
-
-            //Check is mocked data is loaded
-            if(e.detail.hasOwnProperty('mock')){
-              that.list = e.detail.data;
-            }
-            else {
-              that.list = e.detail;
-            }
-
             that.list = e.detail;
             that.fire('uqlibrary-api-term-dates', that.list);
           });

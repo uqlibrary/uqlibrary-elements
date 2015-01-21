@@ -38,25 +38,8 @@ Element providing course reading lists.
 
         ready: function () {
           var that = this;
-          this.$.list.mockDataFileUrl = this.tagName.toLowerCase();
           this.$.list.addEventListener('uqlibrary-api', function(e) {
-            if(e.detail.hasOwnProperty('status') && e.detail.status != 200) {
-              that.list = [];
-            }
-            else {
-              //Check is mocked data is loaded
-              if(e.detail.hasOwnProperty('mock')){
-                if(e.detail.data.hasOwnProperty(that.listCode)){
-                  that.list = e.detail.data[that.listCode];
-                }
-                else {
-                  that.list = [];
-                }
-              }
-              else {
-                that.list = e.detail;
-              }
-            }
+            that.list = e.detail;
             that.fire('uqlibrary-api-course-reading-list', that.list);
           });
         },

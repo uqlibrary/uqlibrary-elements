@@ -1,0 +1,31 @@
+[
+  {
+    "title": "MGTS3204",
+    "course_title": "Electronic Commerce Infrastructure Management",
+    "reading_lists": [
+      {
+        "title": "MGTS3204  St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/D2239E2D-82BB-7E7D-E745-BDBFCB369C0E",
+        "period": "Semester 1 2015"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_MGTS3204_s.pdf",
+        "period": "Semester 1 2013",
+        "course": "mgts3204"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_MGTS3204_s.pdf",
+        "period": "Semester 1 2012",
+        "course": "mgts3204"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/mgts3204_st.pdf",
+        "period": "Semester 1 2011",
+        "course": "mgts3204"
+      }
+    ]
+  }
+]
