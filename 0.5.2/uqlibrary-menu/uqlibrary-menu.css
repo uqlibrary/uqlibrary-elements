@@ -194,10 +194,10 @@ paper-item {
   color: rgba(0, 0, 0, 0.87); }
 
 #account {
-  padding: 8px;
+  padding: 12px;
   font-size: 0.875em;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #49075e;
+  color: #333;
+  background-color: #eeeeee;
   border-bottom: 1px solid #F5F5F5; }
   #account core-icon {
     height: 64px;
