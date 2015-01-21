@@ -45,3 +45,9 @@ core-toolbar {
 core-menu {
   margin: 0;
 }
+
+paper-progress {
+  #activeProgress {
+    background-color: $dark-accent;
+  }
+}
