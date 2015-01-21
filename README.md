@@ -68,6 +68,15 @@ Once the script completes, commit this repo with the updated components.
 Each app is deployed using codeship.io. The script bin/codeship.sh is run on codeship.io to gzip the
 application, and to upload the application to S3.
 
+### Running with mock data
+
+To use mock data set cookie value UQLMockData to true
+
+```sh
+      //add a cookie to indicate usage of mock data
+      document.cookie="UQLMockData=true";
+```
+
 ### Styling Guidelines
 
 See the styling example here: https://uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/styles.html
