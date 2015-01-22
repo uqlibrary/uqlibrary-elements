@@ -42,28 +42,28 @@
       "title": "Regression analysis of count data",
       "datePlaced": "2014-11-22T14:00:00+10:00",
       "url": "http:\/\/library.uq.edu.au\/record=i2673780",
-      "status": 'onHold'
+      "status": "onHold"
     },
     {
       "title": "Regression analysis of count data. Part 2",
       "datePlaced": "2014-02-12T14:00:00+10:00",
       "url": "http:\/\/library.uq.edu.au\/record=i2673780",
-      "pickupLocation": 'BSL - Level 3',
-      "status": 'itemReady'
+      "pickupLocation": "BSL - Level 3",
+      "status": "itemReady"
     },
     {
       "title": "Image processing",
       "datePlaced": "2013-12-30T14:00:00+10:00",
       "url": "http:\/\/library.uq.edu.au\/record=i2673780",
-      "pickupLocation": 'SS&H Library - High Use area',
-      "status": 'itemTransit'
+      "pickupLocation": "SS&H Library - High Use area",
+      "status": "itemTransit"
     },
     {
       "title": "Regression analysis of count data",
       "datePlaced": "2014-04-30T14:00:00+10:00",
       "url": "http:\/\/library.uq.edu.au\/record=i2673780",
-      "pickupLocation": 'SS&H Library - High Use area',
-      "status": 'bibReady'
+      "pickupLocation": "SS&H Library - High Use area",
+      "status": "bibReady"
     }
   ],
   "fines": [
