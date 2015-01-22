@@ -177,8 +177,10 @@ core-icon {
   core-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
 
-core-menu core-icon {
-  margin-right: 2em; }
+core-menu {
+  margin: 0; }
+  core-menu core-icon {
+    margin-right: 2em; }
 
 core-toolbar {
   background-color: #ffffff; }
@@ -186,14 +188,19 @@ core-toolbar {
     color: #ffffff; }
 
 core-drawer-panel {
-  background-color: #ffffff; }
+  background-color: #FAFAFA; }
 
 core-header-panel {
   background-color: #ffffff; }
 
 core-toolbar {
-  background-color: #7b0c9d;
+  background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
+
+#drawer {
+  background-color: #FAFAFA;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 core-menu {
   margin: 0; }
