@@ -10,8 +10,8 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5.2",
-    "paper-button": "Polymer/paper-button#0.5.2"
+    "polymer": "Polymer/polymer#0.5.3",
+    "paper-button": "Polymer/paper-button#0.5.3"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"

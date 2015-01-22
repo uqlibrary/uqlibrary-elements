@@ -20,6 +20,6 @@
     "commit": "53e97bf8bef4ccb132ea483bb62f75fb0985a5d7"
   },
   "_source": "git://github.com/Polymer/paper-tabs.git",
-  "_target": "^0.5.3",
+  "_target": "^0.5",
   "_originalSource": "Polymer/paper-tabs"
 }
