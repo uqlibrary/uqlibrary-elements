@@ -1,0 +1,189 @@
+<!--
+Element providing an overview for loans, holds and fines.
+
+##### Example
+
+    <uqlibrary-borrowing></uqlibrary-borrowing>
+
+    <script>
+      window.addEventListener('polymer-ready', function() {
+
+        var borrowing = document.querySelector('uqlibrary-borrowing');
+
+        borrowing.data = {
+          "checkedOut": [
+            {
+              "title": "Pharmaceutics : the science of dosage form design",
+              "dueDate": "2014-12-06T04:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i3349004"
+            },
+          ],
+          "holds": [
+            {
+              "title": "Regression analysis of count data",
+              "datePlaced": "2014-11-22T14:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i2673780",
+              "status": 'onHold'
+            },
+            {
+              "title": "Regression analysis of count data. Part 2",
+              "datePlaced": "2014-02-12T14:00:00+10:00",
+              "url": "http:\/\/library.uq.edu.au\/record=i2673780",
+              "pickupLocation": 'BSL - Level 3',
+              "status": 'itemReady'
+            },
+          ],
+          "fines": [
+            {
+              "title": "1. Human physiology : from cells to systems \/ Lauralee Sherwood.",
+              "fineAmount": 840,
+              "dueDate": "2014-04-08T04:00:00+10:00",
+              "dateReturned": "2014-04-14T14:02:05+10:00",
+              "dateAssessed": "2014-04-15T14:02:05+10:00",
+              "description": "Book loan overdue",
+              "fineType": "overdue",
+              "url": "http:\/\/library.uq.edu.au\/record=i3698283"
+            },
+            {
+              "title": "2. Human physiology : from cells to systems \/ Lauralee Sherwood.",
+              "fineAmount": 160,
+              "dueDate": "2013-04-22T04:00:00+10:00",
+              "dateReturned": "2013-04-24T14:44:15+10:00",
+              "dateAssessed": "2013-04-25T14:02:05+10:00",
+              "description": "Book loan overdue and slight damage",
+              "fineType": "overdue",
+              "url": "http:\/\/library.uq.edu.au\/record=i3704585"
+            },
+          ],
+        };
+
+      });
+    }());
+    </script>
+
+@element uqlibrary-borrowing
+@blurb Element providing an overview for loans, holds and fines.
+@status alpha
+@homepage http://uqlibrary.github.io/uqlibrary-borrowing
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-tabs/paper-tabs.html">
+<link rel="import" href="../paper-tabs/paper-tab.html">
+<link rel="import" href="../core-signals/core-signals.html">
+<link rel="import" href="../core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../core-animated-pages/transitions/slide-from-right.html">
+
+<link rel="import" href="uqlibrary-holds.html">
+<link rel="import" href="uqlibrary-loans.html">
+<link rel="import" href="uqlibrary-fines.html">
+
+
+<polymer-element name="uqlibrary-borrowing" layout center attributes="data">
+  <template>
+    <link rel="stylesheet" href="uqlibrary-borrowing.css">
+    <paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}">
+      <paper-tab name="loans" id="loans">
+          <div layout vertical center class="menu">
+            <span class="tabTitleNumber">{{ data.checkedOut.length }}</span>
+            <span class="tabTitle">Loans</span>
+          </div>
+      </paper-tab>
+
+
+      <paper-tab name="holds" id="holds">
+        <div layout vertical center class="menu">
+          <span class="tabTitleNumber">{{ data.holds.length }}</span>
+          <span class="tabTitle">Holds</span>
+        </div>
+
+      </paper-tab>
+      <paper-tab name="fines" id="fines">
+        <div layout vertical center class="menu">
+          <span class="tabTitleNumber">{{ sumFines }}</span>
+          <span class="tabTitle">Overdue Charges</span>
+        </div>
+
+      </paper-tab>
+    </paper-tabs>
+
+    <div class="infoWrapper">
+      <core-animated-pages id="animatedPages" transitions="slide-from-right" block selected="{{selectedTab}}"
+                           on-core-animated-pages-transition-prepare="{{transitionPrepareHandler}}"
+                           on-core-animated-pages-transition-end="{{transitionEndHandler}}"
+        >
+
+        <section id="loans" name="loans" class="loans" hidden?="{{ selectedTab != 'loans' }}">
+          <uqlibrary-loans id="loans" loans="{{ data.checkedOut }}"></uqlibrary-loans>
+        </section>
+
+        <section id="holds" name="holds" class="holds" hidden?="{{ selectedTab != 'holds' }}">
+          <uqlibrary-holds id="holds" holds="{{ data.holds }}"></uqlibrary-holds>
+        </section>
+
+        <section id="fines" name="fines" class="fines" hidden?="{{ selectedTab != 'fines' }}">
+          <uqlibrary-fines id="fines" fines="{{ data.fines }}"></uqlibrary-fines>
+        </section>
+
+     </core-animated-pages>
+     </div>
+  </template>
+
+  <script>
+    Polymer('uqlibrary-borrowing', {
+
+      /**
+       * The `data` attribute contains information about loans, holds and fines
+       *
+       * @property data
+       * @type Object
+       */
+
+      publish: {
+        data : {
+          holds: [],
+          loans: [],
+          fines: []
+        }
+      },
+      sumFines : 0,
+      selectedTab : 'loans',
+      patronNumber: '',
+
+      ready: function() {
+      },
+
+      dataChanged: function() {
+        this.processData();
+
+      },
+
+      processData: function () {
+        this.sumFines = this.$.fines.moneyFormat(this.$.fines.calculateFines(this.data.fines));
+        var patronNumber = this.data.recordNumber;
+
+        if(this.data.checkedOut.length > 0){
+          this.$.loans.actionButtons = [{title: 'Renew Loans', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/items'}];
+        }
+        if(this.data.holds.length > 0){
+          this.$.holds.actionButtons = [{title: 'Cancel Holds', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/holds'}];
+        }
+        if(this.data.fines.length > 0){
+          this.$.fines.actionButtons = [{title: 'Pay fines', url: 'https://library.uq.edu.au/patroninfo~S7/' + patronNumber + '/overdues'}];
+        }
+
+      },
+
+      transitionPrepareHandler: function() {
+        this.transitioning = true;
+        this.fire('core-signal', {name: "transitioning-change", data: {transitioning: this.transitioning}});
+      },
+      transitionEndHandler: function() {
+        this.transitioning = false;
+        this.fire('core-signal', {name: "transitioning-change", data: {transitioning: this.transitioning}});
+      }
+
+    });
+  </script>
+
+</polymer-element>

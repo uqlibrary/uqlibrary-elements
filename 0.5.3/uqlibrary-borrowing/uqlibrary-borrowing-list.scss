@@ -1,0 +1,111 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+.empty-items {
+  line-height: 48px;
+  color: $secondary-text;
+  text-align: center;
+}
+
+#timeline {
+  margin: 16px;
+}
+
+.timeline-item-inner {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.timeline-divider {
+  line-height: 0.625em;
+  border-bottom: 1px solid $primary-500;
+  margin: 0 0 9px 52px;
+}
+
+.timeline-divider:before {
+  content: '\2022';
+  font-size: 3.1em;
+  color: $primary-500;
+  margin: 0 0 0 -12px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 0px;
+}
+
+.date {
+  width: 64px;
+}
+
+.item {
+  background-color: $highlight-primary;
+  border-radius: 2px;
+  padding: 16px ;
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+  height: 88px;
+  position: relative;
+
+  .item-inner {
+    div.body1, div.caption {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+}
+
+.item-item {
+  &.warning {
+    .item{
+      //background-color: $grey-A400;
+    }
+  }
+}
+
+.last {
+  .item,
+  .item-inner {
+    margin-bottom: 0;
+  }
+}
+
+.event-item {
+  transition: opacity 2000ms;
+}
+
+.event-item-hidden {
+  opacity: 0;
+}
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%;
+  paper-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.warning{
+
+  }
+  &.error{
+
+  }
+
+}
+.tooltip {
+  margin-right: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}

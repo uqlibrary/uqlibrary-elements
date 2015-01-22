@@ -1,0 +1,21 @@
+{
+  "name": "core-shared-lib",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5"
+  },
+  "devDependencies": {
+    "polymer-test-tools": "Polymer/polymer-test-tools#master"
+  },
+  "version": "0.5.3",
+  "homepage": "https://github.com/Polymer/core-shared-lib",
+  "_release": "0.5.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.5.3",
+    "commit": "abca35dbc0c007328a3636604dfcfe997a2fd014"
+  },
+  "_source": "git://github.com/Polymer/core-shared-lib.git",
+  "_target": "^0.5",
+  "_originalSource": "Polymer/core-shared-lib"
+}

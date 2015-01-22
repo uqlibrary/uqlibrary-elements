@@ -1,0 +1,77 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../uqlibrary-persistent-footer/uqlibrary-persistent-footer.html">
+<link rel="import" href="../core-signals/core-signals.html">
+<link rel="import" href="uqlibrary-borrowing-list.html">
+
+<polymer-element name="uqlibrary-loans" attributes="loans actionButtons" extends="uqlibrary-borrowing-list">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-borrowing.css">
+    <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
+    <section name="list" class="with-persistent-footer">
+      <uqlibrary-borrowing-list id="loansTimeline" items="{{loans}}">
+      </uqlibrary-borrowing-list>
+    </section>
+    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}" hidden?="{{ actionButtons.length == 0 }}"></uqlibrary-persistent-footer>
+
+  </template>
+
+  <script>
+    Polymer('uqlibrary-loans', {
+
+      publish: {
+        loans: {
+          value : [],
+          reflect : true
+        },
+        actionButtons: []
+      },
+      transitioning: false,
+
+      ready: function(){
+        this.$.loansTimeline.noItemsMessage = "No loans";
+      },
+
+      loansChanged: function(){
+        this.processData();
+      },
+
+      processData: function() {
+        var _loans = [];
+        for (var i = 0; i < this.loans.length; i++) {
+
+          var _loan = this.loans[i];
+          _loan.class = '';
+          _loan.id = i;
+          _loan.date = new Date(_loan.dueDate);
+          _loan.dateText = _loan.date.getDate() + '/' + (_loan.date.getMonth() + 1) + '/' + _loan.date.getFullYear();
+          _loan.actions = [];
+          var today = new Date();
+          var overdue = Math.ceil((_loan.date - today) / (1000 * 60 * 60 * 24));
+
+          _loan.daysRemain = -1;
+          if(overdue < 0) {
+            _loan.isOverdue = true;
+            //_loan.attentionIcon = {icon: "warning", text: "This item is "+ Math.abs(overdue) + " day(s) overdue", type: 'warning'};
+            //_loan.class += ' warning';
+            //_loan.daysOverdue = Math.abs(overdue);
+            //this.data.loansOverdue ++;
+          }
+          else if(overdue >= 0 && overdue < 5 ) {
+            _loan.daysRemain = overdue;
+            //_loan.attentionIcon = {icon: "warning", text: (overdue == 0 ? 'Last day of the loan' : "This item is due in "+ overdue + " day(s)"), type: 'warning'};
+            //this.data.dueSoon ++;
+          }
+        }
+      },
+
+      transitioningChangeHandler: function(e) {
+        if(e.detail.hasOwnProperty('transitioning'))
+          this.transitioning = e.detail.transitioning;
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

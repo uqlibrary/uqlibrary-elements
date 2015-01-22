@@ -1,0 +1,111 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-signals/core-signals.html">
+<link rel="import" href="../uqlibrary-persistent-footer/uqlibrary-persistent-footer.html">
+<link rel="import" href="uqlibrary-borrowing-list.html">
+
+<polymer-element name="uqlibrary-fines" attributes="fines actionButtons" extends="uqlibrary-borrowing-list">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-borrowing.css">
+    <core-signals on-core-signal-transitioning-change="{{transitioningChangeHandler}}"></core-signals>
+    <section name="list" class="with-persistent-footer">
+      <uqlibrary-borrowing-list id="finesList" items="{{fines}}">
+      </uqlibrary-borrowing-list>
+    </section>
+    <uqlibrary-persistent-footer actionButtons="{{actionButtons}}" hidden?="{{finesSum == 0}}">
+      <div layout horizontal>
+        <div flex> <b>Total</b>: {{finesSum | moneyFormat}} </div>
+        <div class="footer-info" end-justified hidden?="{{ finesSum > fineMinimumPayableAmount }}"><core-icon icon="info-outline"></core-icon> No need to pay unless you reach {{fineMinimumPayableAmount | moneyFormat}}</div>
+      </div>
+
+    </uqlibrary-persistent-footer>
+
+  </template>
+
+  <script>
+    Polymer('uqlibrary-fines', {
+
+      publish: {
+        fines: {
+          value : [],
+          reflect : true
+        }
+      },
+      transitioning: false,
+      actionButtons: [],
+      finesSum: 0,
+      fineMinimumPayableAmount: 20 * 100, // in cents
+
+      ready: function(){
+        this.$.finesList.noItemsMessage = "No overdue charges";
+      },
+
+      finesChanged: function(){
+        this.processData();
+        if(this.finesSum < this.fineMinimumPayableAmount) {
+          this.actionButtons = [];
+        }
+
+      },
+
+      processData: function() {
+        var _fines = [];
+
+        for (var i = 0; i < this.fines.length; i++) {
+
+          var _fine = this.fines[i];
+          _fine.class = 'fine-item';
+          _fine.id = i;
+          _fine.date = new Date(_fine.dateAssessed);
+          _fine.day = this.moneyFormat(_fine.fineAmount);
+          _fine.dayPrefixText = '';
+          _fine.daySuffixText = '';
+          if (_fine.dueDate){
+            _fine.dueDate = new Date(_fine.dueDate);
+            _fine.dueDateText = _fine.dueDate.getDate() + '/' + (_fine.dueDate.getMonth() + 1) + '/' + _fine.dueDate.getFullYear();
+          }
+          if (_fine.dateReturned) {
+            _fine.dateReturned = new Date(_fine.dateReturned);
+            _fine.dateReturnedText = _fine.dateReturned.getDate() + '/' + (_fine.dateReturned.getMonth() + 1) + '/' + _fine.dateReturned.getFullYear();
+          }
+
+          _fine.actions = [];
+
+          if(_fine.dueDateText && _fine.dateReturnedText) {
+            _fine.subtitle = "Due date: " + _fine.dueDateText;
+            _fine.secondaryText = "Date Returned: " + _fine.dateReturnedText;
+            //if(_fine.description) {
+              //_fine.attentionIcon = {icon: "warning", text: _fine.description, type: 'warning'};
+            //}
+          }
+
+          this.finesSum = this.calculateFines(this.fines);
+        }
+      },
+
+      transitioningChangeHandler: function(e) {
+        if(e.detail.hasOwnProperty('transitioning'))
+          this.transitioning = e.detail.transitioning;
+      },
+
+      calculateFines : function(fines) {
+        this.finesSum = 0;
+        if(fines.length > 0) {
+          for(var i=0; i < fines.length; i++){
+            if(fines[i].fineAmount) {
+              this.finesSum += parseInt(fines[i].fineAmount);
+            }
+          }
+        }
+        return this.finesSum;
+      },
+
+      moneyFormat: function(value) {
+        return '$' + (value > 0 ? (parseFloat(value) / 100).toFixed(2) : '0') ;
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

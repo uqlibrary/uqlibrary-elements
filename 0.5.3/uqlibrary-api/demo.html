@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>uqlibrary-api Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="uqlibrary-api-account.html">
+  <link rel="import" href="uqlibrary-api-facilities-availability.html">
+  <link rel="import" href="uqlibrary-api-account-bookings.html">
+  <link rel="import" href="uqlibrary-api-facilities-booking.html">
+  <link rel="import" href="uqlibrary-api-course-reading-list.html">
+  <link rel="import" href="uqlibrary-api-learning-resources.html">
+  <link rel="import" href="uqlibrary-api-library-guides.html">
+  <link rel="import" href="uqlibrary-api-term-dates.html">
+  <link rel="import" href="uqlibrary-api-computer-availability.html">
+  <link rel="import" href="uqlibrary-api-account-loans.html">
+
+  <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
+  <style>
+    body {
+      font-size: 16px;
+      font-family: "RobotoDraft",Helvetica,Arial,sans-serif;
+      font-weight: 400;
+      line-height: 1.1em;
+    }
+
+    div {
+      height: 3em;
+      overflow: hidden;
+    }
+
+  </style>
+</head>
+<body unresolved>
+
+  <uqlibrary-api-account></uqlibrary-api-account>
+  <h3>uqlibrary-api-account</h3>
+  <div id="accountLog"></div>
+
+  <uqlibrary-api-facilities-availability></uqlibrary-api-facilities-availability>
+  <h3>uqlibrary-api-facilities-availability</h3>
+  <div id="availabilityLog"></div>
+
+  <uqlibrary-api-facilities-booking></uqlibrary-api-facilities-booking>
+  <h3>uqlibrary-api-facilities-booking</h3>
+  <div id="bookingLog"></div>
+
+  <uqlibrary-api-account-bookings></uqlibrary-api-account-bookings>
+  <h3>uqlibrary-api-account-bookings</h3>
+  <div id="accountBookingsLog"></div>
+
+  <uqlibrary-api-course-reading-list></uqlibrary-api-course-reading-list>
+  <h3>uqlibrary-api-course-reading-list</h3>
+  <div id="readingListLog"></div>
+
+  <uqlibrary-api-learning-resources></uqlibrary-api-learning-resources>
+  <h3>uqlibrary-api-learning-resources</h3>
+  <div id="learningResourceLog"></div>
+
+  <uqlibrary-api-library-guides></uqlibrary-api-library-guides>
+  <h3>uqlibrary-api-library-guides</h3>
+  <div id="libGuidesLog"></div>
+
+  <uqlibrary-api-term-dates></uqlibrary-api-term-dates>
+  <h3>uqlibrary-api-term-dates</h3>
+  <div id="termDatesLog"></div>
+
+  <uqlibrary-api-computer-availability></uqlibrary-api-computer-availability>
+  <h3>uqlibrary-api-computer-availability</h3>
+  <div id="computerAvailabilityLog"></div>
+
+  <uqlibrary-api-account-loans></uqlibrary-api-account-loans>
+  <h3>uqlibrary-api-account-loans</h3>
+  <div id="accountLoansLog"></div>
+
+  <script>
+    (function () {
+
+      //add a cookie to indicate usage of mock data
+      document.cookie="UQLMockData=true";
+
+      window.addEventListener('polymer-ready', function() {
+
+        var account = document.querySelector('uqlibrary-api-account');
+        account.addEventListener('uqlibrary-api-account-loaded', function(e) {
+          if (e.detail.hasSession) {
+            document.getElementById('accountLog').innerText = JSON.stringify(e.detail);
+          } else {
+            document.getElementById('accountLog').innerText = "Account: Not logged in";
+          }
+        });
+        account.get();
+
+        var availability = document.querySelector('uqlibrary-api-facilities-availability');
+        availability.addEventListener('uqlibrary-api-facilities-availability-loaded', function(e) {
+            document.getElementById('availabilityLog').innerText = JSON.stringify(e.detail);
+        });
+        availability.get();
+
+        var booking = document.querySelector('uqlibrary-api-facilities-booking');
+        booking.addEventListener('uqlibrary-api-facilities-booking-executed', function(e) {
+          document.getElementById('bookingLog').innerText += "OK ";
+        });
+
+        //test create/update booking
+        booking.post({ booking: {
+          date: "12/21/2014",
+          endtime: 1440,
+          machid: "",
+          scheduleid: "",
+          starttime: 1410
+          //resid: '' //to modify existing booking
+          }
+        });
+
+        //test delete booking
+        booking.delete({ booking: {
+          resid: ''
+          }
+        });
+
+        var accountBookings = document.querySelector('uqlibrary-api-account-bookings');
+        accountBookings.addEventListener('uqlibrary-api-account-bookings-loaded', function(e) {
+          document.getElementById('accountBookingsLog').innerText = JSON.stringify(e.detail);
+        });
+        accountBookings.get();
+
+        var readingList = document.querySelector('uqlibrary-api-course-reading-list');
+        readingList.addEventListener('uqlibrary-api-course-reading-list', function(e) {
+          document.getElementById('readingListLog').innerText = JSON.stringify(e.detail);
+        });
+        readingList.get( {code: '5C8C5165-7429-DD81-2CD4-906E945EC3F2' } );
+
+        var learningResources = document.querySelector('uqlibrary-api-learning-resources');
+        learningResources.addEventListener('uqlibrary-api-learning-resources', function(e) {
+          document.getElementById('learningResourceLog').innerText = JSON.stringify(e.detail);
+        });
+        learningResources.get( {code: 'FINM2401' } );
+
+        var libGuides = document.querySelector('uqlibrary-api-library-guides');
+        libGuides.addEventListener('uqlibrary-api-library-guides', function(e) {
+          document.getElementById('libGuidesLog').innerText = JSON.stringify(e.detail);
+        });
+        libGuides.get( { code: 'MGTS' } );
+
+        var termDates = document.querySelector('uqlibrary-api-term-dates');
+        termDates.addEventListener('uqlibrary-api-term-dates', function(e) {
+          document.getElementById('termDatesLog').innerText = JSON.stringify(e.detail);
+        });
+        termDates.get( { codes: ['1234', '6020'] } );
+
+        var compAvailability = document.querySelector('uqlibrary-api-computer-availability');
+        compAvailability.addEventListener('uqlibrary-api-computer-availability-loaded', function(e) {
+          document.getElementById('computerAvailabilityLog').innerText = JSON.stringify(e.detail);
+        });
+        compAvailability.get();
+
+        var loans = document.querySelector('uqlibrary-api-account-loans');
+        loans.addEventListener('uqlibrary-api-account-loans-loaded', function(e) {
+          document.getElementById('accountLoansLog').innerText = JSON.stringify(e.detail);
+        });
+        loans.get();
+
+
+      });
+
+    }());
+  </script>
+</body>
+</html>

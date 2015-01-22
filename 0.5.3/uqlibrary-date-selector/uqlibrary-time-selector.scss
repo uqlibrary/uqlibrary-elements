@@ -1,0 +1,33 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+
+.items{
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+.item{
+  text-align: center;
+  display: inline-block;
+  margin: 1px;
+  min-width: 30px;
+  padding: 15px 1px;
+  font-size: 13px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background-color: $fbs-available-time;
+
+  &.occupied-true {
+    background-color: $fbs-unavailable-time;
+    color: $white;
+  }
+
+  &.selected-true {
+    background-color: $fbs-selected-time;
+    color: $white;
+  }
+}
+
+

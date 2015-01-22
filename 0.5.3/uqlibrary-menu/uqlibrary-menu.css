@@ -1,0 +1,218 @@
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87); }
+
+.inverse a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.87); }
+
+h1 {
+  font-family: "Roboto light";
+  font-size: 8em;
+  line-height: 1.1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgba(0, 0, 0, 0.54); }
+
+h1.inverse {
+  font-family: "Roboto light";
+  font-size: 8em;
+  line-height: 1.1em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: white; }
+
+h2 {
+  font-family: "Roboto regular";
+  font-size: 4em;
+  white-space: nowrap;
+  line-height: 1.1em;
+  text-overflow: ellipsis;
+  color: rgba(0, 0, 0, 0.54); }
+
+h2.inverse {
+  font-family: "Roboto regular";
+  font-size: 4em;
+  white-space: nowrap;
+  line-height: 1.1em;
+  text-overflow: ellipsis;
+  color: white; }
+
+h3 {
+  font-family: "Roboto regular";
+  font-size: 3.4em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54); }
+
+h3.inverse {
+  font-family: "Roboto regular";
+  font-size: 3.4em;
+  line-height: 1.1em;
+  color: white; }
+
+h4 {
+  font-family: "Roboto regular";
+  font-size: 2.6em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54); }
+
+h4.inverse {
+  font-family: "Roboto regular";
+  font-size: 2.6em;
+  line-height: 1.1em;
+  color: white; }
+
+.headline {
+  font-family: "Roboto regular";
+  font-size: 1.8em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.headline.inverse {
+  font-family: "Roboto regular";
+  font-size: 1.8em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.title {
+  font-family: "Roboto medium";
+  font-size: 1.42857em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.title.inverse {
+  font-family: "Roboto medium";
+  font-size: 1.42857em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.subhead {
+  font-family: "Roboto regular";
+  font-size: 1.14286em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.subhead.inverse {
+  font-family: "Roboto regular";
+  font-size: 1.14286em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.body2 {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.body2.inverse {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.body1 {
+  font-family: "Roboto regular";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.body1.inverse {
+  font-family: "Roboto regular";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.caption {
+  font-family: "Roboto regular";
+  font-size: 0.85714em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54); }
+
+.caption.inverse {
+  font-family: "Roboto regular";
+  font-size: 0.85714em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.54); }
+
+.menu {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.menu.inverse {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+.button {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+.button.inverse {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
+core-icon {
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 2em; }
+  core-icon.inactive {
+    color: rgba(0, 0, 0, 0.26); }
+  core-icon.active-inverse {
+    color: white; }
+  core-icon.inactive-inverse {
+    color: rgba(255, 255, 255, 0.3); }
+
+:host,
+:host *,
+::content * {
+  box-sizing: border-box;
+  outline: none; }
+
+core-menu {
+  padding: 8px 0;
+  margin: 0; }
+  core-menu.divider {
+    border-bottom: 1px solid #F5F5F5; }
+
+paper-item {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+#account {
+  padding: 12px;
+  font-size: 0.875em;
+  color: #333;
+  background-color: #eeeeee;
+  border-bottom: 1px solid #F5F5F5; }
+  #account core-icon {
+    height: 64px;
+    width: 64px; }
+  #account #details {
+    padding: 14px; }
+  #account #name {
+    font-weight: 400;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  #account #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+/*# sourceMappingURL=uqlibrary-menu.css.map */

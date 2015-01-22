@@ -1,0 +1,46 @@
+[
+  {
+    "title": "FINM2401",
+    "course_title": "Financial Management",
+    "reading_lists": [
+      {
+        "title": "FINM2401 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/5C8C5165-7429-DD81-2CD4-906E945EC3F2",
+        "period": "Semester 2 2014"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_FINM2401_s.pdf",
+        "period": "Semester 2 2013",
+        "course": "FINM2401"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_FINM2401_s.pdf",
+        "period": "Semester 1 2013",
+        "course": "FINM2401"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_FINM2401_s.pdf",
+        "period": "Semester 1 2012",
+        "course": "FINM2401"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_FINM2401.pdf",
+        "period": "Semester 2 2012",
+        "course": "FINM2401"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/finm2401_st.pdf",
+        "period": "Semester 1 2011",
+        "course": "FINM2401"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/finm2401_ipwst.pdf",
+        "period": "Semester 2 2011",
+        "course": "FINM2401"
+      }
+    ]
+  }
+]
