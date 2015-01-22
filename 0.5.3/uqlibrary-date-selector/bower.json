@@ -14,7 +14,7 @@
     "paper-tabs": "Polymer/paper-tabs#^0.5.3",
     "paper-button": "Polymer/paper-button#^0.5.3",
     "core-animation": "Polymer/core-animation#^0.5.3",
-    "web-animations-js": "web-animations/web-animations-js",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
     "moment": "~2.8.4"
   },
   "devDependencies": {
