@@ -721,6 +721,9 @@ paper-fab {
   .hint-box.unavailable {
     background-color: #BDBDBD; }
 
+@media screen and (min-width: 768px) {
+  .responsiveToolbarButton {
+    display: none; } }
 :host,
 :host *,
 ::content * {
