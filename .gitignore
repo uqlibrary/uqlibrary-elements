@@ -4,3 +4,4 @@
 *.map
 .bowerrc
 *.rb
+bower_components/
