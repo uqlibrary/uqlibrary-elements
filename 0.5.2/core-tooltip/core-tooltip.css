@@ -27,10 +27,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .core-tooltip {
   position: absolute;
   font-size: 10px;
-  font-weight: 500;
+  font-family: sans-serif;
   padding: 8px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0,0,0,0.8);
   box-sizing: border-box;
   border-radius: 3px; /* TODO: not in spec. */
   white-space: nowrap;

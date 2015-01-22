@@ -4,9 +4,3 @@
 *.map
 .bowerrc
 *.rb
-
-0.5.2/context-free-parser/.bower.json
-
-*.json
-
-0.5.2/core-icon-button/bower.json

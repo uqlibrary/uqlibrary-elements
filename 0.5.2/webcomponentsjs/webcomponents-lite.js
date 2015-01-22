@@ -7,13 +7,14 @@
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-// @version 0.5.3
+// @version 0.5.1-1
 window.WebComponents = window.WebComponents || {};
 
 (function(scope) {
   var flags = scope.flags || {};
   var file = "webcomponents.js";
   var script = document.querySelector('script[src*="' + file + '"]');
+  var flags = {};
   if (!flags.noOpts) {
     location.search.slice(1).split("&").forEach(function(o) {
       o = o.split("=");
@@ -510,9 +511,9 @@ window.HTMLImports = window.HTMLImports || {
   whenReady(function() {
     HTMLImports.ready = true;
     HTMLImports.readyTime = new Date().getTime();
-    var evt = rootDocument.createEvent("CustomEvent");
-    evt.initCustomEvent("HTMLImportsLoaded", true, true, {});
-    rootDocument.dispatchEvent(evt);
+    rootDocument.dispatchEvent(new CustomEvent("HTMLImportsLoaded", {
+      bubbles: true
+    }));
   });
   scope.IMPORT_LINK_TYPE = IMPORT_LINK_TYPE;
   scope.useNative = useNative;
@@ -563,7 +564,7 @@ HTMLImports.addModule(function(scope) {
 });
 
 HTMLImports.addModule(function(scope) {
-  var xhr = {
+  xhr = {
     async: true,
     ok: function(request) {
       return request.status >= 200 && request.status < 300 || request.status === 304 || request.status === 0;
@@ -640,13 +641,7 @@ HTMLImports.addModule(function(scope) {
     },
     fetch: function(url, elt) {
       flags.load && console.log("fetch", url, elt);
-      if (!url) {
-        setTimeout(function() {
-          this.receive(url, elt, {
-            error: "href must be specified"
-          }, null);
-        }.bind(this), 0);
-      } else if (url.match(/^data:/)) {
+      if (url.match(/^data:/)) {
         var pieces = url.split(",");
         var header = pieces[0];
         var body = pieces[1];
@@ -1050,7 +1045,7 @@ HTMLImports.addModule(function(scope) {
   var importer = scope.importer;
   var dynamic = {
     added: function(nodes) {
-      var owner, parsed, loading;
+      var owner, parsed;
       for (var i = 0, l = nodes.length, n; i < l && (n = nodes[i]); i++) {
         if (!owner) {
           owner = n.ownerDocument;
