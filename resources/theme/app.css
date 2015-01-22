@@ -510,7 +510,7 @@ h4.inverse {
       .three-line-icon-list .list-item.timeline .date .title, .three-line-icon-list .list-item.timeline .date .headline {
         color: #7b0c9d; }
     .three-line-icon-list .list-item.timeline .content {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       border-radius: 2px;
       padding-left: 16px; }
     .three-line-icon-list .list-item .content {
@@ -616,7 +616,7 @@ h4.inverse {
   border-radius: 2px;
   box-sizing: border-box;
   height: auto;
-  background: #ffffff;
+  background: white;
   width: 320px;
   margin: 16px auto; }
   .card .cardSection {
@@ -637,15 +637,15 @@ core-menu core-icon {
   margin-right: 2em; }
 
 core-toolbar {
-  background-color: #ffffff; }
+  background-color: white; }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: white; }
 
 core-drawer-panel {
-  background-color: #ffffff; }
+  background-color: white; }
 
 core-header-panel {
-  background-color: #ffffff; }
+  background-color: white; }
 
 core-toolbar {
   background-color: #7b0c9d;
@@ -659,7 +659,7 @@ paper-progress #activeProgress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -696,7 +696,7 @@ paper-tabs {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -728,9 +728,9 @@ paper-tabs {
   .hint-box.selected {
     background-color: #007e9e; }
   .hint-box.available {
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
   .hint-box.unavailable {
-    background-color: #BDBDBD; }
+    background-color: #bdbdbd; }
 
 body {
   font-size: 16px;
@@ -741,4 +741,9 @@ body {
   margin: 0;
   background-color: #fafafa; }
 
-/*# sourceMappingURL=app.css.map */
+#loader {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
