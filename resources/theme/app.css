@@ -675,6 +675,14 @@ paper-tabs {
   paper-tabs paper-tab::shadow #ink {
     color: #8db800; }
 
+.home-icon {
+  width: 44px;
+  height: 44px;
+  color: #7b0c9d; }
+
+#masquerade-icon {
+  color: #ce4627; }
+
 .text-center {
   text-align: center; }
 
