@@ -655,7 +655,6 @@ core-toolbar {
 
 #drawer {
   background-color: #FAFAFA;
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 core-menu {
@@ -682,6 +681,22 @@ paper-tabs {
 
 #masquerade-icon {
   color: #ce4627; }
+
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px; }
+
+.icon-button > core-icon {
+  margin: 16px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.icon-button:hover > core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); }
 
 .text-center {
   text-align: center; }

@@ -43,7 +43,6 @@ core-toolbar {
 }
 #drawer {
   background-color: $background-primary;
-  box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -85,4 +84,23 @@ paper-tabs {
 
 #masquerade-icon {
   color: $uq-warm-red;
+}
+
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+}
+
+.icon-button > core-icon {
+  margin: 16px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-button:hover > core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
