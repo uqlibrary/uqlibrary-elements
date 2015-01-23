@@ -21,7 +21,7 @@ Element providing a the library main apps menu
 
   <template>
     <link rel="stylesheet" href="uqlibrary-menu.css">
-    <uqlibrary-ga id="ga" appName="Menu"></uqlibrary-ga>
+    <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
     <template if="{{account.hasSession}}">
       <div reverse horizontal layout id="account">
         <!--<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>-->
