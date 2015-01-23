@@ -741,6 +741,7 @@ paper-item {
   width: 100%; }
 
 #searchWrapper {
+  width: 96%;
   margin: 8px;
   transition: 300ms ease-in-out; }
 

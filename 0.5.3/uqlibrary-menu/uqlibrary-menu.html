@@ -44,7 +44,7 @@ Element providing a the library main apps menu
           <a href="https://www.library.uq.edu.au">
             <core-icon icon="home"></core-icon> UQ Library Home
           </a></paper-item>
-        <paper-item on-tap="{{doFeedback}}" id="showFeedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+        <paper-item on-tap="{{askFeedback}}" id="askFeedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
         <!--<paper-item>-->
           <!--<a href="https://www.library.uq.edu.au/logout">-->
           <!--<core-icon icon="lock"></core-icon> Logout-->
@@ -54,17 +54,57 @@ Element providing a the library main apps menu
 
     <core-menu selectedAttribute="">
       <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking"><core-icon icon="event"></core-icon> Booking</paper-item>
-      <paper-item on-tap="{{doTransition}}" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
-      <paper-item on-tap="{{doTransition}}" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
-      <template if="{{user.classes.length}}">
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
+      <paper-item on-tap="{{go}}" link="#" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <template if="{{account.classes.length}}">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses"><core-icon icon="social:school"></core-icon> Courses</paper-item>
       </template>
-      <paper-item on-tap="{{doTransition}}" id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
-      <template if="{{user.canMasquerade}}">
-        <paper-item on-tap="{{doTransition}}" id="showMasqueradePage"><core-icon icon="supervisor-account"></core-icon> Masquerade</paper-item>
+      <paper-item on-tap="{{go}}" link="#" id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
+      <template if="{{account.canMasquerade}}">
+        <paper-item on-tap="{{go}}" link="#" id="showMasqueradePage"><core-icon icon="supervisor-account"></core-icon> Masquerade</paper-item>
       </template>
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
+
+    <template>
+
+      <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
+        <p>This will log you out of all your UQ website sessions.</p>
+        <paper-button affirmative on-tap={{closeDialog}}">Cancel</paper-button>
+        <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+      </paper-action-dialog>
+
+    </template>
+
+    <template>
+
+    <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
+      <p>Your feedback will help us improve MyLibrary.</p>
+      <paper-input-decorator label="Your comments (required)" error="input is required!" id="feedbackInput" autofocus on-input="{{inputHandler}}">
+
+        <paper-autogrow-textarea>
+          <textarea></textarea>
+        </paper-autogrow-textarea>
+      </paper-input-decorator>
+
+      <core-label horizontal layout>
+        <paper-checkbox for>
+          <style>
+          </style>
+        </paper-checkbox>
+        <div vertical layout>
+          <h4>Include my contact information</h4>
+          <div>We'll include your name, library barcode and email address so we can get back to you.</div>
+        </div>
+      </core-label>
+      <br>
+      <br>
+
+      <paper-button affirmative on-tap="{{closeDialog}}">Cancel</paper-button>
+      <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{sendFeedback}}">Send feedback</paper-button>
+    </paper-action-dialog>
+
+    </template>
 
   </template>
 
@@ -80,7 +120,34 @@ Element providing a the library main apps menu
 
         ready: function () {
 
+
+        },
+
+        askFeedback: function () {
+          console.log("feedback should send!");
+          document.querySelector('#feedbackDialog').toggle();
+        },
+
+        askLogout: function () {
+          console.log("logout dialog!");
+          document.querySelector('#logoutDialog').toggle();
+        },
+
+        go: function (e, _, el) {
+          document.location.href = el.attributes.link.value;
+        },
+
+        sendFeedback: function () {
+          // TODO: use UQLAPP API to send this email rather than the core-ajax function
+          console.log("sending feedback!");
+        },
+
+        closeDialog: function () {
+          // TODO: include name of dialog as parameter
+          console.log("closing dialog!");
+          this.toggle();
         }
+
       });
     })();
   </script>

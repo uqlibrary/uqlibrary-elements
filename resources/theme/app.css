@@ -698,6 +698,24 @@ paper-tabs {
   -webkit-transform: scale(1.2);
   transform: scale(1.2); }
 
+paper-input-decorator::shadow .focused-underline {
+  background-color: #8cb800; }
+
+paper-checkbox::shadow #ink[checked] {
+  color: #007e9e; }
+
+paper-checkbox::shadow #checkbox.checked {
+  border-color: #007e9e; }
+
+paper-checkbox::shadow #ink {
+  color: #cccccc; }
+
+paper-checkbox::shadow #checkbox {
+  border-color: #cccccc; }
+
+paper-button [colored] {
+  background-color: #007e9e; }
+
 .text-center {
   text-align: center; }
 
