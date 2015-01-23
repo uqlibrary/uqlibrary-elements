@@ -26,11 +26,7 @@ Element providing a the library main apps menu
       <div reverse horizontal layout id="account">
         <!--<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>-->
         <!--<div id="icon"><core-icon icon="lock" class="active"></core-icon></div>-->
-<<<<<<< HEAD
-        <paper-icon-button icon="lock" title="Logout" id="logoutButton" on-tap="{{askLogout}}"></paper-icon-button>
-=======
         <paper-icon-button icon="lock" title="Logout" on-tap="{{askLogout}}" id="askLogout"></paper-icon-button>
->>>>>>> FETCH_HEAD
         <div id="details" flex>
           <div>
             <div id="name" class="body2">{{account.name}}</div>
@@ -41,13 +37,8 @@ Element providing a the library main apps menu
 
       <core-menu selectedAttribute="" class="divider">
         <paper-item>
-<<<<<<< HEAD
-          <a href="https://app.library.uq.edu.au/v1/home">
-            <core-icon icon="dashboard"></core-icon> My Library
-=======
           <a href="https://app.library.uq.edu.au/v1/home" id="MyLibrary" on-click="{{linkClicked}}">
-            <core-icon icon="dashboard"></core-icon> MyLibrary
->>>>>>> FETCH_HEAD
+            <core-icon icon="dashboard"></core-icon> My Library
           </a></paper-item>
         <paper-item>
           <a href="https://www.library.uq.edu.au" id="LibraryHome" on-click="{{linkClicked}}">
