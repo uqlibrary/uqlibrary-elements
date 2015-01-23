@@ -12,7 +12,7 @@ To use mock data set cookie value UQLMockData to true
 
 ```sh
       //add a cookie to indicate usage of mock data
-      document.cookie="UQLMockData=true";
+      document.cookie="UQLMockData=enabled";
 ```
       
 ### Mock files

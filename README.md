@@ -70,11 +70,11 @@ application, and to upload the application to S3.
 
 ### Running with mock data
 
-To use mock data set cookie value UQLMockData to true
+To use mock data set cookie value UQLMockData to enabled (cookie values are strings).
 
 ```sh
       //add a cookie to indicate usage of mock data
-      document.cookie="UQLMockData=true";
+      document.cookie="UQLMockData=enabled";
 ```
 
 ### Styling Guidelines

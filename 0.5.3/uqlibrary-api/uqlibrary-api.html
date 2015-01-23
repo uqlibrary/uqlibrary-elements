@@ -42,7 +42,7 @@ Element providing access to UQ Library's API.
         ready: function() {
           var cookie = this.getCookie('UQLMockData');
           if (cookie !== "undefined") {
-            this.useMockData = cookie === 'true';
+            this.useMockData = (cookie === 'enabled');
           }
         },
 

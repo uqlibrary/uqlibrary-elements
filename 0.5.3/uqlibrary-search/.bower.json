@@ -24,11 +24,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "f349bf5aa7",
+  "_release": "b484987f9f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f349bf5aa7bf6945b2303863057829590ef7bd49"
+    "commit": "b484987f9fa2954f89cc8fb0937815e7fa76fc20"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
   "_target": "master",

@@ -56,20 +56,29 @@ Custom web element for Google Analytics
       //google analytics settings: clientId, siteSpeedSampleRate, forceSSL, etc
       sampleRate: 100,
       disableTracking: 'ga-disable-UA-XXX-Y',
+      useMockData: false,
 
       created: function() {
       },
 
       ready: function() {
+        var cookie = this.getCookie('UQLMockData');
+        if (cookie !== "undefined") {
+          this.useMockData = (cookie === 'enabled');
+        }
+        //Don't use GA if we are running a mock data test
+        if (!this.useMockData) {
+          try {
+            ga('create', this.trackingId,
+                    {
+                      'cookieName': 'ga_' + this.appName,
+                      'cookieDomain': document.location.origin != this.websiteUrl ? 'none' : this.cookieDomain,
+                      'sampleRate': this.sampleRate
+                    });
+          } catch(err){}
+        }
 
-        ga('create', this.trackingId,
-                {
-                  'cookieName'    : 'ga_' + this.appName,
-                  'cookieDomain'  : document.location.origin != this.websiteUrl ? 'none' : this.cookieDomain,
-                  'sampleRate'    : this.sampleRate
-                });
-
-        //check if user opted out from GA tracking
+        //check if user opted out from GA tracking or if we are currently using mock testing
         this.disableTracking = 'ga-disable-' + this.trackingId;
         if (document.cookie.indexOf(this.disableTracking + '=true') > -1) {
           window[this.disableTracking] = true;
@@ -93,10 +102,16 @@ Custom web element for Google Analytics
        * @method addPageView
        */
       addPageView: function(page) {
-        var pageHit = "/" + this.appName + "/" + page;
+        //Don't use GA if we are running a mock data test
+        if (!this.useMockData) {
+          try {
+            var pageHit = "/" + this.appName + "/" + page;
 
-        ga('set', { page: pageHit, title: pageHit });
-        ga('send', 'pageview');
+            ga('set', {page: pageHit, title: pageHit});
+            ga('send', 'pageview');
+          } catch (err) {
+          }
+        }
       },
 
       /**
@@ -106,11 +121,17 @@ Custom web element for Google Analytics
        * @method addEvent
        */
       addEvent: function(action, label) {
-        if(typeof(label) != 'undefined'){
-          ga('send', 'event', this.appName, "/" + this.appName + "/" + action, label);
-        }
-        else {
-          ga('send', 'event', this.appName, "/" + this.appName + "/" + action);
+        //Don't use GA if we are running a mock data test
+        if (!this.useMockData) {
+          try {
+            if (typeof(label) != 'undefined') {
+              ga('send', 'event', this.appName, "/" + this.appName + "/" + action, label);
+            }
+            else {
+              ga('send', 'event', this.appName, "/" + this.appName + "/" + action);
+            }
+          } catch (err) {
+          }
         }
       }
 
