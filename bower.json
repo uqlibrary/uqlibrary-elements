@@ -23,6 +23,7 @@
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#master",
     "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#master",
-    "md-timepicker": "uqlibrary/md-timepicker#master"
+    "md-timepicker": "uqlibrary/md-timepicker#master",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.2"
   }
 }

@@ -46,12 +46,17 @@ Element providing a the library main apps menu
     </template>
 
     <core-menu selectedAttribute="">
-      <paper-item><a href="#"><core-icon icon="event"></core-icon> Booking</a></paper-item>
-      <paper-item><a href="#"><core-icon icon="maps:local-library"></core-icon> Borrowing</a></paper-item>
-      <paper-item><a href="#"><core-icon icon="hardware:desktop-windows"></core-icon> Computers</a></paper-item>
-      <paper-item><a href="#"><core-icon icon="social:school"></core-icon> Courses</a></paper-item>
-      <paper-item><a href="#"><core-icon icon="schedule"></core-icon> Hours</a></paper-item>
-      <paper-item><a href="#"><core-icon icon="communication:comment"></core-icon> Feedback</a></paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking"><core-icon icon="event"></core-icon> Booking</paper-item>
+      <paper-item on-tap="{{doTransition}}" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
+      <paper-item on-tap="{{doTransition}}" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <template if="{{user.classes.length}}">
+        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses"><core-icon icon="social:school"></core-icon> Courses</paper-item>
+      </template>
+      <paper-item on-tap="{{doTransition}}" id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
+      <template if="{{user.canMasquerade}}">
+        <paper-item on-tap="{{doTransition}}" id="showMasqueradePage"><core-icon icon="supervisor-account"></core-icon> Masquerade</paper-item>
+      </template>
+      <paper-item on-tap="{{doFeedback}}" id="showFeedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
 
