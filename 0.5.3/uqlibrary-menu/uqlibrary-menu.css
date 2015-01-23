@@ -193,4 +193,27 @@ paper-item {
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
+#details {
+  padding: 110px 14px 14px 14px;
+}
+
+#account {
+  font-size: 0.875em;
+  background-color: #7b0c9d;
+  border-bottom: 1px solid #cccccc; }
+#account core-icon {
+  height: 64px;
+  width: 64px; }
+#account #details {
+  padding: 110px 14px 14px 14px; }
+#account #name {
+  margin-bottom: 2px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+#account #mail {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
 /*# sourceMappingURL=uqlibrary-menu.css.map */
