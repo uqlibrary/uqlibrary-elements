@@ -133,6 +133,17 @@ Custom web element for Google Analytics
           } catch (err) {
           }
         }
+      },
+
+      /**
+       * Gets a cookie by name
+       * @param name the name of the cookie to return
+       * @returns {String}
+       */
+      getCookie: function (name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
       }
 
     });
