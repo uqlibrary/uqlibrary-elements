@@ -15,34 +15,3 @@ core-menu {
 paper-item {
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
 }
-
-#account {
-  padding: 12px;
-  font-size: 0.875em;
-  color: $text;
-//  background-color: $grey-A200;
-  border-bottom: 1px solid $uq-divider;
-
-  core-icon {
-    height: 64px;
-    width: 64px;
-  }
-
-  #details {
-    padding: 14px;
-  }
-
-  #name {
-//    font-weight: 400;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  #mail {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}

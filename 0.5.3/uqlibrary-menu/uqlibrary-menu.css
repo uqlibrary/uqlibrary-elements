@@ -184,7 +184,7 @@ core-menu {
   padding: 8px 0;
   margin: 0; }
   core-menu.divider {
-    border-bottom: 1px solid #F5F5F5; }
+    border-bottom: 1px solid #cccccc; }
 
 paper-item {
   font-family: "Roboto medium";
@@ -192,27 +192,5 @@ paper-item {
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
-
-#account {
-  padding: 12px;
-  font-size: 0.875em;
-  color: #333;
-  background-color: #eeeeee;
-  border-bottom: 1px solid #F5F5F5; }
-  #account core-icon {
-    height: 64px;
-    width: 64px; }
-  #account #details {
-    padding: 14px; }
-  #account #name {
-    font-weight: 400;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; }
-  #account #mail {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden; }
 
 /*# sourceMappingURL=uqlibrary-menu.css.map */
