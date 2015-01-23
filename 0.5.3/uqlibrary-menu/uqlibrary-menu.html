@@ -59,7 +59,7 @@ Element providing a the library main apps menu
       <template if="{{account.classes.length}}">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
       </template>
-      <paper-item on-tap="{{go}}" link="#" id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/hours"  id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
       <template if="{{account.canMasquerade}}">
         <paper-item on-tap="{{go}}" link="#" id="showMasqueradePage"><core-icon icon="supervisor-account"></core-icon> Masquerade</paper-item>
       </template>
