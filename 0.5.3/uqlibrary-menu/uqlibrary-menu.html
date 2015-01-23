@@ -26,7 +26,11 @@ Element providing a the library main apps menu
       <div horizontal layout id="account">
         <!--<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>-->
         <!--<div id="icon"><core-icon icon="lock" class="active"></core-icon></div>-->
+<<<<<<< HEAD
         <paper-icon-button icon="lock" title="Logout" on-tap="{{askLogout}}" id="askLogout"></paper-icon-button>
+=======
+        <paper-icon-button icon="lock" title="Logout" on-tap="{{askLogout}}"></paper-icon-button>
+>>>>>>> FETCH_HEAD
         <div id="details" flex>
           <div>
             <div id="name" class="body2">{{account.name}}</div>
@@ -37,6 +41,7 @@ Element providing a the library main apps menu
 
       <core-menu selectedAttribute="" class="divider">
         <paper-item>
+<<<<<<< HEAD
           <a href="https://app.library.uq.edu.au/v1/home" id="MyLibrary" on-click="{{linkClicked}}">
             <core-icon icon="dashboard"></core-icon> MyLibrary
           </a></paper-item>
@@ -45,6 +50,16 @@ Element providing a the library main apps menu
             <core-icon icon="home"></core-icon> UQ Library Home
           </a></paper-item>
         <paper-item on-tap="{{askFeedback}}" id="askFeedback" on-click="{{linkClicked}}"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+=======
+          <a href="https://app.library.uq.edu.au/v1/home">
+            <core-icon icon="dashboard"></core-icon> MyLibrary
+          </a></paper-item>
+        <paper-item>
+          <a href="https://www.library.uq.edu.au">
+            <core-icon icon="home"></core-icon> UQ Library Home
+          </a></paper-item>
+        <paper-item on-tap="{{askFeedback}}" id="askFeedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+>>>>>>> FETCH_HEAD
         <!--<paper-item>-->
           <!--<a href="https://www.library.uq.edu.au/logout">-->
           <!--<core-icon icon="lock"></core-icon> Logout-->
@@ -53,11 +68,19 @@ Element providing a the library main apps menu
     </template>
 
     <core-menu selectedAttribute="">
+<<<<<<< HEAD
       <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
       <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
       <paper-item on-tap="{{go}}" link="#" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
       <template if="{{account.classes.length}}">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
+=======
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking"><core-icon icon="event"></core-icon> Booking</paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
+      <paper-item on-tap="{{go}}" link="#" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <template if="{{account.classes.length}}">
+        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses"><core-icon icon="social:school"></core-icon> Courses</paper-item>
+>>>>>>> FETCH_HEAD
       </template>
       <paper-item on-tap="{{go}}" link="#" id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
       <template if="{{account.canMasquerade}}">
@@ -71,7 +94,11 @@ Element providing a the library main apps menu
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
         <paper-button affirmative on-tap={{closeDialog}}">Cancel</paper-button>
+<<<<<<< HEAD
         <paper-button affirmative autofocus raised colored class="coloured" id="Logout" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+=======
+        <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+>>>>>>> FETCH_HEAD
       </paper-action-dialog>
 
     </template>
@@ -134,18 +161,24 @@ Element providing a the library main apps menu
         },
 
         go: function (e, _, el) {
+<<<<<<< HEAD
           var _id = el.getAttribute('id');
           if(_id) {
             this.$.ga.addEvent('Menu Item Clicked', _id);
           }
+=======
+>>>>>>> FETCH_HEAD
           document.location.href = el.attributes.link.value;
         },
 
         sendFeedback: function () {
+<<<<<<< HEAD
           var _id = el.getAttribute('id');
           if(_id) {
             this.$.ga.addEvent('Feedback Sent', _id);
           }
+=======
+>>>>>>> FETCH_HEAD
           // TODO: use UQLAPP API to send this email rather than the core-ajax function
           console.log("sending feedback!");
         },
@@ -154,6 +187,7 @@ Element providing a the library main apps menu
           // TODO: include name of dialog as parameter
           console.log("closing dialog!");
           this.toggle();
+<<<<<<< HEAD
         },
 
         linkClicked: function(e, detail, sender) {
@@ -161,6 +195,8 @@ Element providing a the library main apps menu
           if(_id) {
             this.$.ga.addEvent('Link Clicked', _id);
           }
+=======
+>>>>>>> FETCH_HEAD
         }
 
       });
