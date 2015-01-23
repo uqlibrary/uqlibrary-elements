@@ -654,8 +654,11 @@ core-toolbar {
   color: rgba(255, 255, 255, 0.87); }
 
 #drawer {
-  background-color: #FAFAFA;
+  background-color: #ffffff;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
+
+#main {
+  background-color: #FAFAFA; }
 
 core-menu {
   margin: 0; }
@@ -674,13 +677,34 @@ paper-tabs {
   paper-tabs paper-tab::shadow #ink {
     color: #8db800; }
 
+#account {
+  font-size: 0.875em;
+  background-color: #7b0c9d;
+  border-bottom: 1px solid #cccccc; }
+  #account core-icon {
+    height: 64px;
+    width: 64px; }
+  #account #details {
+    padding: 110px 14px 14px 14px; }
+  #account #name {
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  #account #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+#logoutButton {
+  height: 44px;
+  width: 44px;
+  padding: 10px; }
+
 .home-icon {
   width: 44px;
   height: 44px;
   color: #7b0c9d; }
-
-#masquerade-icon {
-  color: #ce4627; }
 
 /* Icon Button */
 .icon-button {
@@ -697,24 +721,6 @@ paper-tabs {
 .icon-button:hover > core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2); }
-
-paper-input-decorator::shadow .focused-underline {
-  background-color: #8cb800; }
-
-paper-checkbox::shadow #ink[checked] {
-  color: #007e9e; }
-
-paper-checkbox::shadow #checkbox.checked {
-  border-color: #007e9e; }
-
-paper-checkbox::shadow #ink {
-  color: #cccccc; }
-
-paper-checkbox::shadow #checkbox {
-  border-color: #cccccc; }
-
-paper-button [colored] {
-  background-color: #007e9e; }
 
 .text-center {
   text-align: center; }

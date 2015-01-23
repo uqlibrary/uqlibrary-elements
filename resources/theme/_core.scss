@@ -42,8 +42,11 @@ core-toolbar {
   color: $text-inverse;
 }
 #drawer {
-  background-color: $background-primary;
+  background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#main {
+  background-color: $background-primary;
 }
 
 core-menu {
@@ -76,14 +79,46 @@ paper-tabs {
   }
 }
 
+
+#account {
+  font-size: 0.875em;
+  background-color: $primary;
+  border-bottom: 1px solid $uq-divider;
+
+  core-icon {
+    height: 64px;
+    width: 64px;
+  }
+
+  #details {
+    padding: 110px 14px 14px 14px;
+  }
+
+  #name {
+    //    font-weight: 400;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+#logoutButton {
+  height: 44px;
+  width: 44px;
+  padding: 10px;
+}
+
 .home-icon {
   width: 44px;
   height: 44px;
   color: $primary;
-}
-
-#masquerade-icon {
-  color: $uq-warm-red;
 }
 
 /* Icon Button */
@@ -103,23 +138,4 @@ paper-tabs {
 .icon-button:hover > core-icon {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-}
-
-paper-input-decorator::shadow .focused-underline {
-  background-color: #8cb800;
-}
-paper-checkbox::shadow #ink[checked] {
-  color: $uq-aqua;
-}
-paper-checkbox::shadow #checkbox.checked {
-  border-color: $uq-aqua;
-}
-paper-checkbox::shadow #ink {
-  color: $uq-divider;
-}
-paper-checkbox::shadow #checkbox {
-  border-color: $uq-divider;
-}
-paper-button [colored] {
-  background-color: $uq-aqua;
 }
