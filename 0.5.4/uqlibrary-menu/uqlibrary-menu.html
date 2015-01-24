@@ -36,14 +36,8 @@ Element providing a the library main apps menu
       </div>
 
       <core-menu selectedAttribute="" class="divider">
-        <paper-item>
-          <a href="https://app.library.uq.edu.au/v1/home" id="MyLibrary" on-click="{{linkClicked}}">
-            <core-icon icon="dashboard"></core-icon> My Library
-          </a></paper-item>
-        <paper-item>
-          <a href="https://www.library.uq.edu.au" id="LibraryHome" on-click="{{linkClicked}}">
-            <core-icon icon="home"></core-icon> UQ Library Home
-          </a></paper-item>
+        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
+        <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome"><core-icon icon="home"></core-icon> UQ Library Home</paper-item>
         <paper-item on-tap="{{askFeedback}}" id="askFeedback" on-click="{{linkClicked}}"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
         <!--<paper-item>-->
           <!--<a href="https://www.library.uq.edu.au/logout">-->
