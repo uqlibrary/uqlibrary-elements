@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "0.4.1",
-    "matchdep": "~0.1.1",
-    "grunt-aws-s3": "0.7.0",
-    "grunt-invalidate-cloudfront": "0.1.1"
+    "grunt": "0.4.5",
+    "matchdep": "~0.3.0",
+    "grunt-aws-s3": "0.11.0",
+    "grunt-invalidate-cloudfront": "0.1.6"
   },
   "engines": {
     "node": ">=0.8.0"

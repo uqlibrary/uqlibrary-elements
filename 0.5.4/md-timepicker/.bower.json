@@ -1,0 +1,34 @@
+{
+  "name": "md-timepicker",
+  "homepage": "https://github.com/virtual-dev/md-timepicker",
+  "authors": [
+    "virtual-dev"
+  ],
+  "private": true,
+  "description": "A Polymer Timepicker element in Material Design",
+  "main": "md-timepicker.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "moment": "~2.8.3",
+    "paper-ripple": "Polymer/paper-ripple#0.5.4",
+    "paper-button": "Polymer/paper-button#0.5.4",
+    "paper-shadow": "Polymer/paper-shadow#0.5.4"
+  },
+  "_release": "3646a83518",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3646a835183c5410630fd2686229a5fd77b38acb"
+  },
+  "_source": "git://github.com/uqlibrary/md-timepicker.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/md-timepicker"
+}
