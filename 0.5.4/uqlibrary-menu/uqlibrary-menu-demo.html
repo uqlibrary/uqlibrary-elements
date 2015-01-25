@@ -1,0 +1,50 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-icons/maps-icons.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../uqlibrary-menu/uqlibrary-menu.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<!--
+Element providing a the library main apps menu
+
+##### Example
+
+    <uqlibrary-menu></uqlibrary-menu>
+
+@element uqlibrary-menu
+@blurb Element providing a the library main apps menu
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-menu
+-->
+<polymer-element name="uqlibrary-menu-demo" attributes="account" extends="uqlibrary-menu">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-menu.css">
+    <uqlibrary-api-account id="account"></uqlibrary-api-account>
+    <uqlibrary-menu account="{{user}}"></uqlibrary-menu>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-menu-demo', {
+
+          ready: function() {
+              var that = this;
+              this.$.account.addEventListener('uqlibrary-api-account-loaded', function(e) {
+                  if (e.detail.hasSession) {
+                      that.user = e.detail;
+                  } else {
+                      that.$.account.login('https://app.library.uq.edu.au/v1/home');
+                  }
+              });
+              this.$.account.get();
+          }
+
+      });
+    })();
+  </script>
+
+</polymer-element>

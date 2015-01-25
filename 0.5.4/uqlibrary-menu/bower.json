@@ -14,6 +14,7 @@
     "core-icon": "Polymer/core-icon#0.5.4",
     "core-icons": "Polymer/core-icons#0.5.4",
     "core-menu": "Polymer/core-menu#0.5.4",
+    "core-ajax": "Polymer/core-ajax#0.5.4",
     "paper-item": "Polymer/paper-item#0.5.4"
   },
   "devDependencies": {

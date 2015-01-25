@@ -5,15 +5,34 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>uqlibrary-menu Demo</title>
 
-  <script src="../webcomponentsjs/webcomponents.min.js"></script>
-  <link rel="import" href="uqlibrary-menu.html">
+    <script>
+        function isIE () {
+            var myNav = navigator.userAgent.toLowerCase();
+            return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+        }
+
+        if (! ('registerElement' in document
+                && 'createShadowRoot' in HTMLElement.prototype
+                && 'import' in document.createElement('link')
+                && 'content' in document.createElement('template'))) {
+            // IE 8 and 9 throw errors if you try to include webcomponents.js, which prevents other user messages working
+            if (!isIE() || isIE () > 9) {
+                document.write('<script src="../../uqlibrary-elements/0.5.4/webcomponentsjs/webcomponents.js"><\/script>');
+            }
+        }
+        //enable mock data for the account api to show the full menu
+        document.cookie="UQLMockData=enabled";
+    </script>
   <!-- Uncomment below to test the demo locally instead of via the github pages pathing -->
-  <!-- <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css"> -->
+  <!--<link rel="import" href="../uqlibrary-elements/0.5.4/lib/vulcanized.html">-->
+  <!--<link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css">-->
+  <!--<link rel="import" href="uqlibrary-menu-demo.html">-->
   <link rel="stylesheet" href="//uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/resources/theme/app.css">
+  <link rel="import" href="//uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-api/uqlibrary-api-account.html">
+  <link rel="import" href="//uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-menu/uqlibrary-menu-demo.html">
+
 </head>
 <body unresolved>
-
-  <uqlibrary-menu></uqlibrary-menu>
-
+  <uqlibrary-menu-demo></uqlibrary-menu-demo>
 </body>
 </html>
