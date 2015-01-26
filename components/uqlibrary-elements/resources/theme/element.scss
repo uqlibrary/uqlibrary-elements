@@ -1,0 +1,19 @@
+@import "variables";
+@import "typography";
+@import "core";
+@import "lists";
+@import "buttons";
+@import "cards";
+@import "containers";
+
+:host,
+:host *,
+::content *
+{
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+
+

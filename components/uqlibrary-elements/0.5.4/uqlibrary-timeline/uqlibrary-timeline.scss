@@ -1,0 +1,12 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+.event-item {
+  transition: opacity 2000ms;
+}
+
+.event-item-hidden {
+  opacity: 0;
+}

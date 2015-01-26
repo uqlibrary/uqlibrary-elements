@@ -1,0 +1,31 @@
+[
+  {
+    "title": "INFS2244",
+    "course_title": "Electronic Commerce Systems Development",
+    "reading_lists": [
+      {
+        "title": "INFS2244 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/63839A01-F705-74B7-94CC-15B8477EAD4B",
+        "period": "Semester 2 2014"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_INFS2244_s.pdf",
+        "period": "Semester 2 2013",
+        "course": "INFS2244"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_INFS2244_s.pdf",
+        "period": "Semester 2 2012",
+        "course": "INFS2244"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/infs2244_st.pdf",
+        "period": "Semester 2 2011",
+        "course": "INFS2244"
+      }
+    ]
+  }
+]

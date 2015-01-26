@@ -1,0 +1,141 @@
+@import "variables";
+
+core-icon {
+  color: $active-icon;
+
+  &.inactive {
+    color: $inactive-icon;
+  }
+  &.active-inverse {
+    color: $active-icon-inverse;
+  }
+  &.inactive-inverse {
+    color: $inactive-icon-inverse;
+  }
+}
+
+core-menu {
+  margin: 0;
+  core-icon {
+    margin-right: 2em;
+  }
+}
+
+core-toolbar {
+  background-color: $white;
+
+  core-icon {
+    color: $white;
+  }
+}
+
+core-drawer-panel {
+  background-color: $background-secondary;
+}
+
+core-header-panel {
+  background-color: $background-primary;
+}
+
+core-toolbar {
+  background-color: $dark-primary;
+  color: $text-inverse;
+}
+#drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#main {
+  background-color: $background-primary;
+}
+
+core-menu {
+  margin: 0;
+}
+
+paper-progress {
+  #activeProgress {
+    background-color: $dark-accent;
+  }
+}
+
+paper-tabs {
+  //height: 64px;
+  color: $text;
+  background-color: $white;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+  &::shadow #selectionBar {
+    background-color: $accent;
+  }
+  paper-tab {
+    .tabTitleNumber {
+      margin-bottom: 4px;
+    }
+
+    &::shadow #ink {
+      color: $accent;
+    }
+
+  }
+}
+
+
+#account {
+  font-size: 0.875em;
+  background-color: $primary;
+  border-bottom: 1px solid $uq-divider;
+
+  core-icon {
+    height: 64px;
+    width: 64px;
+  }
+
+  #details {
+    padding: 110px 14px 14px 14px;
+  }
+
+  #name {
+    //    font-weight: 400;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+#logoutButton {
+  height: 44px;
+  width: 44px;
+  padding: 10px;
+}
+
+.home-icon {
+  width: 44px;
+  height: 44px;
+  color: $primary;
+}
+
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+}
+
+.icon-button > core-icon {
+  margin: 16px;
+  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-button:hover > core-icon {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}

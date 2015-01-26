@@ -1,0 +1,25 @@
+@import "variables";
+@import "margins";
+
+$default-card-width: 320px;
+
+.card {
+  display: block;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: auto;
+  background: $background-secondary;
+  width: $default-card-width;
+  margin: $card-margin auto;
+
+  .cardSection {
+    border-bottom: 1px solid $divider;
+    padding: $card-title-padding;
+    display: block;
+  }
+
+  .cardTitle {
+  }
+
+
+}

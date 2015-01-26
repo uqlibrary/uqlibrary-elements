@@ -1,0 +1,55 @@
+<link rel="import" href="../paper-item/paper-item.html">
+
+<polymer-element name="uqlibrary-notification-item" attributes="item">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-notification-item.css">
+    <div class="wrapper">
+      <paper-item class="{{item.isNew ? 'new' : ''}}" on-tap="{{redirectToItem}}">
+        <div class="imageWrapper" style="background-image: url({{item.image}})" hidden?="{{!item.image}}" ></div>
+        <div flex>{{item.text}}</div>
+      </paper-item>
+      <div class="markAsRead" hidden?={{!item.isNew}}>
+        <core-icon id="markAsReadIcon" icon="cancel" on-tap="{{markItemAsRead}}" title="Mark as Read"></core-icon>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-notification-item', {
+
+        publish: {
+          item: {
+           observe: true,
+           value: {}
+           }
+
+        },
+
+        created: function () {
+        },
+
+        ready: function() {
+
+        },
+
+        markItemAsRead: function(e, data, sender) {
+          if (this.item.isNew) {
+            this.item.isNew = false;
+            this.fire('item-marked-as-read', {item: this.item});
+          }
+        },
+
+        redirectToItem: function() {
+          this.markItemAsRead();
+          if (this.item.link && !this.item.changedState) {
+            window.location.href = this.item.link;
+          }
+        }
+
+      });
+    })();
+  </script>
+
+</polymer-element>

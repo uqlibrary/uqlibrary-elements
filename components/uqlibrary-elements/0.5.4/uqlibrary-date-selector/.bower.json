@@ -1,0 +1,32 @@
+{
+  "name": "uqlibrary-date-selector",
+  "description": "Element displaying date and time with ability to select time slots",
+  "main": "uqlibrary-date-selector.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-date-selector/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "paper-tabs": "Polymer/paper-tabs#^0.5.4",
+    "paper-button": "Polymer/paper-button#^0.5.4",
+    "core-animation": "Polymer/core-animation#^0.5.4",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
+    "moment": "~2.8.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^1.6.1"
+  },
+  "_release": "74a1e36a4e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "74a1e36a4e26e1f683bf4f44cf6229a02a645f9f"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-date-selector.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-date-selector"
+}

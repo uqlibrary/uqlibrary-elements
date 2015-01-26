@@ -1,0 +1,46 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+core-menu {
+  padding: 8px 0;
+  margin: 0;
+
+  &.divider {
+    border-bottom: 1px solid $uq-divider;
+  }
+}
+
+paper-item {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+}
+
+#account {
+  font-size: 0.875em;
+  background-color: $primary;
+  border-bottom: 1px solid $uq-divider;
+
+  core-icon {
+    height: 64px;
+    width: 64px;
+  }
+
+  #details {
+    padding: 110px 14px 14px 14px;
+  }
+
+  #name {
+    //    font-weight: 400;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

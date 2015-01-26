@@ -1,0 +1,170 @@
+[
+  {
+    "library": "Architecture &amp; Music Library",
+    "buildingNumber": 51,
+    "availability": {
+      "Level 3": {
+        "Available": 41,
+        "Occupied": 2
+      }
+    }
+  },
+  {
+    "library": "Biological Sciences Library",
+    "buildingNumber": 94,
+    "availability": {
+      "Level 1": {
+        "Available": 13,
+        "Occupied": 15
+      },
+      "Level 2": {
+        "Available": 60,
+        "Occupied": 24
+      },
+      "Level 3": {
+        "Available": 25,
+        "Occupied": 12
+      },
+      "Level 4": {
+        "Available": 26,
+        "Occupied": 14
+      }
+    }
+  },
+  {
+    "library": "D.H. Engineering &amp; Sciences Library",
+    "buildingNumber": 50,
+    "availability": {
+      "Level 2": {
+        "Available": 15,
+        "Occupied": 0
+      }
+    }
+  },
+  {
+    "library": "Duhig Building",
+    "buildingNumber": 2,
+    "availability": {
+      "Postgraduate Study Centre": {
+        "Available": 14,
+        "Occupied": 6
+      },
+      "Level 1": {
+        "Available": 30,
+        "Occupied": 3
+      },
+      "Level 2": {
+        "Available": 69,
+        "Occupied": 24
+      }
+    }
+  },
+  {
+    "library": "Graduate Economics &amp; Business Library",
+    "buildingNumber": 39,
+    "availability": {
+      "Level 2": {
+        "Available": 25,
+        "Occupied": 1
+      }
+    }
+  },
+  {
+    "library": "Gatton Campus Library",
+    "buildingNumber": 8102,
+    "availability": {
+      "Level 1": {
+        "Available": 64,
+        "Occupied": 1
+      },
+      "Level 2": {
+        "Available": 16,
+        "Occupied": 1
+      }
+    }
+  },
+  {
+    "library": "Herston Health Sciences Library",
+    "buildingNumber": null,
+    "availability": {
+      "Level 6": {
+        "Available": 36,
+        "Occupied": 4
+      }
+    }
+  },
+  {
+    "library": "Law Library",
+    "buildingNumber": 1,
+    "availability": {
+      "Level 2": {
+        "Available": 10,
+        "Occupied": 8
+      },
+      "Level 3": {
+        "Available": 8,
+        "Occupied": 1
+      },
+      "Level 4": {
+        "Available": 6,
+        "Occupied": 0
+      }
+    }
+  },
+  {
+    "library": "Mater Hospital Library",
+    "buildingNumber": null,
+    "availability": {
+      "Level 1": {
+        "Available": 19,
+        "Occupied": 2
+      }
+    }
+  },
+  {
+    "library": "PACE Health Sciences Library",
+    "buildingNumber": null,
+    "availability": {
+      "Level 6": {
+        "Available": 41,
+        "Occupied": 1
+      }
+    }
+  },
+  {
+    "library": "Princess Alexandra Hospital Library",
+    "buildingNumber": null,
+    "availability": {
+      "Level 1": {
+        "Available": 19,
+        "Occupied": 4
+      }
+    }
+  },
+  {
+    "library": "Social Sciences &amp; Humanities Library",
+    "buildingNumber": 12,
+    "availability": {
+      "Level 1 Entry": {
+        "Available": 31,
+        "Occupied": 21
+      },
+      "Level 1": {
+        "Available": 1,
+        "Occupied": 1
+      },
+      "Level 2": {
+        "Available": 19,
+        "Occupied": 4
+      },
+      "Level 3": {
+        "Available": 21,
+        "Occupied": 4
+      },
+      "Level 4": {
+        "Available": 19,
+        "Occupied": 0
+      }
+    }
+  }
+]

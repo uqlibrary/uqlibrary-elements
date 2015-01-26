@@ -1,0 +1,56 @@
+  [
+    {
+      "referenceType": "Book",
+      "title": "Financial accounting: an integrated approach",
+      "importance": "Required",
+      "author": "Trotman, K. T.; Gibbins, Michael; Carson, Elizabeth",
+      "publisher": "Cengage Learning",
+      "year": "2013",
+      "placePublished": "South Melbourne, Vic",
+      "isbn": "9780170214414",
+      "catalogueRecordId": "b3205953",
+      "itemLink": "http://lr.library.uq.edu.au/items/24081F45-B7F8-06ED-705C-977A83A86E3A.html"
+    },
+    {
+      "referenceType": "Book",
+      "title": "Financial reporting handbook 2013: incorporating all the standards as at 1 December 2012",
+      "importance": "Required",
+      "author": "Locke, Claire; Institute of Chartered Accountants in Australia",
+      "publisher": "Wiley",
+      "year": "2013",
+      "placePublished": "Milton, Qld",
+      "isbn": "9781118452349",
+      "catalogueRecordId": "b3207519",
+      "itemLink": "http://lr.library.uq.edu.au/items/4A3B11E1-543B-285C-475F-A6FDA361524B.html"
+    },
+    {
+      "referenceType": "Webpage",
+      "title": "Past Central Exam Papers",
+      "notes": "Follow the link and search for past exam papers by course code",
+      "url": "https://www.library.uq.edu.au/#exampapers",
+      "itemLink": "http://lr.library.uq.edu.au/items/6A68C13A-D517-098C-E39A-328EEB1FB2EF.html"
+    },
+    {
+      "referenceType": "Document",
+      "title": "Australian Accounting Standards Board",
+      "author": "Australian Accounting Standards Board",
+      "publisher": "AASB.",
+      "url": "http://www.aasb.gov.au/",
+      "placePublished": "Melbourne",
+      "catalogueRecordId": "b2071657",
+      "itemLink": "http://lr.library.uq.edu.au/items/6BCB6F68-CDEF-BC65-8E4A-DFA481BF83BE.html"
+    },
+    {
+      "referenceType": "Book",
+      "title": "Accounting handbook: 2013",
+      "importance": "Required",
+      "author": "Shying, Mark; Subramanian, Ram; CPA Australia",
+      "publisher": "Pearson Australia for CPA",
+      "year": "2013",
+      "placePublished": "Frenchs Forest, N.S.W.",
+      "isbn": "9781486006519",
+      "catalogueRecordId": "b3198928",
+      "itemLink": "http://lr.library.uq.edu.au/items/DE51909A-B752-2F68-A2A3-A284F0C9111E.html"
+    }
+  ]
+

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--
+Copyright 2013 The Polymer Authors. All rights reserved.
+Use of this source code is governed by a BSD-style
+license that can be found in the LICENSE file.
+-->
+<html>
+<head>
+  <title>UQ Library Style Guide</title>
+
+  <link rel="stylesheet" href="resources/theme/app.css">
+
+</head>
+<body unresolved fullbleed vertical layout>
+<p class="title">UQ Library  Style Guide</p>
+<ul>
+  <li><a href="#typo">Colours</a></li>
+  <li><a href="#typo">Typography</a></li>
+  <li><a href="#sllist">Single line list</a></li>
+  <li><a href="#twollist">Two-line list</a></li>
+  <li><a href="#threellist">Three-line list</a></li>
+  <li><a href="#containers">Containers</a></li>
+</ul>
+
+<a name="colours"></a>
+
+<p class="title">Colours</p>
+
+<div class="colours">
+  <p>The following colours are based on the official University of Queensland colour palette.</p>
+    <p>It has only been modified where necessary to meet WCAG 2.0 AA colour contrast specifications.</p>
+<ul class="sg-colors">
+  <li>
+    <div class="sg-swatch" id="primary-alt"></div>
+    <span class="sg-label">#49075E<br>$dark-primary</span>
+  </li>
+  <li>
+    <div class="sg-swatch" id="primary"></div>
+    <span class="sg-label">#7B0C9D<br>$primary</span>
+  </li>
+    <li>
+    <div class="sg-swatch" id="accent-alt"></div>
+    <span class="sg-label">#38852E<br>$dark-accent</span>
+  </li>
+  <li>
+    <div class="sg-swatch" id="accent"></div>
+    <span class="sg-label">#8CB800<br>$accent</span>
+  </li>
+    <li>
+        <div class="sg-swatch" id="uq-gold"></div>
+        <span class="sg-label">#BDA14E<br>$uq-gold</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="uq-gold-alt"></div>
+        <span class="sg-label">#8A7433<br>$uq-gold-alt</span>
+    </li>
+  <li>
+    <div class="sg-swatch" id="uq-red"></div>
+    <span class="sg-label">#AA0041<br>$uq-red</span>
+  </li>
+  <li>
+    <div class="sg-swatch" id="uq-warm-red"></div>
+    <span class="sg-label">#CE4627<br>$uq-warm-red</span>
+  </li>
+  <li>
+    <div class="sg-swatch" id="link"></div>
+    <span class="sg-label">#007E9E<br>$link</span>
+  </li>
+    <li>
+        <div class="sg-swatch" id="link-alt"></div>
+        <span class="sg-label">#E7E7E7<br>$link-secondary</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="text"></div>
+        <span class="sg-label">#333333<br>$text</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="text-alt"></div>
+        <span class="sg-label">#757575<br>$text-secondary</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="divider"></div>
+        <span class="sg-label">#CCCCCC<br>$divider</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="background"></div>
+        <span class="sg-label">#FAFAFA<br>$background-primary</span>
+    </li>
+    <li>
+        <div class="sg-swatch" id="background-alt"></div>
+        <span class="sg-label">#FFFFFF<br>$background-secondary</span>
+    </li>
+</ul>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a name="typo"></a>
+<p class="title">Typography </p>
+
+<h1> H1: Display4</h1>
+<h2> H2: Display3</h2>
+<h3> H3: Display2</h3>
+<h4> H4: Display1</h4>
+<div class="headline"> .headline </div>
+<div class="title"> .title </div>
+<div class="subhead"> .subhead </div>
+<div class="body2"> .body2 </div>
+<div class="body1"> .body1 </div>
+<div class="caption"> .caption </div>
+<div class="menu"> .menu </div>
+<div class="button"> .button </div>
+
+<div style="background-color: #333;">
+  <h1 class="inverse"> H1.inverse: Display4</h1>
+  <h2 class="inverse"> H2.inverse: Display3</h2>
+  <h3 class="inverse"> H3.inverse: Display2</h3>
+  <h4 class="inverse"> H4.inverse: Display1</h4>
+  <div class="headline inverse"> .headline </div>
+  <div class="title inverse"> .title.inverse </div>
+  <div class="subhead inverse"> .subhead.inverse </div>
+  <div class="body2 inverse"> .body2.inverse </div>
+  <div class="body1 inverse"> .body1.inverse </div>
+  <div class="caption inverse"> .caption.inverse </div>
+  <div class="menu inverse"> .menu.inverse </div>
+  <div class="button inverse"> .button.inverse </div>
+</div>
+
+<a name="sllist"></a>
+<p class="title"> Single line list</p>
+<ul class="single-line-list">
+  <li class="list-item header">Single line list items</li>
+  <li class="list-item"><div class="content">St. Lucia</div></li>
+  <li class="list-item"><div class="content">Gatton</div></li>
+  <li class="list-item"><div class="content">Herston</div></li>
+  <li class="gap"></li>
+</ul>
+
+<p class="title"> Single line list with avatar/icon</p>
+
+<ul class="single-line-icon-list">
+  <li class="list-item header">Single line list items with avatar</li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">Single-line list item 1</div>
+  </li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">Long single-line list item 1 Single-line list item 1 Single-line list item 1 Single-line list item 1 Single-line list item 1 Single-line list item 1 Single-line list item 1 Single-line list item 1</div>
+  </li>
+  <li class="gap border"></li>
+  <li class="list-item header">Single line list items with icon</li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">Ipswich
+      <div class="icon">
+        <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+      </div>
+    </div>
+  </li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">Hospital
+      <div class="icon">
+        <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<a name="twollist"></a>
+<p class="title"> Two line list</p>
+<ul class="two-line-list">
+  <li class="list-item header">Two line list items</li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+  </li>
+  <li class="list-item">
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+  </li>
+  <li class="gap"></li>
+</ul>
+
+<p class="title"> Two line list with avatar/icon</p>
+<ul class="two-line-icon-list">
+  <li class="list-item header">Two-line list items with avatar</li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+  </li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+  </li>
+  <li class="gap border"></li>
+  <li class="list-item header">Two-line list items with avatar and icon</li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+  <li class="list-item">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Two-line list item line 1</div>
+      <div class="line2">some description of two-line list item line 2</div>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+</ul>
+
+<a name="threellist"></a>
+<p class="title"> Three line list</p>
+
+<ul class="three-line-list">
+  <li class="list-item header">Three-line list items</li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <div class="line2">Duhig Building</div>
+      <div class="line3">Available time: 1:30pm - 2:00pm</div>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <div class="line2">Duhig Building</div>
+      <div class="line3">Available time: 1:30pm - 2:00pm</div>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <div class="line2">Duhig Building</div>
+      <div class="line3">Available time: 1:30pm - 2:00pm</div>
+    </div>
+  </li>
+
+  <li class="gap"></li>
+</ul>
+
+<p class="title"> Three line list text</p>
+
+<ul class="three-line-text-list">
+  <li class="list-item header">Three-line list items with text</li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero
+      </span>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero, dignissim condimentum risus fringilla congue. Phasellus sit amet fermentum nisi. Nunc nec mi sit amet libero rutrum eleifend. Fusce ultricies volutpat fermentum. Nam ut elit et justo commodo tristique. Aliquam mollis erat at eros tincidunt bibendum.
+      </span>
+    </div>
+  </li>
+
+  <li class="gap"></li>
+</ul>
+
+<p class="title"> Three line list with avatar/icon</p>
+<ul class="three-line-icon-list">
+  <li class="list-item header">Three-line item with avatar</li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+  </li>
+  <li class="gap"></li>
+  <li class="list-item header">Items with avatar and icon</li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+</ul>
+
+<p class="title"> Three line text list with avatar/icon</p>
+<ul class="three-line-text-icon-list">
+  <li class="list-item header">Three-line item with avatar</li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero</span>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero, dignissim condimentum risus fringilla congue. Phasellus sit amet fermentum nisi. Nunc nec mi sit amet libero rutrum eleifend. Fusce ultricies volutpat fermentum. Nam ut elit et justo commodo tristique. Aliquam mollis erat at eros tincidunt bibendum.</span>
+    </div>
+  </li>
+  <li class="gap"></li>
+  <li class="list-item header">Items with avatar and icon</li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero
+      </span>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+  <li class="list-item border">
+    <div class="avatar" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/biological_sciences_library_94_thumb.jpg');"></div>
+    <div class="content">
+      <div class="line1">St. Lucia</div>
+      <span class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum blandit libero quam, quis fermentum quam egestas et. Etiam tincidunt pretium libero
+      </span>
+    </div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46c1.23.78 2.69 1.24 4.26 1.24 4.42 0 8-3.58 8-8h3l-4-4zm-13 4c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46c-1.23-.78-2.69-1.24-4.26-1.24-4.42 0-8 3.58-8 8h-3l4 4 4-4h-3z"></path></g></svg>
+    </div>
+  </li>
+</ul>
+
+<p class="title"> Timeline three-line text list</p>
+<ul class="three-line-icon-list">
+  <li class="list-item header">Three-line item with date</li>
+  <li class="list-item timeline">
+    <div class="date">
+      <div class="title">12</div>
+      <div class="caption">Mon</div>
+    </div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+  </li>
+  <li class="list-divider timeline">
+    <div class="line"></div>
+  </li>
+  <li class="list-item timeline">
+    <div class="date" style="display:none">
+      <div class="title">17</div>
+      <div class="caption">jan</div>
+    </div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+  </li>
+  <li class="list-item timeline">
+    <div class="date">
+      <div class="title">17</div>
+      <div class="caption">Sat</div>
+    </div>
+    <div class="content">
+      <div class="line1">Three-line list item line 1</div>
+      <div class="line2">some description</div>
+      <div class="line3">some description of three-line list item line 3</div>
+    </div>
+  </li>
+</ul>
+
+<a name="containers"></a>
+<p class="title"> Containers </p>
+<p class="title"> Image header with title </p>
+
+<div class="image-header" style="background-image: url('https://app.library.uq.edu.au/assets/images/uq-buildings/st_lucia/zelman_cowan_bldg_51.jpg')">
+
+  <div class="title-container">
+    <div class="title inverse">Individual Room 1</div>
+    <div class="subhead inverse">Zelman Cowan Bldg (#51), St Lucia</div>
+  </div>
+</div>
+
+<div class="text-container body1">
+  Body1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis auctor tortor eu lobortis. Nullam non felis vel velit ultrices volutpat vitae ac risus. Praesent varius arcu urna, ut lacinia erat malesuada id. Nam aliquet porta egestas. Nullam nec justo magna. Ut mattis rhoncus felis elementum porttitor. Cras vitae mi et ligula pulvinar rhoncus sed eget nisl.
+</div>
+
+<div class="text-container body2">
+  Body2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis auctor tortor eu lobortis. Nullam non felis vel velit ultrices volutpat vitae ac risus. Praesent varius arcu urna, ut lacinia erat malesuada id. Nam aliquet porta egestas. Nullam nec justo magna. Ut mattis rhoncus felis elementum porttitor. Cras vitae mi et ligula pulvinar rhoncus sed eget nisl.
+</div>
+
+<p class="title"> Text alignment classes </p>
+<p class="text-container text-left body1"> class="text-left" - left aligned text </p>
+<p class="text-container text-center body1"> class="text-center" center aligned text </p>
+<p class="text-container text-right body1"> class="text-right" right aligned text </p>
+<p class="text-container text-nowrap body1"> class="text-nowrap" Flannel slow-carb bitters, four loko 3 wolf moon locavore pour-over yr four dollar toast Pitchfork hoodie American Apparel. Sustainable photo booth tattooed, Vice actually ethical shabby chic keytar deep v post-ironic ugh Pinterest polaroid. Selvage jean shorts sartorial, Blue Bottle salvia fashion axe narwhal cliche art party mixtape chillwave VHS meh asymmetrical Vice. Try-hard Intelligentsia Echo Park McSweeney's photo booth Bushwick, bitters Etsy raw denim scenester wayfarers.</p>
+
+
+<!--persistent footer styles, embedded in element, not for separate use-->
+
+<!--<div class="persistent-footer">-->
+  <!--<div class="text-container" flex>Some text in the footer</div>-->
+  <!--<div class="buttons-container">-->
+    <!--<div class="button">Same me</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+</body>
+</html>

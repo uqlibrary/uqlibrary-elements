@@ -1,0 +1,7 @@
+{
+  "name": "uqlibrary-elements#gh-pages",
+  "private": true,
+  "dependencies": {
+    "uqlibrary-elements": "uqlibrary/uqlibrary-elements#master"
+  }
+}

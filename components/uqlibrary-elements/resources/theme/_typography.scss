@@ -1,0 +1,199 @@
+@import "variables";
+
+$_gmd-type-styles: (
+        display4: (
+                font-family: "Roboto light",
+                font-size: 8em,
+                line-height: 1.1em,
+                white-space: nowrap,
+                text-overflow: ellipsis,
+        ),
+        display3: (
+                font-family: "Roboto regular",
+                font-size: 4em,
+                white-space: nowrap,
+                line-height: 1.1em,
+                text-overflow: ellipsis,
+        ),
+        display2: (
+                font-family: "Roboto regular",
+                font-size: 3.4em,
+                line-height: 1.1em,
+        ),
+        display1: (
+                font-family: "Roboto regular",
+                font-size: 2.6em,
+                line-height: 1.1em,
+        ),
+        headline: (
+                font-family: "Roboto regular",
+                font-size: 1.8em,
+                line-height: 1.1em,
+        ),
+        title: (
+                font-family: "Roboto medium",
+                font-size: 1.42857143em,
+                line-height: 1.1em,
+        ),
+        subhead: (
+                font-family: "Roboto regular",
+                font-size: 1.14285714em,
+                line-height: 1.1em,
+        ),
+        body2: (
+                font-family: "Roboto medium",
+                font-size: 1em,
+                line-height: 1.1em,
+
+        ),
+        body1: (
+                font-family: "Roboto regular",
+                font-size: 1em,
+                line-height: 1.1em,
+        ),
+
+        caption: (
+                font-family: "Roboto regular",
+                font-size: .85714286em,
+                line-height: 1.1em,
+        ),
+        list-title: (
+                font-family: "Roboto bold",
+                font-size: .85714286em,
+                line-height: 1.1em,
+        ),
+        menu: (
+                font-family: "Roboto medium",
+                font-size: 1em,
+                color: $text,
+                line-height: 1.1em,
+        ),
+        button: (
+                font-family: "Roboto medium",
+                font-size: 1em,
+                text-transform: uppercase,
+                color: $text,
+                line-height: 1.1em,
+        ),
+        link: (
+                text-decoration: none,
+        )
+);
+
+@mixin gmd-type-style($type, $color) {
+
+  $style: map-get($_gmd-type-styles, $type);
+  @each $property, $value in $style {
+    #{$property}: $value;
+  }
+  color: $color;
+}
+
+
+a {
+  @include gmd-type-style(link, gmd-alpha-color($black, text));
+}
+
+.inverse a {
+  @include gmd-type-style(link, gmd-alpha-color($white, text));
+}
+
+h1 {
+  @include gmd-type-style(display4, gmd-alpha-color($black, secondary-text));
+}
+
+h1.inverse {
+  @include gmd-type-style(display4, gmd-alpha-color($white, opaque));
+}
+
+h2 {
+  @include gmd-type-style(display3, gmd-alpha-color($black, secondary-text));
+}
+
+h2.inverse {
+  @include gmd-type-style(display3, gmd-alpha-color($white, opaque));
+}
+
+h3 {
+  @include gmd-type-style(display2, gmd-alpha-color($black, secondary-text));
+}
+
+h3.inverse {
+  @include gmd-type-style(display2, gmd-alpha-color($white, opaque));
+}
+
+h4 {
+  @include gmd-type-style(display1, gmd-alpha-color($black, secondary-text));
+}
+
+h4.inverse {
+  @include gmd-type-style(display1, gmd-alpha-color($white, opaque));
+}
+
+.headline {
+  @include gmd-type-style(headline, gmd-alpha-color($black, text));
+}
+
+.headline.inverse {
+  @include gmd-type-style(headline, gmd-alpha-color($white, text));
+}
+
+.title {
+  @include gmd-type-style(title, gmd-alpha-color($black, text));
+}
+
+.title.inverse {
+  @include gmd-type-style(title, gmd-alpha-color($white, text));
+}
+
+.subhead {
+  @include gmd-type-style(subhead, gmd-alpha-color($black, text));
+}
+
+.subhead.inverse {
+  @include gmd-type-style(subhead, gmd-alpha-color($white, text));
+}
+
+.body2 {
+  @include gmd-type-style(body2, gmd-alpha-color($black, text));
+}
+
+.body2.inverse {
+  @include gmd-type-style(body2, gmd-alpha-color($white, text));
+}
+
+.body1 {
+  @include gmd-type-style(body1, gmd-alpha-color($black, text));
+}
+
+.body1.inverse {
+  @include gmd-type-style(body1, gmd-alpha-color($white, text));
+}
+
+.caption {
+  @include gmd-type-style(caption, gmd-alpha-color($black, secondary-text));
+}
+
+.caption.inverse {
+  @include gmd-type-style(caption, gmd-alpha-color($white, secondary-text));
+}
+
+.menu {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+}
+
+.menu.inverse {
+  @include gmd-type-style(menu, gmd-alpha-color($white, text));
+}
+
+.button {
+  @include gmd-type-style(button, gmd-alpha-color($black, text));
+}
+
+.button.inverse {
+  @include gmd-type-style(button, gmd-alpha-color($white, text));
+}
+
+.link {
+  @include gmd-type-style(link, gmd-alpha-color($link, text));
+}

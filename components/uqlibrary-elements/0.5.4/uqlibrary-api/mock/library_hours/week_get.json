@@ -1,0 +1,882 @@
+[
+  {
+    "code": "arm",
+    "name": "Architecture / Music Library",
+    "abbr": "Arch Music",
+    "url": "http://www.library.uq.edu.au/locations/architecture-music-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday"
+  },
+  {
+    "code": "bio",
+    "name": "Biological Sciences Library",
+    "abbr": "Biol Sci",
+    "url": "http://www.library.uq.edu.au/locations/biological-sciences-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "notes": "Walk in access from 7am to 8pm. Entry after 8pm UQ ID card necessary."
+  },
+  {
+    "code": "bnd",
+    "name": "RCS Library - Bundaberg",
+    "abbr": "Bundaberg",
+    "url": "http://www.library.uq.edu.au/locations/rural-clinical-school-rcs-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:45:00",
+      "close": "16:45:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:45:00",
+      "close": "16:45:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:45:00",
+      "close": "16:45:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:45:00",
+      "close": "16:45:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday"
+  },
+  {
+    "code": "duh",
+    "name": "Study Areas in the Duhig Library Building",
+    "abbr": "DuhigStudy",
+    "url": "http://www.library.uq.edu.au/locations/social-sciences-humanities-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:00:00",
+      "close": "20:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>During Summer Semester, study spaces are only open while SS&amp;H Library is open."
+  },
+  {
+    "code": "eco",
+    "name": "Graduate Economics &amp; Business Library",
+    "abbr": "GradEcoBus",
+    "url": "http://www.library.uq.edu.au/locations/graduate-economics-and-business-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "00:00:00",
+      "close": "24:00:00",
+      "rev": "0"
+    },
+    "notes": "Access is 24 hours. It is limited to the use of Business, Economics and Tourism postgraduate students.\r\nUQ ID card necessary"
+  },
+  {
+    "code": "fry",
+    "name": "Fryer Library",
+    "abbr": "Fryer",
+    "url": "http://www.library.uq.edu.au/fryer/",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "10:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "10:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "10:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "10:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday"
+  },
+  {
+    "code": "gat",
+    "name": "Gatton Library",
+    "abbr": "Gatton",
+    "url": "http://www.library.uq.edu.au/locations/uq-gatton-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>The 24x7 Study Space is available when the library is closed. \r\nSwipe card access after hours and public holidays. \r\nUQ ID Card necessary."
+  },
+  {
+    "code": "hhs",
+    "name": "Herston Health Sciences Library",
+    "abbr": "Herston",
+    "url": "http://www.library.uq.edu.au/locations/herston-health-sciences-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:00:00",
+      "close": "19:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:00:00",
+      "close": "19:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:00:00",
+      "close": "19:00:00",
+      "rev": "0"
+    },
+    "notes": "24 Hour library access &ndash; apply for swipe card access to the 24x7 Study Space."
+  },
+  {
+    "code": "hvy",
+    "name": "RCS Library - Hervey Bay",
+    "abbr": "HerveyBay",
+    "url": "http://www.library.uq.edu.au/locations/rural-clinical-school-rcs-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "09:00:00",
+      "close": "16:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "09:00:00",
+      "close": "13:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "09:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "09:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "09:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday"
+  },
+  {
+    "code": "ips",
+    "name": "Ipswich Library",
+    "abbr": "Ipswich",
+    "url": "http://www.library.uq.edu.au/locations/uq-ipswich-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    }
+  },
+  {
+    "code": "law",
+    "name": "Law Library",
+    "abbr": "Law",
+    "url": "http://www.library.uq.edu.au/locations/walter-harrison-law-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "09:00:00",
+      "close": "20:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "09:00:00",
+      "close": "20:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>24x7 Study Space is available when the Library is closed. After hours entry is off the Great Court near the Michie Building. UQ ID card necessary."
+  },
+  {
+    "code": "mat",
+    "name": "Mater McAuley Library",
+    "abbr": "Mater",
+    "url": "http://www.library.uq.edu.au/locations/uqmater-mcauley-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:00:00",
+      "close": "18:00:00",
+      "rev": "0"
+    }
+  },
+  {
+    "code": "pah",
+    "name": "Princess Alexandra Hospital Library",
+    "abbr": "PA Hosp",
+    "url": "http://www.library.uq.edu.au/locations/pace-health-sciences-library-joint-princess-alexandra-hospitaluq-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "10:00:00",
+      "close": "16:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "10:00:00",
+      "close": "16:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "10:00:00",
+      "close": "16:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "10:00:00",
+      "close": "16:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>24x7 Study Space - Princess Alexandra Hospital proxy card access only"
+  },
+  {
+    "code": "phs",
+    "name": "PACE Health Sciences Library",
+    "abbr": "PACE",
+    "url": "http://www.library.uq.edu.au/locations/pace-health-sciences-library-joint-princess-alexandra-hospitaluq-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday"
+  },
+  {
+    "code": "pse",
+    "name": "Dorothy Hill Engineering &amp; Sciences Library",
+    "abbr": "DHEngSci",
+    "url": "http://www.library.uq.edu.au/locations/dorothy-hill-engineering-and-sciences-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "09:00:00",
+      "close": "20:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>During Summer Semester, study spaces are only open while the Library is open."
+  },
+  {
+    "code": "roc",
+    "name": "RCS Library - Rockhampton",
+    "abbr": "Rockhampton",
+    "url": "http://www.library.uq.edu.au/locations/rural-clinical-school-rcs-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>Swipe card access after hours and public holidays"
+  },
+  {
+    "code": "ssh",
+    "name": "Social Sciences &amp; Humanities Library",
+    "abbr": "SSAH",
+    "url": "http://www.library.uq.edu.au/locations/social-sciences-humanities-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "09:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:00:00",
+      "close": "20:00:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:00:00",
+      "close": "17:00:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>Membership &amp; Payments desk closes at 30 minutes before Library closing, Loans desk closes at 15 minutes &amp; Autoloans close at 5 minutes to the closing hour."
+  },
+  {
+    "code": "tba",
+    "name": "RCS Library - Toowoomba",
+    "abbr": "Toowoomba",
+    "url": "http://www.library.uq.edu.au/locations/rural-clinical-school-rcs-library",
+    "2015-01-23": {
+      "dow": "Fri",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-24": {
+      "dow": "Sat",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-25": {
+      "dow": "Sun",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-26": {
+      "dow": "Mon",
+      "open": "00:00:00",
+      "close": "00:00:00",
+      "rev": "0"
+    },
+    "2015-01-27": {
+      "dow": "Tue",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-28": {
+      "dow": "Wed",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "2015-01-29": {
+      "dow": "Thu",
+      "open": "08:30:00",
+      "close": "16:30:00",
+      "rev": "0"
+    },
+    "notes": "[Mon 26 Jan] Australia Day Public Holiday<br>Swipe card access after hours and public holidays for RCS students only"
+  }
+]

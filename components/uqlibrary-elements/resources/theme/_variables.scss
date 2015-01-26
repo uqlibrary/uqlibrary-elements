@@ -1,0 +1,157 @@
+
+// Colours from Material Design specifications
+$deep-purple-50:   #ede7f6;
+$deep-purple-100:  #d1c4e9;
+$deep-purple-200:  #b39ddb;
+$deep-purple-300:  #9575cd;
+$deep-purple-400:  #7e57c2;
+$deep-purple-500:  #673ab7;
+$deep-purple-600:  #5e35b1;
+$deep-purple-700:  #512da8;
+$deep-purple-800:  #4527a0;
+$deep-purple-900:  #311b92;
+
+$uq-purple-1000: #49075E;
+$uq-purple-50:   rgba($uq-purple-1000, .05);
+$uq-purple-100:  rgba($uq-purple-1000, .10);
+$uq-purple-200:  rgba($uq-purple-1000, .20);
+$uq-purple-300:  rgba($uq-purple-1000, .30);
+$uq-purple-400:  rgba($uq-purple-1000, .40);
+$uq-purple-500:  rgba($uq-purple-1000, .50);
+$uq-purple-600:  rgba($uq-purple-1000, .60);
+$uq-purple-700:  rgba($uq-purple-1000, .70);
+$uq-purple-800:  rgba($uq-purple-1000, .80);
+$uq-purple-900:  rgba($uq-purple-1000, .90);
+
+$blue-A100: #82B1FF;
+$blue-A200: #448AFF;
+$blue-A400: #2979FF;
+$blue-A700: #2962FF;
+
+$teal-500: #009688;
+$teal-A100: #a7ffeb;
+$teal-A200: #64ffda;
+$teal-A400: #1de9b6;
+$teal-A700: #00bfa5;
+
+$green: #4CAF50;
+$green-A100: #a2f78d;
+$green-A200: #5af158;
+$green-A400: #14e715;
+$green-A700: #12c700;
+
+$grey-50:   #FAFAFA;
+$grey-A100: #F5F5F5;
+$grey-A200: #EEEEEE;
+$grey-A400: #BDBDBD;
+$grey-A700: #616161;
+
+$uq-green-A700: #8CB800;
+$uq-green-A100: rgba($uq-green-A700, .25);
+$uq-green-A200: rgba($uq-green-A700, .50);
+$uq-green-A400: rgba($uq-green-A700, .75);
+// End of Material Design specification colours
+
+$white: #ffffff;
+$black: #000000;
+
+// Official UQ Palette v0.3
+//
+// The following all pass WCAG 2.0 accessibility standards
+//
+// Based on official UQ pantone values and
+// tweaked where UQ colours fail accessibility
+
+
+$baseline-uq-purple:    hsl(286, 86%, 0%);
+$baseline-uq-green:     hsl(74, 100%, 0%);
+$uq-red:                hsl(337, 100%, 33%);
+$uq-blue:               hsl(214,69%,50%);
+$uq-aqua:               hsl(192, 100%, 31%);
+$uq-emerald:            hsl(113, 49%, 35%);
+$uq-warm-red:           hsl(11, 68%, 48%);
+$uq-gold:               hsl(45, 46%, 52%);
+$uq-gold-alt:           hsl(45, 46%, 37%); // this is a tweaked gold where white text is required
+
+$dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
+$primary:               lighten($baseline-uq-purple,33%);
+$alpha-primary:         transparentize($primary, .3);
+$accent:                lighten($baseline-uq-green, 36%);
+
+// repeated for quick looks at real colours in phpstorm by commenting in/out
+//$dark-primary:          hsl(286, 86%, 20%); // Official UQ purple
+//$primary:               hsl(286, 86%, 33%);
+//$accent:                hsl(74, 100%, 36%);
+
+$dark-accent:           $uq-emerald;
+$link:                  $uq-aqua;
+$button:                $uq-aqua;
+$link-secondary:        hsl(0, 0%, 91%);
+$background-primary:    $grey-50;
+$background-secondary:  $white;
+$uq-text-primary:       hsl(0, 0%, 20%);
+$uq-text-secondary:     hsl(0, 0%, 46%);
+$uq-divider:            hsl(0, 0%, 80%);
+
+$_gmd-alphas: (
+  dividers: .12,
+  hint-text: .26,
+  secondary-text: .54,
+  icons: .54,
+  text: .87,
+  opaque: 1
+);
+
+@function gmd-alpha-color($color, $type) {
+  @if map-has-key($_gmd-alphas, $type) {
+    @return rgba($color, map-get($_gmd-alphas, $type));
+  }
+  @warn "invalid alpha type, using default 100%";
+  @return rgba($color, 1);
+}
+
+// Colour palette for the application
+//still used by lots of styles, clean up as you go
+$primary-100: $uq-purple-100;
+$primary-500: $uq-purple-1000;
+$primary-700: $uq-purple-1000;
+$highlight-primary: $uq-purple-1000;
+
+// Accents
+$accent-A200: $teal-A400;
+$accent-A400: $teal-A700;
+
+// Text / icons / dividers
+$divider:        $uq-divider;
+
+$hint-text:      rgba($black, .26);
+$secondary-text: rgba($black, .54);
+$text:           rgba($black, .87);
+$active-icon:    rgba($black, .54);
+$inactive-icon:  rgba($black, .26);
+
+// Inverse text / icons / dividers
+$divider-inverse:        rgba($white, .12);
+$hint-text-inverse:      rgba($white, .26);
+$secondary-text-inverse: rgba($white, .54);
+$text-inverse:           rgba($white, .87);
+$active-icon-inverse:    rgba($white, 1);
+$inactive-icon-inverse:  rgba($white, .30);
+
+$dropdown-background: $grey-A200;
+$dropdown-background-hover: $grey-A400;
+
+$error-color: #F44336;
+
+// FBS Room details
+$uq-fbs-room-header-bg:   $white;
+$uq-fbs-room-title-color: $white;
+$uq-fbs-room-title-bg:    $uq-purple-600;
+
+$fbs-selected-date:       $button;
+$fbs-unselected-date:     $grey-A200;
+
+$fbs-selected-time:       $button;
+$fbs-available-time:      $grey-A200;
+$fbs-unavailable-time:    $grey-A400;
+

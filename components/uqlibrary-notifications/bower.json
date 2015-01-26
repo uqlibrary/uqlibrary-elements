@@ -1,0 +1,26 @@
+{
+  "name": "uqlibrary-notifications",
+  "description": "A simple home app",
+  "main": "uqlibrary-notifications.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-notifications/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "paper-icon-button": "Polymer/paper-icon-button#^0.5.4",
+    "paper-ripple": "Polymer/paper-ripple#^0.5.4",
+    "core-overlay": "Polymer/core-overlay#^0.5.4",
+    "paper-shadow": "Polymer/paper-shadow#^0.5.4",
+    "core-selector": "Polymer/core-selector#^0.5.4",
+    "core-icons": "Polymer/core-icons#^0.5.4",
+    "paper-item": "Polymer/paper-item#^0.5.4"
+
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  }
+}

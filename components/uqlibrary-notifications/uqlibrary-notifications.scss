@@ -1,0 +1,66 @@
+@import "../uqlibrary-elements/resources/theme/element";
+
+:host {
+}
+
+#iconPopupView {
+  position: relative;
+
+  #iconWrapper {
+    position: relative;
+    width: 40px;
+    border-radius: 50%;
+
+    #newMessagesCount {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $error-color;
+      color: $text-inverse;
+      text-align: center;
+      font-size: 10px;
+      padding-top: 0px;
+    }
+  }
+
+  #notificationsPopup {
+    width: 250px;
+    max-height: 300px;
+    padding:5px;
+    z-index: 5000;
+    position: fixed;
+
+    &.arrow {
+      &:before {
+        border: solid;
+        border-color: $white transparent;
+        border-width: 0 5px 5px 5px;
+        content: "";
+        display: block;
+        top: 0px;
+        position: absolute;
+        z-index: 99;
+      }
+
+      &.right-arrow {
+        &:before {
+          right: 32px;
+        }
+      }
+      &.left-arrow {
+        &:before {
+          left: 16px;
+        }
+      }
+
+    }
+
+
+
+
+  }
+
+}

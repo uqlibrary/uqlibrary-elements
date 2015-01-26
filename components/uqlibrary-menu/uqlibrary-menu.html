@@ -1,0 +1,165 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-icons/maps-icons.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../uqlibrary-ga/uqlibrary-ga.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<!--
+Element providing a the library main apps menu
+
+##### Example
+
+    <uqlibrary-menu></uqlibrary-menu>
+
+@element uqlibrary-menu
+@blurb Element providing a the library main apps menu
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-menu
+-->
+<polymer-element name="uqlibrary-menu" attributes="account">
+
+  <template>
+    <link rel="stylesheet" href="uqlibrary-menu.css">
+    <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
+    <template if="{{account.hasSession}}">
+      <div reverse horizontal layout id="account">
+        <!--<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>-->
+        <!--<div id="icon"><core-icon icon="lock" class="active"></core-icon></div>-->
+        <paper-icon-button icon="lock" title="Logout" on-tap="{{askLogout}}" id="askLogout"></paper-icon-button>
+        <div id="details" flex>
+          <div>
+            <div id="name" class="body2 inverse">{{account.name}}</div>
+            <div id="mail" class="body1 inverse">{{account.mail}}</div>
+          </div>
+        </div>
+      </div>
+
+      <core-menu selectedAttribute="" class="divider">
+        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
+        <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome"><core-icon icon="home"></core-icon> UQ Library Home</paper-item>
+        <paper-item on-tap="{{askFeedback}}" id="askFeedback" on-click="{{linkClicked}}"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+        <!--<paper-item>-->
+          <!--<a href="https://www.library.uq.edu.au/logout">-->
+          <!--<core-icon icon="lock"></core-icon> Logout-->
+          <!--</a></paper-item>-->
+      </core-menu>
+    </template>
+
+    <core-menu selectedAttribute="">
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/computers" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <template if="{{account.classes.length}}">
+        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
+      </template>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/hours"  id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
+      <template if="{{account.canMasquerade}}">
+        <paper-item on-tap="{{go}}" link="#" id="showMasqueradePage"><core-icon icon="supervisor-account"></core-icon> Masquerade</paper-item>
+      </template>
+      <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
+    </core-menu>
+
+    <template>
+
+      <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
+        <p>This will log you out of all your UQ website sessions.</p>
+        <paper-button affirmative on-tap={{closeDialog}}">Cancel</paper-button>
+        <paper-button affirmative autofocus raised colored class="coloured" id="Logout" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+      </paper-action-dialog>
+
+    </template>
+
+    <template>
+
+    <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
+      <p>Your feedback will help us improve MyLibrary.</p>
+      <paper-input-decorator label="Your comments (required)" error="input is required!" id="feedbackInput" autofocus on-input="{{inputHandler}}">
+
+        <paper-autogrow-textarea>
+          <textarea></textarea>
+        </paper-autogrow-textarea>
+      </paper-input-decorator>
+
+      <core-label horizontal layout>
+        <paper-checkbox for>
+          <style>
+          </style>
+        </paper-checkbox>
+        <div vertical layout>
+          <h4>Include my contact information</h4>
+          <div>We'll include your name, library barcode and email address so we can get back to you.</div>
+        </div>
+      </core-label>
+      <br>
+      <br>
+
+      <paper-button affirmative on-tap="{{closeDialog}}">Cancel</paper-button>
+      <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{sendFeedback}}">Send feedback</paper-button>
+    </paper-action-dialog>
+
+    </template>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-menu', {
+
+        created: function () {
+          this.account = {
+            hasSession: false
+          };
+        },
+
+        ready: function () {
+
+
+        },
+
+        askFeedback: function () {
+          console.log("feedback should send!");
+          document.querySelector('#feedbackDialog').toggle();
+        },
+
+        askLogout: function () {
+          console.log("logout dialog!");
+          document.querySelector('#logoutDialog').toggle();
+        },
+
+        go: function (e, _, el) {
+          var _id = el.getAttribute('id');
+          if(_id) {
+            this.$.ga.addEvent('Menu Item Clicked', _id);
+          }
+          document.location.href = el.attributes.link.value;
+        },
+
+        sendFeedback: function () {
+          var _id = el.getAttribute('id');
+          if(_id) {
+            this.$.ga.addEvent('Feedback Sent', _id);
+          }
+          // TODO: use UQLAPP API to send this email rather than the core-ajax function
+          console.log("sending feedback!");
+        },
+
+        closeDialog: function () {
+          // TODO: include name of dialog as parameter
+          console.log("closing dialog!");
+          this.toggle();
+        },
+
+        linkClicked: function(e, detail, sender) {
+          var _id = sender.getAttribute('id');
+          if(_id) {
+            this.$.ga.addEvent('Link Clicked', _id);
+          }
+        }
+
+      });
+    })();
+  </script>
+
+</polymer-element>
