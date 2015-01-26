@@ -50,7 +50,7 @@ Element providing a the library main apps menu
     <core-menu selectedAttribute="">
       <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
       <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
-      <paper-item on-tap="{{go}}" link="#" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/computers" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
       <template if="{{account.classes.length}}">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
       </template>

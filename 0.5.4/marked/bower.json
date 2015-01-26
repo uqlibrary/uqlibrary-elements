@@ -1,6 +1,6 @@
 {
   "name": "marked",
-  "version": "0.3.3",
+  "version": "0.3.2",
   "homepage": "https://github.com/chjj/marked",
   "authors": [
     "Christopher Jeffrey <chjjeffrey@gmail.com>"
@@ -20,14 +20,5 @@
     "app/bower_components",
     "test",
     "tests"
-  ],
-  "_release": "0.3.3",
-  "_resolution": {
-    "type": "version",
-    "tag": "v0.3.3",
-    "commit": "2b5802f258c5e23e48366f2377fbb4c807f47658"
-  },
-  "_source": "git://github.com/chjj/marked.git",
-  "_target": "*",
-  "_originalSource": "marked"
+  ]
 }

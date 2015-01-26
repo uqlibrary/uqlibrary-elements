@@ -22,8 +22,10 @@ paper-item {
   border-bottom: 1px solid $uq-divider;
 
   core-icon {
-    height: 64px;
-    width: 64px;
+    height: 44px;
+    width: 44px;
+    fill: $background-primary;
+    color: $background-primary;
   }
 
   #details {
