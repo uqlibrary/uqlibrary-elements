@@ -827,24 +827,24 @@ body {
   background-color: #fafafa; }
 
 #loader {
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  margin: 0px auto;
+  position: relative;
+  margin: 0 auto;
   width: 100px;
   height: 100px;
   zoom: 1; }
-  #loader .circular {
-    animation: rotate 2s linear infinite;
-    height: 100px;
-    position: relative;
-    width: 100px; }
-    #loader .circular .path {
-      stroke-dasharray: 1,200;
-      stroke-dashoffset: 0;
-      animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
-      stroke-linecap: round; }
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100px;
+  position: relative;
+  width: 100px; }
+
+.path {
+  stroke-dasharray: 1,200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round; }
+
 @keyframes rotate {
   100% {
     transform: rotate(360deg); } }
@@ -862,10 +862,10 @@ body {
   100%, 0% {
     stroke: #4a075f; }
   40% {
-    stroke: #4a075f; }
+    stroke: #7b0c9d; }
   66% {
-    stroke: #4a075f; }
+    stroke: #8db800; }
   80%, 90% {
-    stroke: #4a075f; } }
+    stroke: #8db800; } }
 
 /*# sourceMappingURL=app.css.map */
