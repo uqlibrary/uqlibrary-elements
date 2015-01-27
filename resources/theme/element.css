@@ -794,7 +794,8 @@ paper-checkbox::shadow #ink[checked] {
   color: #007e9e; }
 
 paper-checkbox::shadow #checkbox.checked {
-  border-color: #007e9e; }
+  border-color: #007e9e;
+  background-color: #007e9e; }
 
 paper-checkbox::shadow #ink {
   color: #cccccc; }

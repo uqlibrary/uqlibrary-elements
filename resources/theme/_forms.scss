@@ -6,6 +6,7 @@ paper-checkbox::shadow #ink[checked] {
 }
 paper-checkbox::shadow #checkbox.checked {
   border-color: $uq-aqua;
+  background-color: $uq-aqua;
 }
 paper-checkbox::shadow #ink {
   color: $uq-divider;
