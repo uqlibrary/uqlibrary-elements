@@ -681,7 +681,9 @@ paper-tabs {
   height: 44px;
   width: 44px;
   fill: #FAFAFA;
-  color: #FAFAFA; }
+  color: #FAFAFA;
+  bottom: 8px;
+  right: 5px; }
 
 #account {
   font-size: 0.875em;

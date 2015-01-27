@@ -815,7 +815,10 @@ paper-item {
 #account {
   font-size: 0.875em;
   background-color: #7b0c9d;
-  border-bottom: 1px solid #cccccc; }
+  border-bottom: 1px solid #cccccc;
+  background: 100%;
+  background-size: cover;
+  background-image: url("https://uqimages.uq.edu.au/servlet/display?file=a78916e42414ed9e14a030ec2ebb2561bf58c0c99e8996aff179b72c69.jpg"); }
   #account paper-icon-button {
     height: 44px;
     width: 44px;
@@ -832,5 +835,14 @@ paper-item {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
+
+#gradient {
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
+}
 
 /*# sourceMappingURL=uqlibrary-menu.css.map */
