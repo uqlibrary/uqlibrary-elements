@@ -17,19 +17,37 @@
                 && 'content' in document.createElement('template'))) {
             // IE 8 and 9 throw errors if you try to include webcomponents.js, which prevents other user messages working
             if (!isIE() || isIE () > 9) {
-                document.write('<script src="../../uqlibrary-elements/0.5.4/webcomponentsjs/webcomponents.js"><\/script>');
+                document.write('<script src="../webcomponentsjs/webcomponents.min.js"><\/script>');
             }
         }
         //enable mock data for the account api to show the full menu
         document.cookie="UQLMockData=enabled";
     </script>
   <!-- Uncomment below and disable chrome security (with Allow-Control-Allow-Origin: * extension) to test the demo locally instead of via the github pages pathing -->
-  <!--<link rel="import" href="uqlibrary-menu-demo.html">-->
-  <link rel="import" href="//uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-menu/uqlibrary-menu-demo.html">
-  <link rel="stylesheet" href="//uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/resources/theme/app.css">
-  <!--<link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css">-->
+  <link rel="import" href="uqlibrary-menu.html">
+  <link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+  <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css">
+  <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
 </head>
 <body unresolved>
-  <uqlibrary-menu-demo></uqlibrary-menu-demo>
+  <uqlibrary-api-account id="account"></uqlibrary-api-account>
+  <uqlibrary-menu></uqlibrary-menu>
+  <script>
+      (function () {
+          window.addEventListener('polymer-ready', function() {
+              var menu = document.querySelector('uqlibrary-menu');
+              var api = document.querySelector('uqlibrary-api-account');
+
+              api.addEventListener('uqlibrary-api-account-loaded', function(e) {
+                  if (e.detail.hasSession) {
+                      menu.account = e.detail;
+                  } else {
+                      menu.account.login('https://app.library.uq.edu.au/v1/home');
+                  }
+              });
+              api.$.account.get();
+          })
+      }());
+   </script>
 </body>
 </html>

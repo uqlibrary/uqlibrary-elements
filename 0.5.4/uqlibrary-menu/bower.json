@@ -15,8 +15,14 @@
     "core-icons": "Polymer/core-icons#0.5.4",
     "core-menu": "Polymer/core-menu#0.5.4",
     "core-ajax": "Polymer/core-ajax#0.5.4",
+    "core-label": "Polymer/core-label#0.5.4",
     "uqlibrary-ga": "uqlibrary/uqlibrary-ga#master",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
+    "paper-dialog": "Polymer/paper-dialog#0.5.4",
+    "paper-input": "Polymer/paper-input#0.5.4",
+    "paper-button": "Polymer/paper-button#0.5.4",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.4",
+    "paper-checkbox": "Polymer/paper-checkbox#0.5.4",
     "paper-item": "Polymer/paper-item#0.5.4"
   },
   "devDependencies": {

@@ -2,8 +2,19 @@
 <link rel="import" href="../core-icon/core-icon.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../core-icons/maps-icons.html">
+<link rel="import" href="../core-icons/hardware-icons.html">
+<link rel="import" href="../core-icons/social-icons.html">
+<link rel="import" href="../core-icons/communication-icons.html">
 <link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-label/core-label.html">
 <link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input-decorator.html">
+<link rel="import" href="../paper-input/paper-autogrow-textarea.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-dialog/paper-action-dialog.html">
 <link rel="import" href="../uqlibrary-ga/uqlibrary-ga.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
 <!--
@@ -33,17 +44,6 @@ Element providing a the library main apps menu
           </div>
         </div>
       </div>
-      <!--<div reverse horizontal layout id="account">-->
-        <!--&lt;!&ndash;<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div id="icon"><core-icon icon="lock" class="active"></core-icon></div>&ndash;&gt;-->
-        <!--<paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>-->
-        <!--<div id="details" flex>-->
-          <!--<div>-->
-            <!--<div id="name" class="body2 inverse">{{account.name}}</div>-->
-            <!--<div id="mail" class="body1 inverse">{{account.mail}}</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
 
       <core-menu selectedAttribute="" class="divider">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
@@ -69,7 +69,7 @@ Element providing a the library main apps menu
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
         <paper-button affirmative on-tap={{toggleLogout}}">Cancel</paper-button>
-        <paper-button affirmative autofocus raised colored class="coloured" id="Logout" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+        <paper-button affirmative autofocus colored class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
       </paper-action-dialog>
 
     <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
@@ -82,21 +82,21 @@ Element providing a the library main apps menu
       </paper-input-decorator>
 
       <core-label horizontal layout>
-        <paper-checkbox for>
-          <style>
-          </style>
+        <paper-checkbox>
         </paper-checkbox>
         <div vertical layout>
-          <h4>Include my contact information</h4>
-          <div>We'll include your name, library barcode and email address so we can get back to you.</div>
+          <div class="body2">Include my contact information</div>
+          <p class="body1">We'll include your name, library barcode and email address so we can get back to you.</p>
         </div>
       </core-label>
       <br>
       <br>
 
       <paper-button affirmative on-tap="{{toggleFeedback}}">Cancel</paper-button>
-      <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{sendFeedback}}">Send feedback</paper-button>
+      <paper-button affirmative autofocus colored class="colored" on-tap="{{sendFeedback}}">Send feedback</paper-button>
     </paper-action-dialog>
+
+    <paper-toast id="feedbackSentToast" role="alert" text="Your feedback has been sent"></paper-toast>
 
     </template>
 
@@ -140,6 +140,7 @@ Element providing a the library main apps menu
           }
           // TODO: use UQLAPP API to send this email rather than the core-ajax function
           console.log("sending feedback!");
+          this.$.feedbackSentToast.show();
         },
 
         linkClicked: function(e, detail, sender) {
