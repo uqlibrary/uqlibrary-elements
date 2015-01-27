@@ -677,6 +677,12 @@ paper-tabs {
   paper-tabs paper-tab::shadow #ink {
     color: #8db800; }
 
+#askLogout {
+  height: 44px;
+  width: 44px;
+  fill: #FAFAFA;
+  color: #FAFAFA; }
+
 #account {
   font-size: 0.875em;
   background-color: #7b0c9d;
