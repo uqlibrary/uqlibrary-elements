@@ -17,6 +17,7 @@ body {
     background-color: #fafafa;
 }
 
+// remove this once it's no longer needed
 #loader {
   position: fixed;
   text-align: center;
@@ -25,3 +26,61 @@ body {
   transform: translate(-50%, -50%);
 }
 
+// Loader animation that looks and feels like the paper-spinner
+$width: 100px;
+$zoom: 1;
+
+.loader {
+  position: relative;
+  margin: 0px auto;
+  width: $width;
+  height: $width;
+  zoom: $zoom;
+  .circular {
+    animation: rotate 2s linear infinite;
+    height: $width;
+    position: relative;
+    width: $width;
+    .path {
+      stroke-dasharray: 1,200;
+      stroke-dashoffset: 0;
+      animation:
+      dash 1.5s ease-in-out infinite,
+      color 6s ease-in-out infinite;
+      stroke-linecap: round;
+      @keyframes rotate{
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes dash{
+        0%{
+          stroke-dasharray: 1,200;
+          stroke-dashoffset: 0;
+        }
+        50%{
+          stroke-dasharray: 89,200;
+          stroke-dashoffset: -35;
+        }
+        100%{
+          stroke-dasharray: 89,200;
+          stroke-dashoffset: -124;
+        }
+      }
+      @keyframes color{
+        100%, 0%{
+          stroke: $dark-primary;
+        }
+        40%{
+          stroke: $dark-primary;
+        }
+        66%{
+          stroke: $dark-primary;
+        }
+        80%, 90%{
+          stroke: $dark-primary;
+        }
+      }
+    }
+  }
+}
