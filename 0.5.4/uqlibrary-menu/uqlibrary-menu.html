@@ -14,7 +14,7 @@ Element providing a the library main apps menu
     <uqlibrary-menu></uqlibrary-menu>
 
 @element uqlibrary-menu
-@blurb Element providing a the library main apps menu
+@blurb Element providing the library main navigation menu using a responsive drawer panel
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-menu
 -->
@@ -27,7 +27,7 @@ Element providing a the library main apps menu
       <div reverse horizontal layout id="account">
         <!--<div id="icon"><core-icon icon="account-circle" class="active"></core-icon></div>-->
         <!--<div id="icon"><core-icon icon="lock" class="active"></core-icon></div>-->
-        <paper-icon-button icon="lock" title="Logout" on-tap="{{askLogout}}" id="askLogout"></paper-icon-button>
+        <paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
         <div id="details" flex>
           <div>
             <div id="name" class="body2 inverse">{{account.name}}</div>
@@ -39,7 +39,7 @@ Element providing a the library main apps menu
       <core-menu selectedAttribute="" class="divider">
         <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
         <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome"><core-icon icon="home"></core-icon> UQ Library Home</paper-item>
-        <paper-item on-tap="{{askFeedback}}" id="askFeedback" on-click="{{linkClicked}}"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+        <paper-item on-tap="{{toggleFeedback}}" id="askFeedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
         <!--<paper-item>-->
           <!--<a href="https://www.library.uq.edu.au/logout">-->
           <!--<core-icon icon="lock"></core-icon> Logout-->
@@ -61,17 +61,11 @@ Element providing a the library main apps menu
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
 
-    <template>
-
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
-        <paper-button affirmative on-tap={{closeDialog}}">Cancel</paper-button>
+        <paper-button affirmative on-tap={{toggleLogout}}">Cancel</paper-button>
         <paper-button affirmative autofocus raised colored class="coloured" id="Logout" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
       </paper-action-dialog>
-
-    </template>
-
-    <template>
 
     <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
       <p>Your feedback will help us improve MyLibrary.</p>
@@ -95,7 +89,7 @@ Element providing a the library main apps menu
       <br>
       <br>
 
-      <paper-button affirmative on-tap="{{closeDialog}}">Cancel</paper-button>
+      <paper-button affirmative on-tap="{{toggleFeedback}}">Cancel</paper-button>
       <paper-button affirmative autofocus raised colored class="coloured" on-tap="{{sendFeedback}}">Send feedback</paper-button>
     </paper-action-dialog>
 
@@ -118,14 +112,14 @@ Element providing a the library main apps menu
 
         },
 
-        askFeedback: function () {
-          console.log("feedback should send!");
-          document.querySelector('#feedbackDialog').toggle();
+        toggleFeedback: function () {
+          this.$.feedbackDialog.toggle();
         },
 
-        askLogout: function () {
+        toggleLogout: function () {
           console.log("logout dialog!");
-          document.querySelector('#logoutDialog').toggle();
+          this.$.logoutDialog.toggle();
+//          document.querySelector('#logoutDialog').toggle();
         },
 
         go: function (e, _, el) {
@@ -143,12 +137,6 @@ Element providing a the library main apps menu
           }
           // TODO: use UQLAPP API to send this email rather than the core-ajax function
           console.log("sending feedback!");
-        },
-
-        closeDialog: function () {
-          // TODO: include name of dialog as parameter
-          console.log("closing dialog!");
-          this.toggle();
         },
 
         linkClicked: function(e, detail, sender) {

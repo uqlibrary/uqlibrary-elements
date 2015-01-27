@@ -139,3 +139,9 @@ paper-tabs {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
+
+.responsiveToolbarButton {
+  @media screen and (min-width: 768px) {
+    display:none;
+  }
+}

@@ -722,6 +722,10 @@ paper-tabs {
   -webkit-transform: scale(1.2);
   transform: scale(1.2); }
 
+@media screen and (min-width: 768px) {
+  .responsiveToolbarButton {
+    display: none; } }
+
 .text-center {
   text-align: center; }
 
