@@ -18,7 +18,7 @@
 <link rel="import" href="../uqlibrary-ga/uqlibrary-ga.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
 <!--
-Element providing a the library main apps menu
+Element providing the library main navigation menu using a responsive drawer panel
 
 ##### Example
 
@@ -69,7 +69,7 @@ Element providing a the library main apps menu
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
         <paper-button affirmative on-tap={{toggleLogout}}">Cancel</paper-button>
-        <paper-button affirmative autofocus colored class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+        <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
       </paper-action-dialog>
 
     <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
@@ -82,18 +82,14 @@ Element providing a the library main apps menu
       </paper-input-decorator>
 
       <core-label horizontal layout>
-        <paper-checkbox>
-        </paper-checkbox>
+        <paper-checkbox for></paper-checkbox>
         <div vertical layout>
           <div class="body2">Include my contact information</div>
           <p class="body1">We'll include your name, library barcode and email address so we can get back to you.</p>
         </div>
       </core-label>
-      <br>
-      <br>
-
       <paper-button affirmative on-tap="{{toggleFeedback}}">Cancel</paper-button>
-      <paper-button affirmative autofocus colored class="colored" on-tap="{{sendFeedback}}">Send feedback</paper-button>
+      <paper-button affirmative autofocus class="colored" on-tap="{{sendFeedback}}">Send feedback</paper-button>
     </paper-action-dialog>
 
     <paper-toast id="feedbackSentToast" role="alert" text="Your feedback has been sent"></paper-toast>
@@ -134,10 +130,8 @@ Element providing a the library main apps menu
         },
 
         sendFeedback: function () {
-          var _id = el.getAttribute('id');
-          if(_id) {
-            this.$.ga.addEvent('Feedback Sent', _id);
-          }
+          // uncomment this GA event when ready to use and fill in placeholder text
+//          this.$.ga.addEvent('Feedback Sent', "placeholder text");
           // TODO: use UQLAPP API to send this email rather than the core-ajax function
           console.log("sending feedback!");
           this.$.feedbackSentToast.show();
