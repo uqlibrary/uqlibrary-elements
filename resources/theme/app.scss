@@ -17,21 +17,15 @@ body {
     background-color: #fafafa;
 }
 
-// remove this once it's no longer needed
+// Loader animation that looks and feels like the paper-spinner
+$width: 100px;
+$zoom: 1;
+
 #loader {
   position: fixed;
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-// Loader animation that looks and feels like the paper-spinner
-$width: 100px;
-$zoom: 1;
-
-.loader {
-  position: relative;
   margin: 0px auto;
   width: $width;
   height: $width;
