@@ -790,6 +790,9 @@ paper-fab {
 paper-input-decorator::shadow .focused-underline {
   background-color: #8cb800; }
 
+paper-button.colored {
+  color: #007e9e; }
+
 paper-checkbox::shadow #ink[checked] {
   color: #007e9e; }
 
