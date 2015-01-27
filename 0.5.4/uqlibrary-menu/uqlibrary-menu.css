@@ -818,7 +818,7 @@ paper-item {
   border-bottom: 1px solid #cccccc;
   background: 100%;
   background-size: cover;
-  background-image: url("https://uqimages.uq.edu.au/servlet/display?file=a78916e42414ed9e14a030ec2ebb2561bf58c0c99e8996aff179b72c69.jpg"); }
+  background-image: url("../uqlibrary-elements/resources/theme/img/menu-img.jpg"); }
   #account paper-icon-button {
     height: 44px;
     width: 44px;
