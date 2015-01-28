@@ -28,11 +28,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "715b1c4979",
+  "_release": "2ccd832e84",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "715b1c49796001e3512a0e3db32ee9f4224171e6"
+    "commit": "2ccd832e84f6e8a5a8d779bc457585dfcb027e04"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
   "_target": "master",

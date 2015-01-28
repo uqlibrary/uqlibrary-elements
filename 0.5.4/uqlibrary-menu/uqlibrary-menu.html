@@ -66,19 +66,26 @@ Element providing the library main navigation menu using a responsive drawer pan
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
 
+    // Logout dialog
+    // Prevents users from accidentally logging out
+
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
         <paper-button affirmative on-tap={{toggleLogout}}">Cancel</paper-button>
         <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
       </paper-action-dialog>
 
+    // Feedback dialog
+    // Prompts users to provide feedback through a paper action dialog
+    // Uses UQL API to send details if user is authenticated
+    // Pops a toast to notify users about the success or failure of the feedback transmission
+
     <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
       <p>Your feedback will help us improve MyLibrary.</p>
-      <paper-input-decorator label="Your comments (required)" error="input is required!" id="feedbackInput" autofocus on-input="{{inputHandler}}">
-
-        <paper-autogrow-textarea>
-          <textarea></textarea>
-        </paper-autogrow-textarea>
+      <paper-input-decorator label="Your comments (required)" error="input is required!" id="feedbackInput" autofocus>
+          <paper-autogrow-textarea>
+            <textarea></textarea>
+          </paper-autogrow-textarea>
       </paper-input-decorator>
 
       <core-label horizontal layout>
@@ -89,10 +96,10 @@ Element providing the library main navigation menu using a responsive drawer pan
         </div>
       </core-label>
       <paper-button affirmative on-tap="{{toggleFeedback}}">Cancel</paper-button>
-      <paper-button affirmative autofocus class="colored" on-tap="{{sendFeedback}}">Send feedback</paper-button>
+      <paper-button affirmative class="colored" on-tap="{{sendFeedback}}">Send feedback</paper-button>
     </paper-action-dialog>
 
-    <paper-toast id="feedbackSentToast" role="alert" text="Your feedback has been sent"></paper-toast>
+    <paper-toast id="feedbackSentToast" role="alert" text="Your feedback has been sent."></paper-toast>
 
     </template>
 
@@ -132,10 +139,10 @@ Element providing the library main navigation menu using a responsive drawer pan
         sendFeedback: function () {
           // uncomment this GA event when ready to use and fill in placeholder text
 //          this.$.ga.addEvent('Feedback Sent', "placeholder text");
-          // TODO: use UQLAPP API to send this email rather than the core-ajax function
+          // TODO: use UQLAPP API to send this email
           console.log("sending feedback!");
           this.$.feedbackSentToast.show();
-          console.log("user is " + this.$.account.name);
+          console.log("user is " + account.name);
         },
 
         linkClicked: function(e, detail, sender) {
