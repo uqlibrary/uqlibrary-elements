@@ -66,8 +66,8 @@ Element providing the library main navigation menu using a responsive drawer pan
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
 
-    // Logout dialog
-    // Prevents users from accidentally logging out
+          <!--Logout dialog-->
+          <!--Prevents users from accidentally logging out-->
 
       <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
         <p>This will log you out of all your UQ website sessions.</p>
@@ -75,10 +75,10 @@ Element providing the library main navigation menu using a responsive drawer pan
         <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
       </paper-action-dialog>
 
-    // Feedback dialog
-    // Prompts users to provide feedback through a paper action dialog
-    // Uses UQL API to send details if user is authenticated
-    // Pops a toast to notify users about the success or failure of the feedback transmission
+            <!--Feedback dialog-->
+            <!--Prompts users to provide feedback through a paper action dialog-->
+            <!--Uses UQL API to send details if user is authenticated-->
+            <!--Pops a toast to notify users about the success or failure of the feedback transmission-->
 
     <paper-action-dialog id="feedbackDialog" heading="Tell us what you think" transition="core-transition-bottom" backdrop>
       <p>Your feedback will help us improve MyLibrary.</p>
@@ -142,6 +142,8 @@ Element providing the library main navigation menu using a responsive drawer pan
           // TODO: use UQLAPP API to send this email
           console.log("sending feedback!");
           this.$.feedbackSentToast.show();
+          this.$.primaryToast.text = "Test text for primary toast";
+          this.$.primaryToast.show();
           console.log("user is " + account.name);
         },
 

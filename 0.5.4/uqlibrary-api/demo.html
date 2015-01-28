@@ -75,6 +75,10 @@
   <h3>uqlibrary-api-account-loans</h3>
   <div id="accountLoansLog"></div>
 
+  <uqlibrary-api-feedback></uqlibrary-api-feedback>
+  <h3>uqlibrary-api-feedback</h3>
+  <div id="feedbackLog"></div>
+
   <script>
     (function () {
 
@@ -113,6 +117,13 @@
           starttime: 1410
           //resid: '' //to modify existing booking
           }
+        });
+
+        //test post feedback
+        feedback.post({ feedback: {
+          subject: "UQ Library Feedback",
+          comment: "This is a test comment using the UQ Library Feedback API"
+        }
         });
 
         //test delete booking

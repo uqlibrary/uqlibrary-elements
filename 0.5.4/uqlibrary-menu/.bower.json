@@ -21,6 +21,7 @@
     "paper-dialog": "Polymer/paper-dialog#0.5.4",
     "paper-input": "Polymer/paper-input#0.5.4",
     "paper-button": "Polymer/paper-button#0.5.4",
+    "paper-toast": "Polymer/paper-toast#0.5.4",
     "paper-icon-button": "Polymer/paper-icon-button#0.5.4",
     "paper-checkbox": "Polymer/paper-checkbox#0.5.4",
     "paper-item": "Polymer/paper-item#0.5.4"
@@ -28,11 +29,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "2ccd832e84",
+  "_release": "7319642b59",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "2ccd832e84f6e8a5a8d779bc457585dfcb027e04"
+    "commit": "7319642b599ebe047edeb10f32f24fc67a936ca1"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
   "_target": "master",
