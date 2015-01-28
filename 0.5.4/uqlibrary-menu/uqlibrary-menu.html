@@ -25,7 +25,7 @@ Element providing the library main navigation menu using a responsive drawer pan
     <uqlibrary-menu></uqlibrary-menu>
 
 @element uqlibrary-menu
-@blurb Element providing the library main navigation menu using a responsive drawer panel
+@blurb Element providing the library main navigation menu using a responsive drawer panel. Width of drawer should be screen width - app bar height (max-width = 400dp) (source: http://www.google.com/design/spec/layout/structure.html#structure-side-nav)
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-menu
 -->
@@ -135,6 +135,7 @@ Element providing the library main navigation menu using a responsive drawer pan
           // TODO: use UQLAPP API to send this email rather than the core-ajax function
           console.log("sending feedback!");
           this.$.feedbackSentToast.show();
+          console.log("user is " + this.$.account.name);
         },
 
         linkClicked: function(e, detail, sender) {
