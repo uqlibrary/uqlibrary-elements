@@ -677,7 +677,7 @@ paper-tabs {
   paper-tabs paper-tab::shadow #ink {
     color: #8db800; }
 
-#askLogout {
+#askLogout, #askLogout::shadow {
   height: 44px;
   width: 44px;
   fill: #FAFAFA;
@@ -733,6 +733,19 @@ paper-tabs {
 @media screen and (min-width: 768px) {
   .responsiveToolbarButton {
     display: none; } }
+
+core-tooltip.fancy::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0, 1.92, 0.99, 1.07);
+  transition: all 300ms cubic-bezier(0, 1.92, 0.99, 1.07);
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0); }
+
+core-tooltip.fancy:hover::shadow .core-tooltip,
+core-tooltip.fancy:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
 
 .text-center {
   text-align: center; }
