@@ -69,12 +69,12 @@ $zoom: 1;
     stroke: $dark-primary;
   }
   40%{
-    stroke: $primary;
+    stroke: $dark-primary;
   }
   66%{
-    stroke: $accent;
+    stroke: $primary;
   }
   80%, 90%{
-    stroke: $accent;
+    stroke: $primary;
   }
 }

@@ -728,6 +728,9 @@ paper-fab {
   paper-fab core-icon {
     color: #ffffff; }
 
+paper-action-dialog paper-button.colored {
+  color: #007e9e; }
+
 .card {
   display: block;
   border-radius: 2px;
@@ -804,28 +807,6 @@ paper-fab {
     background-color: #EEEEEE; }
   .hint-box.unavailable {
     background-color: #BDBDBD; }
-
-paper-input-decorator::shadow .focused-underline {
-  background-color: #8cb800; }
-
-paper-button.colored {
-  color: #007e9e; }
-
-paper-checkbox::shadow #ink[checked] {
-  color: #007e9e; }
-
-paper-checkbox::shadow #checkbox.checked {
-  border-color: #007e9e;
-  background-color: #007e9e; }
-
-paper-checkbox::shadow #ink {
-  color: #cccccc; }
-
-paper-checkbox::shadow #checkbox {
-  border-color: #cccccc; }
-
-paper-button [colored] {
-  background-color: #007e9e; }
 
 :host,
 :host *,

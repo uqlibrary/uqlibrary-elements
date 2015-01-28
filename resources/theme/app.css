@@ -816,28 +816,6 @@ uqlibrary-home #account core-icon {
   .hint-box.unavailable {
     background-color: #BDBDBD; }
 
-paper-input-decorator::shadow .focused-underline {
-  background-color: #8cb800; }
-
-paper-button.colored {
-  color: #007e9e; }
-
-paper-checkbox::shadow #ink[checked] {
-  color: #007e9e; }
-
-paper-checkbox::shadow #checkbox.checked {
-  border-color: #007e9e;
-  background-color: #007e9e; }
-
-paper-checkbox::shadow #ink {
-  color: #cccccc; }
-
-paper-checkbox::shadow #checkbox {
-  border-color: #cccccc; }
-
-paper-button [colored] {
-  background-color: #007e9e; }
-
 body {
   font-size: 16px;
   font-family: "Roboto", Arial, sans-serif;
@@ -883,10 +861,10 @@ body {
   100%, 0% {
     stroke: #4a075f; }
   40% {
-    stroke: #7b0c9d; }
+    stroke: #4a075f; }
   66% {
-    stroke: #8db800; }
+    stroke: #7b0c9d; }
   80%, 90% {
-    stroke: #8db800; } }
+    stroke: #7b0c9d; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,24 +1,18 @@
 @import "variables";
 
-paper-input-decorator::shadow .focused-underline {
-  background-color: #8cb800;
-}
-paper-button.colored {
-  color: $uq-aqua;
-}
-paper-checkbox::shadow #ink[checked] {
-  color: $uq-aqua;
-}
-paper-checkbox::shadow #checkbox.checked {
-  border-color: $uq-aqua;
-  background-color: $uq-aqua;
-}
-paper-checkbox::shadow #ink {
-  color: $uq-divider;
-}
-paper-checkbox::shadow #checkbox {
-  border-color: $uq-divider;
-}
-paper-button [colored] {
-  background-color: $uq-aqua;
-}
+//paper-input-decorator::shadow .focused-underline {
+//  background-color: $uq-aqua;
+//}
+//paper-checkbox::shadow #ink[checked] {
+//  color: $uq-aqua;
+//}
+//paper-checkbox::shadow #checkbox.checked {
+//  border-color: $uq-aqua;
+//  background-color: $uq-aqua;
+//}
+//paper-checkbox::shadow #ink {
+//  color: $uq-divider;
+//}
+//paper-checkbox::shadow #checkbox {
+//  border-color: $uq-divider;
+//}
