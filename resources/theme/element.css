@@ -291,6 +291,11 @@ core-tooltip.fancy:focus::shadow .core-tooltip {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
+uqlibrary-home #account core-icon {
+  height: 26px;
+  width: 26px;
+  color: #FAFAFA; }
+
 .single-line-list {
   list-style-type: none;
   margin: 0;

@@ -169,3 +169,11 @@ core-tooltip.fancy:focus::shadow .core-tooltip {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+
+
+// for firefox/non-chrome styles:
+uqlibrary-home #account core-icon {
+  height: 26px;
+  width: 26px;
+  color: $background-primary;
+}

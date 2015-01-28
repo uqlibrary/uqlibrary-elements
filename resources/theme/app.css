@@ -747,6 +747,11 @@ core-tooltip.fancy:focus::shadow .core-tooltip {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
+uqlibrary-home #account core-icon {
+  height: 26px;
+  width: 26px;
+  color: #FAFAFA; }
+
 .text-center {
   text-align: center; }
 
