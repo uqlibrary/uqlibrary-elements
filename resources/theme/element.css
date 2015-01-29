@@ -296,6 +296,9 @@ uqlibrary-home #account core-icon {
   width: 26px;
   color: #FAFAFA; }
 
+.colored {
+  color: #007e9e; }
+
 .single-line-list {
   list-style-type: none;
   margin: 0;
