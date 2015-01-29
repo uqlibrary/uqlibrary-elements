@@ -728,8 +728,12 @@ paper-fab {
   paper-fab core-icon {
     color: #ffffff; }
 
-paper-action-dialog paper-button.colored {
+paper-button.colored {
   color: #007e9e; }
+
+paper-button[raised].colored {
+  background: #007e9e;
+  color: #ffffff; }
 
 .card {
   display: block;
