@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set +x
+set -xe
 
 #src=$(git rev-parse --show-toplevel)
 #base=$(basename ${src})
