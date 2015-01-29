@@ -135,7 +135,7 @@ Element providing the library main navigation menu using a responsive drawer pan
         },
 
         sendFeedback: function () {
-          var userAccount = account;
+          var userAccount = this.account.name;
           var userAgent = navigator.userAgent;
           var userComment = this.$.feedbackInput;
           var compiledResponse = "From: " + userAccount + "<br>Comment: " + userComment + "<br>User Agent: " + userAgent;
