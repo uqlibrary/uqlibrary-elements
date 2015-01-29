@@ -6,19 +6,6 @@ src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 #tag=$(git describe --exact-match --tags HEAD)
 
-# Get a list of uplibrary-* components (excluding this one)
-components=$(ls -d */ | grep uqlibrary | grep -v elements)
-
-# Run the tests for each component
-for component in ${components[@]}; do
-  cd $component
-  if [ -d "test" ]; then
-    wct
-  fi
-  cd ..
-  cp -R $component "${component/uqlibrary-/}"
-done
-
 # Gzip component files
 cd ${src}
 find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
@@ -31,6 +18,7 @@ cp -R ${base} "${base/uqlibrary-/}"
 set +x
 cd uqlibrary-elements
 awsconfig="aws.json"
+
 # use codeship branch environment variable to push to branch name dir unless it's 'production' branch (or master for now)
 if [ ${CI_BRANCH} != "production" ] && [ ${CI_BRANCH} != "master" ]; then
   export BucketSubDir=/${CI_BRANCH}
