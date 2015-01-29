@@ -6,6 +6,19 @@ src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 #tag=$(git describe --exact-match --tags HEAD)
 
+# Get a list of uplibrary-* components (excluding this one)
+components=$(ls -d */ | grep uqlibrary | grep -v elements)
+
+# Run the tests for each component
+for component in ${components[@]}; do
+  cd $component
+  if [ -d "test" ]; then
+    wct
+  fi
+  cd ..
+  cp -R $component "${component/uqlibrary-/}"
+done
+
 # Gzip component files
 cd ${src}
 find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;

@@ -101,8 +101,6 @@ Element providing the library main navigation menu using a responsive drawer pan
 
     <paper-toast id="feedbackSentToast" role="alert" text="Your feedback has been sent."></paper-toast>
 
-    </template>
-
   </template>
 
   <script>
@@ -137,14 +135,20 @@ Element providing the library main navigation menu using a responsive drawer pan
         },
 
         sendFeedback: function () {
-          // uncomment this GA event when ready to use and fill in placeholder text
-//          this.$.ga.addEvent('Feedback Sent', "placeholder text");
-          // TODO: use UQLAPP API to send this email
+          var userAccount = this.account.name;
+          var userAgent = navigator.userAgent;
+          var userComment = this.$.feedbackInput;
+          var compiledResponse = "From: " + userAccount + "<br>Comment: " + userComment + "<br>User Agent: " + userAgent;
+          var newFeedback = { feedback : {
+            subject: "UQ My Library Feedback",
+            comment: compiledResponse
+            }
+          };
+          this.$.sendFeedback.post(newFeedback);
+
+          this.$.ga.addEvent('Feedback Sent', userComment);
           console.log("sending feedback!");
           this.$.feedbackSentToast.show();
-          this.$.primaryToast.text = "Test text for primary toast";
-          this.$.primaryToast.show();
-          console.log("user is " + account.name);
         },
 
         linkClicked: function(e, detail, sender) {
