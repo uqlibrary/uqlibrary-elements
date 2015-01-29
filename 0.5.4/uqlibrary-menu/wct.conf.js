@@ -6,8 +6,8 @@ module.exports = {
       browsers: [
       {
         browserName: "Safari",
-        platform: "OS X 10.10",
-        version: "8.0"
+        platform: "OS X 10.9",
+        version: "7.0"
       }
   ]}
 }
