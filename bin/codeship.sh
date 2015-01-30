@@ -20,7 +20,7 @@ cd uqlibrary-elements
 awsconfig="aws.json"
 
 # use codeship branch environment variable to push to branch name dir unless it's 'production' branch (or master for now)
-if [ ${CI_BRANCH} != "production" ] && [ ${CI_BRANCH} != "master" ]; then
+if [ ${CI_BRANCH} != "production" ]; then
   export BucketSubDir=/${CI_BRANCH}
 else
   export BucketSubDir=''
