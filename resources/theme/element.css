@@ -827,6 +827,22 @@ paper-button[raised].colored {
   .hint-box.unavailable {
     background-color: #BDBDBD; }
 
+paper-input-decorator::shadow .focused-underline {
+  background-color: #007e9e; }
+
+paper-checkbox::shadow #ink[checked] {
+  color: #007e9e; }
+
+paper-checkbox::shadow #checkbox.checked {
+  border-color: #007e9e;
+  background-color: #007e9e; }
+
+paper-checkbox::shadow #ink {
+  color: #cccccc; }
+
+paper-checkbox::shadow #checkbox {
+  border-color: #cccccc; }
+
 :host,
 :host *,
 ::content * {
