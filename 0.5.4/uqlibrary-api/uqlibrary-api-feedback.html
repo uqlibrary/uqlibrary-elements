@@ -36,7 +36,7 @@ Element providing functionality to post library feedback to the servers.
          */
         ready: function () {
           var that = this;
-          this.$.booking.addEventListener('uqlibrary-api', function(e) {
+          this.$.feedback.addEventListener('uqlibrary-api', function(e) {
             that.fire('uqlibrary-api-feedback-executed', e.detail);
           });
         },

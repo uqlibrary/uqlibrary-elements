@@ -752,6 +752,9 @@ uqlibrary-home #account core-icon {
   width: 26px;
   color: #FAFAFA; }
 
+.colored {
+  color: #007e9e; }
+
 .text-center {
   text-align: center; }
 

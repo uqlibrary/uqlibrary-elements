@@ -16,6 +16,11 @@ paper-fab {
   }
 }
 
-paper-action-dialog paper-button.colored {
+paper-button.colored {
   color: $uq-aqua;
+}
+
+paper-button[raised].colored {
+  background: $uq-aqua;
+  color: $background-secondary;
 }

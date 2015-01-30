@@ -296,6 +296,9 @@ uqlibrary-home #account core-icon {
   width: 26px;
   color: #FAFAFA; }
 
+.colored {
+  color: #007e9e; }
+
 .single-line-list {
   list-style-type: none;
   margin: 0;
@@ -728,8 +731,12 @@ paper-fab {
   paper-fab core-icon {
     color: #ffffff; }
 
-paper-action-dialog paper-button.colored {
+paper-button.colored {
   color: #007e9e; }
+
+paper-button[raised].colored {
+  background: #007e9e;
+  color: #ffffff; }
 
 .card {
   display: block;
