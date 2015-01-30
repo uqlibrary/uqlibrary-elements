@@ -752,8 +752,20 @@ uqlibrary-home #account core-icon {
   width: 26px;
   color: #FAFAFA; }
 
-.colored {
-  color: #007e9e; }
+.persistentFooter {
+  position: fixed;
+  height: 44px;
+  bottom: 0px;
+  background-color: #ffffff;
+  width: 100%;
+  border-top: 1px solid #EEEEEE; }
+  .persistentFooter .contentWrapper {
+    padding: 12px; }
+  .persistentFooter .actionButtonsWrapper {
+    padding-right: 16px; }
+  .persistentFooter .footerActionButton {
+    background: #007e9e;
+    color: #ffffff; }
 
 .text-center {
   text-align: center; }
@@ -818,6 +830,22 @@ uqlibrary-home #account core-icon {
     background-color: #EEEEEE; }
   .hint-box.unavailable {
     background-color: #BDBDBD; }
+
+paper-fab {
+  background-color: #007e9e; }
+  paper-fab.bottom-fixed {
+    bottom: 16px;
+    position: fixed;
+    right: 16px; }
+  paper-fab core-icon {
+    color: #ffffff; }
+
+paper-button.colored {
+  color: #007e9e; }
+
+paper-button[raised].colored {
+  background: #007e9e;
+  color: #ffffff; }
 
 body {
   font-size: 16px;

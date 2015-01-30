@@ -296,8 +296,20 @@ uqlibrary-home #account core-icon {
   width: 26px;
   color: #FAFAFA; }
 
-.colored {
-  color: #007e9e; }
+.persistentFooter {
+  position: fixed;
+  height: 44px;
+  bottom: 0px;
+  background-color: #ffffff;
+  width: 100%;
+  border-top: 1px solid #EEEEEE; }
+  .persistentFooter .contentWrapper {
+    padding: 12px; }
+  .persistentFooter .actionButtonsWrapper {
+    padding-right: 16px; }
+  .persistentFooter .footerActionButton {
+    background: #007e9e;
+    color: #ffffff; }
 
 .single-line-list {
   list-style-type: none;

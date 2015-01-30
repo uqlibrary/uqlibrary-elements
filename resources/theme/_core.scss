@@ -178,7 +178,27 @@ uqlibrary-home #account core-icon {
   color: $background-primary;
 }
 
-//for flat button colored text //
-.colored {
-  color: $uq-aqua;
+// persistent footer styles//
+.persistentFooter {
+  position: fixed;
+  height: $persistent-footer-height;
+  bottom: 0px;
+  background-color: $white;
+  width: 100%;
+  border-top: 1px solid $grey-A200;
+
+  .contentWrapper{
+    padding: 12px;
+  }
+
+  .actionButtonsWrapper{
+    padding-right: 16px;
+  }
+
+  .footerActionButton {
+    background: $uq-aqua;
+    color: $white;
+
+  }
+
 }
