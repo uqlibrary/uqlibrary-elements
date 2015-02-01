@@ -234,8 +234,12 @@ paper-tabs {
   background-color: #7b0c9d;
   border-bottom: 1px solid #cccccc; }
   #account core-icon {
-    height: 64px;
-    width: 64px; }
+    height: 44px;
+    width: 44px;
+    fill: #FAFAFA;
+    color: #FAFAFA;
+    bottom: 8px;
+    right: 5px; }
   #account #details {
     padding: 110px 14px 14px 14px; }
   #account #name {
