@@ -18,7 +18,8 @@ for component in ${components[@]}; do
 
   cd $component
   if [ -d "test" ]; then
-    wct
+#   ../../bin/local_tests.sh
+    ../../bin/sauce.sh
   fi
   cd ..
 done
