@@ -68,10 +68,11 @@
               setTimeout(function () {
                 checkMenu(menu);
                 done();
-              }, 1000);
+              }, 2000);
             }
             api.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
             menuLoadedEventListeners.push(menuLoadListener);
+            api.fire('uqlibrary-api-account-loaded', api.$.account);
           });
         });
       });

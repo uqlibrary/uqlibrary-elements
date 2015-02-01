@@ -1,0 +1,27 @@
+[
+  {
+    "title": "MGTS7801",
+    "course_title": "Management Frameworks",
+    "reading_lists": [
+      {
+        "title": "MGTS7801 St Lucia - Intensive",
+        "campus": "St Lucia - Intensive",
+        "url": "http://lr.library.uq.edu.au/lists/5AF88C5C-2F4D-26AA-88E1-83BFBB0843FA",
+        "period": "Semester 1 2015"
+      },
+      {
+        "title": "MGTS7801 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/5AF88C5C-2F4D-26AA-88E1-83BFBB0843FA",
+        "period": "Semester 2 2014"
+      },
+      {
+        "title": "MGTS7801 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/5AF88C5C-2F4D-26AA-88E1-83BFBB0843FA",
+        "period": "Semester 1 2015"
+      }
+    ],
+    "exam_papers": []
+  }
+]

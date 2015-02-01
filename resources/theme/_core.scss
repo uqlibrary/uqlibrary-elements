@@ -53,10 +53,8 @@ core-menu {
   margin: 0;
 }
 
-paper-progress {
-  #activeProgress {
-    background-color: $dark-accent;
-  }
+paper-progress::shadow #activeProgress {
+  background-color: $dark-accent;
 }
 
 paper-tabs {
@@ -94,8 +92,12 @@ paper-tabs {
   border-bottom: 1px solid $uq-divider;
 
   core-icon {
-    height: 64px;
-    width: 64px;
+    height: 44px;
+    width: 44px;
+    fill: $background-primary;
+    color: $background-primary;
+    bottom: 8px;
+    right: 5px;
   }
 
   #details {
