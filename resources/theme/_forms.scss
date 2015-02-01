@@ -3,6 +3,9 @@
 paper-input-decorator::shadow .focused-underline {
   background-color: $uq-aqua;
 }
+paper-input-decorator /deep/ .focused-underline {
+  background-color: $uq-aqua;
+}
 paper-checkbox::shadow #ink[checked] {
   color: $uq-aqua;
 }

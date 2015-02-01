@@ -838,6 +838,9 @@ uqlibrary-home #account core-icon {
 paper-input-decorator::shadow .focused-underline {
   background-color: #007e9e; }
 
+paper-input-decorator /deep/ .focused-underline {
+  background-color: #007e9e; }
+
 paper-checkbox::shadow #ink[checked] {
   color: #007e9e; }
 
