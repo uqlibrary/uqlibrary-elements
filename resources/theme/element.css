@@ -207,7 +207,7 @@ core-toolbar {
 core-menu {
   margin: 0; }
 
-paper-progress #activeProgress {
+paper-progress::shadow #activeProgress {
   background-color: #38852e; }
 
 paper-tabs {
