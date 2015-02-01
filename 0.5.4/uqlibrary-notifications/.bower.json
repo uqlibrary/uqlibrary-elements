@@ -22,13 +22,13 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "07cec92ea7",
+  "_release": "48b7b01167",
   "_resolution": {
     "type": "branch",
-    "branch": "master",
-    "commit": "07cec92ea7e29c99c8d15a075489849269ea5158"
+    "branch": "staging",
+    "commit": "48b7b0116747e48834b8d0642f9bc4429e3dc82f"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-notifications.git",
-  "_target": "master",
+  "_target": "staging",
   "_originalSource": "uqlibrary/uqlibrary-notifications"
 }
