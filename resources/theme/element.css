@@ -1,10 +1,10 @@
 a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.87); }
+  color: #007e9e; }
 
 .inverse a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.87); }
+  color: white; }
 
 h1 {
   font-family: "Roboto light";
@@ -207,7 +207,7 @@ core-toolbar {
 core-menu {
   margin: 0; }
 
-paper-progress #activeProgress {
+paper-progress::shadow #activeProgress {
   background-color: #38852e; }
 
 paper-tabs {
@@ -234,8 +234,12 @@ paper-tabs {
   background-color: #7b0c9d;
   border-bottom: 1px solid #cccccc; }
   #account core-icon {
-    height: 64px;
-    width: 64px; }
+    height: 44px;
+    width: 44px;
+    fill: #FAFAFA;
+    color: #FAFAFA;
+    bottom: 8px;
+    right: 5px; }
   #account #details {
     padding: 110px 14px 14px 14px; }
   #account #name {
@@ -826,6 +830,25 @@ paper-button[raised].colored {
     background-color: #EEEEEE; }
   .hint-box.unavailable {
     background-color: #BDBDBD; }
+
+paper-input-decorator::shadow .focused-underline {
+  background-color: #007e9e; }
+
+paper-input-decorator /deep/ .focused-underline {
+  background-color: #007e9e; }
+
+paper-checkbox::shadow #ink[checked] {
+  color: #007e9e; }
+
+paper-checkbox::shadow #checkbox.checked {
+  border-color: #007e9e;
+  background-color: #007e9e; }
+
+paper-checkbox::shadow #ink {
+  color: #cccccc; }
+
+paper-checkbox::shadow #checkbox {
+  border-color: #cccccc; }
 
 :host,
 :host *,

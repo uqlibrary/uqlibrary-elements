@@ -15,6 +15,7 @@ sed -i -e "s#<branch>#${branch}#g" bower.json
 bower install
 #put in the template branch name back into bower.json so it doesnt accidentally get committed back
 sed -i -e "s#${branch}#<branch>#g" bower.json
+rm -f bower.json-e
 mkdir ${polymer}/lib
 cp index.html ${polymer}/lib/index.html
 cd ${polymer}/lib/
