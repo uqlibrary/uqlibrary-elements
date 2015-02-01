@@ -18,7 +18,7 @@ for component in ${components[@]}; do
 
   cd $component
   if [ -d "test" ]; then
-    wct --remote
+    wct
   fi
   cd ..
 done
