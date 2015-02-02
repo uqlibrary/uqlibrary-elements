@@ -97,7 +97,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask(
-    'predeploy', [
+    'optimize', [
       'cssmin',
       'filerev',
       'usemin'
