@@ -23,7 +23,23 @@ paper-button.colored {
 paper-button[raised].colored {
   background: $uq-aqua;
   color: $background-secondary;
-  hover {
+  &:hover {
     background-color: $button-hover;
+  }
+  &:active {
+    background-color: $button-click;
+  }
+  &:disabled {
+    background-color: $background-primary;
+    color: $uq-divider;
+  }
+}
+
+paper-button[disabled] {
+  background-color: $background-primary;
+  color: $uq-divider;
+  &.colored {
+    background-color: $background-primary;
+    color: $uq-divider;
   }
 }

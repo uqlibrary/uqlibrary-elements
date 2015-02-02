@@ -864,8 +864,20 @@ paper-button.colored {
 paper-button[raised].colored {
   background: #007e9e;
   color: #ffffff; }
-  paper-button[raised].colored hover {
+  paper-button[raised].colored:hover {
     background-color: #006680; }
+  paper-button[raised].colored:active {
+    background-color: #00566b; }
+  paper-button[raised].colored:disabled {
+    background-color: #FAFAFA;
+    color: #cccccc; }
+
+paper-button[disabled] {
+  background-color: #FAFAFA;
+  color: #cccccc; }
+  paper-button[disabled].colored {
+    background-color: #FAFAFA;
+    color: #cccccc; }
 
 body {
   font-size: 16px;
