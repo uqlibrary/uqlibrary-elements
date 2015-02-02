@@ -96,10 +96,16 @@ module.exports = function (grunt) {
     //'invalidate_cloudfront'
   ]);
 
-  grunt.registerTask(
-    'predeploy', [
-      'cssmin',
-      'filerev',
-      'usemin'
-    ]);
+  grunt.registerTask('predeploy', [
+    'aws_s3:production'//,
+    //'invalidate_cloudfront'
+  ]);
+
+  //grunt.registerTask(
+  //  'predeploy', [
+  //    //'cssmin'
+  //    //,
+  //    //'filerev',
+  //    //'usemin'
+  //  ]);
 };
