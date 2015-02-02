@@ -310,7 +310,8 @@ uqlibrary-home #account core-icon {
   .persistentFooter .contentWrapper {
     padding: 12px; }
   .persistentFooter .actionButtonsWrapper {
-    padding-right: 16px; }
+    padding-right: 16px;
+    margin-top: 4 px; }
   .persistentFooter .footerActionButton {
     background: #007e9e;
     color: #ffffff; }
