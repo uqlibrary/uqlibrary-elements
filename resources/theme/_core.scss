@@ -92,12 +92,10 @@ paper-tabs {
   border-bottom: 1px solid $uq-divider;
 
   core-icon {
-    height: 44px;
-    width: 44px;
+    height: 26px;
+    width: 26px;
     fill: $background-primary;
     color: $background-primary;
-    bottom: 8px;
-    right: 5px;
   }
 
   #details {
@@ -117,12 +115,6 @@ paper-tabs {
     text-overflow: ellipsis;
     overflow: hidden;
   }
-}
-
-#logoutButton {
-  height: 44px;
-  width: 44px;
-  padding: 10px;
 }
 
 .home-icon {
@@ -195,6 +187,7 @@ uqlibrary-home #account core-icon {
 
   .actionButtonsWrapper{
     padding-right: 16px;
+    margin-top: 4px;
   }
 
   .footerActionButton {

@@ -690,12 +690,10 @@ paper-tabs {
   background-color: #7b0c9d;
   border-bottom: 1px solid #cccccc; }
   #account core-icon {
-    height: 44px;
-    width: 44px;
+    height: 26px;
+    width: 26px;
     fill: #FAFAFA;
-    color: #FAFAFA;
-    bottom: 8px;
-    right: 5px; }
+    color: #FAFAFA; }
   #account #details {
     padding: 110px 14px 14px 14px; }
   #account #name {
@@ -707,11 +705,6 @@ paper-tabs {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
-
-#logoutButton {
-  height: 44px;
-  width: 44px;
-  padding: 10px; }
 
 .home-icon {
   width: 44px;
@@ -766,7 +759,8 @@ uqlibrary-home #account core-icon {
   .persistentFooter .contentWrapper {
     padding: 12px; }
   .persistentFooter .actionButtonsWrapper {
-    padding-right: 16px; }
+    padding-right: 16px;
+    margin-top: 4px; }
   .persistentFooter .footerActionButton {
     background: #007e9e;
     color: #ffffff; }
