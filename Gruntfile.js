@@ -6,6 +6,48 @@ module.exports = function (grunt) {
   grunt.initConfig({
     aws: grunt.file.readJSON('aws.json'),
 
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'resources/theme',
+          src: ['*.css'],
+          dest: 'resources/theme',
+          ext: '.css'
+        }]
+      }
+    },
+
+    filerev: {
+      options: {
+        algorithm: 'md5',
+        length: 8
+      },
+      html: {
+        src: [
+          '0.5.4/lib/vulcanized.html' //TODO: make 0.5.4 dynamic
+        ]
+      },
+      css: {
+        src: [
+          'resources/theme/element.css',
+          'resources/theme/app.css'
+        ]
+      },
+      js: {
+
+        src: [
+          '0.5.4/lib/vulcanized.js',
+          '0.5.4/webcomponentsjs/webcomponents.min.js'
+        ]
+      }
+    },
+
+    usemin: {
+      html: ['*.html', '**/*.html', '../**/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
+      //css: ['resources/theme/*.css']
+    },
+
     invalidate_cloudfront: {
       options: {
         key: '<%= aws.AWSAccessKeyId %>',
@@ -53,4 +95,11 @@ module.exports = function (grunt) {
     'aws_s3:production'//,
     //'invalidate_cloudfront'
   ]);
+
+  grunt.registerTask(
+    'predeploy', [
+      'cssmin',
+      'filerev',
+      'usemin'
+    ]);
 };
