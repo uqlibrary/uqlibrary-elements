@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "0.4.1",
-    "grunt-legacy-util": "0.2.0",
+    "grunt": "0.4.2",
     "matchdep": "~0.3.0",
     "grunt-aws-s3": "0.11.0",
     "grunt-invalidate-cloudfront": "0.1.6",
