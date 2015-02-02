@@ -32,6 +32,8 @@ sed -i -e "s#<S3Bucket>#${S3Bucket}${BucketSubDir}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
 sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
 
+echo "${CI_BRANCH}"
+
 if [ ${CI_BRANCH} = "staging" ]; then
  npm install
  grunt predeploy
