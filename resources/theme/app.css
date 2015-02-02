@@ -865,7 +865,7 @@ paper-button[raised].colored {
   background: #007e9e;
   color: #ffffff; }
   paper-button[raised].colored hover {
-    background-color: #007e9e; }
+    background-color: #006680; }
 
 body {
   font-size: 16px;

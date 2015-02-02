@@ -67,7 +67,9 @@ $baseline-uq-purple:    hsl(286, 86%, 0%);
 $baseline-uq-green:     hsl(74, 100%, 0%);
 $uq-red:                hsl(337, 100%, 33%);
 $uq-blue:               hsl(214,69%,50%);
-$uq-aqua:               hsl(192, 100%, 31%);
+$baseline-uq-aqua:      hsl(192, 100%, 0%);
+$uq-aqua-600:           hsl(192, 100%, 31%);
+$uq-aqua-700:           hsl(192, 100%, 31%);
 $uq-emerald:            hsl(113, 49%, 35%);
 $uq-warm-red:           hsl(11, 68%, 48%);
 $uq-gold:               hsl(45, 46%, 52%);
@@ -77,6 +79,10 @@ $dark-primary:          lighten($baseline-uq-purple,20%); // Official UQ purple
 $primary:               lighten($baseline-uq-purple,33%);
 $alpha-primary:         transparentize($primary, .3);
 $accent:                lighten($baseline-uq-green, 36%);
+$uq-aqua:               lighten($baseline-uq-aqua,31%); // Official UQ aqua
+//$uq-aqua:               hsl(192, 100%, 31%);
+$uq-aqua-600:           lighten($baseline-uq-aqua,25%);
+$uq-aqua-700:           lighten($baseline-uq-aqua,21%);
 
 // repeated for quick looks at real colours in phpstorm by commenting in/out
 //$dark-primary:          hsl(286, 86%, 20%); // Official UQ purple
@@ -86,6 +92,8 @@ $accent:                lighten($baseline-uq-green, 36%);
 $dark-accent:           $uq-emerald;
 $link:                  $uq-aqua;
 $button:                $uq-aqua;
+$button-hover:          $uq-aqua-600;
+$button-click:          $uq-aqua-700;
 $link-secondary:        hsl(0, 0%, 91%);
 $background-primary:    $grey-50;
 $background-secondary:  $white;
