@@ -24,4 +24,7 @@ case "$branch" in
   --sauce "Windows 8.1/firefox@35.0" \
   --sauce "Windows 8.1/internet explorer@11.0"
   ;;
+*)
+  echo "couldn't detect branch"
+  ;;
 esac
