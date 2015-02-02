@@ -21,4 +21,5 @@ cp index.html ${polymer}/lib/index.html
 cd ${polymer}/lib/
 
 #vulcanize --config ../../vulcanize.conf -o vulcanized.html index.html
-vulcanize --config ../../vulcanize.conf -csp -strip -o vulcanized.html index.html
+#vulcanize --config ../../vulcanize.conf -csp -strip -o vulcanized.html index.html
+vulcanize --config ../../vulcanize.conf --inline -csp -strip -o vulcanized.html index.html
