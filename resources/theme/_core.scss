@@ -1,4 +1,6 @@
 @import "variables";
+@import "margins";
+
 
 core-icon {
   color: $active-icon;
@@ -182,18 +184,16 @@ uqlibrary-home #account core-icon {
   border-top: 1px solid $grey-A200;
 
   .contentWrapper{
-    padding: 12px;
+    padding: 0;
   }
-
+  .footerInfo {
+    padding: 18px;
+  }
+  .footerButtons {
+    padding-top: 8px;
+  }
   .actionButtonsWrapper{
     padding-right: 16px;
     margin-top: 4px;
   }
-
-  .footerActionButton {
-    background: $uq-aqua;
-    color: $white;
-
-  }
-
 }

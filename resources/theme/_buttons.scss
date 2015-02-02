@@ -23,4 +23,7 @@ paper-button.colored {
 paper-button[raised].colored {
   background: $uq-aqua;
   color: $background-secondary;
+  hover {
+    background-color: darken($uq-aqua,20%);
+  }
 }
