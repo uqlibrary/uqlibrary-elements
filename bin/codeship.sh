@@ -8,7 +8,7 @@ base=$(basename ${src})
 
 pwd
 
-#cd ../uqlibrary-elements
+cd ../uqlibrary-elements
 
 pwd
 
