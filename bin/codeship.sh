@@ -7,7 +7,9 @@ src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 
 pwd
-cd ../uqlibrary-elements
+
+#cd ../uqlibrary-elements
+
 pwd
 
 if [ ${CI_BRANCH} = "staging" ]; then

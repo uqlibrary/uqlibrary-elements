@@ -1,8 +1,9 @@
 {
   "name": "uqlibrary-elements",
   "version": "1.0.0",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "grunt-cli" : "0.1.13",
+    "web-component-tester": "2.2.1",
     "grunt": "0.4.3",
     "matchdep": "~0.3.0",
     "grunt-aws-s3": "0.11.0",
@@ -10,6 +11,9 @@
     "grunt-contrib-cssmin": "^0.11.0",
     "grunt-filerev": "^2.1.2",
     "grunt-usemin": "^3.0.0"
+  },
+  "devDependencies": {
+
   },
   "engines": {
     "node": ">=0.8.0"
