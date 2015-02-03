@@ -3,8 +3,9 @@
 set -xe
 
 echo "${CI_BRANCH}"
+pwd
 
-cd uqlibrary-elements
+cd ../uqlibrary-elements
 if [ ${CI_BRANCH} = "staging" ]; then
   grunt predeploy
 fi
