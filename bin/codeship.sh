@@ -35,8 +35,8 @@ sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
 echo "${CI_BRANCH}"
 
 if [ ${CI_BRANCH} = "staging" ]; then
- npm install
- grunt predeploy
+# npm install
+  grunt predeploy
 fi
 
 grunt deploy
