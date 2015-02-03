@@ -2,8 +2,7 @@
 branch=$(git rev-parse --abbrev-ref HEAD)
 case "$branch" in
 "master")
-  wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
-  --sauce "OSX 10.9/safari@7.0"
+  wct --plugin local --local "chrome"
   ;;
 "uat")
   wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
