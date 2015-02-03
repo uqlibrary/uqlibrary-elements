@@ -44,7 +44,7 @@ module.exports = function (grunt) {
     },
 
     usemin: {
-      html: ['*.html', '**/lib/*.html', '../**/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
+      html: ['*.html', '**/lib/*.html', '../uqlibrary-booking/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
       //css: ['resources/theme/*.css']
     },
 
