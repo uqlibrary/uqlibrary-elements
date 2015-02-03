@@ -32,6 +32,11 @@ sed -i -e "s#<S3Bucket>#${S3Bucket}${BucketSubDir}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
 sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
 
+if [ ${CI_BRANCH} = "staging" ]; then
+ npm install
+ grunt optimize
+fi
+
 grunt deploy
 set -x
 

@@ -295,16 +295,20 @@ uqlibrary-home #account core-icon {
 
 .persistentFooter {
   position: fixed;
-  height: 44px;
+  height: 48px;
   bottom: 0px;
   background-color: #ffffff;
   width: 100%;
   border-top: 1px solid #EEEEEE; }
   .persistentFooter .contentWrapper {
-    padding: 12px; }
+    padding: 0; }
+  .persistentFooter .footerInfo {
+    padding: 18px; }
+  .persistentFooter .footerButtons {
+    padding-top: 8px; }
   .persistentFooter .actionButtonsWrapper {
     padding-right: 16px;
-    margin-top: 4 px; }
+    margin-top: 4px; }
   .persistentFooter .footerActionButton {
     background: #007e9e;
     color: #ffffff; }

@@ -5,3 +5,4 @@
 .bowerrc
 *.rb
 bower_components/
+node_modules/

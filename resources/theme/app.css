@@ -751,19 +751,20 @@ uqlibrary-home #account core-icon {
 
 .persistentFooter {
   position: fixed;
-  height: 44px;
+  height: 48px;
   bottom: 0px;
   background-color: #ffffff;
   width: 100%;
   border-top: 1px solid #EEEEEE; }
   .persistentFooter .contentWrapper {
-    padding: 12px; }
+    padding: 0; }
+  .persistentFooter .footerInfo {
+    padding: 18px; }
+  .persistentFooter .footerButtons {
+    padding-top: 8px; }
   .persistentFooter .actionButtonsWrapper {
     padding-right: 16px;
     margin-top: 4px; }
-  .persistentFooter .footerActionButton {
-    background: #007e9e;
-    color: #ffffff; }
 
 .text-center {
   text-align: center; }
@@ -863,6 +864,20 @@ paper-button.colored {
 paper-button[raised].colored {
   background: #007e9e;
   color: #ffffff; }
+  paper-button[raised].colored:hover {
+    background-color: #006680; }
+  paper-button[raised].colored:active {
+    background-color: #00566b; }
+  paper-button[raised].colored:disabled {
+    background-color: #FAFAFA;
+    color: #cccccc; }
+
+paper-button[disabled] {
+  background-color: #FAFAFA;
+  color: #cccccc; }
+  paper-button[disabled].colored {
+    background-color: #FAFAFA;
+    color: #cccccc; }
 
 body {
   font-size: 16px;
