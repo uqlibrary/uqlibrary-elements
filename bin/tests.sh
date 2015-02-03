@@ -19,6 +19,7 @@ for component in ${components[@]}; do
   cd $component
   if [ -d "test" ]; then
 #   ../../bin/local_tests.sh
+    echo $(pwd)
     ../../bin/sauce.sh
   fi
   cd ..
