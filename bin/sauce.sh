@@ -1,5 +1,10 @@
 #!/bin/bash
-branch=$(git rev-parse --abbrev-ref HEAD)
+if [ -z $CI_BRANCH ]; then
+  branch=$(git rev-parse --abbrev-ref HEAD)
+else
+  branch=$CI_BRANCH
+fi
+
 case "$branch" in
 "master")
   wct --plugin local --local "chrome"
