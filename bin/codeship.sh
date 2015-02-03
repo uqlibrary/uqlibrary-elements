@@ -2,6 +2,10 @@
 
 set -xe
 
+if [ ${CI_BRANCH} = "staging" ]; then
+  grunt predeploy
+fi
+
 src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 #tag=$(git describe --exact-match --tags HEAD)
@@ -34,10 +38,7 @@ sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
 
 echo "${CI_BRANCH}"
 
-if [ ${CI_BRANCH} = "staging" ]; then
-# npm install
-  grunt predeploy
-fi
+
 
 grunt deploy
 set -x
