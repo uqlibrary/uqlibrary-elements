@@ -6,16 +6,15 @@ echo "${CI_BRANCH}"
 src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
 
-echo ${src}
-echo ${base}
-
 pwd
 cd ../uqlibrary-elements
 pwd
 
 if [ ${CI_BRANCH} = "staging" ]; then
-  grunt predeploy
+  grunt predeploy -v
 fi
+
+
 
 #tag=$(git describe --exact-match --tags HEAD)
 

@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       },
       html: {
         src: [
-          '0.5.4/lib/vulcanized.html' //TODO: make 0.5.4 dynamic
+          '**/lib/vulcanized.html'
         ]
       },
       css: {
@@ -37,14 +37,14 @@ module.exports = function (grunt) {
       js: {
 
         src: [
-          '0.5.4/lib/vulcanized.js',
-          '0.5.4/webcomponentsjs/webcomponents.min.js'
+          '**/lib/vulcanized.js',
+          '**/webcomponentsjs/webcomponents.min.js'
         ]
       }
     },
 
     usemin: {
-      html: ['*.html', '**/*.html', '../**/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
+      html: ['*.html', '**/lib/*.html', '../**/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
       //css: ['resources/theme/*.css']
     },
 
@@ -72,7 +72,7 @@ module.exports = function (grunt) {
         accessKeyId: '<%= aws.AWSAccessKeyId %>',
         secretAccessKey: '<%= aws.AWSSecretKey %>',
         region: '<%= aws.AWSRegion %>',
-        concurrency: 5
+        uploadConcurrency: 5
       },
       production: {
         options: {
@@ -98,7 +98,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask(
     'predeploy', [
-      'cssmin',
       'filerev',
       'usemin'
     ]);
