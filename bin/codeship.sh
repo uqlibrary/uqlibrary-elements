@@ -2,9 +2,13 @@
 
 set -xe
 
+echo "${CI_BRANCH}"
+
+cd uqlibrary-elements
 if [ ${CI_BRANCH} = "staging" ]; then
   grunt predeploy
 fi
+cd ..
 
 src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
@@ -35,8 +39,6 @@ sed -i -e "s#<AWSSecretKey>#${AWSSecretKey}#g" ${awsconfig}
 sed -i -e "s#<S3Bucket>#${S3Bucket}${BucketSubDir}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
 sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
-
-echo "${CI_BRANCH}"
 
 
 
