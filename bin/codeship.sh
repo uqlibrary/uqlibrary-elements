@@ -16,8 +16,6 @@ if [ ${CI_BRANCH} = "staging" ]; then
   grunt predeploy -v
 fi
 
-
-
 #tag=$(git describe --exact-match --tags HEAD)
 
 # Gzip component files

@@ -5,7 +5,6 @@
   },
   "devDependencies": {
     "grunt-cli" : "0.1.13",
-    "web-component-tester": "2.2.1",
     "grunt": "0.4.3",
     "matchdep": "~0.3.0",
     "grunt-aws-s3": "0.11.0",
