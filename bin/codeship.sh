@@ -36,8 +36,6 @@ echo "${CI_BRANCH}"
 
 if [ ${CI_BRANCH} = "staging" ]; then
  npm install
- echo pwd
- tail Gruntfile.js
  grunt predeploy
 fi
 

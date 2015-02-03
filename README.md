@@ -4,6 +4,8 @@ uqlibrary-elements
 An aggregate of components used in apps, combining the components into a vulcanized file, and contains the
 build script for deploying applications.
 
+[ ![Codeship Status for uqlibrary/uqlibrary-elements](https://codeship.com/projects/391b0aa0-882d-0132-a5ab-42354043e837/status?branch=master)](https://codeship.com/projects/59351)
+
 ## Getting Started
 
 ### Install requirements
