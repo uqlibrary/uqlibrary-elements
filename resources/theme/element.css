@@ -168,6 +168,24 @@ h4.inverse {
   text-decoration: none;
   color: rgba(0, 126, 158, 0.87); }
 
+core-toolbar {
+  background-color: #4a075f;
+  color: rgba(255, 255, 255, 0.87); }
+  core-toolbar core-icon {
+    color: #ffffff; }
+
+.drawer {
+  background-color: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.1); }
+
+.main {
+  background-color: #FAFAFA; }
+
+core-menu {
+  margin: 0; }
+  core-menu core-icon {
+    margin-right: 2em; }
+
 core-icon {
   color: rgba(0, 0, 0, 0.54); }
   core-icon.inactive {
@@ -176,36 +194,6 @@ core-icon {
     color: white; }
   core-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
-
-core-menu {
-  margin: 0; }
-  core-menu core-icon {
-    margin-right: 2em; }
-
-core-toolbar {
-  background-color: #ffffff; }
-  core-toolbar core-icon {
-    color: #ffffff; }
-
-core-drawer-panel {
-  background-color: #ffffff; }
-
-core-header-panel {
-  background-color: #FAFAFA; }
-
-core-toolbar {
-  background-color: #4a075f;
-  color: rgba(255, 255, 255, 0.87); }
-
-#drawer {
-  background-color: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.1); }
-
-#main {
-  background-color: #FAFAFA; }
-
-core-menu {
-  margin: 0; }
 
 paper-progress::shadow #activeProgress {
   background-color: #38852e; }

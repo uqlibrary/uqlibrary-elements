@@ -1,6 +1,35 @@
 @import "variables";
 @import "margins";
 
+// Core styles used across UQ My Library
+
+
+// Core toolbar background, font colour, and icon colour
+core-toolbar {
+  background-color: $dark-primary;
+  color: $text-inverse;
+  core-icon {
+    color: $white;
+  }
+}
+
+// Drawer panel background colour and border
+.drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// Main content background
+.main {
+  background-color: $background-primary;
+}
+
+core-menu {
+  margin: 0;
+  core-icon {
+    margin-right: 2em;
+  }
+}
 
 core-icon {
   color: $active-icon;
@@ -16,44 +45,11 @@ core-icon {
   }
 }
 
-core-menu {
-  margin: 0;
-  core-icon {
-    margin-right: 2em;
-  }
-}
 
-core-toolbar {
-  background-color: $white;
 
-  core-icon {
-    color: $white;
-  }
-}
 
-core-drawer-panel {
-  background-color: $background-secondary;
-}
 
-core-header-panel {
-  background-color: $background-primary;
-}
 
-core-toolbar {
-  background-color: $dark-primary;
-  color: $text-inverse;
-}
-#drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-#main {
-  background-color: $background-primary;
-}
-
-core-menu {
-  margin: 0;
-}
 
 paper-progress::shadow #activeProgress {
   background-color: $dark-accent;
