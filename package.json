@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
+    "grunt-cli" : "0.1.13",
     "grunt": "0.4.3",
     "matchdep": "~0.3.0",
     "grunt-aws-s3": "0.11.0",
