@@ -110,7 +110,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask(
     'predeploy', [
-      //'cssmin',
+      'cssmin',
       'filerev',
       'usemin'
     ]);
