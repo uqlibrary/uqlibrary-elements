@@ -2,8 +2,19 @@
 
 set -xe
 
+echo "${CI_BRANCH}"
 src=$(git rev-parse --show-toplevel)
 base=$(basename ${src})
+
+pwd
+cd ../uqlibrary-elements
+pwd
+
+#run file revision, css min tasks
+if [ ${CI_BRANCH} = "staging" ]; then
+  grunt predeploy -v
+fi
+
 #tag=$(git describe --exact-match --tags HEAD)
 
 # Gzip component files
@@ -31,11 +42,6 @@ sed -i -e "s#<AWSSecretKey>#${AWSSecretKey}#g" ${awsconfig}
 sed -i -e "s#<S3Bucket>#${S3Bucket}${BucketSubDir}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
 sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
-
-if [ ${CI_BRANCH} = "staging" ]; then
- npm install
- grunt optimize
-fi
 
 grunt deploy
 set -x

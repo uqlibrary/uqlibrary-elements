@@ -14,6 +14,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+
     aws: grunt.file.readJSON('aws.json'),
 
     cssmin: {
@@ -35,27 +36,27 @@ module.exports = function (grunt) {
       },
       html: {
         src: [
-          '0.5.4/lib/vulcanized.html' //TODO: make 0.5.4 dynamic
+          '../uqlibrary-elements/**/lib/vulcanized.html'
         ]
       },
       css: {
         src: [
-          'resources/theme/element.css',
-          'resources/theme/app.css'
+          '../uqlibrary-elements/resources/theme/element.css',
+          '../uqlibrary-elements/resources/theme/app.css'
         ]
       },
       js: {
 
         src: [
-          '0.5.4/lib/vulcanized.js',
-          '0.5.4/webcomponentsjs/webcomponents.min.js'
+          '../uqlibrary-elements/**/lib/vulcanized.js',
+          '../uqlibrary-elements/**/webcomponentsjs/webcomponents.min.js'
         ]
       }
     },
 
     usemin: {
-      html: ['*.html', '**/*.html', '../**/*.html'] //, //'{,*/}*.html' //.html, **/*.html' //,
-      //css: ['resources/theme/*.css']
+      html: ['../**/*.html'] //, '../uqlibrary-elements/**/*.html', '../uqlibrary-booking/*.html'] //'{,*/}*.html' //.html, **/*.html' //,
+      //html: ['*.html', '**/*.html', '../**/*.html']
     },
 
     invalidate_cloudfront: {
@@ -77,6 +78,7 @@ module.exports = function (grunt) {
         ]
       }
     },
+
     aws_s3: {
       options: {
         accessKeyId: '<%= aws.AWSAccessKeyId %>',
@@ -107,8 +109,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask(
-    'optimize', [
-      'cssmin',
+    'predeploy', [
+      //'cssmin',
       'filerev',
       'usemin'
     ]);
