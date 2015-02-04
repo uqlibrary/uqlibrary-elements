@@ -85,6 +85,10 @@ See the styling example here: https://uqlibrary.github.io/uqlibrary-elements/com
 
 ### Styling Implementation Guidelines
 
+1 seperate elements use elements.css from uqlibrary-elements/resources/theme
+2 element.css is excluded from vulcanization in vulcanize.conf
+3 grunt-text-replace runs to update path in 
+
 Do's
 
 Don'ts
