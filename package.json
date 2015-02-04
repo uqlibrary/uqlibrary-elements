@@ -9,7 +9,8 @@
     "grunt-invalidate-cloudfront": "0.1.6",
     "grunt-contrib-cssmin": "^0.11.0",
     "grunt-filerev": "^2.1.2",
-    "grunt-usemin": "^3.0.0"
+    "grunt-usemin": "^3.0.0",
+    "grunt-text-replace": "^0.4.0"
   },
   "engines": {
     "node": ">=0.8.0"

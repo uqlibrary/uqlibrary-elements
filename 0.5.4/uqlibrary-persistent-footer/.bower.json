@@ -16,11 +16,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "60dbf315ec",
+  "_release": "4bcf3e6348",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "60dbf315eca3146b5bd409017d1ec5896e90a12b"
+    "commit": "4bcf3e6348220afc2fac164b4e20fa84dd91f3cd"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-persistent-footer.git",
   "_target": "master",

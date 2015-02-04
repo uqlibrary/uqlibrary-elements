@@ -309,10 +309,11 @@ uqlibrary-home #account core-icon {
   .persistentFooter .actionButtonsWrapper {
     padding-right: 16px;
     margin-top: 4px; }
-  .persistentFooter .footerActionButton {
-    background: #007e9e;
-    color: #ffffff; }
 
+@media screen and (min-width: 768px) {
+  .persistentFooter {
+    left: 0;
+    z-index: 1; } }
 .single-line-list {
   list-style-type: none;
   margin: 0;
@@ -751,6 +752,20 @@ paper-button.colored {
 paper-button[raised].colored {
   background: #007e9e;
   color: #ffffff; }
+  paper-button[raised].colored:hover {
+    background-color: #006680; }
+  paper-button[raised].colored:active {
+    background-color: #00566b; }
+  paper-button[raised].colored:disabled {
+    background-color: #FAFAFA;
+    color: #cccccc; }
+
+paper-button[disabled] {
+  background-color: #FAFAFA;
+  color: #cccccc; }
+  paper-button[disabled].colored {
+    background-color: #FAFAFA;
+    color: #cccccc; }
 
 .card {
   display: block;

@@ -766,6 +766,10 @@ uqlibrary-home #account core-icon {
     padding-right: 16px;
     margin-top: 4px; }
 
+@media screen and (min-width: 768px) {
+  .persistentFooter {
+    left: 0;
+    z-index: 1; } }
 .text-center {
   text-align: center; }
 
@@ -889,7 +893,6 @@ body {
   background-color: #fafafa; }
 
 #loader {
-  position: relative;
   margin: 0 auto;
   width: 100px;
   height: 100px;
