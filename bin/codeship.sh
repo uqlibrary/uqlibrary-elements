@@ -11,8 +11,8 @@ cd ../uqlibrary-elements
 pwd
 
 #run file revision, css min tasks
-if [ ${CI_BRANCH} = "staging" ]; then
-  grunt predeploy -v
+if [ ${CI_BRANCH} = "staging" ] || [ ${CI_BRANCH} = "production" ]; then
+  grunt predeploy
 fi
 
 #tag=$(git describe --exact-match --tags HEAD)
