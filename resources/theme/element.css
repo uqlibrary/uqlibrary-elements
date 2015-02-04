@@ -224,7 +224,6 @@ paper-tabs {
 #askLogout, #askLogout::shadow {
   height: 44px;
   width: 44px;
-  fill: #FAFAFA;
   color: #FAFAFA;
   bottom: 8px;
   right: 5px; }
@@ -236,7 +235,6 @@ paper-tabs {
   #account core-icon {
     height: 26px;
     width: 26px;
-    fill: #FAFAFA;
     color: #FAFAFA; }
   #account #details {
     padding: 110px 14px 14px 14px; }
@@ -296,7 +294,7 @@ uqlibrary-home #account core-icon {
 .persistentFooter {
   position: fixed;
   height: 48px;
-  bottom: 0px;
+  bottom: 0;
   background-color: #ffffff;
   width: 100%;
   border-top: 1px solid #EEEEEE; }
@@ -348,14 +346,14 @@ paper-dropdown::shadow #scroller {
 #autosuggest,
 #filters {
   top: 55px;
-  left: 0px;
-  right: 0px;
+  left: 0;
+  right: 0;
   width: 100%; }
 
 #filters {
   top: 71px; }
   #filters paper-item {
-    padding-left: 0px;
+    padding-left: 0;
     border-bottom: 1px solid #cccccc; }
     #filters paper-item.last {
       border-bottom: none; }
@@ -527,8 +525,8 @@ paper-tabs {
 
 paper-tab {
   text-align: center;
-  margin: 0px;
-  padding: 0px; }
+  margin: 0;
+  padding: 0; }
   paper-tab .dayOfWeek {
     width: 40px; }
   paper-tab .date {
@@ -545,7 +543,7 @@ paper-tab {
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
   paper-tabs paper-tab .tabTitleNumber {
@@ -568,7 +566,7 @@ paper-tabs {
   font-style: italic; }
 
 .listItemLink core-icon {
-  margin-right: 0px; }
+  margin-right: 0; }
 
 #loadingOverlay {
   background-color: transparent;
@@ -672,7 +670,7 @@ uqlibrary-filter-group div.groupContentWrapper[horizontal] paper-dropdown-menu {
   min-width: 150px;
   margin-right: 20px; }
   uqlibrary-filter-group div.groupContentWrapper[horizontal] paper-dropdown-menu:last-child {
-    margin-right: 0px; }
+    margin-right: 0; }
 uqlibrary-filter-group:last-child {
   border-bottom: none; }
 
@@ -761,7 +759,7 @@ paper-toast#infoToast {
 core-overlay#timepickerDialog::shadow #actions {
   display: none; }
 core-overlay#timepickerDialog::shadow #main {
-  padding: 0px; }
+  padding: 0; }
 
 .single-line-list {
   list-style-type: none;
