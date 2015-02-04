@@ -4,6 +4,16 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
+    replace: {
+      cssUpdatePath: {
+        src: ['**/lib/vulcanized.html'],             // source files array (supports minimatch)
+        overwrite: true,                            // overwrite matched source files
+        replacements: [{
+          from: "../uqlibrary-elements/resources/theme/element.css",
+          to: "../../resources/theme/element.css"
+        }]
+      }
+    },
     aws: grunt.file.readJSON('aws.json'),
 
     cssmin: {

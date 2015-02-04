@@ -51,7 +51,7 @@ Custom web element displays a provided date and time schedule with ability to se
 
   <template>
 
-    <link rel="stylesheet" href="uqlibrary-date-selector.css">
+      <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
 
     <paper-tabs id="items" selected="{{ selectedDateIndex }}" on-core-select = "{{ dateSelected }}" scrollable nobar horizontal center layout>
       <template repeat="{{date, index in dates}}">

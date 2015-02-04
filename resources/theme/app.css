@@ -680,7 +680,6 @@ paper-tabs {
 #askLogout, #askLogout::shadow {
   height: 44px;
   width: 44px;
-  fill: #FAFAFA;
   color: #FAFAFA;
   bottom: 8px;
   right: 5px; }
@@ -692,7 +691,6 @@ paper-tabs {
   #account core-icon {
     height: 26px;
     width: 26px;
-    fill: #FAFAFA;
     color: #FAFAFA; }
   #account #details {
     padding: 110px 14px 14px 14px; }
@@ -752,7 +750,7 @@ uqlibrary-home #account core-icon {
 .persistentFooter {
   position: fixed;
   height: 48px;
-  bottom: 0px;
+  bottom: 0;
   background-color: #ffffff;
   width: 100%;
   border-top: 1px solid #EEEEEE; }
@@ -765,6 +763,448 @@ uqlibrary-home #account core-icon {
   .persistentFooter .actionButtonsWrapper {
     padding-right: 16px;
     margin-top: 4px; }
+
+@media screen and (min-width: 768px) {
+  .persistentFooter {
+    left: 0;
+    z-index: 1; } }
+.event-item {
+  transition: opacity 2000ms; }
+
+.event-item-hidden {
+  opacity: 0; }
+
+paper-dropdown {
+  min-width: 150px; }
+
+paper-dropdown::shadow #scroller {
+  width: 100% !important; }
+
+.card {
+  background: white;
+  box-sizing: border-box;
+  padding: 6px; }
+
+#searchIcon core-icon {
+  margin-left: -10px; }
+
+#search {
+  margin-left: 10px; }
+
+#searchInput {
+  width: 100%; }
+
+#searchWrapper {
+  width: 96%;
+  margin: 8px;
+  transition: 300ms ease-in-out; }
+
+#autosuggest,
+#filters {
+  top: 55px;
+  left: 0;
+  right: 0;
+  width: 100%; }
+
+#filters {
+  top: 71px; }
+  #filters paper-item {
+    padding-left: 0;
+    border-bottom: 1px solid #cccccc; }
+    #filters paper-item.last {
+      border-bottom: none; }
+    #filters paper-item.core-selected {
+      color: rgba(0, 0, 0, 0.87); }
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.recent {
+  color: #49075E; }
+
+core-menu {
+  padding: 8px 0;
+  margin: 0; }
+  core-menu.divider {
+    border-bottom: 1px solid #cccccc; }
+
+paper-item {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
+#account {
+  font-size: 0.875em;
+  background-color: #7b0c9d;
+  border-bottom: 1px solid #cccccc;
+  background: 100%;
+  background-size: cover;
+  background-image: url("https://app.library.uq.edu.au/assets/images/uq-menu/st-lucia.jpg"); }
+  #account #gradient {
+    background: -moz-linear-gradient(top, transparent 30%, black 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, transparent), color-stop(100%, black));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, transparent 30%, black 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, transparent 30%, black 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, transparent 30%, black 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, transparent 30%, black 100%);
+    /* W3C */ }
+  #account #details {
+    padding: 110px 14px 14px 14px; }
+  #account #name {
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  #account #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+
+.masqueradeCard {
+  width: 86%;
+  padding: 18px 32px; }
+
+.masqueradeCard core-tooltip {
+  display: flex; }
+
+.masqueradeCard paper-checkbox {
+  margin: 0 20px 0 0; }
+
+.masqueradeCard paper-input-decorator {
+  margin-bottom: 20px; }
+
+.masqueradeCard #masqueradeButton {
+  margin-top: 24px; }
+
+#feedbackCard {
+  width: 86%;
+  padding: 18px 32px; }
+
+#feedbackCard core-tooltip {
+  display: flex; }
+
+#feedbackCard paper-checkbox {
+  margin: 0 20px 0 0; }
+
+#feedbackCard paper-input-decorator {
+  margin-bottom: 20px; }
+
+#feedbackCard #feedbackButtons {
+  margin-top: 24px; }
+
+.open {
+  color: #38852e !important; }
+
+.closed {
+  color: #ce4627 !important; }
+
+.list-margin {
+  margin-bottom: 38px; }
+
+#masquerade {
+  margin: 16px; }
+
+#booking {
+  margin: 16px; }
+
+.apps {
+  margin-top: 10px; }
+
+#homePage {
+  text-align: -moz-center; }
+
+.app {
+  width: 100px;
+  height: 90px;
+  text-align: center; }
+
+.home-icon {
+  width: 44px;
+  height: 44px;
+  color: #7b0c9d;
+  padding: 0; }
+
+paper-icon-button.huge::shadow #icon {
+  width: 44px;
+  height: 44px; }
+
+uqlibrary-home paper-icon-button.huge #icon {
+  color: #7b0c9d; }
+
+.iconLabel {
+  margin: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 14px; }
+
+.items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0; }
+
+.item {
+  text-align: center;
+  display: inline-block;
+  margin: 1px;
+  min-width: 30px;
+  padding: 15px 1px;
+  font-size: 13px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background-color: #EEEEEE; }
+  .item.occupied-true {
+    background-color: #BDBDBD;
+    color: #ffffff; }
+  .item.selected-true {
+    background-color: #007e9e;
+    color: #ffffff; }
+
+.selectedDate {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0; }
+
+paper-tabs {
+  background-color: #ffffff;
+  height: 60px; }
+
+paper-tab {
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  paper-tab .dayOfWeek {
+    width: 40px; }
+  paper-tab .date {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 12px; }
+  paper-tab.core-selected .date {
+    background-color: #007e9e;
+    color: #ffffff; }
+
+paper-tabs {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
+  paper-tabs::shadow #selectionBar {
+    background-color: #8db800; }
+  paper-tabs paper-tab .tabTitleNumber {
+    margin-bottom: 4px; }
+  paper-tabs paper-tab::shadow #ink {
+    color: #8db800; }
+
+.listItemSection.listItemTitle {
+  padding-bottom: 16px; }
+.listItemSection.listItemAuthor {
+  font-style: italic;
+  padding-bottom: 16px; }
+.listItemSection.listItemType {
+  color: #7b0c9d;
+  font-style: italic; }
+.listItemSection.listItemNotes {
+  font-style: italic;
+  padding-bottom: 16px; }
+.listItemSection.listItemNoResultsMessage {
+  font-style: italic; }
+
+.listItemLink core-icon {
+  margin-right: 0; }
+
+#loadingOverlay {
+  background-color: transparent;
+  width: 64px;
+  height: 64px; }
+  #loadingOverlay paper-spinner::shadow .circle {
+    border-color: #7b0c9d; }
+
+paper-progress {
+  height: 20px;
+  width: 100%; }
+
+#availability {
+  margin-top: 8px;
+  padding: 16px; }
+
+#branchSelect {
+  padding: 7px;
+  width: 100%; }
+
+#branches {
+  width: 100%; }
+
+.available {
+  color: #8CB800; }
+
+.unavailable {
+  color: #ce4627; }
+
+paper-dropdown::shadow #scroller {
+  width: 100% !important; }
+
+#branchWrapper {
+  width: 96%;
+  margin: 8px;
+  transition: 300ms ease-in-out;
+  padding: 6px; }
+
+.availability-item {
+  border-bottom: 1px solid #F5F5F5;
+  padding: 4px;
+  line-height: 1.2; }
+  .availability-item .totals {
+    float: right;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54); }
+
+uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
+  padding-top: 20px; }
+
+uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
+  padding-top: 20px;
+  font-family: "Roboto regular";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: #7b0c9d; }
+uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
+  margin-left: 64px; }
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%; }
+  .attentionIcon paper-icon {
+    width: 24px;
+    height: 24px; }
+
+.tooltip {
+  margin-right: 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right; }
+
+.group-label {
+  margin-left: 32px; }
+
+.group-content {
+  padding-left: 56px; }
+
+.filterWrapper {
+  background-color: #ffffff;
+  margin-bottom: 30px; }
+
+uqlibrary-filter-group div.groupContentWrapper[horizontal] paper-dropdown-menu {
+  min-width: 150px;
+  margin-right: 20px; }
+  uqlibrary-filter-group div.groupContentWrapper[horizontal] paper-dropdown-menu:last-child {
+    margin-right: 0; }
+uqlibrary-filter-group:last-child {
+  border-bottom: none; }
+
+paper-dropdown-menu {
+  display: block;
+  width: 100%; }
+  paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
+    color: #BDBDBD; }
+  paper-dropdown-menu paper-dropdown paper-item:hover {
+    background-color: #F5F5F5; }
+
+paper-input-decorator::shadow #focusedUnderline {
+  background-color: #007e9e !important; }
+
+paper-input {
+  display: block; }
+  paper-input::shadow input {
+    color: rgba(0, 0, 0, 0.54); }
+  paper-input#time {
+    display: block;
+    width: 100%; }
+
+md-timepicker::shadow #card {
+  border: 1px solid #cccccc;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 360px;
+  width: 225px; }
+  md-timepicker::shadow #card #display {
+    background-color: #007e9e !important;
+    height: 108px;
+    padding: 21.6px;
+    color: #ffffff;
+    font-size: 41.4px; }
+    md-timepicker::shadow #card #display .digit {
+      opacity: 0.7; }
+      md-timepicker::shadow #card #display .digit[active] {
+        opacity: 1; }
+  md-timepicker::shadow #card #keypad {
+    font-size: 37.8px; }
+    md-timepicker::shadow #card #keypad .digit {
+      flex-basis: 56.7px;
+      -webkit-flex-basis: 56.7px; }
+md-timepicker::shadow paper-button {
+  font-size: 12.6px; }
+
+paper-slider {
+  width: 100%; }
+  paper-slider::shadow #sliderBar {
+    box-sizing: content-box; }
+    paper-slider::shadow #sliderBar::shadow #activeProgress {
+      background-color: #007e9e; }
+  paper-slider::shadow #sliderKnobInner {
+    background-color: #007e9e; }
+    paper-slider::shadow #sliderKnobInner::before {
+      background-color: #007e9e;
+      display: block !important; }
+  paper-slider#timePeriod {
+    width: 50%; }
+
+.sliderWrapper {
+  color: rgba(0, 0, 0, 0.87);
+  margin-top: 20pt; }
+  .sliderWrapper .durationText {
+    width: 75px; }
+
+paper-checkbox::shadow #checkbox.checked {
+  border-color: #007e9e; }
+
+.equipment-item {
+  margin-bottom: 10pt;
+  color: rgba(0, 0, 0, 0.54); }
+  .equipment-item core-icon {
+    margin-right: 10pt; }
+
+paper-toast#infoToast {
+  position: fixed;
+  max-width: 280px;
+  max-height: 48px; }
+
+.error {
+  border-bottom: 1px solid #F44336; }
+  .error::shadow #label {
+    color: #F44336; }
+
+core-overlay#timepickerDialog::shadow #actions {
+  display: none; }
+core-overlay#timepickerDialog::shadow #main {
+  padding: 0; }
 
 .text-center {
   text-align: center; }
@@ -889,7 +1329,6 @@ body {
   background-color: #fafafa; }
 
 #loader {
-  position: relative;
   margin: 0 auto;
   width: 100px;
   height: 100px;

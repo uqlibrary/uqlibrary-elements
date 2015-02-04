@@ -85,6 +85,6 @@ See the styling example here: https://uqlibrary.github.io/uqlibrary-elements/com
 
 ### Styling Implementation Guidelines
 
-Do's
-
-Don'ts
+1 Seperate elements use elements.css from uqlibrary-elements/resources/theme (e.g. uqlibrary-persistent-footer)
+2 Element.css is excluded from vulcanization in vulcanize.conf
+3 Grunt-text-replace runs to update path in vulcanized.html to point to relative element.css
