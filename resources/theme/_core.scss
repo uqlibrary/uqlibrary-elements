@@ -661,13 +661,7 @@ uqlibrary-fines {
 
 // filter group
 
-//:host {
-//  display: block;
-//  position: relative;
-//  background-color: $white;
-//  padding: $form-padding;
-//  border-bottom: 1pt solid $divider;
-//}
+
 
 .group-label {
   margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
@@ -684,10 +678,7 @@ $timepickerRatio: 0.9;
 $inputColor: $secondary-text;
 $textColor: $secondary-text;
 
-//:host {
-//  font-size: 10pt;
-//  width: 100%;
-//}
+
 
 .filterWrapper {
   background-color: $white;
