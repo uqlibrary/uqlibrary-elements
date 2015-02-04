@@ -1101,22 +1101,12 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
   text-overflow: ellipsis;
   text-align: right; }
 
-:host {
-  display: block;
-  position: relative;
-  background-color: #ffffff;
-  padding: 16px;
-  border-bottom: 1pt solid #cccccc; }
-
+host
 .group-label {
   margin-left: 32px; }
 
 .group-content {
   padding-left: 56px; }
-
-:host {
-  font-size: 10pt;
-  width: 100%; }
 
 .filterWrapper {
   background-color: #ffffff;
