@@ -656,8 +656,11 @@ core-icon {
   core-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
 
-paper-progress::shadow #activeProgress {
-  background-color: #38852e; }
+paper-progress {
+  height: 1.14286em;
+  width: 100%; }
+  paper-progress::shadow #activeProgress {
+    background-color: #38852e; }
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
@@ -777,8 +780,7 @@ paper-item {
 
 .card {
   background: white;
-  box-sizing: border-box;
-  padding: 6px; }
+  box-sizing: border-box; }
 
 #search {
   margin-left: 8px; }
@@ -931,27 +933,6 @@ uqlibrary-home paper-icon-button.huge #icon {
   padding: 10px 0; }
 
 paper-tabs {
-  background-color: #ffffff;
-  height: 60px; }
-
-paper-tab {
-  text-align: center;
-  margin: 0;
-  padding: 0; }
-  paper-tab .dayOfWeek {
-    width: 40px; }
-  paper-tab .date {
-    height: 40px;
-    width: 40px;
-    font-size: 1.14286em;
-    text-align: center;
-    border-radius: 50%;
-    padding-top: 12px; }
-  paper-tab.core-selected .date {
-    background-color: #007e9e;
-    color: #ffffff; }
-
-paper-tabs {
   color: rgba(0, 0, 0, 0.87);
   background-color: #ffffff;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
@@ -961,6 +942,18 @@ paper-tabs {
     margin-bottom: 4px; }
   paper-tabs paper-tab::shadow #ink {
     color: #8db800; }
+  paper-tabs paper-tab .dayOfWeek {
+    width: 40px; }
+  paper-tabs paper-tab .date {
+    height: 40px;
+    width: 40px;
+    font-size: 1.14286em;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 12px; }
+  paper-tabs paper-tab.core-selected .date {
+    background-color: #007e9e;
+    color: #ffffff; }
 
 .listItemSection.listItemTitle {
   padding-bottom: 16px; }
@@ -985,10 +978,6 @@ paper-tabs {
   height: 64px; }
   #loadingOverlay paper-spinner::shadow .circle {
     border-color: #7b0c9d; }
-
-paper-progress {
-  height: 20px;
-  width: 100%; }
 
 #availability {
   margin-top: 8px;
