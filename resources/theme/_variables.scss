@@ -1,3 +1,12 @@
+// Minimum human touch target size
+$touch-target-size: 44px;
+
+// Responsive width
+// using iPad landscape (768px) for now as
+// this seems like a sensible default
+// and allows us to showcase the effect easily
+$responsive-width: 768px;
+
 
 // Colours from Material Design specifications
 $deep-purple-50:   #ede7f6;
