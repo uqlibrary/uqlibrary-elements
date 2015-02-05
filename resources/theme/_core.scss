@@ -1,7 +1,47 @@
 @import "variables";
 @import "margins";
 
+// Core styles used across UQ My Library
 
+
+// Core toolbar background, font colour, and icon colour
+core-toolbar {
+  background-color: $dark-primary;
+  color: $text-inverse;
+  core-icon {
+    color: $white;
+  }
+}
+
+// Drawer panel background colour and border
+.drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// Main content background colour
+.main {
+  background-color: $background-primary;
+}
+
+// Used to enable the correct behaviour with regard to the
+// menu drawer toggle button and back button on complex apps
+.responsiveToolbarButton {
+  @media screen and (min-width: $responsive-width) {
+    display:none;
+  }
+}
+
+// Core menu using Material Design specs from
+// http://www.google.com/design/spec/patterns/navigation-drawer.html
+core-menu {
+  core-icon {
+    margin-left: $nav-drawer-icon;
+    margin-right: $nav-drawer-text;
+  }
+}
+
+// Core icons all defined according to MD spec
 core-icon {
   color: $active-icon;
 
@@ -16,51 +56,13 @@ core-icon {
   }
 }
 
-core-menu {
-  margin: 0;
-  core-icon {
-    margin-right: 2em;
-  }
-}
-
-core-toolbar {
-  background-color: $white;
-
-  core-icon {
-    color: $white;
-  }
-}
-
-core-drawer-panel {
-  background-color: $background-secondary;
-}
-
-core-header-panel {
-  background-color: $background-primary;
-}
-
-core-toolbar {
-  background-color: $dark-primary;
-  color: $text-inverse;
-}
-#drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-#main {
-  background-color: $background-primary;
-}
-
-core-menu {
-  margin: 0;
-}
-
+// Paper progress bars should all look consistent
 paper-progress::shadow #activeProgress {
   background-color: $dark-accent;
 }
 
+// Paper tabs should all look consistent
 paper-tabs {
-  //height: 64px;
   color: $text;
   background-color: $white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
@@ -71,45 +73,51 @@ paper-tabs {
     .tabTitleNumber {
       margin-bottom: 4px;
     }
-
     &::shadow #ink {
       color: $accent;
     }
-
   }
 }
 
-#askLogout, #askLogout::shadow {
-  height: 44px;
-  width: 44px;
-  color: $background-primary;
-  bottom: 8px;
-  right: 5px;
-}
-
+// User account section of drawer panel
+// includes optimised image and gradient cover for text legibility
+// all margins based on UQ and material design specs where necessary
 #account {
   font-size: 0.875em;
   background-color: $primary;
   border-bottom: 1px solid $uq-divider;
+  background: 100%;
+  background-size: cover;
+  background-image: url("https://app.library.uq.edu.au/assets/images/uq-menu/st-lucia.jpg");
 
-  core-icon {
-    height: 26px;
-    width: 26px;
+  // gradient compatibility for all browsers
+  #gradient {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
+  }
+  // the lock paper-icon-button allowing users to logout
+  #askLogout, #askLogout::shadow {
     color: $background-primary;
+    margin-bottom: 8px;
+    margin-right: 8px;
   }
-
+  // user account details container
   #details {
-    padding: 110px 14px 14px 14px;
+    padding: 110px 14px 14px 16px;
   }
-
+  // user full name
+  // TODO: Only show name without prefix (e.g. "Mr.", "Miss", etc)
   #name {
-    //    font-weight: 400;
     margin-bottom: 2px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
   }
-
+  // user logged-in email address
   #mail {
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -117,38 +125,38 @@ paper-tabs {
   }
 }
 
+// UQ My Library Home screen main app icons
+// TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
 .home-icon {
-  width: 44px;
-  height: 44px;
+  width: $touch-target-size;
+  height: $touch-target-size;
   color: $primary;
 }
 
+// TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
 /* Icon Button */
 .icon-button {
   position: relative;
   display: inline-block;
   width: 56px;
   height: 56px;
-}
-
-.icon-button > core-icon {
-  margin: 16px;
-  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-button:hover > core-icon {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
-.responsiveToolbarButton {
-  @media screen and (min-width: 768px) {
-    display:none;
+  &:core-icon {
+    margin: 16px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover {
+    &:core-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
   }
 }
 
-// provides a polished effect for tooltips
+// TODO: sassify tooltip styles
+// TODO: revisit when tooltips become more easily customisable
+// see: http://www.google.com/design/spec/components/tooltips.html#
+// Provides a polished effect for tooltips
 core-tooltip.fancy::shadow .core-tooltip {
   opacity: 0;
   -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
@@ -164,15 +172,23 @@ core-tooltip.fancy:focus::shadow .core-tooltip {
   transform: translate3d(0, 0, 0);
 }
 
-
-// for firefox/non-chrome styles:
-uqlibrary-home #account core-icon {
-  height: 26px;
-  width: 26px;
-  color: $background-primary;
+// Provides a polished effect for tooltips
+core-tooltip.fancyLeft::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
 }
 
-// persistent footer styles//
+core-tooltip.fancyLeft:hover::shadow .core-tooltip,
+core-tooltip.fancyLeft:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+}
+
+// persistent footer styles
 .persistentFooter {
   position: fixed;
   height: $persistent-footer-height;
@@ -184,33 +200,38 @@ uqlibrary-home #account core-icon {
   .contentWrapper{
     padding: 0;
   }
-  .footerInfo {
-    padding: 18px;
-  }
-  .footerButtons {
-    padding-top: 8px;
-  }
   .actionButtonsWrapper{
     padding-right: 16px;
     margin-top: 4px;
   }
 }
+// Borrowing->fines-specific footer styles because custom buttons
+#finesFooter {
+  margin: 4px;
+  .footerInfo {
+    margin: 12px;
+  }
+}
 
-@media screen and (min-width: 768px) {
+// Keeps persistent footer above drawer panel when responsive mode engaged
+@media screen and (min-width: $responsive-width) {
   .persistentFooter {
     left: 0;
     z-index: 1;
   }
 }
 
+// used to animate the creation and removal of event items
 .event-item {
   transition: opacity 2000ms;
 }
-
 .event-item-hidden {
   opacity: 0;
 }
 
+// Paper-dropdowns should be consistent
+// they shouldn't get too small
+// see http://www.google.com/design/spec/components/menus.html#menus-specs
 paper-dropdown {
   min-width: 150px;
 }
@@ -219,20 +240,15 @@ paper-dropdown::shadow #scroller {
   width: 100% !important;
 }
 
+// Core card styles
 .card {
   background: white;
   box-sizing: border-box;
   padding: 6px;
 }
 
-#searchIcon {
-  core-icon {
-    margin-left: -10px;
-  }
-}
-
 #search {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 #searchInput {
@@ -292,41 +308,7 @@ paper-item {
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
 }
 
-#account {
-  font-size: 0.875em;
-  background-color: $primary;
-  border-bottom: 1px solid $uq-divider;
-  background: 100%;
-  background-size: cover;
-  background-image: url("https://app.library.uq.edu.au/assets/images/uq-menu/st-lucia.jpg");
 
-  #gradient {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
-  }
-
-  #details {
-    padding: 110px 14px 14px 14px;
-  }
-
-  #name {
-    //    font-weight: 400;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  #mail {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}
 .masqueradeCard {
   width: 86%;
   padding: 18px 32px;
