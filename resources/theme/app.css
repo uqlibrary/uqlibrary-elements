@@ -644,6 +644,8 @@ core-toolbar {
 core-menu core-icon {
   margin-left: -3;
   margin-right: 28px; }
+core-menu.divider {
+  border-bottom: 1px solid #cccccc; }
 
 core-icon {
   color: rgba(0, 0, 0, 0.54); }
@@ -669,7 +671,7 @@ paper-tabs {
     color: #8db800; }
 
 #account {
-  font-size: 0.875em;
+  font-size: 0.85714em;
   background-color: #7b0c9d;
   border-bottom: 1px solid #cccccc;
   background: 100%;
@@ -703,25 +705,6 @@ paper-tabs {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
-
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: #7b0c9d; }
-
-/* Icon Button */
-.icon-button {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 56px; }
-  .icon-button:core-icon {
-    margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-  .icon-button:hover:core-icon {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
 
 core-tooltip.fancy::shadow .core-tooltip {
   opacity: 0;
@@ -762,10 +745,12 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
     padding-right: 16px;
     margin-top: 4px; }
 
-#finesFooter {
-  margin: 4px; }
-  #finesFooter .footerInfo {
-    margin: 12px; }
+#persistentFooter {
+  margin: 8px; }
+  #persistentFooter .footerInfo {
+    margin: 16px; }
+  #persistentFooter .footerButtons {
+    margin: 4px; }
 
 @media screen and (min-width: 768px) {
   .persistentFooter {
@@ -783,6 +768,13 @@ paper-dropdown {
 paper-dropdown::shadow #scroller {
   width: 100% !important; }
 
+paper-item {
+  font-family: "Roboto medium";
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.87); }
+
 .card {
   background: white;
   box-sizing: border-box;
@@ -795,16 +787,8 @@ paper-dropdown::shadow #scroller {
   width: 100%; }
 
 #searchWrapper {
-  width: 96%;
-  margin: 8px;
+  width: 100%;
   transition: 300ms ease-in-out; }
-
-#autosuggest,
-#filters {
-  top: 55px;
-  left: 0;
-  right: 0;
-  width: 100%; }
 
 #filters {
   top: 71px; }
@@ -815,6 +799,8 @@ paper-dropdown::shadow #scroller {
       border-bottom: none; }
     #filters paper-item.core-selected {
       color: rgba(0, 0, 0, 0.87); }
+    #filters paper-item .button-content {
+      text-align: left; }
 
 .truncate {
   width: 100%;
@@ -822,20 +808,7 @@ paper-dropdown::shadow #scroller {
   text-overflow: ellipsis; }
 
 .recent {
-  color: #49075E; }
-
-core-menu {
-  padding: 8px 0;
-  margin: 0; }
-  core-menu.divider {
-    border-bottom: 1px solid #cccccc; }
-
-paper-item {
-  font-family: "Roboto medium";
-  font-size: 1em;
-  color: rgba(0, 0, 0, 0.87);
-  line-height: 1.1em;
-  color: rgba(0, 0, 0, 0.87); }
+  color: #4a075f; }
 
 .masqueradeCard {
   width: 86%;
@@ -878,6 +851,26 @@ paper-item {
 .list-margin {
   margin-bottom: 38px; }
 
+.home-icon {
+  width: 44px;
+  height: 44px;
+  color: #7b0c9d;
+  padding: 0; }
+
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px; }
+  .icon-button:core-icon {
+    margin: 16px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  .icon-button:hover:core-icon {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+
 #masquerade {
   margin: 16px; }
 
@@ -895,12 +888,6 @@ paper-item {
   height: 90px;
   text-align: center; }
 
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: #7b0c9d;
-  padding: 0; }
-
 paper-icon-button.huge::shadow #icon {
   width: 44px;
   height: 44px; }
@@ -912,7 +899,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 0;
   text-align: center;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 14px; }
+  font-size: 1em; }
 
 .items {
   margin: 0 10px;
@@ -926,7 +913,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 1px;
   min-width: 30px;
   padding: 15px 1px;
-  font-size: 13px;
+  font-size: 0.929em;
   line-height: 1.1;
   text-transform: uppercase;
   background-color: #EEEEEE; }
@@ -939,7 +926,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 
 .selectedDate {
   text-align: center;
-  font-size: 16px;
+  font-size: 1.14286em;
   font-weight: bold;
   padding: 10px 0; }
 
@@ -956,7 +943,7 @@ paper-tab {
   paper-tab .date {
     height: 40px;
     width: 40px;
-    font-size: 16px;
+    font-size: 1.14286em;
     text-align: center;
     border-radius: 50%;
     padding-top: 12px; }
@@ -1035,7 +1022,7 @@ paper-dropdown::shadow #scroller {
   line-height: 1.2; }
   .availability-item .totals {
     float: right;
-    font-size: 14px;
+    font-size: 1em;
     color: rgba(0, 0, 0, 0.54); }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {

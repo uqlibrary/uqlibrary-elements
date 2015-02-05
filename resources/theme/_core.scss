@@ -39,6 +39,9 @@ core-menu {
     margin-left: $nav-drawer-icon;
     margin-right: $nav-drawer-text;
   }
+  &.divider {
+    border-bottom: 1px solid $uq-divider;
+  }
 }
 
 // Core icons all defined according to MD spec
@@ -83,7 +86,7 @@ paper-tabs {
 // includes optimised image and gradient cover for text legibility
 // all margins based on UQ and material design specs where necessary
 #account {
-  font-size: 0.875em;
+  font-size: $caption-size-font;
   background-color: $primary;
   border-bottom: 1px solid $uq-divider;
   background: 100%;
@@ -122,34 +125,6 @@ paper-tabs {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-  }
-}
-
-// UQ My Library Home screen main app icons
-// TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
-.home-icon {
-  width: $touch-target-size;
-  height: $touch-target-size;
-  color: $primary;
-}
-
-// TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
-/* Icon Button */
-.icon-button {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-  &:core-icon {
-    margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  &:hover {
-    &:core-icon {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
-    }
   }
 }
 
@@ -205,11 +180,14 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
     margin-top: 4px;
   }
 }
-// Borrowing->fines-specific footer styles because custom buttons
-#finesFooter {
-  margin: 4px;
+// Specific footer styles because custom buttons
+#persistentFooter {
+  margin: 8px;
   .footerInfo {
-    margin: 12px;
+    margin: 16px;
+  }
+  .footerButtons {
+    margin: 4px;
   }
 }
 
@@ -240,6 +218,11 @@ paper-dropdown::shadow #scroller {
   width: 100% !important;
 }
 
+// Paper-item should be consistent
+paper-item {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+}
+
 // Core card styles
 .card {
   background: white;
@@ -247,68 +230,43 @@ paper-dropdown::shadow #scroller {
   padding: 6px;
 }
 
+// Library Search paper-input styles
 #search {
   margin-left: 8px;
 }
-
 #searchInput {
   width: 100%;
 }
-
 #searchWrapper {
-  width: 96%;
-  margin: 8px;
+  width: 100%;
   transition: 300ms ease-in-out;
 }
-
-#autosuggest,
-#filters {
-  top: 55px;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
 #filters {
   top: 71px;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
-
     &.last {
       border-bottom: none;
     }
-
     &.core-selected {
       color: $text;
     }
+    .button-content {
+      text-align: left;
+    }
   }
 }
-
 .truncate {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
 .recent {
   color: $primary-700;
 }
 
-core-menu {
-  padding: 8px 0;
-  margin: 0;
-
-  &.divider {
-    border-bottom: 1px solid $uq-divider;
-  }
-}
-
-paper-item {
-  @include gmd-type-style(menu, gmd-alpha-color($black, text));
-}
-
-
+// Masquerade app styles
 .masqueradeCard {
   width: 86%;
   padding: 18px 32px;
@@ -326,6 +284,7 @@ paper-item {
   margin-top: 24px;
 }
 
+// Feedback app styles
 #feedbackCard {
   width: 86%;
   padding: 18px 32px;
@@ -343,47 +302,67 @@ paper-item {
   margin-top: 24px;
 }
 
+// Library opening hours
 .open {
   color: $dark-accent !important;
 }
-
 .closed {
   color: $uq-warm-red !important;
 }
-
 .list-margin {
   margin-bottom: 38px;
+}
+
+// My Library home
+
+// UQ My Library Home screen main app icons
+// TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
+.home-icon {
+  width: $touch-target-size;
+  height: $touch-target-size;
+  color: $primary;
+  padding: 0;
+}
+
+// TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  &:core-icon {
+    margin: 16px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover {
+    &:core-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
 }
 #masquerade {
   margin: 16px;
 }
-
 #booking {
   margin: 16px;
 }
-
 .apps {
   margin-top: 10px;
 }
-
 #homePage {
   text-align: -moz-center;
 }
-
 .app {
   width: 100px;
   height: 90px;
   text-align: center;
 }
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: $primary;
-  padding: 0;
-}
 paper-icon-button.huge::shadow #icon {
-  width: 44px;
-  height: 44px;
+  width: $touch-target-size;
+  height: $touch-target-size;
 }
 uqlibrary-home paper-icon-button.huge #icon {
   color: $primary;
@@ -392,10 +371,10 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 0;
   text-align: center;
   color: $secondary-text;
-  font-size: 14px;
+  font-size: $body1-size-font-device;
 }
 
-
+// TODO: investigate why font-size: 0
 .items{
   margin: 0 10px;
   list-style-type: none;
@@ -409,7 +388,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 1px;
   min-width: 30px;
   padding: 15px 1px;
-  font-size: 13px;
+  font-size: $body1-size-font-desktop;
   line-height: 1.1;
   text-transform: uppercase;
   background-color: $fbs-available-time;
@@ -426,7 +405,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 }
 .selectedDate {
   text-align: center;
-  font-size: 16px;
+  font-size: $subhead-size-font-device;
   font-weight: bold;
   padding: 10px 0;
 }
@@ -448,7 +427,7 @@ paper-tab {
   & .date {
     height: 40px;
     width: 40px;
-    font-size: 16px;
+    font-size: $subhead-size-font-device;
     text-align: center;
     border-radius: 50%;
     padding-top: 12px;
@@ -572,7 +551,7 @@ paper-dropdown::shadow #scroller {
 
   .totals {
     float: right;
-    font-size: 14px;
+    font-size: $body1-size-font-device;
     color: $secondary-text;
   }
 }
