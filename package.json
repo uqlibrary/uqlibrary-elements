@@ -1,7 +1,8 @@
 {
   "name": "uqlibrary-elements",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "grunt-cli" : "0.1.13",
     "grunt": "0.4.3",

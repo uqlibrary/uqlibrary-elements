@@ -849,6 +849,26 @@ paper-toast#infoToast {
   box-sizing: border-box;
   width: 300px; }
 
+.home-icon {
+  width: 44px;
+  height: 44px;
+  color: #7b0c9d;
+  padding: 0; }
+
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px; }
+  .icon-button:core-icon {
+    margin: 16px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  .icon-button:hover:core-icon {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+
 #search {
   margin-left: 8px; }
 
@@ -856,11 +876,13 @@ paper-toast#infoToast {
   width: 100%; }
 
 #searchWrapper {
-  width: 100%;
+  width: 90%;
+  height: 50px;
   transition: 300ms ease-in-out; }
 
 #filters {
-  top: 71px; }
+  top: 50px;
+  width: 100%; }
   #filters paper-item {
     padding-left: 0;
     border-bottom: 1px solid #cccccc; }
@@ -874,7 +896,8 @@ paper-toast#infoToast {
 .truncate {
   width: 100%;
   white-space: nowrap;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  font-family: "Roboto"; }
 
 .recent {
   color: #4a075f; }
@@ -919,26 +942,6 @@ paper-toast#infoToast {
 
 .list-margin {
   margin-bottom: 38px; }
-
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: #7b0c9d;
-  padding: 0; }
-
-/* Icon Button */
-.icon-button {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 56px; }
-  .icon-button:core-icon {
-    margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-  .icon-button:hover:core-icon {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2); }
 
 #masquerade {
   margin: 16px; }
