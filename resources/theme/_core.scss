@@ -292,15 +292,12 @@ paper-toast {
   }
 }
 
-
-//   ____  ____     ___        _______ ____    ____   _    _   _ _____ _
-//  |  _ \|  _ \   / \ \      / / ____|  _ \  |  _ \ / \  | \ | | ____| |
-//  | | | | |_) | / _ \ \ /\ / /|  _| | |_) | | |_) / _ \ |  \| |  _| | |
-//  | |_| |  _ < / ___ \ V  V / | |___|  _ <  |  __/ ___ \| |\  | |___| |___
-//  |____/|_| \_\_/   \_\_/\_/  |_____|_| \_\ |_| /_/   \_\_| \_|_____|_____|
+//   ____                                ____                  _
+//  |  _ \ _ __ __ ___      _____ _ __  |  _ \ __ _ _ __   ___| |
+//  | | | | '__/ _` \ \ /\ / / _ \ '__| | |_) / _` | '_ \ / _ \ |
+//  | |_| | | | (_| |\ V  V /  __/ |    |  __/ (_| | | | |  __/ |
+//  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
-
-
 // Drawer panel background colour and border
 .drawer {
   background-color: $background-secondary;
@@ -359,13 +356,12 @@ paper-toast {
 }
 
 
-//   ____  _____ ____  ____ ___ ____ _____ _____ _   _ _____   _____ ___   ___ _____ _____ ____
-//  |  _ \| ____|  _ \/ ___|_ _/ ___|_   _| ____| \ | |_   _| |  ___/ _ \ / _ \_   _| ____|  _ \
-//  | |_) |  _| | |_) \___ \| |\___ \ | | |  _| |  \| | | |   | |_ | | | | | | || | |  _| | |_) |
-//  |  __/| |___|  _ < ___) | | ___) || | | |___| |\  | | |   |  _|| |_| | |_| || | | |___|  _ <
-//  |_|   |_____|_| \_\____/___|____/ |_| |_____|_| \_| |_|   |_|   \___/ \___/ |_| |_____|_| \_\
+//   ____               _     _             _     _____           _
+//  |  _ \ ___ _ __ ___(_)___| |_ ___ _ __ | |_  |  ___|__   ___ | |_ ___ _ __
+//  | |_) / _ \ '__/ __| / __| __/ _ \ '_ \| __| | |_ / _ \ / _ \| __/ _ \ '__|
+//  |  __/  __/ |  \__ \ \__ \ |_  __/ | | | |_  |  _| (_) | (_) | |_  __/ |
+//  |_|   \___|_|  |___/_|___/\__\___|_| |_|\__| |_|  \___/ \___/ \__\___|_|
 //
-
 // persistent footer styles
 .persistentFooter {
   position: fixed;
@@ -402,13 +398,12 @@ paper-toast {
 }
 
 
-//   _______     _______ _   _ _____   ___ _____ _____ __  __ ____
-//  | ____\ \   / / ____| \ | |_   _| |_ _|_   _| ____|  \/  / ___|
-//  |  _|  \ \ / /|  _| |  \| | | |    | |  | | |  _| | |\/| \___ \
-//  | |___  \ V / | |___| |\  | | |    | |  | | | |___| |  | |___) |
-//  |_____|  \_/  |_____|_| \_| |_|   |___| |_| |_____|_|  |_|____/
+//   _____                 _     ___ _
+//  | ____|_   _____ _ __ | |_  |_ _| |_ ___ _ __ ___  ___
+//  |  _| \ \ / / _ \ '_ \| __|  | || __/ _ \ '_ ` _ \/ __|
+//  | |___ \ V /  __/ | | | |_   | || |_  __/ | | | | \__ \
+//  |_____| \_/ \___|_| |_|\__| |___|\__\___|_| |_| |_|___/
 //
-
 // used to animate the creation and removal of event items
 .event-item {
   transition: opacity 2000ms;
@@ -417,13 +412,12 @@ paper-toast {
   opacity: 0;
 }
 
-//    ____    _    ____  ____  ____
-//   / ___|  / \  |  _ \|  _ \/ ___|
-//  | |     / _ \ | |_) | | | \___ \
-//  | |___ / ___ \|  _ <| |_| |___) |
-//   \____/_/   \_\_| \_\____/|____/
+//    ____              _
+//   / ___|__ _ _ __ __| |___
+//  | |   / _` | '__/ _` / __|
+//  | |___ (_| | | | (_| \__ \
+//   \____\__,_|_|  \__,_|___/
 //
-
 // Core card styles
 .card {
   background: white;
@@ -478,13 +472,45 @@ paper-toast {
   }
 }
 
-//   ____  _____    _    ____   ____ _   _
-//  / ___|| ____|  / \  |  _ \ / ___| | | |
-//  \___ \|  _|   / _ \ | |_) | |   | |_| |
-//   ___) | |___ / ___ \|  _ <| |___|  _  |
-//  |____/|_____/_/   \_\_| \_\\____|_| |_|
-//
 
+paper-icon-button.huge::shadow #icon {
+  width: $touch-target-size;
+  height: $touch-target-size;
+}
+uqlibrary-home paper-icon-button.huge #icon {
+  color: $primary;
+}
+.iconLabel {
+  margin: 0;
+  text-align: center;
+  color: $secondary-text;
+  font-size: $body1-size-font-device;
+}
+
+#masquerade {
+  margin: 16px;
+}
+#booking {
+  margin: 16px;
+}
+.apps {
+  margin-top: 10px;
+}
+#homePage {
+  text-align: -moz-center;
+}
+.app {
+  width: 100px;
+  height: 90px;
+  text-align: center;
+}
+
+//   ____                      _
+//  / ___|  ___  __ _ _ __ ___| |__
+//  \___ \ / _ \/ _` | '__/ __| '_ \
+//   ___) |  __/ (_| | | | (__| | | |
+//  |____/ \___|\__,_|_|  \___|_| |_|
+//
 // Library Search paper-input styles
 #search {
   margin-left: 8px;
@@ -524,36 +550,227 @@ paper-toast {
   color: $primary-700;
 }
 
-
-//   __  __    _    ____   ___  _   _ _____ ____     _    ____  _____
-//  |  \/  |  / \  / ___| / _ \| | | | ____|  _ \   / \  |  _ \| ____|
-//  | |\/| | / _ \ \___ \| | | | | | |  _| | |_) | / _ \ | | | |  _|
-//  | |  | |/ ___ \ ___) | |_| | |_| | |___|  _ < / ___ \| |_| | |___
-//  |_|  |_/_/   \_\____/ \__\_\\___/|_____|_| \_\_/   \_\____/|_____|
+//   ____              _    _
+//  | __ )  ___   ___ | | ___)_ __   __ _
+//  |  _ \ / _ \ / _ \| |/ / | '_ \ / _` |
+//  | |_) | (_) | (_) |   <| | | | | (_| |
+//  |____/ \___/ \___/|_|\_\_|_| |_|\__, |
+//                                  |___/
 //
-// Masquerade app styles
-.masqueradeCard {
-  width: 86%;
-  padding: 18px 32px;
+// UQ My Library Booking app
+
+// filter group
+.group-label {
+  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
 }
-.masqueradeCard core-tooltip {
-  display: flex;
-}
-.masqueradeCard paper-checkbox {
-  margin: 0 20px 0 0;
-}
-.masqueradeCard paper-input-decorator {
-  margin-bottom: 20px;
-}
-.masqueradeCard #masqueradeButton {
-  margin-top: 24px;
+.group-content {
+  padding-left: $form-icon-padding-left - $form-padding;
 }
 
-//   _____ _____ _____ ____  ____    _    ____ _  __
-//  |  ___| ____| ____|  _ \| __ )  / \  / ___| |/ /
-//  | |_  |  _| |  _| | | | |  _ \ / _ \| |   | ' /
-//  |  _| | |___| |___| |_| | |_) / ___ \ |___| . \
-//  |_|   |_____|_____|____/|____/_/   \_\____|_|\_\
+// filter-form
+
+.filterWrapper {
+  background-color: $white;
+  margin-bottom: 30px;
+}
+
+md-timepicker {
+  &::shadow {
+    #card {
+      border: 1px solid $divider;
+      margin-top: 0;
+      margin-bottom: 0;
+      height: 400px * $timepickerRatio;
+      width: 250px * $timepickerRatio;
+
+      #display {
+        background-color: $button !important;
+        height: 120px * $timepickerRatio;
+        padding: 24px * $timepickerRatio;
+        color: $white;
+        font-size: 46px * $timepickerRatio;
+        .digit{
+          opacity: 0.7;
+          &[active] {
+            opacity: 1;
+          }
+        }
+      }
+      #keypad {
+        font-size: 42px * $timepickerRatio;
+        .digit {
+          flex-basis: 63px * $timepickerRatio;
+          -webkit-flex-basis: 63px * $timepickerRatio;
+        }
+      }
+    }
+    paper-button {
+      font-size: 14px * $timepickerRatio;
+    }
+  }
+}
+.equipment-item {
+  margin-bottom: 10pt;
+  color: $textColor;
+  core-icon {
+    margin-right: 10pt;
+  }
+}
+.error {
+  border-bottom: 1px solid $error-color;
+  &::shadow {
+    #label {
+      color: $error-color;
+    }
+  }
+}
+
+//   ____                               _
+//  | __ )  ___  _ __ _ __ _____      ___)_ __   __ _
+//  |  _ \ / _ \| '__| '__/ _ \ \ /\ / / | '_ \ / _` |
+//  | |_) | (_) | |  | | | (_) \ V  V /| | | | | (_| |
+//  |____/ \___/|_|  |_|  \___/ \_/\_/ |_|_| |_|\__, |
+//                                              |___/
+// UQ My Library Borrowing app
+
+uqlibrary-holds {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .date {
+          padding-top: $three-line-list-item-padding-top;
+        }
+      }
+    }
+  }
+}
+
+uqlibrary-fines {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .title {
+          padding-top: $three-line-list-item-padding-top;
+          @include gmd-type-style(body1, $primary);
+        }
+        // For fines with 3 digits we need a bit more space
+        .content {
+          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
+        }
+      }
+    }
+  }
+}
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%;
+  paper-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+//    ____                            _
+//   / ___|___  _ __ ___  _ __  _   _| |_ ___ _ __ ___
+//  | |   / _ \| '_ ` _ \| '_ \| | | | __/ _ \ '__/ __|
+//  | |___ (_) | | | | | | |_) | |_| | |_  __/ |  \__ \
+//   \____\___/|_| |_| |_| .__/ \__,_|\__\___|_|  |___/
+//                       |_|
+//
+//// UQ My Library Computers app
+
+#availability {
+  margin-top: $list-item-gap;
+  padding: $text-padding;
+}
+
+#branchSelect {
+  padding: 7px;
+  width: 100%;
+}
+
+#branches {
+  width: 100%;
+}
+
+.available {
+  color: $uq-green-A700;
+}
+
+.unavailable {
+  color: $uq-warm-red;
+}
+
+paper-dropdown::shadow #scroller {
+  width: 100% !important;
+}
+
+#branchWrapper {
+  width: 96%;
+  margin: $list-item-gap;
+  transition: 300ms ease-in-out;
+  padding: 6px;
+}
+
+.availability-item {
+  border-bottom: 1px solid $grey-A100;
+  padding: 4px;
+  line-height: 1.2;
+
+  .totals {
+    float: right;
+    font-size: $body1-size-font-device;
+    color: $secondary-text;
+  }
+}
+
+//    ____
+//   / ___|___  _   _ _ __ ___  ___ ___
+//  | |   / _ \| | | | '__/ __|/ _ \ __|
+//  | |___ (_) | |_| | |  \__ \  __\__ \
+//   \____\___/ \__,_|_|  |___/\___|___/
+//
+//UQ My Library Courses app
+
+.listItemSection {
+
+  &.listItemTitle {
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemAuthor {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemType {
+    color: $primary;
+    font-style: italic;
+  }
+  &.listItemNotes {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemNoResultsMessage {
+    font-style: italic;
+  }
+
+}
+.listItemLink {
+  core-icon {
+    margin-right: 0;
+  }
+}
+
+//   _____             _ _                _
+//  |  ___|__  ___  __| | |__   __ _  ___| | __
+//  | |_ / _ \/ _ \/ _` | '_ \ / _` |/ __| |/ /
+//  |  _|  __/  __/ (_| | |_) | (_| | (__|   <
+//  |_|  \___|\___|\__,_|_.__/ \__,_|\___|_|\_\
 //
 // Feedback app styles
 #feedbackCard {
@@ -573,11 +790,11 @@ paper-toast {
   margin-top: 24px;
 }
 
-//   _   _  ___  _   _ ____  ____
-//  | | | |/ _ \| | | |  _ \/ ___|
-//  | |_| | | | | | | | |_) \___ \
-//  |  _  | |_| | |_| |  _ < ___) |
-//  |_| |_|\___/ \___/|_| \_\____/
+//   _   _
+//  | | | | ___  _   _ _ __ ___
+//  | |_| |/ _ \| | | | '__/ __|
+//  |  _  | (_) | |_| | |  \__ \
+//  |_| |_|\___/ \__,_|_|  |___/
 //
 // Library opening hours
 .open {
@@ -591,46 +808,16 @@ paper-toast {
 }
 
 
-#masquerade {
-  margin: 16px;
-}
-#booking {
-  margin: 16px;
-}
-.apps {
-  margin-top: 10px;
-}
-#homePage {
-  text-align: -moz-center;
-}
-.app {
-  width: 100px;
-  height: 90px;
-  text-align: center;
-}
-paper-icon-button.huge::shadow #icon {
-  width: $touch-target-size;
-  height: $touch-target-size;
-}
-uqlibrary-home paper-icon-button.huge #icon {
-  color: $primary;
-}
-.iconLabel {
-  margin: 0;
-  text-align: center;
-  color: $secondary-text;
-  font-size: $body1-size-font-device;
-}
 
 // TODO: investigate why font-size: 0
-.items{
+.items {
   margin: 0 10px;
   list-style-type: none;
   font-size: 0;
   line-height: 0;
 }
 
-.item{
+.item {
   text-align: center;
   display: inline-block;
   margin: 1px;
@@ -690,199 +877,26 @@ paper-tabs {
   }
 }
 
-
-//UQ My Library Courses app
-
-.listItemSection {
-
-  &.listItemTitle {
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemAuthor {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemType {
-    color: $primary;
-    font-style: italic;
-  }
-  &.listItemNotes {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemNoResultsMessage {
-    font-style: italic;
-  }
-
+//   __  __                                          _
+//  |  \/  | __ _ ___  __ _ _   _  ___ _ __ __ _  __| | ___
+//  | |\/| |/ _` / __|/ _` | | | |/ _ \ '__/ _` |/ _` |/ _ \
+//  | |  | | (_| \__ \ (_| | |_| |  __/ | | (_| | (_| |  __/
+//  |_|  |_|\__,_|___/\__, |\__,_|\___|_|  \__,_|\__,_|\___|
+//                       |_|
+// Masquerade app styles
+.masqueradeCard {
+  width: 86%;
+  padding: 18px 32px;
 }
-.listItemLink {
-  core-icon {
-    margin-right: 0;
-  }
+.masqueradeCard core-tooltip {
+  display: flex;
 }
-
-// UQ My Library Computers app
-
-#availability {
-  margin-top: $list-item-gap;
-  padding: $text-padding;
+.masqueradeCard paper-checkbox {
+  margin: 0 20px 0 0;
 }
-
-#branchSelect {
-  padding: 7px;
-  width: 100%;
+.masqueradeCard paper-input-decorator {
+  margin-bottom: 20px;
 }
-
-#branches {
-  width: 100%;
+.masqueradeCard #masqueradeButton {
+  margin-top: 24px;
 }
-
-.available {
-  color: $uq-green-A700;
-}
-
-.unavailable {
-  color: $uq-warm-red;
-}
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important;
-}
-
-#branchWrapper {
-  width: 96%;
-  margin: $list-item-gap;
-  transition: 300ms ease-in-out;
-  padding: 6px;
-}
-
-.availability-item {
-  border-bottom: 1px solid $grey-A100;
-  padding: 4px;
-  line-height: 1.2;
-
-  .totals {
-    float: right;
-    font-size: $body1-size-font-device;
-    color: $secondary-text;
-  }
-}
-
-// UQ My Library Borrowing app
-
-uqlibrary-holds {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .date {
-          padding-top: $three-line-list-item-padding-top;
-        }
-      }
-    }
-  }
-}
-
-uqlibrary-fines {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .title {
-          padding-top: $three-line-list-item-padding-top;
-          @include gmd-type-style(body1, $primary);
-        }
-        // For fines with 3 digits we need a bit more space
-        .content {
-          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
-        }
-      }
-    }
-  }
-}
-
-.attentionIcon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  padding-left: 16px;
-  height: 32px;
-  overflow: hidden;
-  width: 100%;
-  paper-icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-// UQ My Library Booking app
-
-// filter group
-.group-label {
-  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
-}
-.group-content {
-  padding-left: $form-icon-padding-left - $form-padding;
-}
-
-// filter-form
-
-.filterWrapper {
-  background-color: $white;
-  margin-bottom: 30px;
-}
-
-md-timepicker {
-  &::shadow {
-    #card {
-      border: 1px solid $divider;
-      margin-top: 0;
-      margin-bottom: 0;
-      height: 400px * $timepickerRatio;
-      width: 250px * $timepickerRatio;
-
-      #display {
-        background-color: $button !important;
-        height: 120px * $timepickerRatio;
-        padding: 24px * $timepickerRatio;
-        color: $white;
-        font-size: 46px * $timepickerRatio;
-        .digit{
-          opacity: 0.7;
-          &[active] {
-            opacity: 1;
-          }
-        }
-      }
-      #keypad {
-        font-size: 42px * $timepickerRatio;
-        .digit {
-          flex-basis: 63px * $timepickerRatio;
-          -webkit-flex-basis: 63px * $timepickerRatio;
-        }
-      }
-    }
-    paper-button {
-      font-size: 14px * $timepickerRatio;
-    }
-  }
-}
-
-
-.equipment-item {
-  margin-bottom: 10pt;
-  color: $textColor;
-  core-icon {
-    margin-right: 10pt;
-  }
-
-}
-
-
-.error {
-  border-bottom: 1px solid $error-color;
-  &::shadow {
-    #label {
-      color: $error-color;
-    }
-  }
-}
-

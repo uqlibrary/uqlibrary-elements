@@ -869,6 +869,36 @@ paper-toast#infoToast {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
 
+paper-icon-button.huge::shadow #icon {
+  width: 44px;
+  height: 44px; }
+
+uqlibrary-home paper-icon-button.huge #icon {
+  color: #7b0c9d; }
+
+.iconLabel {
+  margin: 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 1em; }
+
+#masquerade {
+  margin: 16px; }
+
+#booking {
+  margin: 16px; }
+
+.apps {
+  margin-top: 10px; }
+
+#homePage {
+  text-align: -moz-center; }
+
+.app {
+  width: 100px;
+  height: 90px;
+  text-align: center; }
+
 #search {
   margin-left: 8px; }
 
@@ -902,21 +932,126 @@ paper-toast#infoToast {
 .recent {
   color: #4a075f; }
 
-.masqueradeCard {
-  width: 86%;
-  padding: 18px 32px; }
+.group-label {
+  margin-left: 32px; }
 
-.masqueradeCard core-tooltip {
-  display: flex; }
+.group-content {
+  padding-left: 56px; }
 
-.masqueradeCard paper-checkbox {
-  margin: 0 20px 0 0; }
+.filterWrapper {
+  background-color: #ffffff;
+  margin-bottom: 30px; }
 
-.masqueradeCard paper-input-decorator {
-  margin-bottom: 20px; }
+md-timepicker::shadow #card {
+  border: 1px solid #cccccc;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 360px;
+  width: 225px; }
+  md-timepicker::shadow #card #display {
+    background-color: #007e9e !important;
+    height: 108px;
+    padding: 21.6px;
+    color: #ffffff;
+    font-size: 41.4px; }
+    md-timepicker::shadow #card #display .digit {
+      opacity: 0.7; }
+      md-timepicker::shadow #card #display .digit[active] {
+        opacity: 1; }
+  md-timepicker::shadow #card #keypad {
+    font-size: 37.8px; }
+    md-timepicker::shadow #card #keypad .digit {
+      flex-basis: 56.7px;
+      -webkit-flex-basis: 56.7px; }
+md-timepicker::shadow paper-button {
+  font-size: 12.6px; }
 
-.masqueradeCard #masqueradeButton {
-  margin-top: 24px; }
+.equipment-item {
+  margin-bottom: 10pt;
+  color: rgba(0, 0, 0, 0.54); }
+  .equipment-item core-icon {
+    margin-right: 10pt; }
+
+.error {
+  border-bottom: 1px solid #F44336; }
+  .error::shadow #label {
+    color: #F44336; }
+
+uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
+  padding-top: 20px; }
+
+uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
+  padding-top: 20px;
+  font-family: "Roboto regular";
+  font-size: 1em;
+  line-height: 1.1em;
+  color: #7b0c9d; }
+uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
+  margin-left: 64px; }
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%; }
+  .attentionIcon paper-icon {
+    width: 24px;
+    height: 24px; }
+
+#availability {
+  margin-top: 8px;
+  padding: 16px; }
+
+#branchSelect {
+  padding: 7px;
+  width: 100%; }
+
+#branches {
+  width: 100%; }
+
+.available {
+  color: #8CB800; }
+
+.unavailable {
+  color: #ce4627; }
+
+paper-dropdown::shadow #scroller {
+  width: 100% !important; }
+
+#branchWrapper {
+  width: 96%;
+  margin: 8px;
+  transition: 300ms ease-in-out;
+  padding: 6px; }
+
+.availability-item {
+  border-bottom: 1px solid #F5F5F5;
+  padding: 4px;
+  line-height: 1.2; }
+  .availability-item .totals {
+    float: right;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.54); }
+
+.listItemSection.listItemTitle {
+  padding-bottom: 16px; }
+.listItemSection.listItemAuthor {
+  font-style: italic;
+  padding-bottom: 16px; }
+.listItemSection.listItemType {
+  color: #7b0c9d;
+  font-style: italic; }
+.listItemSection.listItemNotes {
+  font-style: italic;
+  padding-bottom: 16px; }
+.listItemSection.listItemNoResultsMessage {
+  font-style: italic; }
+
+.listItemLink core-icon {
+  margin-right: 0; }
 
 #feedbackCard {
   width: 86%;
@@ -942,36 +1077,6 @@ paper-toast#infoToast {
 
 .list-margin {
   margin-bottom: 38px; }
-
-#masquerade {
-  margin: 16px; }
-
-#booking {
-  margin: 16px; }
-
-.apps {
-  margin-top: 10px; }
-
-#homePage {
-  text-align: -moz-center; }
-
-.app {
-  width: 100px;
-  height: 90px;
-  text-align: center; }
-
-paper-icon-button.huge::shadow #icon {
-  width: 44px;
-  height: 44px; }
-
-uqlibrary-home paper-icon-button.huge #icon {
-  color: #7b0c9d; }
-
-.iconLabel {
-  margin: 0;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 1em; }
 
 .items {
   margin: 0 10px;
@@ -1025,126 +1130,21 @@ paper-tabs {
     background-color: #007e9e;
     color: #ffffff; }
 
-.listItemSection.listItemTitle {
-  padding-bottom: 16px; }
-.listItemSection.listItemAuthor {
-  font-style: italic;
-  padding-bottom: 16px; }
-.listItemSection.listItemType {
-  color: #7b0c9d;
-  font-style: italic; }
-.listItemSection.listItemNotes {
-  font-style: italic;
-  padding-bottom: 16px; }
-.listItemSection.listItemNoResultsMessage {
-  font-style: italic; }
+.masqueradeCard {
+  width: 86%;
+  padding: 18px 32px; }
 
-.listItemLink core-icon {
-  margin-right: 0; }
+.masqueradeCard core-tooltip {
+  display: flex; }
 
-#availability {
-  margin-top: 8px;
-  padding: 16px; }
+.masqueradeCard paper-checkbox {
+  margin: 0 20px 0 0; }
 
-#branchSelect {
-  padding: 7px;
-  width: 100%; }
+.masqueradeCard paper-input-decorator {
+  margin-bottom: 20px; }
 
-#branches {
-  width: 100%; }
-
-.available {
-  color: #8CB800; }
-
-.unavailable {
-  color: #ce4627; }
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important; }
-
-#branchWrapper {
-  width: 96%;
-  margin: 8px;
-  transition: 300ms ease-in-out;
-  padding: 6px; }
-
-.availability-item {
-  border-bottom: 1px solid #F5F5F5;
-  padding: 4px;
-  line-height: 1.2; }
-  .availability-item .totals {
-    float: right;
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.54); }
-
-uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
-  padding-top: 20px; }
-
-uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
-  padding-top: 20px;
-  font-family: "Roboto regular";
-  font-size: 1em;
-  line-height: 1.1em;
-  color: #7b0c9d; }
-uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
-  margin-left: 64px; }
-
-.attentionIcon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  padding-left: 16px;
-  height: 32px;
-  overflow: hidden;
-  width: 100%; }
-  .attentionIcon paper-icon {
-    width: 24px;
-    height: 24px; }
-
-.group-label {
-  margin-left: 32px; }
-
-.group-content {
-  padding-left: 56px; }
-
-.filterWrapper {
-  background-color: #ffffff;
-  margin-bottom: 30px; }
-
-md-timepicker::shadow #card {
-  border: 1px solid #cccccc;
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 360px;
-  width: 225px; }
-  md-timepicker::shadow #card #display {
-    background-color: #007e9e !important;
-    height: 108px;
-    padding: 21.6px;
-    color: #ffffff;
-    font-size: 41.4px; }
-    md-timepicker::shadow #card #display .digit {
-      opacity: 0.7; }
-      md-timepicker::shadow #card #display .digit[active] {
-        opacity: 1; }
-  md-timepicker::shadow #card #keypad {
-    font-size: 37.8px; }
-    md-timepicker::shadow #card #keypad .digit {
-      flex-basis: 56.7px;
-      -webkit-flex-basis: 56.7px; }
-md-timepicker::shadow paper-button {
-  font-size: 12.6px; }
-
-.equipment-item {
-  margin-bottom: 10pt;
-  color: rgba(0, 0, 0, 0.54); }
-  .equipment-item core-icon {
-    margin-right: 10pt; }
-
-.error {
-  border-bottom: 1px solid #F44336; }
-  .error::shadow #label {
-    color: #F44336; }
+.masqueradeCard #masqueradeButton {
+  margin-top: 24px; }
 
 .text-center {
   text-align: center; }
