@@ -441,6 +441,43 @@ paper-toast {
 //
 
 
+//   _   _
+//  | | | | ___  _ __ ___   ___
+//  | |_| |/ _ \| '_ ` _ \ / _ \
+//  |  _  | (_) | | | | | |  __/
+//  |_| |_|\___/|_| |_| |_|\___|
+//
+// My Library home
+
+// UQ My Library Home screen main app icons
+// TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
+.home-icon {
+  width: $touch-target-size;
+  height: $touch-target-size;
+  color: $primary;
+  padding: 0;
+}
+
+// TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
+/* Icon Button */
+.icon-button {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  &:core-icon {
+    margin: 16px;
+    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &:hover {
+    &:core-icon {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  }
+}
+
 //   ____  _____    _    ____   ____ _   _
 //  / ___|| ____|  / \  |  _ \ / ___| | | |
 //  \___ \|  _|   / _ \ | |_) | |   | |_| |
@@ -456,11 +493,13 @@ paper-toast {
   width: 100%;
 }
 #searchWrapper {
-  width: 100%;
+  width: 90%;
+  height: 50px;
   transition: 300ms ease-in-out;
 }
 #filters {
-  top: 71px;
+  top: 50px;
+  width:100%;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
@@ -479,6 +518,7 @@ paper-toast {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: "Roboto";
 }
 .recent {
   color: $primary-700;
@@ -550,36 +590,7 @@ paper-toast {
   margin-bottom: 38px;
 }
 
-// My Library home
 
-// UQ My Library Home screen main app icons
-// TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
-.home-icon {
-  width: $touch-target-size;
-  height: $touch-target-size;
-  color: $primary;
-  padding: 0;
-}
-
-// TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
-/* Icon Button */
-.icon-button {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-  &:core-icon {
-    margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  &:hover {
-    &:core-icon {
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
-    }
-  }
-}
 #masquerade {
   margin: 16px;
 }
