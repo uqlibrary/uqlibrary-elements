@@ -3,34 +3,30 @@
 
 // Core styles used across UQ My Library
 
+//    ____ ___  ____  _____      _____ _     _____ __  __ _____ _   _ _____ ____
+//   / ___/ _ \|  _ \| ____|    | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |  | | | | |_) |  _| _____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  | |___ |_| |  _ <| |________| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//   \____\___/|_| \_\_____|    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
 
-// Core toolbar background, font colour, and icon colour
-core-toolbar {
-  background-color: $dark-primary;
-  color: $text-inverse;
-  core-icon {
-    color: $white;
-  }
-}
 
-// Drawer panel background colour and border
-.drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-// Main content background colour
-.main {
-  background-color: $background-primary;
-}
-
-// Used to enable the correct behaviour with regard to the
-// menu drawer toggle button and back button on complex apps
-.responsiveToolbarButton {
-  @media screen and (min-width: $responsive-width) {
-    display:none;
-  }
-}
+//<link rel="import" href="../core-drawer-panel/core-drawer-panel.html">
+//<link rel="import" href="../core-dropdown/core-dropdown.html">
+//<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+//<link rel="import" href="../core-header-panel/core-header-panel.html">
+//<link rel="import" href="../core-icon-button/core-icon-button.html">
+//<link rel="import" href="../core-icons/core-icons.html">
+//<link rel="import" href="../core-image/core-image.html">
+//<link rel="import" href="../core-input/core-input.html">
+//<link rel="import" href="../core-item/core-item.html">
+//<link rel="import" href="../core-label/core-label.html">
+//<link rel="import" href="../core-list/core-list.html">
+//<link rel="import" href="../core-media-query/core-media-query.html">
+//<link rel="import" href="../core-menu/core-menu.html">
+//<link rel="import" href="../core-overlay/core-overlay.html">
+//<link rel="import" href="../core-toolbar/core-toolbar.html">
+//<link rel="import" href="../core-tooltip/core-tooltip.html">
 
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
@@ -59,6 +55,106 @@ core-icon {
   }
 }
 
+// Core toolbar background, font colour, and icon colour
+core-toolbar {
+  background-color: $dark-primary;
+  color: $text-inverse;
+  core-icon {
+    color: $white;
+  }
+}
+
+// Used to enable the correct behaviour with regard to the
+// menu drawer toggle button and back button on complex apps
+.responsiveToolbarButton {
+  @media screen and (min-width: $responsive-width) {
+    display:none;
+  }
+}
+
+core-overlay {
+  &#timepickerDialog::shadow {
+    #actions {
+      display: none;
+    }
+    #main {
+      padding: 0;
+    }
+  }
+}
+
+// TODO: sassify tooltip styles
+// TODO: revisit when tooltips become more easily customisable
+// see: http://www.google.com/design/spec/components/tooltips.html#
+// Provides a polished effect for tooltips
+core-tooltip.fancy::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+
+core-tooltip.fancy:hover::shadow .core-tooltip,
+core-tooltip.fancy:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// Provides a polished effect for tooltips
+core-tooltip.fancyLeft::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+
+core-tooltip.fancyLeft:hover::shadow .core-tooltip,
+core-tooltip.fancyLeft:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+}
+
+
+
+//   ____   _    ____  _____ ____       _____ _     _____ __  __ _____ _   _ _____ ____
+//  |  _ \ / \  |  _ \| ____|  _ \     | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |_) / _ \ | |_) |  _| | |_) |____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  |  __/ ___ \|  __/| |___|  _ <_____| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//  |_| /_/   \_\_|   |_____|_| \_\    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
+
+//TODO: investigate whether #loadingOverlay is still necessary
+// Loading styles
+#loadingOverlay {
+  background-color: transparent;
+  width: 64px;
+  height: 64px;
+  paper-spinner{
+    &::shadow .circle {
+      border-color: $primary;
+    }
+  }
+}
+
+// Paper-dropdowns should be consistent
+// they shouldn't get too small
+// see http://www.google.com/design/spec/components/menus.html#menus-specs
+paper-dropdown {
+  min-width: 150px;
+  &::shadow #scroller {
+    width: 100% !important;
+  }
+}
+
+// Paper-item should be consistent
+paper-item {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+}
+
 // Paper progress bars should all look consistent
 paper-progress {
   height: $subhead-size-font-device;
@@ -69,6 +165,10 @@ paper-progress {
     }
   }
 }
+
+$timepickerRatio: 0.9;
+$inputColor: $secondary-text;
+$textColor: $secondary-text;
 
 // Paper tabs should all look consistent
 paper-tabs {
@@ -86,6 +186,130 @@ paper-tabs {
       color: $accent;
     }
   }
+}
+uqlibrary-filter-group {
+  div.groupContentWrapper[horizontal] {
+    paper-dropdown-menu {
+      min-width: 150px;
+      margin-right: 20px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+paper-dropdown-menu {
+  display: block;
+  width: 100%;
+  &[disabled] {
+    &::shadow {
+      #label, #arrow, #ripple {
+        color: $grey-A400;
+      }
+    }
+  }
+  paper-dropdown {
+    paper-item {
+      &:hover {
+        background-color: $grey-A100;
+      }
+    }
+  }
+}
+paper-input-decorator {
+  &::shadow {
+    #focusedUnderline
+    {
+      background-color: $button !important;
+    }
+  }
+}
+paper-input {
+  display: block;
+  &::shadow {
+    input {
+      color: $inputColor;
+    }
+  }
+  &#time{
+    display: block;
+    width: 100%;
+  }
+}
+paper-slider {
+  width: 100%;
+  &::shadow {
+    #sliderBar {
+      box-sizing: content-box;
+      &::shadow {
+        #activeProgress {
+          background-color: $button;
+        }
+      }
+    }
+    #sliderKnobInner {
+      background-color: $button;
+      &::before {
+        background-color: $button;
+        display: block !important;
+      }
+      &::after {
+      }
+    }
+  }
+  &#timePeriod {
+    width: 50%;
+  }
+  &#capacity {
+  }
+}
+.sliderWrapper {
+  color: $text;
+  margin-top: 20pt;
+  .durationText {
+    width: 75px;
+  }
+}
+paper-checkbox {
+  &::shadow {
+    #checkbox {
+      &.checked {
+        border-color: $button;
+      }
+    }
+  }
+}
+// TODO: consider whether this is needed because toast has built in style
+paper-toast {
+  &#infoToast {
+    position: fixed;
+    max-width: 280px;
+    max-height: 48px;
+  }
+}
+
+
+//   ____  ____     ___        _______ ____    ____   _    _   _ _____ _
+//  |  _ \|  _ \   / \ \      / / ____|  _ \  |  _ \ / \  | \ | | ____| |
+//  | | | | |_) | / _ \ \ /\ / /|  _| | |_) | | |_) / _ \ |  \| |  _| | |
+//  | |_| |  _ < / ___ \ V  V / | |___|  _ <  |  __/ ___ \| |\  | |___| |___
+//  |____/|_| \_\_/   \_\_/\_/  |_____|_| \_\ |_| /_/   \_\_| \_|_____|_____|
+//
+
+
+// Drawer panel background colour and border
+.drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// Main content background colour
+.main {
+  background-color: $background-primary;
 }
 
 // User account section of drawer panel
@@ -134,40 +358,13 @@ paper-tabs {
   }
 }
 
-// TODO: sassify tooltip styles
-// TODO: revisit when tooltips become more easily customisable
-// see: http://www.google.com/design/spec/components/tooltips.html#
-// Provides a polished effect for tooltips
-core-tooltip.fancy::shadow .core-tooltip {
-  opacity: 0;
-  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  -webkit-transform: translate3d(0, -10px, 0);
-  transform: translate3d(0, -10px, 0);
-}
 
-core-tooltip.fancy:hover::shadow .core-tooltip,
-core-tooltip.fancy:focus::shadow .core-tooltip {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-// Provides a polished effect for tooltips
-core-tooltip.fancyLeft::shadow .core-tooltip {
-  opacity: 0;
-  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  -webkit-transform: translate3d(0px, 0, 0);
-  transform: translate3d(0px, 0, 0);
-}
-
-core-tooltip.fancyLeft:hover::shadow .core-tooltip,
-core-tooltip.fancyLeft:focus::shadow .core-tooltip {
-  opacity: 1;
-  -webkit-transform: translate3d(-10px, 0, 0);
-  transform: translate3d(-10px, 0, 0);
-}
+//   ____  _____ ____  ____ ___ ____ _____ _____ _   _ _____   _____ ___   ___ _____ _____ ____
+//  |  _ \| ____|  _ \/ ___|_ _/ ___|_   _| ____| \ | |_   _| |  ___/ _ \ / _ \_   _| ____|  _ \
+//  | |_) |  _| | |_) \___ \| |\___ \ | | |  _| |  \| | | |   | |_ | | | | | | || | |  _| | |_) |
+//  |  __/| |___|  _ < ___) | | ___) || | | |___| |\  | | |   |  _|| |_| | |_| || | | |___|  _ <
+//  |_|   |_____|_| \_\____/___|____/ |_| |_____|_| \_| |_|   |_|   \___/ \___/ |_| |_____|_| \_\
+//
 
 // persistent footer styles
 .persistentFooter {
@@ -196,7 +393,6 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
     margin: 4px;
   }
 }
-
 // Keeps persistent footer above drawer panel when responsive mode engaged
 @media screen and (min-width: $responsive-width) {
   .persistentFooter {
@@ -204,6 +400,14 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
     z-index: 1;
   }
 }
+
+
+//   _______     _______ _   _ _____   ___ _____ _____ __  __ ____
+//  | ____\ \   / / ____| \ | |_   _| |_ _|_   _| ____|  \/  / ___|
+//  |  _|  \ \ / /|  _| |  \| | | |    | |  | | |  _| | |\/| \___ \
+//  | |___  \ V / | |___| |\  | | |    | |  | | | |___| |  | |___) |
+//  |_____|  \_/  |_____|_| \_| |_|   |___| |_| |_____|_|  |_|____/
+//
 
 // used to animate the creation and removal of event items
 .event-item {
@@ -213,27 +417,36 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
   opacity: 0;
 }
 
-// Paper-dropdowns should be consistent
-// they shouldn't get too small
-// see http://www.google.com/design/spec/components/menus.html#menus-specs
-paper-dropdown {
-  min-width: 150px;
-}
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important;
-}
-
-// Paper-item should be consistent
-paper-item {
-  @include gmd-type-style(menu, gmd-alpha-color($black, text));
-}
+//    ____    _    ____  ____  ____
+//   / ___|  / \  |  _ \|  _ \/ ___|
+//  | |     / _ \ | |_) | | | \___ \
+//  | |___ / ___ \|  _ <| |_| |___) |
+//   \____/_/   \_\_| \_\____/|____/
+//
 
 // Core card styles
 .card {
   background: white;
   box-sizing: border-box;
+  width: 300px;
 }
+
+
+
+//   __  ____   __  _     ___ ____  ____     _    ______   __     _    ____  ____  ____
+//  |  \/  \ \ / / | |   |_ _| __ )|  _ \   / \  |  _ \ \ / /    / \  |  _ \|  _ \/ ___|
+//  | |\/| |\ V /  | |    | ||  _ \| |_) | / _ \ | |_) \ V /    / _ \ | |_) | |_) \___ \
+//  | |  | | | |   | |___ | || |_) |  _ < / ___ \|  _ < | |    / ___ \|  __/|  __/ ___) |
+//  |_|  |_| |_|   |_____|___|____/|_| \_\_/   \_\_| \_\|_|   /_/   \_\_|   |_|   |____/
+//
+
+
+//   ____  _____    _    ____   ____ _   _
+//  / ___|| ____|  / \  |  _ \ / ___| | | |
+//  \___ \|  _|   / _ \ | |_) | |   | |_| |
+//   ___) | |___ / ___ \|  _ <| |___|  _  |
+//  |____/|_____/_/   \_\_| \_\\____|_| |_|
+//
 
 // Library Search paper-input styles
 #search {
@@ -271,6 +484,13 @@ paper-item {
   color: $primary-700;
 }
 
+
+//   __  __    _    ____   ___  _   _ _____ ____     _    ____  _____
+//  |  \/  |  / \  / ___| / _ \| | | | ____|  _ \   / \  |  _ \| ____|
+//  | |\/| | / _ \ \___ \| | | | | | |  _| | |_) | / _ \ | | | |  _|
+//  | |  | |/ ___ \ ___) | |_| | |_| | |___|  _ < / ___ \| |_| | |___
+//  |_|  |_/_/   \_\____/ \__\_\\___/|_____|_| \_\_/   \_\____/|_____|
+//
 // Masquerade app styles
 .masqueradeCard {
   width: 86%;
@@ -289,6 +509,12 @@ paper-item {
   margin-top: 24px;
 }
 
+//   _____ _____ _____ ____  ____    _    ____ _  __
+//  |  ___| ____| ____|  _ \| __ )  / \  / ___| |/ /
+//  | |_  |  _| |  _| | | | |  _ \ / _ \| |   | ' /
+//  |  _| | |___| |___| |_| | |_) / ___ \ |___| . \
+//  |_|   |_____|_____|____/|____/_/   \_\____|_|\_\
+//
 // Feedback app styles
 #feedbackCard {
   width: 86%;
@@ -307,6 +533,12 @@ paper-item {
   margin-top: 24px;
 }
 
+//   _   _  ___  _   _ ____  ____
+//  | | | |/ _ \| | | |  _ \/ ___|
+//  | |_| | | | | | | | |_) \___ \
+//  |  _  | |_| | |_| |  _ < ___) |
+//  |_| |_|\___/ \___/|_| \_\____/
+//
 // Library opening hours
 .open {
   color: $dark-accent !important;
@@ -426,15 +658,12 @@ paper-tabs {
     .tabTitleNumber {
       margin-bottom: 4px;
     }
-
     &::shadow #ink {
       color: $accent;
     }
-
     & .dayOfWeek {
       width: 40px;
     }
-
     & .date {
       height: 40px;
       width: 40px;
@@ -443,7 +672,6 @@ paper-tabs {
       border-radius: 50%;
       padding-top: 12px;
     }
-
     &.core-selected .date {
       background-color: $fbs-selected-date;
       color: $white;
@@ -452,7 +680,7 @@ paper-tabs {
 }
 
 
-//uqlibrary-courses
+//UQ My Library Courses app
 
 .listItemSection {
 
@@ -482,22 +710,7 @@ paper-tabs {
   }
 }
 
-#loadingOverlay {
-  //background-color: $primary;
-  background-color: transparent;
-  width: 64px;
-  height: 64px;
-
-  paper-spinner{
-    &::shadow .circle {
-      border-color: $primary;
-    }
-  }
-
-}
-
-
-// uqlibrary-computers
+// UQ My Library Computers app
 
 #availability {
   margin-top: $list-item-gap;
@@ -544,7 +757,7 @@ paper-dropdown::shadow #scroller {
   }
 }
 
-//uqlibrary-borrowing
+// UQ My Library Borrowing app
 
 uqlibrary-holds {
   &::shadow {
@@ -566,11 +779,9 @@ uqlibrary-fines {
           padding-top: $three-line-list-item-padding-top;
           @include gmd-type-style(body1, $primary);
         }
-
         // For fines with 3 digits we need a bit more space
         .content {
           margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
-
         }
       }
     }
@@ -589,29 +800,11 @@ uqlibrary-fines {
     width: 24px;
     height: 24px;
   }
-
-  &.warning{
-
-  }
-  &.error{
-
-  }
-
-}
-.tooltip {
-  margin-right: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
 }
 
-// booking
+// UQ My Library Booking app
 
 // filter group
-
-
-
 .group-label {
   margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
 }
@@ -619,78 +812,11 @@ uqlibrary-fines {
   padding-left: $form-icon-padding-left - $form-padding;
 }
 
-
 // filter-form
-
-$timepickerRatio: 0.9;
-
-$inputColor: $secondary-text;
-$textColor: $secondary-text;
-
-
 
 .filterWrapper {
   background-color: $white;
   margin-bottom: 30px;
-}
-
-
-uqlibrary-filter-group {
-  div.groupContentWrapper[horizontal] {
-    paper-dropdown-menu {
-      min-width: 150px;
-      margin-right: 20px;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-paper-dropdown-menu {
-  display: block;
-  width: 100%;
-  &[disabled] {
-    &::shadow {
-      #label, #arrow, #ripple {
-        color: $grey-A400;
-      }
-    }
-  }
-  paper-dropdown {
-    paper-item {
-      &:hover {
-        background-color: $grey-A100;
-      }
-    }
-  }
-}
-
-paper-input-decorator {
-  &::shadow {
-    #focusedUnderline
-    {
-      background-color: $button !important;
-    }
-  }
-}
-
-paper-input {
-  display: block;
-
-  &::shadow {
-    input {
-      color: $inputColor;
-    }
-  }
-  &#time{
-    display: block;
-    width: 100%;
-  }
-
 }
 
 md-timepicker {
@@ -715,77 +841,16 @@ md-timepicker {
           }
         }
       }
-
       #keypad {
         font-size: 42px * $timepickerRatio;
-
         .digit {
           flex-basis: 63px * $timepickerRatio;
           -webkit-flex-basis: 63px * $timepickerRatio;
         }
-
       }
     }
-
     paper-button {
       font-size: 14px * $timepickerRatio;
-    }
-
-
-  }
-}
-
-paper-slider {
-  width: 100%;
-  &::shadow {
-    #sliderBar {
-      box-sizing: content-box;
-      &::shadow {
-        #activeProgress {
-          background-color: $button;
-        }
-      }
-    }
-
-    #sliderKnobInner {
-      background-color: $button;
-
-      &::before {
-        background-color: $button;
-        display: block !important;
-      }
-
-      &::after {
-      }
-
-    }
-
-  }
-  &#timePeriod {
-    width: 50%;
-  }
-
-  &#capacity {
-
-  }
-}
-
-.sliderWrapper {
-  color: $text;
-  margin-top: 20pt;
-
-  .durationText {
-    width: 75px;
-  }
-
-}
-
-paper-checkbox {
-  &::shadow {
-    #checkbox {
-      &.checked {
-        border-color: $button;
-      }
     }
   }
 }
@@ -800,13 +865,6 @@ paper-checkbox {
 
 }
 
-paper-toast {
-  &#infoToast {
-    position: fixed;
-    max-width: 280px;
-    max-height: 48px;
-  }
-}
 
 .error {
   border-bottom: 1px solid $error-color;
@@ -817,14 +875,3 @@ paper-toast {
   }
 }
 
-core-overlay {
-
-  &#timepickerDialog::shadow {
-    #actions {
-      display: none;
-    }
-    #main {
-      padding: 0;
-    }
-  }
-}
