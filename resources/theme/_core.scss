@@ -3,34 +3,30 @@
 
 // Core styles used across UQ My Library
 
+//    ____ ___  ____  _____      _____ _     _____ __  __ _____ _   _ _____ ____
+//   / ___/ _ \|  _ \| ____|    | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |  | | | | |_) |  _| _____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  | |___ |_| |  _ <| |________| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//   \____\___/|_| \_\_____|    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
 
-// Core toolbar background, font colour, and icon colour
-core-toolbar {
-  background-color: $dark-primary;
-  color: $text-inverse;
-  core-icon {
-    color: $white;
-  }
-}
 
-// Drawer panel background colour and border
-.drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-// Main content background colour
-.main {
-  background-color: $background-primary;
-}
-
-// Used to enable the correct behaviour with regard to the
-// menu drawer toggle button and back button on complex apps
-.responsiveToolbarButton {
-  @media screen and (min-width: $responsive-width) {
-    display:none;
-  }
-}
+//<link rel="import" href="../core-drawer-panel/core-drawer-panel.html">
+//<link rel="import" href="../core-dropdown/core-dropdown.html">
+//<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+//<link rel="import" href="../core-header-panel/core-header-panel.html">
+//<link rel="import" href="../core-icon-button/core-icon-button.html">
+//<link rel="import" href="../core-icons/core-icons.html">
+//<link rel="import" href="../core-image/core-image.html">
+//<link rel="import" href="../core-input/core-input.html">
+//<link rel="import" href="../core-item/core-item.html">
+//<link rel="import" href="../core-label/core-label.html">
+//<link rel="import" href="../core-list/core-list.html">
+//<link rel="import" href="../core-media-query/core-media-query.html">
+//<link rel="import" href="../core-menu/core-menu.html">
+//<link rel="import" href="../core-overlay/core-overlay.html">
+//<link rel="import" href="../core-toolbar/core-toolbar.html">
+//<link rel="import" href="../core-tooltip/core-tooltip.html">
 
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
@@ -38,6 +34,9 @@ core-menu {
   core-icon {
     margin-left: $nav-drawer-icon;
     margin-right: $nav-drawer-text;
+  }
+  &.divider {
+    border-bottom: 1px solid $uq-divider;
   }
 }
 
@@ -56,10 +55,120 @@ core-icon {
   }
 }
 
-// Paper progress bars should all look consistent
-paper-progress::shadow #activeProgress {
-  background-color: $dark-accent;
+// Core toolbar background, font colour, and icon colour
+core-toolbar {
+  background-color: $dark-primary;
+  color: $text-inverse;
+  core-icon {
+    color: $white;
+  }
 }
+
+// Used to enable the correct behaviour with regard to the
+// menu drawer toggle button and back button on complex apps
+.responsiveToolbarButton {
+  @media screen and (min-width: $responsive-width) {
+    display:none;
+  }
+}
+
+core-overlay {
+  &#timepickerDialog::shadow {
+    #actions {
+      display: none;
+    }
+    #main {
+      padding: 0;
+    }
+  }
+}
+
+// TODO: sassify tooltip styles
+// TODO: revisit when tooltips become more easily customisable
+// see: http://www.google.com/design/spec/components/tooltips.html#
+// Provides a polished effect for tooltips
+core-tooltip.fancy::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0, -10px, 0);
+  transform: translate3d(0, -10px, 0);
+}
+
+core-tooltip.fancy:hover::shadow .core-tooltip,
+core-tooltip.fancy:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// Provides a polished effect for tooltips
+core-tooltip.fancyLeft::shadow .core-tooltip {
+  opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+
+core-tooltip.fancyLeft:hover::shadow .core-tooltip,
+core-tooltip.fancyLeft:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+}
+
+
+
+//   ____   _    ____  _____ ____       _____ _     _____ __  __ _____ _   _ _____ ____
+//  |  _ \ / \  |  _ \| ____|  _ \     | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |_) / _ \ | |_) |  _| | |_) |____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  |  __/ ___ \|  __/| |___|  _ <_____| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//  |_| /_/   \_\_|   |_____|_| \_\    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
+
+//TODO: investigate whether #loadingOverlay is still necessary
+// Loading styles
+#loadingOverlay {
+  background-color: transparent;
+  width: 64px;
+  height: 64px;
+  paper-spinner{
+    &::shadow .circle {
+      border-color: $primary;
+    }
+  }
+}
+
+// Paper-dropdowns should be consistent
+// they shouldn't get too small
+// see http://www.google.com/design/spec/components/menus.html#menus-specs
+paper-dropdown {
+  min-width: 150px;
+  &::shadow #scroller {
+    width: 100% !important;
+  }
+}
+
+// Paper-item should be consistent
+paper-item {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+}
+
+// Paper progress bars should all look consistent
+paper-progress {
+  height: $subhead-size-font-device;
+  width: 100%;
+  &::shadow {
+    #activeProgress {
+      background-color: $dark-accent;
+    }
+  }
+}
+
+$timepickerRatio: 0.9;
+$inputColor: $secondary-text;
+$textColor: $secondary-text;
 
 // Paper tabs should all look consistent
 paper-tabs {
@@ -78,12 +187,133 @@ paper-tabs {
     }
   }
 }
+uqlibrary-filter-group {
+  div.groupContentWrapper[horizontal] {
+    paper-dropdown-menu {
+      min-width: 150px;
+      margin-right: 20px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+paper-dropdown-menu {
+  display: block;
+  width: 100%;
+  &[disabled] {
+    &::shadow {
+      #label, #arrow, #ripple {
+        color: $grey-A400;
+      }
+    }
+  }
+  paper-dropdown {
+    paper-item {
+      &:hover {
+        background-color: $grey-A100;
+      }
+    }
+  }
+}
+paper-input-decorator {
+  &::shadow {
+    #focusedUnderline
+    {
+      background-color: $button !important;
+    }
+  }
+}
+paper-input {
+  display: block;
+  &::shadow {
+    input {
+      color: $inputColor;
+    }
+  }
+  &#time{
+    display: block;
+    width: 100%;
+  }
+}
+paper-slider {
+  width: 100%;
+  &::shadow {
+    #sliderBar {
+      box-sizing: content-box;
+      &::shadow {
+        #activeProgress {
+          background-color: $button;
+        }
+      }
+    }
+    #sliderKnobInner {
+      background-color: $button;
+      &::before {
+        background-color: $button;
+        display: block !important;
+      }
+      &::after {
+      }
+    }
+  }
+  &#timePeriod {
+    width: 50%;
+  }
+  &#capacity {
+  }
+}
+.sliderWrapper {
+  color: $text;
+  margin-top: 20pt;
+  .durationText {
+    width: 75px;
+  }
+}
+paper-checkbox {
+  &::shadow {
+    #checkbox {
+      &.checked {
+        border-color: $button;
+      }
+    }
+  }
+}
+// TODO: consider whether this is needed because toast has built in style
+paper-toast {
+  &#infoToast {
+    position: fixed;
+    max-width: 280px;
+    max-height: 48px;
+  }
+}
+
+//   ____                                ____                  _
+//  |  _ \ _ __ __ ___      _____ _ __  |  _ \ __ _ _ __   ___| |
+//  | | | | '__/ _` \ \ /\ / / _ \ '__| | |_) / _` | '_ \ / _ \ |
+//  | |_| | | | (_| |\ V  V /  __/ |    |  __/ (_| | | | |  __/ |
+//  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
+//
+// Drawer panel background colour and border
+ core-header-panel [drawer] {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+// Main content background colour
+.main {
+  background-color: $background-primary;
+}
 
 // User account section of drawer panel
 // includes optimised image and gradient cover for text legibility
 // all margins based on UQ and material design specs where necessary
 #account {
-  font-size: 0.875em;
+  font-size: $caption-size-font;
   background-color: $primary;
   border-bottom: 1px solid $uq-divider;
   background: 100%;
@@ -125,12 +355,101 @@ paper-tabs {
   }
 }
 
+
+//   ____               _     _             _     _____           _
+//  |  _ \ ___ _ __ ___(_)___| |_ ___ _ __ | |_  |  ___|__   ___ | |_ ___ _ __
+//  | |_) / _ \ '__/ __| / __| __/ _ \ '_ \| __| | |_ / _ \ / _ \| __/ _ \ '__|
+//  |  __/  __/ |  \__ \ \__ \ |_  __/ | | | |_  |  _| (_) | (_) | |_  __/ |
+//  |_|   \___|_|  |___/_|___/\__\___|_| |_|\__| |_|  \___/ \___/ \__\___|_|
+//
+// persistent footer styles
+.persistentFooter {
+  position: fixed;
+  height: $persistent-footer-height;
+  bottom: 0;
+  background-color: $white;
+  width: 100%;
+  border-top: 1px solid $grey-A200;
+
+  .contentWrapper{
+    padding: 0;
+  }
+  .actionButtonsWrapper{
+    padding-right: 16px;
+    margin-top: 4px;
+  }
+}
+// Specific footer styles because custom buttons
+#persistentFooter {
+  margin: 8px;
+  .footerInfo {
+    margin: 16px;
+  }
+  .footerButtons {
+    margin: 4px;
+  }
+}
+// Keeps persistent footer above drawer panel when responsive mode engaged
+@media screen and (min-width: $responsive-width) {
+  .persistentFooter {
+    left: 0;
+    z-index: 1;
+  }
+}
+
+
+//   _____                 _     ___ _
+//  | ____|_   _____ _ __ | |_  |_ _| |_ ___ _ __ ___  ___
+//  |  _| \ \ / / _ \ '_ \| __|  | || __/ _ \ '_ ` _ \/ __|
+//  | |___ \ V /  __/ | | | |_   | || |_  __/ | | | | \__ \
+//  |_____| \_/ \___|_| |_|\__| |___|\__\___|_| |_| |_|___/
+//
+// used to animate the creation and removal of event items
+.event-item {
+  transition: opacity 2000ms;
+}
+.event-item-hidden {
+  opacity: 0;
+}
+
+//    ____              _
+//   / ___|__ _ _ __ __| |___
+//  | |   / _` | '__/ _` / __|
+//  | |___ (_| | | | (_| \__ \
+//   \____\__,_|_|  \__,_|___/
+//
+// Core card styles
+.card {
+  background: white;
+  box-sizing: border-box;
+  width: 300px;
+}
+
+
+
+//   __  ____   __  _     ___ ____  ____     _    ______   __     _    ____  ____  ____
+//  |  \/  \ \ / / | |   |_ _| __ )|  _ \   / \  |  _ \ \ / /    / \  |  _ \|  _ \/ ___|
+//  | |\/| |\ V /  | |    | ||  _ \| |_) | / _ \ | |_) \ V /    / _ \ | |_) | |_) \___ \
+//  | |  | | | |   | |___ | || |_) |  _ < / ___ \|  _ < | |    / ___ \|  __/|  __/ ___) |
+//  |_|  |_| |_|   |_____|___|____/|_| \_\_/   \_\_| \_\|_|   /_/   \_\_|   |_|   |____/
+//
+
+
+//   _   _
+//  | | | | ___  _ __ ___   ___
+//  | |_| |/ _ \| '_ ` _ \ / _ \
+//  |  _  | (_) | | | | | |  __/
+//  |_| |_|\___/|_| |_| |_|\___|
+//
+// My Library home
+
 // UQ My Library Home screen main app icons
 // TODO: investigate using more interesting launcher interaction such as live tiles (e.g. see Topeka app)
 .home-icon {
   width: $touch-target-size;
   height: $touch-target-size;
   color: $primary;
+  padding: 0;
 }
 
 // TODO: investigate whether this is necessary - .icon-button doesn't seem to be used anywhere?
@@ -153,237 +472,10 @@ paper-tabs {
   }
 }
 
-// TODO: sassify tooltip styles
-// TODO: revisit when tooltips become more easily customisable
-// see: http://www.google.com/design/spec/components/tooltips.html#
-// Provides a polished effect for tooltips
-core-tooltip.fancy::shadow .core-tooltip {
-  opacity: 0;
-  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  -webkit-transform: translate3d(0, -10px, 0);
-  transform: translate3d(0, -10px, 0);
-}
 
-core-tooltip.fancy:hover::shadow .core-tooltip,
-core-tooltip.fancy:focus::shadow .core-tooltip {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-// Provides a polished effect for tooltips
-core-tooltip.fancyLeft::shadow .core-tooltip {
-  opacity: 0;
-  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
-  -webkit-transform: translate3d(0px, 0, 0);
-  transform: translate3d(0px, 0, 0);
-}
-
-core-tooltip.fancyLeft:hover::shadow .core-tooltip,
-core-tooltip.fancyLeft:focus::shadow .core-tooltip {
-  opacity: 1;
-  -webkit-transform: translate3d(-10px, 0, 0);
-  transform: translate3d(-10px, 0, 0);
-}
-
-// persistent footer styles
-.persistentFooter {
-  position: fixed;
-  height: $persistent-footer-height;
-  bottom: 0;
-  background-color: $white;
-  width: 100%;
-  border-top: 1px solid $grey-A200;
-
-  .contentWrapper{
-    padding: 0;
-  }
-  .actionButtonsWrapper{
-    padding-right: 16px;
-    margin-top: 4px;
-  }
-}
-// Borrowing->fines-specific footer styles because custom buttons
-#finesFooter {
-  margin: 4px;
-  .footerInfo {
-    margin: 12px;
-  }
-}
-
-// Keeps persistent footer above drawer panel when responsive mode engaged
-@media screen and (min-width: $responsive-width) {
-  .persistentFooter {
-    left: 0;
-    z-index: 1;
-  }
-}
-
-// used to animate the creation and removal of event items
-.event-item {
-  transition: opacity 2000ms;
-}
-.event-item-hidden {
-  opacity: 0;
-}
-
-// Paper-dropdowns should be consistent
-// they shouldn't get too small
-// see http://www.google.com/design/spec/components/menus.html#menus-specs
-paper-dropdown {
-  min-width: 150px;
-}
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important;
-}
-
-// Core card styles
-.card {
-  background: white;
-  box-sizing: border-box;
-  padding: 6px;
-}
-
-#search {
-  margin-left: 8px;
-}
-
-#searchInput {
-  width: 100%;
-}
-
-#searchWrapper {
-  width: 96%;
-  margin: 8px;
-  transition: 300ms ease-in-out;
-}
-
-#autosuggest,
-#filters {
-  top: 55px;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
-#filters {
-  top: 71px;
-  paper-item {
-    padding-left: 0;
-    border-bottom: 1px solid $divider;
-
-    &.last {
-      border-bottom: none;
-    }
-
-    &.core-selected {
-      color: $text;
-    }
-  }
-}
-
-.truncate {
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.recent {
-  color: $primary-700;
-}
-
-core-menu {
-  padding: 8px 0;
-  margin: 0;
-
-  &.divider {
-    border-bottom: 1px solid $uq-divider;
-  }
-}
-
-paper-item {
-  @include gmd-type-style(menu, gmd-alpha-color($black, text));
-}
-
-
-.masqueradeCard {
-  width: 86%;
-  padding: 18px 32px;
-}
-.masqueradeCard core-tooltip {
-  display: flex;
-}
-.masqueradeCard paper-checkbox {
-  margin: 0 20px 0 0;
-}
-.masqueradeCard paper-input-decorator {
-  margin-bottom: 20px;
-}
-.masqueradeCard #masqueradeButton {
-  margin-top: 24px;
-}
-
-#feedbackCard {
-  width: 86%;
-  padding: 18px 32px;
-}
-#feedbackCard core-tooltip {
-  display: flex;
-}
-#feedbackCard paper-checkbox {
-  margin: 0 20px 0 0;
-}
-#feedbackCard paper-input-decorator {
-  margin-bottom: 20px;
-}
-#feedbackCard #feedbackButtons {
-  margin-top: 24px;
-}
-
-.open {
-  color: $dark-accent !important;
-}
-
-.closed {
-  color: $uq-warm-red !important;
-}
-
-.list-margin {
-  margin-bottom: 38px;
-}
-#masquerade {
-  margin: 16px;
-}
-
-#booking {
-  margin: 16px;
-}
-
-.apps {
-  margin-top: 10px;
-}
-
-#homePage {
-  text-align: -moz-center;
-}
-
-.app {
-  width: 100px;
-  height: 90px;
-  text-align: center;
-}
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: $primary;
-  padding: 0;
-}
 paper-icon-button.huge::shadow #icon {
-  width: 44px;
-  height: 44px;
+  width: $touch-target-size;
+  height: $touch-target-size;
 }
 uqlibrary-home paper-icon-button.huge #icon {
   color: $primary;
@@ -392,145 +484,206 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 0;
   text-align: center;
   color: $secondary-text;
-  font-size: 14px;
+  font-size: $body1-size-font-device;
 }
 
-
-.items{
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0;
+#masquerade {
+  margin: 16px;
 }
-
-.item{
+#booking {
+  margin: 16px;
+}
+.apps {
+  margin-top: 10px;
+}
+#homePage {
+  text-align: -moz-center;
+}
+.app {
+  width: 100px;
+  height: 90px;
   text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: 13px;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: $fbs-available-time;
-
-  &.occupied-true {
-    background-color: $fbs-unavailable-time;
-    color: $white;
-  }
-
-  &.selected-true {
-    background-color: $fbs-selected-time;
-    color: $white;
-  }
-}
-.selectedDate {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 0;
 }
 
-paper-tabs {
-  background-color: $white;
-  height: 60px;
+//   ____                      _
+//  / ___|  ___  __ _ _ __ ___| |__
+//  \___ \ / _ \/ _` | '__/ __| '_ \
+//   ___) |  __/ (_| | | | (__| | | |
+//  |____/ \___|\__,_|_|  \___|_| |_|
+//
+// Library Search paper-input styles
+#search {
+  margin-left: 8px;
 }
-
-paper-tab {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  & .dayOfWeek {
-    width: 40px;
-  }
-
-  & .date {
-    height: 40px;
-    width: 40px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 50%;
-    padding-top: 12px;
-  }
-
-  &.core-selected .date{
-    background-color: $fbs-selected-date;
-    color: $white;
-  }
-}
-
-
-//uqlibrary-courses
-
-paper-tabs {
-  color: $text;
-  background-color: $white;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
-  &::shadow #selectionBar {
-    background-color: $accent;
-  }
-  paper-tab {
-    .tabTitleNumber {
-      margin-bottom: 4px;
-    }
-
-    &::shadow #ink {
-      color: $accent;
-    }
-
-  }
-}
-
-.listItemSection {
-
-  &.listItemTitle {
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemAuthor {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemType {
-    color: $primary;
-    font-style: italic;
-  }
-  &.listItemNotes {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemNoResultsMessage {
-    font-style: italic;
-  }
-
-}
-.listItemLink {
-  core-icon {
-    margin-right: 0;
-  }
-}
-
-#loadingOverlay {
-  //background-color: $primary;
-  background-color: transparent;
-  width: 64px;
-  height: 64px;
-
-  paper-spinner{
-    &::shadow .circle {
-      border-color: $primary;
-    }
-  }
-
-}
-
-
-// uqlibrary-computers
-
-paper-progress {
-  height: 20px;
+#searchInput {
   width: 100%;
 }
+#searchWrapper {
+  width: 90%;
+  height: 50px;
+  transition: 300ms ease-in-out;
+}
+#filters {
+  top: 50px;
+  width:100%;
+  paper-item {
+    padding-left: 0;
+    border-bottom: 1px solid $divider;
+    &.last {
+      border-bottom: none;
+    }
+    &.core-selected {
+      color: $text;
+    }
+    .button-content {
+      text-align: left;
+    }
+  }
+}
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Roboto";
+}
+.recent {
+  color: $primary-700;
+}
+
+//   ____              _    _
+//  | __ )  ___   ___ | | ___)_ __   __ _
+//  |  _ \ / _ \ / _ \| |/ / | '_ \ / _` |
+//  | |_) | (_) | (_) |   <| | | | | (_| |
+//  |____/ \___/ \___/|_|\_\_|_| |_|\__, |
+//                                  |___/
+//
+// UQ My Library Booking app
+
+// filter group
+.group-label {
+  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
+}
+.group-content {
+  padding-left: $form-icon-padding-left - $form-padding;
+}
+
+// filter-form
+
+.filterWrapper {
+  background-color: $white;
+  margin-bottom: 30px;
+}
+
+md-timepicker {
+  &::shadow {
+    #card {
+      border: 1px solid $divider;
+      margin-top: 0;
+      margin-bottom: 0;
+      height: 400px * $timepickerRatio;
+      width: 250px * $timepickerRatio;
+
+      #display {
+        background-color: $button !important;
+        height: 120px * $timepickerRatio;
+        padding: 24px * $timepickerRatio;
+        color: $white;
+        font-size: 46px * $timepickerRatio;
+        .digit{
+          opacity: 0.7;
+          &[active] {
+            opacity: 1;
+          }
+        }
+      }
+      #keypad {
+        font-size: 42px * $timepickerRatio;
+        .digit {
+          flex-basis: 63px * $timepickerRatio;
+          -webkit-flex-basis: 63px * $timepickerRatio;
+        }
+      }
+    }
+    paper-button {
+      font-size: 14px * $timepickerRatio;
+    }
+  }
+}
+.equipment-item {
+  margin-bottom: 10pt;
+  color: $textColor;
+  core-icon {
+    margin-right: 10pt;
+  }
+}
+.error {
+  border-bottom: 1px solid $error-color;
+  &::shadow {
+    #label {
+      color: $error-color;
+    }
+  }
+}
+
+//   ____                               _
+//  | __ )  ___  _ __ _ __ _____      ___)_ __   __ _
+//  |  _ \ / _ \| '__| '__/ _ \ \ /\ / / | '_ \ / _` |
+//  | |_) | (_) | |  | | | (_) \ V  V /| | | | | (_| |
+//  |____/ \___/|_|  |_|  \___/ \_/\_/ |_|_| |_|\__, |
+//                                              |___/
+// UQ My Library Borrowing app
+
+uqlibrary-holds {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .date {
+          padding-top: $three-line-list-item-padding-top;
+        }
+      }
+    }
+  }
+}
+
+uqlibrary-fines {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .title {
+          padding-top: $three-line-list-item-padding-top;
+          @include gmd-type-style(body1, $primary);
+        }
+        // For fines with 3 digits we need a bit more space
+        .content {
+          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
+        }
+      }
+    }
+  }
+}
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%;
+  paper-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+//    ____                            _
+//   / ___|___  _ __ ___  _ __  _   _| |_ ___ _ __ ___
+//  | |   / _ \| '_ ` _ \| '_ \| | | | __/ _ \ '__/ __|
+//  | |___ (_) | | | | | | |_) | |_| | |_  __/ |  \__ \
+//   \____\___/|_| |_| |_| .__/ \__,_|\__\___|_|  |___/
+//                       |_|
+//
+//// UQ My Library Computers app
 
 #availability {
   margin-top: $list-item-gap;
@@ -572,292 +725,178 @@ paper-dropdown::shadow #scroller {
 
   .totals {
     float: right;
-    font-size: 14px;
+    font-size: $body1-size-font-device;
     color: $secondary-text;
   }
 }
 
-//uqlibrary-borrowing
+//    ____
+//   / ___|___  _   _ _ __ ___  ___ ___
+//  | |   / _ \| | | | '__/ __|/ _ \ __|
+//  | |___ (_) | |_| | |  \__ \  __\__ \
+//   \____\___/ \__,_|_|  |___/\___|___/
+//
+//UQ My Library Courses app
 
-uqlibrary-holds {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .date {
-          padding-top: $three-line-list-item-padding-top;
-        }
-      }
-    }
+.listItemSection {
+
+  &.listItemTitle {
+    padding-bottom: $single-line-list-item-padding-top;
   }
-}
-
-uqlibrary-fines {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .title {
-          padding-top: $three-line-list-item-padding-top;
-          @include gmd-type-style(body1, $primary);
-        }
-
-        // For fines with 3 digits we need a bit more space
-        .content {
-          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
-
-        }
-      }
-    }
+  &.listItemAuthor {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
   }
-}
-
-.attentionIcon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  padding-left: 16px;
-  height: 32px;
-  overflow: hidden;
-  width: 100%;
-  paper-icon {
-    width: 24px;
-    height: 24px;
+  &.listItemType {
+    color: $primary;
+    font-style: italic;
   }
-
-  &.warning{
-
+  &.listItemNotes {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
   }
-  &.error{
-
+  &.listItemNoResultsMessage {
+    font-style: italic;
   }
 
 }
-.tooltip {
-  margin-right: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
-}
-
-// booking
-
-// filter group
-
-
-
-.group-label {
-  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
-}
-.group-content {
-  padding-left: $form-icon-padding-left - $form-padding;
-}
-
-
-// filter-form
-
-$timepickerRatio: 0.9;
-
-$inputColor: $secondary-text;
-$textColor: $secondary-text;
-
-
-
-.filterWrapper {
-  background-color: $white;
-  margin-bottom: 30px;
-}
-
-
-uqlibrary-filter-group {
-  div.groupContentWrapper[horizontal] {
-    paper-dropdown-menu {
-      min-width: 150px;
-      margin-right: 20px;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-paper-dropdown-menu {
-  display: block;
-  width: 100%;
-  &[disabled] {
-    &::shadow {
-      #label, #arrow, #ripple {
-        color: $grey-A400;
-      }
-    }
-  }
-  paper-dropdown {
-    paper-item {
-      &:hover {
-        background-color: $grey-A100;
-      }
-    }
-  }
-}
-
-paper-input-decorator {
-  &::shadow {
-    #focusedUnderline
-    {
-      background-color: $button !important;
-    }
-  }
-}
-
-paper-input {
-  display: block;
-
-  &::shadow {
-    input {
-      color: $inputColor;
-    }
-  }
-  &#time{
-    display: block;
-    width: 100%;
-  }
-
-}
-
-md-timepicker {
-  &::shadow {
-    #card {
-      border: 1px solid $divider;
-      margin-top: 0;
-      margin-bottom: 0;
-      height: 400px * $timepickerRatio;
-      width: 250px * $timepickerRatio;
-
-      #display {
-        background-color: $button !important;
-        height: 120px * $timepickerRatio;
-        padding: 24px * $timepickerRatio;
-        color: $white;
-        font-size: 46px * $timepickerRatio;
-        .digit{
-          opacity: 0.7;
-          &[active] {
-            opacity: 1;
-          }
-        }
-      }
-
-      #keypad {
-        font-size: 42px * $timepickerRatio;
-
-        .digit {
-          flex-basis: 63px * $timepickerRatio;
-          -webkit-flex-basis: 63px * $timepickerRatio;
-        }
-
-      }
-    }
-
-    paper-button {
-      font-size: 14px * $timepickerRatio;
-    }
-
-
-  }
-}
-
-paper-slider {
-  width: 100%;
-  &::shadow {
-    #sliderBar {
-      box-sizing: content-box;
-      &::shadow {
-        #activeProgress {
-          background-color: $button;
-        }
-      }
-    }
-
-    #sliderKnobInner {
-      background-color: $button;
-
-      &::before {
-        background-color: $button;
-        display: block !important;
-      }
-
-      &::after {
-      }
-
-    }
-
-  }
-  &#timePeriod {
-    width: 50%;
-  }
-
-  &#capacity {
-
-  }
-}
-
-.sliderWrapper {
-  color: $text;
-  margin-top: 20pt;
-
-  .durationText {
-    width: 75px;
-  }
-
-}
-
-paper-checkbox {
-  &::shadow {
-    #checkbox {
-      &.checked {
-        border-color: $button;
-      }
-    }
-  }
-}
-
-
-.equipment-item {
-  margin-bottom: 10pt;
-  color: $textColor;
+.listItemLink {
   core-icon {
-    margin-right: 10pt;
-  }
-
-}
-
-paper-toast {
-  &#infoToast {
-    position: fixed;
-    max-width: 280px;
-    max-height: 48px;
+    margin-right: 0;
   }
 }
 
-.error {
-  border-bottom: 1px solid $error-color;
-  &::shadow {
-    #label {
-      color: $error-color;
+//   _____             _ _                _
+//  |  ___|__  ___  __| | |__   __ _  ___| | __
+//  | |_ / _ \/ _ \/ _` | '_ \ / _` |/ __| |/ /
+//  |  _|  __/  __/ (_| | |_) | (_| | (__|   <
+//  |_|  \___|\___|\__,_|_.__/ \__,_|\___|_|\_\
+//
+// Feedback app styles
+#feedbackCard {
+  width: 86%;
+  padding: 18px 32px;
+}
+#feedbackCard core-tooltip {
+  display: flex;
+}
+#feedbackCard paper-checkbox {
+  margin: 0 20px 0 0;
+}
+#feedbackCard paper-input-decorator {
+  margin-bottom: 20px;
+}
+#feedbackCard #feedbackButtons {
+  margin-top: 24px;
+}
+
+//   _   _
+//  | | | | ___  _   _ _ __ ___
+//  | |_| |/ _ \| | | | '__/ __|
+//  |  _  | (_) | |_| | |  \__ \
+//  |_| |_|\___/ \__,_|_|  |___/
+//
+// Library opening hours
+.open {
+  color: $dark-accent !important;
+}
+.closed {
+  color: $uq-warm-red !important;
+}
+.list-margin {
+  margin-bottom: 38px;
+}
+
+
+
+// TODO: investigate why font-size: 0
+.items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+.item {
+  text-align: center;
+  display: inline-block;
+  margin: 1px;
+  min-width: 30px;
+  padding: 15px 1px;
+  font-size: $body1-size-font-desktop;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background-color: $fbs-available-time;
+
+  &.occupied-true {
+    background-color: $fbs-unavailable-time;
+    color: $white;
+  }
+
+  &.selected-true {
+    background-color: $fbs-selected-time;
+    color: $white;
+  }
+}
+.selectedDate {
+  text-align: center;
+  font-size: $subhead-size-font-device;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+paper-tabs {
+  color: $text;
+  background-color: $white;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
+  &::shadow #selectionBar {
+    background-color: $accent;
+  }
+  paper-tab {
+    .tabTitleNumber {
+      margin-bottom: 4px;
+    }
+    &::shadow #ink {
+      color: $accent;
+    }
+    & .dayOfWeek {
+      width: 40px;
+    }
+    & .date {
+      height: 40px;
+      width: 40px;
+      font-size: $subhead-size-font-device;
+      text-align: center;
+      border-radius: 50%;
+      padding-top: 12px;
+    }
+    &.core-selected .date {
+      background-color: $fbs-selected-date;
+      color: $white;
     }
   }
 }
 
-core-overlay {
-
-  &#timepickerDialog::shadow {
-    #actions {
-      display: none;
-    }
-    #main {
-      padding: 0;
-    }
-  }
+//   __  __                                          _
+//  |  \/  | __ _ ___  __ _ _   _  ___ _ __ __ _  __| | ___
+//  | |\/| |/ _` / __|/ _` | | | |/ _ \ '__/ _` |/ _` |/ _ \
+//  | |  | | (_| \__ \ (_| | |_| |  __/ | | (_| | (_| |  __/
+//  |_|  |_|\__,_|___/\__, |\__,_|\___|_|  \__,_|\__,_|\___|
+//                       |_|
+// Masquerade app styles
+.masqueradeCard {
+  width: 86%;
+  padding: 18px 32px;
+}
+.masqueradeCard core-tooltip {
+  display: flex;
+}
+.masqueradeCard paper-checkbox {
+  margin: 0 20px 0 0;
+}
+.masqueradeCard paper-input-decorator {
+  margin-bottom: 20px;
+}
+.masqueradeCard #masqueradeButton {
+  margin-top: 24px;
 }

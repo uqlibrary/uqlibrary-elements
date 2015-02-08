@@ -1,3 +1,45 @@
+// Base font-size is 14sp = 1em = 14px
+
+// Quick explanation about font size specifications:
+// Em is traditionally defined as the width of the uppercase M in the current face and point size.
+// It is more properly defined as simply the current point size.
+// For example, in 12-point type, em is a distance of 12 points.
+// see: http://stackoverflow.com/questions/15827038/what-does-css-measurement-unit-em-actually-stand-for
+
+// Sp = scalable pixel; not yet used in web but em is closest approximation
+// Material Design spec is given in sp, so we convert to em for a completely scalable and responsive interface.
+
+// DO NOT DELETE - KEEP FOR REFERENCE
+//$display4-size-font: 112sp;
+//$display3-size-font: 56sp;
+//$display2-size-font: 45sp;
+//$display1-size-font: 34sp;
+//$headline-size-font: 24sp;
+//$title-size-font: 20sp;
+//$subhead-size-font-device: 16sp;
+//$subhead-size-font-desktop: 15sp;
+//$body2-size-font-device: 14sp;
+//$body2-size-font-desktop: 13sp;
+//$body1-size-font-device: 14sp;
+//$body1-size-font-desktop: 13sp;
+//$caption-size-font: 12sp;
+//$button-size-font: 14sp;
+
+$display4-size-font: 8em;
+$display3-size-font: 4em;
+$display2-size-font: 3.4em;
+$display1-size-font: 2.6em;
+$headline-size-font: 1.8em;
+$title-size-font: 1.42857143em;
+$subhead-size-font-device: 1.14285714em;
+$subhead-size-font-desktop: 1.071em;
+$body2-size-font-device: 1em;
+$body2-size-font-desktop: 0.929em;
+$body1-size-font-device: 1em;
+$body1-size-font-desktop: 0.929em;
+$caption-size-font: 0.85714286em;
+$button-size-font: 1em;
+
 // Minimum human touch target size
 $touch-target-size: 44px;
 
@@ -19,18 +61,6 @@ $deep-purple-600:  #5e35b1;
 $deep-purple-700:  #512da8;
 $deep-purple-800:  #4527a0;
 $deep-purple-900:  #311b92;
-
-$uq-purple-1000: #49075E;
-$uq-purple-50:   rgba($uq-purple-1000, .05);
-$uq-purple-100:  rgba($uq-purple-1000, .10);
-$uq-purple-200:  rgba($uq-purple-1000, .20);
-$uq-purple-300:  rgba($uq-purple-1000, .30);
-$uq-purple-400:  rgba($uq-purple-1000, .40);
-$uq-purple-500:  rgba($uq-purple-1000, .50);
-$uq-purple-600:  rgba($uq-purple-1000, .60);
-$uq-purple-700:  rgba($uq-purple-1000, .70);
-$uq-purple-800:  rgba($uq-purple-1000, .80);
-$uq-purple-900:  rgba($uq-purple-1000, .90);
 
 $blue-A100: #82B1FF;
 $blue-A200: #448AFF;
@@ -109,6 +139,18 @@ $background-secondary:  $white;
 $uq-text-primary:       hsl(0, 0%, 20%);
 $uq-text-secondary:     hsl(0, 0%, 46%);
 $uq-divider:            hsl(0, 0%, 80%);
+
+$uq-purple-1000: $dark-primary;
+$uq-purple-50:   rgba($uq-purple-1000, .05);
+$uq-purple-100:  rgba($uq-purple-1000, .10);
+$uq-purple-200:  rgba($uq-purple-1000, .20);
+$uq-purple-300:  rgba($uq-purple-1000, .30);
+$uq-purple-400:  rgba($uq-purple-1000, .40);
+$uq-purple-500:  rgba($uq-purple-1000, .50);
+$uq-purple-600:  rgba($uq-purple-1000, .60);
+$uq-purple-700:  rgba($uq-purple-1000, .70);
+$uq-purple-800:  rgba($uq-purple-1000, .80);
+$uq-purple-900:  rgba($uq-purple-1000, .90);
 
 $_gmd-alphas: (
   dividers: .12,

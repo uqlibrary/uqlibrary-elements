@@ -84,7 +84,7 @@ module.exports = function (grunt) {
         accessKeyId: '<%= aws.AWSAccessKeyId %>',
         secretAccessKey: '<%= aws.AWSSecretKey %>',
         region: '<%= aws.AWSRegion %>',
-        concurrency: 5
+        uploadConcurrency: 5
       },
       production: {
         options: {
