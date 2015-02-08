@@ -299,7 +299,7 @@ paper-toast {
 //  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
 // Drawer panel background colour and border
-.drawer {
+ core-header-panel [drawer] {
   background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
