@@ -632,6 +632,87 @@ md-timepicker {
   }
 }
 
+// date-selector styles
+
+uqlibrary-date-selector /deep/ {
+
+  .selectedDate {
+     text-align: center;
+     font-size: 16px;
+     font-weight: bold;
+     padding: 10px 0;
+   }
+
+  paper-tabs {
+    color: $text;
+    background-color: transparent;
+    height: 60px;
+    box-shadow: none;
+
+    paper-tab {
+      .tabTitleNumber {
+        margin-bottom: 4px;
+      }
+
+      &::shadow #ink {
+        color: $white;
+      }
+
+      & .dayOfWeek {
+        text-align: center;
+        width: 40px;
+      }
+      & .date {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 12px;
+      }
+      &.core-selected .date {
+        background-color: $fbs-selected-date;
+        color: $white;
+      }
+    }
+  }
+}
+
+// time-selector styles
+uqlibrary-time-selector /deep/ .items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+
+  paper-button.item {
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+    min-width: 30px;
+    width: 71px;
+    padding: 15px 1px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: $fbs-available-time;
+
+    &.occupied-true {
+      background-color: $fbs-unavailable-time;
+      color: $white;
+    }
+
+    &.selected-true {
+      background-color: $fbs-selected-time;
+      color: $white;
+    }
+  }
+
+}
+
+
+
+
 //   ____                               _
 //  | __ )  ___  _ __ _ __ _____      ___)_ __   __ _
 //  |  _ \ / _ \| '__| '__/ _ \ \ /\ / / | '_ \ / _` |
@@ -814,43 +895,6 @@ paper-dropdown::shadow #scroller {
   margin-bottom: 38px;
 }
 
-
-
-// TODO: investigate why font-size: 0
-.items {
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0;
-}
-
-.item {
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: $body1-size-font-desktop;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: $fbs-available-time;
-
-  &.occupied-true {
-    background-color: $fbs-unavailable-time;
-    color: $white;
-  }
-
-  &.selected-true {
-    background-color: $fbs-selected-time;
-    color: $white;
-  }
-}
-.selectedDate {
-  text-align: center;
-  font-size: $subhead-size-font-device;
-  font-weight: bold;
-  padding: 10px 0;
-}
 
 paper-tabs {
   color: $text;

@@ -474,6 +474,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
   font-family: "Roboto"; }
 
 .recent {
@@ -523,6 +524,57 @@ md-timepicker::shadow paper-button {
   border-bottom: 1px solid #F44336; }
   .error::shadow #label {
     color: #F44336; }
+
+uqlibrary-date-selector /deep/ .selectedDate {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0; }
+uqlibrary-date-selector /deep/ paper-tabs {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  height: 60px;
+  box-shadow: none; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
+    margin-bottom: 4px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
+    color: #ffffff; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
+    text-align: center;
+    width: 40px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .date {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 12px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
+    background-color: #007e9e;
+    color: #ffffff; }
+
+uqlibrary-time-selector /deep/ .items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0; }
+  uqlibrary-time-selector /deep/ .items paper-button.item {
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+    min-width: 30px;
+    width: 71px;
+    padding: 15px 1px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: #EEEEEE; }
+    uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
+      background-color: #BDBDBD;
+      color: #ffffff; }
+    uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
+      background-color: #007e9e;
+      color: #ffffff; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
@@ -624,35 +676,6 @@ paper-dropdown::shadow #scroller {
 
 .list-margin {
   margin-bottom: 38px; }
-
-.items {
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0; }
-
-.item {
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: 0.929em;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: #EEEEEE; }
-  .item.occupied-true {
-    background-color: #BDBDBD;
-    color: #ffffff; }
-  .item.selected-true {
-    background-color: #007e9e;
-    color: #ffffff; }
-
-.selectedDate {
-  text-align: center;
-  font-size: 1.14286em;
-  font-weight: bold;
-  padding: 10px 0; }
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
