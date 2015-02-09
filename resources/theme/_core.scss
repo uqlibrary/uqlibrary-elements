@@ -42,6 +42,12 @@ core-menu {
 
 // Core icons all defined according to MD spec
 core-icon {
+
+  .big-icon {
+    height: 40px;
+    width: 40px;
+  }
+
   color: $active-icon;
 
   &.inactive {

@@ -632,6 +632,9 @@ core-menu.divider {
 
 core-icon {
   color: rgba(0, 0, 0, 0.54); }
+  core-icon .big-icon {
+    height: 40px;
+    width: 40px; }
   core-icon.inactive {
     color: rgba(0, 0, 0, 0.26); }
   core-icon.active-inverse {
