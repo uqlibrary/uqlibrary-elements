@@ -821,7 +821,7 @@ paper-toast#infoToast {
   position: fixed;
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #EEEEEE; }
   .persistentFooter .contentWrapper {
