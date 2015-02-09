@@ -81,10 +81,14 @@ To use mock data set cookie value UQLMockData to enabled (cookie values are stri
 
 ### Styling Guidelines
 
-See the styling example here: https://uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/styles.html
+See the styling example here: [styles.html](https://uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/styles.html)
 
 ### Styling Implementation Guidelines
 
-1 Seperate elements use elements.css from uqlibrary-elements/resources/theme (e.g. uqlibrary-persistent-footer)
-2 Element.css is excluded from vulcanization in vulcanize.conf
-3 Grunt-text-replace runs to update path in vulcanized.html to point to relative element.css
+1. Seperate elements use elements.css from uqlibrary-elements/resources/theme (e.g. uqlibrary-persistent-footer)
+2. Element.css is excluded from vulcanization in vulcanize.conf
+3. Grunt-text-replace runs to update path in vulcanized.html to point to relative element.css
+4. Grunt predeploy task runs following commands (for staging and production environments):
+  * cssmin - to minify element.css and application.css
+  * file-rev - to include revision number in file names for *.js *.css and vulcanized.html
+  * usemin - updates references to file-rev files
