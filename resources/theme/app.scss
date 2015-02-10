@@ -32,53 +32,88 @@ $zoom: 1;
 }
 
 .circular {
+  -webkit-animation: rotate 2s linear infinite;
   animation: rotate 2s linear infinite;
-  height: $width;
+  height: 100px;
   position: relative;
-  width: $width;
-}
+  width: 100px; }
 
 .path {
   stroke-dasharray: 1,200;
   stroke-dashoffset: 0;
-  animation:
-  dash 1.5s ease-in-out infinite,
-  color 6s ease-in-out infinite;
-  stroke-linecap: round;
-}
+  -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round; }
 
-@keyframes rotate{
-  100%{
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
-@keyframes dash{
-  0%{
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
     stroke-dasharray: 1,200;
     stroke-dashoffset: 0;
   }
-  50%{
+  50% {
     stroke-dasharray: 89,200;
     stroke-dashoffset: -35;
   }
-  100%{
+  100% {
     stroke-dasharray: 89,200;
     stroke-dashoffset: -124;
   }
 }
-@keyframes color{
-  100%, 0%{
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124;
+  }
+}
+@-webkit-keyframes color {
+  100%, 0% {
     stroke: $dark-primary;
   }
-  40%{
+  40% {
     stroke: $dark-primary;
   }
-  66%{
+  66% {
     stroke: $primary;
   }
-  80%, 90%{
+  80%, 90% {
     stroke: $primary;
   }
 }
+@keyframes color {
+  100%, 0% {
+    stroke: $dark-primary;
+  }
+  40% {
+    stroke: $dark-primary;
+  }
+  66% {
+    stroke: $primary;
+  }
+  80%, 90% {
+    stroke: $primary;
+  }
+}
+
 
 
