@@ -694,10 +694,13 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
   #loadingOverlay paper-spinner::shadow .circle {
     border-color: #7b0c9d; }
 
-paper-dropdown {
-  min-width: 150px; }
-  paper-dropdown::shadow #scroller {
-    width: 100% !important; }
+paper-checkbox::shadow #checkbox.checked {
+  border-color: #007e9e; }
+
+paper-toast#infoToast {
+  position: fixed;
+  max-width: 280px;
+  max-height: 48px; }
 
 paper-item {
   font-family: "Roboto medium";
@@ -730,6 +733,11 @@ uqlibrary-filter-group div.groupContentWrapper[horizontal] paper-dropdown-menu {
     margin-right: 0; }
 uqlibrary-filter-group:last-child {
   border-bottom: none; }
+
+paper-dropdown {
+  min-width: 150px; }
+  paper-dropdown::shadow #scroller {
+    width: 100% !important; }
 
 paper-dropdown-menu {
   display: block;
@@ -771,14 +779,6 @@ paper-slider {
   margin-top: 20pt; }
   .sliderWrapper .durationText {
     width: 75px; }
-
-paper-checkbox::shadow #checkbox.checked {
-  border-color: #007e9e; }
-
-paper-toast#infoToast {
-  position: fixed;
-  max-width: 280px;
-  max-height: 48px; }
 
 .drawer {
   background-color: #ffffff;
