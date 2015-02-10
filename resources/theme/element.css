@@ -1185,6 +1185,8 @@ paper-button[disabled] {
     border-bottom: 1px solid #cccccc;
     padding: 16px;
     display: block; }
+    .card .cardSection.noBorder {
+      border: 0px; }
 
 .text-center {
   text-align: center; }

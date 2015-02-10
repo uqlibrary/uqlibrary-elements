@@ -623,6 +623,8 @@ h4.inverse {
     border-bottom: 1px solid #cccccc;
     padding: 16px;
     display: block; }
+    .card .cardSection.noBorder {
+      border: 0px; }
 
 core-menu core-icon {
   margin-left: -3;

@@ -16,6 +16,11 @@ $default-card-width: 320px;
     border-bottom: 1px solid $divider;
     padding: $card-title-padding;
     display: block;
+
+    &.noBorder {
+      border: 0px;
+    }
+
   }
 
   .cardTitle {
