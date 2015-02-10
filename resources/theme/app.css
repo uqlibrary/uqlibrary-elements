@@ -739,6 +739,8 @@ paper-dropdown-menu {
   paper-dropdown-menu paper-dropdown paper-item:hover {
     background-color: #F5F5F5; }
 
+paper-input-decorator .mirror-text {
+  padding: 0.8em 0 0.25em; }
 paper-input-decorator::shadow #focusedUnderline {
   background-color: #007e9e !important; }
 
