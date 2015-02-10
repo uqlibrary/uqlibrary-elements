@@ -318,7 +318,7 @@ paper-toast#infoToast {
   max-width: 280px;
   max-height: 48px; }
 
-#mainContainer {
+.drawer {
   background-color: #ffffff;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
