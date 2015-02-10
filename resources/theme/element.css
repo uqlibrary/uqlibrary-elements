@@ -374,6 +374,9 @@ core-drawer-panel [drawer] {
   margin-bottom: 8px;
   margin-right: 8px; }
 
+html /deep/ [autofocus] {
+  color: #007e9e; }
+
 .persistentFooter {
   position: fixed;
   height: 48px;

@@ -405,6 +405,9 @@ core-drawer-panel [drawer] {
   margin-right: 8px;
 }
 
+html /deep/ [autofocus] {
+  color: $uq-aqua;
+}
 
 //   ____               _     _             _     _____           _
 //  |  _ \ ___ _ __ ___(_)___| |_ ___ _ __ | |_  |  ___|__   ___ | |_ ___ _ __
