@@ -321,12 +321,6 @@ core-drawer-panel [drawer] {
 .main {
   background-color: $background-primary;
 }
-// the lock paper-icon-button allowing users to logout
-#askLogout, #askLogout::shadow {
-  color: $background-primary;
-  margin-bottom: 8px;
-  margin-right: 8px;
-}
 // User account section of drawer panel
 // includes optimised image and gradient cover for text legibility
 // all margins based on UQ and material design specs where necessary
@@ -347,7 +341,6 @@ core-drawer-panel [drawer] {
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
   }
-
   // user account details container
   #details {
     padding: 110px 14px 14px 16px;
@@ -371,6 +364,12 @@ core-drawer-panel [drawer] {
     height: 24px;
     width: 24px;
   }
+}
+// the lock paper-icon-button allowing users to logout
+#askLogout, #askLogout::shadow {
+  color: $background-primary;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 
