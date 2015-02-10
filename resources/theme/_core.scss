@@ -745,6 +745,15 @@ uqlibrary-holds {
   }
 }
 
+paper-tabs {
+  paper-tab {
+    &#finesTab {
+      padding-left:8px;
+      padding-right: 8px;
+    }
+  }
+}
+
 uqlibrary-fines {
   &::shadow {
     uqlibrary-borrowing-list {
