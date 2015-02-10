@@ -190,7 +190,7 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: white; }
 
 @media screen and (min-width: 768px) {
   .responsiveToolbarButton {
@@ -254,7 +254,7 @@ paper-progress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -275,9 +275,9 @@ paper-dropdown-menu {
   display: block;
   width: 100%; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
-    color: #BDBDBD; }
+    color: #bdbdbd; }
   paper-dropdown-menu paper-dropdown paper-item:hover {
-    background-color: #F5F5F5; }
+    background-color: whitesmoke; }
 
 paper-input-decorator::shadow #focusedUnderline {
   background-color: #007e9e !important; }
@@ -318,12 +318,12 @@ paper-toast#infoToast {
   max-width: 280px;
   max-height: 48px; }
 
-#mainContainer {
-  background-color: #ffffff;
+.drawer {
+  background-color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 .main {
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 
 #account {
   font-size: 0.85714em;
@@ -346,7 +346,7 @@ paper-toast#infoToast {
     background: linear-gradient(to bottom, transparent 30%, black 100%);
     /* W3C */ }
   #account #askLogout, #account #askLogout::shadow {
-    color: #FAFAFA;
+    color: #fafafa;
     margin-bottom: 8px;
     margin-right: 8px; }
   #account #details {
@@ -365,9 +365,9 @@ paper-toast#infoToast {
   position: fixed;
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
-  border-top: 1px solid #EEEEEE; }
+  border-top: 1px solid #eeeeee; }
   .persistentFooter .contentWrapper {
     padding: 0; }
   .persistentFooter .actionButtonsWrapper {
@@ -474,6 +474,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
   font-family: "Roboto"; }
 
 .recent {
@@ -486,7 +487,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   padding-left: 56px; }
 
 .filterWrapper {
-  background-color: #ffffff;
+  background-color: white;
   margin-bottom: 30px; }
 
 md-timepicker::shadow #card {
@@ -499,7 +500,7 @@ md-timepicker::shadow #card {
     background-color: #007e9e !important;
     height: 108px;
     padding: 21.6px;
-    color: #ffffff;
+    color: white;
     font-size: 41.4px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
@@ -520,12 +521,67 @@ md-timepicker::shadow paper-button {
     margin-right: 10pt; }
 
 .error {
-  border-bottom: 1px solid #F44336; }
+  border-bottom: 1px solid #f44336; }
   .error::shadow #label {
-    color: #F44336; }
+    color: #f44336; }
+
+uqlibrary-date-selector /deep/ .selectedDate {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 0; }
+uqlibrary-date-selector /deep/ paper-tabs {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  height: 60px;
+  box-shadow: none; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
+    margin-bottom: 4px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
+    color: white; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
+    text-align: center;
+    width: 40px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab .date {
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 12px; }
+  uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
+    background-color: #007e9e;
+    color: white; }
+
+uqlibrary-time-selector /deep/ .items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0; }
+  uqlibrary-time-selector /deep/ .items paper-button.item {
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+    min-width: 30px;
+    width: 71px;
+    padding: 15px 1px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: #eeeeee; }
+    uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
+      background-color: #bdbdbd;
+      color: white; }
+    uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
+      background-color: #007e9e;
+      color: white; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
+
+paper-tabs paper-tab#finesTab {
+  padding-left: 8px;
+  padding-right: 8px; }
 
 uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
   padding-top: 20px;
@@ -560,7 +616,7 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
   width: 100%; }
 
 .available {
-  color: #8CB800; }
+  color: #8cb800; }
 
 .unavailable {
   color: #ce4627; }
@@ -575,7 +631,7 @@ paper-dropdown::shadow #scroller {
   padding: 6px; }
 
 .availability-item {
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid whitesmoke;
   padding: 4px;
   line-height: 1.2; }
   .availability-item .totals {
@@ -625,38 +681,9 @@ paper-dropdown::shadow #scroller {
 .list-margin {
   margin-bottom: 38px; }
 
-.items {
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0; }
-
-.item {
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: 0.929em;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: #EEEEEE; }
-  .item.occupied-true {
-    background-color: #BDBDBD;
-    color: #ffffff; }
-  .item.selected-true {
-    background-color: #007e9e;
-    color: #ffffff; }
-
-.selectedDate {
-  text-align: center;
-  font-size: 1.14286em;
-  font-weight: bold;
-  padding: 10px 0; }
-
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -675,7 +702,7 @@ paper-tabs {
     padding-top: 12px; }
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 .masqueradeCard {
   width: 86%;
@@ -1015,7 +1042,7 @@ paper-tabs {
       .three-line-icon-list .list-item.timeline .date .title, .three-line-icon-list .list-item.timeline .date .headline {
         color: #7b0c9d; }
     .three-line-icon-list .list-item.timeline .content {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       border-radius: 2px;
       padding-left: 16px; }
     .three-line-icon-list .list-item .content {
@@ -1123,27 +1150,27 @@ paper-fab {
     position: fixed;
     right: 16px; }
   paper-fab core-icon {
-    color: #ffffff; }
+    color: white; }
 
 paper-button.colored {
   color: #007e9e; }
 
 paper-button[raised].colored {
   background: #007e9e;
-  color: #ffffff; }
+  color: white; }
   paper-button[raised].colored:hover {
     background-color: #006680; }
   paper-button[raised].colored:active {
     background-color: #00566b; }
   paper-button[raised].colored:disabled {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #cccccc; }
 
 paper-button[disabled] {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #cccccc; }
   paper-button[disabled].colored {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #cccccc; }
 
 .card {
@@ -1151,7 +1178,7 @@ paper-button[disabled] {
   border-radius: 2px;
   box-sizing: border-box;
   height: auto;
-  background: #ffffff;
+  background: white;
   width: 320px;
   margin: 16px auto; }
   .card .cardSection {
@@ -1187,7 +1214,7 @@ paper-button[disabled] {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -1219,9 +1246,9 @@ paper-button[disabled] {
   .hint-box.selected {
     background-color: #007e9e; }
   .hint-box.available {
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
   .hint-box.unavailable {
-    background-color: #BDBDBD; }
+    background-color: #bdbdbd; }
 
 paper-input-decorator::shadow .focused-underline {
   background-color: #007e9e; }
