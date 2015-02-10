@@ -168,11 +168,13 @@ h4.inverse {
   text-decoration: none;
   color: rgba(0, 126, 158, 0.87); }
 
-core-menu core-icon {
-  margin-left: -3;
-  margin-right: 28px; }
-core-menu.divider {
-  border-bottom: 1px solid #cccccc; }
+core-menu {
+  margin: 0;
+  padding: 12px; }
+  core-menu core-icon {
+    margin: -3px 28px -3px -3px; }
+  core-menu.divider {
+    border-bottom: 1px solid #cccccc; }
 
 core-icon {
   color: rgba(0, 0, 0, 0.54); }
@@ -322,8 +324,17 @@ paper-toast#infoToast {
   background-color: #ffffff;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
+core-drawer-panel [drawer] {
+  background-color: #ffffff;
+  border-right: 1px solid rgba(0, 0, 0, 0.1); }
+
 .main {
   background-color: #FAFAFA; }
+
+#askLogout, #askLogout::shadow {
+  color: #FAFAFA;
+  margin-bottom: 8px;
+  margin-right: 8px; }
 
 #account {
   font-size: 0.85714em;
@@ -345,10 +356,6 @@ paper-toast#infoToast {
     /* IE10+ */
     background: linear-gradient(to bottom, transparent 30%, black 100%);
     /* W3C */ }
-  #account #askLogout, #account #askLogout::shadow {
-    color: #FAFAFA;
-    margin-bottom: 8px;
-    margin-right: 8px; }
   #account #details {
     padding: 110px 14px 14px 16px; }
   #account #name {
@@ -360,6 +367,10 @@ paper-toast#infoToast {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden; }
+  #account core-icon {
+    color: #FAFAFA;
+    height: 24px;
+    width: 24px; }
 
 .persistentFooter {
   position: fixed;

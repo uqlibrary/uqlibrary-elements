@@ -31,9 +31,12 @@
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
+  margin: 0;
+  padding: 12px;
   core-icon {
-    margin-left: $nav-drawer-icon;
-    margin-right: $nav-drawer-text;
+    margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
+//    margin-left: $nav-drawer-icon;
+//    margin-right: $nav-drawer-text;
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
@@ -304,8 +307,12 @@ paper-toast {
 //  | |_| | | | (_| |\ V  V /  __/ |    |  __/ (_| | | | |  __/ |
 //  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
-// Drawer panel background colour and border
+// Drawer panel background colour and border (includes non chrome compatibility)
 .drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+core-drawer-panel [drawer] {
   background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -314,7 +321,12 @@ paper-toast {
 .main {
   background-color: $background-primary;
 }
-
+// the lock paper-icon-button allowing users to logout
+#askLogout, #askLogout::shadow {
+  color: $background-primary;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
 // User account section of drawer panel
 // includes optimised image and gradient cover for text legibility
 // all margins based on UQ and material design specs where necessary
@@ -335,12 +347,7 @@ paper-toast {
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
   }
-  // the lock paper-icon-button allowing users to logout
-  #askLogout, #askLogout::shadow {
-    color: $background-primary;
-    margin-bottom: 8px;
-    margin-right: 8px;
-  }
+
   // user account details container
   #details {
     padding: 110px 14px 14px 16px;
@@ -358,6 +365,11 @@ paper-toast {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+  core-icon {
+    color: $background-primary;
+    height: 24px;
+    width: 24px;
   }
 }
 
