@@ -78,12 +78,14 @@ h4.inverse {
   font-family: "Roboto medium";
   font-size: 1.42857em;
   line-height: 1.1em;
+  white-space: normal;
   color: rgba(0, 0, 0, 0.87); }
 
 .title.inverse {
   font-family: "Roboto medium";
   font-size: 1.42857em;
   line-height: 1.1em;
+  white-space: normal;
   color: rgba(255, 255, 255, 0.87); }
 
 .subhead {
@@ -385,7 +387,7 @@ uqlibrary-menu /deep/ [autofocus] {
   width: 100%;
   border-top: 1px solid #EEEEEE;
   padding: 4px; }
-  .persistentFooter finesFooter .footerInfo {
+  .persistentFooter .finesFooter .footerInfo {
     padding: 16px; }
 
 @media screen and (min-width: 768px) {
