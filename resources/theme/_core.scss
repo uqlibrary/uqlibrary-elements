@@ -32,7 +32,7 @@
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
   margin: 0;
-  padding: 12px;
+  padding: 8px 0;
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
 //    margin-left: $nav-drawer-icon;
@@ -422,6 +422,11 @@ uqlibrary-menu /deep/ [autofocus] {
 //  |_|   \___|_|  |___/_|___/\__\___|_| |_|\__| |_|  \___/ \___/ \__\___|_|
 //
 // persistent footer styles
+uqlibrary-persistent-footer {
+  .footerInfo {
+    padding: 12px;
+  }
+}
 .persistentFooter {
   position: fixed;
   height: $persistent-footer-height;

@@ -172,7 +172,7 @@ h4.inverse {
 
 core-menu {
   margin: 0;
-  padding: 12px; }
+  padding: 8px 0; }
   core-menu core-icon {
     margin: -3px 28px -3px -3px; }
   core-menu.divider {
@@ -381,6 +381,9 @@ core-drawer-panel [drawer] {
 
 uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
+
+uqlibrary-persistent-footer .footerInfo {
+  padding: 12px; }
 
 .persistentFooter {
   position: fixed;
