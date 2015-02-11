@@ -68,7 +68,8 @@ Element providing the library main navigation menu using a responsive drawer pan
           <!--Prevents users from accidentally logging out-->
 
     <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
-      <p>Are you sure you want to log out? This will log you out of all your UQ website sessions.</p>
+      <p>Are you sure you want to log out?</p>
+      <p>This will log you out of all your UQ website sessions.</p>
       <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
       <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
     </paper-action-dialog>
