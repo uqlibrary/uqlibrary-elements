@@ -67,8 +67,8 @@ Element providing the library main navigation menu using a responsive drawer pan
           <!--Logout dialog-->
           <!--Prevents users from accidentally logging out-->
 
-    <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
-      <p>This will log you out of all your UQ website sessions.</p>
+    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+      <p>Are you sure you want to log out? This will log you out of all your UQ website sessions.</p>
       <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
       <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
     </paper-action-dialog>
@@ -103,8 +103,8 @@ Element providing the library main navigation menu using a responsive drawer pan
           var currentURL = document.URL;
           var nextLocation = el.attributes.link.value;
           var nextURL = currentURL.match("^(.*[\\\/]){3}");
-          currentURL.replace(nextURL[1],nextLocation)
-          document.location.href = currentURL;
+
+          document.location.href = currentURL.replace(nextURL[1],nextLocation);
         },
 
         linkClicked: function(e, detail, sender) {
