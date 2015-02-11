@@ -910,8 +910,14 @@ paper-dropdown::shadow #scroller {
 //
 // Feedback app styles
 #feedbackCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+  width: 100%;
+  margin: 0;
+  }
 }
 #feedbackCard core-tooltip {
   display: flex;
@@ -984,8 +990,14 @@ paper-tabs {
 //                       |_|
 // Masquerade app styles
 .masqueradeCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
+  }
 }
 .masqueradeCard core-tooltip {
   display: flex;

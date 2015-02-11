@@ -1128,8 +1128,14 @@ paper-dropdown::shadow #scroller {
   margin-right: 0; }
 
 #feedbackCard {
-  width: 86%;
   padding: 18px 32px; }
+  @media screen and (min-width: 768px) {
+    #feedbackCard {
+      width: 86%; } }
+  @media screen and (max-width: 768px) {
+    #feedbackCard {
+      width: 100%;
+      margin: 0; } }
 
 #feedbackCard core-tooltip {
   display: flex; }
@@ -1176,8 +1182,14 @@ paper-tabs {
     color: #ffffff; }
 
 .masqueradeCard {
-  width: 86%;
   padding: 18px 32px; }
+  @media screen and (min-width: 768px) {
+    .masqueradeCard {
+      width: 86%; } }
+  @media screen and (max-width: 768px) {
+    .masqueradeCard {
+      width: 100%;
+      margin: 0; } }
 
 .masqueradeCard core-tooltip {
   display: flex; }
