@@ -699,6 +699,9 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
 paper-checkbox::shadow #checkbox.checked {
   border-color: #007e9e; }
 
+paper-fab:hover {
+  background-color: #006680; }
+
 paper-toast#infoToast {
   position: fixed;
   max-width: 280px;
@@ -845,8 +848,8 @@ uqlibrary-menu /deep/ [autofocus] {
   width: 100%;
   border-top: 1px solid #EEEEEE;
   padding: 4px; }
-  .persistentFooter .finesFooter .footerInfo {
-    padding: 16px; }
+  .persistentFooter .footerInfo {
+    padding: 12px; }
 
 @media screen and (min-width: 768px) {
   .persistentFooter {

@@ -157,6 +157,12 @@ paper-checkbox {
   }
 }
 
+paper-fab {
+  &:hover {
+    background-color: $uq-aqua-600;
+  }
+}
+
 // TODO: consider whether this is needed because toast has built in style
 paper-toast {
   &#infoToast {
@@ -426,8 +432,8 @@ uqlibrary-menu /deep/ [autofocus] {
   padding: 4px;
 //  margin: 16px 0 16px 16px;
 
-  .finesFooter .footerInfo{
-    padding: 16px;
+  .footerInfo{
+    padding: 12px;
   }
 }
 // Keeps persistent footer above drawer panel when responsive mode engaged
