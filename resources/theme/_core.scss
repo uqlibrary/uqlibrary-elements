@@ -31,9 +31,12 @@
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
+  margin: 0;
+  padding: 12px;
   core-icon {
-    margin-left: $nav-drawer-icon;
-    margin-right: $nav-drawer-text;
+    margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
+//    margin-left: $nav-drawer-icon;
+//    margin-right: $nav-drawer-text;
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
@@ -124,8 +127,6 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
   transform: translate3d(-10px, 0, 0);
 }
 
-
-
 //   ____   _    ____  _____ ____       _____ _     _____ __  __ _____ _   _ _____ ____
 //  |  _ \ / \  |  _ \| ____|  _ \     | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
 //  | |_) / _ \ | |_) |  _| | |_) |____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
@@ -146,13 +147,22 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
   }
 }
 
-// Paper-dropdowns should be consistent
-// they shouldn't get too small
-// see http://www.google.com/design/spec/components/menus.html#menus-specs
-paper-dropdown {
-  min-width: 150px;
-  &::shadow #scroller {
-    width: 100% !important;
+paper-checkbox {
+  &::shadow {
+    #checkbox {
+      &.checked {
+        border-color: $button;
+      }
+    }
+  }
+}
+
+// TODO: consider whether this is needed because toast has built in style
+paper-toast {
+  &#infoToast {
+    position: fixed;
+    max-width: 280px;
+    max-height: 48px;
   }
 }
 
@@ -160,6 +170,8 @@ paper-dropdown {
 paper-item {
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
 }
+
+
 
 // Paper progress bars should all look consistent
 paper-progress {
@@ -172,6 +184,12 @@ paper-progress {
   }
 }
 
+//   ____                            _        _
+//  |  _ \ __ _ _ __   ___ _ __     | |_ __ _| |__  ___
+//  | |_) / _` | '_ \ / _ \ '__|____| __/ _` | '_ \/ __|
+//  |  __/ (_| | |_) |  __/ | |_____| |_ (_| | |_) \__ \
+//  |_|   \__,_| .__/ \___|_|        \__\__,_|_.__/|___/
+//             |_|
 $timepickerRatio: 0.9;
 $inputColor: $secondary-text;
 $textColor: $secondary-text;
@@ -208,6 +226,22 @@ uqlibrary-filter-group {
   }
 }
 
+//   ____                                _                     _
+//  |  _ \ __ _ _ __   ___ _ __       __| |_ __ ___  _ __   __| | _____      ___ __
+//  | |_) / _` | '_ \ / _ \ '__|____ / _` | '__/ _ \| '_ \ / _` |/ _ \ \ /\ / / '_ \
+//  |  __/ (_| | |_) |  __/ | |_____| (_| | | | (_) | |_) | (_| | (_) \ V  V /| | | |
+//  |_|   \__,_| .__/ \___|_|        \__,_|_|  \___/| .__/ \__,_|\___/ \_/\_/ |_| |_|
+//             |_|                                  |_|
+
+// Paper-dropdowns should be consistent
+// they shouldn't get too small
+// see http://www.google.com/design/spec/components/menus.html#menus-specs
+paper-dropdown {
+  min-width: 150px;
+  &::shadow #scroller {
+    width: 100% !important;
+  }
+}
 paper-dropdown-menu {
   display: block;
   width: 100%;
@@ -226,7 +260,17 @@ paper-dropdown-menu {
     }
   }
 }
+
+//   ____                            _                   _
+//  |  _ \ __ _ _ __   ___ _ __     (_)_ __  _ __  _   _| |_
+//  | |_) / _` | '_ \ / _ \ '__|____| | '_ \| '_ \| | | | __|
+//  |  __/ (_| | |_) |  __/ | |_____| | | | | |_) | |_| | |_
+//  |_|   \__,_| .__/ \___|_|       |_|_| |_| .__/ \__,_|\__|
+//             |_|                          |_|
 paper-input-decorator {
+  .mirror-text {
+    padding: 0.8em 0 0.25em;
+  }
   &::shadow {
     #focusedUnderline
     {
@@ -246,6 +290,14 @@ paper-input {
     width: 100%;
   }
 }
+
+//   ____                                _ _     _
+//  |  _ \ __ _ _ __   ___ _ __      ___| (_) __| | ___ _ __
+//  | |_) / _` | '_ \ / _ \ '__|____/ __| | |/ _` |/ _ \ '__|
+//  |  __/ (_| | |_) |  __/ | |_____\__ \ | | (_| |  __/ |
+//  |_|   \__,_| .__/ \___|_|       |___/_|_|\__,_|\___|_|
+//             |_|
+//
 paper-slider {
   width: 100%;
   &::shadow {
@@ -280,23 +332,7 @@ paper-slider {
     width: 75px;
   }
 }
-paper-checkbox {
-  &::shadow {
-    #checkbox {
-      &.checked {
-        border-color: $button;
-      }
-    }
-  }
-}
-// TODO: consider whether this is needed because toast has built in style
-paper-toast {
-  &#infoToast {
-    position: fixed;
-    max-width: 280px;
-    max-height: 48px;
-  }
-}
+
 
 //   ____                                ____                  _
 //  |  _ \ _ __ __ ___      _____ _ __  |  _ \ __ _ _ __   ___| |
@@ -304,8 +340,12 @@ paper-toast {
 //  | |_| | | | (_| |\ V  V /  __/ |    |  __/ (_| | | | |  __/ |
 //  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
-// Drawer panel background colour and border
-#mainContainer {
+// Drawer panel background colour and border (includes non chrome compatibility)
+.drawer {
+  background-color: $background-secondary;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+core-drawer-panel [drawer] {
   background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -314,7 +354,6 @@ paper-toast {
 .main {
   background-color: $background-primary;
 }
-
 // User account section of drawer panel
 // includes optimised image and gradient cover for text legibility
 // all margins based on UQ and material design specs where necessary
@@ -335,12 +374,6 @@ paper-toast {
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
   }
-  // the lock paper-icon-button allowing users to logout
-  #askLogout, #askLogout::shadow {
-    color: $background-primary;
-    margin-bottom: 8px;
-    margin-right: 8px;
-  }
   // user account details container
   #details {
     padding: 110px 14px 14px 16px;
@@ -359,8 +392,22 @@ paper-toast {
     text-overflow: ellipsis;
     overflow: hidden;
   }
+  core-icon {
+    color: $background-primary;
+    height: 24px;
+    width: 24px;
+  }
 }
-
+// the lock paper-icon-button allowing users to logout
+#askLogout, #askLogout::shadow {
+  color: $background-primary;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+//Logout dialog affirmative button colour
+uqlibrary-menu /deep/ [autofocus] {
+  color: $uq-aqua;
+}
 
 //   ____               _     _             _     _____           _
 //  |  _ \ ___ _ __ ___(_)___| |_ ___ _ __ | |_  |  ___|__   ___ | |_ ___ _ __
@@ -376,23 +423,11 @@ paper-toast {
   background-color: $white;
   width: 100%;
   border-top: 1px solid $grey-A200;
+  padding: 4px;
+//  margin: 16px 0 16px 16px;
 
-  .contentWrapper{
-    padding: 0;
-  }
-  .actionButtonsWrapper{
-    padding-right: 16px;
-    margin-top: 4px;
-  }
-}
-// Specific footer styles because custom buttons
-#persistentFooter {
-  margin: 8px;
-  .footerInfo {
-    margin: 16px;
-  }
-  .footerButtons {
-    margin: 4px;
+  .finesFooter .footerInfo{
+    padding: 16px;
   }
 }
 // Keeps persistent footer above drawer panel when responsive mode engaged
@@ -439,7 +474,7 @@ paper-toast {
 //  | |  | | | |   | |___ | || |_) |  _ < / ___ \|  _ < | |    / ___ \|  __/|  __/ ___) |
 //  |_|  |_| |_|   |_____|___|____/|_| \_\_/   \_\_| \_\|_|   /_/   \_\_|   |_|   |____/
 //
-
+// Element styles specific to individual apps
 
 //   _   _
 //  | | | | ___  _ __ ___   ___
@@ -524,9 +559,13 @@ uqlibrary-home paper-icon-button.huge #icon {
 #searchInput {
   width: 100%;
 }
+#searchIcon {
+  color: $uq-text-primary;
+}
 #searchWrapper {
-  width: 90%;
-  height: 50px;
+  width: 96%;
+  height: 54px;
+  padding-left: 8px;
   transition: 300ms ease-in-out;
 }
 #filters {
@@ -632,6 +671,87 @@ md-timepicker {
   }
 }
 
+// date-selector styles
+
+uqlibrary-date-selector /deep/ {
+
+  .selectedDate {
+     text-align: center;
+     font-size: 16px;
+     font-weight: bold;
+     padding: 10px 0;
+   }
+
+  paper-tabs {
+    color: $text;
+    background-color: transparent;
+    height: 60px;
+    box-shadow: none;
+
+    paper-tab {
+      .tabTitleNumber {
+        margin-bottom: 4px;
+      }
+
+      &::shadow #ink {
+        color: $white;
+      }
+
+      & .dayOfWeek {
+        text-align: center;
+        width: 40px;
+      }
+      & .date {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 12px;
+      }
+      &.core-selected .date {
+        background-color: $fbs-selected-date;
+        color: $white;
+      }
+    }
+  }
+}
+
+// time-selector styles
+uqlibrary-time-selector /deep/ .items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+
+  paper-button.item {
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+    min-width: 30px;
+    width: 71px;
+    padding: 15px 1px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: $fbs-available-time;
+
+    &.occupied-true {
+      background-color: $fbs-unavailable-time;
+      color: $white;
+    }
+
+    &.selected-true {
+      background-color: $fbs-selected-time;
+      color: $white;
+    }
+  }
+
+}
+
+
+
+
 //   ____                               _
 //  | __ )  ___  _ __ _ __ _____      ___)_ __   __ _
 //  |  _ \ / _ \| '__| '__/ _ \ \ /\ / / | '_ \ / _` |
@@ -648,6 +768,15 @@ uqlibrary-holds {
           padding-top: $three-line-list-item-padding-top;
         }
       }
+    }
+  }
+}
+
+paper-tabs {
+  paper-tab {
+    &#finesTab {
+      padding-left:8px;
+      padding-right: 8px;
     }
   }
 }
@@ -781,8 +910,14 @@ paper-dropdown::shadow #scroller {
 //
 // Feedback app styles
 #feedbackCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+  width: 100%;
+  margin: 0;
+  }
 }
 #feedbackCard core-tooltip {
   display: flex;
@@ -814,43 +949,6 @@ paper-dropdown::shadow #scroller {
   margin-bottom: 38px;
 }
 
-
-
-// TODO: investigate why font-size: 0
-.items {
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0;
-}
-
-.item {
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: $body1-size-font-desktop;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: $fbs-available-time;
-
-  &.occupied-true {
-    background-color: $fbs-unavailable-time;
-    color: $white;
-  }
-
-  &.selected-true {
-    background-color: $fbs-selected-time;
-    color: $white;
-  }
-}
-.selectedDate {
-  text-align: center;
-  font-size: $subhead-size-font-device;
-  font-weight: bold;
-  padding: 10px 0;
-}
 
 paper-tabs {
   color: $text;
@@ -892,8 +990,14 @@ paper-tabs {
 //                       |_|
 // Masquerade app styles
 .masqueradeCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
+  }
 }
 .masqueradeCard core-tooltip {
   display: flex;

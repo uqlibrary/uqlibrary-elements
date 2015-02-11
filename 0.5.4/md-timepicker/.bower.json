@@ -25,10 +25,10 @@
   "_release": "22f525b98b",
   "_resolution": {
     "type": "branch",
-    "branch": "uat",
+    "branch": "staging",
     "commit": "22f525b98b300503298ce7fe92e8a60c38f15ce2"
   },
   "_source": "git://github.com/uqlibrary/md-timepicker.git",
-  "_target": "uat",
+  "_target": "staging",
   "_originalSource": "uqlibrary/md-timepicker"
 }
