@@ -383,19 +383,10 @@ uqlibrary-menu /deep/ [autofocus] {
   bottom: 0;
   background-color: #ffffff;
   width: 100%;
-  border-top: 1px solid #EEEEEE; }
-  .persistentFooter .contentWrapper {
-    padding: 0; }
-  .persistentFooter .actionButtonsWrapper {
-    padding-right: 16px;
-    margin-top: 4px; }
-
-#persistentFooter {
-  margin: 8px; }
-  #persistentFooter .footerInfo {
-    margin: 16px; }
-  #persistentFooter .footerButtons {
-    margin: 4px; }
+  border-top: 1px solid #EEEEEE;
+  padding: 4px; }
+  .persistentFooter finesFooter .footerInfo {
+    padding: 16px; }
 
 @media screen and (min-width: 768px) {
   .persistentFooter {
