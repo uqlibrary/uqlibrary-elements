@@ -374,7 +374,7 @@ core-drawer-panel [drawer] {
   margin-bottom: 8px;
   margin-right: 8px; }
 
-uqlibrar /deep/ [autofocus] {
+uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
 
 .persistentFooter {
