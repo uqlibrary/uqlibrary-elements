@@ -571,9 +571,13 @@ uqlibrary-home paper-icon-button.huge #icon {
 #searchInput {
   width: 100%;
 }
+#searchIcon {
+  color: $uq-text-primary;
+}
 #searchWrapper {
-  width: 90%;
-  height: 50px;
+  width: 96%;
+  height: 54px;
+  padding-left: 8px;
   transition: 300ms ease-in-out;
 }
 #filters {
