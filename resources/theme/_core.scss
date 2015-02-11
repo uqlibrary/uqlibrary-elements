@@ -580,8 +580,9 @@ uqlibrary-home paper-icon-button.huge #icon {
   transition: 300ms ease-in-out;
 }
 #filters {
-  top: 50px;
+  top: 56px;
   width:100%;
+  left: 0!important;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
