@@ -47,20 +47,20 @@ Element providing the library main navigation menu using a responsive drawer pan
       </div>
 
       <core-menu selectedAttribute="" class="divider">
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
+        <paper-item on-tap="{{go}}" link="home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
         <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome"><core-icon icon="home"></core-icon> UQ Library Home</paper-item>
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/feedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
       </core-menu>
     </template>
 
     <core-menu selectedAttribute="">
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/computers" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
+      <paper-item on-tap="{{go}}" link="booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
+      <paper-item on-tap="{{go}}" link="borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
+      <paper-item on-tap="{{go}}" link="computers" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
       <template if="{{account.classes.length}}">
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
+        <paper-item on-tap="{{go}}" link="courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
       </template>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/hours"  id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
+      <paper-item on-tap="{{go}}" link="feedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+      <paper-item on-tap="{{go}}" link="hours"  id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
       <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
     </core-menu>
 
@@ -100,7 +100,11 @@ Element providing the library main navigation menu using a responsive drawer pan
           if(_id) {
             this.$.ga.addEvent('Menu Item Clicked', _id);
           }
-          document.location.href = el.attributes.link.value;
+          var currentURL = document.URL;
+          var nextLocation = el.attributes.link.value;
+          var nextURL = currentURL.match("^(.*[\\\/]){3}");
+          currentURL.replace(nextURL[1],nextLocation)
+          document.location.href = currentURL;
         },
 
         linkClicked: function(e, detail, sender) {
