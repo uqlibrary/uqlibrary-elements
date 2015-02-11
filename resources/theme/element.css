@@ -78,12 +78,14 @@ h4.inverse {
   font-family: "Roboto medium";
   font-size: 1.42857em;
   line-height: 1.1em;
+  white-space: normal;
   color: rgba(0, 0, 0, 0.87); }
 
 .title.inverse {
   font-family: "Roboto medium";
   font-size: 1.42857em;
   line-height: 1.1em;
+  white-space: normal;
   color: rgba(255, 255, 255, 0.87); }
 
 .subhead {
@@ -383,19 +385,10 @@ uqlibrary-menu /deep/ [autofocus] {
   bottom: 0;
   background-color: #ffffff;
   width: 100%;
-  border-top: 1px solid #EEEEEE; }
-  .persistentFooter .contentWrapper {
-    padding: 0; }
-  .persistentFooter .actionButtonsWrapper {
-    padding-right: 16px;
-    margin-top: 4px; }
-
-#persistentFooter {
-  margin: 8px; }
-  #persistentFooter .footerInfo {
-    margin: 16px; }
-  #persistentFooter .footerButtons {
-    margin: 4px; }
+  border-top: 1px solid #EEEEEE;
+  padding: 4px; }
+  .persistentFooter .finesFooter .footerInfo {
+    padding: 16px; }
 
 @media screen and (min-width: 768px) {
   .persistentFooter {
@@ -677,8 +670,14 @@ paper-dropdown::shadow #scroller {
   margin-right: 0; }
 
 #feedbackCard {
-  width: 86%;
   padding: 18px 32px; }
+  @media screen and (min-width: 768px) {
+    #feedbackCard {
+      width: 86%; } }
+  @media screen and (max-width: 768px) {
+    #feedbackCard {
+      width: 100%;
+      margin: 0; } }
 
 #feedbackCard core-tooltip {
   display: flex; }
@@ -725,8 +724,14 @@ paper-tabs {
     color: #ffffff; }
 
 .masqueradeCard {
-  width: 86%;
   padding: 18px 32px; }
+  @media screen and (min-width: 768px) {
+    .masqueradeCard {
+      width: 86%; } }
+  @media screen and (max-width: 768px) {
+    .masqueradeCard {
+      width: 100%;
+      margin: 0; } }
 
 .masqueradeCard core-tooltip {
   display: flex; }

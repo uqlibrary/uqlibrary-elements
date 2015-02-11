@@ -423,23 +423,11 @@ uqlibrary-menu /deep/ [autofocus] {
   background-color: $white;
   width: 100%;
   border-top: 1px solid $grey-A200;
+  padding: 4px;
+//  margin: 16px 0 16px 16px;
 
-  .contentWrapper{
-    padding: 0;
-  }
-  .actionButtonsWrapper{
-    padding-right: 16px;
-    margin-top: 4px;
-  }
-}
-// Specific footer styles because custom buttons
-#persistentFooter {
-  margin: 8px;
-  .footerInfo {
-    margin: 16px;
-  }
-  .footerButtons {
-    margin: 4px;
+  .finesFooter .footerInfo{
+    padding: 16px;
   }
 }
 // Keeps persistent footer above drawer panel when responsive mode engaged
@@ -922,8 +910,14 @@ paper-dropdown::shadow #scroller {
 //
 // Feedback app styles
 #feedbackCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+  width: 100%;
+  margin: 0;
+  }
 }
 #feedbackCard core-tooltip {
   display: flex;
@@ -996,8 +990,14 @@ paper-tabs {
 //                       |_|
 // Masquerade app styles
 .masqueradeCard {
-  width: 86%;
   padding: 18px 32px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
+  }
 }
 .masqueradeCard core-tooltip {
   display: flex;
