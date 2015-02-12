@@ -174,7 +174,7 @@ h4.inverse {
 
 .button {
   font-family: "Roboto";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.87);
@@ -183,7 +183,7 @@ h4.inverse {
 
 .button.inverse {
   font-family: "Roboto";
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.87);
@@ -480,7 +480,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px; }
 
 .apps {
-  margin-top: 10px; }
+  margin: 8px 8px 0 34px; }
 
 #homePage {
   text-align: -moz-center; }
