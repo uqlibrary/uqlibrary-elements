@@ -750,9 +750,6 @@ core-tooltip.fancyLeft:focus::shadow .core-tooltip {
 paper-checkbox::shadow #checkbox.checked {
   border-color: #007e9e; }
 
-paper-fab:hover {
-  background-color: #006680; }
-
 paper-toast#infoToast {
   position: fixed;
   max-width: 280px;
@@ -1110,10 +1107,6 @@ uqlibrary-time-selector /deep/ .items {
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
 
-paper-tabs paper-tab#finesTab {
-  padding-left: 8px;
-  padding-right: 8px; }
-
 uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
   padding-top: 20px;
   font-family: "Roboto";
@@ -1350,7 +1343,11 @@ paper-checkbox::shadow #checkbox {
   border-color: #cccccc; }
 
 paper-fab {
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #007e9e; }
+  paper-fab:hover {
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-fab.bottom-fixed {
     bottom: 16px;
     position: fixed;
@@ -1359,15 +1356,22 @@ paper-fab {
     color: #ffffff; }
 
 paper-button.colored {
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   color: #007e9e; }
+  paper-button.colored:hover {
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 paper-button[raised].colored {
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   background: #007e9e;
   color: #ffffff; }
   paper-button[raised].colored:hover {
-    background-color: #006680; }
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:active {
-    background-color: #00566b; }
+    background-color: #00566b;
+    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:disabled {
     background-color: #FAFAFA;
     color: #cccccc; }

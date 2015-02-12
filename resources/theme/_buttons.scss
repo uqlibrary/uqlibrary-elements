@@ -2,9 +2,12 @@
 @import "margins";
 
 paper-fab {
-
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: $button;
-
+  &:hover {
+    background-color: $uq-aqua-600;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  }
   &.bottom-fixed {
     bottom: $action-button-padding;
     position: fixed;
@@ -17,17 +20,25 @@ paper-fab {
 }
 
 paper-button.colored {
-  color: $uq-aqua;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  color: $button;
+  &:hover {
+    background-color: $uq-aqua-600;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  }
 }
 
 paper-button[raised].colored {
-  background: $uq-aqua;
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background: $button;
   color: $background-secondary;
   &:hover {
     background-color: $button-hover;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
   }
   &:active {
     background-color: $button-click;
+    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
   }
   &:disabled {
     background-color: $background-primary;

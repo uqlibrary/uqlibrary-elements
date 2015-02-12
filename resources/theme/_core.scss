@@ -161,12 +161,6 @@ paper-checkbox {
   }
 }
 
-paper-fab {
-  &:hover {
-    background-color: $uq-aqua-600;
-  }
-}
-
 // TODO: consider whether this is needed because toast has built in style
 paper-toast {
   &#infoToast {
@@ -785,15 +779,6 @@ uqlibrary-holds {
           padding-top: $three-line-list-item-padding-top;
         }
       }
-    }
-  }
-}
-
-paper-tabs {
-  paper-tab {
-    &#finesTab {
-      padding-left:8px;
-      padding-right: 8px;
     }
   }
 }
