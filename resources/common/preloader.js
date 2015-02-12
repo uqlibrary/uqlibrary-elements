@@ -92,6 +92,11 @@ catch (e) {
 
             messageCard.appendChild(e);
 
+          var o = document.createElement("p");
+          o.id = "browserDetailsOld";
+          o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary\'>the old version of MyLibrary<\/a>.";
+          messageCard.appendChild(o);
+
         });
     }
     if (window.attachEvent) {
