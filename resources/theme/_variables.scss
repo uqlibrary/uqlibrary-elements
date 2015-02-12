@@ -49,6 +49,12 @@ $touch-target-size: 44px;
 // and allows us to showcase the effect easily
 $responsive-width: 768px;
 
+$transition-duration: 500ms;
+$transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+$shadow-transition: box-shadow $transition-duration $transition-function;
+$background-transition: background-color $transition-duration $transition-function;
+$shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+
 
 // Colours from Material Design specifications
 $deep-purple-50:   #ede7f6;

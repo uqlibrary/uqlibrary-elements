@@ -206,6 +206,9 @@ paper-tabs {
   &::shadow #selectionBar {
     background-color: $accent;
   }
+  #finesTab {
+    padding: 0 34px;
+  }
   paper-tab {
     .tabTitleNumber {
       margin-bottom: 4px;

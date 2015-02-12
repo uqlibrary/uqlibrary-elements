@@ -2,11 +2,12 @@
 @import "margins";
 
 paper-fab {
-  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $shadow-transition,$background-transition;
   background-color: $button;
   &:hover {
+    transition: $shadow-transition,$background-transition;
     background-color: $uq-aqua-600;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow;
   }
   &.bottom-fixed {
     bottom: $action-button-padding;
@@ -20,29 +21,39 @@ paper-fab {
 }
 
 paper-button.colored {
-  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $shadow-transition,$background-transition;
   color: $button;
   &:hover {
+    transition: $shadow-transition,$background-transition;
     background-color: $uq-aqua-600;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
   }
 }
 
 paper-button[raised].colored {
-  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $shadow-transition,$background-transition;
   background: $button;
   color: $background-secondary;
   &:hover {
+    transition: $shadow-transition,$background-transition;
     background-color: $button-hover;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow;
   }
   &:active {
+    transition: $shadow-transition,$background-transition;
     background-color: $button-click;
-    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow;
   }
   &:disabled {
-    background-color: $background-primary;
+    transition: $shadow-transition,$background-transition;
     color: $uq-divider;
+  }
+}
+
+paper-button[raised] {
+  transition: $shadow-transition;
+  &:hover {
+    transition: $shadow-transition;
+    box-shadow: $shadow;
   }
 }
 
