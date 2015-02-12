@@ -65,10 +65,65 @@ The script uses the Polymer version in bower.json to determine the directory com
 
 Once the script completes, commit this repo with the updated components.
 
+### Branches
+
+Master is the development branch. All small development should be done here, but large changes should be done in their own feature branches.
+
+UAT is for User Acceptance testing for non-developers.
+
+Staging is for final browser testing and necessary manual (mainly CSS visual rendering) testing before going into Production
+ 
+Production gets deployed to the live production site.
+
 ### Deploying
 
 Each app is deployed using codeship.io. The script bin/codeship.sh is run on codeship.io to gzip the
 application, and to upload the application to S3.
+
+Codeship builds are triggered automatically on every push to GitHub.
+
+Each branch is monitored and deploys to a separate subdirectory with that branch name, eg /v1/staging/home, /v1/uat/home. 
+Except for production which goes directly into the /v1/ directory e.g. /v1/home, /v1/borrowing.
+
+Automated tests are triggered during deployment and are run in staggered degrees of browser compatibility checking depending on branch:
+  * Master: Runs only latest chrome, directly on CodeShips local deployment VM
+  * UAT: Runs OSX Safari 7.0 and Windows 8.1 Chrome 39 via SauceLabs
+  * Staging: Same as UAT, but adds Windows 8.1 Firefox 35 and Internet Explorer 11
+  * Production: Same as Staging
+
+This is covered in the bin/sauce.sh script.
+  
+Note: CSS Rendering issues are not currently tested (only javascript) need to be performed manually. 
+At least until we can look at adding PhantomCSS (with it's SauceLabs experimental integration).
+
+Each application (e.g. Courses) runs the uqlibrary-elements tests and it's own tests.
+In addition there is a uqlibrary-elements codeship build which only runs the uqlibrary-elements tests, but performs no deployment.
+The uqlibrary-elements tests in sub-application build triggers will be changed to only run the tests in chrome on the Codeship VM, 
+no matter what branch, with full browser test coverage staying on the uqlibrary-elements codeship build itself. 
+This will be done to speed up deployment while keeping some level of safety net.
+
+### Testing
+
+Testing should be performed locally (in your development environment) and all tests should be passing prior to pushing to Master.
+
+Tests can be run locally by running:
+
+```
+wct --plugin local --local "chrome" --local "firefox" --local "safari"
+```
+
+Or by setting up SauceLabs environment variables (SAUCE_USERNAME and SAUCE_ACCESS_KEY) and running via that service:
+
+```
+wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
+     --sauce "OSX 10.9/safari@7.0" \
+     --sauce "Windows 8.1/chrome@39.0" \
+     --sauce "Windows 8.1/firefox@35.0" \
+     --sauce "Windows 8.1/internet explorer@11.0"
+```
+
+Each new sub-application should have at least one functional and at least one unit test.
+The unit test should use in-built mock data, while the functional test should pull the mock data from the uqlibrary-api web component.
 
 ### Running with mock data
 
