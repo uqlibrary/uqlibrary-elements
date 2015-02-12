@@ -28,6 +28,10 @@
 //<link rel="import" href="../core-toolbar/core-toolbar.html">
 //<link rel="import" href="../core-tooltip/core-tooltip.html">
 
+* {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
@@ -243,6 +247,7 @@ uqlibrary-filter-group {
 // they shouldn't get too small
 // see http://www.google.com/design/spec/components/menus.html#menus-specs
 paper-dropdown {
+  font-family: "Roboto", sans-serif !important;
   min-width: 150px;
   &::shadow #scroller {
     width: 100% !important;
