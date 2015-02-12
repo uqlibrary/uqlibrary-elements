@@ -67,7 +67,8 @@ Element providing the library main navigation menu using a responsive drawer pan
           <!--Logout dialog-->
           <!--Prevents users from accidentally logging out-->
 
-    <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
+    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+      <p>Are you sure you want to log out?</p>
       <p>This will log you out of all your UQ website sessions.</p>
       <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
       <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
@@ -86,9 +87,6 @@ Element providing the library main navigation menu using a responsive drawer pan
         },
 
         ready: function () {
-//          var fullName = that.user.name;
-//          var splitName = fullName.split(' ');
-//          splitName.splice(0,1);
         },
 
         toggleLogout: function () {
@@ -100,11 +98,17 @@ Element providing the library main navigation menu using a responsive drawer pan
           if(_id) {
             this.$.ga.addEvent('Menu Item Clicked', _id);
           }
+
           var currentURL = document.URL;
-          var nextLocation = el.attributes.link.value;
-          var nextURL = currentURL.match("^(.*[\\\/]){3}");
-          currentURL.replace(nextURL[1],nextLocation)
-          document.location.href = currentURL;
+          var nextURL = el.attributes.link.value;
+
+          if (nextURL.indexOf('http') < 0) {
+            //if path is relative, update current path
+            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
+            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
+          }
+
+          document.location.href = nextURL;
         },
 
         linkClicked: function(e, detail, sender) {

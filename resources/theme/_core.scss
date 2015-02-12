@@ -28,11 +28,15 @@
 //<link rel="import" href="../core-toolbar/core-toolbar.html">
 //<link rel="import" href="../core-tooltip/core-tooltip.html">
 
+* {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
   margin: 0;
-  padding: 12px;
+  padding: 8px 0;
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
 //    margin-left: $nav-drawer-icon;
@@ -202,6 +206,9 @@ paper-tabs {
   &::shadow #selectionBar {
     background-color: $accent;
   }
+  #finesTab {
+    padding: 0 34px;
+  }
   paper-tab {
     .tabTitleNumber {
       margin-bottom: 4px;
@@ -237,6 +244,7 @@ uqlibrary-filter-group {
 // they shouldn't get too small
 // see http://www.google.com/design/spec/components/menus.html#menus-specs
 paper-dropdown {
+  font-family: "Roboto", sans-serif !important;
   min-width: 150px;
   &::shadow #scroller {
     width: 100% !important;
@@ -416,6 +424,11 @@ uqlibrary-menu /deep/ [autofocus] {
 //  |_|   \___|_|  |___/_|___/\__\___|_| |_|\__| |_|  \___/ \___/ \__\___|_|
 //
 // persistent footer styles
+uqlibrary-persistent-footer {
+  .footerInfo {
+    padding: 12px;
+  }
+}
 .persistentFooter {
   position: fixed;
   height: $persistent-footer-height;
@@ -426,8 +439,8 @@ uqlibrary-menu /deep/ [autofocus] {
   padding: 4px;
 //  margin: 16px 0 16px 16px;
 
-  .finesFooter .footerInfo{
-    padding: 16px;
+  .footerInfo{
+    padding: 12px;
   }
 }
 // Keeps persistent footer above drawer panel when responsive mode engaged
@@ -535,7 +548,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px;
 }
 .apps {
-  margin-top: 10px;
+  margin: 8px 8px 0 34px;
 }
 #homePage {
   text-align: -moz-center;
@@ -569,8 +582,9 @@ uqlibrary-home paper-icon-button.huge #icon {
   transition: 300ms ease-in-out;
 }
 #filters {
-  top: 50px;
+  top: 56px;
   width:100%;
+  left: 0!important;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
@@ -772,15 +786,6 @@ uqlibrary-holds {
   }
 }
 
-paper-tabs {
-  paper-tab {
-    &#finesTab {
-      padding-left:8px;
-      padding-right: 8px;
-    }
-  }
-}
-
 uqlibrary-fines {
   &::shadow {
     uqlibrary-borrowing-list {
@@ -836,7 +841,7 @@ uqlibrary-fines {
 }
 
 .available {
-  color: $uq-green-A700;
+  color: $dark-accent;
 }
 
 .unavailable {

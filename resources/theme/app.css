@@ -27,7 +27,8 @@ a {
   color: white; }
 
 h1 {
-  font-family: "Roboto light";
+  font-family: "Roboto";
+  font-weight: 300;
   font-size: 8em;
   line-height: 1.1em;
   white-space: nowrap;
@@ -35,7 +36,8 @@ h1 {
   color: rgba(0, 0, 0, 0.54); }
 
 h1.inverse {
-  font-family: "Roboto light";
+  font-family: "Roboto";
+  font-weight: 300;
   font-size: 8em;
   line-height: 1.1em;
   white-space: nowrap;
@@ -43,7 +45,8 @@ h1.inverse {
   color: white; }
 
 h2 {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 4em;
   white-space: nowrap;
   line-height: 1.1em;
@@ -51,7 +54,8 @@ h2 {
   color: rgba(0, 0, 0, 0.54); }
 
 h2.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 4em;
   white-space: nowrap;
   line-height: 1.1em;
@@ -59,119 +63,138 @@ h2.inverse {
   color: white; }
 
 h3 {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 3.4em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.54); }
 
 h3.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 3.4em;
   line-height: 1.1em;
   color: white; }
 
 h4 {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 2.6em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.54); }
 
 h4.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 2.6em;
   line-height: 1.1em;
   color: white; }
 
 .headline {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1.8em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
 .headline.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1.8em;
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
 .title {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1.42857em;
   line-height: 1.1em;
   white-space: normal;
   color: rgba(0, 0, 0, 0.87); }
 
 .title.inverse {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1.42857em;
   line-height: 1.1em;
   white-space: normal;
   color: rgba(255, 255, 255, 0.87); }
 
 .subhead {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1.14286em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
 .subhead.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1.14286em;
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
 .body2 {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
 .body2.inverse {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
 .body1 {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
 .body1.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
 .caption {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 0.85714em;
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.54); }
 
 .caption.inverse {
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 0.85714em;
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.54); }
 
 .menu {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
 
 .menu.inverse {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
   color: rgba(255, 255, 255, 0.87); }
 
 .button {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.87);
@@ -179,7 +202,8 @@ h4.inverse {
   color: rgba(0, 0, 0, 0.87); }
 
 .button.inverse {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.87);
@@ -204,7 +228,8 @@ h4.inverse {
     height: 48px;
     padding-left: 16px;
     padding-right: 16px;
-    font-family: "Roboto regular";
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 1em;
     line-height: 1.1em;
     color: rgba(0, 0, 0, 0.87); }
@@ -216,7 +241,8 @@ h4.inverse {
       white-space: nowrap;
       text-overflow: ellipsis; }
     .single-line-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -238,12 +264,14 @@ h4.inverse {
     height: 56px;
     padding-left: 16px;
     padding-right: 16px;
-    font-family: "Roboto regular";
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 1em;
     line-height: 1.1em;
     color: rgba(0, 0, 0, 0.87); }
     .single-line-icon-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -289,7 +317,8 @@ h4.inverse {
       padding-top: 20px;
       padding-bottom: 20px; }
       .two-line-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -297,7 +326,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .two-line-list .list-item .content .line2 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54);
@@ -305,7 +335,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
     .two-line-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -346,7 +377,8 @@ h4.inverse {
       padding-bottom: 20px;
       margin-left: 56px; }
       .two-line-icon-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -354,7 +386,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .two-line-icon-list .list-item .content .line2 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54);
@@ -362,7 +395,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
     .two-line-icon-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -388,7 +422,8 @@ h4.inverse {
       padding-top: 20px;
       padding-bottom: 20px; }
       .three-line-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -396,7 +431,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-list .list-item .content .line2 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -404,7 +440,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-list .list-item .content .line3 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54);
@@ -412,7 +449,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
     .three-line-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -443,7 +481,8 @@ h4.inverse {
       overflow: hidden;
       text-overflow: ellipsis; }
       .three-line-text-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -451,12 +490,14 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-text-list .list-item .content .text {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54); }
     .three-line-text-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -520,7 +561,8 @@ h4.inverse {
       padding-bottom: 20px;
       margin-left: 56px; }
       .three-line-icon-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -528,7 +570,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-icon-list .list-item .content .line2 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -536,7 +579,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-icon-list .list-item .content .line3 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54);
@@ -544,7 +588,8 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
     .three-line-icon-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -592,7 +637,8 @@ h4.inverse {
       overflow: hidden;
       text-overflow: ellipsis; }
       .three-line-text-icon-list .list-item .content .line1 {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 1em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.87);
@@ -600,12 +646,14 @@ h4.inverse {
         white-space: nowrap;
         text-overflow: ellipsis; }
       .three-line-text-icon-list .list-item .content .text {
-        font-family: "Roboto regular";
+        font-family: "Roboto";
+        font-weight: 400;
         font-size: 0.85714em;
         line-height: 1.1em;
         color: rgba(0, 0, 0, 0.54); }
     .three-line-text-icon-list .list-item.header {
-      font-family: "Roboto bold";
+      font-family: "Roboto";
+      font-weight: 700;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(0, 0, 0, 0.54);
@@ -628,9 +676,12 @@ h4.inverse {
     .card .cardSection.noBorder {
       border: 0px; }
 
+* {
+  font-family: "Roboto", Helvetica, Arial, sans-serif; }
+
 core-menu {
   margin: 0;
-  padding: 12px; }
+  padding: 8px 0; }
   core-menu core-icon {
     margin: -3px 28px -3px -3px; }
   core-menu.divider {
@@ -705,7 +756,8 @@ paper-toast#infoToast {
   max-height: 48px; }
 
 paper-item {
-  font-family: "Roboto medium";
+  font-family: "Roboto";
+  font-weight: 500;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
@@ -723,6 +775,8 @@ paper-tabs {
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
+  paper-tabs #finesTab {
+    padding: 0 34px; }
   paper-tabs paper-tab .tabTitleNumber {
     margin-bottom: 4px; }
   paper-tabs paper-tab::shadow #ink {
@@ -737,6 +791,7 @@ uqlibrary-filter-group:last-child {
   border-bottom: none; }
 
 paper-dropdown {
+  font-family: "Roboto", sans-serif !important;
   min-width: 150px; }
   paper-dropdown::shadow #scroller {
     width: 100% !important; }
@@ -837,6 +892,9 @@ core-drawer-panel [drawer] {
 uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
 
+uqlibrary-persistent-footer .footerInfo {
+  padding: 12px; }
+
 .persistentFooter {
   position: fixed;
   height: 48px;
@@ -845,8 +903,8 @@ uqlibrary-menu /deep/ [autofocus] {
   width: 100%;
   border-top: 1px solid #EEEEEE;
   padding: 4px; }
-  .persistentFooter .finesFooter .footerInfo {
-    padding: 16px; }
+  .persistentFooter .footerInfo {
+    padding: 12px; }
 
 @media screen and (min-width: 768px) {
   .persistentFooter {
@@ -903,7 +961,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px; }
 
 .apps {
-  margin-top: 10px; }
+  margin: 8px 8px 0 34px; }
 
 #homePage {
   text-align: -moz-center; }
@@ -929,8 +987,9 @@ uqlibrary-home paper-icon-button.huge #icon {
   transition: 300ms ease-in-out; }
 
 #filters {
-  top: 50px;
-  width: 100%; }
+  top: 56px;
+  width: 100%;
+  left: 0 !important; }
   #filters paper-item {
     padding-left: 0;
     border-bottom: 1px solid #cccccc; }
@@ -1050,13 +1109,10 @@ uqlibrary-time-selector /deep/ .items {
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
 
-paper-tabs paper-tab#finesTab {
-  padding-left: 8px;
-  padding-right: 8px; }
-
 uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
   padding-top: 20px;
-  font-family: "Roboto regular";
+  font-family: "Roboto";
+  font-weight: 400;
   font-size: 1em;
   line-height: 1.1em;
   color: #7b0c9d; }
@@ -1087,7 +1143,7 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
   width: 100%; }
 
 .available {
-  color: #8CB800; }
+  color: #38852e; }
 
 .unavailable {
   color: #ce4627; }
@@ -1237,7 +1293,8 @@ paper-tabs {
   .persistent-footer .text-container {
     padding: 16px;
     padding-right: 0px;
-    font-family: "Roboto regular";
+    font-family: "Roboto";
+    font-weight: 400;
     font-size: 0.85714em;
     line-height: 1.1em;
     color: rgba(0, 0, 0, 0.54); }
@@ -1246,7 +1303,8 @@ paper-tabs {
   .persistent-footer.inverse {
     background-color: #7b0c9d; }
     .persistent-footer.inverse .text-container {
-      font-family: "Roboto regular";
+      font-family: "Roboto";
+      font-weight: 400;
       font-size: 0.85714em;
       line-height: 1.1em;
       color: rgba(255, 255, 255, 0.54); }
@@ -1287,7 +1345,12 @@ paper-checkbox::shadow #checkbox {
   border-color: #cccccc; }
 
 paper-fab {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #007e9e; }
+  paper-fab:hover {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-fab.bottom-fixed {
     bottom: 16px;
     position: fixed;
@@ -1296,18 +1359,33 @@ paper-fab {
     color: #ffffff; }
 
 paper-button.colored {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #007e9e; }
+  paper-button.colored:hover {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #006680; }
 
 paper-button[raised].colored {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background: #007e9e;
   color: #ffffff; }
   paper-button[raised].colored:hover {
-    background-color: #006680; }
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:active {
-    background-color: #00566b; }
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #00566b;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:disabled {
-    background-color: #FAFAFA;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #cccccc; }
+
+paper-button[raised] {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  paper-button[raised]:hover {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 paper-button[disabled] {
   background-color: #FAFAFA;

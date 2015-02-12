@@ -12,11 +12,11 @@
     color: white;
 }
 
-#unsupportedBrowserSupportMessage .titleMessage {
-    font-size: 1.42857em;
+#loadingTitle {
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-size: 1.5em;
     line-height: 1.1em;
     font-weight: bold;
-    font-family: "sans-serif";
 }
 
 #unsupportedBrowser a {
