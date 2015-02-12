@@ -87,9 +87,6 @@ Element providing the library main navigation menu using a responsive drawer pan
         },
 
         ready: function () {
-//          var fullName = that.user.name;
-//          var splitName = fullName.split(' ');
-//          splitName.splice(0,1);
         },
 
         toggleLogout: function () {
@@ -101,11 +98,17 @@ Element providing the library main navigation menu using a responsive drawer pan
           if(_id) {
             this.$.ga.addEvent('Menu Item Clicked', _id);
           }
-          var currentURL = document.URL;
-          var nextLocation = el.attributes.link.value;
-          var nextURL = currentURL.match("^(.*[\\\/]){3}");
 
-          document.location.href = currentURL.replace(nextURL[1],nextLocation);
+          var currentURL = document.URL;
+          var nextURL = el.attributes.link.value;
+
+          if (nextURL.indexOf('http') < 0) {
+            //if path is relative, update current path
+            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
+            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
+          }
+
+          document.location.href = nextURL;
         },
 
         linkClicked: function(e, detail, sender) {
