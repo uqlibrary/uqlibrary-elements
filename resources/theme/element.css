@@ -1225,10 +1225,10 @@ paper-tabs {
       padding-bottom: 28px; }
 
 paper-fab {
-  transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #007e9e; }
   paper-fab:hover {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #006680;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-fab.bottom-fixed {
@@ -1239,32 +1239,32 @@ paper-fab {
     color: #ffffff; }
 
 paper-button.colored {
-  transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #007e9e; }
   paper-button.colored:hover {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #006680; }
 
 paper-button[raised].colored {
-  transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background: #007e9e;
   color: #ffffff; }
   paper-button[raised].colored:hover {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #006680;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:active {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #00566b;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised].colored:disabled {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1), background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #cccccc; }
 
 paper-button[raised] {
-  transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1); }
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   paper-button[raised]:hover {
-    transition: box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 paper-button[disabled] {
