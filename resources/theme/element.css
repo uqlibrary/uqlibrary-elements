@@ -453,8 +453,8 @@ uqlibrary-persistent-footer .footerInfo {
   height: 56px; }
   .icon-button:core-icon {
     margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   .icon-button:hover:core-icon {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
