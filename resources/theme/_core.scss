@@ -414,16 +414,16 @@ core-drawer-panel [drawer] {
 }
 // the lock paper-icon-button allowing users to logout
 #askLogout, #askLogout::shadow {
-  transition: $background-transition, $outline-transition;
+  transition: $main-transition;
   color: $background-primary;
   margin-bottom: 8px;
   margin-right: 8px;
   &:hover {
-    transition: $background-transition;
+    transition: $main-transition;
     background-color: $hint-text-inverse;
   }
   &:active, &:focus {
-    transition: $outline-transition;
+    transition: $main-transition;
     outline: 2px solid $hint-text-inverse;
   }
 }
@@ -569,7 +569,6 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: -moz-center;
 }
 .app {
-  transition: $background-transition, $outline-transition;
   width: 100px;
   height: 72px;
   margin: 0px 2px 10px 2px;
@@ -577,13 +576,15 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
+  [focused] {
+    background-color: rgba(0, 0, 0, 0.05);
+    outline: $primary auto 5px;
+  }
   &:hover {
-    transition: $outline-transition;
     outline: #999 auto 1px;
   }
   &:active, &:focus {
-    transition: $background-transition, $outline-transition;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
     outline: $primary auto 5px;
   }
 }

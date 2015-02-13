@@ -894,15 +894,15 @@ core-drawer-panel [drawer] {
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1), outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #FAFAFA;
   margin-bottom: 8px;
   margin-right: 8px; }
   #askLogout:hover, #askLogout::shadow:hover {
-    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(255, 255, 255, 0.26); }
   #askLogout:active, #askLogout:focus, #askLogout::shadow:active, #askLogout::shadow:focus {
-    transition: outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: 2px solid rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
@@ -983,7 +983,6 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: -moz-center; }
 
 .app {
-  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1), outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100px;
   height: 72px;
   margin: 0px 2px 10px 2px;
@@ -991,12 +990,13 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: center;
   border-radius: 2px;
   cursor: pointer; }
+  .app [focused] {
+    background-color: rgba(0, 0, 0, 0.05);
+    outline: #7b0c9d auto 5px; }
   .app:hover {
-    transition: outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: #999 auto 1px; }
   .app:active, .app:focus {
-    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1), outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
     outline: #7b0c9d auto 5px; }
 
 #search {
