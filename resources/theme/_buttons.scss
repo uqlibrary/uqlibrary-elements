@@ -29,6 +29,10 @@ paper-button.colored {
   }
 }
 
+paper-button[autofocus] {
+    color: $button !important;
+}
+
 paper-button[raised].colored {
   transition: $shadow-transition,$background-transition;
   background: $button;

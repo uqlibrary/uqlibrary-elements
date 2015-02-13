@@ -93,22 +93,22 @@ Element providing the library main navigation menu using a responsive drawer pan
           this.$.logoutDialog.toggle();
         },
 
+        constructURL: function(currentURL, nextURL) {
+          if (nextURL.indexOf('http') < 0) {
+            //if path is relative, update current path
+            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
+            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
+          }
+          return nextURL;
+        },
+
         go: function (e, _, el) {
           var _id = el.getAttribute('id');
           if(_id) {
             this.$.ga.addEvent('Menu Item Clicked', _id);
           }
 
-          var currentURL = document.URL;
-          var nextURL = el.attributes.link.value;
-
-          if (nextURL.indexOf('http') < 0) {
-            //if path is relative, update current path
-            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
-            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
-          }
-
-          document.location.href = nextURL;
+          document.location.href = this.constructURL(document.URL,el.attributes.link.value);
         },
 
         linkClicked: function(e, detail, sender) {
