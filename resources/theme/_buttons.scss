@@ -20,12 +20,14 @@ paper-fab {
   }
 }
 
-paper-button.colored {
-  transition: $shadow-transition,$background-transition;
-  color: $button;
+paper-button {
+  transition: $background-transition;
   &:hover {
-    transition: $shadow-transition,$background-transition;
-    background-color: $uq-aqua-600;
+    transition: $background-transition;
+    background-color: $background-primary;
+  }
+  &.colored {
+    color: $button;
   }
 }
 

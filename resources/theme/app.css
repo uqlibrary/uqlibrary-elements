@@ -1218,7 +1218,7 @@ paper-dropdown::shadow #scroller {
   margin-bottom: 20px; }
 
 #feedbackCard #feedbackButtons {
-  margin-top: 24px; }
+  margin-top: 14px 0; }
 
 .open {
   color: #38852e !important; }
@@ -1373,12 +1373,13 @@ paper-fab {
   paper-fab core-icon {
     color: #ffffff; }
 
-paper-button.colored {
-  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #007e9e; }
-  paper-button.colored:hover {
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #006680; }
+paper-button {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  paper-button:hover {
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #FAFAFA; }
+  paper-button.colored {
+    color: #007e9e; }
 
 paper-button[autofocus] {
   color: #007e9e !important; }
