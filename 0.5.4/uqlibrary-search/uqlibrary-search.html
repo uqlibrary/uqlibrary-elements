@@ -46,8 +46,8 @@ Element providing library search.
 
     <paper-shadow id="searchWrapper" class="card" z="1" horizontal layout center>
 
-      <div id="searchIcon" relative>
-        <core-icon-button icon="search" on-tap="{{onTapSearchIcon}}">
+      <div relative>
+        <core-icon-button icon="search" on-tap="{{onTapSearchIcon}}" id="searchIcon">
           <core-icon icon="{{$.filters.opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
         </core-icon-button>
 

@@ -65,3 +65,13 @@ paper-button[disabled] {
     color: $uq-divider;
   }
 }
+
+paper-icon-button {
+  transition: $background-transition;
+  border-radius: 50%;
+}
+paper-icon-button:hover {
+  transition: $background-transition;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+}
