@@ -572,7 +572,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
-  paper-icon-button [focused] {
+  [focused] {
     background-color: rgba(0, 0, 0, 0.05);
     outline: $primary auto 5px;
   }

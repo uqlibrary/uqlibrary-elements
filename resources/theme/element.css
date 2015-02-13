@@ -501,7 +501,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: center;
   border-radius: 2px;
   cursor: pointer; }
-  .app paper-icon-button [focused] {
+  .app [focused] {
     background-color: rgba(0, 0, 0, 0.05);
     outline: #7b0c9d auto 5px; }
   .app:hover {
