@@ -274,12 +274,16 @@ paper-toast#infoToast {
   max-height: 48px; }
 
 paper-item {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Roboto";
   font-weight: 500;
   font-size: 1em;
   color: rgba(0, 0, 0, 0.87);
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
+  paper-item:hover, paper-item:focus, paper-item:ho {
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #FAFAFA; }
 
 paper-progress {
   height: 1.14286em;
@@ -403,9 +407,18 @@ core-drawer-panel [drawer] {
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #FAFAFA;
   margin-bottom: 8px;
   margin-right: 8px; }
+  #askLogout:hover, #askLogout::shadow:hover {
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.26); }
+  #askLogout:active, #askLogout:focus, #askLogout::shadow:active, #askLogout::shadow:focus {
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 6px;
+    margin-right: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
