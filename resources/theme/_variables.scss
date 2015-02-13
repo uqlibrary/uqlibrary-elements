@@ -53,6 +53,7 @@ $transition-duration: 280ms;
 $transition-function: cubic-bezier(0.4, 0, 0.2, 1);
 $shadow-transition: box-shadow $transition-duration $transition-function;
 $background-transition: background-color $transition-duration $transition-function;
+$outline-transition: outline $transition-duration $transition-function;
 $shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
 
 @mixin material-shadow($level:1){

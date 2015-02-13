@@ -354,10 +354,6 @@ paper-slider {
 //  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
 // Drawer panel background colour and border (includes non chrome compatibility)
-.drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
 core-drawer-panel [drawer] {
   background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -554,7 +550,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 0;
   text-align: center;
   color: $secondary-text;
-  font-size: $body1-size-font-device;
+  font-size: $body2-size-font-desktop;
 }
 
 #masquerade {
@@ -564,25 +560,28 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px;
 }
 .apps {
-  margin: 8px 4px 0 8px;
+  margin: 8px 8px 0px 8px;
 }
 #homePage {
   text-align: -moz-center;
 }
 .app {
-  transition: $background-transition;
+  transition: $background-transition, $outline-transition;
   width: 100px;
   height: 72px;
-  margin: 2px;
+  margin: 0px 2px 10px 2px;
+  padding-top: 4px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 2px;
+  cursor: pointer;
   &:hover {
-    transition: $background-transition;
-    background-color: rgba(0,0,0,0.1);
+    transition: $outline-transition;
+    outline: #999 auto 1px;
   }
   &:active, &:focus {
-    transition: $background-transition;
-    background-color: rgba(0,0,0,0.2);
+    transition: $background-transition, $outline-transition;
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: $primary auto 5px;
   }
 }
 
