@@ -51,6 +51,7 @@ $responsive-width: 768px;
 
 $transition-duration: 280ms;
 $transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+$main-transition: all $transition-duration $transition-function;
 $shadow-transition: box-shadow $transition-duration $transition-function;
 $background-transition: background-color $transition-duration $transition-function;
 $outline-transition: outline $transition-duration $transition-function;

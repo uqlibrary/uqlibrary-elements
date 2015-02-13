@@ -708,7 +708,11 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #ffffff; }
+    core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
+      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+      outline: 1px solid rgba(255, 255, 255, 0.87); }
 
 @media screen and (min-width: 768px) {
   .responsiveToolbarButton {
@@ -890,7 +894,7 @@ core-drawer-panel [drawer] {
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1), outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #FAFAFA;
   margin-bottom: 8px;
   margin-right: 8px; }
@@ -898,10 +902,8 @@ core-drawer-panel [drawer] {
     transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(255, 255, 255, 0.26); }
   #askLogout:active, #askLogout:focus, #askLogout::shadow:active, #askLogout::shadow:focus {
-    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: 6px;
-    margin-right: 6px;
-    border: 2px solid rgba(255, 255, 255, 0.26); }
+    transition: outline 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: 2px solid rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
@@ -975,7 +977,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px; }
 
 .apps {
-  margin: 8px 8px 0px 8px; }
+  margin: 0 !important; }
 
 #homePage {
   text-align: -moz-center; }
