@@ -731,7 +731,7 @@ paper-dropdown::shadow #scroller {
   margin-bottom: 20px; }
 
 #feedbackCard #feedbackButtons {
-  margin-top: 14px 0; }
+  margin: 20px 0; }
 
 .open {
   color: #38852e !important; }
