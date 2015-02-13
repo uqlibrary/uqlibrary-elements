@@ -557,6 +557,18 @@ uqlibrary-home paper-icon-button.huge #icon {
   width: 100px;
   height: 90px;
   text-align: center;
+  &:hover {
+    transition: $shadow-transition,$background-transition;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: $shadow;
+  }
+  &:active, &:focus {
+    transition: $shadow-transition,$background-transition;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: $shadow;
+  }
 }
 
 //   ____                      _
