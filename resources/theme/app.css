@@ -4,6 +4,11 @@
   font-weight: 200;
   src: url("Roboto-Light.woff") format("woff"); }
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
   font-family: 'Roboto regular';
   font-style: normal;
   font-weight: 400;
@@ -935,8 +940,8 @@ uqlibrary-persistent-footer .footerInfo {
   height: 56px; }
   .icon-button:core-icon {
     margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   .icon-button:hover:core-icon {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
@@ -961,7 +966,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px; }
 
 .apps {
-  margin: 8px 8px 0 34px; }
+  margin: 8px 4px 0 8px; }
 
 #homePage {
   text-align: -moz-center; }
@@ -1393,6 +1398,15 @@ paper-button[disabled] {
   paper-button[disabled].colored {
     background-color: #FAFAFA;
     color: #cccccc; }
+
+paper-icon-button {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%; }
+
+paper-icon-button:hover {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%; }
 
 body {
   font-size: 16px;

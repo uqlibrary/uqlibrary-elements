@@ -515,8 +515,8 @@ uqlibrary-persistent-footer {
   height: 56px;
   &:core-icon {
     margin: 16px;
-    transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform $transition-duration $transition-function;
+    transition: transform $transition-duration $transition-function;
   }
   &:hover {
     &:core-icon {
@@ -548,7 +548,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px;
 }
 .apps {
-  margin: 8px 8px 0 34px;
+  margin: 8px 4px 0 8px;
 }
 #homePage {
   text-align: -moz-center;
