@@ -4,6 +4,11 @@
   font-weight: 200;
   src: url("Roboto-Light.woff") format("woff"); }
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("Roboto-Regular.woff") format("woff"); }
+@font-face {
   font-family: 'Roboto regular';
   font-style: normal;
   font-weight: 400;
