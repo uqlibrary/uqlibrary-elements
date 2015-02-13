@@ -39,8 +39,6 @@ core-menu {
   padding: 8px 0;
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
-//    margin-left: $nav-drawer-icon;
-//    margin-right: $nav-drawer-text;
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
@@ -177,10 +175,8 @@ paper-toast {
 
 // Paper-item should be consistent
 paper-item {
-  transition: $background-transition;
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
   &:hover, &:focus, &:active {
-    transition: $background-transition;
     background-color: $background-primary;
   }
 }
@@ -582,10 +578,6 @@ uqlibrary-home paper-icon-button.huge #icon {
   }
   &:hover {
     outline: #999 auto 1px;
-  }
-  &:active, &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: $primary auto 5px;
   }
 }
 

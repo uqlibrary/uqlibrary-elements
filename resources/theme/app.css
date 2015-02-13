@@ -765,7 +765,6 @@ paper-toast#infoToast {
   max-height: 48px; }
 
 paper-item {
-  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Roboto";
   font-weight: 500;
   font-size: 1em;
@@ -773,7 +772,6 @@ paper-item {
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
   paper-item:hover, paper-item:focus, paper-item:active {
-    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #FAFAFA; }
 
 paper-progress {
@@ -995,9 +993,6 @@ uqlibrary-home paper-icon-button.huge #icon {
     outline: #7b0c9d auto 5px; }
   .app:hover {
     outline: #999 auto 1px; }
-  .app:active, .app:focus {
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: #7b0c9d auto 5px; }
 
 #search {
   margin-left: 8px; }
