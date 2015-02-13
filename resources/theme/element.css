@@ -485,19 +485,18 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: -moz-center; }
 
 .app {
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 100px;
-  height: 90px;
-  text-align: center; }
+  height: 72px;
+  margin: 2px;
+  text-align: center;
+  border-radius: 12px; }
   .app:hover {
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(0, 0, 0, 0.1); }
   .app:active, .app:focus {
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+    transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(0, 0, 0, 0.2); }
 
 #search {
   margin-left: 8px; }

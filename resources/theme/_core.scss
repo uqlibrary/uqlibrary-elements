@@ -554,20 +554,19 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: -moz-center;
 }
 .app {
+  transition: $background-transition;
   width: 100px;
-  height: 90px;
+  height: 72px;
+  margin: 2px;
   text-align: center;
+  border-radius: 12px;
   &:hover {
-    transition: $shadow-transition,$background-transition;
+    transition: $background-transition;
     background-color: rgba(0,0,0,0.1);
-    border-radius: 12px;
-    box-shadow: $shadow;
   }
   &:active, &:focus {
-    transition: $shadow-transition,$background-transition;
+    transition: $background-transition;
     background-color: rgba(0,0,0,0.2);
-    border-radius: 12px;
-    box-shadow: $shadow;
   }
 }
 
