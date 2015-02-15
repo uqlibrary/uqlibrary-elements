@@ -71,12 +71,16 @@ core-toolbar {
   background-color: $dark-primary;
   color: $text-inverse;
   core-icon {
-    transition: $main-transition;
     color: $white;
     &:focus, &:active, &:hover {
-      transition: $main-transition;
-      outline: 1px solid rgba(255, 255, 255, 0.87);
+      outline: 1px solid $hint-text-inverse;
     }
+  }
+}
+
+#toolBarLeftButton {
+  &:focus, &:hover {
+    background-color: $hint-text-inverse;
   }
 }
 
@@ -410,16 +414,13 @@ core-drawer-panel [drawer] {
 }
 // the lock paper-icon-button allowing users to logout
 #askLogout, #askLogout::shadow {
-  transition: $main-transition;
   color: $background-primary;
   margin-bottom: 8px;
   margin-right: 8px;
   &:hover {
-    transition: $main-transition;
     background-color: $hint-text-inverse;
   }
   &:active, &:focus {
-    transition: $main-transition;
     outline: 2px solid $hint-text-inverse;
   }
 }
@@ -567,17 +568,17 @@ uqlibrary-home paper-icon-button.huge #icon {
 .app {
   width: 100px;
   height: 72px;
-  margin: 0px 2px 10px 2px;
+  margin: 0 2px 10px 2px;
   padding-top: 4px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
   [focused] {
     background-color: rgba(0, 0, 0, 0.05);
-    outline: $primary auto 5px;
+    outline: transparentize($primary, 0.5) solid 2px;
   }
   &:hover {
-    outline: #999 auto 1px;
+    background-color: rgba(0, 0, 0, 0.05);
   }
 }
 

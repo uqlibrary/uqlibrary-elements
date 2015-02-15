@@ -221,11 +221,12 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     color: #ffffff; }
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
-      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-      outline: 1px solid rgba(255, 255, 255, 0.87); }
+      outline: 1px solid rgba(255, 255, 255, 0.26); }
+
+#toolBarLeftButton:focus, #toolBarLeftButton:hover {
+  background-color: rgba(255, 255, 255, 0.26); }
 
 @media screen and (min-width: 768px) {
   .responsiveToolbarButton {
@@ -405,15 +406,12 @@ core-drawer-panel [drawer] {
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #FAFAFA;
   margin-bottom: 8px;
   margin-right: 8px; }
   #askLogout:hover, #askLogout::shadow:hover {
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(255, 255, 255, 0.26); }
   #askLogout:active, #askLogout:focus, #askLogout::shadow:active, #askLogout::shadow:focus {
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
     outline: 2px solid rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
@@ -496,16 +494,16 @@ uqlibrary-home paper-icon-button.huge #icon {
 .app {
   width: 100px;
   height: 72px;
-  margin: 0px 2px 10px 2px;
+  margin: 0 2px 10px 2px;
   padding-top: 4px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer; }
   .app [focused] {
     background-color: rgba(0, 0, 0, 0.05);
-    outline: #7b0c9d auto 5px; }
+    outline: rgba(123, 12, 157, 0.5) solid 2px; }
   .app:hover {
-    outline: #999 auto 1px; }
+    background-color: rgba(0, 0, 0, 0.05); }
 
 #search {
   margin-left: 8px; }
