@@ -559,9 +559,6 @@ uqlibrary-home paper-icon-button.huge #icon {
 #booking {
   margin: 16px;
 }
-.apps {
-
-}
 #homePage {
   text-align: -moz-center;
 }
@@ -573,12 +570,15 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
-  [focused] {
-    background-color: rgba(0, 0, 0, 0.05);
-    outline: transparentize($primary, 0.5) solid 2px;
-  }
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
+  }
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: transparentize($primary, 0.5) solid 2px;
+  }
+  &:active {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }
 
