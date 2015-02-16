@@ -489,20 +489,26 @@ uqlibrary-home paper-icon-button.huge #icon {
   text-align: -moz-center; }
 
 .app {
-  width: 100px;
+  width: 90px;
   height: 72px;
   margin: 6px 2px;
   padding-top: 4px;
+  padding-bottom: 90px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer; }
+  .app paper-button {
+    height: 90px; }
+    .app paper-button:hover {
+      background: none; }
+  .app [focused] {
+    background-color: rgba(0, 0, 0, 0.05);
+    outline: rgba(123, 12, 157, 0.5) solid 2px; }
   .app:hover {
     background-color: rgba(0, 0, 0, 0.05); }
-  .app:focus {
-    background-color: rgba(0, 0, 0, 0.1);
-    outline: rgba(123, 12, 157, 0.5) solid 2px; }
-  .app:active {
-    background-color: rgba(0, 0, 0, 0.2); }
+  .app .iconLabel {
+    margin-top: -28px;
+    text-transform: capitalize; }
 
 #search {
   margin-left: 8px; }
