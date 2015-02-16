@@ -560,7 +560,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 16px;
 }
 .apps {
-  margin: 0 !important;
+
 }
 #homePage {
   text-align: -moz-center;
@@ -568,7 +568,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 .app {
   width: 100px;
   height: 72px;
-  margin: 0 2px 10px 2px;
+  margin: 6px 2px;
   padding-top: 4px;
   text-align: center;
   border-radius: 2px;
@@ -603,6 +603,12 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 54px;
   padding-left: 8px;
   transition: 300ms ease-in-out;
+  &:hover {
+    box-shadow: $shadow;
+  }
+  &:active, &:focus {
+    box-shadow: $shadow;
+  }
 }
 #filters {
   top: 56px;

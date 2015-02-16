@@ -972,16 +972,13 @@ uqlibrary-home paper-icon-button.huge #icon {
 #booking {
   margin: 16px; }
 
-.apps {
-  margin: 0 !important; }
-
 #homePage {
   text-align: -moz-center; }
 
 .app {
   width: 100px;
   height: 72px;
-  margin: 0 2px 10px 2px;
+  margin: 6px 2px;
   padding-top: 4px;
   text-align: center;
   border-radius: 2px;
@@ -1006,6 +1003,10 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 54px;
   padding-left: 8px;
   transition: 300ms ease-in-out; }
+  #searchWrapper:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+  #searchWrapper:active, #searchWrapper:focus {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 #filters {
   top: 56px;
