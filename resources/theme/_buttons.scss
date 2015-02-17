@@ -7,7 +7,7 @@ paper-fab {
   &:hover {
     transition: $shadow-transition,$background-transition;
     background-color: $uq-aqua-600;
-    box-shadow: $shadow;
+    box-shadow: $shadow-z-2;
   }
   &.bottom-fixed {
     bottom: $action-button-padding;
@@ -42,12 +42,12 @@ paper-button[raised].colored {
   &:hover {
     transition: $shadow-transition,$background-transition;
     background-color: $button-hover;
-    box-shadow: $shadow;
+    box-shadow: $shadow-z-2;
   }
   &:active {
     transition: $shadow-transition,$background-transition;
     background-color: $button-click;
-    box-shadow: $shadow;
+    box-shadow: $shadow-z-2;
   }
   &:disabled {
     transition: $shadow-transition,$background-transition;
@@ -59,7 +59,7 @@ paper-button[raised] {
   transition: $shadow-transition;
   &:hover {
     transition: $shadow-transition;
-    box-shadow: $shadow;
+    box-shadow: $shadow-z-2;
   }
 }
 

@@ -1040,6 +1040,9 @@ uqlibrary-home paper-icon-button.huge #icon {
 .recent {
   color: #4a075f; }
 
+#autosuggest {
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3); }
+
 .group-label {
   margin-left: 32px; }
 
