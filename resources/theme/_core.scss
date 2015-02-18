@@ -417,11 +417,8 @@ core-drawer-panel [drawer] {
   color: $background-primary;
   margin-bottom: 8px;
   margin-right: 8px;
-  &:hover {
+  &:active, &:focus, &:hover {
     background-color: $hint-text-inverse;
-  }
-  &:active, &:focus {
-    outline: 2px solid $hint-text-inverse;
   }
 }
 //Logout dialog affirmative button colour
@@ -577,12 +574,9 @@ uqlibrary-home paper-icon-button.huge #icon {
       background: none;
     }
   }
-  [focused] {
+  [focused], &:hover, &:focus {
     background-color: rgba(0, 0, 0, 0.05);
-    outline: transparentize($primary, 0.5) solid 2px;
-  }
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none
   }
   .iconLabel {
     margin-top: -28px;

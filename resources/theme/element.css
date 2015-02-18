@@ -411,10 +411,8 @@ core-drawer-panel [drawer] {
   color: #FAFAFA;
   margin-bottom: 8px;
   margin-right: 8px; }
-  #askLogout:hover, #askLogout::shadow:hover {
+  #askLogout:active, #askLogout:focus, #askLogout:hover, #askLogout::shadow:active, #askLogout::shadow:focus, #askLogout::shadow:hover {
     background-color: rgba(255, 255, 255, 0.26); }
-  #askLogout:active, #askLogout:focus, #askLogout::shadow:active, #askLogout::shadow:focus {
-    outline: 2px solid rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
   color: #007e9e; }
@@ -503,11 +501,9 @@ uqlibrary-home paper-icon-button.huge #icon {
     height: 90px; }
     .app paper-button:hover {
       background: none; }
-  .app [focused] {
+  .app [focused], .app:hover, .app:focus {
     background-color: rgba(0, 0, 0, 0.05);
-    outline: rgba(123, 12, 157, 0.5) solid 2px; }
-  .app:hover {
-    background-color: rgba(0, 0, 0, 0.05); }
+    text-decoration: none; }
   .app .iconLabel {
     margin-top: -28px;
     text-transform: capitalize; }
