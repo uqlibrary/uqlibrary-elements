@@ -209,6 +209,8 @@ core-menu {
     background-color: #FAFAFA; }
   core-menu a {
     color: rgba(0, 0, 0, 0.87); }
+    core-menu a:hover {
+      text-decoration: none; }
   core-menu.divider {
     border-bottom: 1px solid #cccccc; }
 
