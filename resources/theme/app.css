@@ -907,7 +907,18 @@ core-drawer-panel [drawer] {
     background-color: rgba(255, 255, 255, 0.26); }
 
 uqlibrary-menu /deep/ [autofocus] {
+  color: #007e9e;
+  text-decoration: none; }
+  uqlibrary-menu /deep/ [autofocus]:hover {
+    text-decoration: none; }
+
+body /deep/ #logoutDialog a {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none; }
+body /deep/ #logoutDialog .colored {
   color: #007e9e; }
+body /deep/ #logoutDialog paper-button:hover {
+  background-color: #FAFAFA; }
 
 uqlibrary-persistent-footer .footerInfo {
   padding: 12px; }

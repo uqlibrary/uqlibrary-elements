@@ -433,6 +433,24 @@ core-drawer-panel [drawer] {
 //Logout dialog affirmative button colour
 uqlibrary-menu /deep/ [autofocus] {
   color: $uq-aqua;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+body /deep/ #logoutDialog {
+  a {
+    color: $text;
+    text-decoration: none;
+  }
+  .colored {
+    color: $uq-aqua;
+  }
+  paper-button{
+    &:hover {
+      background-color: $background-primary;
+    }
+  }
 }
 
 //   ____               _     _             _     _____           _
