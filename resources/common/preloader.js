@@ -1,3 +1,5 @@
+// Uncomment this when developing locally
+// Comment out before committing!
 //document.cookie="UQLMockData=enabled";
 
 function isIE() {
