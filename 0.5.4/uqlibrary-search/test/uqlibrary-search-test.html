@@ -48,7 +48,7 @@
                 if (filterDropDown.offsetParent == null) {
                     searchWrapper.querySelector('#searchIcon').fire('tap');
                     setTimeout(function() {
-                        expect(filterDropDown.offsetParent).to.be.equal(searchWrapper);
+                        expect(filterDropDown.offsetParent).to.be.not.equal(null);
                         done();
                     }, 50);
                 } if (filterDropDown.offsetParent == searchWrapper) {
