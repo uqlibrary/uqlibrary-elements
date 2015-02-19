@@ -35,10 +35,19 @@
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
+  background-color: $background-secondary;
   margin: 0;
   padding: 8px 0;
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
+  }
+  paper-item {
+    &:hover, &:focus, &:active {
+     background-color: $background-primary;
+    }
+  }
+  a {
+    color: $text;
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;

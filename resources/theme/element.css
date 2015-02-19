@@ -200,10 +200,15 @@ h4.inverse {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 core-menu {
+  background-color: #ffffff;
   margin: 0;
   padding: 8px 0; }
   core-menu core-icon {
     margin: -3px 28px -3px -3px; }
+  core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
+    background-color: #FAFAFA; }
+  core-menu a {
+    color: rgba(0, 0, 0, 0.87); }
   core-menu.divider {
     border-bottom: 1px solid #cccccc; }
 
