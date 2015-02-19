@@ -51,9 +51,16 @@ $responsive-width: 768px;
 
 $transition-duration: 280ms;
 $transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+$main-transition: all $transition-duration $transition-function;
 $shadow-transition: box-shadow $transition-duration $transition-function;
 $background-transition: background-color $transition-duration $transition-function;
-$shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+$outline-transition: outline $transition-duration $transition-function;
+$shadow-z-0: none;
+$shadow-z-1: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+$shadow-z-2: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-3: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-4: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-5: 0 27px 55px 0 rgba(0, 0, 0, 0.3);
 
 @mixin material-shadow($level:1){
 // from https://gist.github.com/destan/b9ccfa6243eab53460d2
