@@ -27,7 +27,7 @@
         test('there should be 9 filter types', function(done) {
             setTimeout(function() {
                 // There should be 9 filter options
-                expect(filterDropDown.querySelector('#filterSelector').querySelectorAll('paper-item').length == 9);
+                expect(filterDropDown.querySelector('#filterSelector').querySelectorAll('paper-item').length).to.be.equal(9);
                 done();
             }, 10);
         });
@@ -35,7 +35,7 @@
         test('default placeholder text should be "Search library"', function(done) {
             setTimeout(function() {
                 // There should be 9 filter options
-                expect(searchPlaceholderText == "Search library");
+                expect(searchPlaceholderText).to.be.equal("Search library");
                 done();
             }, 10);
         });
