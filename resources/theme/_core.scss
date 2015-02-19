@@ -48,6 +48,9 @@ core-menu {
   }
   a {
     color: $text;
+    &:hover {
+      text-decoration: none;
+    }
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
