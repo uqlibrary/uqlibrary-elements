@@ -22,6 +22,7 @@
     "uqlibrary-api": "uqlibrary/uqlibrary-api#<branch>",
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#<branch>",
     "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#<branch>",
+    "uqlibrary-a11y-link": "uqlibrary/uqlibrary-a11y-link#<branch>",
     "md-timepicker": "uqlibrary/md-timepicker#<branch>",
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4"
   }

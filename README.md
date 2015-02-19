@@ -138,6 +138,54 @@ To use mock data set cookie value UQLMockData to enabled (cookie values are stri
 
 See the styling example here: [styles.html](https://uqlibrary.github.io/uqlibrary-elements/components/uqlibrary-elements/styles.html)
 
+### Accessibility Guidelines
+
+Keyboard navigation issues and resolutions
+* use on-click (on-tap is a gesture/mouse-only only, in Polymer v0.8 it might be fixed
+* keyboard navigation with TAB (Option+TAB for Safari) is applicable only to links and form elements
+* any items with an action need to have a link for keyboard navigation
+    
+```sh
+  <!-- use on-click event on the container  -->
+  <div class="content" on-click="{{ itemSelected }}" data-item-id="2">
+    <!-- add a link for keyboard navigation, link is void and event is processed by on-click -->
+    <div class="line1"><a href="javascript:;">Pharmaceutics : the science of dosage form design</a></div>
+    <div class="line2">Barcode: 34067027831923</div>
+    <div class="line3">Call Number: Q222 .T83 1990</div>
+  </div>
+``` 
+* paper-item, paper-tab, etc are not keyboard accessible, as a solution use core-a11y-keys with link, example:
+   
+```sh
+  <!-- keyboard events will be applied to tab -->
+  <core-a11y-keys id="a11yFinesTab" 
+    target="{{$.finesTab}}" 
+    keys="enter space" 
+    on-keys-pressed="{{tabFinesSelected}}"></core-a11y-keys>
+  
+  <paper-tab name="fines" id="finesTab">
+    <!-- adding a link makes a tab accessible via key board -->
+    <a href="javascript:;" layout vertical center>Overdue Charges</a>
+  </paper-tab>
+```
+
+* for dynamically created clickable items (eg paper-tabs, clickable lists) use uqlibrary-a11y-link (since those can't be bound to a core-a11y-key dynamically)
+
+```sh
+<paper-tabs id="tabs" selected="{{ selectedTab }}" on-core-select="{{ tabSelected }}">
+  <template repeat="{{ processedCourses as course }}">
+  <!-- dynamically created tab -->
+    <paper-tab name="{{ course.courseId }}" id="course{{course.courseId}}">
+      <div class="menu">
+        <!-- include uqlibrary-a11y-link to make paper-tab keyboard navigable -->
+        <uqlibrary-a11y-link>{{ course.SUBJECT }}</uqlibrary-a11y-link>
+      </div>
+    </paper-tab>
+  </template>
+</paper-tabs>
+```
+
+
 ### Styling Implementation Guidelines
 
 1. Seperate elements use elements.css from uqlibrary-elements/resources/theme (e.g. uqlibrary-persistent-footer)
