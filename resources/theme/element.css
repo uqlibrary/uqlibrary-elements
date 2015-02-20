@@ -196,6 +196,13 @@ h4.inverse {
   text-decoration: none;
   color: rgba(0, 126, 158, 0.87); }
 
+h1#toolbar-page-title {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
 * {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
