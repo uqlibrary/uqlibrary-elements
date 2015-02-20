@@ -693,6 +693,11 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
     width: 24px;
     height: 24px; }
 
+#expandLibraryList, #expandLibraryList::shadow {
+  padding: 0px; }
+  #expandLibraryList:active, #expandLibraryList:focus, #expandLibraryList:hover, #expandLibraryList::shadow:active, #expandLibraryList::shadow:focus, #expandLibraryList::shadow:hover {
+    background-color: rgba(0, 0, 0, 0.26); }
+
 #availability {
   margin-top: 8px;
   padding: 16px; }

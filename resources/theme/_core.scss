@@ -890,6 +890,14 @@ uqlibrary-fines {
 //
 //// UQ My Library Computers app
 
+#expandLibraryList, #expandLibraryList::shadow {
+  padding: 0px;
+
+  &:active, &:focus, &:hover {
+    background-color: $hint-text;
+  }
+}
+
 #availability {
   margin-top: $list-item-gap;
   padding: $text-padding;
