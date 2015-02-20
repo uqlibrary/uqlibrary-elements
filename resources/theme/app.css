@@ -221,6 +221,13 @@ h4.inverse {
   text-decoration: none;
   color: rgba(0, 126, 158, 0.87); }
 
+h1#toolbar-page-title {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.1em;
+  color: rgba(255, 255, 255, 0.87); }
+
 .single-line-list {
   list-style-type: none;
   margin: 0;
@@ -1179,6 +1186,11 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
   .attentionIcon paper-icon {
     width: 24px;
     height: 24px; }
+
+#expandLibraryList, #expandLibraryList::shadow {
+  padding: 0px; }
+  #expandLibraryList:active, #expandLibraryList:focus, #expandLibraryList:hover, #expandLibraryList::shadow:active, #expandLibraryList::shadow:focus, #expandLibraryList::shadow:hover {
+    background-color: rgba(0, 0, 0, 0.26); }
 
 #availability {
   margin-top: 8px;
