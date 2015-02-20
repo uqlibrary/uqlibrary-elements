@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-collapse/core-collapse.html">
+
 <script src="../moment/min/moment.min.js"></script>
 
 <!--
@@ -36,24 +37,51 @@ Element providing a simple timeline.
 <polymer-element name="uqlibrary-timeline" attributes="events noEventsMessage">
 
   <template>
+
+    <style>
+      :host,
+      :host *,
+      ::content * {
+        box-sizing: border-box;
+        outline: none; }
+
+      .event-item {
+        transition: opacity 2000ms; }
+
+      .event-item-hidden {
+        opacity: 0; }
+
+      a:focus,
+      .list-item:focus,
+      .line1:focus {
+        text-decoration: underline;
+      }
+
+    </style>
+
     <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
 
     <div class="text-container text-center caption" hidden?="{{processedEvents.length > 0}}"> {{ noEventsMessage }} </div>
-
     <ul id="timeline" class="three-line-icon-list">
       <li class="gap"></li>
       <template repeat="{{event, idx in processedEvents}}">
         <template if="{{!event.isDivider}}">
           <core-collapse opened="{{event.opened}}">
+
             <li class="list-item timeline" id="event-{{event.id}}">
+
               <div class="date">
-                <div class="title">{{event.day}}</div>
-                <div class="caption">{{event.dayText}}</div>
+                <div class="caption dayOfWeek">{{event.dayText}}</div>
+                <div class="title dayOfMonth">{{event.day}}</div>
+                <div class="caption month">{{event.monthText}}</div>
               </div>
-              <div class="content" on-tap="{{eventSelected}}" data-event-id="{{event.id}}">
-                <div class="line1">{{event.title}}</div>
+              <div class="content" on-click="{{eventSelected}}" data-event-id="{{event.id}}" role="link">
+                <div class="line1">
+                  <a href="{{javascriptPlaceholder}}">{{event.title}}</a>
+                </div>
                 <div class="line2">{{event.subtitle}}</div>
                 <div class="line3">{{event.timeText}}</div>
+
               </div>
             </li>
           </core-collapse>
@@ -85,6 +113,7 @@ Element providing a simple timeline.
          */
 
         noEventsMessage : 'You do not have any bookings scheduled',
+        javascriptPlaceholder: 'javascript:;', //disable javascript
 
         created: function () {
           this.events = [];
@@ -97,9 +126,11 @@ Element providing a simple timeline.
          * @event event-selected
          */
         eventSelected: function(event, data, source) {
-          var eventId = source.getAttribute('data-event-id');
-          var selectedEvent = this.events.filter(function(event){ return event.id == eventId; });
-          this.fire('event-selected', selectedEvent.length ? selectedEvent[0] : undefined);
+            var eventId = source.getAttribute('data-event-id');
+            var selectedEvent = this.events.filter(function (event) {
+              return event.id == eventId;
+            });
+            this.fire('event-selected', selectedEvent.length ? selectedEvent[0] : undefined);
         },
 
         processedEventsChanged: function (changeValue) {
@@ -156,6 +187,7 @@ Element providing a simple timeline.
 
             events[i].day = events[i].startDate.getDate();
             events[i].dayText = moment(events[i].startDate).format('ddd');
+            events[i].monthText = moment(events[i].startDate).format('MMM');
 
             var startFormat = moment(events[i].startDate).format('a') == moment(events[i].endDate).format('a') ? 'h:mm' : 'h:mm a';
             events[i].timeText = moment(events[i].startDate).format(startFormat) + " - " + moment(events[i].endDate).format('h:mm a');
@@ -174,6 +206,7 @@ Element providing a simple timeline.
                     && events[i].startDate.getDate() === events[(i-1)].startDate.getDate()) {
               events[i].day = '';
               events[i].dayText = '';
+              events[i].monthText = '';
             }
 
             //insert divider between past and upcoming

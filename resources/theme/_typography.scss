@@ -106,6 +106,9 @@ $_gmd-type-styles: (
 
 a {
   @include gmd-type-style(link, gmd-alpha-color($uq-aqua, opaque));
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
 }
 
 .inverse a {

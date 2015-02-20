@@ -35,6 +35,8 @@
     window.addEventListener('polymer-ready', function() {
       var menuLoadedEventListeners = [];
       var menu = document.querySelector('uqlibrary-menu');
+        var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
+
 
       var localAccount = {
         "id": "s1234567",
@@ -97,7 +99,7 @@
             "STRM":"6520"
           }
         ]
-      }
+      };
       menu.addEventListener('uqlibrary-api-account-loaded', function(e) {
         menu.account = e.detail;
       });
@@ -116,6 +118,23 @@
           }
         });
 
+
+        test('constructs proper url', function(done) {
+
+          //constructs url
+          var coursesURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','courses');
+          expect(coursesURL).to.be.equal('http://app.library.uq.edu.au/v1/courses/');
+
+          var demoURL = menu.constructURL('http://app.library.uq.edu.au/v1/courses/demo.html','booking');
+          expect(demoURL).to.be.equal('http://app.library.uq.edu.au/v1/booking/demo.html');
+
+          var absoluteURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','http://library.uq.edu.au');
+          expect(absoluteURL).to.be.equal('http://library.uq.edu.au');
+
+          done();
+
+        });
+
         describe('menu-items-unit', function () {
 
           it('should have a menu user with a details set', function (done) {
@@ -125,12 +144,54 @@
                 checkMenu(menu);
                 done();
               }, 1000);
-            }
+            };
             menu.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
             menuLoadedEventListeners.push(menuLoadListener);
             menu.fire('uqlibrary-api-account-loaded', localAccount);
           });
         });
+
+          test('menu structure is correct and contains user name and email', function(done) {
+              setTimeout(function () {
+                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#name').innerText).to.not.equal("");
+                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#mail').innerText).to.not.equal("");
+                  done();
+              }, 1000);
+          });
+
+          test('menu structure is correct and contains logout button', function(done) {
+              setTimeout(function () {
+                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('paper-icon-button').title).to.be.equal("Logout");
+                  done();
+              }, 1000);
+          });
+
+          test('menu list of links are present', function(done) {
+              setTimeout(function () {
+                  expect(menuLinks.length).to.be.at.least(1);
+                  done();
+              }, 1000);
+          });
+
+          test('menu links are not null and accessible', function(done) {
+              setTimeout(function () {
+                  var numMenuLinks = 0;
+                  while (numMenuLinks < menuLinks.length) {
+                      var listOfLinks = menuLinks[numMenuLinks].querySelectorAll('paper-item');
+                      var numListsOfLinks = 0;
+                      while (numListsOfLinks < listOfLinks.length) {
+                          listOfLinks[numListsOfLinks].querySelector('core-icon');
+                          expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.have.property('alt');
+                          expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.not.equal("");
+                          numListsOfLinks++;
+                      }
+                      numMenuLinks++;
+                  }
+                  done();
+              }, 1000);
+          });
+
+
       });
 
     });

@@ -35,12 +35,22 @@
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
+  background-color: $background-secondary;
   margin: 0;
   padding: 8px 0;
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
-//    margin-left: $nav-drawer-icon;
-//    margin-right: $nav-drawer-text;
+  }
+  paper-item {
+    &:hover, &:focus, &:active {
+     background-color: $background-primary;
+    }
+  }
+  a {
+    color: $text;
+    &:hover {
+      text-decoration: none;
+    }
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
@@ -74,6 +84,15 @@ core-toolbar {
   color: $text-inverse;
   core-icon {
     color: $white;
+    &:focus, &:active, &:hover {
+      outline: 1px solid $hint-text-inverse;
+    }
+  }
+}
+
+#toolBarLeftButton {
+  &:focus, &:hover {
+    background-color: $hint-text-inverse;
   }
 }
 
@@ -173,6 +192,9 @@ paper-toast {
 // Paper-item should be consistent
 paper-item {
   @include gmd-type-style(menu, gmd-alpha-color($black, text));
+  &:hover, &:focus, &:active {
+    background-color: $background-primary;
+  }
 }
 
 
@@ -349,10 +371,6 @@ paper-slider {
 //  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
 //
 // Drawer panel background colour and border (includes non chrome compatibility)
-.drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
 core-drawer-panel [drawer] {
   background-color: $background-secondary;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -411,10 +429,31 @@ core-drawer-panel [drawer] {
   color: $background-primary;
   margin-bottom: 8px;
   margin-right: 8px;
+  &:active, &:focus, &:hover {
+    background-color: $hint-text-inverse;
+  }
 }
 //Logout dialog affirmative button colour
 uqlibrary-menu /deep/ [autofocus] {
   color: $uq-aqua;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+body /deep/ #logoutDialog {
+  a {
+    color: $text;
+    text-decoration: none;
+  }
+  .colored {
+    color: $uq-aqua;
+  }
+  paper-button{
+    &:hover {
+      background-color: $background-primary;
+    }
+  }
 }
 
 //   ____               _     _             _     _____           _
@@ -538,7 +577,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   margin: 0;
   text-align: center;
   color: $secondary-text;
-  font-size: $body1-size-font-device;
+  font-size: $body2-size-font-desktop;
 }
 
 #masquerade {
@@ -547,16 +586,32 @@ uqlibrary-home paper-icon-button.huge #icon {
 #booking {
   margin: 16px;
 }
-.apps {
-  margin: 8px 4px 0 8px;
-}
 #homePage {
   text-align: -moz-center;
 }
 .app {
-  width: 100px;
-  height: 90px;
+  width: 90px;
+  height: 72px;
+  margin: 6px 2px;
+  padding-top: 4px;
+  padding-bottom: 90px;
   text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  paper-button {
+    height: 90px;
+    &:hover {
+      background: none;
+    }
+  }
+  [focused], &:hover, &:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none
+  }
+  .iconLabel {
+    margin-top: -28px;
+    text-transform: capitalize;
+  }
 }
 
 //   ____                      _
@@ -580,6 +635,12 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 54px;
   padding-left: 8px;
   transition: 300ms ease-in-out;
+  &:hover {
+    box-shadow: $shadow-z-2;
+  }
+  &:active, &:focus {
+    box-shadow: $shadow-z-2;
+  }
 }
 #filters {
   top: 56px;
@@ -608,6 +669,9 @@ uqlibrary-home paper-icon-button.huge #icon {
 }
 .recent {
   color: $primary-700;
+}
+#autosuggest {
+  box-shadow: $shadow-z-3;
 }
 
 //   ____              _    _
@@ -934,7 +998,7 @@ paper-dropdown::shadow #scroller {
   margin-bottom: 20px;
 }
 #feedbackCard #feedbackButtons {
-  margin-top: 24px;
+  margin: 20px 0;
 }
 
 //   _   _

@@ -1,3 +1,7 @@
+// Uncomment this when developing locally
+// Comment out before committing!
+//document.cookie="UQLMockData=enabled";
+
 function isIE() {
   var myNav = navigator.userAgent.toLowerCase();
   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
