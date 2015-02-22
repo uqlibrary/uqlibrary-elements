@@ -29,11 +29,19 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
+<<<<<<< HEAD
   "_release": "1dc0b4daa6",
   "_resolution": {
     "type": "branch",
     "branch": "uat",
     "commit": "1dc0b4daa6d8b7d22d5032b1398b217720cb007d"
+=======
+  "_release": "2b6add70b6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2b6add70b665214c798999a4a3886c540c11e437"
+>>>>>>> master
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
   "_target": "uat",
