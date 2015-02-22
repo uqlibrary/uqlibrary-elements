@@ -1,0 +1,36 @@
+[
+  {
+    "title": "MGTS2961",
+    "course_title": "Working with Groups & Teams",
+    "reading_lists": [
+      {
+        "title": "MGTS2961 Gatton",
+        "campus": "Gatton",
+        "url": "http://lr.library.uq.edu.au/lists/EF37D3F6-5FEA-0B4F-FC9D-72DA22D242FB",
+        "period": "Semester 1 2015"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1303/2013_3_MGTS2961.pdf",
+        "period": "Semester 3 2013",
+        "course": "MGTS2961"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_MGTS2961.pdf",
+        "period": "Semester 1 2013",
+        "course": "MGTS2961"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201/2012_1_MGTS2961.pdf",
+        "period": "Semester 1 2012",
+        "course": "MGTS2961"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101/mgts2961_gatie.pdf",
+        "period": "Semester 1 2011",
+        "course": "MGTS2961"
+      }
+    ]
+  }
+]

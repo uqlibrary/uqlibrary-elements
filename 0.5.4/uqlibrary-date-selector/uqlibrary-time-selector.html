@@ -1,0 +1,139 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../core-animation/core-animation.html">
+
+<script src="../moment/min/moment.min.js"></script>
+<!--
+Element provides slide-show display for paper checkboxes, touch enabled
+
+##### Example
+
+    <uqlibrary-time-selector></uqlibrary-time-selector>
+     <script>
+      (function () {
+
+        window.addEventListener('polymer-ready', function() {
+            var time_selector = document.querySelector('uqlibrary-time-selector');
+
+            time_selector.maxBookingLength = 4;
+            time_selector.timeslots = [
+                {
+                    startTime : new Date(Fri Nov 21 2014 00:00:00 GMT+1000 (AEST)),
+                    endTime : new Date(Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)),
+                    selectable: true,
+                    selected: false
+                },
+                {
+                    startTime : new Date(Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)),
+                    endTime : new Date(Fri Nov 21 2014 01:00:00 GMT+1000 (AEST)),
+                    selectable: true,
+                    selected: false
+                }
+            ];
+            }());
+    </script>
+
+@element uqlibrary-time-selector
+@blurb Element provides display of time slots, indicating available and busy time slots, with ability to select time slots
+@status alpha
+@homepage http://uqlibrary.github.io/uqlibrary-date-selector
+-->
+
+<polymer-element name="uqlibrary-time-selector" attributes="bookingTimeslots maxBookingLength">
+
+  <template>
+
+      <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+
+    <div class="items">
+      <template repeat="{{timeslot, index in bookingTimeslots}}">
+
+        <paper-button
+                id="timeslot{{index}}"
+                class="item selected-{{ timeslot.selected }} occupied-{{ !timeslot.selectable }}"
+                disabled?="{{!timeslot.selectable}}"
+                aria-disabled?="{{!timeslot.selectable}}"
+                data-index="{{index}}"
+                on-click="{{timeslotChanged}}">
+
+          {{ timeslot.startTime | formatTime }}
+
+        </paper-button>
+
+      </template>
+    </div>
+  </template>
+
+  <script>
+
+    Polymer({
+
+    /**
+     * The `bookingTimeslots` attribute is a sorted array of objects - time slots to display
+     *
+     * @property bookingTimeslots
+     * @type array
+     */
+
+    /**
+     * The `maxBookingLength` attribute is an int - indicates maximum number of time slots per booking
+     *
+     * @property maxBookingLength
+     * @type Int
+     */
+
+      formatTime : function (timeslotValue) {
+        return moment(timeslotValue).format("hh:mm a");
+      },
+     
+      created: function() {
+        this.bookingTimeslots = [];
+        this.maxBookingLength = 0;
+      },
+
+      ready: function() {
+      },
+
+      timeslotChanged : function (event, data, source) {
+        var selectedIndex = source.attributes["data-index"].value;
+
+        if (this.isTimeslotChangeValid(selectedIndex)) {
+          this.bookingTimeslots[selectedIndex].selected = !this.bookingTimeslots[selectedIndex].selected;
+          this.fire('time-selector-changed', { bookingTimeslots: this.bookingTimeslots, changedIndex: selectedIndex });
+        }
+      },
+
+      isTimeslotChangeValid : function (index) {
+        index = parseInt(index);
+        var currentTimeslot = this.bookingTimeslots[index];
+
+        var prevTimeslot = index > 0 ? this.bookingTimeslots[index - 1] : null;
+        var nextTimeslot = (index + 1) < this.bookingTimeslots.length ? this.bookingTimeslots[index + 1] : null;
+
+        // get currently selected elements
+        var selectedTimeslots = this.bookingTimeslots.filter(function(item) {
+          return item.selected;
+        });
+
+        if (!currentTimeslot.selectable) {
+          //cannot select or deselect unavailable time slots
+          return false;
+        } else if (selectedTimeslots.length == 0) {
+          // valid if first timeslot selected
+          return true;
+        } else if (this.bookingTimeslots[index].selected) {
+          // valid if current timeslot is deselected not from the middle of selection
+          return !(prevTimeslot && prevTimeslot.selected && nextTimeslot && nextTimeslot.selected);
+        } else if ((prevTimeslot && prevTimeslot.selected) || (nextTimeslot && nextTimeslot.selected)) {
+          // valid if selected time slot is next to previously selected time slots
+          // valid if total number of timeslots selections does not exceed max booking length
+          return this.maxBookingLength == 0 || (selectedTimeslots.length + 1) <= this.maxBookingLength;
+        }
+
+        return false;
+      }
+    });
+
+  </script>
+
+</polymer-element>

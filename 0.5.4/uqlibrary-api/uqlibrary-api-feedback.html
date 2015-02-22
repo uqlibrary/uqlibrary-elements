@@ -1,0 +1,67 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing functionality to post library feedback to the servers.
+
+##### Example
+
+    <uqlibrary-api-feedback></uqlibrary-api-feedback>
+
+@element uqlibrary-api-feedback
+@blurb Element providing functionality post library feedback to the servers
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-feedback" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="feedback" uri="/feedback" auto="false"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-feedback', {
+
+        baseUri : '/feedback',
+
+        created: function () {
+        },
+
+        /**
+         * Fired when response has been received from server
+         *
+         * @event uqlibrary-api-feedback-executed
+         */
+        ready: function () {
+          var that = this;
+          this.$.feedback.addEventListener('uqlibrary-api', function(e) {
+            that.fire('uqlibrary-api-feedback-executed', e.detail);
+          });
+        },
+
+        /**
+         * Send a new piece of feedback
+         * args is not optional parameter, contains feedback details
+         *  args = {
+         *    feedback: {
+         *     subject	: '',
+         *     comment : ''
+         *     }
+         *    }
+         * @method post
+         */
+        post: function (args) {
+          if (args && args.feedback) {
+            this.$.feedback.uri = this.baseUri;
+            this.$.feedback.method = "POST";
+            this.$.feedback.get({ body : args.feedback });
+            }
+          }
+
+      });
+    })();
+  </script>
+
+</polymer-element>
