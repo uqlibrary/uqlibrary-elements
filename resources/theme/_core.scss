@@ -941,6 +941,9 @@ paper-dropdown::shadow #scroller {
   margin: $list-item-gap;
   transition: 300ms ease-in-out;
   padding: 6px;
+  &:hover {
+    box-shadow: $shadow-z-2;
+  }
 }
 
 .availability-item {

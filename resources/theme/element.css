@@ -740,6 +740,8 @@ paper-dropdown::shadow #scroller {
   margin: 8px;
   transition: 300ms ease-in-out;
   padding: 6px; }
+  #branchWrapper:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 .availability-item {
   border-bottom: 1px solid #F5F5F5;
@@ -1315,6 +1317,8 @@ paper-button {
 paper-button[autofocus] {
   color: #007e9e !important; }
 
+paper-button a:hover {
+  text-decoration: none; }
 paper-button .colored:hover {
   background: #FAFAFA !important; }
 

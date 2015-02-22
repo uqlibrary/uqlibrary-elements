@@ -36,6 +36,11 @@ paper-button[autofocus] {
 }
 
 paper-button {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .colored {
     &:hover {
       background: $background-primary !important;
