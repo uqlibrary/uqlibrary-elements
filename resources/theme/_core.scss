@@ -445,13 +445,20 @@ body /deep/ #logoutDialog {
   a {
     color: $text;
     text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
   .colored {
     color: $uq-aqua;
+    &:hover {
+      text-decoration: none;
+    }
   }
   paper-button{
     &:hover {
       background-color: $background-primary;
+      text-decoration: none;
     }
   }
 }
@@ -589,6 +596,10 @@ uqlibrary-home paper-icon-button.huge #icon {
 #homePage {
   text-align: -moz-center;
 }
+#apps {
+  margin-left: 12px;
+  margin-top: -8px;
+}
 .app {
   width: 90px;
   height: 72px;
@@ -646,6 +657,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   top: 56px;
   width:100%;
   left: 0!important;
+  box-shadow: $shadow-z-2;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
