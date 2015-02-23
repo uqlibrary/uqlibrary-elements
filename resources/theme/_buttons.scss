@@ -35,31 +35,39 @@ paper-button[autofocus] {
     color: $button !important;
 }
 
-paper-button[raised].colored {
-  transition: $shadow-transition,$background-transition;
-  background: $button;
-  color: $background-secondary;
-  &:hover {
-    transition: $shadow-transition,$background-transition;
-    background-color: $button-hover;
-    box-shadow: $shadow-z-2;
+paper-button {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
   }
-  &:active {
-    transition: $shadow-transition,$background-transition;
-    background-color: $button-click;
-    box-shadow: $shadow-z-2;
-  }
-  &:disabled {
-    transition: $shadow-transition,$background-transition;
-    color: $uq-divider;
+  .colored {
+    &:hover {
+      background: $background-primary !important;
+    }
   }
 }
 
 paper-button[raised] {
   transition: $shadow-transition;
-  &:hover {
-    transition: $shadow-transition;
-    box-shadow: $shadow-z-2;
+  .colored {
+    transition: $shadow-transition, $background-transition;
+    background: $button;
+    color: $background-secondary;
+    &:hover {
+      transition: $shadow-transition, $background-transition;
+      background-color: $button-hover;
+      box-shadow: $shadow-z-2;
+    }
+    &:active {
+      transition: $shadow-transition, $background-transition;
+      background-color: $button-click;
+      box-shadow: $shadow-z-2;
+    }
+    &:disabled {
+      transition: $shadow-transition, $background-transition;
+      color: $uq-divider;
+    }
   }
 }
 

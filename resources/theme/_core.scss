@@ -48,6 +48,9 @@ core-menu {
   }
   a {
     color: $text;
+    &:hover {
+      text-decoration: none;
+    }
   }
   &.divider {
     border-bottom: 1px solid $uq-divider;
@@ -442,13 +445,20 @@ body /deep/ #logoutDialog {
   a {
     color: $text;
     text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
   }
   .colored {
     color: $uq-aqua;
+    &:hover {
+      text-decoration: none;
+    }
   }
   paper-button{
     &:hover {
       background-color: $background-primary;
+      text-decoration: none;
     }
   }
 }
@@ -586,6 +596,10 @@ uqlibrary-home paper-icon-button.huge #icon {
 #homePage {
   text-align: -moz-center;
 }
+#apps {
+  margin-left: 12px;
+  margin-top: -8px;
+}
 .app {
   width: 90px;
   height: 72px;
@@ -643,6 +657,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   top: 56px;
   width:100%;
   left: 0!important;
+  box-shadow: $shadow-z-2;
   paper-item {
     padding-left: 0;
     border-bottom: 1px solid $divider;
@@ -887,6 +902,14 @@ uqlibrary-fines {
 //
 //// UQ My Library Computers app
 
+#expandLibraryList, #expandLibraryList::shadow {
+  padding: 0px;
+
+  &:active, &:focus, &:hover {
+    background-color: $hint-text;
+  }
+}
+
 #availability {
   margin-top: $list-item-gap;
   padding: $text-padding;
@@ -918,6 +941,9 @@ paper-dropdown::shadow #scroller {
   margin: $list-item-gap;
   transition: 300ms ease-in-out;
   padding: 6px;
+  &:hover {
+    box-shadow: $shadow-z-2;
+  }
 }
 
 .availability-item {
