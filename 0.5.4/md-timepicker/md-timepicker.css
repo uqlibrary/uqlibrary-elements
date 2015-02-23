@@ -74,7 +74,11 @@
     font-size: 14px;
 }
 #done_button{
+<<<<<<< HEAD
     color: #4285f4;
+=======
+    color: #007e9e;
+>>>>>>> master
 }
 #done_button,
 #clear_button,
