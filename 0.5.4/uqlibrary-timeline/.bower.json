@@ -17,24 +17,13 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-<<<<<<< HEAD
-  "_release": "4929e0598c",
+  "_release": "62f4e5ace0",
   "_resolution": {
     "type": "branch",
-    "branch": "uat",
-    "commit": "4929e0598cd289c8d5d825f294ec66ddbddcf512"
+    "branch": "staging",
+    "commit": "62f4e5ace0cc5b44656a581c04adf2a0bc903c1b"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-timeline.git",
-  "_target": "uat",
-=======
-  "_release": "44dd34c395",
-  "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "44dd34c395009f132b222c1d979a9b33650a425a"
-  },
-  "_source": "git://github.com/uqlibrary/uqlibrary-timeline.git",
-  "_target": "master",
->>>>>>> master
+  "_target": "staging",
   "_originalSource": "uqlibrary/uqlibrary-timeline"
 }
