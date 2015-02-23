@@ -1,0 +1,37 @@
+[
+  {
+    "title": "LAWS5215",
+    "course_title": "Civil Procedure",
+    "reading_lists": [
+      {
+        "title": "LAWS5215 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/5AF88C5C-2F4D-26AA-88E1-83BFBB0843FA",
+        "period": "Semester 1 2015"
+      },
+      {
+        "title": "LAWS5215 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/C59C445F-8726-5A06-694A-82C7D6607F7F",
+        "period": "Summer 2014/15"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_LAWS5215.pdf",
+        "period": "Semester 1 2013",
+        "course": "LAWS5215"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201/2012_1_LAWS5215.pdf",
+        "period": "Semester 1 2012",
+        "course": "LAWS5215"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101/laws5215_st.pdf",
+        "period": "Semester 1 2011",
+        "course": "LAWS5215"
+      }
+    ]
+  }
+]

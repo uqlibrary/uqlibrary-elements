@@ -1,0 +1,141 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-icons/maps-icons.html">
+<link rel="import" href="../core-icons/hardware-icons.html">
+<link rel="import" href="../core-icons/social-icons.html">
+<link rel="import" href="../core-icons/communication-icons.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-label/core-label.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input-decorator.html">
+<link rel="import" href="../paper-input/paper-autogrow-textarea.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-dialog/paper-action-dialog.html">
+<link rel="import" href="../uqlibrary-ga/uqlibrary-ga.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<!--
+Element providing the library main navigation menu using a responsive drawer panel
+
+##### Example
+
+    <uqlibrary-menu></uqlibrary-menu>
+
+@element uqlibrary-menu
+@blurb Element providing the library main navigation menu using a responsive drawer panel. Width of drawer should be screen width - app bar height (max-width = 400dp) (source: http://www.google.com/design/spec/layout/structure.html#structure-side-nav)
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-menu
+-->
+<polymer-element name="uqlibrary-menu" attributes="account" role=”navigation”>
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <uqlibrary-api-feedback id="feedbackApi"></uqlibrary-api-feedback>
+    <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
+    <template if="{{account.hasSession}}">
+      <div id="account">
+        <div id="gradient" reverse horizontal layout end flex>
+            <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
+          <paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+          <div id="details" flex>
+            <div id="name" class="body2 inverse">{{account.name}}</div>
+            <div id="mail" class="body1 inverse">{{account.mail}}</div>
+          </div>
+        </div>
+      </div>
+
+      <core-menu selectedAttribute="" class="divider">
+        <paper-item on-tap="{{go}}" link="home" id="MyLibrary">
+            <core-icon alt="Return to My Library" icon="dashboard"></core-icon> <a href="{{ '../home' }}">My Library</a>
+        </paper-item>
+        <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome">
+            <core-icon alt="Return to UQ Library Home" icon="home"></core-icon> <a href="https://www.library.uq.edu.au">UQ Library Home</a>
+        </paper-item>
+      </core-menu>
+    </template>
+
+    <core-menu selectedAttribute="">
+      <paper-item on-tap="{{go}}" link="booking" id="showBookingsPage">
+          <core-icon alt="View or manage my library bookings" icon="event"></core-icon> <a href="{{ '../booking' }}">Booking</a>
+      </paper-item>
+      <paper-item on-tap="{{go}}" link="borrowing" id="showLoansPage">
+          <core-icon alt="View or manage my library loans, holds, and fines" icon="maps:local-library"></core-icon><a href="{{ '../borrowing' }}">Borrowing</a>
+      </paper-item>
+      <paper-item on-tap="{{go}}" link="computers" id="showAvailabilityPage">
+          <core-icon alt="View my library computer availability" icon="hardware:desktop-mac"></core-icon> <a href="{{ '../computers' }}">Computers</a></paper-item>
+      <template if="{{account.classes.length}}">
+        <paper-item on-tap="{{go}}" link="courses" id="showCoursesPage">
+            <core-icon alt="View my library course learning resources" icon="social:school"></core-icon> <a href="{{ '../courses' }}">Courses</a>
+        </paper-item>
+      </template>
+      <paper-item on-tap="{{go}}" link="feedback">
+          <core-icon alt="Leave feedback for my library" icon="communication:comment"></core-icon> <a href="{{ '../feedback' }}">Feedback</a>
+      </paper-item>
+      <paper-item on-tap="{{go}}" link="hours"  id="showHoursPage">
+          <core-icon alt="View my library opening hours" icon="schedule"></core-icon> <a href="{{ '../hours' }}">Hours</a>
+      </paper-item>
+    </core-menu>
+
+    <!--Logout dialog-->
+    <!--Prevents users from accidentally logging out-->
+
+    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+      <p>Are you sure you want to log out?</p>
+      <p>This will log you out of all your UQ website sessions.</p>
+      <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
+      <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
+    </paper-action-dialog>
+
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-menu', {
+
+        created: function () {
+          this.account = {
+            hasSession: false
+          };
+        },
+
+        ready: function () {
+        },
+
+        toggleLogout: function (e) {
+            console.log(e);
+          this.$.logoutDialog.toggle();
+        },
+
+        constructURL: function(currentURL, nextURL) {
+          if (nextURL.indexOf('http') < 0) {
+            //if path is relative, update current path
+            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
+            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
+          }
+          return nextURL;
+        },
+
+        go: function (e, _, el) {
+          var _id = el.getAttribute('id');
+          if(_id) {
+            this.$.ga.addEvent('Menu Item Clicked', _id);
+          }
+
+          document.location.href = this.constructURL(document.URL,el.attributes.link.value);
+        },
+
+        linkClicked: function(e, detail, sender) {
+          var _id = sender.getAttribute('id');
+          if(_id) {
+            this.$.ga.addEvent('Link Clicked', _id);
+          }
+        }
+
+      });
+    })();
+  </script>
+
+</polymer-element>

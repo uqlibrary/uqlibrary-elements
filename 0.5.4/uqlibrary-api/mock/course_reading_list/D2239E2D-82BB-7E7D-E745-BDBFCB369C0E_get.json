@@ -1,0 +1,58 @@
+  [
+    {
+      "referenceType": "Book",
+      "title": "Guide to networking essentials",
+      "importance": "Recommended",
+      "author": "Tomsho, Greg; Tittel, Ed; Johnson, David",
+      "publisher": "Thomson Course Technology",
+      "year": "c2007",
+      "placePublished": "Boston, Mass",
+      "isbn": "1418837180; 9781418837181",
+      "catalogueRecordId": "b2306717",
+      "volume": "Networking",
+      "itemLink": "http://lr.library.uq.edu.au/items/1A13F128-A179-FB1A-BF4F-839FC60AC7EB.html"
+    },
+    {
+      "referenceType": "Webpage",
+      "title": "Past Central Exam Papers",
+      "notes": "Follow the link and search for past exam papers by course code.",
+      "url": "https://www.library.uq.edu.au/#exampapers",
+      "itemLink": "http://lr.library.uq.edu.au/items/6925AEF6-A17C-CBDF-B6BA-F4EC4FE4DB42.html"
+    },
+    {
+      "referenceType": "Book",
+      "title": "Applied data communications: a business-oriented approach",
+      "importance": "Recommended",
+      "author": "Goldman, James E.; Rawles, Phillip T.",
+      "publisher": "Wiley",
+      "year": "2004",
+      "placePublished": "Hoboken, NJ",
+      "isbn": "0471346403; 0471451770",
+      "catalogueRecordId": "b2264217",
+      "itemLink": "http://lr.library.uq.edu.au/items/73E35A28-BF62-A20D-B1C6-917CF190AA18.html"
+    },
+    {
+      "referenceType": "Book",
+      "title": "Business data communications and networking",
+      "importance": "Required",
+      "author": "FitzGerald, Jerry; Dennis, Alan; Durcikova, Alexandra",
+      "publisher": "John Wiley",
+      "year": "c2012",
+      "placePublished": "Hoboken, NJ",
+      "isbn": "111808683X; 9781118086834",
+      "catalogueRecordId": "b3084774",
+      "itemLink": "http://lr.library.uq.edu.au/items/CFF38A6C-031C-8F73-8845-FE96C5F58F78.html"
+    },
+    {
+      "referenceType": "Book",
+      "title": "Internetworking with TCP/IP",
+      "importance": "Recommended",
+      "author": "Comer, Douglas",
+      "publisher": "Pearson Education Inc",
+      "year": "2014]-",
+      "placePublished": "Upper Saddle River, New Jersey",
+      "isbn": "013608530X; 9780136085300",
+      "catalogueRecordId": "b3356151",
+      "itemLink": "http://lr.library.uq.edu.au/items/D4847D38-7607-4131-1D92-5C0FE541A56D.html"
+    }
+  ]
