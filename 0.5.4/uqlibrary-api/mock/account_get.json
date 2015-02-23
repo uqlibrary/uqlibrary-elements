@@ -1,0 +1,62 @@
+{
+  "id": "s1234567",
+  "class": "0",
+  "type": 31,
+  "homeLib": "sshia",
+  "name": "Mr. John Doe",
+  "mail": "s1234567@student.uq.edu.au",
+  "groups": [],
+  "hasSession": true,
+  "classes": [
+    {
+      "ACAD_CAREER": "UGRD",
+      "DESCR": "Financial Management",
+      "SUBJECT": "FINM",
+      "CATALOG_NBR": "2401",
+      "CAMPUS": "STLUC",
+      "INSTRUCTION_MODE": "IN",
+      "ACAD_GROUP": "BEL",
+      "STRM":"6460"
+    },
+    {
+      "ACAD_CAREER": "UGRD",
+      "DESCR": "Elect Commerce Systems Dev",
+      "SUBJECT": "INFS",
+      "CATALOG_NBR": "2244",
+      "CAMPUS": "STLUC",
+      "INSTRUCTION_MODE": "IN",
+      "ACAD_GROUP": "BEL",
+      "STRM":"6460"
+    },
+    {
+      "ACAD_CAREER": "UGRD",
+      "DESCR": "Working with Groups & Teams",
+      "SUBJECT": "MGTS",
+      "CATALOG_NBR": "2961",
+      "CAMPUS": "GATTN",
+      "INSTRUCTION_MODE": "EX",
+      "ACAD_GROUP": "SCI",
+      "STRM":"6520"
+    },
+    {
+      "ACAD_CAREER": "UGRD",
+      "DESCR": "Civil Procedure",
+      "SUBJECT": "LAWS",
+      "CATALOG_NBR": "5215",
+      "CAMPUS": "STLUC",
+      "INSTRUCTION_MODE": "IN",
+      "ACAD_GROUP": "BEL",
+      "STRM":"6520"
+    },
+    {
+      "ACAD_CAREER": "UGRD",
+      "DESCR": "Elect Com Infrastructure Mgmt",
+      "SUBJECT": "MGTS",
+      "CATALOG_NBR": "7801",
+      "CAMPUS": "STLUC",
+      "INSTRUCTION_MODE": "IN",
+      "ACAD_GROUP": "BEL",
+      "STRM":"6520"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "title": "ACCT2101",
+    "course_title": "Financial Reporting",
+    "reading_lists": [
+      {
+        "title": "ACCT2101 St Lucia",
+        "campus": "St Lucia",
+        "url": "http://lr.library.uq.edu.au/lists/A97E01A9-741C-818E-0CB2-94B606D08156",
+        "period": "Semester 1 2015"
+      }
+    ],
+    "exam_papers": [
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1302/2013_2_ACCT2101_s.pdf",
+        "period": "Semester 2 2013",
+        "course": "ACCT2101"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1301/2013_1_ACCT2101_s.pdf",
+        "period": "Semester 1 2013",
+        "course": "ACCT2101"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1202/2012_2_ACCT2101_s.pdf",
+        "period": "Semester 2 2012",
+        "course": "ACCT2101"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1201sum/2012_1_ACCT2101_s.pdf",
+        "period": "Semester 1 2012",
+        "course": "ACCT2101"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1101sum/acct2101_st.pdf",
+        "period": "Semester 1 2011",
+        "course": "ACCT2101"
+      },
+      {
+        "url": "https://www.library.uq.edu.au/pdfserve.php?image=1102sum/acct2101_ipwst.pdf ",
+        "period": "Semester 2 2011",
+        "course": "ACCT2101"
+      }
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "name": "uqlibrary-search",
+  "description": "Element providing library search.",
+  "main": "uqlibrary-search.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-search/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "paper-dropdown-menu": "Polymer/paper-dropdown-menu#0.5.4",
+    "paper-dropdown": "Polymer/paper-dropdown#0.5.4",
+    "paper-item": "Polymer/paper-item#0.5.4",
+    "paper-input": "Polymer/paper-input#0.5.4",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.4",
+    "core-selector": "Polymer/core-selector#0.5.4",
+    "core-input": "Polymer/core-input#0.5.4",
+    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.4",
+    "core-localstorage": "Polymer/core-localstorage#0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+<<<<<<< HEAD
+  "_release": "217005fab3",
+  "_resolution": {
+    "type": "branch",
+    "branch": "uat",
+    "commit": "217005fab31b7c6401057700bb4bb4b109afe8b5"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
+  "_target": "uat",
+=======
+  "_release": "8e1604b3d2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8e1604b3d2635e8e43a0058fa81601057ebd0308"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
+  "_target": "master",
+>>>>>>> master
+  "_originalSource": "uqlibrary/uqlibrary-search"
+}
