@@ -24,7 +24,6 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-<<<<<<< HEAD
   "_release": "217005fab3",
   "_resolution": {
     "type": "branch",
@@ -33,15 +32,5 @@
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
   "_target": "uat",
-=======
-  "_release": "8e1604b3d2",
-  "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "8e1604b3d2635e8e43a0058fa81601057ebd0308"
-  },
-  "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
-  "_target": "master",
->>>>>>> master
   "_originalSource": "uqlibrary/uqlibrary-search"
 }

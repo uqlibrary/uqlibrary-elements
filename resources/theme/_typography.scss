@@ -214,7 +214,3 @@ h4.inverse {
 .link {
   @include gmd-type-style(link, gmd-alpha-color($link, text));
 }
-
-h1#toolbar-page-title {
-  @include gmd-type-style(body1, gmd-alpha-color($white, text));
-}

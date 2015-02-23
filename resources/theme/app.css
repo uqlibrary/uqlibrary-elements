@@ -221,13 +221,6 @@ h4.inverse {
   text-decoration: none;
   color: rgba(0, 126, 158, 0.87); }
 
-h1#toolbar-page-title {
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 1em;
-  line-height: 1.1em;
-  color: rgba(255, 255, 255, 0.87); }
-
 .single-line-list {
   list-style-type: none;
   margin: 0;
@@ -703,8 +696,6 @@ core-menu {
     background-color: #FAFAFA; }
   core-menu a {
     color: rgba(0, 0, 0, 0.87); }
-    core-menu a:hover {
-      text-decoration: none; }
   core-menu.divider {
     border-bottom: 1px solid #cccccc; }
 
@@ -924,15 +915,10 @@ uqlibrary-menu /deep/ [autofocus] {
 body /deep/ #logoutDialog a {
   color: rgba(0, 0, 0, 0.87);
   text-decoration: none; }
-  body /deep/ #logoutDialog a:hover {
-    text-decoration: none; }
 body /deep/ #logoutDialog .colored {
   color: #007e9e; }
-  body /deep/ #logoutDialog .colored:hover {
-    text-decoration: none; }
 body /deep/ #logoutDialog paper-button:hover {
-  background-color: #FAFAFA;
-  text-decoration: none; }
+  background-color: #FAFAFA; }
 
 uqlibrary-persistent-footer .footerInfo {
   padding: 12px; }
@@ -1005,10 +991,6 @@ uqlibrary-home paper-icon-button.huge #icon {
 #homePage {
   text-align: -moz-center; }
 
-#apps {
-  margin-left: 12px;
-  margin-top: -8px; }
-
 .app {
   width: 90px;
   height: 72px;
@@ -1051,8 +1033,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 #filters {
   top: 56px;
   width: 100%;
-  left: 0 !important;
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+  left: 0 !important; }
   #filters paper-item {
     padding-left: 0;
     border-bottom: 1px solid #cccccc; }
@@ -1197,11 +1178,6 @@ uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
     width: 24px;
     height: 24px; }
 
-#expandLibraryList, #expandLibraryList::shadow {
-  padding: 0px; }
-  #expandLibraryList:active, #expandLibraryList:focus, #expandLibraryList:hover, #expandLibraryList::shadow:active, #expandLibraryList::shadow:focus, #expandLibraryList::shadow:hover {
-    background-color: rgba(0, 0, 0, 0.26); }
-
 #availability {
   margin-top: 8px;
   padding: 16px; }
@@ -1227,8 +1203,6 @@ paper-dropdown::shadow #scroller {
   margin: 8px;
   transition: 300ms ease-in-out;
   padding: 6px; }
-  #branchWrapper:hover {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 .availability-item {
   border-bottom: 1px solid #F5F5F5;
@@ -1442,28 +1416,27 @@ paper-button {
 paper-button[autofocus] {
   color: #007e9e !important; }
 
-paper-button a:hover {
-  text-decoration: none; }
-paper-button .colored:hover {
-  background: #FAFAFA !important; }
+paper-button[raised].colored {
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: #007e9e;
+  color: #ffffff; }
+  paper-button[raised].colored:hover {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #006680;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+  paper-button[raised].colored:active {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #00566b;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
+  paper-button[raised].colored:disabled {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #cccccc; }
 
 paper-button[raised] {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-  paper-button[raised] .colored {
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background: #007e9e;
-    color: #ffffff; }
-    paper-button[raised] .colored:hover {
-      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-      background-color: #006680;
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-    paper-button[raised] .colored:active {
-      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-      background-color: #00566b;
-      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-    paper-button[raised] .colored:disabled {
-      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-      color: #cccccc; }
+  paper-button[raised]:hover {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 paper-button[disabled] {
   background-color: #FAFAFA;
