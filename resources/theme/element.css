@@ -241,7 +241,9 @@ core-toolbar {
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
-#toolBarLeftButton:focus, #toolBarLeftButton:hover {
+#toolBarLeftButton:focus, #toolBarLeftButton:hover,
+#toolBarRightButton:focus,
+#toolBarRightButton:hover {
   background-color: rgba(255, 255, 255, 0.26); }
 
 @media screen and (min-width: 768px) {

@@ -39,7 +39,7 @@ Element providing the library main navigation menu using a responsive drawer pan
       <div id="account">
         <div id="gradient" reverse horizontal layout end flex>
             <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
-          <paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+          <paper-icon-button icon="lock" aria-label="Logout" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
           <div id="details" flex>
             <div id="name" class="body2 inverse">{{account.name}}</div>
             <div id="mail" class="body1 inverse">{{account.mail}}</div>

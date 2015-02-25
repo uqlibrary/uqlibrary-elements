@@ -23,16 +23,8 @@ if (!('registerElement' in document
   if (!isIE() || isIE() > 9) {
     document.write('<script src="../uqlibrary-elements/0.5.4/webcomponentsjs/webcomponents.min.js"><\/script>');
   }
-  document.write('<script type="text/javascript" src="../uqlibrary-elements/resources/common/jquery/dist/jquery.min.js"><\/script>');
   document.write('<script type="text/javascript" src="../uqlibrary-elements/resources/common/PgwBrowser/pgwbrowser.min.js"><\/script>');
 }
-
-window.addEventListener('polymer-ready', function() {
-  if (document.getElementById('unsupportedBrowser')) {
-    document.getElementById('loaderImage').style.display = 'none';
-    document.body.removeChild(document.getElementById('unsupportedBrowser'));
-  }
-});
 
 var $buoop = {
     vs: {i: 10, f: 15, o: 15, s: 7, c: 36},  // browser versions to notify
@@ -100,6 +92,9 @@ catch (e) {
           o.id = "browserDetailsOld";
           o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary\'>the old version of MyLibrary<\/a>.";
           messageCard.appendChild(o);
+          document.getElementById('loader').style.display = 'none';
+          document.getElementById('loadingTitle').innerHTML = 'Unsupported Browser';
+
 
         });
     }
