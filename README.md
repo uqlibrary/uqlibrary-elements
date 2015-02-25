@@ -98,9 +98,9 @@ At least until we can look at adding PhantomCSS (with it's SauceLabs experimenta
 
 Each application (e.g. Courses) runs the uqlibrary-elements tests and it's own tests.
 In addition there is a uqlibrary-elements codeship build which only runs the uqlibrary-elements tests, but performs no deployment.
-The uqlibrary-elements tests in sub-application build triggers will be changed to only run the tests in chrome on the Codeship VM, 
+The uqlibrary-elements tests in sub-application build triggers only run the tests in Chrome on the Codeship VM, 
 no matter what branch, with full browser test coverage staying on the uqlibrary-elements codeship build itself. 
-This will be done to speed up deployment while keeping some level of safety net.
+This is done to speed up deployment of apps while keeping some level of safety net for the base aggregate of uqlibrary-elements.
 
 ### Testing
 
