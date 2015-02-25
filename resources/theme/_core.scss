@@ -90,7 +90,7 @@ core-toolbar {
   }
 }
 
-#toolBarLeftButton {
+#toolBarLeftButton, #toolBarRightButton {
   &:focus, &:hover {
     background-color: $hint-text-inverse;
   }
