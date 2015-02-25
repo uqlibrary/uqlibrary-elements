@@ -72,6 +72,9 @@ Element providing access to UQ Library's API.
             if (xobj.readyState == 4 && xobj.status == "200") {
               var response = xobj.responseText;
 
+                console.log(fileName.match(/facilities_availability/));
+                console.log(fileName);
+
               if (fileName.match(/facilities_availability/)) {
                 var now = new Date();
 
@@ -82,9 +85,11 @@ Element providing access to UQ Library's API.
 
                 var bookingFrom = startOfDay / 1000 + 10 * 60 * 60;
                 var bookingTo = startOfDay / 1000 + 11 * 60 * 60;
-
+                  console.log("from = " + availableFrom);
+                  console.log("to = " + availableTo);
 
                 response = response.replace(/"{AVAILABLE_FROM}"/g, availableFrom);
+                  console.log(response);
                 response = response.replace(/"{AVAILABLE_TO}"/g, availableTo);
 
                 response = response.replace(/"{BOOKING_START_TIME}"/g, bookingFrom);
