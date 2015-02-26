@@ -241,9 +241,7 @@ core-toolbar {
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
-#toolBarLeftButton:focus, #toolBarLeftButton:hover,
-#toolBarRightButton:focus,
-#toolBarRightButton:hover {
+#toolBarLeftButton:focus, #toolBarLeftButton:hover, #toolBarRightButton:focus, #toolBarRightButton:hover {
   background-color: rgba(255, 255, 255, 0.26); }
 
 @media screen and (min-width: 768px) {
@@ -436,16 +434,26 @@ uqlibrary-menu /deep/ [autofocus] {
   uqlibrary-menu /deep/ [autofocus]:hover {
     text-decoration: none; }
 
-body /deep/ #logoutDialog a {
+body /deep/ #logoutDialog a,
+body /deep/ #infoDialog a {
   color: rgba(0, 0, 0, 0.87);
   text-decoration: none; }
-  body /deep/ #logoutDialog a:hover {
+  body /deep/ #logoutDialog a:hover,
+  body /deep/ #infoDialog a:hover {
     text-decoration: none; }
-body /deep/ #logoutDialog .colored {
+body /deep/ #logoutDialog .colored,
+body /deep/ #infoDialog .colored {
   color: #007e9e; }
-  body /deep/ #logoutDialog .colored:hover {
+  body /deep/ #logoutDialog .colored:hover,
+  body /deep/ #infoDialog .colored:hover {
     text-decoration: none; }
-body /deep/ #logoutDialog paper-button:hover {
+body /deep/ #logoutDialog paper-button:hover,
+body /deep/ #infoDialog paper-button:hover {
+  background-color: #FAFAFA;
+  text-decoration: none; }
+body /deep/ #logoutDialog paper-button:focus,
+body /deep/ #infoDialog paper-button:focus {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #FAFAFA;
   text-decoration: none; }
 

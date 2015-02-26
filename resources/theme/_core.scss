@@ -441,7 +441,9 @@ uqlibrary-menu /deep/ [autofocus] {
     text-decoration: none;
   }
 }
-body /deep/ #logoutDialog {
+
+body /deep/ #logoutDialog,
+body /deep/ #infoDialog {
   a {
     color: $text;
     text-decoration: none;
@@ -455,8 +457,15 @@ body /deep/ #logoutDialog {
       text-decoration: none;
     }
   }
+
   paper-button{
     &:hover {
+      background-color: $background-primary;
+      text-decoration: none;
+    }
+
+    &:focus {
+      box-shadow: $shadow-z-2;
       background-color: $background-primary;
       text-decoration: none;
     }
