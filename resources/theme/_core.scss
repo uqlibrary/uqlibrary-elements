@@ -1003,6 +1003,19 @@ paper-dropdown::shadow #scroller {
   }
 }
 
+.responsiveCard {
+  padding: 18px 32px;
+  box-shadow: $shadow-z-1;
+  max-height: 400px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 //   _____             _ _                _
 //  |  ___|__  ___  __| | |__   __ _  ___| | __
 //  | |_ / _ \/ _ \/ _` | '_ \ / _` |/ __| |/ /

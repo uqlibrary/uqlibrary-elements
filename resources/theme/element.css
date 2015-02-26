@@ -779,6 +779,18 @@ paper-dropdown::shadow #scroller {
 .listItemLink core-icon {
   margin-right: 0; }
 
+.responsiveCard {
+  padding: 18px 32px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  max-height: 400px; }
+  @media screen and (min-width: 768px) {
+    .responsiveCard {
+      width: 86%; } }
+  @media screen and (max-width: 768px) {
+    .responsiveCard {
+      width: 100%;
+      margin: 0; } }
+
 #feedbackCard {
   padding: 18px 32px; }
   @media screen and (min-width: 768px) {
