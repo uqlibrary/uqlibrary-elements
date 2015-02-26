@@ -1004,11 +1004,14 @@ paper-dropdown::shadow #scroller {
 }
 
 .responsiveCard {
+  background: white;
+  box-sizing: border-box;
   padding: 18px 32px;
   box-shadow: $shadow-z-1;
   max-height: 400px;
   @media screen and (min-width: $responsive-width) {
     width: 86%;
+    margin: 16px auto;
   }
   @media screen and (max-width: $responsive-width) {
     width: 100%;
