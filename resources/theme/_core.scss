@@ -441,7 +441,9 @@ uqlibrary-menu /deep/ [autofocus] {
     text-decoration: none;
   }
 }
-body /deep/ #logoutDialog {
+
+body /deep/ #logoutDialog,
+body /deep/ #infoDialog {
   a {
     color: $text;
     text-decoration: none;
@@ -455,8 +457,15 @@ body /deep/ #logoutDialog {
       text-decoration: none;
     }
   }
+
   paper-button{
     &:hover {
+      background-color: $background-primary;
+      text-decoration: none;
+    }
+
+    &:focus {
+      box-shadow: $shadow-z-2;
       background-color: $background-primary;
       text-decoration: none;
     }
@@ -605,12 +614,12 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 72px;
   margin: 6px 2px;
   padding-top: 4px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
   paper-button {
-    height: 90px;
+    height: 100px;
     &:hover {
       background: none;
     }
@@ -620,7 +629,7 @@ uqlibrary-home paper-icon-button.huge #icon {
     text-decoration: none
   }
   .iconLabel {
-    margin-top: -28px;
+    margin-top: -38px;
     text-transform: capitalize;
   }
 }
@@ -991,6 +1000,22 @@ paper-dropdown::shadow #scroller {
 .listItemLink {
   core-icon {
     margin-right: 0;
+  }
+}
+
+.responsiveCard {
+  background: white;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  box-shadow: $shadow-z-1;
+  max-height: 400px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+    margin: 16px auto;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
   }
 }
 
