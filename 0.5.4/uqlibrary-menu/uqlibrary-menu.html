@@ -57,7 +57,10 @@ Element providing the library main navigation menu using a responsive drawer pan
       </core-menu>
     </template>
 
-    <core-menu selectedAttribute="">
+    <core-menu selectedAttribute="" class="divider">
+        <paper-item on-tap="{{go}}" link="chat"  id="showChatPage">
+            <core-icon alt="Ask the Library for help" icon="question-answer"></core-icon> <a href="{{ '../chat' }}">Ask the Library</a>
+        </paper-item>
       <paper-item on-tap="{{go}}" link="booking" id="showBookingsPage">
           <core-icon alt="View or manage my library bookings" icon="event"></core-icon> <a href="{{ '../booking' }}">Booking</a>
       </paper-item>
@@ -71,13 +74,18 @@ Element providing the library main navigation menu using a responsive drawer pan
             <core-icon alt="View my library course learning resources" icon="social:school"></core-icon> <a href="{{ '../courses' }}">Courses</a>
         </paper-item>
       </template>
-      <paper-item on-tap="{{go}}" link="feedback">
-          <core-icon alt="Leave feedback for my library" icon="communication:comment"></core-icon> <a href="{{ '../feedback' }}">Feedback</a>
-      </paper-item>
       <paper-item on-tap="{{go}}" link="hours"  id="showHoursPage">
           <core-icon alt="View my library opening hours" icon="schedule"></core-icon> <a href="{{ '../hours' }}">Hours</a>
       </paper-item>
     </core-menu>
+
+      <core-menu selectedAttribute="">
+          <paper-item on-tap="{{go}}" link="feedback">
+              <core-icon alt="Leave feedback for my library" icon="communication:comment"></core-icon> <a href="{{ '../feedback' }}">Feedback</a>
+          </paper-item>
+      </core-menu>
+  </template>
+
 
     <!--Logout dialog-->
     <!--Prevents users from accidentally logging out-->
