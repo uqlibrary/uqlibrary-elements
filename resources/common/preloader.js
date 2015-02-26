@@ -52,7 +52,7 @@ function $buo_f() {
   var e = document.createElement("script");
   e.src = "//browser-update.org/update.js";
   document.body.appendChild(e);
-};
+}
 
 function setUnsupported() {
   if (window.jQuery) {
