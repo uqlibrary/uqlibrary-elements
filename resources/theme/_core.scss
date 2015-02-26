@@ -614,12 +614,12 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 72px;
   margin: 6px 2px;
   padding-top: 4px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
   paper-button {
-    height: 90px;
+    height: 100px;
     &:hover {
       background: none;
     }
@@ -629,7 +629,7 @@ uqlibrary-home paper-icon-button.huge #icon {
     text-decoration: none
   }
   .iconLabel {
-    margin-top: -28px;
+    margin-top: -38px;
     text-transform: capitalize;
   }
 }
