@@ -245,10 +245,11 @@ uqlibrary-filter-group {
     paper-dropdown-menu {
       min-width: 150px;
       margin-right: 20px;
-      &:last-child{
+      &:last-child {
         margin-right: 0;
       }
     }
+
   }
   &:last-child {
     border-bottom: none;
@@ -265,6 +266,8 @@ uqlibrary-filter-group {
 // Paper-dropdowns should be consistent
 // they shouldn't get too small
 // see http://www.google.com/design/spec/components/menus.html#menus-specs
+
+
 paper-dropdown {
   font-family: "Roboto", sans-serif !important;
   min-width: 150px;
@@ -275,6 +278,7 @@ paper-dropdown {
 paper-dropdown-menu {
   display: block;
   width: 100%;
+
   &[disabled] {
     &::shadow {
       #label, #arrow, #ripple {
@@ -282,9 +286,17 @@ paper-dropdown-menu {
       }
     }
   }
+
+  border-top: 1px solid transparent;
+
+  &:focus {
+    border-top: 0px solid transparent;
+    border-bottom: 2px solid $uq-aqua;
+  }
+
   paper-dropdown {
     paper-item {
-      &:hover {
+      &:focus, &:hover {
         background-color: $grey-A100;
       }
     }
@@ -329,10 +341,15 @@ paper-input {
 //             |_|
 //
 paper-slider {
+  &:focus {
+    background-color: $grey-A100 !important;
+  }
+
   width: 100%;
   &::shadow {
     #sliderBar {
       box-sizing: content-box;
+
       &::shadow {
         #activeProgress {
           background-color: $button;
@@ -341,6 +358,8 @@ paper-slider {
     }
     #sliderKnobInner {
       background-color: $button;
+      border: 2px solid $button;
+
       &::before {
         background-color: $button;
         display: block !important;
