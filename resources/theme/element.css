@@ -241,7 +241,7 @@ core-toolbar {
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
-#toolBarLeftButton:focus, #toolBarLeftButton:hover {
+#toolBarLeftButton:focus, #toolBarLeftButton:hover, #toolBarRightButton:focus, #toolBarRightButton:hover {
   background-color: rgba(255, 255, 255, 0.26); }
 
 @media screen and (min-width: 768px) {
@@ -339,10 +339,14 @@ paper-dropdown {
 
 paper-dropdown-menu {
   display: block;
-  width: 100%; }
+  width: 100%;
+  border-top: 1px solid transparent; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
     color: #BDBDBD; }
-  paper-dropdown-menu paper-dropdown paper-item:hover {
+  paper-dropdown-menu:focus {
+    border-top: 0px solid transparent;
+    border-bottom: 2px solid #007e9e; }
+  paper-dropdown-menu paper-dropdown paper-item:focus, paper-dropdown-menu paper-dropdown paper-item:hover {
     background-color: #F5F5F5; }
 
 paper-input-decorator .mirror-text {
@@ -360,12 +364,15 @@ paper-input {
 
 paper-slider {
   width: 100%; }
+  paper-slider:focus {
+    background-color: #F5F5F5 !important; }
   paper-slider::shadow #sliderBar {
     box-sizing: content-box; }
     paper-slider::shadow #sliderBar::shadow #activeProgress {
       background-color: #007e9e; }
   paper-slider::shadow #sliderKnobInner {
-    background-color: #007e9e; }
+    background-color: #007e9e;
+    border: 2px solid #007e9e; }
     paper-slider::shadow #sliderKnobInner::before {
       background-color: #007e9e;
       display: block !important; }
@@ -434,16 +441,26 @@ uqlibrary-menu /deep/ [autofocus] {
   uqlibrary-menu /deep/ [autofocus]:hover {
     text-decoration: none; }
 
-body /deep/ #logoutDialog a {
+body /deep/ #logoutDialog a,
+body /deep/ #infoDialog a {
   color: rgba(0, 0, 0, 0.87);
   text-decoration: none; }
-  body /deep/ #logoutDialog a:hover {
+  body /deep/ #logoutDialog a:hover,
+  body /deep/ #infoDialog a:hover {
     text-decoration: none; }
-body /deep/ #logoutDialog .colored {
+body /deep/ #logoutDialog .colored,
+body /deep/ #infoDialog .colored {
   color: #007e9e; }
-  body /deep/ #logoutDialog .colored:hover {
+  body /deep/ #logoutDialog .colored:hover,
+  body /deep/ #infoDialog .colored:hover {
     text-decoration: none; }
-body /deep/ #logoutDialog paper-button:hover {
+body /deep/ #logoutDialog paper-button:hover,
+body /deep/ #infoDialog paper-button:hover {
+  background-color: #FAFAFA;
+  text-decoration: none; }
+body /deep/ #logoutDialog paper-button:focus,
+body /deep/ #infoDialog paper-button:focus {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
   background-color: #FAFAFA;
   text-decoration: none; }
 
@@ -527,19 +544,19 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 72px;
   margin: 6px 2px;
   padding-top: 4px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer; }
   .app paper-button {
-    height: 90px; }
+    height: 100px; }
     .app paper-button:hover {
       background: none; }
   .app [focused], .app:hover, .app:focus {
     background-color: rgba(0, 0, 0, 0.05);
     text-decoration: none; }
   .app .iconLabel {
-    margin-top: -28px;
+    margin-top: -38px;
     text-transform: capitalize; }
 
 #search {
@@ -768,6 +785,21 @@ paper-dropdown::shadow #scroller {
 
 .listItemLink core-icon {
   margin-right: 0; }
+
+.responsiveCard {
+  background: white;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  max-height: 400px; }
+  @media screen and (min-width: 768px) {
+    .responsiveCard {
+      width: 86%;
+      margin: 16px auto; } }
+  @media screen and (max-width: 768px) {
+    .responsiveCard {
+      width: 100%;
+      margin: 0; } }
 
 #feedbackCard {
   padding: 18px 32px; }

@@ -39,7 +39,7 @@ Element providing the library main navigation menu using a responsive drawer pan
       <div id="account">
         <div id="gradient" reverse horizontal layout end flex>
             <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
-          <paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+          <paper-icon-button icon="lock" aria-label="Logout" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
           <div id="details" flex>
             <div id="name" class="body2 inverse">{{account.name}}</div>
             <div id="mail" class="body1 inverse">{{account.mail}}</div>
@@ -57,7 +57,10 @@ Element providing the library main navigation menu using a responsive drawer pan
       </core-menu>
     </template>
 
-    <core-menu selectedAttribute="">
+    <core-menu selectedAttribute="" class="divider">
+        <paper-item on-tap="{{go}}" link="chat"  id="showChatPage">
+            <core-icon alt="Ask the Library for help" icon="question-answer"></core-icon> <a href="{{ '../chat' }}">Ask the Library</a>
+        </paper-item>
       <paper-item on-tap="{{go}}" link="booking" id="showBookingsPage">
           <core-icon alt="View or manage my library bookings" icon="event"></core-icon> <a href="{{ '../booking' }}">Booking</a>
       </paper-item>
@@ -71,23 +74,29 @@ Element providing the library main navigation menu using a responsive drawer pan
             <core-icon alt="View my library course learning resources" icon="social:school"></core-icon> <a href="{{ '../courses' }}">Courses</a>
         </paper-item>
       </template>
-      <paper-item on-tap="{{go}}" link="feedback">
-          <core-icon alt="Leave feedback for my library" icon="communication:comment"></core-icon> <a href="{{ '../feedback' }}">Feedback</a>
-      </paper-item>
       <paper-item on-tap="{{go}}" link="hours"  id="showHoursPage">
           <core-icon alt="View my library opening hours" icon="schedule"></core-icon> <a href="{{ '../hours' }}">Hours</a>
       </paper-item>
     </core-menu>
 
-    <!--Logout dialog-->
-    <!--Prevents users from accidentally logging out-->
+      <core-menu selectedAttribute="">
+          <paper-item on-tap="{{go}}" link="feedback">
+              <core-icon alt="Leave feedback for my library" icon="communication:comment"></core-icon> <a href="{{ '../feedback' }}">Feedback</a>
+          </paper-item>
+      </core-menu>
 
-    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
-      <p>Are you sure you want to log out?</p>
-      <p>This will log you out of all your UQ website sessions.</p>
-      <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
-      <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
-    </paper-action-dialog>
+      <!--Logout dialog-->
+      <!--Prevents users from accidentally logging out-->
+
+      <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+          <p>Are you sure you want to log out?</p>
+          <p>This will log you out of all your UQ website sessions.</p>
+          <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
+          <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
+      </paper-action-dialog>
+      
+  </template>
+
 
   </template>
 

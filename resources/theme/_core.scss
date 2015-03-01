@@ -90,7 +90,7 @@ core-toolbar {
   }
 }
 
-#toolBarLeftButton {
+#toolBarLeftButton, #toolBarRightButton {
   &:focus, &:hover {
     background-color: $hint-text-inverse;
   }
@@ -245,10 +245,11 @@ uqlibrary-filter-group {
     paper-dropdown-menu {
       min-width: 150px;
       margin-right: 20px;
-      &:last-child{
+      &:last-child {
         margin-right: 0;
       }
     }
+
   }
   &:last-child {
     border-bottom: none;
@@ -265,6 +266,8 @@ uqlibrary-filter-group {
 // Paper-dropdowns should be consistent
 // they shouldn't get too small
 // see http://www.google.com/design/spec/components/menus.html#menus-specs
+
+
 paper-dropdown {
   font-family: "Roboto", sans-serif !important;
   min-width: 150px;
@@ -275,6 +278,7 @@ paper-dropdown {
 paper-dropdown-menu {
   display: block;
   width: 100%;
+
   &[disabled] {
     &::shadow {
       #label, #arrow, #ripple {
@@ -282,9 +286,17 @@ paper-dropdown-menu {
       }
     }
   }
+
+  border-top: 1px solid transparent;
+
+  &:focus {
+    border-top: 0px solid transparent;
+    border-bottom: 2px solid $uq-aqua;
+  }
+
   paper-dropdown {
     paper-item {
-      &:hover {
+      &:focus, &:hover {
         background-color: $grey-A100;
       }
     }
@@ -329,10 +341,15 @@ paper-input {
 //             |_|
 //
 paper-slider {
+  &:focus {
+    background-color: $grey-A100 !important;
+  }
+
   width: 100%;
   &::shadow {
     #sliderBar {
       box-sizing: content-box;
+
       &::shadow {
         #activeProgress {
           background-color: $button;
@@ -341,6 +358,8 @@ paper-slider {
     }
     #sliderKnobInner {
       background-color: $button;
+      border: 2px solid $button;
+
       &::before {
         background-color: $button;
         display: block !important;
@@ -441,7 +460,9 @@ uqlibrary-menu /deep/ [autofocus] {
     text-decoration: none;
   }
 }
-body /deep/ #logoutDialog {
+
+body /deep/ #logoutDialog,
+body /deep/ #infoDialog {
   a {
     color: $text;
     text-decoration: none;
@@ -455,8 +476,15 @@ body /deep/ #logoutDialog {
       text-decoration: none;
     }
   }
+
   paper-button{
     &:hover {
+      background-color: $background-primary;
+      text-decoration: none;
+    }
+
+    &:focus {
+      box-shadow: $shadow-z-2;
       background-color: $background-primary;
       text-decoration: none;
     }
@@ -605,12 +633,12 @@ uqlibrary-home paper-icon-button.huge #icon {
   height: 72px;
   margin: 6px 2px;
   padding-top: 4px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
   text-align: center;
   border-radius: 2px;
   cursor: pointer;
   paper-button {
-    height: 90px;
+    height: 100px;
     &:hover {
       background: none;
     }
@@ -620,7 +648,7 @@ uqlibrary-home paper-icon-button.huge #icon {
     text-decoration: none
   }
   .iconLabel {
-    margin-top: -28px;
+    margin-top: -38px;
     text-transform: capitalize;
   }
 }
@@ -991,6 +1019,22 @@ paper-dropdown::shadow #scroller {
 .listItemLink {
   core-icon {
     margin-right: 0;
+  }
+}
+
+.responsiveCard {
+  background: white;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  box-shadow: $shadow-z-1;
+  max-height: 400px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+    margin: 16px auto;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
   }
 }
 
