@@ -7,6 +7,7 @@
   "mail": "s1234567@student.uq.edu.au",
   "groups": [],
   "hasSession": true,
+  "canMasquerade": true,
   "classes": [
     {
       "ACAD_CAREER": "UGRD",

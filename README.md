@@ -187,7 +187,7 @@ Keyboard navigation issues and resolutions
 
 
 ### Styling Implementation Guidelines
-
+ 
 1. Seperate elements use elements.css from uqlibrary-elements/resources/theme (e.g. uqlibrary-persistent-footer)
 2. Element.css is excluded from vulcanization in vulcanize.conf
 3. Grunt-text-replace runs to update path in vulcanized.html to point to relative element.css
@@ -195,3 +195,14 @@ Keyboard navigation issues and resolutions
   * cssmin - to minify element.css and application.css
   * file-rev - to include revision number in file names for *.js *.css and vulcanized.html
   * usemin - updates references to file-rev files
+  
+### Accessibililty Guidelines
+
+1. Any clickable items should be accessible by keyboard with distinct focused state;
+  * use core-a11y-keys or uqlibrary-a11y-link as helpers to enable keyboard navigation
+2. Use meaningful aria-tags:
+  * aria-label, aria-valuetext for sliders
+  * aria-label for icons, text fields, drop down lists and other controls
+  * aria-hidden for hidden elements
+3. Check keyboard navigation with VoiceOver utility on in Safari. 
+
