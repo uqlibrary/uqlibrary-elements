@@ -101,9 +101,25 @@ catch (e) {
           }
           break;
         case 'Android':
-          if (pgwBrowser.os.majorVersion < 4 && pgwBrowser.os.minorVersion < 4) {
-            e.innerHTML = '<br \/><br \/>Since you are using Android (version ' + pgwBrowser.os.fullVersion + ') you can upgrade from the old Android Browser to <a href=\'https:\/\/play.google.com\/store\/apps\/details?id=com.android.chrome&hl=en\'>Google Chrome for Android<\/a> to get a faster, and compatible web experience.';
-            setUnsupported();
+          switch (pgwBrowser.browser.group) {
+            case 'Google Chrome':
+              if (pgwBrowser.browser.majorVersion < 20) {
+                e.innerHTML = '<br \/><br \/>You are currently using an unsupported version of Google Chrome. We can only support Google Chrome 20 and above.';
+                setUnsupported();
+              }
+              break;
+            case 'Firefox':
+              if (pgwBrowser.browser.majorVersion < 14) {
+                e.innerHTML = '<br \/><br \/>You are currently using an unsupported version of Firefox. We can only support Firefox 15 and above.';
+                setUnsupported();
+              }
+              break;
+            default:
+              if (pgwBrowser.os.majorVersion < 4 && pgwBrowser.os.minorVersion < 4) {
+                e.innerHTML = '<br \/><br \/>Since you are using Android (version ' + pgwBrowser.os.fullVersion + ') you can upgrade from the old Android Browser to <a href=\'https:\/\/play.google.com\/store\/apps\/details?id=com.android.chrome&hl=en\'>Google Chrome for Android<\/a> to get a faster, and compatible web experience.';
+                setUnsupported();
+              }
+              break;
           }
           break;
         case 'Mac OS':
