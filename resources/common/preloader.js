@@ -115,7 +115,7 @@ catch (e) {
               }
               break;
             default:
-              if (pgwBrowser.os.majorVersion < 4 && pgwBrowser.os.minorVersion < 4) {
+              if (pgwBrowser.os.majorVersion < 4 || (pgwBrowser.os.majorVersion === 4 && pgwBrowser.os.minorVersion < 4)) {
                 e.innerHTML = '<br \/><br \/>Since you are using Android (version ' + pgwBrowser.os.fullVersion + ') you can upgrade from the old Android Browser to <a href=\'https:\/\/play.google.com\/store\/apps\/details?id=com.android.chrome&hl=en\'>Google Chrome for Android<\/a> to get a faster, and compatible web experience.';
                 setUnsupported();
               }
