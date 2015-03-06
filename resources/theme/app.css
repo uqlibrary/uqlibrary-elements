@@ -567,7 +567,7 @@ h1#toolbar-page-title {
       .three-line-icon-list .list-item.timeline .date .title, .three-line-icon-list .list-item.timeline .date .headline {
         color: #7b0c9d; }
     .three-line-icon-list .list-item.timeline .content {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       border-radius: 2px;
       padding-left: 16px; }
     .three-line-icon-list .list-item .content {
@@ -680,7 +680,7 @@ h1#toolbar-page-title {
   border-radius: 2px;
   box-sizing: border-box;
   height: auto;
-  background: #ffffff;
+  background: white;
   width: 320px;
   margin: 16px auto; }
   .card .cardSection {
@@ -694,13 +694,13 @@ h1#toolbar-page-title {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 core-menu {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0;
   padding: 8px 0; }
   core-menu core-icon {
     margin: -3px 28px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   core-menu a {
     color: rgba(0, 0, 0, 0.87); }
     core-menu a:hover {
@@ -724,7 +724,7 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: white; }
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
@@ -789,7 +789,7 @@ paper-item {
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
   paper-item:hover, paper-item:focus, paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
 
 paper-progress {
   height: 1.14286em;
@@ -799,7 +799,7 @@ paper-progress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -829,12 +829,12 @@ paper-dropdown-menu {
   width: 100%;
   border-top: 1px solid transparent; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
-    color: #BDBDBD; }
+    color: #bdbdbd; }
   paper-dropdown-menu:focus {
     border-top: 0px solid transparent;
     border-bottom: 2px solid #007e9e; }
   paper-dropdown-menu paper-dropdown paper-item:focus, paper-dropdown-menu paper-dropdown paper-item:hover {
-    background-color: #F5F5F5; }
+    background-color: whitesmoke; }
 
 paper-input-decorator .mirror-text {
   padding: 0.8em 0 0.25em; }
@@ -852,7 +852,7 @@ paper-input {
 paper-slider {
   width: 100%; }
   paper-slider:focus {
-    background-color: #F5F5F5 !important; }
+    background-color: whitesmoke !important; }
   paper-slider::shadow #sliderBar {
     box-sizing: content-box; }
     paper-slider::shadow #sliderBar::shadow #activeProgress {
@@ -873,11 +873,11 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff;
+  background-color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 .main {
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 
 #account {
   font-size: 0.85714em;
@@ -911,12 +911,12 @@ core-drawer-panel [drawer] {
     text-overflow: ellipsis;
     overflow: hidden; }
   #account core-icon {
-    color: #FAFAFA;
+    color: #fafafa;
     height: 24px;
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  color: #FAFAFA;
+  color: #fafafa;
   margin-bottom: 8px;
   margin-right: 8px; }
   #askLogout:active, #askLogout:focus, #askLogout:hover, #askLogout::shadow:active, #askLogout::shadow:focus, #askLogout::shadow:hover {
@@ -943,12 +943,12 @@ body /deep/ #infoDialog .colored {
     text-decoration: none; }
 body /deep/ #logoutDialog paper-button:hover,
 body /deep/ #infoDialog paper-button:hover {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 body /deep/ #logoutDialog paper-button:focus,
 body /deep/ #infoDialog paper-button:focus {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 
 uqlibrary-persistent-footer .footerInfo {
@@ -958,9 +958,9 @@ uqlibrary-persistent-footer .footerInfo {
   position: fixed;
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
   padding: 4px; }
   .persistentFooter .footerInfo {
     padding: 12px; }
@@ -1092,8 +1092,9 @@ uqlibrary-home paper-icon-button.huge #icon {
 
 #autosuggest {
   box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
-  margin-top: 36px;
-  width: 65%; }
+  top: 56px;
+  width: 100%;
+  left: 0 !important; }
 
 .group-label {
   margin-left: 32px; }
@@ -1102,7 +1103,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   padding-left: 56px; }
 
 .filterWrapper {
-  background-color: #ffffff;
+  background-color: white;
   margin-bottom: 30px; }
 
 md-timepicker::shadow #card {
@@ -1115,7 +1116,7 @@ md-timepicker::shadow #card {
     background-color: #007e9e !important;
     height: 108px;
     padding: 21.6px;
-    color: #ffffff;
+    color: white;
     font-size: 41.4px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
@@ -1136,9 +1137,9 @@ md-timepicker::shadow paper-button {
     margin-right: 10pt; }
 
 .error {
-  border-bottom: 1px solid #F44336; }
+  border-bottom: 1px solid #f44336; }
   .error::shadow #label {
-    color: #F44336; }
+    color: #f44336; }
 
 uqlibrary-date-selector /deep/ .selectedDate {
   text-align: center;
@@ -1153,7 +1154,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
     margin-bottom: 4px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
-    color: #ffffff; }
+    color: white; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
     text-align: center;
     width: 40px; }
@@ -1166,7 +1167,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
     padding-top: 12px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 uqlibrary-time-selector /deep/ .items {
   margin: 0 10px;
@@ -1183,13 +1184,13 @@ uqlibrary-time-selector /deep/ .items {
     font-size: 12px;
     line-height: 1.1;
     text-transform: uppercase;
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
     uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
-      background-color: #BDBDBD;
-      color: #ffffff; }
+      background-color: #bdbdbd;
+      color: white; }
     uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
       background-color: #007e9e;
-      color: #ffffff; }
+      color: white; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
@@ -1250,7 +1251,7 @@ paper-dropdown::shadow #scroller {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 .availability-item {
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid whitesmoke;
   padding: 4px;
   line-height: 1.2; }
   .availability-item .totals {
@@ -1323,7 +1324,7 @@ paper-dropdown::shadow #scroller {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -1342,7 +1343,7 @@ paper-tabs {
     padding-top: 12px; }
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 .masqueradeCard {
   padding: 18px 32px; }
@@ -1394,7 +1395,7 @@ paper-tabs {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -1428,9 +1429,9 @@ paper-tabs {
   .hint-box.selected {
     background-color: #007e9e; }
   .hint-box.available {
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
   .hint-box.unavailable {
-    background-color: #BDBDBD; }
+    background-color: #bdbdbd; }
 
 paper-input-decorator::shadow .focused-underline {
   background-color: #007e9e; }
@@ -1463,13 +1464,13 @@ paper-fab {
     position: fixed;
     right: 16px; }
   paper-fab core-icon {
-    color: #ffffff; }
+    color: white; }
 
 paper-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   paper-button:hover {
     transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   paper-button.colored {
     color: #007e9e; }
 
@@ -1479,14 +1480,14 @@ paper-button[autofocus] {
 paper-button a:hover {
   text-decoration: none; }
 paper-button .colored:hover {
-  background: #FAFAFA !important; }
+  background: #fafafa !important; }
 
 paper-button[raised] {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   paper-button[raised] .colored {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background: #007e9e;
-    color: #ffffff; }
+    color: white; }
     paper-button[raised] .colored:hover {
       transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
       background-color: #006680;
@@ -1500,10 +1501,10 @@ paper-button[raised] {
       color: #cccccc; }
 
 paper-button[disabled] {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #cccccc; }
   paper-button[disabled].colored {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #cccccc; }
 
 paper-icon-button {
