@@ -1091,7 +1091,9 @@ uqlibrary-home paper-icon-button.huge #icon {
   color: #4a075f; }
 
 #autosuggest {
-  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 36px;
+  width: 65%; }
 
 .group-label {
   margin-left: 32px; }
@@ -1516,5 +1518,3 @@ body {
   line-height: 1.1em;
   margin: 0;
   background-color: #fafafa; }
-
-/*# sourceMappingURL=app.css.map */
