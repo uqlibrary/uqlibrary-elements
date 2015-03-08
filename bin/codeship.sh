@@ -32,9 +32,9 @@ awsconfig="aws.json"
 
 # use codeship branch environment variable to push to branch name dir unless it's 'production' branch (or master for now)
 if [ ${CI_BRANCH} != "production" ]; then
-  export BucketSubDir=/${CI_BRANCH}
+  export S3BucketSubDir=/${CI_BRANCH}
 else
-  export BucketSubDir=''
+  export S3BucketSubDir=''
 fi
 
 sed -i -e "s#<AWSAccessKeyId>#${AWSAccessKeyId}#g" ${awsconfig}

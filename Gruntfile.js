@@ -86,7 +86,6 @@ module.exports = function (grunt) {
         region: '<%= aws.AWSRegion %>',
         uploadConcurrency: 5,
         differential: true,
-        progress: 'progressBar',
         displayChangesOnly: true
       },
       production: {
