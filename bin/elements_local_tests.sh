@@ -13,7 +13,7 @@ cd ${polymer}
 # Get a list of uplibrary-* components (excluding this one).
 components=$(ls -d */ | grep uqlibrary | grep -v elements)
 echo $components
-let COUNTER=0
+COUNTER=0
 # Run the tests for each component
 for component in ${components[@]}; do
   # if this is inside a codeship test pipeline, only run if its for this pipe number
