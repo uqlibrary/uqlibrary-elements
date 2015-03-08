@@ -99,7 +99,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '../',
             src: ['**', '!**/node_modules/**'],
-            dest: ''
+            dest: '<%= aws.S3BucketSubDir %>'
           }
         ]
       }
