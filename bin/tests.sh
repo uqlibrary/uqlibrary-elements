@@ -18,6 +18,14 @@ COUNTER=0
 for component in ${components[@]}; do
   # if this is inside a codeship test pipeline, only run if its for this pipe number
   if [[ -z $PIPE_NUM && -z $PIPE_TOTAL ]]; then
+    cd $component
+    if [ -d "test" ]; then
+      echo $(pwd)
+      ../../bin/sauce.sh
+    fi
+    cd ..
+
+  else
     let COUNTER=COUNTER+1
     if [[ $(( $i % $PIPE_TOTAL )) == $PIPE_NUM ]]; then
       cd $component
@@ -27,13 +35,6 @@ for component in ${components[@]}; do
       fi
       cd ..
     fi
-  else
-    cd $component
-    if [ -d "test" ]; then
-      echo $(pwd)
-      ../../bin/sauce.sh
-    fi
-    cd ..
   fi
 done
 
