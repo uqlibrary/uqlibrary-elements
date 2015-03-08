@@ -17,7 +17,7 @@ COUNTER=0
 # Run the tests for each component
 for component in ${components[@]}; do
   # if this is inside a codeship test pipeline, only run if its for this pipe number
-  if [ -z $PIPE_NUM && -z $PIPE_TOTAL ]; then
+  if [[ -z $PIPE_NUM && -z $PIPE_TOTAL ]]; then
     let COUNTER=COUNTER+1
     if [[ $(( $i % $PIPE_TOTAL )) == $PIPE_NUM ]]; then
       cd $component
