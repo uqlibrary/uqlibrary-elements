@@ -40,7 +40,7 @@ fi
 sed -i -e "s#<AWSAccessKeyId>#${AWSAccessKeyId}#g" ${awsconfig}
 sed -i -e "s#<AWSSecretKey>#${AWSSecretKey}#g" ${awsconfig}
 sed -i -e "s#<S3Bucket>#${S3Bucket}#g" ${awsconfig}
-sed -i -e "s#<S3BucketSubDir>#${S3BucketSubDir}#g" ${awsconfig}
+sed -i -e "s#<S3BucketSubDir>#${S3BucketSubDirVersion}${S3BucketSubDir}#g" ${awsconfig}
 sed -i -e "s#<CFDistribution>#${CFDistribution}#g" ${awsconfig}
 sed -i -e "s#<AWSRegion>#${AWSRegion}#g" ${awsconfig}
 
