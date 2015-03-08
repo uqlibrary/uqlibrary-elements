@@ -84,7 +84,9 @@ module.exports = function (grunt) {
         accessKeyId: '<%= aws.AWSAccessKeyId %>',
         secretAccessKey: '<%= aws.AWSSecretKey %>',
         region: '<%= aws.AWSRegion %>',
-        uploadConcurrency: 5
+        uploadConcurrency: 5,
+        differential: true,
+        displayChangesOnly: true
       },
       production: {
         options: {
@@ -96,7 +98,7 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '../',
             src: ['**', '!**/node_modules/**'],
-            dest: ''
+            dest: '<%= aws.S3BucketSubDir %>/'
           }
         ]
       }
