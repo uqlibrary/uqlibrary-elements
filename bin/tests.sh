@@ -27,8 +27,8 @@ for component in ${components[@]}; do
   else
     let COUNTER=COUNTER+1
     echo "PIPE NUM = " $PIPE_NUM "PIPE_TOTAL = " $PIPE_TOTAL "COUNTER = " $COUNTER
-    MOD=$(( $COUNTER % $PIPE_TOTAL ))
-    if [[ $MOD == $PIPE_NUM  || $MOD == 0 ]]; then
+    MOD=$(( $COUNTER % $PIPE_NUM ))
+    if [[ $MOD == $PIPE_TOTAL  || $MOD == 0 ]]; then
       cd $component
       if [ -d "test" ]; then
         echo $(pwd) $COUNTER
