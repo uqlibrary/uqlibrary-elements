@@ -7,7 +7,7 @@
     "grunt-cli" : "0.1.13",
     "grunt": "0.4.3",
     "matchdep": "~0.3.0",
-    "grunt-aws-s3": "0.11.0",
+    "grunt-aws-s3": "0.12.1",
     "grunt-invalidate-cloudfront": "0.1.6",
     "grunt-contrib-cssmin": "^0.11.0",
     "grunt-filerev": "^2.1.2",
