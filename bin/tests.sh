@@ -13,16 +13,30 @@ cd ${polymer}
 # Get a list of uplibrary-* components (excluding this one).
 components=$(ls -d */ | grep uqlibrary | grep -v elements)
 echo $components
+COUNTER=0
 # Run the tests for each component
 for component in ${components[@]}; do
-
-  cd $component
-  if [ -d "test" ]; then
-#   ../../bin/local_tests.sh
-    echo $(pwd)
-    ../../bin/sauce.sh
+  # if this is inside a codeship test pipeline, only run if its for this pipe number
+  if [[ -z $PIPE_NUM && -z $PIPE_TOTAL ]]; then
+    cd $component
+    if [ -d "test" ]; then
+      echo $(pwd)
+      ../../bin/sauce.sh
+    fi
+    cd ..
+  else
+    let COUNTER=COUNTER+1
+    echo "PIPE NUM = " $PIPE_NUM "PIPE_TOTAL = " $PIPE_TOTAL "COUNTER = " $COUNTER
+    MOD=$(( $COUNTER % $PIPE_TOTAL ))
+    if [[ $MOD == $PIPE_NUM  || ($MOD == 0 && $PIPE_NUM == $PIPE_TOTAL) ]]; then
+      cd $component
+      if [ -d "test" ]; then
+        echo $(pwd) $COUNTER
+        ../../bin/sauce.sh
+      fi
+      cd ..
+    fi
   fi
-  cd ..
 done
 
 cd ..
