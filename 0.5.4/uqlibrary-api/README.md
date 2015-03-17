@@ -14,6 +14,13 @@ To use mock data set cookie value UQLMockData to true
       //add a cookie to indicate usage of mock data
       document.cookie="UQLMockData=enabled";
 ```
+
+To update user type set cookie value UQLMockData-PType to required value, default value is 1 for internal undergraduate 
+
+```sh
+      //required ptype value
+      document.cookie="UQLMockData-PType=18";
+```
       
 ### Mock files
 mock files contain data in json format in same format as live API 

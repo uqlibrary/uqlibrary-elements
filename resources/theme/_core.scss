@@ -52,7 +52,7 @@ core-menu {
       text-decoration: none;
     }
   }
-  &.divider {
+  &.divider, .divider {
     border-bottom: 1px solid $uq-divider;
   }
 }
