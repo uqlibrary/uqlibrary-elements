@@ -16,8 +16,8 @@
   },
   {
     "app": "uqlibrary-chat",
-    "title": "Ask the Library",
-    "description": "Ask the Library for help",
+    "title": "Ask Us",
+    "description": "Ask the library for help",
     "icon": "question-answer",
     "link": "../chat",
     "ga": "chat"
