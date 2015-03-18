@@ -119,22 +119,6 @@
         });
 
 
-        test('constructs proper url', function(done) {
-
-          //constructs url
-          var coursesURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','courses');
-          expect(coursesURL).to.be.equal('http://app.library.uq.edu.au/v1/courses/');
-
-          var demoURL = menu.constructURL('http://app.library.uq.edu.au/v1/courses/demo.html','booking');
-          expect(demoURL).to.be.equal('http://app.library.uq.edu.au/v1/booking/demo.html');
-
-          var absoluteURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','http://library.uq.edu.au');
-          expect(absoluteURL).to.be.equal('http://library.uq.edu.au');
-
-          done();
-
-        });
-
         describe('menu-items-unit', function () {
 
           it('should have a menu user with a details set', function (done) {

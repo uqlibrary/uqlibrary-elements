@@ -84,8 +84,9 @@ Element providing the library main navigation menu using a responsive drawer pan
             <div class="divider"></div>
           </template>
           <template if="{{!app.isDivider}}">
-            <paper-item on-tap="{{go}}" link="{{app.link}}" id="{{app.app}}">
-                <core-icon alt="{{app.description}}" icon="{{app.icon}}"></core-icon> <a href="{{ app.link }}">{{app.title}}</a>
+            <paper-item id="{{ app.app }}">
+              <core-icon alt="{{ app.description }}" icon="{{ app.icon }}"></core-icon>
+              <a href="{{ app.link }}" on-click="{{ linkClicked }}" data-title="{{app.title}}" >{{app.title}}</a>
             </paper-item>
           </template>
         </template>
@@ -95,7 +96,6 @@ Element providing the library main navigation menu using a responsive drawer pan
 
     <!--Logout dialog-->
     <!--Prevents users from accidentally logging out-->
-
     <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
         <p>Are you sure you want to log out?</p>
         <p>This will log you out of all your UQ website sessions.</p>
@@ -143,28 +143,12 @@ Element providing the library main navigation menu using a responsive drawer pan
           this.$.logoutDialog.toggle();
         },
 
-        constructURL: function(currentURL, nextURL) {
-          if (nextURL.indexOf('http') < 0) {
-            //if path is relative, update current path
-            var nextUrlMatch = currentURL.match("^(.*[\\\/]){3}");
-            nextURL = currentURL.replace(nextUrlMatch[1], nextURL + "/");
-          }
-          return nextURL;
-        },
-
-        go: function (e, _, el) {
-          var _id = el.getAttribute('id');
-          if(_id) {
-            this.$.ga.addEvent('Menu Item Clicked', _id);
-          }
-
-          document.location.href = this.constructURL(document.URL, el.attributes.link.value);
-        },
-
         linkClicked: function(e, detail, sender) {
           var _id = sender.getAttribute('id');
-          if(_id) {
-            this.$.ga.addEvent('Link Clicked', _id);
+          var _title = sender.getAttribute('data-title');
+
+          if(_id || _title) {
+            this.$.ga.addEvent('Link Clicked', _id ? _id : _title);
           }
         }
 
