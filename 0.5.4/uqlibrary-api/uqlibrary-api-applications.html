@@ -78,6 +78,10 @@ data is stored in /data/applications.json in following format (order is importan
                 apps = apps.filter(function(element){
                   return element.isDivider || !element.ptypes || element.ptypes.indexOf(Number(that.ptype)) >= 0;
                 });
+              } else {
+                apps = apps.filter(function(element){
+                  return element.isDivider || !element.ptypes;
+                });
               }
 
               that.fire('uqlibrary-api-applications-loaded', apps);
