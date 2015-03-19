@@ -798,33 +798,15 @@ paper-dropdown::shadow #scroller {
   @media screen and (min-width: 768px) {
     .responsiveCard {
       width: 86%;
+      max-width: 600px;
       margin: 16px auto; } }
   @media screen and (max-width: 768px) {
     .responsiveCard {
       width: 100%;
       margin: 0; } }
 
-#feedbackCard {
-  padding: 18px 32px; }
-  @media screen and (min-width: 768px) {
-    #feedbackCard {
-      width: 86%; } }
-  @media screen and (max-width: 768px) {
-    #feedbackCard {
-      width: 100%;
-      margin: 0; } }
-
-#feedbackCard core-tooltip {
-  display: flex; }
-
-#feedbackCard paper-checkbox {
-  margin: 0 20px 0 0; }
-
-#feedbackCard paper-input-decorator {
-  margin-bottom: 20px; }
-
-#feedbackCard #feedbackButtons {
-  margin: 20px 0; }
+#feedbackIncludeContactCheckbox {
+  padding-right: 12px; }
 
 .open {
   color: #38852e !important; }
@@ -857,28 +839,6 @@ paper-tabs {
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
     color: #ffffff; }
-
-.masqueradeCard {
-  padding: 18px 32px; }
-  @media screen and (min-width: 768px) {
-    .masqueradeCard {
-      width: 86%; } }
-  @media screen and (max-width: 768px) {
-    .masqueradeCard {
-      width: 100%;
-      margin: 0; } }
-
-.masqueradeCard core-tooltip {
-  display: flex; }
-
-.masqueradeCard paper-checkbox {
-  margin: 0 20px 0 0; }
-
-.masqueradeCard paper-input-decorator {
-  margin-bottom: 20px; }
-
-.masqueradeCard #masqueradeButton {
-  margin-top: 24px; }
 
 .single-line-list {
   list-style-type: none;
