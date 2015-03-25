@@ -19,10 +19,10 @@
   "_release": "9506d4f804",
   "_resolution": {
     "type": "branch",
-    "branch": "master",
+    "branch": "staging",
     "commit": "9506d4f80477c4bb0a93d64d617494bfd5f1108a"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-a11y-link.git",
-  "_target": "master",
+  "_target": "staging",
   "_originalSource": "uqlibrary/uqlibrary-a11y-link"
 }

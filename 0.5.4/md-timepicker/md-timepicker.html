@@ -111,6 +111,12 @@ Element that let the user input a time easily.
         this.isPm = (now.format("a") == 'pm');
         this.hours = now.format((this.timeFormat == '12h' ? 'hh' : 'HH'));
         this.minutes = now.format("mm");
+
+        if(this.timeFormat == '12h') {
+          this.keys[0].enabled = false;
+        }
+
+
       },
 
 
@@ -224,6 +230,10 @@ Element that let the user input a time easily.
         if(this.currentSelector == this.selector.MINUTE) {
           this.keys[0].enabled = true;
         }
+        if(this.currentSelector == this.selector.HOUR && this.timeFormat == '12h') {
+          this.keys[0].enabled = false;
+        }
+
       },
 
       /**
@@ -244,6 +254,10 @@ Element that let the user input a time easily.
       enableKeys : function(){
         for(var i = 0; i<10; i++)
           this.keys[i].enabled = true;
+
+        if(this.currentSelector == this.selector.HOUR && this.timeFormat == '12h') {
+          this.keys[0].enabled = false;
+        }
       },
       /**
        * Fires `time-selected` event
@@ -262,6 +276,8 @@ Element that let the user input a time easily.
           today.hours(this.hours);
         }
         today.minutes(this.minutes);
+        // this.fire('time-selected', {time: today}); // a moment Object
+        // this.fire('time-selected', {time: today.toDate()}); // a Date Object
         this.fire('time-selected', {time: today.format(this.outputFormat)}); // a String
       },
       /**
