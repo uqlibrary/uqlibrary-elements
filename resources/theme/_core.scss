@@ -484,7 +484,8 @@ body /deep/ #infoDialog {
     }
 
     &:focus {
-      box-shadow: $shadow-z-2;
+      box-shadow: $shadow-z-1;
+      color: $button;
       background-color: $background-primary;
       text-decoration: none;
     }
@@ -961,6 +962,10 @@ uqlibrary-fines {
 
 .unavailable {
   color: $uq-warm-red;
+}
+
+.booked {
+  color: $uq-divider;
 }
 
 paper-dropdown::shadow #scroller {

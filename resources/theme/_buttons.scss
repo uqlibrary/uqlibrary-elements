@@ -50,9 +50,15 @@ paper-button {
 
 paper-button[raised] {
   transition: $shadow-transition;
+  background-color: $background-secondary;
+  &:hover {
+    transition: $shadow-transition, $background-transition;
+    background-color: $background-primary;
+    box-shadow: $shadow-z-2;
+  }
   .colored {
     transition: $shadow-transition, $background-transition;
-    background: $button;
+    background-color: $button;
     color: $background-secondary;
     &:hover {
       transition: $shadow-transition, $background-transition;
