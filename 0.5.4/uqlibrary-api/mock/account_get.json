@@ -1,7 +1,7 @@
 {
   "id": "s1234567",
   "class": "0",
-  "type": 31,
+  "type": {PTYPE},
   "homeLib": "sshia",
   "name": "Mr. John Doe",
   "mail": "s1234567@student.uq.edu.au",
