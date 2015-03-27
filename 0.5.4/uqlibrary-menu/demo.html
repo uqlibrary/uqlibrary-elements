@@ -32,15 +32,18 @@
 <body unresolved>
 
   <uqlibrary-api-account id="account"></uqlibrary-api-account>
+
   <uqlibrary-menu></uqlibrary-menu>
 
   <script>
     (function () {
       document.cookie="UQLMockData=enabled";
+      document.cookie="UQLMockData-PType=";
 
       window.addEventListener('polymer-ready', function() {
         var menu = document.querySelector('uqlibrary-menu');
         var api = document.querySelector('uqlibrary-api-account');
+        var apiApps = document.querySelector('uqlibrary-api-applications');
 
         api.addEventListener('uqlibrary-api-account-loaded', function(e) {
           if (e.detail.hasSession) {

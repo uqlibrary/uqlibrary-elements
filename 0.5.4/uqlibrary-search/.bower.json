@@ -24,13 +24,13 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "44a9f52103",
+  "_release": "c8c9a42759",
   "_resolution": {
     "type": "branch",
-    "branch": "staging",
-    "commit": "44a9f521035d1765f22bbe6727ca1d6a8a2d1e6a"
+    "branch": "production",
+    "commit": "c8c9a42759ee85b23f149a147f87cfe5dc921cf4"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-search.git",
-  "_target": "staging",
+  "_target": "production",
   "_originalSource": "uqlibrary/uqlibrary-search"
 }

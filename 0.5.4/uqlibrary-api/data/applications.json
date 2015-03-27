@@ -1,0 +1,114 @@
+[
+  {
+    "title": "My Library",
+    "description": "Return to My Library",
+    "icon": "dashboard",
+    "link": "../home"
+  },
+  {
+    "title": "UQ Library Home",
+    "description": "Return to UQ Library Home",
+    "icon": "home",
+    "link": "https://www.library.uq.edu.au/"
+  },
+  {
+    "isDivider": true
+  },
+  {
+    "app": "uqlibrary-chat",
+    "title": "Ask Us",
+    "description": "Ask the library for help",
+    "icon": "question-answer",
+    "link": "../chat",
+    "ga": "chat"
+  },
+  {
+    "app": "uqlibrary-booking",
+    "title": "Booking",
+    "description": "View or manage my library bookings",
+    "icon": "event",
+    "link": "../booking",
+    "ptypes": [1, 31, 11, 21, 2, 22, 17, 18],
+    "ga": "FBS"
+  },
+  {
+    "app": "uqlibrary-borrowing",
+    "title": "Borrowing",
+    "description": "View or manage my library loans, holds, and fines",
+    "icon": "maps:local-library",
+    "link": "../borrowing",
+    "ptypes": [1, 31, 11, 21, 2, 22, 3, 32, 17, 18, 25, 14, 4, 9, 13, 10, 12, 27, 7, 15, 5, 8],
+    "ga": "Borrowing",
+    "subApplications": [
+      {
+        "app": "Loans",
+        "title": "Loans",
+        "ptypes": [1, 31, 11, 21, 2, 22, 3, 32, 17, 18, 25, 14, 4, 9, 13, 10, 12, 27, 7, 15, 5, 8]
+      },
+      {
+        "app": "Holds",
+        "title": "Holds",
+        "ptypes": [1, 31, 11, 21, 2, 22, 3, 32, 17, 18, 25, 14, 4, 9, 7, 15, 8]
+      },
+      {
+        "app": "Fines",
+        "title": "Fines",
+        "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8]
+      }
+    ]
+  },
+  {
+    "app": "uqlibrary-computers",
+    "title": "Computers",
+    "description": "View library computers availability",
+    "icon": "hardware:desktop-mac",
+    "link": "../computers",
+    "ga": "Computers"
+  },
+  {
+    "app": "uqlibrary-hours",
+    "title": "Hours",
+    "description": "View library opening hours",
+    "icon": "schedule",
+    "link": "../hours",
+    "ga": "Hours"
+  },
+  {
+    "app": "uqlibrary-courses",
+    "title": "Courses",
+    "description": "View course learning resources",
+    "icon": "social:school",
+    "link": "../courses",
+    "ga": "Courses",
+    "ptypes": [1, 3, 9, 31, 11, 21]
+  },
+  {
+    "app": "uqlibrary-papercut",
+    "title": "Printing",
+    "description": "Manage my printing balance",
+    "icon": "print",
+    "link": "../papercut",
+    "ga": "papercut",
+    "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8]
+  },
+  {
+    "app": "uqlibrary-masquerade",
+    "title": "Masquerade",
+    "description": "Masquerade as another library user",
+    "icon": "perm-identity",
+    "link": "../masquerade",
+    "ga": "masquerade",
+    "ptypes": [17,18]
+  },
+  {
+    "isDivider": true
+  },
+  {
+    "app": "uqlibrary-feedback",
+    "title": "Feedback",
+    "description": "Leave feedback for my library",
+    "icon": "communication:comment",
+    "link": "../feedback",
+    "ga": "Feedback"
+  }
+]
