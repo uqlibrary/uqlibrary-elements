@@ -108,7 +108,7 @@
     "title": "Feedback",
     "description": "Leave feedback for my library",
     "icon": "communication:comment",
-    "link": "../communication:comment",
+    "link": "../feedback",
     "ga": "Feedback"
   }
 ]
