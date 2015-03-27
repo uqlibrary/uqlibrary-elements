@@ -72,6 +72,7 @@ Element providing access to UQ Library's API.
             if (xobj.readyState == 4 && xobj.status == "200") {
               var response = xobj.responseText;
 
+
               if (fileName.match(/facilities_availability/)) {
                 var now = new Date();
 
@@ -89,6 +90,17 @@ Element providing access to UQ Library's API.
 
                 response = response.replace(/"{BOOKING_START_TIME}"/g, bookingFrom);
                 response = response.replace(/"{BOOKING_END_TIME}"/g, bookingTo);
+              }
+              else if (fileName.match(/account_get/)) {
+                //get user role from a cookie
+                var ptype = that.getCookie('UQLMockData-PType');
+
+                //set default user role to undegraduate
+                if (!ptype){
+                  ptype = 1;
+                }
+
+                response = response.replace(/{PTYPE}/g, ptype);
               }
 
               that.fire('uqlibrary-api', JSON.parse(response));

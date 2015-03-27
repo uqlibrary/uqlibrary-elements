@@ -1,0 +1,96 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Element providing access to a list of applications based on user PType.
+
+##### Example
+
+    <uqlibrary-api-applications ptype="18"></uqlibrary-api-applications>
+
+@element uqlibrary-api-applications
+@blurb Element providing access to a list of applications based on user PType.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+
+data is stored in /data/applications.json in following format (order is important for displaying menue)
+
+[
+  {
+    "isDivider": true,    //optional: indicates new group to follow
+    "app": "uqlibrary-*", //optional: name of web component, eg uqlibrary-borrowing
+    "title": "",          //optional: title to display
+    "description": "",    //optional: description for aria-label
+    "icon": "",           //optional: icon associated with app
+    "link": "",           //optional: url associated with app
+    "ptypes": [1, 11],    //optional: ptypes that have access to the app,
+                                      absence of ptypes indicates - all ptypes have access,
+                                      empty array indicates no one has access
+    "subApplications": [] //optional: special access rules for sub apps, eg Borrowing has Loans and Fines
+  }
+]
+-->
+
+<polymer-element name="uqlibrary-api-applications" attributes="ptype app">
+
+  <template>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-applications', {
+
+        method: 'GET',
+        auto: false,
+        baseApiUrl: 'data/',
+        url: 'applications.json',
+
+        ready: function() {
+        },
+
+        /**
+         * Gets the apps list based on user ptype and/or
+         *
+         * @method get
+         */
+        get: function() {
+          var that = this;
+
+          var xobj = new XMLHttpRequest();
+          xobj.overrideMimeType("application/json");
+          xobj.open('GET', this.resolvePath(this.baseApiUrl + this.url), true);
+
+          xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+              var response = xobj.responseText;
+              var apps = JSON.parse(response);
+
+
+              //filter out by application
+              if (that.app) {
+                apps = apps.filter(function(element){
+                  return element.app && element.app == that.app;
+                });
+              }
+
+              //filter by ptype
+              if (that.ptype) {
+                apps = apps.filter(function(element){
+                  return element.isDivider || !element.ptypes || element.ptypes.indexOf(Number(that.ptype)) >= 0;
+                });
+              } else {
+                apps = apps.filter(function(element){
+                  return element.isDivider || !element.ptypes;
+                });
+              }
+
+              that.fire('uqlibrary-api-applications-loaded', apps);
+            }
+          };
+          xobj.send(null);
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
