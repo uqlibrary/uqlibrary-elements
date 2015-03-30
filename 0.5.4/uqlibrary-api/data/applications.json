@@ -53,7 +53,7 @@
       {
         "app": "Fines",
         "title": "Fines",
-        "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8]
+        "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8, 17, 18]
       }
     ]
   },
@@ -80,7 +80,7 @@
     "icon": "social:school",
     "link": "../courses",
     "ga": "Courses",
-    "ptypes": [1, 3, 9, 31, 11, 21]
+    "ptypes": [1, 3, 31, 11, 21, 17, 18]
   },
   {
     "app": "uqlibrary-papercut",
@@ -89,7 +89,7 @@
     "icon": "print",
     "link": "../papercut",
     "ga": "papercut",
-    "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8]
+    "ptypes": [1, 31, 11, 21, 2, 22, 14, 4, 13, 5, 8, 17, 18]
   },
   {
     "app": "uqlibrary-masquerade",
