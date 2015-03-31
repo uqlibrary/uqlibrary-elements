@@ -31,7 +31,7 @@ data is stored in /data/applications.json in following format (order is importan
 ]
 -->
 
-<polymer-element name="uqlibrary-api-applications" attributes="ptype app">
+<polymer-element name="uqlibrary-api-applications" attributes="user app">
 
   <template>
   </template>
@@ -55,6 +55,7 @@ data is stored in /data/applications.json in following format (order is importan
          */
         get: function() {
           var that = this;
+          this.ptype = this.user.type;
 
           var xobj = new XMLHttpRequest();
           xobj.overrideMimeType("application/json");
@@ -76,7 +77,21 @@ data is stored in /data/applications.json in following format (order is importan
               //filter by ptype
               if (that.ptype) {
                 apps = apps.filter(function(element){
-                  return element.isDivider || !element.ptypes || element.ptypes.indexOf(Number(that.ptype)) >= 0;
+                  var include = element.isDivider || !element.ptypes || element.ptypes.indexOf(Number(that.ptype)) >= 0;
+
+                  //filter by specific user fields
+                  switch(element.app) {
+                    case "uqlibrary-masquerade":
+                      include = include && that.user && that.user.canMasquerade;
+                      break;
+
+                    case "uqlibrary-courses":
+                      include = include && that.user && (!that.user.classes || !(that.user.classes.length == 1 && that.user.classes[0].SUBJECT == "RSCH"));
+                      break;
+                  }
+
+                  return include;
+
                 });
               } else {
                 apps = apps.filter(function(element){

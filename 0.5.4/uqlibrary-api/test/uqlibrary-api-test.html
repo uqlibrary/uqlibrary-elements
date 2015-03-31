@@ -40,10 +40,46 @@
             'uqlibrary-feedback', 'uqlibrary-papercut']
         },
         {
-          ptype: [2, 22], //postgrad research
+          ptype: [2], //postgrad research without courses
           apps: [
             'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-computers',
-            'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut']
+            'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut'],
+          classes: [{
+            "ACAD_CAREER": "",
+            "DESCR": "",
+            "SUBJECT": "RSCH",
+            "CATALOG_NBR": "",
+            "CAMPUS": "",
+            "INSTRUCTION_MODE": "",
+            "ACAD_GROUP": "",
+            "STRM":""
+          }]
+        },
+        {
+          ptype: [22], //postgrad research with courses
+          apps: [
+            'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-computers',
+            'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut', 'uqlibrary-courses'],
+          classes: [{
+              "ACAD_CAREER": "",
+              "DESCR": "",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "",
+              "CAMPUS": "",
+              "INSTRUCTION_MODE": "",
+              "ACAD_GROUP": "",
+              "STRM":""
+            },
+            {
+              "ACAD_CAREER": "UGRD",
+              "DESCR": "Financial Management",
+              "SUBJECT": "FINM",
+              "CATALOG_NBR": "2401",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "BEL",
+              "STRM":"6460"
+            }]
         },
         {
           ptype: [3],  //academic staff
@@ -51,10 +87,17 @@
             'uqlibrary-chat', 'uqlibrary-borrowing', 'uqlibrary-computers', 'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-courses']
         },
         {
-          ptype: [17,18],  //library staff
+          ptype: [17],  //library staff with masquerade access
           apps: [
             'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-papercut', 'uqlibrary-courses',
-            'uqlibrary-computers', 'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-masquerade']
+            'uqlibrary-computers', 'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-masquerade'],
+          canMasquerade: true
+        },
+        {
+          ptype: [18],  //library staff without masquerade access
+          apps: [
+            'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-papercut', 'uqlibrary-courses',
+            'uqlibrary-computers', 'uqlibrary-hours', 'uqlibrary-feedback']
         },
         {
           ptype: [14, 4],  //alumni
@@ -82,7 +125,12 @@
         ptypeApps.forEach(function(item, index, array) {
             item.ptype.forEach(function(ptype, indexP, arrayP){
               test('check permissions for ptype ' + ptype, function (done) {
-                parent.ptype = ptype;
+
+                parent.user = {
+                  type: ptype,
+                  canMasquerade: item.canMasquerade,
+                  classes: item.classes
+                };
 
                 var appsLoaded = function(e) {
 
@@ -118,7 +166,7 @@
 
                   parent.get();
 
-                }, 10);
+                }, 100);
 
               });
             });
