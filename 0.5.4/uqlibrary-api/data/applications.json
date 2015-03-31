@@ -83,6 +83,15 @@
     "ptypes": [1, 3, 31, 11, 21, 17, 18, 2, 22]
   },
   {
+    "app": "uqlibrary-research",
+    "title": "Research",
+    "description": "View my research progress",
+    "icon": "social:school",
+    "link": "../research",
+    "ga": "Research",
+    "ptypes": [2, 22, 3, 17, 18]
+  },
+  {
     "app": "uqlibrary-papercut",
     "title": "Printing",
     "description": "Manage my printing balance",
