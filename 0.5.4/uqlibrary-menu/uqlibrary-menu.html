@@ -58,7 +58,7 @@ Element providing the library main navigation menu using a responsive drawer pan
     </style>
 
     <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
-    <uqlibrary-api-applications id="apiApplications" ptype="{{account.type}}"></uqlibrary-api-applications>
+    <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
 
     <template if="{{account.hasSession}}">
       <paper-button id="skipNavigation" aria-label="skip navigation"
