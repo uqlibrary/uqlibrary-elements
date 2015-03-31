@@ -207,13 +207,13 @@ h1#toolbar-page-title {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 core-menu {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0;
   padding: 8px 0; }
   core-menu core-icon {
     margin: -3px 28px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   core-menu a {
     color: rgba(0, 0, 0, 0.87); }
     core-menu a:hover {
@@ -237,7 +237,7 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: white; }
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
@@ -302,7 +302,7 @@ paper-item {
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
   paper-item:hover, paper-item:focus, paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
 
 paper-progress {
   height: 1.14286em;
@@ -312,7 +312,7 @@ paper-progress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -342,12 +342,12 @@ paper-dropdown-menu {
   width: 100%;
   border-top: 1px solid transparent; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
-    color: #BDBDBD; }
+    color: #bdbdbd; }
   paper-dropdown-menu:focus {
     border-top: 0px solid transparent;
     border-bottom: 2px solid #007e9e; }
   paper-dropdown-menu paper-dropdown paper-item:focus, paper-dropdown-menu paper-dropdown paper-item:hover {
-    background-color: #F5F5F5; }
+    background-color: whitesmoke; }
 
 paper-input-decorator .mirror-text {
   padding: 0.8em 0 0.25em; }
@@ -365,7 +365,7 @@ paper-input {
 paper-slider {
   width: 100%; }
   paper-slider:focus {
-    background-color: #F5F5F5 !important; }
+    background-color: whitesmoke !important; }
   paper-slider::shadow #sliderBar {
     box-sizing: content-box; }
     paper-slider::shadow #sliderBar::shadow #activeProgress {
@@ -386,11 +386,11 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff;
+  background-color: white;
   border-right: 1px solid rgba(0, 0, 0, 0.1); }
 
 .main {
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 
 #account {
   font-size: 0.85714em;
@@ -424,12 +424,12 @@ core-drawer-panel [drawer] {
     text-overflow: ellipsis;
     overflow: hidden; }
   #account core-icon {
-    color: #FAFAFA;
+    color: #fafafa;
     height: 24px;
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  color: #FAFAFA;
+  color: #fafafa;
   margin-bottom: 8px;
   margin-right: 8px; }
   #askLogout:active, #askLogout:focus, #askLogout:hover, #askLogout::shadow:active, #askLogout::shadow:focus, #askLogout::shadow:hover {
@@ -456,13 +456,13 @@ body /deep/ #infoDialog .colored {
     text-decoration: none; }
 body /deep/ #logoutDialog paper-button:hover,
 body /deep/ #infoDialog paper-button:hover {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 body /deep/ #logoutDialog paper-button:focus,
 body /deep/ #infoDialog paper-button:focus {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
   color: #007e9e;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 
 uqlibrary-persistent-footer .footerInfo {
@@ -472,9 +472,9 @@ uqlibrary-persistent-footer .footerInfo {
   position: fixed;
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
   padding: 4px; }
   .persistentFooter .footerInfo {
     padding: 12px; }
@@ -617,7 +617,7 @@ uqlibrary-home paper-icon-button.huge #icon {
   padding-left: 56px; }
 
 .filterWrapper {
-  background-color: #ffffff;
+  background-color: white;
   margin-bottom: 30px; }
 
 md-timepicker::shadow #card {
@@ -630,7 +630,7 @@ md-timepicker::shadow #card {
     background-color: #007e9e !important;
     height: 108px;
     padding: 21.6px;
-    color: #ffffff;
+    color: white;
     font-size: 41.4px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
@@ -651,9 +651,9 @@ md-timepicker::shadow paper-button {
     margin-right: 10pt; }
 
 .error {
-  border-bottom: 1px solid #F44336; }
+  border-bottom: 1px solid #f44336; }
   .error::shadow #label {
-    color: #F44336; }
+    color: #f44336; }
 
 uqlibrary-date-selector /deep/ .selectedDate {
   text-align: center;
@@ -668,7 +668,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
     margin-bottom: 4px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
-    color: #ffffff; }
+    color: white; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
     text-align: center;
     width: 40px; }
@@ -681,7 +681,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
     padding-top: 12px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 uqlibrary-time-selector /deep/ .items {
   margin: 0 10px;
@@ -698,13 +698,13 @@ uqlibrary-time-selector /deep/ .items {
     font-size: 12px;
     line-height: 1.1;
     text-transform: uppercase;
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
     uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
-      background-color: #BDBDBD;
-      color: #ffffff; }
+      background-color: #bdbdbd;
+      color: white; }
     uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
       background-color: #007e9e;
-      color: #ffffff; }
+      color: white; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
@@ -768,7 +768,7 @@ paper-dropdown::shadow #scroller {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 .availability-item {
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid whitesmoke;
   padding: 4px;
   line-height: 1.2; }
   .availability-item .totals {
@@ -823,7 +823,7 @@ paper-dropdown::shadow #scroller {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -842,7 +842,168 @@ paper-tabs {
     padding-top: 12px; }
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
+
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .title,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .title {
+  text-decoration: none;
+  padding-bottom: 8px;
+  font-weight: 300; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .new-title,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .new-title {
+  text-decoration: none;
+  padding-bottom: 8px;
+  font-weight: 300; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .authors,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .authors {
+  /*color: #38852e;*/
+  padding-bottom: 8px;
+  font-weight: 400; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .journal,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .journal {
+  padding-bottom: 4px;
+  font-weight: 300; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type {
+  /*color: #666;*/
+  padding-left: 16px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .title-type,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .title-type {
+  padding-left: 16px;
+  /*font-weight: 500;*/ }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow hr,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow hr {
+  margin: 0; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .menuLine,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .menuLine {
+  margin: 12px 0; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .mine,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .mine {
+  transition: 100ms ease-in-out;
+  background-color: #c8e6c9; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .mine:hover,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .mine:hover {
+  transition: 100ms ease-in-out;
+  background-color: #a5d6a7; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .not-mine,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .not-mine {
+  transition: 100ms ease-in-out;
+  background-color: #ffcdd2; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .not-mine:hover,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .not-mine:hover {
+  transition: 100ms ease-in-out;
+  background-color: #ef9a9a; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow left-swipe-action-button,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow left-swipe-action-button {
+  border-radius: 2px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow left-swipe-action,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow left-swipe-action {
+  cursor: pointer; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .view-more:hover,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .view-more:hover {
+  color: #007e9e;
+  text-decoration: underline;
+  cursor: pointer; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .link,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .link {
+  color: #007e9e; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .link:hover,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .link:hover {
+  cursor: pointer;
+  text-decoration: underline; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .recent,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .recent {
+  padding: 16px;
+  line-height: 1.3;
+  margin-top: 14px;
+  margin-bottom: 2px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .year,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .year {
+  padding-right: 20px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics {
+  margin: -16px -16px -16px 0; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics div,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics div {
+  text-align: center; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .num-cites,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .num-cites {
+  font-size: 24px;
+  font-weight: 300; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
+  color: #333 !important;
+  font-size: 11px;
+  font-weight: 300; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .border-top,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-top {
+  border-top: 1px solid #ccc; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .border-right,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-right {
+  border-right: 1px solid #ccc; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .border-left,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-left {
+  border-left: 1px solid #ccc; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .border-bottom,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-bottom {
+  border-bottom: 1px solid #ccc; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .wos,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .wos {
+  padding: 8px 16px;
+  background-color: #fafafa;
+  color: #ce4627; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .scopus,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .scopus {
+  padding: 8px 16px;
+  background-color: #fafafa;
+  color: #2874d7; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .altmetrics,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .altmetrics {
+  padding: 8px 16px;
+  background-color: #fafafa; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .espace,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .espace {
+  padding: 8px 16px;
+  color: #bda14e; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .h-index,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .h-index {
+  padding: 8px 16px;
+  color: #333; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .centre,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .centre {
+  text-align: center; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .completion,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .completion {
+  padding: 8px;
+  margin-bottom: -18px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .completion-desc,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .completion-desc {
+  color: rgba(0, 0, 0, 0.54);
+  margin: 2px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metric-text,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metric-text {
+  margin-left: 8px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .trending, uqlibrary-research::shadow uqlibrary-research-trending::shadow core-icon[icon="arrow-drop-up"],
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .trending,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow core-icon[icon="arrow-drop-up"] {
+  /*color: #8cb800;*/
+  margin: -10px;
+  padding: 0;
+  left: 10px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow core-icon[icon="arrow-drop-down"],
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow core-icon[icon="arrow-drop-down"] {
+  margin: -10px;
+  padding: 0;
+  left: 10px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites-header,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header {
+  /*vertical-align: middle;*/ }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metric-list,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metric-list {
+  padding: 15px 15px 14px 15px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .thin,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .thin {
+  border: 1px solid #eee; }
 
 .single-line-list {
   list-style-type: none;
@@ -1183,7 +1344,7 @@ paper-tabs {
       .three-line-icon-list .list-item.timeline .date .title, .three-line-icon-list .list-item.timeline .date .headline {
         color: #7b0c9d; }
     .three-line-icon-list .list-item.timeline .content {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       border-radius: 2px;
       padding-left: 16px; }
     .three-line-icon-list .list-item .content {
@@ -1303,13 +1464,13 @@ paper-fab {
     position: fixed;
     right: 16px; }
   paper-fab core-icon {
-    color: #ffffff; }
+    color: white; }
 
 paper-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   paper-button:hover {
     transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   paper-button.colored {
     color: #007e9e; }
 
@@ -1319,19 +1480,19 @@ paper-button[autofocus] {
 paper-button a:hover {
   text-decoration: none; }
 paper-button .colored:hover {
-  background: #FAFAFA !important; }
+  background: #fafafa !important; }
 
 paper-button[raised] {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: #ffffff; }
+  background-color: white; }
   paper-button[raised]:hover {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised] .colored {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
     paper-button[raised] .colored:hover {
       transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
       background-color: #006680;
@@ -1345,10 +1506,10 @@ paper-button[raised] {
       color: #cccccc; }
 
 paper-button[disabled] {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #cccccc; }
   paper-button[disabled].colored {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #cccccc; }
 
 paper-icon-button {
@@ -1360,7 +1521,7 @@ paper-icon-button {
   border-radius: 2px;
   box-sizing: border-box;
   height: auto;
-  background: #ffffff;
+  background: white;
   width: 320px;
   margin: 16px auto; }
   .card .cardSection {
@@ -1398,7 +1559,7 @@ paper-icon-button {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -1432,9 +1593,9 @@ paper-icon-button {
   .hint-box.selected {
     background-color: #007e9e; }
   .hint-box.available {
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
   .hint-box.unavailable {
-    background-color: #BDBDBD; }
+    background-color: #bdbdbd; }
 
 paper-input-decorator::shadow .focused-underline {
   background-color: #007e9e; }
@@ -1460,5 +1621,3 @@ paper-checkbox::shadow #checkbox {
 ::content * {
   box-sizing: border-box;
   outline: none; }
-
-/*# sourceMappingURL=element.css.map */
