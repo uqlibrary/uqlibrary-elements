@@ -1114,10 +1114,17 @@ uqlibrary-research {
         padding: 18px 0;
         font-size: 24px;
         font-weight: 300;
-        width: 3em;
+        width: 4em;
         text-align: center;
-//        background-color: blue;
         background-color: $background-primary;
+      }
+      .plus {
+        padding: 5px;
+        font-size: 14px;
+        color: $primary;
+        border-radius: 50%;
+        width: 5px;
+        vertical-align: super;
       }
       .authors {
         /*color: #38852e;*/
