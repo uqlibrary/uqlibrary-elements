@@ -1015,6 +1015,8 @@ paper-dropdown::shadow #scroller {
   }
 }
 
+// .card and .responsiveCard should be the same, really. At some point, card should just do what responsiveCard does
+
 .responsiveCard {
   background: white;
   box-sizing: border-box;
