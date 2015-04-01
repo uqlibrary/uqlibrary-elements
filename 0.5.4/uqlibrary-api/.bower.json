@@ -16,11 +16,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "3dc1f8f317",
+  "_release": "89fa3d43dc",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "3dc1f8f3179f1202d5f65075a622d2df11351b76"
+    "commit": "89fa3d43dc9c01b02bc5489523b101a77b8f5ecf"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-api.git",
   "_target": "master",
