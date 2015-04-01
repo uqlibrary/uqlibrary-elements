@@ -8,13 +8,17 @@ $default-card-width: 98%;
   box-sizing: border-box;
   display: block;
   border-radius: 2px;
-  box-sizing: border-box;
   height: auto;
   background: $background-secondary;
   width: $default-card-width;
-//  min-width: 300px;
   max-width: 800px;
   margin: $card-margin auto;
+
+  core-icon {
+    margin-right: 4px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+  }
 
   .cardSection {
     border-bottom: 1px solid $divider;

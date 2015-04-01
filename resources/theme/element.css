@@ -1536,12 +1536,15 @@ paper-icon-button {
   box-sizing: border-box;
   display: block;
   border-radius: 2px;
-  box-sizing: border-box;
   height: auto;
   background: #ffffff;
   width: 98%;
   max-width: 800px;
   margin: 16px auto; }
+  .card core-icon {
+    margin-right: 4px;
+    margin-top: -2px;
+    margin-bottom: 2px; }
   .card .cardSection {
     border-bottom: 1px solid #cccccc;
     padding: 16px;
