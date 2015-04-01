@@ -1100,6 +1100,9 @@ uqlibrary-research {
   &::shadow {
     uqlibrary-research-trending::shadow,
     uqlibrary-research-metrics::shadow {
+      .hoverable:hover {
+        background-color: $background-primary;
+      }
       .title {
         text-decoration: none;
         padding-bottom: 8px;
