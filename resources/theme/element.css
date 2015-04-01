@@ -211,7 +211,7 @@ core-menu {
   margin: 0;
   padding: 8px 0; }
   core-menu core-icon {
-    margin: -3px 28px -3px -3px; }
+    margin: -3px 34px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
     background-color: #FAFAFA; }
   core-menu a {
