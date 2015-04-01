@@ -1,15 +1,19 @@
 @import "variables";
 @import "margins";
 
-$default-card-width: 320px;
+$default-card-width: 98%;
 
 .card {
+  background: white;
+  box-sizing: border-box;
   display: block;
   border-radius: 2px;
   box-sizing: border-box;
   height: auto;
   background: $background-secondary;
   width: $default-card-width;
+//  min-width: 300px;
+  max-width: 800px;
   margin: $card-margin auto;
 
   .cardSection {

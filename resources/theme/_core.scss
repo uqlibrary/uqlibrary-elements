@@ -541,21 +541,6 @@ uqlibrary-persistent-footer {
   opacity: 0;
 }
 
-//    ____              _
-//   / ___|__ _ _ __ __| |___
-//  | |   / _` | '__/ _` / __|
-//  | |___ (_| | | | (_| \__ \
-//   \____\__,_|_|  \__,_|___/
-//
-// Core card styles
-.card {
-  background: white;
-  box-sizing: border-box;
-  width: 300px;
-}
-
-
-
 //   __  ____   __  _     ___ ____  ____     _    ______   __     _    ____  ____  ____
 //  |  \/  \ \ / / | |   |_ _| __ )|  _ \   / \  |  _ \ \ / /    / \  |  _ \|  _ \/ ___|
 //  | |\/| |\ V /  | |    | ||  _ \| |_) | / _ \ | |_) \ V /    / _ \ | |_) | |_) \___ \
@@ -1122,8 +1107,17 @@ uqlibrary-research {
       }
       .new-title {
         text-decoration: none;
-        padding-bottom: 8px;
         font-weight: 300;
+        padding: 12px;
+      }
+      .num-cites {
+        padding: 18px 0;
+        font-size: 24px;
+        font-weight: 300;
+        width: 3em;
+        text-align: center;
+//        background-color: blue;
+        background-color: $background-primary;
       }
       .authors {
         /*color: #38852e;*/
@@ -1197,10 +1191,6 @@ uqlibrary-research {
       }
       .metrics div {
         text-align: center;
-      }
-      .num-cites {
-        font-size: 24px;
-        font-weight: 300;
       }
       .type-cites {
         color: #333 !important;
