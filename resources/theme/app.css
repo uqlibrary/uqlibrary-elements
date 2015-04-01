@@ -1329,6 +1329,10 @@ paper-tabs {
     background-color: #007e9e;
     color: #ffffff; }
 
+.no-margin {
+  margin: 0 !important;
+  width: 100% !important; }
+
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .hoverable:hover,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .hoverable:hover {
   background-color: #FAFAFA; }
