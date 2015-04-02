@@ -1,0 +1,104 @@
+{
+  "author_details": [
+    {
+      "aut_id": "1234",
+      "aut_org_username": "s1234567",
+      "aut_email": null,
+      "aut_display_name": "Academic, Author",
+      "aut_fname": "Author",
+      "aut_mname": null,
+      "aut_lname": "Academic",
+      "aut_title": "Professor",
+      "aut_position": null,
+      "aut_function": null,
+      "aut_cv_link": null,
+      "aut_homepage_link": null,
+      "aut_researcher_id": "D-8900-2013",
+      "aut_scopus_id": null,
+      "aut_mypub_url": null,
+      "aut_people_australia_id": null,
+      "aut_description": null,
+      "aut_orcid_id": null,
+      "aut_google_scholar_id": null,
+      "aut_rid_last_updated": "2013-04-26"
+    }
+  ],
+  "altmetric": [
+    {
+      "id": "1234",
+      "count": "8",
+      "difference": "7.408",
+      "created": "1393332161",
+      "last_checked": "1427688321",
+      "rek_pid": "UQ:123456",
+      "title": "The title of the altmetric publication",
+      "citation": "Citation of the altmetric publication",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    },
+    {
+      "id": "1235",
+      "count": "18",
+      "difference": "7.222",
+      "created": "1393332161",
+      "last_checked": "1427688321",
+      "rek_pid": "UQ:123457",
+      "title": "The title of the second altmetric publication",
+      "citation": "Citation of the second altmetric publication",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    }
+  ],
+  "thomson": [
+    {
+      "id": "12345678",
+      "count": "12",
+      "difference": "3",
+      "created": "1427565488",
+      "last_checked": "1427565488",
+      "rek_pid": "UQ:654321",
+      "title": "Title of thomson publication",
+      "citation": "Citation of thomson publication",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    }
+  ],
+  "scopus": [
+    {
+      "id": "87654321",
+      "count": "141",
+      "difference": "12",
+      "created": "1427558906",
+      "last_checked": "1427558906",
+      "rek_pid": "UQ:333333",
+      "title": "Scopus title",
+      "citation": "Scopus citation",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    },
+    {
+      "id": "98765432",
+      "count": "11",
+      "difference": "5",
+      "created": "1427558906",
+      "last_checked": "1427558906",
+      "rek_pid": "UQ:222222",
+      "title": "Scopus second title",
+      "citation": "Scopus second citation",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    },
+    {
+      "id": "66655544",
+      "count": "14",
+      "difference": "2",
+      "created": "1427558906",
+      "last_checked": "1427558906",
+      "rek_pid": "UQ:111111",
+      "title": "Scopus third title",
+      "citation": "Scopus third citation",
+      "authors": "Author of the publication",
+      "rek_date": "2014-02-25 00:00:00"
+    }
+  ]
+}

@@ -86,7 +86,7 @@
   <h3>uqlibrary-api-papercut</h3>
   <div id="papercutLog"></div>
 
-  <uqlibrary-api-applications ptype=""></uqlibrary-api-applications>
+  <uqlibrary-api-applications></uqlibrary-api-applications>
   <h3>uqlibrary-api-applications</h3>
   <div id="applicationsLog">Apps for staff: </div>
 
@@ -176,7 +176,7 @@
         termDates.addEventListener('uqlibrary-api-term-dates', function(e) {
           document.getElementById('termDatesLog').innerText = JSON.stringify(e.detail);
         });
-        termDates.get( { codes: ['1234', '6020'] } );
+        termDates.get( { codes: ['1234', '6020'], date : new Date() } );
 
         var compAvailability = document.querySelector('uqlibrary-api-computer-availability');
         compAvailability.addEventListener('uqlibrary-api-computer-availability-loaded', function(e) {
@@ -197,6 +197,16 @@
         papercut.get();
 
         var apps = document.querySelector('uqlibrary-api-applications');
+
+        apps.user =
+        {
+          type: 2,
+          classes: [
+            {"ACAD_CAREER":"PGRS","DESCR":"Doctoral Colloquium A","SUBJECT":"RELN","CATALOG_NBR":"9000","CAMPUS":"STLUC","INSTRUCTION_MODE":"IT","ACAD_GROUP":"HSS","STRM":"6480"},
+            {"ACAD_CAREER":"PGRS","DESCR":"Research Studies (Part-time)","SUBJECT":"RSCH","CATALOG_NBR":"9001","CAMPUS":"STLUC","INSTRUCTION_MODE":"IN","ACAD_GROUP":"GRAD","STRM":"6505"},
+            {"ACAD_CAREER":"PGRS","DESCR":"Research Studies (Part-time)","SUBJECT":"RSCH","CATALOG_NBR":"9001","CAMPUS":"STLUC","INSTRUCTION_MODE":"IN","ACAD_GROUP":"GRAD","STRM":"6525"}
+          ]
+        };
         apps.addEventListener('uqlibrary-api-applications-loaded', function(e) {
           document.getElementById('applicationsLog').innerText = JSON.stringify(e.detail.map(function(element){ return element.isDivider ? "divider" : element.title; }));
         });
