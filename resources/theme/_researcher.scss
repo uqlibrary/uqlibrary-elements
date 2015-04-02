@@ -21,7 +21,7 @@ uqlibrary-research {
         padding: 12px;
       }
       .num-cites {
-        padding: 18px 0;
+        padding: 20px;
         font-size: 24px;
         font-weight: 300;
         width: 4em;
@@ -36,12 +36,33 @@ uqlibrary-research {
         width: 5px;
         vertical-align: super;
       }
-
       .type-cites {
         color: #333 !important;
         font-size: 11px;
         font-weight: 300;
         background-color: $background-primary;
+      }
+      .link {
+        color: #007e9e;
+      }
+      .link:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .thomson {
+        background-color: #fafafa;
+        color: #ce4627;
+      }
+      .scopus {
+        background-color: #fafafa;
+        color: #2874d7;
+      }
+      .altmetric {
+        background-color: #fafafa;
+      }
+      .espace {
+        padding: 8px 16px;
+        color: #bda14e;
       }
 
       // check after here whether these are still needed
@@ -96,13 +117,7 @@ uqlibrary-research {
         text-decoration: underline;
         cursor: pointer;
       }
-      .link {
-        color: #007e9e;
-      }
-      .link:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
+
       .recent {
         padding: 16px;
         line-height: 1.3;
@@ -129,24 +144,6 @@ uqlibrary-research {
       }
       .border-bottom {
         border-bottom: 1px solid #ccc;
-      }
-      .thomson {
-        padding: 8px 16px;
-        background-color: #fafafa;
-        color: #ce4627;
-      }
-      .scopus {
-        padding: 8px 16px;
-        background-color: #fafafa;
-        color: #2874d7;
-      }
-      .altmetric {
-        padding: 8px 16px;
-        background-color: #fafafa;
-      }
-      .espace {
-        padding: 8px 16px;
-        color: #bda14e;
       }
       .h-index {
         padding: 8px 16px;
