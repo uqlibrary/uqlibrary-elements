@@ -1,0 +1,65 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing hindex for an academic
+
+##### Example
+
+    <uqlibrary-api-academic-hindex></uqlibrary-api-academic-hindex>
+
+@element uqlibrary-api-academic-hindex
+@blurb Element providing hindex for an academic
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-academic-hindex" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="list"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-academic-hindex', {
+
+
+        baseUri : '/academic/{username}/hindex',
+        username: '',
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-academic-hindex
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.list.addEventListener('uqlibrary-api', function(e) {
+            that.data = e.detail;
+            that.fire('uqlibrary-api-academic-hindex-loaded', that.data);
+          });
+        },
+
+        /**
+         * Gets academic hindex.
+         *
+         * @method get
+         */
+        get: function (args) {
+
+          if (args && args.username){
+            this.username = args.username;
+            this.$.list.uri = this.baseUri.replace('{username}', args.username);
+            this.$.list.get();
+          }
+
+
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

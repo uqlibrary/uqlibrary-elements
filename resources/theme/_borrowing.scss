@@ -1,0 +1,55 @@
+@import "variables";
+@import "margins";
+
+
+
+//   ____                               _
+//  | __ )  ___  _ __ _ __ _____      ___)_ __   __ _
+//  |  _ \ / _ \| '__| '__/ _ \ \ /\ / / | '_ \ / _` |
+//  | |_) | (_) | |  | | | (_) \ V  V /| | | | | (_| |
+//  |____/ \___/|_|  |_|  \___/ \_/\_/ |_|_| |_|\__, |
+//                                              |___/
+// UQ My Library Borrowing app
+
+uqlibrary-holds {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .date {
+          padding-top: $three-line-list-item-padding-top;
+        }
+      }
+    }
+  }
+}
+
+uqlibrary-fines {
+  &::shadow {
+    uqlibrary-borrowing-list {
+      &::shadow {
+        .title {
+          padding-top: $three-line-list-item-padding-top;
+          @include gmd-type-style(body1, $primary);
+        }
+        // For fines with 3 digits we need a bit more space
+        .content {
+          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
+        }
+      }
+    }
+  }
+}
+
+.attentionIcon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding-left: 16px;
+  height: 32px;
+  overflow: hidden;
+  width: 100%;
+  paper-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
