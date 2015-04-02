@@ -44,42 +44,76 @@
           apps: [
             'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-computers',
             'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut', 'uqlibrary-research'],
-          classes: [{
-            "ACAD_CAREER": "",
-            "DESCR": "",
-            "SUBJECT": "RSCH",
-            "CATALOG_NBR": "",
-            "CAMPUS": "",
-            "INSTRUCTION_MODE": "",
-            "ACAD_GROUP": "",
-            "STRM":""
-          }]
+          classes: [
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Doctoral Colloquium A",
+              "SUBJECT": "RELN",
+              "CATALOG_NBR": "9000",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IT",
+              "ACAD_GROUP": "HSS",
+              "STRM": "6480"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Part-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9001",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM": "6505"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Part-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9001",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM": "6525"
+            }],
+          date: new Date("2015-03-01") //set up "current date" to somewhere in first semestre - only research subjects
         },
         {
           ptype: [22], //postgrad research with courses
           apps: [
             'uqlibrary-chat', 'uqlibrary-booking', 'uqlibrary-borrowing', 'uqlibrary-computers',
-            'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut', 'uqlibrary-research'],
-          classes: [{
-              "ACAD_CAREER": "",
-              "DESCR": "",
-              "SUBJECT": "RSCH",
-              "CATALOG_NBR": "",
-              "CAMPUS": "",
-              "INSTRUCTION_MODE": "",
-              "ACAD_GROUP": "",
-              "STRM":""
+            'uqlibrary-hours', 'uqlibrary-feedback', 'uqlibrary-papercut', 'uqlibrary-courses', 'uqlibrary-research'],
+          classes: [
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Doctoral Colloquium A",
+              "SUBJECT": "RELN",
+              "CATALOG_NBR": "9000",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IT",
+              "ACAD_GROUP": "HSS",
+              "STRM": "6480"
             },
             {
-              "ACAD_CAREER": "UGRD",
-              "DESCR": "Financial Management",
-              "SUBJECT": "FINM",
-              "CATALOG_NBR": "2401",
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Part-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9001",
               "CAMPUS": "STLUC",
               "INSTRUCTION_MODE": "IN",
-              "ACAD_GROUP": "BEL",
-              "STRM":"6460"
-            }]
+              "ACAD_GROUP": "GRAD",
+              "STRM": "6505"
+            },
+            {
+              "ACAD_CAREER": "PGRS",
+              "DESCR": "Research Studies (Part-time)",
+              "SUBJECT": "RSCH",
+              "CATALOG_NBR": "9001",
+              "CAMPUS": "STLUC",
+              "INSTRUCTION_MODE": "IN",
+              "ACAD_GROUP": "GRAD",
+              "STRM": "6525"
+            }],
+          date: new Date("2015-01-01") //set up "current date" to a date between summer and first semestre, research & real subject
         },
         {
           ptype: [3],  //academic staff
@@ -132,6 +166,9 @@
                   canMasquerade: item.canMasquerade,
                   classes: item.classes
                 };
+
+                if (item.date)
+                  parent.checkDate = item.date;
 
                 var appsLoaded = function(e) {
 

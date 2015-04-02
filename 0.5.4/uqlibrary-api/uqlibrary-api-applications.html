@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api-term-dates.html">
 
 <!--
 Element providing access to a list of applications based on user PType.
@@ -13,7 +14,10 @@ Element providing access to a list of applications based on user PType.
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-api
 
-data is stored in /data/applications.json in following format (order is important for displaying menue)
+@param - user - user details as returned by account api - required
+@param - app - application name to check if user has permissions - optional
+@param - checkDate - current date (or specific date) required to check current semestre enrollment for research students, optional, defaults to current date
+data is stored in /data/applications.json in following format (order is important for displaying menu)
 
 [
   {
@@ -31,9 +35,10 @@ data is stored in /data/applications.json in following format (order is importan
 ]
 -->
 
-<polymer-element name="uqlibrary-api-applications" attributes="user app">
+<polymer-element name="uqlibrary-api-applications" attributes="user app checkDate">
 
   <template>
+    <uqlibrary-api-term-dates id="termDates"></uqlibrary-api-term-dates>
   </template>
 
   <script>
@@ -44,6 +49,7 @@ data is stored in /data/applications.json in following format (order is importan
         auto: false,
         baseApiUrl: 'data/',
         url: 'applications.json',
+        checkDate: null,
 
         ready: function() {
         },
@@ -56,6 +62,30 @@ data is stored in /data/applications.json in following format (order is importan
         get: function() {
           var that = this;
           this.ptype = this.user.type;
+
+          //for research students extra processing - get current term dates (to filter classes later)
+          if (this.ptype == 2 || this.ptype == 22) {
+
+            var termCodes = this.user.classes.map(function (item) {
+              return item.STRM;
+            });
+
+            if (!this.checkDate)
+              this.checkDate = new Date();
+
+            this.$.termDates.get({codes: termCodes, date: this.checkDate });
+            this.$.termDates.addEventListener("uqlibrary-api-term-dates", function (e) {
+              that.executeRequest(e.detail);
+            });
+
+          } else {
+            this.executeRequest();
+          }
+
+        },
+
+        executeRequest: function(currentTerms) {
+          var that = this;
 
           var xobj = new XMLHttpRequest();
           xobj.overrideMimeType("application/json");
@@ -84,10 +114,17 @@ data is stored in /data/applications.json in following format (order is importan
                     case "uqlibrary-masquerade":
                       include = include && that.user && that.user.canMasquerade;
                       break;
-//                    case "uqlibrary-courses":
-//                      break;
+                    case "uqlibrary-courses":
+                      //for research students only, check if they have current subjects other than RSCH
+                      if (currentTerms) {
+                        //filter out research classes
+                        var currentClasses = that.user.classes.filter(function(item) {
+                          return item.SUBJECT != "RSCH" && currentTerms[item.STRM];
+                        });
+                        include = include && currentClasses.length > 0;
+                      }
+                      break;
                   }
-
                   return include;
 
                 });
