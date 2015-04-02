@@ -69,8 +69,12 @@ uqlibrary-research {
         background-color: #fafafa;
       }
       .espace {
-        padding: 8px 16px;
+        font-size: 24px;
         color: #bda14e;
+      }
+      .type-cites-header {
+        text-align: left;
+        padding-left: 16px;
       }
 
       // check after here whether these are still needed
@@ -182,9 +186,6 @@ uqlibrary-research {
         margin: -10px;
         padding: 0;
         left: 10px;
-      }
-      .type-cites-header {
-        /*vertical-align: middle;*/
       }
       .metric-list {
         padding: 15px 15px 14px 15px;
