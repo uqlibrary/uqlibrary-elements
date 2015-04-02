@@ -1454,6 +1454,14 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .num-cites {
   width: 4em;
   text-align: center;
   background-color: #FAFAFA; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics-cites,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics-cites {
+  padding: 8px;
+  font-size: 24px;
+  font-weight: 300;
+  width: 4em;
+  text-align: center;
+  background-color: #FAFAFA; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .plus,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .plus {
   padding: 5px;
