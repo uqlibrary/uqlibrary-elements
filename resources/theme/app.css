@@ -1552,8 +1552,8 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-left {
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .border-bottom,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .border-bottom {
   border-bottom: 1px solid #ccc; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .web-of-science,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .web-of-science {
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .thomson,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .thomson {
   padding: 8px 16px;
   background-color: #fafafa;
   color: #ce4627; }
@@ -1562,8 +1562,8 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .scopus {
   padding: 8px 16px;
   background-color: #fafafa;
   color: #2874d7; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .altmetrics,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .altmetrics {
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .altmetric,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .altmetric {
   padding: 8px 16px;
   background-color: #fafafa; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .espace,
