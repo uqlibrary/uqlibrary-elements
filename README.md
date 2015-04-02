@@ -140,9 +140,9 @@ See the styling example here: [styles.html](https://uqlibrary.github.io/uqlibrar
 
 At the moment most components have styling applied to them to look consistent within My Library and also within The University of Queensland style guidelines where available.
 
-All sass files exist in the /theme directory, and each app that has it's own particular styles have their own corresponding sass file, so the Computer availability app has a _computers.scss file associated with it. Please make sure you keep your style changes contained within each respective file so when we eventually reduce the number of 'unique snowflakes' and have more completely reusable components.
+All sass files exist in the `/theme` directory, and each app that has it's own particular styles have their own corresponding sass file, so the Computer availability app has a `_computers.scss` file associated with it. Please make sure you keep your style changes contained within each respective file so when we eventually reduce the number of 'unique snowflakes' and have more completely reusable components.
 
-_variables.scss is where all hardcoded values should go and be stored as variables with comments about why the particular values are chosen (e.g. $touch-target-size is 44px because this is what human usability studies suggest is the minumum human touch target size). _core.scss is where core styles that apply across components should go, while others, such as _buttons.scss and _margins.scss describe the styles associated with those types of commonly-used structural elements.
+`_variables.scss` is where all hardcoded values should go and be stored as variables with comments about why the particular values are chosen (e.g. `/* $touch-target-size is 44px because this is what human usability studies suggest is the minumum human touch target size */`). `_core.scss` is where core styles that apply across components should go, while others, such as `_buttons.scss` and `_margins.scss` describe the styles associated with those types of commonly-used structural elements.
 
 ### Accessibility Guidelines
 
