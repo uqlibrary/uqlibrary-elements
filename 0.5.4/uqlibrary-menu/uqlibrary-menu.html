@@ -131,6 +131,7 @@ Element providing the library main navigation menu using a responsive drawer pan
 
           this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
             that.applications = e.detail;
+            that.fire('uqlibrary-menu-loaded');
           });
 
         },
