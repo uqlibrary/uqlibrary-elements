@@ -7,6 +7,16 @@
 @import "containers";
 @import "forms";
 
+// App-specific styles
+@import "booking";
+@import "borrowing";
+@import "computers";
+@import "courses";
+@import "home";
+@import "hours";
+@import "researcher";
+@import "search";
+
 :host,
 :host *,
 ::content *

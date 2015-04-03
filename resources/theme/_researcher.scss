@@ -1,0 +1,198 @@
+@import "variables";
+@import "margins";
+
+// Research
+
+uqlibrary-research {
+  &::shadow {
+    uqlibrary-research-trending::shadow,
+    uqlibrary-research-metrics::shadow {
+      .hoverable:hover {
+        background-color: $background-primary;
+      }
+      .title {
+        text-decoration: none;
+        padding-bottom: 8px;
+        font-weight: 300;
+      }
+      .new-title {
+        text-decoration: none;
+        font-weight: 300;
+        padding: 12px;
+      }
+      .num-cites {
+        padding: 20px;
+        font-size: 24px;
+        font-weight: 300;
+        width: 4em;
+        text-align: center;
+        background-color: $background-primary;
+      }
+      .metrics-cites {
+        padding: 8px;
+        font-size: 24px;
+        font-weight: 300;
+        width: 4em;
+        text-align: center;
+        background-color: $background-primary;
+      }
+      .plus {
+        padding: 5px;
+        font-size: 14px;
+        color: $primary;
+        border-radius: 50%;
+        width: 5px;
+        vertical-align: super;
+      }
+      .type-cites {
+        color: #333 !important;
+        font-size: 11px;
+        font-weight: 300;
+        background-color: $background-primary;
+      }
+      .link {
+        color: #007e9e;
+      }
+      .link:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .thomson {
+        background-color: #fafafa;
+        color: #ce4627;
+      }
+      .scopus {
+        background-color: #fafafa;
+        color: #2874d7;
+      }
+      .altmetric {
+        background-color: #fafafa;
+      }
+      .espace {
+        font-size: 24px;
+        color: #bda14e;
+      }
+      .type-cites-header {
+        text-align: left;
+        padding-left: 16px;
+      }
+
+      // check after here whether these are still needed
+      .authors {
+        /*color: #38852e;*/
+        padding-bottom: 8px;
+        font-weight: 400;
+      }
+      .journal {
+        padding-bottom: 4px;
+        font-weight: 300;
+      }
+      .type {
+        /*color: #666;*/
+        padding-left: 16px;
+      }
+      .title-type {
+        padding-left: 16px;
+        /*font-weight: 500;*/
+      }
+      hr {
+        margin: 0;
+      }
+      .menuLine {
+        margin: 12px 0;
+      }
+
+      .mine {
+        transition: 100ms ease-in-out;
+        background-color: #c8e6c9;
+      }
+      .mine:hover {
+        transition: 100ms ease-in-out;
+        background-color: #a5d6a7;
+      }
+      .not-mine {
+        transition: 100ms ease-in-out;
+        background-color: #ffcdd2;
+      }
+      .not-mine:hover {
+        transition: 100ms ease-in-out;
+        background-color: #ef9a9a;
+      }
+      left-swipe-action-button {
+        border-radius: 2px;
+      }
+      left-swipe-action {
+        cursor: pointer;
+      }
+      .view-more:hover {
+        color: #007e9e;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .recent {
+        padding: 16px;
+        line-height: 1.3;
+        margin-top: 14px;
+        margin-bottom: 2px;
+      }
+      .year {
+        padding-right: 20px;
+      }
+      .metrics {
+        margin: -16px -16px -16px 0;
+      }
+      .metrics div {
+        text-align: center;
+      }
+      .border-top {
+        border-top: 1px solid #ccc;
+      }
+      .border-right {
+        border-right: 1px solid #ccc;
+      }
+      .border-left {
+        border-left: 1px solid #ccc;
+      }
+      .border-bottom {
+        border-bottom: 1px solid #ccc;
+      }
+      .h-index {
+        padding: 8px 16px;
+        color: #333;
+      }
+      .centre {
+        text-align: center;
+      }
+      .completion {
+        padding: 8px;
+        margin-bottom: -18px;
+      }
+      .completion-desc {
+        color: rgba(0,0,0,.54);
+        margin:2px;
+
+      }
+      .metric-text {
+        margin-left: 8px;
+      }
+      .trending, core-icon[icon="arrow-drop-up"] {
+        /*color: #8cb800;*/
+        margin: -10px;
+        padding: 0;
+        left: 10px;
+      }
+      core-icon[icon="arrow-drop-down"] {
+        margin: -10px;
+        padding: 0;
+        left: 10px;
+      }
+      .metric-list {
+        padding: 15px 15px 14px 15px;
+      }
+      .thin {
+        border: 1px solid #eee;
+      }
+    }
+  }
+}
