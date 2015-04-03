@@ -41,6 +41,27 @@ Element providing facilities availability.
           });
         },
 
+        constructUrl: function(args, baseUrl) {
+          var url = baseUrl;
+
+          if (args && args.date){
+            url += "?date=" + args.date;
+          }
+
+          if (args && args.id && args.ptype) {
+            url += (url.indexOf('?') >= 0 ? '&' : '?');
+            url += "id=" + args.id;
+            url += "&ptype=" + args.ptype;
+          }
+
+          if (args && args.nocache) {
+            url += (url.indexOf('?') >= 0 ? '&' : '?');
+            url += 'nocache=true';
+          }
+
+          return url;
+        },
+
         /**
          * Gets facilities availability.
          * args is optional parameter (as per facilities availability API):
@@ -50,20 +71,7 @@ Element providing facilities availability.
          * @method get
          */
         get: function (args) {
-          var url = this.baseUri;
-
-          if (args && args.date){
-            url = this.baseUri + "?date=" + args.date;
-          } else if (args && args.id && args.ptype) {
-            url = this.baseUri + "?id=" + args.id + "&ptype=" + args.ptype;
-          } else {
-            url = this.baseUri;
-          }
-
-          if (args && args.nocache) {
-            url += (url.indexOf('?') >= 0 ? '&' : '?');
-            url += 'nocache=true';
-          }
+          var url = this.constructUrl(args, this.baseUri);
 
           this.$.facilities.uri = url;
           this.$.facilities.get({ addTimestamp: args && args.nocache});

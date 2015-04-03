@@ -33,10 +33,9 @@
 <script>
   (function () {
     window.addEventListener('polymer-ready', function() {
+
       var menuLoadedEventListeners = [];
       var menu = document.querySelector('uqlibrary-menu');
-        var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
-
 
       var localAccount = {
         "id": "s1234567",
@@ -100,11 +99,12 @@
           }
         ]
       };
+
       menu.addEventListener('uqlibrary-api-account-loaded', function(e) {
         menu.account = e.detail;
       });
-      menu.fire('uqlibrary-api-account-loaded', localAccount);
 
+      menu.fire('uqlibrary-api-account-loaded', localAccount);
 
       describe('uqlibrary-menu', function () {
         before(function () {
@@ -118,22 +118,6 @@
           }
         });
 
-
-        test('constructs proper url', function(done) {
-
-          //constructs url
-          var coursesURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','courses');
-          expect(coursesURL).to.be.equal('http://app.library.uq.edu.au/v1/courses/');
-
-          var demoURL = menu.constructURL('http://app.library.uq.edu.au/v1/courses/demo.html','booking');
-          expect(demoURL).to.be.equal('http://app.library.uq.edu.au/v1/booking/demo.html');
-
-          var absoluteURL = menu.constructURL('http://app.library.uq.edu.au/v1/home/','http://library.uq.edu.au');
-          expect(absoluteURL).to.be.equal('http://library.uq.edu.au');
-
-          done();
-
-        });
 
         describe('menu-items-unit', function () {
 
@@ -168,14 +152,17 @@
 
           test('menu list of links are present', function(done) {
               setTimeout(function () {
-                  expect(menuLinks.length).to.be.at.least(1);
+                var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
+                console.log(menuLinks);
+                expect(menuLinks.length).to.be.equal(1);
                   done();
               }, 1000);
           });
 
           test('menu links are not null and accessible', function(done) {
               setTimeout(function () {
-                  var numMenuLinks = 0;
+                var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
+                var numMenuLinks = 0;
                   while (numMenuLinks < menuLinks.length) {
                       var listOfLinks = menuLinks[numMenuLinks].querySelectorAll('paper-item');
                       var numListsOfLinks = 0;

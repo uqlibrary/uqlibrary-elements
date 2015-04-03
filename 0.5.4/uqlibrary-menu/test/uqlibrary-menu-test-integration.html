@@ -48,7 +48,6 @@
       });
       api.$.account.get();
 
-
       describe('uqlibrary-menu', function () {
         before(function () {
         });
@@ -74,7 +73,25 @@
             menuLoadedEventListeners.push(menuLoadListener);
             api.fire('uqlibrary-api-account-loaded', api.$.account);
           });
+
+          it('user ptype change should show/hide menu items', function (done) {
+
+            var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
+            assert.isNull(masqueradeId);
+
+            //change user type as library staff
+            menu.account.type = 18;
+            menu.accountChanged();
+
+              // Wait 2 second for mock data to be loaded
+              setTimeout(function () {
+                var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
+                assert.isNotNull(masqueradeId);
+                done();
+              }, 2000);
+          });
         });
+
       });
 
     });

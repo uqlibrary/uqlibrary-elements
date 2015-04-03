@@ -218,7 +218,7 @@ core-menu {
     color: rgba(0, 0, 0, 0.87); }
     core-menu a:hover {
       text-decoration: none; }
-  core-menu.divider {
+  core-menu.divider, core-menu .divider {
     border-bottom: 1px solid #cccccc; }
 
 core-icon {
@@ -339,10 +339,14 @@ paper-dropdown {
 
 paper-dropdown-menu {
   display: block;
-  width: 100%; }
+  width: 100%;
+  border-top: 1px solid transparent; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
     color: #BDBDBD; }
-  paper-dropdown-menu paper-dropdown paper-item:hover {
+  paper-dropdown-menu:focus {
+    border-top: 0px solid transparent;
+    border-bottom: 2px solid #007e9e; }
+  paper-dropdown-menu paper-dropdown paper-item:focus, paper-dropdown-menu paper-dropdown paper-item:hover {
     background-color: #F5F5F5; }
 
 paper-input-decorator .mirror-text {
@@ -360,12 +364,15 @@ paper-input {
 
 paper-slider {
   width: 100%; }
+  paper-slider:focus {
+    background-color: #F5F5F5 !important; }
   paper-slider::shadow #sliderBar {
     box-sizing: content-box; }
     paper-slider::shadow #sliderBar::shadow #activeProgress {
       background-color: #007e9e; }
   paper-slider::shadow #sliderKnobInner {
-    background-color: #007e9e; }
+    background-color: #007e9e;
+    border: 2px solid #007e9e; }
     paper-slider::shadow #sliderKnobInner::before {
       background-color: #007e9e;
       display: block !important; }
@@ -597,7 +604,10 @@ uqlibrary-home paper-icon-button.huge #icon {
   color: #4a075f; }
 
 #autosuggest {
-  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+  top: 56px;
+  width: 100%;
+  left: 0 !important; }
 
 .group-label {
   margin-left: 32px; }
