@@ -1,0 +1,72 @@
+@import "variables";
+@import "margins";
+
+//    ____                            _
+//   / ___|___  _ __ ___  _ __  _   _| |_ ___ _ __ ___
+//  | |   / _ \| '_ ` _ \| '_ \| | | | __/ _ \ '__/ __|
+//  | |___ (_) | | | | | | |_) | |_| | |_  __/ |  \__ \
+//   \____\___/|_| |_| |_| .__/ \__,_|\__\___|_|  |___/
+//                       |_|
+//
+//// UQ My Library Computers app
+
+#expandLibraryList, #expandLibraryList::shadow {
+  padding: 0px;
+
+  &:active, &:focus, &:hover {
+    background-color: $hint-text;
+  }
+}
+
+#availability {
+  margin-top: $list-item-gap;
+  padding: $text-padding;
+}
+
+#branchSelect {
+  padding: 7px;
+  width: 100%;
+}
+
+#branches {
+  width: 100%;
+}
+
+.available {
+  color: $dark-accent;
+}
+
+.unavailable {
+  color: $uq-warm-red;
+}
+
+.booked {
+  color: $uq-divider;
+}
+
+paper-dropdown::shadow #scroller {
+  width: 100% !important;
+}
+
+#branchWrapper {
+  width: 96%;
+  max-width: 96%;
+  margin: $list-item-gap;
+  transition: 300ms ease-in-out;
+  padding: 6px;
+  &:hover {
+    box-shadow: $shadow-z-2;
+  }
+}
+
+.availability-item {
+  border-bottom: 1px solid $grey-A100;
+  padding: 4px;
+  line-height: 1.2;
+
+  .totals {
+    float: right;
+    font-size: $body1-size-font-device;
+    color: $secondary-text;
+  }
+}
