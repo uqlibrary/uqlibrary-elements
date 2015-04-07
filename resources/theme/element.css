@@ -1480,7 +1480,7 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header
   padding-left: 16px; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .trending-title,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .trending-title {
-  font-weight: 100;
+  font-weight: 600;
   padding-bottom: 8px; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .year,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .year {
