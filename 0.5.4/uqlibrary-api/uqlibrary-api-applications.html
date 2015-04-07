@@ -52,6 +52,10 @@ data is stored in /data/applications.json in following format (order is importan
         checkDate: null,
 
         ready: function() {
+          var that = this;
+          this.$.termDates.addEventListener("uqlibrary-api-term-dates", function (e) {
+            that.executeRequest(e.detail);
+          });
         },
 
         /**
@@ -74,9 +78,6 @@ data is stored in /data/applications.json in following format (order is importan
               this.checkDate = new Date();
 
             this.$.termDates.get({codes: termCodes, date: this.checkDate });
-            this.$.termDates.addEventListener("uqlibrary-api-term-dates", function (e) {
-              that.executeRequest(e.detail);
-            });
 
           } else {
             this.executeRequest();
@@ -133,7 +134,6 @@ data is stored in /data/applications.json in following format (order is importan
                   return element.isDivider || !element.ptypes;
                 });
               }
-
               that.fire('uqlibrary-api-applications-loaded', apps);
             }
           };
