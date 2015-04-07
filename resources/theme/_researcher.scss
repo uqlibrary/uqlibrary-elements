@@ -39,7 +39,8 @@ uqlibrary-research {
       .plus {
         padding: 5px;
         font-size: 14px;
-        color: $primary;
+//        color: $primary;
+        color: $uq-text-primary;
         border-radius: 50%;
         width: 5px;
         vertical-align: super;
@@ -67,6 +68,7 @@ uqlibrary-research {
       }
       .altmetric {
         background-color: #fafafa;
+        color: $primary;
       }
       .espace {
         font-size: 24px;
@@ -76,13 +78,21 @@ uqlibrary-research {
         text-align: left;
         padding-left: 16px;
       }
-
-      // check after here whether these are still needed
-      .authors {
-        /*color: #38852e;*/
+      .trending-title {
+        font-weight: 100;
         padding-bottom: 8px;
+      }
+      .year {
+        font-weight: 400;
+        padding-right: 20px;
+      }
+      .authors {
         font-weight: 400;
       }
+
+
+      // check after here whether these are still needed
+
       .journal {
         padding-bottom: 4px;
         font-weight: 300;
@@ -136,9 +146,7 @@ uqlibrary-research {
         margin-top: 14px;
         margin-bottom: 2px;
       }
-      .year {
-        padding-right: 20px;
-      }
+
       .metrics {
         margin: -16px -16px -16px 0;
       }
