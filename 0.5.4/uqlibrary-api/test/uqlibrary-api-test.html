@@ -29,7 +29,7 @@
   window.addEventListener('polymer-ready', function() {
     var loadedEventListeners = [];
 
-    var alreadyRun = [];
+    var lastRan = 0;
     var parent = document.querySelector('uqlibrary-api-applications');
     var ptypes = [1, 31, 11, 21, 2, 22, 3, 32, 17, 18, 25, 14, 4, 9, 13, 10, 12, 27, 7, 15, 5, 8];
     var ptypeApps =  [
@@ -167,8 +167,8 @@
                       parent.checkDate = item.date;
 
                     var appsLoaded = function(e) {
-                      if (alreadyRun.indexOf(ptype) == -1) {
-                        alreadyRun.push(ptype);
+                      if (lastRan != ptype) {
+                        lastRan = ptype;
                         var apps = e.detail.filter(function (item) {
                           return !item.isDivider && item.app;
                         });
