@@ -1127,27 +1127,27 @@ paper-checkbox::shadow #checkbox {
 
 md-timepicker::shadow #card {
   border: 1px solid #cccccc;
-  margin-top: 0;
+  margin-top: 30px;
   margin-bottom: 0;
-  height: 360px;
-  width: 225px; }
+  height: 288px;
+  width: 200px; }
   md-timepicker::shadow #card #display {
     background-color: #007e9e !important;
-    height: 108px;
-    padding: 21.6px;
+    height: 80px;
+    padding: 19.2px;
     color: #ffffff;
-    font-size: 41.4px; }
+    font-size: 36.8px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
       md-timepicker::shadow #card #display .digit[active] {
         opacity: 1; }
   md-timepicker::shadow #card #keypad {
-    font-size: 37.8px; }
+    font-size: 33.6px; }
     md-timepicker::shadow #card #keypad .digit {
-      flex-basis: 56.7px;
-      -webkit-flex-basis: 56.7px; }
+      flex-basis: 50.4px;
+      -webkit-flex-basis: 50.4px; }
 md-timepicker::shadow paper-button {
-  font-size: 12.6px; }
+  font-size: 11.2px; }
 
 .equipment-item {
   margin-bottom: 10pt;

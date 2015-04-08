@@ -1,6 +1,7 @@
 @import "variables";
 @import "margins";
 
+$timepickerRatio: 0.8;
 
 
 //   ____              _    _
@@ -30,15 +31,16 @@
 md-timepicker {
   &::shadow {
     #card {
+
       border: 1px solid $divider;
-      margin-top: 0;
+      margin-top: 30px;
       margin-bottom: 0;
-      height: 400px * $timepickerRatio;
+      height: 360px * $timepickerRatio;
       width: 250px * $timepickerRatio;
 
       #display {
         background-color: $button !important;
-        height: 120px * $timepickerRatio;
+        height: 100px * $timepickerRatio;
         padding: 24px * $timepickerRatio;
         color: $white;
         font-size: 46px * $timepickerRatio;
