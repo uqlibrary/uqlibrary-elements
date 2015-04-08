@@ -968,6 +968,8 @@ paper-button {
 paper-button[autofocus] {
   color: #007e9e !important; }
 
+paper-button.topUpButton {
+  margin-top: 16px; }
 paper-button a:hover {
   text-decoration: none; }
 paper-button .colored:hover {
