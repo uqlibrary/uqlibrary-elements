@@ -1435,6 +1435,9 @@ paper-tabs {
     background-color: #007e9e;
     color: #ffffff; }
 
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
+  color: #cccccc; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .hoverable:hover,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .hoverable:hover {
   background-color: #FAFAFA; }
@@ -1472,6 +1475,11 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .plus {
   border-radius: 50%;
   width: 5px;
   vertical-align: super; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites-header,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header {
+  text-align: left;
+  padding-left: 16px;
+  z-index: 12; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
   color: #333 !important;
@@ -1501,10 +1509,6 @@ uqlibrary-research::shadow uqlibrary-research-trending::shadow .espace,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .espace {
   font-size: 24px;
   color: #bda14e; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites-header,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header {
-  text-align: left;
-  padding-left: 16px; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .trending-title,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .trending-title {
   font-weight: 600;

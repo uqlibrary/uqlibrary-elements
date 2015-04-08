@@ -7,6 +7,9 @@ uqlibrary-research {
   &::shadow {
     uqlibrary-research-trending::shadow,
     uqlibrary-research-metrics::shadow {
+      .coming-soon {
+        color: $uq-divider;
+      }
       .hoverable:hover {
         background-color: $background-primary;
       }
@@ -44,6 +47,11 @@ uqlibrary-research {
         width: 5px;
         vertical-align: super;
       }
+      .type-cites-header {
+        text-align: left;
+        padding-left: 16px;
+        z-index: 12;
+      }
       .type-cites {
         color: #333 !important;
         font-size: 11px;
@@ -72,10 +80,6 @@ uqlibrary-research {
       .espace {
         font-size: 24px;
         color: #bda14e;
-      }
-      .type-cites-header {
-        text-align: left;
-        padding-left: 16px;
       }
       .trending-title {
         font-weight: 600;
