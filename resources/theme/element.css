@@ -968,6 +968,8 @@ paper-button {
 paper-button[autofocus] {
   color: #007e9e !important; }
 
+paper-button.topUpButton {
+  margin-top: 16px; }
 paper-button a:hover {
   text-decoration: none; }
 paper-button .colored:hover {
@@ -1125,27 +1127,27 @@ paper-checkbox::shadow #checkbox {
 
 md-timepicker::shadow #card {
   border: 1px solid #cccccc;
-  margin-top: 0;
+  margin-top: 30px;
   margin-bottom: 0;
-  height: 360px;
-  width: 225px; }
+  height: 288px;
+  width: 200px; }
   md-timepicker::shadow #card #display {
     background-color: #007e9e !important;
-    height: 108px;
-    padding: 21.6px;
+    height: 80px;
+    padding: 19.2px;
     color: #ffffff;
-    font-size: 41.4px; }
+    font-size: 36.8px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
       md-timepicker::shadow #card #display .digit[active] {
         opacity: 1; }
   md-timepicker::shadow #card #keypad {
-    font-size: 37.8px; }
+    font-size: 33.6px; }
     md-timepicker::shadow #card #keypad .digit {
-      flex-basis: 56.7px;
-      -webkit-flex-basis: 56.7px; }
+      flex-basis: 50.4px;
+      -webkit-flex-basis: 50.4px; }
 md-timepicker::shadow paper-button {
-  font-size: 12.6px; }
+  font-size: 11.2px; }
 
 .equipment-item {
   margin-bottom: 10pt;
@@ -1408,6 +1410,9 @@ paper-tabs {
     background-color: #007e9e;
     color: #ffffff; }
 
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
+  color: #cccccc; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .hoverable:hover,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .hoverable:hover {
   background-color: #FAFAFA; }
@@ -1441,10 +1446,15 @@ uqlibrary-research::shadow uqlibrary-research-trending::shadow .plus,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .plus {
   padding: 5px;
   font-size: 14px;
-  color: #7b0c9d;
+  color: #333333;
   border-radius: 50%;
   width: 5px;
   vertical-align: super; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites-header,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header {
+  text-align: left;
+  padding-left: 16px;
+  z-index: 12; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
   color: #333 !important;
@@ -1468,19 +1478,22 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .scopus {
   color: #2874d7; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .altmetric,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .altmetric {
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  color: #7b0c9d; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .espace,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .espace {
   font-size: 24px;
   color: #bda14e; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites-header,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header {
-  text-align: left;
-  padding-left: 16px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .trending-title,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .trending-title {
+  font-weight: 600;
+  padding-bottom: 8px; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .year,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .year {
+  font-weight: 400;
+  padding-right: 20px; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .authors,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .authors {
-  /*color: #38852e;*/
-  padding-bottom: 8px;
   font-weight: 400; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .journal,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .journal {
@@ -1533,9 +1546,6 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .recent {
   line-height: 1.3;
   margin-top: 14px;
   margin-bottom: 2px; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .year,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .year {
-  padding-right: 20px; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics {
   margin: -16px -16px -16px 0; }
