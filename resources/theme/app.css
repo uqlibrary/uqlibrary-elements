@@ -1435,6 +1435,9 @@ paper-tabs {
     background-color: #007e9e;
     color: #ffffff; }
 
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
+  color: #cccccc; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .hoverable:hover,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .hoverable:hover {
   background-color: #FAFAFA; }

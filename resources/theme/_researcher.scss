@@ -7,6 +7,9 @@ uqlibrary-research {
   &::shadow {
     uqlibrary-research-trending::shadow,
     uqlibrary-research-metrics::shadow {
+      .coming-soon {
+        color: $uq-divider;
+      }
       .hoverable:hover {
         background-color: $background-primary;
       }
