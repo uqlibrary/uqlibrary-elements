@@ -24,6 +24,7 @@
     "uqlibrary-persistent-footer": "uqlibrary/uqlibrary-persistent-footer#<branch>",
     "uqlibrary-a11y-link": "uqlibrary/uqlibrary-a11y-link#<branch>",
     "md-timepicker": "uqlibrary/md-timepicker#<branch>",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4"
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
   }
 }
