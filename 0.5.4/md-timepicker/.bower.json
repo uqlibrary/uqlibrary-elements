@@ -22,13 +22,13 @@
     "paper-button": "Polymer/paper-button#0.5.4",
     "paper-shadow": "Polymer/paper-shadow#0.5.4"
   },
-  "_release": "8be18ab7ef",
+  "_release": "373de9a92a",
   "_resolution": {
     "type": "branch",
-    "branch": "staging",
-    "commit": "8be18ab7ef129973737db223face62e5c41b7ca8"
+    "branch": "production",
+    "commit": "373de9a92a9e2f0459e7e98e89a91c60fd98fdf2"
   },
   "_source": "git://github.com/uqlibrary/md-timepicker.git",
-  "_target": "staging",
+  "_target": "production",
   "_originalSource": "uqlibrary/md-timepicker"
 }
