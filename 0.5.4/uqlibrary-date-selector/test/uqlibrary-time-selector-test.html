@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-time-selector-test</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../uqlibrary-time-selector.html">
+</head>
+<body>
+
+  <!-- You use the document as a place to set up your fixtures. -->
+  <uqlibrary-time-selector></uqlibrary-time-selector>
+
+  <script>
+    window.addEventListener('polymer-ready', function() {
+
+      var element = document.querySelector('uqlibrary-time-selector');
+      var maxBookingLength = 3;
+      var bookingTimeslots = [
+        {
+          startTime : new Date('Fri Nov 21 2014 00:00:00 GMT+1000 (AEST)'),
+          endTime : new Date('Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)'),
+          selectable: true,
+          selected: false
+        },
+        {
+          startTime : new Date('Fri Nov 21 2014 00:30:00 GMT+1000 (AEST)'),
+          endTime : new Date('Fri Nov 21 2014 01:00:00 GMT+1000 (AEST)'),
+          selectable: true,
+          selected: false
+        },
+        {
+          startTime : new Date('Fri Nov 21 2014 01:00:00 GMT+1000 (AEST)'),
+          endTime : new Date('Fri Nov 21 2014 01:30:00 GMT+1000 (AEST)'),
+          selectable: true,
+          selected: false
+        },
+        {
+          startTime : new Date('Fri Nov 21 2014 01:30:00 GMT+1000 (AEST)'),
+          endTime : new Date('Fri Nov 21 2014 02:00:00 GMT+1000 (AEST)'),
+          selectable: true,
+          selected: false
+        },
+        {
+          startTime : new Date('Fri Nov 21 2014 02:00:00 GMT+1000 (AEST)'),
+          endTime : new Date('Fri Nov 21 2014 02:30:00 GMT+1000 (AEST)'),
+          selectable: false,
+          selected: false
+        }
+      ];
+
+
+      suite('uqlibrary-time-selector', function() {
+
+        before(function () {
+          element = document.querySelector('uqlibrary-time-selector');
+
+          element.bookingTimeslots = bookingTimeslots;
+          element.maxBookingLength = maxBookingLength;
+        });
+
+        //properties unit tests
+        test('defines bookingTimeslots property', function () {
+          assert.equal(element.bookingTimeslots.length, bookingTimeslots.length);
+        });
+
+        test('defines maxBookingLength property', function () {
+          assert.equal(element.maxBookingLength, maxBookingLength);
+        });
+
+
+        //methods unit tests
+        test('isTimeslotChangeValid - validate selection of unselectable time slot', function () {
+          //invalid - select (selectable = false) time slot
+          assert.isFalse(element.isTimeslotChangeValid(4));
+        });
+
+        test('isTimeslotChangeValid - validate selection of first time slot', function () {
+          //valid - select first time slot
+          assert.isTrue(element.isTimeslotChangeValid(0));
+        });
+
+        test('isTimeslotChangeValid - validate selection of consecutive time slot', function () {
+          element.bookingTimeslots[0].selected = true;
+          assert.isTrue(element.isTimeslotChangeValid(1));
+        });
+
+        test('isTimeslotChangeValid - validate selection of not consecutive time slot', function () {
+          element.bookingTimeslots[0].selected = true;
+          assert.isFalse(element.isTimeslotChangeValid(2));
+        });
+
+
+        test('isTimeslotChangeValid - validate selection exceeding max booking length', function () {
+          element.bookingTimeslots[0].selected = true;
+          element.bookingTimeslots[1].selected = true;
+          element.bookingTimeslots[2].selected = true;
+
+          assert.isFalse(element.isTimeslotChangeValid(3));
+        });
+
+        test('isTimeslotChangeValid - validate de-selection in the edge of selection', function () {
+          element.bookingTimeslots[0].selected = true;
+          element.bookingTimeslots[1].selected = true;
+          element.bookingTimeslots[2].selected = true;
+
+          assert.isTrue(element.isTimeslotChangeValid(2));
+        });
+
+        test('isTimeslotChangeValid - validate de-selection in the middle of selection', function () {
+          element.bookingTimeslots[0].selected = true;
+          element.bookingTimeslots[1].selected = true;
+          element.bookingTimeslots[2].selected = true;
+
+          assert.isFalse(element.isTimeslotChangeValid(1));
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

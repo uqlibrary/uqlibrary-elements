@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <title>uqlibrary-search</title>
+
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../uqlibrary-search.html">
+</head>
+<body>
+
+<uqlibrary-search></uqlibrary-search>
+
+<script>
+    window.addEventListener('polymer-ready', function() {
+
+        var parent = document.querySelector('uqlibrary-search');
+        var searchWrapper = parent.shadowRoot.querySelector('#searchWrapper');
+        var search = searchWrapper.querySelector('#search');
+        var filterDropDown = search.querySelector('#filters');
+        var searchInput = search.querySelector('input');
+        var searchPlaceholderText = searchInput.placeholder;
+
+        test('there should be 9 filter types', function(done) {
+            setTimeout(function() {
+                // There should be 9 filter options
+                expect(filterDropDown.querySelector('#filterSelector').querySelectorAll('paper-item').length).to.be.equal(9);
+                done();
+            }, 10);
+        });
+
+        test('default placeholder text should be "Search library"', function(done) {
+            setTimeout(function() {
+                // There should be 9 filter options
+                expect(searchPlaceholderText).to.be.equal("Search library");
+                done();
+            }, 10);
+        });
+
+        test('search filter menu should be trigger-able', function(done) {
+            setTimeout(function() {
+
+                // expects filter options to appear when user clicks magnifying glass dropdown
+                // if filterDropDown is not already open, then open it, otherwise just check that it appears correctly
+                if (filterDropDown.offsetParent == null) {
+                    searchWrapper.querySelector('#searchIcon').fire('tap');
+                    setTimeout(function() {
+                        expect(filterDropDown.offsetParent).to.be.not.equal(null);
+                        done();
+                    }, 50);
+                } if (filterDropDown.offsetParent == searchWrapper) {
+                    searchWrapper.querySelector('#searchIcon').fire('tap');
+                    setTimeout(function() {
+                        expect(filterDropDown.offsetParent).to.be.equal(null);
+                        done();
+                    }, 50);
+                }
+            }, 10);
+
+        });
+
+        test('make a selection from the filter menu', function(done) {
+            setTimeout(function() {
+                if (filterDropDown.offsetParent == null) {
+                    filterDropDown.querySelector('#searchIcon').fire('tap');
+                    setTimeout(function() {
+                        filterDropDown.querySelector('#filterSelector').querySelectorAll('paper-item')[2].fire('tap');
+                        expect(searchPlaceholderText).to.be.equal("Search journal articles");
+                    }, 50);
+                } if (filterDropDown.offsetParent == searchWrapper) {
+                    setTimeout(function() {
+                        filterDropDown.querySelector('#filterSelector').querySelectorAll('paper-item')[2].fire('tap');
+                        expect(searchPlaceholderText).to.be.equal("Search journal articles");
+                    }, 50);
+                }
+                done();
+            }, 10);
+        });
+
+//        test('test outbound google analytics', function(done) {
+//            setTimeout(function() {
+//                expect(this.$.ga.addEvent("TEST ONLY", "This test tracker runs every time the search component is tested"));
+//            }, 10);
+//        });
+
+// TODO: get keyboard events to fire to simulate user typing into the search box
+//        test('get autosuggestions', function(done) {
+//            setTimeout(function() {
+//
+//                searchInput.fire('tap');
+//                var keyboardEvent = document.createEvent("KeyboardEvent");
+//                var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? "initKeyboardEvent" : "initKeyEvent";
+//                keyboardEvent[initMethod](
+//                        "keydown", // event type : keydown, keyup, keypress
+//                        true, // bubbles
+//                        true, // cancelable
+//                        window, // viewArg: should be window
+//                        false, // ctrlKeyArg
+//                        false, // altKeyArg
+//                        false, // shiftKeyArg
+//                        false, // metaKeyArg
+//                        84, // keyCodeArg : unsigned long the virtual key code, else 0
+//                        0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+//                );
+//                document.dispatchEvent(keyboardEvent);
+//
+//
+//            }, 6000);
+//            done();
+//        });
+
+    });
+</script>
+
+</body>
+</html>

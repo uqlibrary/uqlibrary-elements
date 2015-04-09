@@ -1,0 +1,36 @@
+[
+  {
+    "id": "sc154b889de4d365",
+    "from": 1421415000,
+    "to": 1421416800,
+    "resource": {
+      "machid": "sc14a517a692d37d",
+      "id": "sc14a5179d427848",
+
+      "title": "Projector",
+      "location": "Gatton Campus (Bldg 8102)"
+    }
+  },
+  {
+    "id": "sc154b889de4d366",
+    "from": 1421415000,
+    "to": 1421416800,
+    "resource": {
+      "machid": "sc149bda6ca15d30",
+      "id": "sc149bdef7bb3d8c",
+      "title": "Locker 01",
+      "location": "Lockers - Level 4"
+    }
+  },
+  {
+    "id": "sc154b889de4d367",
+    "from": 1421415000,
+    "to": 1421416800,
+    "resource": {
+      "machid": "sc14d4a385d2e1c6",
+      "id": "sc14d4a3820e0860",
+      "title": "Meeting Room",
+      "location": "Hawken Bldg (#50)"
+    }
+  }
+]

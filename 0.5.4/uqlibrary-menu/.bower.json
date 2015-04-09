@@ -1,0 +1,41 @@
+{
+  "name": "uqlibrary-menu",
+  "description": "Element providing a the library main apps menu.",
+  "main": "uqlibrary-menu.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-menu/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "core-icon": "Polymer/core-icon#0.5.4",
+    "core-icons": "Polymer/core-icons#0.5.4",
+    "core-menu": "Polymer/core-menu#0.5.4",
+    "core-ajax": "Polymer/core-ajax#0.5.4",
+    "core-label": "Polymer/core-label#0.5.4",
+    "uqlibrary-ga": "uqlibrary/uqlibrary-ga#uat",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#uat",
+    "paper-dialog": "Polymer/paper-dialog#0.5.4",
+    "paper-input": "Polymer/paper-input#0.5.4",
+    "paper-button": "Polymer/paper-button#0.5.4",
+    "paper-toast": "Polymer/paper-toast#0.5.4",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.4",
+    "paper-checkbox": "Polymer/paper-checkbox#0.5.4",
+    "paper-item": "Polymer/paper-item#0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "31e43643d1",
+  "_resolution": {
+    "type": "branch",
+    "branch": "uat",
+    "commit": "31e43643d193ce9e75350fbbca646983a3899b75"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
+  "_target": "uat",
+  "_originalSource": "uqlibrary/uqlibrary-menu"
+}
