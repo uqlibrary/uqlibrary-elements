@@ -1436,12 +1436,18 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .num-cites {
   background-color: #FAFAFA; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics-cites,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics-cites {
-  padding: 8px;
+  padding: 0.6em 1em 0.3em 1em;
   font-size: 24px;
   font-weight: 300;
-  width: 4em;
   text-align: center;
   background-color: #FAFAFA; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
+  color: #333 !important;
+  font-size: 11px;
+  font-weight: 300;
+  background-color: #FAFAFA;
+  padding: 0 0.6em; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .plus,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .plus {
   padding: 5px;
@@ -1455,12 +1461,6 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites-header
   text-align: left;
   padding-left: 16px;
   z-index: 12; }
-uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
-uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
-  color: #333 !important;
-  font-size: 11px;
-  font-weight: 300;
-  background-color: #FAFAFA; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .link,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .link {
   color: #007e9e; }
@@ -1495,6 +1495,10 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .year {
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .authors,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .authors {
   font-weight: 400; }
+uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics-type,
+uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics-type {
+  padding-left: 16px;
+  text-align: left; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .journal,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .journal {
   padding-bottom: 4px;

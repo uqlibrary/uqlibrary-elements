@@ -1,0 +1,135 @@
+{
+  "responseHeader": {
+  },
+  "response": {
+  },
+  "stats": {
+    "stats_fields": {
+      "thomson_citation_count_i": {
+        "min": 0,
+        "max": 627,
+        "count": 157,
+        "missing": 16,
+        "sum": 6736,
+        "sumOfSquares": 1192284,
+        "mean": 42.904458598726,
+        "stddev": 76.093716125838,
+        "facets": {
+          "date_year_t": {
+            "2011": {
+              "min": 0,
+              "max": 319,
+              "count": 44,
+              "missing": 7,
+              "sum": 2309,
+              "sumOfSquares": 330775,
+              "mean": 52.477272727273,
+              "stddev": 69.817865587396,
+              "facets": []
+            },
+            "2012": {
+              "min": 0,
+              "max": 98,
+              "count": 32,
+              "missing": 1,
+              "sum": 768,
+              "sumOfSquares": 38520,
+              "mean": 24,
+              "stddev": 25.455844122716,
+              "facets": []
+            },
+            "2013": {
+              "min": 0,
+              "max": 60,
+              "count": 23,
+              "missing": 4,
+              "sum": 304,
+              "sumOfSquares": 10444,
+              "mean": 13.217391304348,
+              "stddev": 17.090551674002,
+              "facets": []
+            }
+          }
+        }
+      },
+      "scopus_citation_count_i": {
+        "min": 0,
+        "max": 650,
+        "count": 159,
+        "missing": 14,
+        "sum": 6897,
+        "sumOfSquares": 1268709,
+        "mean": 43.377358490566,
+        "stddev": 78.334537320917,
+        "facets": {
+          "date_year_t": {
+            "2011": {
+              "min": 0,
+              "max": 311,
+              "count": 46,
+              "missing": 5,
+              "sum": 2399,
+              "sumOfSquares": 346903,
+              "mean": 52.152173913043,
+              "stddev": 70.204452974091,
+              "facets": []
+            },
+            "2012": {
+              "min": 2,
+              "max": 103,
+              "count": 31,
+              "missing": 2,
+              "sum": 826,
+              "sumOfSquares": 44590,
+              "mean": 26.645161290323,
+              "stddev": 27.435437408696,
+              "facets": []
+            },
+            "2013": {
+              "min": 0,
+              "max": 66,
+              "count": 23,
+              "missing": 4,
+              "sum": 303,
+              "sumOfSquares": 9797,
+              "mean": 13.173913043478,
+              "stddev": 16.244305782511,
+              "facets": []
+            }
+          }
+        }
+      },
+      "id": {
+        "min": "UQ:185505",
+        "max": "UQ:343926",
+        "count": 173,
+        "missing": 0,
+        "facets": {
+          "date_year_t": {
+            "2011": {
+              "min": "UQ:230363",
+              "max": "UQ:316763",
+              "count": 51,
+              "missing": 0,
+              "facets": []
+            },
+            "2012": {
+              "min": "UQ:267049",
+              "max": "UQ:310755",
+              "count": 33,
+              "missing": 0,
+              "facets": []
+            },
+            "2013": {
+              "min": "UQ:286848",
+              "max": "UQ:343926",
+              "count": 27,
+              "missing": 0,
+              "facets": []
+            }
+          }
+        }
+      }
+    }
+  }
+}

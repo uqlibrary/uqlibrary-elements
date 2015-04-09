@@ -25,12 +25,16 @@
 
   <body>
     <script>
-      document.cookie="UQLMockData=enabled";
+     //add a cookie to indicate usage of mock data
+     document.cookie="UQLMockData=enabled";
+     document.cookie="UQLMockData-PType=18";
+
       WCT.loadSuites([
         'uqlibrary-api-test.html',
         'uqlibrary-api-facilities-availability-test.html',
         'uqlibrary-api-term-dates-test.html',
-        'uqlibrary-api-academic-hindex-test.html'
+        'uqlibrary-api-academic-hindex-test.html',
+        'uqlibrary-api-academic-stats-test.html'
       ]);
     </script>
   </body>

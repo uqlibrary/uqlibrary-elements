@@ -32,12 +32,19 @@ uqlibrary-research {
         background-color: $background-primary;
       }
       .metrics-cites {
-        padding: 8px;
+        padding: 0.6em 1em 0.3em 1em;
         font-size: 24px;
         font-weight: 300;
-        width: 4em;
+//        width: 50%;
         text-align: center;
         background-color: $background-primary;
+      }
+      .type-cites {
+        color: #333 !important;
+        font-size: 11px;
+        font-weight: 300;
+        background-color: $background-primary;
+        padding: 0 0.6em;
       }
       .plus {
         padding: 5px;
@@ -51,12 +58,6 @@ uqlibrary-research {
         text-align: left;
         padding-left: 16px;
         z-index: 12;
-      }
-      .type-cites {
-        color: #333 !important;
-        font-size: 11px;
-        font-weight: 300;
-        background-color: $background-primary;
       }
       .link {
         color: #007e9e;
@@ -91,6 +92,10 @@ uqlibrary-research {
       }
       .authors {
         font-weight: 400;
+      }
+      .metrics-type {
+        padding-left: 16px;
+        text-align: left;
       }
 
 

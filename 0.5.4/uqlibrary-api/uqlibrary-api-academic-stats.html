@@ -3,18 +3,18 @@
 <link rel="import" href="uqlibrary-api.html">
 
 <!--
-Element providing hindex for an academic
+Element providing stats for an academic
 
 ##### Example
 
-    <uqlibrary-api-academic-hindex></uqlibrary-api-academic-hindex>
+    <uqlibrary-api-academic-stats></uqlibrary-api-academic-stats>
 
-@element uqlibrary-api-academic-hindex
-@blurb Element providing hindex for an academic
+@element uqlibrary-api-academic-stats
+@blurb Element providing stats for an academic
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-api
 -->
-<polymer-element name="uqlibrary-api-academic-hindex" extends="uqlibrary-api">
+<polymer-element name="uqlibrary-api-academic-stats" extends="uqlibrary-api">
 
   <template>
     <uqlibrary-api id="list"></uqlibrary-api>
@@ -22,14 +22,15 @@ Element providing hindex for an academic
 
   <script>
     (function() {
-      Polymer('uqlibrary-api-academic-hindex', {
+      Polymer('uqlibrary-api-academic-stats', {
 
-        baseUri : '/academic/{username}/hindex',
+
+        baseUri : '/academic/{username}/publication-stats',
         username: '',
         /**
          * Fired when the object has loaded.
          *
-         * @event uqlibrary-api-academic-hindex
+         * @event uqlibrary-api-academic-stats
          */
         created: function () {
         },
@@ -38,12 +39,12 @@ Element providing hindex for an academic
           var that = this;
           this.$.list.addEventListener('uqlibrary-api', function(e) {
             that.data = e.detail;
-            that.fire('uqlibrary-api-academic-hindex-loaded', that.data);
+            that.fire('uqlibrary-api-academic-stats-loaded', that.data);
           });
         },
 
         /**
-         * Gets academic hindex.
+         * Gets academic stats.
          *
          * @method get
          */

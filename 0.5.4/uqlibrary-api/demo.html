@@ -19,6 +19,8 @@
   <link rel="import" href="uqlibrary-api-feedback.html">
   <link rel="import" href="uqlibrary-api-applications.html">
   <link rel="import" href="uqlibrary-api-papercut.html">
+  <link rel="import" href="uqlibrary-api-academic-hindex.html">
+  <link rel="import" href="uqlibrary-api-academic-stats.html">
 
   <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
   <style>
@@ -85,6 +87,14 @@
   <uqlibrary-api-papercut></uqlibrary-api-papercut>
   <h3>uqlibrary-api-papercut</h3>
   <div id="papercutLog"></div>
+
+  <uqlibrary-api-academic-hindex></uqlibrary-api-academic-hindex>
+  <h3>uqlibrary-api-academic-hindex</h3>
+  <div id="hindexLog"></div>
+
+  <uqlibrary-api-academic-stats></uqlibrary-api-academic-stats>
+  <h3>uqlibrary-api-academic-stats</h3>
+  <div id="statsLog"></div>
 
   <uqlibrary-api-applications></uqlibrary-api-applications>
   <h3>uqlibrary-api-applications</h3>
@@ -195,6 +205,18 @@
           document.getElementById('papercutLog').innerText = JSON.stringify(e.detail);
         });
         papercut.get();
+
+        var hindex = document.querySelector('uqlibrary-api-academic-hindex');
+        hindex.addEventListener('uqlibrary-api-academic-hindex-loaded', function(e) {
+          document.getElementById('hindexLog').innerText = JSON.stringify(e.detail);
+        });
+        hindex.get( { username: 's1234567' } );
+
+        var publicationStats = document.querySelector('uqlibrary-api-academic-stats');
+        publicationStats.addEventListener('uqlibrary-api-academic-stats-loaded', function(e) {
+          document.getElementById('statsLog').innerText = JSON.stringify(e.detail);
+        });
+        publicationStats.get( { username: 's1234567' } );
 
         var apps = document.querySelector('uqlibrary-api-applications');
 
