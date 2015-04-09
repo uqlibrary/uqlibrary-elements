@@ -41,7 +41,7 @@ Element providing access to UQ Library's API.
 
         ready: function() {
           var cookie = this.getCookie('UQLMockData');
-          if (typeof cookie !== "undefined") {
+          if (cookie !== "undefined") {
             this.useMockData = (cookie === 'enabled');
           }
         },
@@ -64,8 +64,8 @@ Element providing access to UQ Library's API.
           //var fileName = '../uqlibrary-api/mock/' + this.uri.substring(1, substringTo).replace(/([^a-z]\/)/gi, '_') + '_' + this.method.toLowerCase() + '.json';
           var fileName = this.resolvePath('mock/' + this.uri.substring(1, substringTo).replace(/([^a-z0-9]\/)/gi, '_') + '_' + this.method.toLowerCase() +'.json');
 
-          console.log('URI:' + this.uri);
-          console.log('Filename:' + fileName);
+          console.log(this.uri);
+          console.log(fileName);
 
           xobj.open('GET', fileName, true);
           xobj.onreadystatechange = function () {
@@ -160,13 +160,9 @@ Element providing access to UQ Library's API.
          * @returns {String}
          */
         getCookie: function (name) {
-          var parts = document.cookie.split(";");
-          for (var i = 0, l = parts.length; i < l; i++) {
-            var cookieParts = parts[i].trim().split('=');
-            if (cookieParts[0] === name) {
-              return cookieParts[1];
-            }
-          }
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length === 2) return parts.pop().split(";").shift();
         }
       });
     })();
