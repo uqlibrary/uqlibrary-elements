@@ -210,6 +210,10 @@ core-menu {
   background-color: #ffffff;
   margin: 0;
   padding: 8px 0; }
+  core-menu .core-selected {
+    color: #2874d7; }
+    core-menu .core-selected core-icon {
+      color: #2874d7; }
   core-menu core-icon {
     margin: -3px 34px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
@@ -386,8 +390,7 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.1); }
+  background-color: #ffffff; }
 
 .main {
   background-color: #FAFAFA; }
@@ -1311,6 +1314,92 @@ paper-dropdown::shadow #scroller {
     .responsiveCard {
       width: 100%;
       margin: 0; } }
+
+.flint-item-info {
+  height: 112px;
+  background-color: #FAFAFA; }
+  .flint-item-info h2 {
+    white-space: normal;
+    margin-left: 12px; }
+
+.flint-header-icon {
+  margin-left: 10px;
+  width: 44px;
+  height: 44px; }
+
+@media (min-width: 1500px) {
+  .flint-responsive-menu-icon {
+    display: none; } }
+
+@media (min-width: 750px) {
+  .flint-responsive-menu-toggle-icon {
+    display: none; } }
+
+.glow {
+  cursor: pointer;
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  .glow:hover {
+    -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+[drawer] {
+  background-color: #fafafa;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
+  [drawer] .uq-library-header-logo {
+    color: #fff;
+    margin: 12px 0 0 16px;
+    float: right;
+    font-size: 20px;
+    font-weight: 300;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    @media (max-width: 767px) {
+      [drawer] .uq-library-header-logo {
+        display: none; } }
+    [drawer] .uq-library-header-logo:hover, [drawer] .uq-library-header-logo:active, [drawer] .uq-library-header-logo:focus {
+      color: #fff;
+      text-decoration: none;
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  [drawer] #main-logo {
+    height: 32px;
+    border-right: 1px solid white;
+    margin-top: 4px;
+    padding: 4px 18px 3px 0;
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    [drawer] #main-logo:hover {
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    @media (max-width: 767px) {
+      [drawer] #main-logo {
+        display: none; } }
+  [drawer] #mini-logo {
+    height: 36px;
+    border-right: 1px solid white;
+    margin-top: 10px;
+    padding: 2px 18px 2px 19px;
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    [drawer] #mini-logo:hover {
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    @media (min-width: 768px) {
+      [drawer] #mini-logo {
+        display: none; } }
+  [drawer] .uq-library-header-logo-mini {
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 12px;
+    float: right;
+    font-size: 20px;
+    font-weight: 300;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    [drawer] .uq-library-header-logo-mini:hover, [drawer] .uq-library-header-logo-mini:active, [drawer] .uq-library-header-logo-mini:focus {
+      color: #fff;
+      text-decoration: none;
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    @media (min-width: 768px) {
+      [drawer] .uq-library-header-logo-mini {
+        display: none; } }
 
 .home-icon {
   width: 44px;
