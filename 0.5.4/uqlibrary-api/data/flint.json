@@ -1,0 +1,36 @@
+[
+  {
+    "title": "UQ Library Home",
+    "description": "Return to UQ Library Home",
+    "icon": "home",
+    "link": "https://www.library.uq.edu.au/"
+    "ga": "UQ Library"
+  },
+  {
+    "title": "My Library",
+    "description": "Return to My Library",
+    "icon": "dashboard",
+    "link": "../home",
+    "ga": "UQ My Library"
+  },
+  {
+    "isDivider": true
+  },
+  {
+    "title": "About this collection",
+    "description": "Learn about the Flint Collection",
+    "icon": "info",
+    "link": "#",
+    "ga": "About"
+  },
+  {
+    "isDivider": true
+  },
+  {
+    "title": "Help & Feedback",
+    "description": "Get help or leave feedback to improve this collection",
+    "icon": "help",
+    "link": "#",
+    "ga": "Feedback"
+  }
+]

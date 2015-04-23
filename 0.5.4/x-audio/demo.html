@@ -1,0 +1,48 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>x-audio Demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="x-audio.html">
+
+</head>
+<body unresolved>
+  <div style="width:400px">
+    <x-audio showVolumeControls></x-audio>
+  </div>
+  <a href="#" onclick="return setRecord('track1.mp3')">Play Record 1</a>&nbsp;&nbsp;
+  <a href="#" onclick="return setRecord('track2.mp3')">Play Record 2</a>
+</body>
+<script>
+  var myEl = document.querySelector('x-audio');
+  var autoplay = false;
+  myEl.addEventListener('x-audio-initialized', function() {
+    if(autoplay)
+      myEl.play()
+  });
+
+  function setRecord(url) {
+    if(myEl.src == url) {
+      myEl.play();
+    } else{
+      autoplay = true;
+      myEl.src = url;
+    }
+
+  }
+
+
+
+</script>
+</html>

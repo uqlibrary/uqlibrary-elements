@@ -1,0 +1,97 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+:host {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+            box-sizing: border-box;
+	position: relative;
+	color: #757575;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+.disabled {
+	color: #ccc;
+}
+
+core-icon {
+	color: #757575 !important;
+}
+
+.audio {
+    position: relative;
+}
+
+.audio span {
+    font-size: 14px;
+}
+
+.volume {
+    /*min-width: 100px;*/
+    min-width: 120px;
+    width: 15%;
+
+}
+
+paper-icon-button {
+    transition: 150ms ease-in-out;
+    border-radius: 50%;
+    color: #757575;
+}
+paper-icon-button::shadow core-icon {
+    color: #757575;
+}
+
+paper-icon-button#playButton::shadow core-icon {
+    width: 44px;
+    height: 44px;
+}
+
+paper-icon-button#mute::shadow core-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#info {
+   padding-left: 12px;
+   position: absolute;
+   top: -8px;
+   left: 0px;
+   width: 100%;
+}
+#name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 24px;
+}
+#remainder {
+    padding-right: 24px;
+}
+
+paper-icon-button:hover {
+    transition: 150ms ease-in-out;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#audio_slider:hover, #volume_slider:hover, #mute:hover {
+	cursor: pointer;
+}
+
+
+paper-slider {
+    width: 100%; }
+paper-slider::shadow #sliderBar::shadow #activeProgress {
+    background-color: #007e9e; }
+paper-slider::shadow #sliderKnobInner {
+    background-color: #007e9e; }
+paper-slider::shadow #sliderKnobInner::before {
+    background-color: #007e9e; }
