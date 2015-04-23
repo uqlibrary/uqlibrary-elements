@@ -26,6 +26,7 @@
     "x-audio": "uqlibrary/x-audio#<branch>",
     "md-timepicker": "uqlibrary/md-timepicker#<branch>",
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
-    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+    "web-component-tester": "Polymer/web-component-tester#2.0.5",
+    "google-map": "GoogleWebComponents/google-map#^0.4.2"
   }
 }
