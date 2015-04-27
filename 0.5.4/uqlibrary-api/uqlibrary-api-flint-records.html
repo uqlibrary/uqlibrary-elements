@@ -1,0 +1,91 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing list of records for Flint language survey based on language/voice or search keyword
+
+##### Example
+
+    <uqlibrary-api-flint-records></uqlibrary-api-flint-records>
+
+@element uqlibrary-api-flint-records
+@blurb Element providing list of records for Flint language survey based on language/voice or search keyword
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-flint-records" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="list" baseApiUrl="http://espace.library.uq.edu.au/list"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-flint-records', {
+
+        /*
+         //search by any field
+         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]="{{SEARCH_KEYWORD}}" AND ismemberof:("UQ:353627")&tpl=11
+         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]="song" AND ismemberof:("UQ:353627")&tpl=11
+
+         //search by language
+         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("{{LANGUAGE_TITLE}}") AND ismemberof:("UQ:353627")&tpl=11
+         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("Wakka Wakka / Waka Waka / Waga Waga") AND ismemberof:("UQ:353627")&tpl=11
+
+         //search by contributor/voice
+         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{VOICE_NAME}}") AND ismemberof:("UQ:353627")&tpl=11
+         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{Eddie}}") AND ismemberof:("UQ:353627")&tpl=11
+        */
+
+        baseUri : {
+          keyword: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]="{{KEYWORD}}" AND ismemberof:("UQ:353627")&tpl=11',
+          language: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("{{KEYWORD}}") AND ismemberof:("UQ:353627")&tpl=11',
+          voice: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{KEYWORD}}") AND ismemberof:("UQ:353627")&tpl=11'
+        },
+
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-flint-records
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.list.addEventListener('uqlibrary-api', function(e) {
+
+            //always returns an array of items
+            if (Object.prototype.toString.call(e.detail.item) === '[object Array]') {
+              that.data = e.detail.item;
+            } else {
+              that.data = [];
+              that.data.push(e.detail.item);
+            }
+
+            that.fire('uqlibrary-api-flint-records-loaded', that.data);
+          });
+        },
+
+        /**
+         * Gets results
+         *
+         * @method get
+         */
+        get: function (args) {
+          if (args && args.keyword) {
+            this.$.list.uri = this.baseUri.keyword.replace('{{KEYWORD}}', args.keyword);
+          } else if (args && args.language) {
+            this.$.list.uri = this.baseUri.language.replace('{{KEYWORD}}', args.language);
+          } else if (args && args.voice) {
+            this.$.list.uri = this.baseUri.voice.replace('{{KEYWORD}}', args.voice);
+          }
+
+          this.$.list.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>
