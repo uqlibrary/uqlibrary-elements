@@ -8,7 +8,7 @@ function isIE() {
 }
 
 function hasSession() {
-  return document.cookie.indexOf("UQLID") >= 0 || document.cookie.indexOf("UQLMockData") >= 0;
+  return (typeof ignoreSession !== 'undefined' && ignoreSession) || document.cookie.indexOf("UQLID") >= 0 || document.cookie.indexOf("UQLMockData") >= 0;
 }
 
 if (!('registerElement' in document
