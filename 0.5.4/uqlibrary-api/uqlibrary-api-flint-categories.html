@@ -39,44 +39,50 @@ Element providing list of languages or interviewees for Flint language survey
 
         ready: function () {
           var that = this;
+
           this.$.list.addEventListener('uqlibrary-api', function(e) {
-            that.data = e.detail;
-
-            //order data
-            that.data.sort(function(item1, item2) {
-              if (item1.cvo_title < item2.cvo_title)
-                return -1;
-              else
-                return 1;
-            });
-
-            //create an index of letter/item count
-            var letterCountList = [];
-            that.data.forEach(function(item){
-              if (!item.cvo_title)
-                item.cvo_title = item.rek_contributor;
-
-              if (!item.record_count)
-                item.record_count = item.interviewee_count;
-
-              var startLetter = item.cvo_title[0].toUpperCase();
-
-              if (letterCountList[startLetter]) {
-                letterCountList[startLetter] = letterCountList[startLetter] + 1;
-              } else {
-                letterCountList[startLetter] = 1;
-              }
-            });
-
-            //create a group structure
+            that.data = [];
             var groups = [];
-            for(var letter in letterCountList) {
-              groups.push({
-                length: letterCountList[letter],
-                data: {
-                  label: letter
+
+            if (e.details) {
+
+              that.data = e.detail;
+
+              //order data
+              that.data.sort(function (item1, item2) {
+                if (item1.cvo_title < item2.cvo_title)
+                  return -1;
+                else
+                  return 1;
+              });
+
+              //create an index of letter/item count
+              var letterCountList = [];
+              that.data.forEach(function (item) {
+                if (!item.cvo_title)
+                  item.cvo_title = item.rek_contributor;
+
+                if (!item.record_count)
+                  item.record_count = item.interviewee_count;
+
+                var startLetter = item.cvo_title[0].toUpperCase();
+
+                if (letterCountList[startLetter]) {
+                  letterCountList[startLetter] = letterCountList[startLetter] + 1;
+                } else {
+                  letterCountList[startLetter] = 1;
                 }
               });
+
+              //create a group structure
+              for (var letter in letterCountList) {
+                groups.push({
+                  length: letterCountList[letter],
+                  data: {
+                    label: letter
+                  }
+                });
+              }
             }
 
             that.fire('uqlibrary-api-flint-categories-loaded', { items: that.data, groups: groups });
