@@ -250,10 +250,11 @@ h1#toolbar-page-title {
     .single-line-list .list-item .content {
       padding-top: 16px;
       padding-bottom: 20px;
-      margin-right: 16px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis; }
+      margin-right: 16px; }
+      .single-line-list .list-item .content div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
     .single-line-list .list-item.header {
       font-family: "Roboto";
       font-weight: 700;
