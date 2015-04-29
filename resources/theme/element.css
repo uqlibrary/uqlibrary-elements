@@ -1316,6 +1316,47 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
+uqlibrary-flint-items-core-list /deep/ li {
+  cursor: pointer; }
+
+uqlibrary-flint /deep/ #search {
+  transition: 300ms ease-in-out; }
+uqlibrary-flint /deep/ .iconSlide {
+  transition: 300ms ease-in-out;
+  opacity: 0;
+  transform: translate(-1000px, 0); }
+uqlibrary-flint /deep/ .slideIn {
+  transition: 300ms ease-in-out;
+  opacity: 1;
+  transform: translate(0, 0); }
+uqlibrary-flint /deep/ paper-input-decorator {
+  transform: translate(1000px, 0);
+  opacity: 0;
+  transition: 300ms ease-in-out;
+  background-image: url("img/ic_search_white_24dp.png");
+  background-repeat: no-repeat;
+  background-position: 16px 8px;
+  background-size: 24px;
+  margin: 0;
+  padding: 3px 0;
+  font-size: 16px;
+  padding-left: 64px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  color: #fafafa; }
+uqlibrary-flint /deep/ paper-input-decorator:hover {
+  background-color: rgba(255, 255, 255, 0.2); }
+uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-webkit-input-placeholder {
+  /* platform specific rules for placeholder text */
+  color: #fafafa;
+  /*font-weight: 300;*/ }
+uqlibrary-flint /deep/ paper-input-decorator /deep/ .unfocused-underline {
+  /* line color when the input is unfocused */
+  background-color: transparent; }
+uqlibrary-flint /deep/ paper-input-decorator /deep/ .focused-underline {
+  /* line color when the input is unfocused */
+  background-color: transparent; }
+
 .flint-item-info {
   height: 112px;
   background-color: #FAFAFA; }
@@ -1335,6 +1376,9 @@ paper-dropdown::shadow #scroller {
 @media (min-width: 750px) {
   .flint-responsive-menu-toggle-icon {
     display: none; } }
+
+paper-icon-button::shadow {
+  padding: 0; }
 
 .glow {
   cursor: pointer;
