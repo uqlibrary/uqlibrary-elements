@@ -8,6 +8,20 @@ uqlibrary-flint-items-core-list /deep/ li {
 }
 
 uqlibrary-flint {
+  /deep/ core-animated-pages {
+//    z-index: -1;
+  }
+  /deep/ li {
+    padding-bottom: 16px;
+    &:hover, &:focus, &:active {
+      background-color: $item-hover;
+    }
+  }
+  /deep/ .three-line-icon-list .list-item.expanded {
+    &:hover, &:focus, &:active {
+      background-color: transparent;
+    }
+  }
   /deep/ #search {
     transition: $main-transition;
   }
