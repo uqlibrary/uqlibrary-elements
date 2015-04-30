@@ -19,7 +19,7 @@
 </head>
 <body unresolved>
   <div style="width:400px">
-    <x-audio showVolumeControls></x-audio>
+    <x-audio disabled showVolumeControls></x-audio>
   </div>
   <a href="#" onclick="return setRecord('track1.mp3')">Play Record 1</a>&nbsp;&nbsp;
   <a href="#" onclick="return setRecord('track2.mp3')">Play Record 2</a>
@@ -28,8 +28,10 @@
   var myEl = document.querySelector('x-audio');
   var autoplay = false;
   myEl.addEventListener('x-audio-initialized', function() {
-    if(autoplay)
+    if(autoplay){
+      myEl.removeAttribute('disabled');
       myEl.play()
+    }
   });
 
   function setRecord(url) {

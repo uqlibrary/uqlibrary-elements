@@ -134,7 +134,9 @@ Material design audio element
     }
   },
   togglePlay: function () {
-    if (!this.src && !this.disabled) return;
+    if (!this.src || this.disabled)
+      return;
+
     if (!this.isPlaying) {
       this.play()
     } else {
@@ -157,11 +159,15 @@ Material design audio element
   },
 
   changeCurrentTime: function (event) {
-    if (!this.src && !this.disabled) return;
+    if (!this.src || this.disabled)
+      return;
+
     this.audio.currentTime = event.target.immediateValue;
   },
   immediateVolumeChanged: function (oldValue, newValue) {
-    if (!this.src && !this.disabled) return;
+    if (!this.src || this.disabled)
+      return;
+
     this.audio.volume = newValue / 10;
 
     if (this.audio.volume === 0) {
@@ -180,7 +186,9 @@ Material design audio element
     }
   },
   mouseOut: function () {
-    if (!this.src && !this.disabled) return;
+    if (!this.src || this.disabled)
+      return;
+
     if (this.audio.volume != 0) {
       this.$.mute.icon = "av:volume-up";
     } else {
@@ -188,7 +196,9 @@ Material design audio element
     }
   },
   mute: function () {
-    if (!this.src && !this.disabled) return;
+    if (!this.src || this.disabled)
+      return;
+
     if (this.audio.volume != 0) {
       this.$.mute.icon = "av:volume-off";
       this.audio.volume = 0;
@@ -212,20 +222,22 @@ Material design audio element
   },
   disabledChanged: function (oldValue, newValue) {
     if (newValue === true) {
-      this.init();
       this.$.volume_slider.disabled = true;
       this.$.audio_slider.disabled = true;
       this.$.playButton.setAttribute('class', 'disabled');
+      this.$.playButton.setAttribute('disabled', 'true');
       this.$.mute.setAttribute('class', 'disabled');
+      this.$.mute.setAttribute('disabled', 'true');
       this.$.name.setAttribute('class', 'disabled');
       this.$.remainder.setAttribute('class', 'disabled');
 
     } else if (newValue === false) {
-      this.init(this.src);
       this.$.volume_slider.disabled = false;
       this.$.audio_slider.disabled = false;
       this.$.playButton.removeAttribute('class');
+      this.$.playButton.removeAttribute('disabled');
       this.$.mute.removeAttribute('class');
+      this.$.mute.removeAttribute('disabled');
       this.$.name.removeAttribute('class');
       this.$.remainder.removeAttribute('class');
 

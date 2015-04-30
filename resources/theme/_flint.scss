@@ -31,10 +31,13 @@ uqlibrary-flint {
   }
   /deep/ paper-icon-button {
     transition: $main-transition;
+    &:hover {
+      background-color: $divider-inverse;
+    }
   }
   /deep/ paper-input-decorator {
     transform: translate(1000px, 0);
-//    opacity: 0;
+    opacity: 0;
     transition: 300ms ease-in-out;
     background-image: url('http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_search_wht_24dp_r1.png');
     background-repeat: no-repeat;
@@ -62,15 +65,15 @@ uqlibrary-flint {
     background-color: transparent;
   }
   /deep/ paper-input-decorator /deep/ .focused-underline {
-    /* line color when the input is unfocused */
+    /* line color when the input is focused */
 
-    background-color: transparent;
+    background-color: transparent !important;
   }
   /deep/ [drawer] {
     background-color: #fafafa;
     box-shadow: $shadow-z-1;
     //  border-right: 1px solid #ccc;
-    .uq-library-header-logo {
+    /deep/ .uq-library-header-logo {
       color: #fff;
       margin: 12px 0 0 16px;
       float: right;
@@ -87,7 +90,7 @@ uqlibrary-flint {
         transition: $shadow-transition;
       }
     }
-    #main-logo {
+    /deep/ #main-logo {
       height: 32px;
       border-right: 1px solid white;
       margin-top: 4px;
@@ -101,7 +104,7 @@ uqlibrary-flint {
         display: none;
       }
     }
-    #mini-logo {
+    /deep/ #mini-logo {
       height: 36px;
       border-right: 1px solid white;
       margin-top: 10px;
@@ -115,7 +118,7 @@ uqlibrary-flint {
         display: none;
       }
     }
-    .uq-library-header-logo-mini {
+    /deep/ .uq-library-header-logo-mini {
       color: #fff;
       margin-top: 20px;
       margin-left: 12px;
@@ -162,7 +165,7 @@ uqlibrary-flint {
 paper-icon-button::shadow {
   padding: 0;
 }
-.glow {
+/deep/ .glow {
   cursor: pointer;
   transition: $main-transition;
   &:hover {

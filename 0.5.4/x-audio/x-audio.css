@@ -48,6 +48,9 @@ paper-icon-button {
 paper-icon-button::shadow core-icon {
     color: #757575;
 }
+paper-icon-button[disabled]::shadow core-icon {
+    color: #ccc;
+}
 
 paper-icon-button#playButton::shadow core-icon {
     width: 44px;
