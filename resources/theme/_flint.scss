@@ -13,11 +13,17 @@ uqlibrary-flint {
       background-color: $item-hover;
     }
   }
+  /deep/ .list-item.header {
+    &:hover, &:focus, &:active {
+      background-color: transparent;
+      cursor: text;
+    }
+  }
   /deep/ .three-line-icon-list .list-item {
 //    transition: $main-transition;
     transition: transform 100ms ease-in;
   }
-  /deep/ .three-line-icon-list .list-item.expanded {
+  /deep/ .three-line-icon-list .list-item.expanded, .list-item.header {
 //    transition: $main-transition;
     transition: transform 100ms ease-in;
     &:hover, &:focus, &:active {

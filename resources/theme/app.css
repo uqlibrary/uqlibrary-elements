@@ -1346,11 +1346,14 @@ uqlibrary-flint /deep/ li {
   uqlibrary-flint /deep/ li:hover, uqlibrary-flint /deep/ li:focus, uqlibrary-flint /deep/ li:active {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05); }
+uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
+  background-color: transparent;
+  cursor: text; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item {
   transition: transform 100ms ease-in; }
-uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded {
+uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flint .list-item.header {
   transition: transform 100ms ease-in; }
-  uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active {
+  uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active, uqlibrary-flint .list-item.header:hover, uqlibrary-flint .list-item.header:focus, uqlibrary-flint .list-item.header:active {
     background-color: transparent;
     cursor: text; }
 uqlibrary-flint /deep/ #search {
