@@ -3,23 +3,26 @@
 
 // Flint
 
-uqlibrary-flint-items-core-list /deep/ li {
-  cursor: pointer;
-}
-
 uqlibrary-flint {
-  /deep/ core-animated-pages {
-//    z-index: -1;
-  }
   /deep/ li {
     padding-bottom: 16px;
+//    transition: $main-transition;
     &:hover, &:focus, &:active {
+//      transition: $main-transition;
+      cursor: pointer;
       background-color: $item-hover;
     }
   }
+  /deep/ .three-line-icon-list .list-item {
+//    transition: $main-transition;
+    transition: transform 100ms ease-in;
+  }
   /deep/ .three-line-icon-list .list-item.expanded {
+//    transition: $main-transition;
+    transition: transform 100ms ease-in;
     &:hover, &:focus, &:active {
       background-color: transparent;
+      cursor: text;
     }
   }
   /deep/ #search {
