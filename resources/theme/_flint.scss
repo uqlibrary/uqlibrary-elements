@@ -67,6 +67,10 @@ uqlibrary-flint {
     border-radius: 2px;
     color: #fafafa;
 
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
     &::shadow #focusedUnderline {
       background-color: transparent !important;
     }

@@ -1387,6 +1387,8 @@ uqlibrary-flint /deep/ paper-input-decorator {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   color: #fafafa; }
+  uqlibrary-flint /deep/ paper-input-decorator:hover {
+    background-color: rgba(255, 255, 255, 0.2); }
   uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
     background-color: transparent !important; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-webkit-input-placeholder {
