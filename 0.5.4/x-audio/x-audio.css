@@ -79,7 +79,7 @@ paper-icon-button#mute::shadow core-icon {
     padding-right: 24px;
 }
 
-paper-icon-button:hover {
+paper-icon-button:hover, paper-icon-button[focused]  {
     transition: 150ms ease-in-out;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.1);
@@ -98,3 +98,7 @@ paper-slider::shadow #sliderKnobInner {
     background-color: #007e9e; }
 paper-slider::shadow #sliderKnobInner::before {
     background-color: #007e9e; }
+paper-slider:focus {
+    transition: 150ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.1);
+}

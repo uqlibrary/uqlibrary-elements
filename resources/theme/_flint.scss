@@ -49,25 +49,26 @@ uqlibrary-flint {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     color: #fafafa;
-  }
-  /deep/ paper-input-decorator:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  /deep/ paper-input-decorator /deep/::-webkit-input-placeholder {
-    /* platform specific rules for placeholder text */
 
-    color: #fafafa;
-    /*font-weight: 300;*/
-  }
-  /deep/ paper-input-decorator /deep/ .unfocused-underline {
-    /* line color when the input is unfocused */
+    &::shadow #focusedUnderline {
+      background-color: transparent !important;
+    }
 
-    background-color: transparent;
-  }
-  /deep/ paper-input-decorator /deep/ .focused-underline {
-    /* line color when the input is focused */
+    /deep/ ::-webkit-input-placeholder {
+      /* platform specific rules for placeholder text */
+      color: white;
+    }
+    /deep/ ::-moz-placeholder {
+      color: white;
+    }
+    /deep/ :-ms-input-placeholder {
+      color: white;
+    }
 
-    background-color: transparent !important;
+    /deep/ .unfocused-underline {
+      /* line color when the input is unfocused */
+      background-color: transparent;
+    }
   }
   /deep/ [drawer] {
     background-color: #fafafa;
@@ -77,8 +78,6 @@ uqlibrary-flint {
       color: #fff;
       margin: 12px 0 0 16px;
       float: right;
-      font-size: 20px;
-      font-weight: 300;
       transition: $shadow-transition;
       @media (max-width: 767px) {
         display: none;
@@ -91,9 +90,8 @@ uqlibrary-flint {
       }
     }
     /deep/ #main-logo {
-      height: 32px;
+      height: 40px;
       border-right: 1px solid white;
-      margin-top: 4px;
       padding: 4px 18px 3px 0;
       transition: $main-transition;
       &:hover {
@@ -105,6 +103,7 @@ uqlibrary-flint {
       }
     }
     /deep/ #mini-logo {
+      display: none;
       height: 36px;
       border-right: 1px solid white;
       margin-top: 10px;
@@ -120,11 +119,8 @@ uqlibrary-flint {
     }
     /deep/ .uq-library-header-logo-mini {
       color: #fff;
-      margin-top: 20px;
       margin-left: 12px;
       float: right;
-      font-size:20px;
-      font-weight: 300;
       transition: $shadow-transition;
       &:hover, &:active, &:focus {
         color: #fff;
