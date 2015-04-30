@@ -69,18 +69,16 @@ Element providing the library main navigation menu using a responsive drawer pan
     <template if="{{!account.hasSession}}">
 
       <core-toolbar>
-        <div vertical layout>
-          <div horizontal layout>
-            <div>
-              <a href="http://www.uq.edu.au" class="uq-link"><img
-                      src="https://app.library.uq.edu.au/images/uq_theme/uq.png" id="mini-logo"></a>
+        <div vertical layout center-justified>
+          <div horizontal layout center-justified>
+            <div align-self="center">
               <a href="http://www.uq.edu.au"><img src="https://www.library.uq.edu.au/360Link/Current/uq-logo.svg"
                                                   id="main-logo"></a>
-              <a class="uq-library-header-logo" href="https://www.library.uq.edu.au">Library</a>
-              <a class="uq-library-header-logo-mini" href="https://www.library.uq.edu.au">UQ Library</a>
+              <a class="uq-library-header-logo glow" href="https://www.library.uq.edu.au">Library</a>
+                <a href="http://www.uq.edu.au" class="uq-link">UQ </a>
+                <a class="uq-library-header-logo-mini glow" href="https://www.library.uq.edu.au">Library</a>
             </div>
           </div>
-          <div flex></div>
         </div>
       </core-toolbar>
     </template>

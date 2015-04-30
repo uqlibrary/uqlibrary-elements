@@ -33,7 +33,8 @@ Material design audio element
     <div id="container" horizontal layout center>
 
       <div self-center>
-        <paper-icon-button id="playButton" on-tap="{{togglePlay}}" icon="av:play-circle-outline" role="button" tabindex="0" aria-label="av:play-circle-outline"></paper-icon-button>
+        <core-a11y-keys id="playButtonKeys" target="{{$.playButton}}" keys="space enter" on-keys-pressed="{{ togglePlay }}"></core-a11y-keys>
+        <paper-icon-button id="playButton" on-tap="{{togglePlay}}" icon="av:play-circle-outline" role="button" tabindex="20" aria-label="av:play-circle-outline"></paper-icon-button>
       </div>
 
       <div class="audio" flex  self-center >
@@ -47,7 +48,8 @@ Material design audio element
       </div>
       <div self-center class="volume" hidden?="{{!showVolumeControls}}">
         <div horizontal layout center >
-          <paper-icon-button id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" on-tap="{{mute}}"></paper-icon-button>
+          <core-a11y-keys id="muteKeys" target="{{$.mute}}" keys="space enter" on-keys-pressed="{{ mute }}"></core-a11y-keys>
+          <paper-icon-button id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" role="button" on-tap="{{mute}}"></paper-icon-button>
           <div flex>
             <paper-slider id="volume_slider" min="0" max="10" value="{{volume}}" immediateValue="{{immediateVolume}}"></paper-slider>
           </div>
@@ -206,6 +208,7 @@ Material design audio element
     } else {
       this.audio.volume = this.volume / 10;
       this.$.volume_slider.disabled = false;
+      this.$.mute.icon = "av:volume-up";
     }
   },
   toHHMMSS: function (value) {
