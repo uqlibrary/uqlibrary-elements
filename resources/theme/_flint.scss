@@ -9,30 +9,40 @@ uqlibrary-flint-items-core-list /deep/ li {
 
 uqlibrary-flint {
   /deep/ #search {
-    transition: 300ms ease-in-out;
+    transition: $main-transition;
   }
   /deep/ .iconSlide {
-    transition: 300ms ease-in-out;
+    transition: $main-transition;
     opacity: 0;
-    transform: translate(-1000px, 0);
+    transform: translate(-600px, 0);
+  }
+  /deep/ .cancelIconSlide {
+    transition: $main-transition;
+    opacity: 0;
+    transform: translate(1000px, 0);
   }
   /deep/ .slideIn {
-    transition: 300ms ease-in-out;
+    transition: $main-transition;
     opacity: 1;
     transform: translate(0, 0);
   }
+  /deep/ #toolbar-page-title {
+    transition: $main-transition;
+  }
+  /deep/ paper-icon-button {
+    transition: $main-transition;
+  }
   /deep/ paper-input-decorator {
     transform: translate(1000px, 0);
-    opacity: 0;
+//    opacity: 0;
     transition: 300ms ease-in-out;
-    background-image: url('img/ic_search_white_24dp.png');
+    background-image: url('http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_search_wht_24dp_r1.png');
     background-repeat: no-repeat;
     background-position: 16px 8px;
     background-size: 24px;
     margin: 0;
-    padding: 3px 0;
     font-size: 16px;
-    padding-left: 64px;
+    padding: 3px 8px 3px 64px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     color: #fafafa;
@@ -55,6 +65,74 @@ uqlibrary-flint {
     /* line color when the input is unfocused */
 
     background-color: transparent;
+  }
+  /deep/ [drawer] {
+    background-color: #fafafa;
+    box-shadow: $shadow-z-1;
+    //  border-right: 1px solid #ccc;
+    .uq-library-header-logo {
+      color: #fff;
+      margin: 12px 0 0 16px;
+      float: right;
+      font-size: 20px;
+      font-weight: 300;
+      transition: $shadow-transition;
+      @media (max-width: 767px) {
+        display: none;
+      }
+      &:hover, &:active, &:focus {
+        color: #fff;
+        text-decoration: none;
+        -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
+        transition: $shadow-transition;
+      }
+    }
+    #main-logo {
+      height: 32px;
+      border-right: 1px solid white;
+      margin-top: 4px;
+      padding: 4px 18px 3px 0;
+      transition: $main-transition;
+      &:hover {
+        -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
+        transition: $main-transition;
+      }
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+    #mini-logo {
+      height: 36px;
+      border-right: 1px solid white;
+      margin-top: 10px;
+      padding: 2px 18px 2px 19px;
+      transition: $main-transition;
+      &:hover {
+        -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
+        transition: $main-transition;
+      }
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+    .uq-library-header-logo-mini {
+      color: #fff;
+      margin-top: 20px;
+      margin-left: 12px;
+      float: right;
+      font-size:20px;
+      font-weight: 300;
+      transition: $shadow-transition;
+      &:hover, &:active, &:focus {
+        color: #fff;
+        text-decoration: none;
+        -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
+        transition: $shadow-transition;
+      }
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -90,74 +168,5 @@ paper-icon-button::shadow {
   &:hover {
     -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
     transition: $main-transition;
-  }
-}
-
-[drawer] {
-  background-color: #fafafa;
-  box-shadow: $shadow-z-1;
-  //  border-right: 1px solid #ccc;
-  .uq-library-header-logo {
-    color: #fff;
-    margin: 12px 0 0 16px;
-    float: right;
-    font-size: 20px;
-    font-weight: 300;
-    transition: $shadow-transition;
-    @media (max-width: 767px) {
-      display: none;
-    }
-    &:hover, &:active, &:focus {
-      color: #fff;
-      text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
-      transition: $shadow-transition;
-    }
-  }
-  #main-logo {
-    height: 32px;
-    border-right: 1px solid white;
-    margin-top: 4px;
-    padding: 4px 18px 3px 0;
-    transition: $main-transition;
-    &:hover {
-      -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
-      transition: $main-transition;
-    }
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-  #mini-logo {
-    height: 36px;
-    border-right: 1px solid white;
-    margin-top: 10px;
-    padding: 2px 18px 2px 19px;
-    transition: $main-transition;
-    &:hover {
-      -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
-      transition: $main-transition;
-    }
-    @media (min-width: 768px) {
-      display: none;
-    }
-  }
-  .uq-library-header-logo-mini {
-    color: #fff;
-    margin-top: 20px;
-    margin-left: 12px;
-    float: right;
-    font-size:20px;
-    font-weight: 300;
-    transition: $shadow-transition;
-    &:hover, &:active, &:focus {
-      color: #fff;
-      text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
-      transition: $shadow-transition;
-    }
-    @media (min-width: 768px) {
-      display: none;
-    }
   }
 }
