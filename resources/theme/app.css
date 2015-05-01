@@ -1341,6 +1341,8 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
+uqlibrary-flint /deep/ #feedbackButton {
+  margin-bottom: 12px; }
 uqlibrary-flint /deep/ li {
   padding-bottom: 16px; }
   uqlibrary-flint /deep/ li:hover, uqlibrary-flint /deep/ li:focus, uqlibrary-flint /deep/ li:active {
@@ -1351,6 +1353,8 @@ uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-ite
   cursor: default; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item {
   transition: transform 100ms ease-in; }
+  uqlibrary-flint /deep/ .three-line-icon-list .list-item .content {
+    padding-bottom: 32px; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flint .list-item.header {
   transition: transform 100ms ease-in; }
   uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active, uqlibrary-flint .list-item.header:hover, uqlibrary-flint .list-item.header:focus, uqlibrary-flint .list-item.header:active {
@@ -1374,7 +1378,7 @@ uqlibrary-flint /deep/ #toolbar-page-title {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 uqlibrary-flint /deep/ paper-icon-button {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-  uqlibrary-flint /deep/ paper-icon-button:hover {
+  uqlibrary-flint /deep/ paper-icon-button:hover, uqlibrary-flint /deep/ paper-icon-button:focus, uqlibrary-flint /deep/ paper-icon-button:active {
     background-color: rgba(255, 255, 255, 0.12); }
 uqlibrary-flint /deep/ paper-input-decorator {
   transform: translate(1000px, 0);
@@ -1390,7 +1394,7 @@ uqlibrary-flint /deep/ paper-input-decorator {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   color: #fafafa; }
-  uqlibrary-flint /deep/ paper-input-decorator:hover {
+  uqlibrary-flint /deep/ paper-input-decorator:hover, uqlibrary-flint /deep/ paper-input-decorator:focus, uqlibrary-flint /deep/ paper-input-decorator:active {
     background-color: rgba(255, 255, 255, 0.2); }
   uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
     background-color: transparent !important; }
@@ -1425,7 +1429,7 @@ uqlibrary-flint /deep/ [drawer] {
     border-right: 1px solid white;
     padding: 4px 18px 3px 0;
     transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:hover {
+    uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:focus, uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:active {
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
       transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
     @media (max-width: 767px) {
@@ -1438,7 +1442,7 @@ uqlibrary-flint /deep/ [drawer] {
     margin-top: 10px;
     padding: 2px 18px 2px 19px;
     transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:hover {
+    uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:focus, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:active {
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
       transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
     @media (min-width: 768px) {
@@ -1484,7 +1488,7 @@ paper-icon-button::shadow {
 /deep/ .glow {
   cursor: pointer;
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-  /deep/ .glow:hover {
+  /deep/ .glow:hover, /deep/ .glow:focus, /deep/ .glow:active {
     -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
     transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 

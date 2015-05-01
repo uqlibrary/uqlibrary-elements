@@ -4,6 +4,9 @@
 // Flint
 
 uqlibrary-flint {
+  /deep/ #feedbackButton {
+    margin-bottom: 12px;
+  }
   /deep/ li {
     padding-bottom: 16px;
 //    transition: $main-transition;
@@ -22,6 +25,9 @@ uqlibrary-flint {
   /deep/ .three-line-icon-list .list-item {
 //    transition: $main-transition;
     transition: transform 100ms ease-in;
+    .content {
+      padding-bottom: 32px;
+    }
   }
   /deep/ .three-line-icon-list .list-item.expanded, .list-item.header {
 //    transition: $main-transition;
@@ -54,7 +60,7 @@ uqlibrary-flint {
   }
   /deep/ paper-icon-button {
     transition: $main-transition;
-    &:hover {
+    &:hover, &:focus, &:active {
       background-color: $divider-inverse;
     }
   }
@@ -73,7 +79,7 @@ uqlibrary-flint {
     border-radius: 2px;
     color: #fafafa;
 
-    &:hover {
+    &:hover, &:focus, &:active {
       background-color: rgba(255, 255, 255, 0.2);
     }
 
@@ -121,7 +127,7 @@ uqlibrary-flint {
       border-right: 1px solid white;
       padding: 4px 18px 3px 0;
       transition: $main-transition;
-      &:hover {
+      &:hover, &:focus, &:active {
         -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
         transition: $main-transition;
       }
@@ -136,7 +142,7 @@ uqlibrary-flint {
       margin-top: 10px;
       padding: 2px 18px 2px 19px;
       transition: $main-transition;
-      &:hover {
+      &:hover, &:focus, &:active {
         -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
         transition: $main-transition;
       }
@@ -191,7 +197,7 @@ paper-icon-button::shadow {
 /deep/ .glow {
   cursor: pointer;
   transition: $main-transition;
-  &:hover {
+  &:hover, &:focus, &:active {
     -webkit-filter: drop-shadow(0 0 2px rgba(255,255,255,.5));
     transition: $main-transition;
   }
