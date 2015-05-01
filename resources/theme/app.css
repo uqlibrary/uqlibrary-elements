@@ -1352,14 +1352,20 @@ uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-ite
   background-color: transparent;
   cursor: default; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item {
+  padding-left: 0;
+  padding-right: 0;
   transition: transform 100ms ease-in; }
   uqlibrary-flint /deep/ .three-line-icon-list .list-item .content {
-    padding-bottom: 32px; }
+    padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flint .list-item.header {
   transition: transform 100ms ease-in; }
   uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active, uqlibrary-flint .list-item.header:hover, uqlibrary-flint .list-item.header:focus, uqlibrary-flint .list-item.header:active {
     background-color: transparent;
     cursor: text; }
+uqlibrary-flint /deep/ #itemDetailsCollapse {
+  padding: 24px; }
 uqlibrary-flint /deep/ #search {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 uqlibrary-flint /deep/ .iconSlide {

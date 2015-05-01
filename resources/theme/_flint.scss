@@ -23,10 +23,14 @@ uqlibrary-flint {
     }
   }
   /deep/ .three-line-icon-list .list-item {
+    padding-left: 0;
+    padding-right: 0;
 //    transition: $main-transition;
     transition: transform 100ms ease-in;
     .content {
       padding-bottom: 32px;
+      padding-left: 16px;
+      padding-right: 16px;
     }
   }
   /deep/ .three-line-icon-list .list-item.expanded, .list-item.header {
@@ -36,6 +40,9 @@ uqlibrary-flint {
       background-color: transparent;
       cursor: text;
     }
+  }
+  /deep/ #itemDetailsCollapse {
+    padding: 24px;
   }
   /deep/ #search {
     transition: $main-transition;
