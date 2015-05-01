@@ -16,7 +16,7 @@ uqlibrary-flint {
   /deep/ .list-item.header {
     &:hover, &:focus, &:active {
       background-color: transparent;
-      cursor: text;
+      cursor: default;
     }
   }
   /deep/ .three-line-icon-list .list-item {
