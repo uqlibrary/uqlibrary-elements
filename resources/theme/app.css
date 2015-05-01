@@ -1365,7 +1365,8 @@ uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flin
     background-color: transparent;
     cursor: text; }
 uqlibrary-flint /deep/ #itemDetailsCollapse {
-  padding: 24px; }
+  padding-left: 72px;
+  padding-right: 16px; }
 uqlibrary-flint /deep/ #search {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 uqlibrary-flint /deep/ .iconSlide {
