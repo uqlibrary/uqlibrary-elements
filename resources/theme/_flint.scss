@@ -4,8 +4,15 @@
 // Flint-specific styles
 
 uqlibrary-flint {
+  /deep/ paper-tabs {
+    z-index: 1;
+  }
   /deep/ core-drawer-panel {
     background-color: white;
+    /deep/ .main {
+      background-color: white;
+      z-index: 0;
+    }
   }
   /deep/ #feedbackButton {
     margin-bottom: 12px;
@@ -16,6 +23,14 @@ uqlibrary-flint {
       //      transition: $main-transition;
       cursor: pointer;
       background-color: $item-hover;
+    }
+    /deep/ .avatar {
+      margin-left: 16px;
+      paper-icon-button {
+        &:hover, &:focus, &:active {
+          background-color: $item-hover;
+        }
+      }
     }
   }
   /deep/ .list-item.header {
@@ -37,7 +52,7 @@ uqlibrary-flint {
     }
   }
   /deep/ .three-line-icon-list .list-item.expanded, .list-item.header {
-//    transition: $main-transition;
+    padding-left: 16px;
     transition: transform 100ms ease-in;
     &:hover, &:focus, &:active {
       background-color: white;

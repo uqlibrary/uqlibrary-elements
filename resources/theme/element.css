@@ -1316,8 +1316,13 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
+uqlibrary-flint /deep/ paper-tabs {
+  z-index: 1; }
 uqlibrary-flint /deep/ core-drawer-panel {
   background-color: white; }
+  uqlibrary-flint /deep/ core-drawer-panel /deep/ .main {
+    background-color: white;
+    z-index: 0; }
 uqlibrary-flint /deep/ #feedbackButton {
   margin-bottom: 12px; }
 uqlibrary-flint /deep/ core-list li {
@@ -1325,6 +1330,10 @@ uqlibrary-flint /deep/ core-list li {
   uqlibrary-flint /deep/ core-list li:hover, uqlibrary-flint /deep/ core-list li:focus, uqlibrary-flint /deep/ core-list li:active {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05); }
+  uqlibrary-flint /deep/ core-list li /deep/ .avatar {
+    margin-left: 16px; }
+    uqlibrary-flint /deep/ core-list li /deep/ .avatar paper-icon-button:hover, uqlibrary-flint /deep/ core-list li /deep/ .avatar paper-icon-button:focus, uqlibrary-flint /deep/ core-list li /deep/ .avatar paper-icon-button:active {
+      background-color: rgba(0, 0, 0, 0.05); }
 uqlibrary-flint /deep/ .list-item.header {
   background-color: transparent; }
   uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
@@ -1339,6 +1348,7 @@ uqlibrary-flint /deep/ .three-line-icon-list .list-item {
     padding-left: 16px;
     padding-right: 16px; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flint .list-item.header {
+  padding-left: 16px;
   transition: transform 100ms ease-in; }
   uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active, uqlibrary-flint .list-item.header:hover, uqlibrary-flint .list-item.header:focus, uqlibrary-flint .list-item.header:active {
     background-color: white;
