@@ -71,15 +71,41 @@ uqlibrary-flint {
   }
   /deep/ paper-icon-button {
     transition: $main-transition;
-    &:hover, &:focus, &:active {
-      background-color: $divider-inverse;
-    }
-  }
-  /deep/ #playButton {
-    &:hover {
+    &[focused], &:hover, &:focus, &:active {
       background-color: $uq-divider;
     }
   }
+  /deep/ paper-icon {
+    transition: $main-transition;
+    &[focused], &:hover, &:focus, &:active {
+      background-color: $uq-divider;
+    }
+  }
+  /deep/ paper-slider {
+    transition: $main-transition;
+    &:focus{
+      background-color: $uq-divider;
+      &::shadow {
+          #sliderContainer.ring {
+          #sliderKnobInner, #sliderKnobInner::before {
+            background-color: $inactive-icon;
+            border-color: $inactive-icon;
+          }
+        }
+        #sliderBar{
+          &::shadow {
+            #progressContainer {
+              background-color: $inactive-icon;
+            }
+            #progressContainer {
+              background-color: $inactive-icon;
+            }
+          }
+        }
+      }
+    }
+  }
+
   /deep/ paper-input-decorator {
     transform: translate(1000px, 0);
     opacity: 0;
