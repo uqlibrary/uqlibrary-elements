@@ -7,18 +7,23 @@ uqlibrary-flint {
   /deep/ #feedbackButton {
     margin-bottom: 12px;
   }
-  /deep/ li {
-    padding-bottom: 16px;
-//    transition: $main-transition;
+  /deep/ core-list li {
+    background-color: white;
     &:hover, &:focus, &:active {
-//      transition: $main-transition;
+      //      transition: $main-transition;
       cursor: pointer;
       background-color: $item-hover;
     }
   }
+  /deep/ li {
+    padding-bottom: 16px;
+//    transition: $main-transition;
+
+  }
   /deep/ .list-item.header {
+    background-color: $background-primary;
     &:hover, &:focus, &:active {
-      background-color: transparent;
+      background-color: $background-primary;
       cursor: default;
     }
   }
@@ -37,7 +42,7 @@ uqlibrary-flint {
 //    transition: $main-transition;
     transition: transform 100ms ease-in;
     &:hover, &:focus, &:active {
-      background-color: transparent;
+      background-color: white;
       cursor: text;
     }
   }
