@@ -4,6 +4,9 @@
 // Flint-specific styles
 
 uqlibrary-flint {
+  /deep/ core-drawer-panel {
+    background-color: white;
+  }
   /deep/ #feedbackButton {
     margin-bottom: 12px;
   }
@@ -15,15 +18,10 @@ uqlibrary-flint {
       background-color: $item-hover;
     }
   }
-  /deep/ li {
-    padding-bottom: 16px;
-//    transition: $main-transition;
-
-  }
   /deep/ .list-item.header {
-    background-color: $background-primary;
+    background-color: transparent;
     &:hover, &:focus, &:active {
-      background-color: $background-primary;
+      background-color: transparent;
       cursor: default;
     }
   }

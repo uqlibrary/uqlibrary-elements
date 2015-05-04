@@ -1341,6 +1341,8 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
+uqlibrary-flint /deep/ core-drawer-panel {
+  background-color: white; }
 uqlibrary-flint /deep/ #feedbackButton {
   margin-bottom: 12px; }
 uqlibrary-flint /deep/ core-list li {
@@ -1348,12 +1350,10 @@ uqlibrary-flint /deep/ core-list li {
   uqlibrary-flint /deep/ core-list li:hover, uqlibrary-flint /deep/ core-list li:focus, uqlibrary-flint /deep/ core-list li:active {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05); }
-uqlibrary-flint /deep/ li {
-  padding-bottom: 16px; }
 uqlibrary-flint /deep/ .list-item.header {
-  background-color: #FAFAFA; }
+  background-color: transparent; }
   uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
-    background-color: #FAFAFA;
+    background-color: transparent;
     cursor: default; }
 uqlibrary-flint /deep/ .three-line-icon-list .list-item {
   padding-left: 0;
