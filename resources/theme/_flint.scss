@@ -4,6 +4,13 @@
 // Flint-specific styles
 
 uqlibrary-flint {
+  /deep/ core-toolbar {
+    paper-icon-button {
+      &:hover, &:focus, &:active {
+        background-color: $divider-inverse;
+      }
+    }
+  }
   /deep/ paper-tabs {
     z-index: 1;
   }
@@ -31,6 +38,9 @@ uqlibrary-flint {
           background-color: $item-hover;
         }
       }
+    }
+    /deep/ #closeButton {
+      margin-right: 16px;
     }
   }
   /deep/ .list-item.header {
