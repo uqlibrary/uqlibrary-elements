@@ -1,7 +1,7 @@
 @import "variables";
 @import "margins";
 
-// Flint
+// Flint-specific styles
 
 uqlibrary-flint {
   /deep/ #feedbackButton {
@@ -70,6 +70,11 @@ uqlibrary-flint {
     transition: $main-transition;
     &:hover, &:focus, &:active {
       background-color: $divider-inverse;
+    }
+  }
+  /deep/ #playButton {
+    &:hover {
+      background-color: $uq-divider;
     }
   }
   /deep/ paper-input-decorator {
@@ -198,9 +203,6 @@ uqlibrary-flint {
   @media (min-width: 750px) {
     display: none;
   }
-}
-paper-icon-button::shadow {
-  padding: 0;
 }
 /deep/ .glow {
   cursor: pointer;
