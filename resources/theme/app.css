@@ -1476,21 +1476,23 @@ uqlibrary-flint /deep/ [drawer] {
       uqlibrary-flint /deep/ [drawer] /deep/ #main-logo {
         display: none; } }
   uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo {
-    display: none;
     height: 36px;
+    color: white;
     border-right: 1px solid white;
     margin-top: 10px;
     padding: 2px 18px 2px 19px;
     transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
     uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:focus, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:active {
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none; }
     @media (min-width: 768px) {
       uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo {
         display: none; } }
   uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini {
     color: #fff;
     margin-left: 12px;
+    margin-top: 12px;
     float: right;
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
     uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:hover, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:active, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:focus {
@@ -1498,9 +1500,9 @@ uqlibrary-flint /deep/ [drawer] {
       text-decoration: none;
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
       transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
       uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini {
-        display: none; } }
+        margin-top: 0; } }
 
 .flint-item-info {
   height: 112px;

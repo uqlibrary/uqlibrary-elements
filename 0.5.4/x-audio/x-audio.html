@@ -34,7 +34,7 @@ Material design audio element
 
       <div self-center>
         <core-a11y-keys id="playButtonKeys" target="{{$.playButton}}" keys="space enter" on-keys-pressed="{{ togglePlay }}"></core-a11y-keys>
-        <paper-icon-button id="playButton" on-tap="{{togglePlay}}" icon="av:play-circle-outline" role="button" tabindex="20" aria-label="av:play-circle-outline"></paper-icon-button>
+        <paper-icon-button id="playButton" on-click="{{togglePlay}}" icon="av:play-circle-outline" role="button" tabindex="20" aria-label="av:play-circle-outline"></paper-icon-button>
       </div>
 
       <div class="audio" flex  self-center >
@@ -49,15 +49,15 @@ Material design audio element
       <div self-center class="volume" hidden?="{{!showVolumeControls}}">
         <div horizontal layout center >
           <core-a11y-keys id="muteKeys" target="{{$.mute}}" keys="space enter" on-keys-pressed="{{ mute }}"></core-a11y-keys>
-          <paper-icon-button id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" role="button" on-tap="{{mute}}"></paper-icon-button>
+          <paper-icon-button id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" role="button" on-click="{{mute}}"></paper-icon-button>
           <div flex>
             <paper-slider id="volume_slider" min="0" max="10" value="{{volume}}" immediateValue="{{immediateVolume}}"></paper-slider>
           </div>
         </div>
       </div>
     </div>
+  </template>
 
-  </template>  
   <script>
 
   Polymer({
@@ -116,11 +116,12 @@ Material design audio element
     self.audio.addEventListener('timeupdate', function (){
       self.currentTimeValue = parseInt(this.currentTime, 10);
       self.duration = this.duration;
-      self.remainder = '-'+self.toHHMMSS(this.duration - this.currentTime);
+      self.remainder =  self.toHHMMSS(this.currentTime) + '/' + self.toHHMMSS(this.duration);
     });
 
     self.audio.addEventListener('ended', function (){
       self.remainder = self.toHHMMSS(this.duration);
+      self.isPlaying = false
       self.fire('x-audio-ended');
     });
 
@@ -138,11 +139,10 @@ Material design audio element
   togglePlay: function () {
     if (!this.src || this.disabled)
       return;
-
     if (!this.isPlaying) {
       this.play()
     } else {
-      this.pause()
+      this.pause();
     }
   },
 

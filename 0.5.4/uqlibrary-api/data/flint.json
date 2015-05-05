@@ -14,9 +14,6 @@
     "ga": "UQ My Library"
   },
   {
-    "isDivider": true
-  },
-  {
     "title": "About this collection",
     "description": "Learn about the Flint Collection",
     "icon": "info",
