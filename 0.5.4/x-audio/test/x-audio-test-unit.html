@@ -52,7 +52,7 @@
 
         test('check volume control', function() {
           expect(audioPlayer.volume).to.be.equal(track.volume);
-          audioPlayer.$.mute.fire('tap');
+          audioPlayer.$.mute.fire('click');
           expect(audioPlayer.audio.volume).to.be.equal(0);
         });
 
@@ -69,11 +69,11 @@
           });
 
           // Start playing
-          audioPlayer.$.playButton.fire('tap');
+          audioPlayer.$.playButton.fire('click');
 
           // Let audio to play for 3 seconds
           setTimeout(function(){
-            audioPlayer.$.playButton.fire('tap');
+            audioPlayer.$.playButton.fire('click');
           }, 3000);
 
         });

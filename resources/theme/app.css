@@ -1451,58 +1451,32 @@ uqlibrary-flint /deep/ paper-input-decorator {
 uqlibrary-flint /deep/ [drawer] {
   background-color: #fafafa;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
-  uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo {
-    color: #fff;
-    margin: 12px 0 0 16px;
-    float: right;
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    @media (max-width: 767px) {
-      uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo {
-        display: none; } }
-    uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo:active, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo:focus {
-      color: #fff;
-      text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-  uqlibrary-flint /deep/ [drawer] /deep/ #main-logo {
-    height: 40px;
-    border-right: 1px solid white;
-    padding: 4px 18px 3px 0;
+  uqlibrary-flint /deep/ [drawer] /deep/ .glow {
+    color: white;
+    cursor: pointer;
     transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:focus, uqlibrary-flint /deep/ [drawer] /deep/ #main-logo:active {
+    uqlibrary-flint /deep/ [drawer] /deep/ .glow:hover, uqlibrary-flint /deep/ [drawer] /deep/ .glow:focus, uqlibrary-flint /deep/ [drawer] /deep/ .glow:active {
+      text-decoration: none;
       -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
       transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    @media (max-width: 767px) {
-      uqlibrary-flint /deep/ [drawer] /deep/ #main-logo {
-        display: none; } }
-  uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo {
+  uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
     height: 36px;
-    color: white;
     border-right: 1px solid white;
-    margin-top: 10px;
-    padding: 2px 18px 2px 19px;
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:hover, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:focus, uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo:active {
-      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-      text-decoration: none; }
-    @media (min-width: 768px) {
-      uqlibrary-flint /deep/ [drawer] /deep/ #mini-logo {
-        display: none; } }
-  uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini {
-    color: #fff;
-    margin-left: 12px;
-    margin-top: 12px;
-    float: right;
-    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-    uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:hover, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:active, uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini:focus {
-      color: #fff;
-      text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    margin-right: 10px;
+    padding-right: 10px; }
     @media (max-width: 768px) {
-      uqlibrary-flint /deep/ [drawer] /deep/ .uq-library-header-logo-mini {
-        margin-top: 0; } }
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
+        display: none; } }
+  uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+    border-right: 1px solid white;
+    margin-right: 10px;
+    padding-right: 14px; }
+    @media (min-width: 769px) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+        display: none; } }
+  @media (min-width: 769px) {
+    uqlibrary-flint /deep/ [drawer] /deep/ #uq-library-logo-text {
+      vertical-align: super; } }
 
 .flint-item-info {
   height: 112px;
@@ -1523,13 +1497,6 @@ uqlibrary-flint /deep/ [drawer] {
 @media (min-width: 750px) {
   .flint-responsive-menu-toggle-icon {
     display: none; } }
-
-/deep/ .glow {
-  cursor: pointer;
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-  /deep/ .glow:hover, /deep/ .glow:focus, /deep/ .glow:active {
-    -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 
 .home-icon {
   width: 44px;
