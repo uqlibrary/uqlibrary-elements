@@ -1513,6 +1513,9 @@ uqlibrary-flint /deep/ [drawer] {
   .flint-responsive-menu-toggle-icon {
     display: none; } }
 
+html /deep/ div.gmnoscreen {
+  display: none; }
+
 .home-icon {
   width: 44px;
   height: 44px;

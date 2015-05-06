@@ -262,3 +262,7 @@ uqlibrary-flint {
     display: none;
   }
 }
+
+html /deep/ div.gmnoscreen {
+  display: none;
+}
