@@ -92,6 +92,7 @@ Material design audio element
   showVolumeControls: false,
   showSeekControl: false,
   isPlaying: false,
+  audio: null,
   volume: 8,
   ready: function () {
     if (!this.src && this.src != '')
@@ -103,32 +104,42 @@ Material design audio element
     self.remainder = '';
 
     this.$.playButton.icon = 'av:play-circle-outline';
-    self.audio = new Audio(src);
-    self.audio.volume = self.volume / 10;
-    self.audio.addEventListener('ended', function () {
-      self.currentTimeValue = self.length;
-      self.$.playButton.icon = 'av:play-circle-outline';
-    });
-
-    self.audio.addEventListener("loadedmetadata", function() {
-      self.remainder = self.toHHMMSS(this.duration);
-    });
-
-    self.audio.addEventListener('timeupdate', function (){
-      self.currentTimeValue = parseInt(this.currentTime, 10);
-      self.duration = this.duration;
-      self.remainder =  self.toHHMMSS(this.currentTime) + '/' + self.toHHMMSS(this.duration);
-    });
-
-    self.audio.addEventListener('ended', function (){
-      self.remainder = self.toHHMMSS(this.duration);
-      self.isPlaying = false
-      self.fire('x-audio-ended');
-    });
-
-    this.fire('x-audio-initialized', {audio: self.audio});
-
+    this.audio = new Audio(src);
+    this.initAudio();
   },
+
+  initAudio: function() {
+    if(this.audio != null) {
+      var that = this;
+      this.audio.volume = this.volume / 10;
+      this.audio.addEventListener('ended', function () {
+        that.currentTimeValue = that.length;
+        that.$.playButton.icon = 'av:play-circle-outline';
+      });
+
+      this.audio.addEventListener("loadedmetadata", function() {
+        that.remainder = that.toHHMMSS(this.duration);
+        that.currentTimeValue = 0;
+      });
+
+      this.audio.addEventListener('timeupdate', function (){
+        that.currentTimeValue = parseInt(this.currentTime, 10);
+        that.duration = this.duration;
+        that.remainder =  that.toHHMMSS(this.currentTime) + '/' + that.toHHMMSS(this.duration);
+      });
+
+      this.audio.addEventListener('ended', function (){
+        that.remainder = that.toHHMMSS(this.duration);
+        that.isPlaying = false
+        that.fire('x-audio-ended');
+      });
+
+      this.fire('x-audio-initialized', {audio: this.audio});
+
+
+    }
+  },
+
   srcChanged: function (oldValue, newValue) {
     if(this.audio) {
       this.pause();
@@ -137,8 +148,9 @@ Material design audio element
       this.init(newValue);
     }
   },
+
   togglePlay: function () {
-    if (!this.src || this.disabled)
+    if (this.audio == null || this.disabled)
       return;
     if (!this.isPlaying) {
       this.play()
@@ -162,13 +174,13 @@ Material design audio element
   },
 
   changeCurrentTime: function (event) {
-    if (!this.src || this.disabled)
+    if (this.audio == null || this.disabled)
       return;
 
     this.audio.currentTime = event.target.immediateValue;
   },
   immediateVolumeChanged: function (oldValue, newValue) {
-    if (!this.src || this.disabled)
+    if (this.audio == null || this.disabled)
       return;
 
     this.audio.volume = newValue / 10;
@@ -181,7 +193,7 @@ Material design audio element
 
   },
   mouseOver: function () {
-    if (!this.src && !this.disabled) return;
+    if (this.audio == null && !this.disabled) return;
     if (this.audio.volume === 0) {
       this.$.mute.icon = "av:volume-up";
     } else {
@@ -189,7 +201,7 @@ Material design audio element
     }
   },
   mouseOut: function () {
-    if (!this.src || this.disabled)
+    if (this.audio == null || this.disabled)
       return;
 
     if (this.audio.volume != 0) {
@@ -199,7 +211,7 @@ Material design audio element
     }
   },
   mute: function () {
-    if (!this.src || this.disabled)
+    if (this.audio == null || this.disabled)
       return;
 
     if (this.audio.volume != 0) {

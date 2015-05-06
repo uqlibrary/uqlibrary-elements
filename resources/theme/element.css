@@ -1395,31 +1395,46 @@ uqlibrary-flint /deep/ paper-slider {
       background-color: rgba(0, 0, 0, 0.26); }
     uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderBar::shadow #progressContainer {
       background-color: rgba(0, 0, 0, 0.26); }
+uqlibrary-flint /deep/ #backArrow, uqlibrary-flint /deep/ #hamburgerMenuIcon, uqlibrary-flint /deep/ #toolbarTitle, uqlibrary-flint /deep/ #expandSearch {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #clearButton:hover {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(0, 0, 0, 0.05); }
+uqlibrary-flint /deep/ .offCanvas {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(1000px, 0); }
+uqlibrary-flint /deep/ #left-flex {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  color: #777;
+  border-radius: 2px 0 0 2px;
+  margin: 0; }
+uqlibrary-flint /deep/ #right-flex {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  color: #777;
+  border-radius: 0 2px 2px 0;
+  margin: 0 8px 0 0; }
+uqlibrary-flint /deep/ #middle-flex {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0; }
 uqlibrary-flint /deep/ paper-input-decorator {
-  transform: translate(1000px, 0);
-  opacity: 0;
+  padding-top: 5px;
+  padding-bottom: 6px;
   transition: 300ms ease-in-out;
-  background-image: url("http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_search_wht_24dp_r1.png");
-  background-repeat: no-repeat;
-  background-position: 16px 8px;
-  background-size: 24px;
-  margin: 0;
   font-size: 16px;
-  padding: 3px 8px 3px 64px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
-  color: #fafafa; }
-  uqlibrary-flint /deep/ paper-input-decorator:hover, uqlibrary-flint /deep/ paper-input-decorator:focus, uqlibrary-flint /deep/ paper-input-decorator:active {
-    background-color: rgba(255, 255, 255, 0.2); }
+  background-color: white;
+  border-radius: 0;
+  color: #777; }
   uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
     background-color: transparent !important; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-webkit-input-placeholder {
     /* platform specific rules for placeholder text */
-    color: white; }
+    color: #777; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-moz-placeholder {
-    color: white; }
+    color: #777; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ :-ms-input-placeholder {
-    color: white; }
+    color: #777; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ .unfocused-underline {
     /* line color when the input is unfocused */
     background-color: transparent; }

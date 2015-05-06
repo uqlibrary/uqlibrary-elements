@@ -54,7 +54,6 @@ uqlibrary-flint {
     .three-line-icon-list .list-item {
       padding-left: 0;
       padding-right: 0;
-      //    transition: $main-transition;
       transition: transform 100ms ease-in;
       .content {
         padding-bottom: 32px;
@@ -132,24 +131,51 @@ uqlibrary-flint {
       }
     }
 
-    paper-input-decorator {
-      transform: translate(1000px, 0);
-      opacity: 0;
-      transition: 300ms ease-in-out;
-      background-image: url('http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/ic_search_wht_24dp_r1.png');
-      background-repeat: no-repeat;
-      background-position: 16px 8px;
-      background-size: 24px;
-      margin: 0;
-      font-size: 16px;
-      padding: 3px 8px 3px 64px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 2px;
-      color: #fafafa;
+    #backArrow, #hamburgerMenuIcon, #toolbarTitle, #expandSearch {
+      transition: $main-transition;
+    }
 
-      &:hover, &:focus, &:active {
-        background-color: rgba(255, 255, 255, 0.2);
+    #searchButton, #clearButton {
+      &:hover {
+        transition: $main-transition;
+        background-color: $item-hover;
       }
+    }
+
+    .offCanvas {
+      transition: $main-transition;
+      transform: translate(1000px, 0);
+    }
+
+    #left-flex {
+      transition: $main-transition;
+      background-color: white;
+      color: #777;
+      border-radius: 2px 0 0 2px;
+      margin: 0;
+    }
+    #right-flex {
+      transition: $main-transition;
+      background-color: white;
+      color: #777;
+      border-radius: 0 2px 2px 0;
+      margin: 0 8px 0 0;
+    }
+    #middle-flex {
+      transition: $main-transition;
+      margin: 0;
+    }
+
+    paper-input-decorator {
+//      transform: translate(1000px, 0);
+//      opacity: 0;
+      padding-top: 5px;
+      padding-bottom: 6px;
+      transition: 300ms ease-in-out;
+      font-size: 16px;
+      background-color: white;
+      border-radius: 0;
+      color: #777;
 
       &::shadow #focusedUnderline {
         background-color: transparent !important;
@@ -158,13 +184,13 @@ uqlibrary-flint {
       /deep/ {
         ::-webkit-input-placeholder {
           /* platform specific rules for placeholder text */
-          color: white;
+          color: #777;
         }
         ::-moz-placeholder {
-          color: white;
+          color: #777;
         }
         :-ms-input-placeholder {
-          color: white;
+          color: #777;
         }
         .unfocused-underline {
           /* line color when the input is unfocused */

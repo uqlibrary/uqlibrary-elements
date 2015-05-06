@@ -21,27 +21,28 @@
   <div style="width:400px">
     <x-audio disabled showVolumeControls showSeekControl></x-audio>
   </div>
-  <a href="#" onclick="return setRecord('track1.mp3')">Play Record 1</a>&nbsp;&nbsp;
-  <a href="#" onclick="return setRecord('track2.mp3')">Play Record 2</a>
+  <a href="#" onclick="return setRecord('track1.mp3', false)">Load Record 1</a>&nbsp;&nbsp;
+  <a href="#" onclick="return setRecord('track2.mp3', true)">Play and Play Record 2</a>
 </body>
 <script>
   var myEl = document.querySelector('x-audio');
   var autoplay = false;
   myEl.addEventListener('x-audio-initialized', function() {
+    myEl.removeAttribute('disabled');
     if(autoplay){
-      myEl.removeAttribute('disabled');
       myEl.play()
     }
   });
 
-  function setRecord(url) {
-    if(myEl.src == url) {
-      myEl.play();
-    } else{
-      autoplay = true;
+  function setRecord(url, play) {
+    if(!play) {
       myEl.src = url;
+      autoplay = false;
     }
-
+    if(play) {
+      myEl.src = url;
+      autoplay = true;
+    }
   }
 
 
