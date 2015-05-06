@@ -131,12 +131,16 @@ uqlibrary-flint {
       }
     }
 
-    #backArrow, #hamburgerMenuIcon, #toolbarTitle, #expandSearch {
+    #backArrow {
+      transition: $main-transition;
+      margin-left: 0;
+    }
+    #hamburgerMenuIcon, #toolbarTitle, #expandSearch {
       transition: $main-transition;
     }
 
-    #searchButton, #clearButton {
-      &:hover {
+    #searchButton {
+      &:hover, &:active, &:focus {
         transition: $main-transition;
         background-color: $item-hover;
       }
@@ -151,30 +155,31 @@ uqlibrary-flint {
       transition: $main-transition;
       background-color: white;
       color: #777;
-      border-radius: 2px 0 0 2px;
       margin: 0;
+      border-radius: 2px 0 0 2px;
     }
     #right-flex {
       transition: $main-transition;
       background-color: white;
       color: #777;
       border-radius: 0 2px 2px 0;
-      margin: 0 8px 0 0;
+      margin: 0;
     }
     #middle-flex {
       transition: $main-transition;
+      color: #777;
       margin: 0;
+      background-color: white;
     }
 
     paper-input-decorator {
-//      transform: translate(1000px, 0);
-//      opacity: 0;
+      border-radius: 2px 0 0 2px;
       padding-top: 5px;
       padding-bottom: 6px;
+      padding-left: 16px;
       transition: 300ms ease-in-out;
       font-size: 16px;
       background-color: white;
-      border-radius: 0;
       color: #777;
 
       &::shadow #focusedUnderline {

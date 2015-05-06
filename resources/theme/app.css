@@ -1420,9 +1420,12 @@ uqlibrary-flint /deep/ paper-slider {
       background-color: rgba(0, 0, 0, 0.26); }
     uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderBar::shadow #progressContainer {
       background-color: rgba(0, 0, 0, 0.26); }
-uqlibrary-flint /deep/ #backArrow, uqlibrary-flint /deep/ #hamburgerMenuIcon, uqlibrary-flint /deep/ #toolbarTitle, uqlibrary-flint /deep/ #expandSearch {
+uqlibrary-flint /deep/ #backArrow {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 0; }
+uqlibrary-flint /deep/ #hamburgerMenuIcon, uqlibrary-flint /deep/ #toolbarTitle, uqlibrary-flint /deep/ #expandSearch {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #clearButton:hover {
+uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #searchButton:active, uqlibrary-flint /deep/ #searchButton:focus, uqlibrary-flint /deep/ #clearButton:hover, uqlibrary-flint /deep/ #clearButton:active, uqlibrary-flint /deep/ #clearButton:focus {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.05); }
 uqlibrary-flint /deep/ .offCanvas {
@@ -1432,24 +1435,27 @@ uqlibrary-flint /deep/ #left-flex {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: white;
   color: #777;
-  border-radius: 2px 0 0 2px;
-  margin: 0; }
+  margin: 0;
+  border-radius: 2px 0 0 2px; }
 uqlibrary-flint /deep/ #right-flex {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: white;
   color: #777;
   border-radius: 0 2px 2px 0;
-  margin: 0 8px 0 0; }
+  margin: 0; }
 uqlibrary-flint /deep/ #middle-flex {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin: 0; }
+  color: #777;
+  margin: 0;
+  background-color: white; }
 uqlibrary-flint /deep/ paper-input-decorator {
+  border-radius: 2px 0 0 2px;
   padding-top: 5px;
   padding-bottom: 6px;
+  padding-left: 16px;
   transition: 300ms ease-in-out;
   font-size: 16px;
   background-color: white;
-  border-radius: 0;
   color: #777; }
   uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
     background-color: transparent !important; }
