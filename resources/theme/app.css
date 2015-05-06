@@ -1425,7 +1425,9 @@ uqlibrary-flint /deep/ #backArrow {
   margin-left: 0; }
 uqlibrary-flint /deep/ #hamburgerMenuIcon, uqlibrary-flint /deep/ #toolbarTitle, uqlibrary-flint /deep/ #expandSearch {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
-uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #searchButton:active, uqlibrary-flint /deep/ #searchButton:focus, uqlibrary-flint /deep/ #clearButton:hover, uqlibrary-flint /deep/ #clearButton:active, uqlibrary-flint /deep/ #clearButton:focus {
+uqlibrary-flint /deep/ #searchButton core-icon {
+  color: #777; }
+uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #searchButton:active, uqlibrary-flint /deep/ #searchButton:focus {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.05); }
 uqlibrary-flint /deep/ .offCanvas {

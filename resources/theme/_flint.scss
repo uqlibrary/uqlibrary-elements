@@ -140,6 +140,9 @@ uqlibrary-flint {
     }
 
     #searchButton {
+      core-icon {
+        color: #777;
+      }
       &:hover, &:active, &:focus {
         transition: $main-transition;
         background-color: $item-hover;
