@@ -172,6 +172,8 @@ Element providing the library main navigation menu using a responsive drawer pan
                     if(_id || _title) {
                         this.$.ga.addEvent('Link Clicked', _id ? _id : _title);
                     }
+
+                    this.fire('uqlibrary-menu-link-clicked', sender.getAttribute('href'));
                 }
 
             });

@@ -52,6 +52,12 @@
             api.login(window.location.href);
           }
         });
+
+        menu.addEventListener('uqlibrary-menu-link-clicked', function(e) {
+          console.log(e.detail);
+        });
+
+
 //        api.get();
 
       })

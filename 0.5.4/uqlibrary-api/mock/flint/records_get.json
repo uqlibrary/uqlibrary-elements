@@ -1,12 +1,96 @@
 {
-  "title": "Search Results (All Fields:\"ismemberof:(&quot;UQ:353627&quot;)\", Status:\" Published\") - UQ eSpace",
+  "title": "Search Results (All Fields:\"&quot;english&quot; AND ismemberof:(&quot;UQ:353627&quot;)\", Status:\" Published\") - UQ eSpace",
   "link": "http:\/\/espace.library.uq.edu.au\/",
   "description": "The University of Queensland",
   "language": "en",
   "generator": "Fez ",
-  "rows": "1000",
+  "rows": "50",
   "pager_row": {},
   "item": [
+    {
+      "title": "Song (untitled)",
+      "pid": "UQ:353898",
+      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Song (untitled)\" href=\"\/view\/UQ:353898\">Song (untitled)<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353898",
+      "description": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960&#039;s. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, &quot;migrants&quot; and &quot;mother-tongue&quot; people from different ages, regions or socio-economic groups.",
+      "genre": "audio\/wav",
+      "created_date": "2015-03-16T11:16:17Z",
+      "updated_date": "2015-04-27T15:50:10Z",
+      "publication_date": {},
+      "formatted_title": {},
+      "formatted_abstract": {},
+      "date_availables": {"date_available": "2015-01-01T00:00:00Z"},
+      "authors": {"author": "Flint, Elwyn Henry"},
+      "contributors": {"contributor": "Unknown participant"},
+      "isMemberOfs": {"isMemberOf": "UQ:353627"},
+      "keywords": {
+        "keyword": [
+          "Queensland Speech Survey",
+          "Aboriginal Australians -- Languages",
+          "Song"
+        ]
+      },
+      "seriess": {"series": "Elwyn Flint collection, UQFL173"},
+      "subjects": {"subject": "453687"},
+      "subject_lookups": {"subject_lookup": "Yanyuwa \/ Yanuwa \/ Yanyula"},
+      "datastream_links": {
+        "datastream_link": [
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=UQFL173_b50_R193L_sideA_254090.wav",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=presmd_UQFL173_b50_R193L_sideA_254090.xml",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=stream_UQFL173_b50_R193L_sideA_254090.flv"
+        ]
+      },
+      "datastreams": {
+        "datastream": [
+          "UQFL173_b50_R193L_sideA_254090.wav",
+          "presmd_UQFL173_b50_R193L_sideA_254090.xml",
+          "stream_UQFL173_b50_R193L_sideA_254090.flv"
+        ]
+      }
+    },
+    {
+      "title": "Wakka Wakka elicitation",
+      "pid": "UQ:353640",
+      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Wakka Wakka elicitation\" href=\"\/view\/UQ:353640\">Wakka Wakka elicitation<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353640",
+      "description": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960&#039;s. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, &quot;migrants&quot; and &quot;mother-tongue&quot; people from different ages, regions or socio-economic groups.",
+      "genre": "audio\/wav",
+      "created_date": "2015-03-11T15:22:40Z",
+      "updated_date": "2015-05-04T09:27:04Z",
+      "publication_date": {},
+      "formatted_title": {},
+      "formatted_abstract": {},
+      "date_availables": {"date_available": "2015-01-01T00:00:00Z"},
+      "authors": {"author": "Flint, Elwyn Henry"},
+      "contributors": {"contributor": "Conway, Eddie"},
+      "isMemberOfs": {"isMemberOf": "UQ:353627"},
+      "keywords": {
+        "keyword": [
+          "Queensland Speech Survey",
+          "Aboriginal Australians -- Languages",
+          "Session organisation"
+        ]
+      },
+      "identifier_numbers": {"identifier_number": "Group 329"},
+      "seriess": {"series": "Elwyn Flint collection, UQFL173"},
+      "subjects": {"subject": "453684"},
+      "subject_lookups": {"subject_lookup": "Wakka Wakka \/ Waka Waka \/ Waga Waga"},
+      "transcript": {"transcript": "Researcher Speech Group 329<br \/>Researcher Speech Using Dr. Cappell's questionnaire<br \/>Researcher Speech Elicitation in Wakka Wakka language<br \/>"},
+      "datastream_links": {
+        "datastream_link": [
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=UQFL173_b41_R329_2971.wav",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=presmd_UQFL173_b41_R329_2971.xml",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=stream_UQFL173_b41_R329_2971.flv"
+        ]
+      },
+      "datastreams": {
+        "datastream": [
+          "UQFL173_b41_R329_2971.wav",
+          "presmd_UQFL173_b41_R329_2971.xml",
+          "stream_UQFL173_b41_R329_2971.flv"
+        ]
+      }
+    },
     {
       "title": "Translation of \"I eat\".",
       "pid": "UQ:353892",
@@ -33,6 +117,9 @@
       "identifier_numbers": {"identifier_number": "Group 329"},
       "seriess": {"series": "Elwyn Flint collection, UQFL173"},
       "subjects": {"subject": "453670"},
+      "subject_lookups": {"subject_lookup": "Yukulta \/ Gangalidda"},
+      "alternate_genre_lookups": {"alternate_genre_lookup": "Conversation"},
+      "transcript": {"transcript": "Researcher Speech Eat. I eat.<br \/>Participant Speech (L)<br \/>Researcher Speech (L)<br \/>Participant Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/><br \/>"},
       "datastream_links": {
         "datastream_link": [
           "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353892&dsID=UQFL173_b41_R329_1112064.wav",
@@ -45,88 +132,6 @@
           "UQFL173_b41_R329_1112064.wav",
           "presmd_UQFL173_b41_R329_1112064.xml",
           "stream_UQFL173_b41_R329_1112064.flv"
-        ]
-      }
-    },
-    {
-      "title": "Wakka Wakka elicitation",
-      "pid": "UQ:353640",
-      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Wakka Wakka elicitation\" href=\"\/view\/UQ:353640\">Wakka Wakka elicitation<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
-      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353640",
-      "description": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960&#039;s. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, &quot;migrants&quot; and &quot;mother-tongue&quot; people from different ages, regions or socio-economic groups.",
-      "genre": "audio\/wav",
-      "created_date": "2015-03-11T15:22:40Z",
-      "updated_date": "2015-04-27T15:47:42Z",
-      "publication_date": {},
-      "formatted_title": {},
-      "formatted_abstract": {},
-      "date_availables": {"date_available": "2015-01-01T00:00:00Z"},
-      "authors": {"author": "Flint, Elwyn Henry"},
-      "contributors": {"contributor": "Conway, Eddie"},
-      "isMemberOfs": {"isMemberOf": "UQ:353627"},
-      "keywords": {
-        "keyword": [
-          "Queensland Speech Survey",
-          "Aboriginal Australians -- Languages",
-          "Session organisation"
-        ]
-      },
-      "identifier_numbers": {"identifier_number": "Group 329"},
-      "seriess": {"series": "Elwyn Flint collection, UQFL173"},
-      "subjects": {"subject": "453684"},
-      "datastream_links": {
-        "datastream_link": [
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=UQFL173_b41_R329_2971.wav",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=presmd_UQFL173_b41_R329_2971.xml",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353640&dsID=stream_UQFL173_b41_R329_2971.flv"
-        ]
-      },
-      "datastreams": {
-        "datastream": [
-          "UQFL173_b41_R329_2971.wav",
-          "presmd_UQFL173_b41_R329_2971.xml",
-          "stream_UQFL173_b41_R329_2971.flv"
-        ]
-      }
-    },
-    {
-      "title": "Translation of 'head' and 'hair (of head)'.",
-      "pid": "UQ:353641",
-      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of 'head' and 'hair (of head)'.\" href=\"\/view\/UQ:353641\">Translation of 'head' and 'hair (of head)'.<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
-      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353641",
-      "description": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960&#039;s. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, &quot;migrants&quot; and &quot;mother-tongue&quot; people from different ages, regions or socio-economic groups.",
-      "genre": "audio\/wav",
-      "created_date": "2015-03-11T15:36:41Z",
-      "updated_date": "2015-04-27T15:49:52Z",
-      "publication_date": {},
-      "formatted_title": {},
-      "formatted_abstract": {},
-      "date_availables": {"date_available": "2015-01-01T00:00:00Z"},
-      "authors": {"author": "Flint, Elwyn Henry"},
-      "contributors": {"contributor": "Conway, Eddie"},
-      "isMemberOfs": {"isMemberOf": "UQ:353627"},
-      "keywords": {
-        "keyword": [
-          "Aboriginal Australians -- Languages",
-          "Queensland Speech Survey",
-          "Traditional language word"
-        ]
-      },
-      "identifier_numbers": {"identifier_number": "Group 329"},
-      "seriess": {"series": "Elwyn Flint collection, UQFL173"},
-      "subjects": {"subject": "453672"},
-      "datastream_links": {
-        "datastream_link": [
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=UQFL173_b41_R329_31604.wav",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=presmd_UQFL173_b41_R329_31604.xml",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=stream_UQFL173_b41_R329_31604.flv"
-        ]
-      },
-      "datastreams": {
-        "datastream": [
-          "UQFL173_b41_R329_31604.wav",
-          "presmd_UQFL173_b41_R329_31604.xml",
-          "stream_UQFL173_b41_R329_31604.flv"
         ]
       }
     },
@@ -156,6 +161,8 @@
       "identifier_numbers": {"identifier_number": "Group 329"},
       "seriess": {"series": "Elwyn Flint collection, UQFL173"},
       "subjects": {"subject": "453681"},
+      "subject_lookups": {"subject_lookup": "Kuku Yalanji \/ Gugu Yalandji"},
+      "transcript": {"transcript": "Researcher Speech Is it Wakka Wakka?<br \/>Researcher Speech Wakka, yeah, was Wakka<br \/>Participant Speech Yeah (unclear) Wakka Wakka<br \/>Researcher Speech You're Mr. What's your first name?<br \/>Participant Speech Eddie<br \/>Researcher Speech Eddie Conway, Eddie Conway<br \/>Researcher Speech And you speak Wakka Wakka. And where do you come from Eddie?<br \/>Participant Speech Springshore<br \/>Researcher Speech Springshore<br \/>Researcher Speech Oh yes, I better get this in the right place.<br \/>Researcher Speech You come from Springshore do you? Wakka Wakka. Oh yes. I see. Good.<br \/><br \/>"},
       "datastream_links": {
         "datastream_link": [
           "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353897&dsID=UQFL173_b41_R329_12818.wav",
@@ -172,42 +179,46 @@
       }
     },
     {
-      "title": "Song (untitled)",
-      "pid": "UQ:353898",
-      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Song (untitled)\" href=\"\/view\/UQ:353898\">Song (untitled)<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
-      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353898",
+      "title": "Translation of 'head' and 'hair (of head)'.",
+      "pid": "UQ:353641",
+      "citation": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of 'head' and 'hair (of head)'.\" href=\"\/view\/UQ:353641\">Translation of 'head' and 'hair (of head)'.<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+      "identifier": "http:\/\/espace.library.uq.edu.au\/view\/UQ:353641",
       "description": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960&#039;s. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, &quot;migrants&quot; and &quot;mother-tongue&quot; people from different ages, regions or socio-economic groups.",
       "genre": "audio\/wav",
-      "created_date": "2015-03-16T11:16:17Z",
-      "updated_date": "2015-04-27T15:50:10Z",
+      "created_date": "2015-03-11T15:36:41Z",
+      "updated_date": "2015-04-27T15:49:52Z",
       "publication_date": {},
       "formatted_title": {},
       "formatted_abstract": {},
       "date_availables": {"date_available": "2015-01-01T00:00:00Z"},
       "authors": {"author": "Flint, Elwyn Henry"},
-      "contributors": {"contributor": "Unknown participant"},
+      "contributors": {"contributor": "Conway, Eddie"},
       "isMemberOfs": {"isMemberOf": "UQ:353627"},
       "keywords": {
         "keyword": [
-          "Queensland Speech Survey",
           "Aboriginal Australians -- Languages",
-          "Song"
+          "Queensland Speech Survey",
+          "Traditional language word"
         ]
       },
+      "identifier_numbers": {"identifier_number": "Group 329"},
       "seriess": {"series": "Elwyn Flint collection, UQFL173"},
-      "subjects": {"subject": "453687"},
+      "subjects": {"subject": "453672"},
+      "subject_lookups": {"subject_lookup": "Kukatj"},
+      "alternate_genre_lookups": {"alternate_genre_lookup": "Session organisation"},
+      "transcript": {"transcript": "Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/> Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/> Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/> Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/> Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>"},
       "datastream_links": {
         "datastream_link": [
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=UQFL173_b50_R193L_sideA_254090.wav",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=presmd_UQFL173_b50_R193L_sideA_254090.xml",
-          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353898&dsID=stream_UQFL173_b50_R193L_sideA_254090.flv"
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=UQFL173_b41_R329_31604.wav",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=presmd_UQFL173_b41_R329_31604.xml",
+          "http:\/\/espace.library.uq.edu.au\/eserv.php?pid=UQ:353641&dsID=stream_UQFL173_b41_R329_31604.flv"
         ]
       },
       "datastreams": {
         "datastream": [
-          "UQFL173_b50_R193L_sideA_254090.wav",
-          "presmd_UQFL173_b50_R193L_sideA_254090.xml",
-          "stream_UQFL173_b50_R193L_sideA_254090.flv"
+          "UQFL173_b41_R329_31604.wav",
+          "presmd_UQFL173_b41_R329_31604.xml",
+          "stream_UQFL173_b41_R329_31604.flv"
         ]
       }
     }

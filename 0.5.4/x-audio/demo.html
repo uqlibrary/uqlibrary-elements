@@ -15,35 +15,39 @@
 
   <script src="../webcomponentsjs/webcomponents.min.js"></script>
   <link rel="import" href="x-audio.html">
+  <link rel="import" href="x-audio-mirror.html">
 
 </head>
 <body unresolved>
   <div style="width:400px">
-    <x-audio src="track1.mp3" showVolumeControls showSeekControl></x-audio>
-    <x-audio src="track2.mp3" showVolumeControls showSeekControl></x-audio>
+    1. <x-audio id="player" src="track1.mp3" showName showVolumeControls showSeekControl></x-audio>
+    2. <x-audio id="player2" src="track2.mp3"></x-audio>
+
+    <x-audio-mirror id="mirror" disabled showName showVolumeControls showSeekControl></x-audio-mirror>
+
   </div>
-  <a href="#" onclick="return setRecord('track1.mp3', false)">Load Record 1</a>&nbsp;&nbsp;
-  <a href="#" onclick="return setRecord('track1.mp3', true)">Play and Play Record 2</a>
 </body>
 <script>
-  var myEl = document.querySelector('x-audio');
-  var autoplay = false;
-  myEl.addEventListener('x-audio-initialized', function() {
-    myEl.removeAttribute('disabled');
-    if(autoplay){
-      myEl.play()
+  var player = document.getElementById('player');
+  var player2 = document.getElementById('player2');
+  var mirror = document.getElementById('mirror');
+
+  var currentPlayer = null;
+  document.addEventListener('x-audio-play', function(e) {
+    if(currentPlayer && currentPlayer.audio.src != e.detail.audio.src) {
+      currentPlayer.pause();
+      currentPlayer.audio.load();
     }
+    currentPlayer = e.path[0];
+    mirror.xaudio = currentPlayer;
   });
 
-  function setRecord(url, play) {
-    if(!play) {
-      myEl.src = url;
-      autoplay = false;
-    }
-    if(play) {
-      var audio = new Audio();
-    }
-  }
+  //var mirror = document.getElementById('mirror');
+  document.addEventListener('polymer-ready', function() {
+
+
+  });
+
 
 
 
