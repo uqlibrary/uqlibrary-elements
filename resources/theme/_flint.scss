@@ -141,7 +141,7 @@ uqlibrary-flint {
 
     #searchButton {
       core-icon {
-        color: #777;
+        color: $uq-text-secondary;
       }
       &:hover, &:active, &:focus {
         transition: $main-transition;
@@ -157,22 +157,16 @@ uqlibrary-flint {
     #left-flex {
       transition: $main-transition;
       background-color: white;
-      color: #777;
+      color: $uq-text-secondary;
       margin: 0;
       border-radius: 2px 0 0 2px;
     }
     #right-flex {
       transition: $main-transition;
       background-color: white;
-      color: #777;
+      color: $uq-text-secondary;
       border-radius: 0 2px 2px 0;
       margin: 0;
-    }
-    #middle-flex {
-      transition: $main-transition;
-      color: #777;
-      margin: 0;
-      background-color: white;
     }
 
     paper-input-decorator {
@@ -183,7 +177,7 @@ uqlibrary-flint {
       transition: 300ms ease-in-out;
       font-size: 16px;
       background-color: white;
-      color: #777;
+      color: $uq-text-secondary;
 
       &::shadow #focusedUnderline {
         background-color: transparent !important;
@@ -192,13 +186,13 @@ uqlibrary-flint {
       /deep/ {
         ::-webkit-input-placeholder {
           /* platform specific rules for placeholder text */
-          color: #777;
+          color: $uq-text-secondary;
         }
         ::-moz-placeholder {
-          color: #777;
+          color: $uq-text-secondary;
         }
         :-ms-input-placeholder {
-          color: #777;
+          color: $uq-text-secondary;
         }
         .unfocused-underline {
           /* line color when the input is unfocused */
@@ -207,7 +201,7 @@ uqlibrary-flint {
       }
     }
     [drawer] {
-      background-color: #fafafa;
+      background-color: $background-primary;
       box-shadow: $shadow-z-1;
       /deep/ {
         .glow {

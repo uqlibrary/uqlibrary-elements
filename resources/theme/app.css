@@ -1426,7 +1426,7 @@ uqlibrary-flint /deep/ #backArrow {
 uqlibrary-flint /deep/ #hamburgerMenuIcon, uqlibrary-flint /deep/ #toolbarTitle, uqlibrary-flint /deep/ #expandSearch {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
 uqlibrary-flint /deep/ #searchButton core-icon {
-  color: #777; }
+  color: #757575; }
 uqlibrary-flint /deep/ #searchButton:hover, uqlibrary-flint /deep/ #searchButton:active, uqlibrary-flint /deep/ #searchButton:focus {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(0, 0, 0, 0.05); }
@@ -1436,20 +1436,15 @@ uqlibrary-flint /deep/ .offCanvas {
 uqlibrary-flint /deep/ #left-flex {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: white;
-  color: #777;
+  color: #757575;
   margin: 0;
   border-radius: 2px 0 0 2px; }
 uqlibrary-flint /deep/ #right-flex {
   transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: white;
-  color: #777;
+  color: #757575;
   border-radius: 0 2px 2px 0;
   margin: 0; }
-uqlibrary-flint /deep/ #middle-flex {
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #777;
-  margin: 0;
-  background-color: white; }
 uqlibrary-flint /deep/ paper-input-decorator {
   border-radius: 2px 0 0 2px;
   padding-top: 5px;
@@ -1458,21 +1453,21 @@ uqlibrary-flint /deep/ paper-input-decorator {
   transition: 300ms ease-in-out;
   font-size: 16px;
   background-color: white;
-  color: #777; }
+  color: #757575; }
   uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
     background-color: transparent !important; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-webkit-input-placeholder {
     /* platform specific rules for placeholder text */
-    color: #777; }
+    color: #757575; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-moz-placeholder {
-    color: #777; }
+    color: #757575; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ :-ms-input-placeholder {
-    color: #777; }
+    color: #757575; }
   uqlibrary-flint /deep/ paper-input-decorator /deep/ .unfocused-underline {
     /* line color when the input is unfocused */
     background-color: transparent; }
 uqlibrary-flint /deep/ [drawer] {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
   uqlibrary-flint /deep/ [drawer] /deep/ .glow {
     color: white;
