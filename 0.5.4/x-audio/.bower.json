@@ -27,11 +27,11 @@
   "devDependencies": {
     "web-component-tester": "*"
   },
-  "_release": "8ba55d7c4b",
+  "_release": "0cb03cd387",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "8ba55d7c4b203930cb8815208bcbccaefe2db2dc"
+    "commit": "0cb03cd387af7afcfa5671e8ea5b7c883ff18271"
   },
   "_source": "git://github.com/uqlibrary/x-audio.git",
   "_target": "master",

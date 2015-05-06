@@ -19,10 +19,11 @@
 </head>
 <body unresolved>
   <div style="width:400px">
-    <x-audio disabled showVolumeControls showSeekControl></x-audio>
+    <x-audio src="track1.mp3" showVolumeControls showSeekControl></x-audio>
+    <x-audio src="track2.mp3" showVolumeControls showSeekControl></x-audio>
   </div>
   <a href="#" onclick="return setRecord('track1.mp3', false)">Load Record 1</a>&nbsp;&nbsp;
-  <a href="#" onclick="return setRecord('track2.mp3', true)">Play and Play Record 2</a>
+  <a href="#" onclick="return setRecord('track1.mp3', true)">Play and Play Record 2</a>
 </body>
 <script>
   var myEl = document.querySelector('x-audio');
@@ -40,8 +41,7 @@
       autoplay = false;
     }
     if(play) {
-      myEl.src = url;
-      autoplay = true;
+      var audio = new Audio();
     }
   }
 
