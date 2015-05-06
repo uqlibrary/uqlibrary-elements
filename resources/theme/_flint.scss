@@ -22,6 +22,15 @@ uqlibrary-flint {
         z-index: 0;
       }
     }
+    #infoSection {
+      core-icon {
+        height: 60px;
+        width: 60px;
+      }
+      .body1 {
+        font-weight: 300;
+      }
+    }
     #feedbackButton {
       margin-bottom: 12px;
     }
@@ -73,26 +82,10 @@ uqlibrary-flint {
       padding-left: 72px;
       padding-right: 16px;
     }
-    #search {
-      transition: $main-transition;
-    }
     .iconSlide {
       transition: $main-transition;
       opacity: 0;
       transform: translate(-600px, 0);
-    }
-    .cancelIconSlide {
-      transition: $main-transition;
-      opacity: 0;
-      transform: translate(1000px, 0);
-    }
-    .slideIn {
-      transition: $main-transition;
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-    #toolbar-page-title {
-      transition: $main-transition;
     }
     paper-icon-button {
       transition: $main-transition;
@@ -170,14 +163,10 @@ uqlibrary-flint {
     }
 
     paper-input-decorator {
-      border-radius: 2px 0 0 2px;
-      padding-top: 5px;
-      padding-bottom: 6px;
-      padding-left: 16px;
       transition: 300ms ease-in-out;
       font-size: 16px;
-      background-color: white;
       color: $uq-text-secondary;
+      padding: 6px 0 5px 16px;
 
       &::shadow #focusedUnderline {
         background-color: transparent !important;
