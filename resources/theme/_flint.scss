@@ -159,8 +159,12 @@ uqlibrary-flint {
       text-overflow: ellipsis;
       padding: 0 $list-item-gap;
     }
+    #itemSection {
+      background: white;
+    }
 
     #activePlayerWrapper {
+      background: $background-primary;
       height: 83px;
       position: absolute;
       bottom: 0;

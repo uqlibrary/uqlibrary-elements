@@ -1473,7 +1473,10 @@ uqlibrary-flint /deep/ .currentlyPlayingTitle {
   white-space: nowrap;
   text-overflow: ellipsis;
   padding: 0 8px; }
+uqlibrary-flint /deep/ #itemSection {
+  background: white; }
 uqlibrary-flint /deep/ #activePlayerWrapper {
+  background: #FAFAFA;
   height: 83px;
   position: absolute;
   bottom: 0;
