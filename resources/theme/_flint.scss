@@ -164,9 +164,7 @@ uqlibrary-flint {
 
     paper-input-decorator {
       transition: 300ms ease-in-out;
-      font-size: 16px;
       color: $uq-text-secondary;
-      padding: 6px 0 5px 16px;
 
       &::shadow #focusedUnderline {
         background-color: transparent !important;
