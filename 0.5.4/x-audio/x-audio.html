@@ -127,7 +127,7 @@ Material design audio element
       this.audio.addEventListener('timeupdate', function (){
         that.currentTimeValue = parseInt(this.currentTime, 10);
         that.duration = this.duration;
-        that.remainder =  that.toHHMMSS(this.currentTime) + ' / ' + that.toHHMMSS(this.duration);
+        that.remainder =  that.toHHMMSS(this.currentTime) + '/' + that.toHHMMSS(this.duration);
         that.fire('x-audio-timeupdate');
       });
 
@@ -284,29 +284,7 @@ Material design audio element
       this.$.remainder.removeAttribute('class');
 
     }
-  },
-
-  /*initMirrorListeners: function() {
-
-    var that = this;
-    this.addEventListener('x-audio-mirror-toggle-play', function (){
-      that.togglePlay()
-
-    });
-
-    this.addEventListener('x-audio-mirror-pause', function (){
-      that.pause();
-    });
-
-
-    this.addEventListener('x-audio-mirror-volumechange', function (){
-
-    });
-
-    this.addEventListener('x-audio-mirror-mute', function (){
-
-    });
-  }*/
+  }
 
 }); 
   </script>

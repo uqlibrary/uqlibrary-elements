@@ -568,7 +568,7 @@ h1#toolbar-page-title {
       .three-line-icon-list .list-item.timeline .date .title, .three-line-icon-list .list-item.timeline .date .headline {
         color: #7b0c9d; }
     .three-line-icon-list .list-item.timeline .content {
-      background-color: #EEEEEE;
+      background-color: #eeeeee;
       border-radius: 2px;
       padding-left: 16px; }
     .three-line-icon-list .list-item .content {
@@ -682,7 +682,7 @@ h1#toolbar-page-title {
   display: block;
   border-radius: 2px;
   height: auto;
-  background: #ffffff;
+  background: white;
   width: 98%;
   max-width: 800px;
   margin: 16px auto; }
@@ -701,7 +701,7 @@ h1#toolbar-page-title {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 core-menu {
-  background-color: #ffffff;
+  background-color: white;
   margin: 0;
   padding: 8px 0; }
   core-menu .core-selected {
@@ -711,7 +711,7 @@ core-menu {
   core-menu core-icon {
     margin: -3px 34px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   core-menu a {
     color: rgba(0, 0, 0, 0.87); }
     core-menu a:hover {
@@ -735,7 +735,7 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: white; }
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
@@ -800,7 +800,7 @@ paper-item {
   line-height: 1.1em;
   color: rgba(0, 0, 0, 0.87); }
   paper-item:hover, paper-item:focus, paper-item:active {
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
 
 paper-progress {
   height: 1.14286em;
@@ -810,7 +810,7 @@ paper-progress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -840,12 +840,12 @@ paper-dropdown-menu {
   width: 100%;
   border-top: 1px solid transparent; }
   paper-dropdown-menu[disabled]::shadow #label, paper-dropdown-menu[disabled]::shadow #arrow, paper-dropdown-menu[disabled]::shadow #ripple {
-    color: #BDBDBD; }
+    color: #bdbdbd; }
   paper-dropdown-menu:focus {
     border-top: 0px solid transparent;
     border-bottom: 2px solid #007e9e; }
   paper-dropdown-menu paper-dropdown paper-item:focus, paper-dropdown-menu paper-dropdown paper-item:hover {
-    background-color: #F5F5F5; }
+    background-color: whitesmoke; }
 
 paper-input-decorator .mirror-text {
   padding: 0.8em 0 0.25em; }
@@ -863,7 +863,7 @@ paper-input {
 paper-slider {
   width: 100%; }
   paper-slider:focus {
-    background-color: #F5F5F5 !important; }
+    background-color: whitesmoke !important; }
   paper-slider::shadow #sliderBar {
     box-sizing: content-box; }
     paper-slider::shadow #sliderBar::shadow #activeProgress {
@@ -884,10 +884,10 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff; }
+  background-color: white; }
 
 .main {
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 
 #account {
   font-size: 0.85714em;
@@ -921,12 +921,12 @@ core-drawer-panel [drawer] {
     text-overflow: ellipsis;
     overflow: hidden; }
   #account core-icon {
-    color: #FAFAFA;
+    color: #fafafa;
     height: 24px;
     width: 24px; }
 
 #askLogout, #askLogout::shadow {
-  color: #FAFAFA;
+  color: #fafafa;
   margin-bottom: 8px;
   margin-right: 8px; }
   #askLogout:active, #askLogout:focus, #askLogout:hover, #askLogout::shadow:active, #askLogout::shadow:focus, #askLogout::shadow:hover {
@@ -953,13 +953,13 @@ body /deep/ #infoDialog .colored {
     text-decoration: none; }
 body /deep/ #logoutDialog paper-button:hover,
 body /deep/ #infoDialog paper-button:hover {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 body /deep/ #logoutDialog paper-button:focus,
 body /deep/ #infoDialog paper-button:focus {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
   color: #007e9e;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   text-decoration: none; }
 
 uqlibrary-persistent-footer .footerInfo {
@@ -969,9 +969,9 @@ uqlibrary-persistent-footer .footerInfo {
   position: fixed;
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
-  border-top: 1px solid #EEEEEE;
+  border-top: 1px solid #eeeeee;
   padding: 4px; }
   .persistentFooter .footerInfo {
     padding: 12px; }
@@ -1021,7 +1021,7 @@ uqlibrary-persistent-footer .footerInfo {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -1055,9 +1055,9 @@ uqlibrary-persistent-footer .footerInfo {
   .hint-box.selected {
     background-color: #007e9e; }
   .hint-box.available {
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
   .hint-box.unavailable {
-    background-color: #BDBDBD; }
+    background-color: #bdbdbd; }
 
 paper-input-decorator::shadow .focused-underline {
   background-color: #007e9e; }
@@ -1090,13 +1090,13 @@ paper-fab {
     position: fixed;
     right: 16px; }
   paper-fab core-icon {
-    color: #ffffff; }
+    color: white; }
 
 paper-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1); }
   paper-button:hover {
     transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FAFAFA; }
+    background-color: #fafafa; }
   paper-button.colored {
     color: #007e9e; }
 
@@ -1108,19 +1108,19 @@ paper-button.topUpButton {
 paper-button a:hover {
   text-decoration: none; }
 paper-button .colored:hover {
-  background: #FAFAFA !important; }
+  background: #fafafa !important; }
 
 paper-button[raised] {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: #ffffff; }
+  background-color: white; }
   paper-button[raised]:hover {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
   paper-button[raised] .colored {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
     paper-button[raised] .colored:hover {
       transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
       background-color: #006680;
@@ -1134,10 +1134,10 @@ paper-button[raised] {
       color: #cccccc; }
 
 paper-button[disabled] {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #cccccc; }
   paper-button[disabled].colored {
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #cccccc; }
 
 paper-icon-button {
@@ -1171,7 +1171,7 @@ uqlibrary-toolbar /deep/ core-toolbar {
   uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu {
     margin: 8px; }
     uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:hover, uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:focus {
-      background-color: #FAFAFA; }
+      background-color: #fafafa; }
     uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item a {
       font-size: 16px;
       cursor: pointer;
@@ -1212,7 +1212,7 @@ uqlibrary-toolbar /deep/ core-toolbar {
   padding-left: 56px; }
 
 .filterWrapper {
-  background-color: #ffffff;
+  background-color: white;
   margin-bottom: 30px; }
 
 md-timepicker::shadow #card {
@@ -1225,7 +1225,7 @@ md-timepicker::shadow #card {
     background-color: #007e9e !important;
     height: 80px;
     padding: 19.2px;
-    color: #ffffff;
+    color: white;
     font-size: 36.8px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
@@ -1246,9 +1246,9 @@ md-timepicker::shadow paper-button {
     margin-right: 10pt; }
 
 .error {
-  border-bottom: 1px solid #F44336; }
+  border-bottom: 1px solid #f44336; }
   .error::shadow #label {
-    color: #F44336; }
+    color: #f44336; }
 
 uqlibrary-date-selector /deep/ .selectedDate {
   text-align: center;
@@ -1263,7 +1263,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
     margin-bottom: 4px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
-    color: #ffffff; }
+    color: white; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
     text-align: center;
     width: 40px; }
@@ -1276,7 +1276,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
     padding-top: 12px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 uqlibrary-time-selector /deep/ .items {
   margin: 0 10px;
@@ -1293,13 +1293,13 @@ uqlibrary-time-selector /deep/ .items {
     font-size: 12px;
     line-height: 1.1;
     text-transform: uppercase;
-    background-color: #EEEEEE; }
+    background-color: #eeeeee; }
     uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
-      background-color: #BDBDBD;
-      color: #ffffff; }
+      background-color: #bdbdbd;
+      color: white; }
     uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
       background-color: #007e9e;
-      color: #ffffff; }
+      color: white; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
@@ -1364,7 +1364,7 @@ paper-dropdown::shadow #scroller {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
 
 .availability-item {
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid whitesmoke;
   padding: 4px;
   line-height: 1.2; }
   .availability-item .totals {
@@ -1470,8 +1470,74 @@ uqlibrary-flint /deep/ paper-slider {
       background-color: rgba(0, 0, 0, 0.26); }
     uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderBar::shadow #progressContainer {
       background-color: rgba(0, 0, 0, 0.26); }
+uqlibrary-flint /deep/ #headerPlayerMirrorWrapper {
+  position: absolute;
+  right: -10px;
+  top: 112px;
+  z-index: 99999;
+  width: 70px;
+  background-color: #eeeeee; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-slider {
+    display: none; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow .volume {
+    min-width: 40px; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button::shadow core-icon {
+    color: rgba(0, 0, 0, 0.54) !important;
+    width: 24px !important;
+    height: 24px !important; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:hover, uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:active, uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:focus {
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.12); }
+uqlibrary-flint /deep/ .currentlyPlayingTitle {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 0.85714em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0px 8px; }
+uqlibrary-flint /deep/ #activePlayerWrapper {
+  height: 83px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid #cccccc; }
+uqlibrary-flint /deep/ .offCanvas {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate(1000px, 0); }
+uqlibrary-flint /deep/ #left-flex {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  color: #757575;
+  margin: 0;
+  border-radius: 2px 0 0 2px; }
+uqlibrary-flint /deep/ #right-flex {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: white;
+  color: #757575;
+  border-radius: 0 2px 2px 0;
+  margin: 0; }
+uqlibrary-flint /deep/ paper-input-decorator {
+  transition: 300ms ease-in-out;
+  font-size: 16px;
+  color: #757575;
+  padding: 6px 0 5px 16px; }
+  uqlibrary-flint /deep/ paper-input-decorator::shadow #focusedUnderline {
+    background-color: transparent !important; }
+  uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-webkit-input-placeholder {
+    /* platform specific rules for placeholder text */
+    color: #757575; }
+  uqlibrary-flint /deep/ paper-input-decorator /deep/ ::-moz-placeholder {
+    color: #757575; }
+  uqlibrary-flint /deep/ paper-input-decorator /deep/ :-ms-input-placeholder {
+    color: #757575; }
+  uqlibrary-flint /deep/ paper-input-decorator /deep/ .unfocused-underline {
+    /* line color when the input is unfocused */
+    background-color: transparent; }
 uqlibrary-flint /deep/ [drawer] {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
   uqlibrary-flint /deep/ [drawer] /deep/ .glow {
     color: white;
@@ -1502,7 +1568,7 @@ uqlibrary-flint /deep/ [drawer] {
 
 .flint-item-info {
   height: 112px;
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
   .flint-item-info h2 {
     white-space: normal;
     margin-left: 12px; }
@@ -1600,7 +1666,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -1619,14 +1685,14 @@ paper-tabs {
     padding-top: 12px; }
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: white; }
 
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
   color: #cccccc; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .hoverable:hover,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .hoverable:hover {
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .title,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .title {
   text-decoration: none;
@@ -1644,7 +1710,7 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .num-cites {
   font-weight: 300;
   width: 4em;
   text-align: center;
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .metrics-cites,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics-cites {
   padding: 0.6em 0 0.3em 0;
@@ -1652,13 +1718,13 @@ uqlibrary-research::shadow uqlibrary-research-metrics::shadow .metrics-cites {
   font-weight: 300;
   width: 3em;
   text-align: center;
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .type-cites,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .type-cites {
   color: #333 !important;
   font-size: 11px;
   font-weight: 300;
-  background-color: #FAFAFA; }
+  background-color: #fafafa; }
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .plus,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .plus {
   padding: 5px;
@@ -1875,5 +1941,3 @@ body {
   line-height: 1.1em;
   margin: 0;
   background-color: #fafafa; }
-
-/*# sourceMappingURL=app.css.map */
