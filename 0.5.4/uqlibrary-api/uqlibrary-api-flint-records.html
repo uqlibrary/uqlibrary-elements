@@ -58,12 +58,11 @@ Element providing list of records for Flint language survey based on language/vo
 
             that.data = [];
 
-            if (e.detail) {
+            if (e.detail && e.detail.item) {
               //always returns an array of items
               if (Object.prototype.toString.call(e.detail.item) === '[object Array]') {
                 that.data = e.detail.item;
               } else {
-                that.data = [];
                 that.data.push(e.detail.item);
               }
             }
