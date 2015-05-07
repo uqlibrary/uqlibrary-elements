@@ -76,7 +76,7 @@ In this case only mouse or touch events will be handled, eg if user navigates to
             </div>
             <div hidden flex id="leftFlex" class="offCanvas">
                 <paper-input-decorator label="Search">
-                    <input is="core-input" id="searchInputField" on-keypress="{{searchKeyPress}}">
+                    <input is="core-input" id="searchInputField" on-keypress="{{searchButtonClicked}}">
                 </paper-input-decorator>
             </div>
             <div hidden id="rightFlex" class="offCanvas" on-tap="{{searchButtonClicked}}">
@@ -175,9 +175,6 @@ In this case only mouse or touch events will be handled, eg if user navigates to
 
             searchButtonClicked: function() {
                 this.fire('uqlibrary-toolbar-search-button-clicked', {searchTerm: this.$.searchInputField.value});
-            },
-            searchKeyPress: function() {
-                this.fire('uqlibrary-toolbar-search-key-pressed', {searchTerm: this.$.searchInputField.value});
             }
         });
     </script>

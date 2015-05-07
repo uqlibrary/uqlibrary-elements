@@ -157,63 +157,15 @@ uqlibrary-flint {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      padding: 0px $list-item-gap;
+      padding: 0 $list-item-gap;
     }
 
     #activePlayerWrapper {
       height: 83px;
       position: absolute;
-      bottom: 0px;
+      bottom: 0;
       width: 100%;
       border-top: 1px solid $divider;
-    }
-
-    .offCanvas {
-      transition: $main-transition;
-      transform: translate(1000px, 0);
-    }
-
-    #left-flex {
-      transition: $main-transition;
-      background-color: white;
-      color: $uq-text-secondary;
-      margin: 0;
-      border-radius: 2px 0 0 2px;
-    }
-    #right-flex {
-      transition: $main-transition;
-      background-color: white;
-      color: $uq-text-secondary;
-      border-radius: 0 2px 2px 0;
-      margin: 0;
-    }
-
-    paper-input-decorator {
-      transition: 300ms ease-in-out;
-      font-size: 16px;
-      color: $uq-text-secondary;
-      padding: 6px 0 5px 16px;
-
-      &::shadow #focusedUnderline {
-        background-color: transparent !important;
-      }
-
-      /deep/ {
-        ::-webkit-input-placeholder {
-          /* platform specific rules for placeholder text */
-          color: $uq-text-secondary;
-        }
-        ::-moz-placeholder {
-          color: $uq-text-secondary;
-        }
-        :-ms-input-placeholder {
-          color: $uq-text-secondary;
-        }
-        .unfocused-underline {
-          /* line color when the input is unfocused */
-          background-color: transparent;
-        }
-      }
     }
     [drawer] {
       background-color: $background-primary;
