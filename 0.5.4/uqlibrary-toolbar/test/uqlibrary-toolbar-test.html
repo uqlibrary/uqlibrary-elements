@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-timeline</title>
+
+  <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../moment/min/moment.min.js"></script>
+
+  <link rel="import" href="../uqlibrary-toolbar.html">
+</head>
+<body>
+
+  <uqlibrary-toolbar>
+    Test Link
+  </uqlibrary-toolbar>
+
+  <script>
+    window.addEventListener('polymer-ready', function() {
+      var myEl = document.querySelector('uqlibrary-toolbar');
+
+      describe('uqlibrary-toolbar', function () {
+        before(function () {
+            expect(myEl).not.to.be.null;
+            done();
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

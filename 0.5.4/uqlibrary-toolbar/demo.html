@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-toolbar demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="uqlibrary-toolbar.html">
+
+  <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css">
+</head>
+<body fullbleed unresolved>
+  <uqlibrary-toolbar
+          appTitle="Application Name"
+          appTitleLink="#">
+  </uqlibrary-toolbar>
+
+<script>
+    var uqlibraryToolbar = document.querySelector('uqlibrary-toolbar');
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {console.log('menu was clicked!')});
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-button-clicked', function(e) {console.log('searched for ' + e.detail.searchTerm)});
+</script>
+
+</body>
+</html>

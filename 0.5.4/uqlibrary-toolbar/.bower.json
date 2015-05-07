@@ -1,0 +1,28 @@
+{
+  "name": "uqlibrary-toolbar",
+  "description": "Accessible version of a link",
+  "main": "uqlibrary-a11y-link.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-toolbar/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "6b3cff036a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6b3cff036ad18e16d8ec9710624730a0f0406eed"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-toolbar.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-toolbar"
+}

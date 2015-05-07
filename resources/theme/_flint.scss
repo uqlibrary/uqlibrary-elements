@@ -82,11 +82,6 @@ uqlibrary-flint {
       padding-left: 72px;
       padding-right: 16px;
     }
-    .iconSlide {
-      transition: $main-transition;
-      opacity: 0;
-      transform: translate(-600px, 0);
-    }
     paper-icon-button {
       transition: $main-transition;
       &[focused], &:hover, &:focus, &:active {
@@ -124,69 +119,6 @@ uqlibrary-flint {
       }
     }
 
-    #backArrow {
-      transition: $main-transition;
-      margin-left: 0;
-    }
-    #hamburgerMenuIcon, #toolbarTitle, #expandSearch {
-      transition: $main-transition;
-    }
-
-    #searchButton {
-      core-icon {
-        color: $uq-text-secondary;
-      }
-      &:hover, &:active, &:focus {
-        transition: $main-transition;
-        background-color: $item-hover;
-      }
-    }
-
-    .offCanvas {
-      transition: $main-transition;
-      transform: translate(1000px, 0);
-    }
-
-    #left-flex {
-      transition: $main-transition;
-      background-color: white;
-      color: $uq-text-secondary;
-      margin: 0;
-      border-radius: 2px 0 0 2px;
-    }
-    #right-flex {
-      transition: $main-transition;
-      background-color: white;
-      color: $uq-text-secondary;
-      border-radius: 0 2px 2px 0;
-      margin: 0;
-    }
-
-    paper-input-decorator {
-      transition: 300ms ease-in-out;
-      color: $uq-text-secondary;
-
-      &::shadow #focusedUnderline {
-        background-color: transparent !important;
-      }
-
-      /deep/ {
-        ::-webkit-input-placeholder {
-          /* platform specific rules for placeholder text */
-          color: $uq-text-secondary;
-        }
-        ::-moz-placeholder {
-          color: $uq-text-secondary;
-        }
-        :-ms-input-placeholder {
-          color: $uq-text-secondary;
-        }
-        .unfocused-underline {
-          /* line color when the input is unfocused */
-          background-color: transparent;
-        }
-      }
-    }
     [drawer] {
       background-color: $background-primary;
       box-shadow: $shadow-z-1;

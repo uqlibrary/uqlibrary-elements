@@ -1,0 +1,184 @@
+<link href="../polymer/polymer.html" rel="import">
+<link rel="import" href="../core-dropdown/core-dropdown.html">
+<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+<link rel="import" href="../core-header-panel/core-header-panel.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../core-item/core-item.html">
+<link rel="import" href="../core-label/core-label.html">
+<link rel="import" href="../core-layout-grid/core-layout-grid.html">
+<link rel="import" href="../core-layout-trbl/core-layout-trbl.html">
+<link rel="import" href="../core-media-query/core-media-query.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-menu/core-submenu.html">
+<link rel="import" href="../core-menu-button/core-menu-button.html">
+<link rel="import" href="../core-selection/core-selection.html">
+<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../core-shared-lib/core-shared-lib.html">
+<link rel="import" href="../core-style/core-style.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+
+<!-- POLYMER PAPER ELEMENTS -->
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-input-decorator.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-progress/paper-progress.html">
+<link rel="import" href="../uqlibrary-a11y-link/uqlibrary-a11y-link.html">
+
+<!-- MATERIAL DESIGN -->
+<link rel="import" href="../font-roboto/roboto.html">
+
+<!--
+
+Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
+In this case only mouse or touch events will be handled, eg if user navigates to a link with keyboard and hits ENTER or SPACE, tap event will not fire:
+
+##### Example
+
+<uqlibrary-a11y-link>Click me or press Enter</uqlibrary-a11y-link>
+
+@element uqlibrary-a11y-link
+@blurb Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-a11y-link
+-->
+
+<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink uqLinks">
+    <!--<polymer-element name="uq-toolbar" attributes="pageTitle appTitle uq-links local-options site-search nav-menu">-->
+
+    <template>
+        <core-toolbar id="mainToolbar">
+
+            <!--Initial toolbar UI which is visible by default-->
+            <!--TODO: bubble up this event so the scaffolding can use it-->
+            <div class="responsive-menu-icon" id="hamburgerMenuIcon">
+                <paper-icon-button icon="menu"
+                                   on-tap="{{menuClicked}}">
+                </paper-icon-button>
+            </div>
+
+            <div flex id="toolbarTitle">
+                <a href="{{appTitleLink}}" class="glow applicationName">{{appTitle}}</a>
+            </div>
+
+            <div id="expandSearch" on-tap="{{activateSearch}}">
+                <uqlibrary-a11y-link><paper-icon-button icon="search"></paper-icon-button></uqlibrary-a11y-link>
+            </div>
+
+            <!--Search UI which is only visible after user clicks 'search'-->
+            <div hidden id="backArrow" class="offCanvas" on-tap="{{deactivateSearch}}">
+                <uqlibrary-a11y-link><paper-icon-button icon="arrow-back"></paper-icon-button></uqlibrary-a11y-link>
+            </div>
+            <div hidden flex id="leftFlex" class="offCanvas">
+                <paper-input-decorator label="Search">
+                    <input is="core-input" id="searchInputField" on-keypress="{{searchKeyPress}}">
+                </paper-input-decorator>
+            </div>
+            <div hidden id="rightFlex" class="offCanvas" on-tap="{{searchButtonClicked}}">
+                <uqlibrary-a11y-link><paper-icon-button icon="search" id="searchButton"></paper-icon-button></uqlibrary-a11y-link>
+            </div>
+
+            <!--<div flex>-->
+            <!--<uq-search behaviour="[siteSearch, library.uq.edu.au]"></uq-search>-->
+            <!--</div>-->
+
+            <!--<uqLinks></uqLinks>-->
+            <!--<localOptions></localOptions>-->
+
+            <!--<div hidden?="{{!uqLinks}}">-->
+            <!--<ul>-->
+            <!--<template repeat="{{l in links}}">-->
+            <!--<li><a href="{{l.url}}">{{l.label}}</a></li>-->
+            <!--</template>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <template if="{{appLinks}}">
+            <paper-menu-button id="responsive-menu-icon">
+                <paper-icon-button icon="more-vert"></paper-icon-button>
+                <paper-dropdown class="dropdown" halign="right">
+                    <core-menu class="menu">
+                        <template repeat="{{link in appLinks}}">
+                            <uqlibrary-a11y-link>
+                                <paper-item><a href="{{link.url}}">{{link.label}}</a></paper-item>
+                            </uqlibrary-a11y-link>
+                        </template>
+                    </core-menu>
+                </paper-dropdown>
+            </paper-menu-button>
+            </template>
+        </core-toolbar>
+
+        <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    </template>
+    <script>
+        Polymer('uqlibrary-toolbar', {
+
+            // TODO: uqLinks variable should be set by the uqLinks attribute
+            animationFrameLength: 150,
+
+            ready: function() {
+                // populate the element’s data model
+                // (the UQ Links array)
+                // TODO: data should come from some central location
+            },
+
+            // TODO: loop through a function to do this animation
+
+            activateSearch: function() {
+                var that = this;
+
+                setTimeout(function() {
+                    that.$.mainToolbar.classList.toggle('turnWhite');
+                    that.$.hamburgerMenuIcon.classList.toggle('invisible');
+                    that.$.toolbarTitle.classList.toggle('invisible');
+                    that.$.expandSearch.classList.toggle('invisible');
+                }, 0);
+
+                setTimeout(function() {
+                    that.$.hamburgerMenuIcon.setAttribute('hidden', true);
+                    that.$.toolbarTitle.setAttribute('hidden', true);
+                    that.$.expandSearch.setAttribute('hidden', true);
+                    that.$.backArrow.removeAttribute('hidden');
+                    that.$.leftFlex.removeAttribute('hidden');
+                    that.$.rightFlex.removeAttribute('hidden');
+                }, that.animationFrameLength);
+            },
+
+            deactivateSearch: function() {
+                var that = this;
+
+                setTimeout(function() {
+                    that.$.hamburgerMenuIcon.removeAttribute('hidden');
+                    that.$.toolbarTitle.removeAttribute('hidden');
+                    that.$.expandSearch.removeAttribute('hidden');
+                    that.$.backArrow.setAttribute('hidden', true);
+                    that.$.leftFlex.setAttribute('hidden', true);
+                    that.$.rightFlex.setAttribute('hidden', true);
+                }, 0);
+
+                setTimeout(function() {
+                    that.$.mainToolbar.classList.toggle('turnWhite');
+                    that.$.hamburgerMenuIcon.classList.toggle('invisible');
+                    that.$.toolbarTitle.classList.toggle('invisible');
+                    that.$.expandSearch.classList.toggle('invisible');
+                }, that.animationFrameLength);
+            },
+
+            menuClicked: function() {
+                this.fire('uqlibrary-toolbar-menu-clicked');
+            },
+
+            searchButtonClicked: function() {
+                this.fire('uqlibrary-toolbar-search-button-clicked', {searchTerm: this.$.searchInputField.value});
+            },
+            searchKeyPress: function() {
+                this.fire('uqlibrary-toolbar-search-key-pressed', {searchTerm: this.$.searchInputField.value});
+            }
+        });
+    </script>
+</polymer-element>
