@@ -82,22 +82,25 @@ uqlibrary-flint {
       padding-left: 72px;
       padding-right: 16px;
     }
+    #playButton {
+      padding: 0;
+    }
     paper-icon-button {
       transition: $main-transition;
       &[focused], &:hover, &:focus, &:active {
-        background-color: $uq-divider;
+        background-color: $paper-hover;
       }
     }
     paper-icon {
       transition: $main-transition;
       &[focused], &:hover, &:focus, &:active {
-        background-color: $uq-divider;
+        background-color: $paper-hover;
       }
     }
     paper-slider {
       transition: $main-transition;
       &:focus{
-        background-color: $uq-divider;
+        background-color: $paper-hover;
         &::shadow {
           #sliderContainer.ring {
             #sliderKnobInner, #sliderKnobInner::before {
@@ -170,6 +173,9 @@ uqlibrary-flint {
       bottom: 0;
       width: 100%;
       border-top: 1px solid $divider;
+      div {
+        margin: 3px;
+      }
     }
     [drawer] {
       background-color: $background-primary;
