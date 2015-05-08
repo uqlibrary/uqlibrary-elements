@@ -62,6 +62,9 @@ uqlibrary-toolbar {
           transition: $main-transition;
           background-color: $item-hover;
         }
+        core-icon {
+          color: $uq-text-primary;
+        }
       }
     }
 
