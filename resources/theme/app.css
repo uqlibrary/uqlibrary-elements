@@ -1413,11 +1413,24 @@ uqlibrary-flint /deep/ core-drawer-panel {
   uqlibrary-flint /deep/ core-drawer-panel /deep/ .main {
     background-color: white;
     z-index: 0; }
-uqlibrary-flint /deep/ #infoSection core-icon {
-  height: 60px;
-  width: 60px; }
-uqlibrary-flint /deep/ #infoSection .body1 {
-  font-weight: 300; }
+uqlibrary-flint /deep/ #infoSection {
+  background: white; }
+  uqlibrary-flint /deep/ #infoSection core-icon {
+    height: 60px;
+    width: 60px; }
+  uqlibrary-flint /deep/ #infoSection .body1 {
+    font-weight: 300; }
+  uqlibrary-flint /deep/ #infoSection ul {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+    padding: 12px; }
+    uqlibrary-flint /deep/ #infoSection ul li {
+      border: none;
+      padding-top: 24px; }
+      uqlibrary-flint /deep/ #infoSection ul li .avatar {
+        margin-top: 0; }
+      uqlibrary-flint /deep/ #infoSection ul li .content {
+        font-size: 1.5em;
+        padding-top: 15px; }
 uqlibrary-flint /deep/ #feedbackButton {
   margin-bottom: 12px; }
 uqlibrary-flint /deep/ core-list li {
@@ -1444,10 +1457,10 @@ uqlibrary-flint /deep/ .three-line-icon-list .list-item {
     padding-bottom: 32px;
     padding-left: 16px;
     padding-right: 16px; }
-uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded, uqlibrary-flint /deep/ .list-item.header {
+uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded {
   padding-left: 16px;
   transition: transform 100ms ease-in; }
-  uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active, uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
+  uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active {
     background-color: white;
     cursor: text; }
 uqlibrary-flint /deep/ #itemDetailsCollapse {

@@ -23,12 +23,28 @@ uqlibrary-flint {
       }
     }
     #infoSection {
+      background: white;
       core-icon {
         height: 60px;
         width: 60px;
       }
       .body1 {
         font-weight: 300;
+      }
+      ul {
+        box-shadow: $shadow-z-1;
+        padding: 12px;
+        li {
+          border: none;
+          padding-top: 24px;
+          .avatar {
+            margin-top: 0;
+          }
+          .content {
+            font-size: 1.5em;
+            padding-top: 15px;
+          }
+        }
       }
     }
     #feedbackButton {
@@ -70,7 +86,7 @@ uqlibrary-flint {
         padding-right: 16px;
       }
     }
-    .three-line-icon-list .list-item.expanded, .list-item.header {
+    .three-line-icon-list .list-item.expanded {
       padding-left: 16px;
       transition: transform 100ms ease-in;
       &:hover, &:focus, &:active {
