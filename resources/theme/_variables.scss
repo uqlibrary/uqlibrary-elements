@@ -55,6 +55,7 @@ $main-transition: all $transition-duration $transition-function;
 $shadow-transition: box-shadow $transition-duration $transition-function;
 $background-transition: background-color $transition-duration $transition-function;
 $outline-transition: outline $transition-duration $transition-function;
+$glow-shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 $shadow-z-0: none;
 $shadow-z-1: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 $shadow-z-2: 0 6px 10px 0 rgba(0, 0, 0, 0.3);

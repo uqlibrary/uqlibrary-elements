@@ -32,7 +32,7 @@ uqlibrary-toolbar {
       transition: $main-transition;
       &:hover, &:focus, &:active {
         text-decoration: none;
-        -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, .5));
+        -webkit-filter: $glow-shadow;
         transition: $main-transition;
       }
     }
