@@ -5,13 +5,6 @@
 
 uqlibrary-flint {
   /deep/ {
-    core-toolbar {
-      paper-icon-button {
-        &:hover, &:focus, &:active {
-          background-color: $divider-inverse;
-        }
-      }
-    }
     paper-tabs {
       z-index: 1;
     }
@@ -32,11 +25,9 @@ uqlibrary-flint {
         font-weight: 300;
       }
       ul {
-        box-shadow: $shadow-z-1;
-        padding: 12px;
         li {
-          border: none;
-          padding-top: 24px;
+          padding: 36px 14px;
+          height: 112px;
           .avatar {
             margin-top: 0;
           }
@@ -53,7 +44,6 @@ uqlibrary-flint {
     core-list li {
       background-color: white;
       &:hover, &:focus, &:active {
-        //      transition: $main-transition;
         cursor: pointer;
         background-color: $item-hover;
       }
@@ -61,7 +51,7 @@ uqlibrary-flint {
         margin-left: 16px;
         paper-icon-button {
           &:hover, &:focus, &:active {
-            background-color: $item-hover;
+            background-color: $paper-hover;
           }
         }
       }
@@ -71,6 +61,7 @@ uqlibrary-flint {
     }
     .list-item.header {
       background-color: transparent;
+      padding-bottom: 12px;
       &:hover, &:focus, &:active {
         background-color: transparent;
         cursor: default;

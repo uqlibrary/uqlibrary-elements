@@ -1404,8 +1404,6 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
-uqlibrary-flint /deep/ core-toolbar paper-icon-button:hover, uqlibrary-flint /deep/ core-toolbar paper-icon-button:focus, uqlibrary-flint /deep/ core-toolbar paper-icon-button:active {
-  background-color: rgba(255, 255, 255, 0.12); }
 uqlibrary-flint /deep/ paper-tabs {
   z-index: 1; }
 uqlibrary-flint /deep/ core-drawer-panel {
@@ -1420,17 +1418,14 @@ uqlibrary-flint /deep/ #infoSection {
     width: 60px; }
   uqlibrary-flint /deep/ #infoSection .body1 {
     font-weight: 300; }
-  uqlibrary-flint /deep/ #infoSection ul {
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-    padding: 12px; }
-    uqlibrary-flint /deep/ #infoSection ul li {
-      border: none;
-      padding-top: 24px; }
-      uqlibrary-flint /deep/ #infoSection ul li .avatar {
-        margin-top: 0; }
-      uqlibrary-flint /deep/ #infoSection ul li .content {
-        font-size: 1.5em;
-        padding-top: 15px; }
+  uqlibrary-flint /deep/ #infoSection ul li {
+    padding: 36px 14px;
+    height: 112px; }
+    uqlibrary-flint /deep/ #infoSection ul li .avatar {
+      margin-top: 0; }
+    uqlibrary-flint /deep/ #infoSection ul li .content {
+      font-size: 1.5em;
+      padding-top: 15px; }
 uqlibrary-flint /deep/ #feedbackButton {
   margin-bottom: 12px; }
 uqlibrary-flint /deep/ core-list li {
@@ -1441,11 +1436,12 @@ uqlibrary-flint /deep/ core-list li {
   uqlibrary-flint /deep/ core-list li .avatar {
     margin-left: 16px; }
     uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:hover, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:focus, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:active {
-      background-color: rgba(0, 0, 0, 0.05); }
+      background-color: rgba(0, 0, 0, 0.1); }
   uqlibrary-flint /deep/ core-list li #closeButton {
     margin-right: 16px; }
 uqlibrary-flint /deep/ .list-item.header {
-  background-color: transparent; }
+  background-color: transparent;
+  padding-bottom: 12px; }
   uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
     background-color: transparent;
     cursor: default; }
