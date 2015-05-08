@@ -17,7 +17,7 @@ Element providing list of records for Flint language survey based on language/vo
 <polymer-element name="uqlibrary-api-flint-records" extends="uqlibrary-api">
 
   <template>
-    <uqlibrary-api id="list" baseApiUrl="https://espace.library.uq.edu.au/list"></uqlibrary-api>
+    <uqlibrary-api id="list" baseApiUrl="https://app.library.uq.edu.au/api/collection"></uqlibrary-api>
   </template>
 
   <script>
@@ -39,9 +39,9 @@ Element providing list of records for Flint language survey based on language/vo
         */
 
         baseUri : {
-          keyword: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]="{{KEYWORD}}" AND ismemberof:("UQ:353627")&tpl=11',
-          language: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("{{KEYWORD}}") AND ismemberof:("UQ:353627")&tpl=11',
-          voice: '/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{KEYWORD}}") AND ismemberof:("UQ:353627")&tpl=11'
+          keyword: '/flint?search={{KEYWORD}}&start=0&rows=50',
+          language: '/flint?language={{KEYWORD}}&start=0&rows=50',
+          voice: '/flint?voice={{KEYWORD}}&start=0&rows=50'
         },
 
         /**
@@ -58,13 +58,8 @@ Element providing list of records for Flint language survey based on language/vo
 
             that.data = [];
 
-            if (e.detail && e.detail.item) {
-              //always returns an array of items
-              if (Object.prototype.toString.call(e.detail.item) === '[object Array]') {
-                that.data = e.detail.item;
-              } else {
-                that.data.push(e.detail.item);
-              }
+            if (e.detail && e.detail.response && e.detail.response.docs) {
+                that.data = e.detail.response.docs;
             }
 
             that.fire('uqlibrary-api-flint-records-loaded', that.data);
