@@ -20,6 +20,8 @@
     var uqlibraryToolbar = document.querySelector('uqlibrary-toolbar');
     uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {console.log('menu was clicked!')});
     uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-button-clicked', function(e) {console.log('searched for ' + e.detail.searchTerm)});
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-key-pressed', function(e) {console.log('typed ' + e.detail.searchTerm)});
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-key-pressed', function(e) {console.log('key ' + e.detail.keyPressed)});
 </script>
 
 </body>
