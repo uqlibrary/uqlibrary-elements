@@ -160,6 +160,25 @@ uqlibrary-flint {
         }
 
       }
+
+      &.ios {
+        width: 45px;
+      }
+
+    }
+
+    .playerButton {
+      &::shadow {
+        core-icon {
+          color: $secondary-text;
+          width: 44px;
+          height: 44px;
+        }
+      }
+      &:hover, &:active, &:focus {
+        transition: $main-transition;
+        background-color: $divider-inverse;
+      }
     }
 
     .currentlyPlayingTitle {
