@@ -119,7 +119,9 @@ Material design audio element
       var that = this;
       this.audio.volume = this.volume / 10;
       this.audio.addEventListener("loadedmetadata", function() {
-        that.remainder = that.toHHMMSS(this.duration);
+        if(this.duration) {
+          that.remainder = that.toHHMMSS(this.duration);
+        }
         that.currentTimeValue = 0;
         that.fire('x-audio-loadedmetadata');
       });
@@ -127,7 +129,9 @@ Material design audio element
       this.audio.addEventListener('timeupdate', function (){
         that.currentTimeValue = parseInt(this.currentTime, 10);
         that.duration = this.duration;
-        that.remainder =  that.toHHMMSS(this.currentTime) + '/' + that.toHHMMSS(this.duration);
+        if(this.currentTime && this.duration) {
+          that.remainder =  that.toHHMMSS(this.currentTime) + '/' + that.toHHMMSS(this.duration);
+        }
         that.fire('x-audio-timeupdate');
       });
 
@@ -144,14 +148,19 @@ Material design audio element
 
   },
 
-  srcChanged: function (oldValue, newValue) {
+  setSrc: function(val) {
+    this.src = val;
+    this.init(val);
+  },
+
+  /*srcChanged: function (oldValue, newValue) {
     if(this.audio) {
       this.pause();
     }
     if(newValue) {
       this.init(newValue);
     }
-  },
+  },*/
 
   setAudioObject: function(audio) {
     this.audioObjectSet = true;

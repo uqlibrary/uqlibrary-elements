@@ -4,13 +4,13 @@
   "dependencies": {
     "core-doc-viewer": "Polymer/core-doc-viewer#^0.5"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/core-docs",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "ee93d38b3af8c0a44c9965986f79f61b9e1444b1"
+    "tag": "0.5.6",
+    "commit": "aa0cccc747a3f40036f58b8f1c0b722920b481bd"
   },
   "_source": "git://github.com/Polymer/core-docs.git",
   "_target": "^0.5",

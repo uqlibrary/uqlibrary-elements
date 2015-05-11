@@ -13,7 +13,7 @@ rm -Rf ${polymer}
 #put in the current branch name into bower.json
 sed -i -e "s#<branch>#${branch}#g" bower.json
 bower install
-#put in the template branch name back into bower.json so it doesnt accidentally get committed back
+#put in the template branch name back into bower.json so it does not accidentally get committed back
 sed -i -e "s#${branch}#<branch>#g" bower.json
 rm -f bower.json-e
 mkdir ${polymer}/lib
