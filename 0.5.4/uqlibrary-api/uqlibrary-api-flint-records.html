@@ -17,31 +17,17 @@ Element providing list of records for Flint language survey based on language/vo
 <polymer-element name="uqlibrary-api-flint-records" extends="uqlibrary-api">
 
   <template>
-    <uqlibrary-api id="list" baseApiUrl="https://app.library.uq.edu.au/api/collection"></uqlibrary-api>
+    <uqlibrary-api id="list"></uqlibrary-api>
   </template>
 
   <script>
     (function() {
       Polymer('uqlibrary-api-flint-records', {
 
-        /*
-         //search by any field
-         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]="{{SEARCH_KEYWORD}}" AND ismemberof:("UQ:353627")&tpl=11
-         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]="song" AND ismemberof:("UQ:353627")&tpl=11
-
-         //search by language
-         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("{{LANGUAGE_TITLE}}") AND ismemberof:("UQ:353627")&tpl=11
-         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=subject:("Wakka Wakka / Waka Waka / Waga Waga") AND ismemberof:("UQ:353627")&tpl=11
-
-         //search by contributor/voice
-         /?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{VOICE_NAME}}") AND ismemberof:("UQ:353627")&tpl=11
-         http://espace.library.uq.edu.au/list/?cat=quick_filter&sort_by=searchKey0&search_keys[0]=contributor:("{{Eddie}}") AND ismemberof:("UQ:353627")&tpl=11
-        */
-
         baseUri : {
-          keyword: '/flint?search={{KEYWORD}}&start=0&rows=50',
-          language: '/flint?language={{KEYWORD}}&start=0&rows=50',
-          voice: '/flint?voice={{KEYWORD}}&start=0&rows=50'
+          keyword: '/collection/flint?search={{KEYWORD}}&start=0&rows=50',
+          language: '/collection/flint?language={{KEYWORD}}&start=0&rows=50',
+          voice: '/collection/flint?voice={{KEYWORD}}&start=0&rows=50'
         },
 
         /**

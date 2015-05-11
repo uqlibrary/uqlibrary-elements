@@ -62,13 +62,6 @@ Element providing access to UQ Library's API.
 
           console.log('URI:' + this.uri);
 
-          //special cases for flint collection
-          if (this.uri.indexOf('flint.php') >= 0) {
-            this.uri = this.uri.replace('.php?', '/');
-          } else if (this.uri.indexOf('/flint?') >= 0) {
-            this.uri = '/flint/records';
-          }
-
           var substringTo = this.uri.indexOf('?') > 0 ? this.uri.indexOf('?') : this.uri.length;
 
           //var fileName = '../uqlibrary-api/mock/' + this.uri.substring(1, substringTo).replace(/([^a-z]\/)/gi, '_') + '_' + this.method.toLowerCase() + '.json';
