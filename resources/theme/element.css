@@ -1379,6 +1379,9 @@ paper-dropdown::shadow #scroller {
       width: 100%;
       margin: 0; } }
 
+uqlibrary-flint /deep/ paper-action-dialog {
+  border-radius: 2px;
+  max-width: 500px; }
 uqlibrary-flint /deep/ paper-tabs {
   z-index: 1; }
 uqlibrary-flint /deep/ core-drawer-panel {
