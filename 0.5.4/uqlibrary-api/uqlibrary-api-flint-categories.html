@@ -17,7 +17,7 @@ Element providing list of languages or interviewees for Flint language survey
 <polymer-element name="uqlibrary-api-flint-categories" extends="uqlibrary-api">
 
   <template>
-    <uqlibrary-api id="list" baseApiUrl="https://app.library.uq.edu.au/api/collection"></uqlibrary-api>
+    <uqlibrary-api id="list"></uqlibrary-api>
   </template>
 
   <script>
@@ -25,8 +25,8 @@ Element providing list of languages or interviewees for Flint language survey
       Polymer('uqlibrary-api-flint-categories', {
 
         baseUri : {
-          languages: '/flint/languages',
-          voices: '/flint/voices'
+          languages: '/collection/flint/languages',
+          voices: '/collection/flint/voices'
         },
 
         /**
