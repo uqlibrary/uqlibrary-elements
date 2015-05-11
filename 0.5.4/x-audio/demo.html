@@ -25,19 +25,12 @@
 
     <x-audio-mirror id="mirror" disabled showName showVolumeControls showSeekControl></x-audio-mirror>
 
-    <a href="#" onclick="setAudio()">Set audio</a>
-
   </div>
 </body>
 <script>
   var player = document.getElementById('player');
   var player2 = document.getElementById('player2');
   var mirror = document.getElementById('mirror');
-
-  function setAudio() {
-    currentPlayer.pause();
-    player.setSrc('http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3');
-  }
 
   var currentPlayer = null;
   document.addEventListener('x-audio-play', function(e) {
@@ -50,10 +43,7 @@
   });
 
   //var mirror = document.getElementById('mirror');
-  document.addEventListener('x-audio-initialized', function(e) {
-    if(e.detail.audio.src == 'http://www.stephaniequinn.com/Music/Hungarian%20Dance.mp3') {
-      player.play();
-    }
+  document.addEventListener('polymer-ready', function() {
 
 
   });
