@@ -11,13 +11,13 @@
     "paper-ripple": "Polymer/paper-ripple#^0.5",
     "core-resizable": "Polymer/core-resizable#^0.5"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/paper-tabs",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "9568e4f553996b960493b9f0edb7cfe2526bdc30"
+    "tag": "0.5.6",
+    "commit": "f3541ea6342f830c9034beede0ead6a059ad39f8"
   },
   "_source": "git://github.com/Polymer/paper-tabs.git",
   "_target": "^0.5",

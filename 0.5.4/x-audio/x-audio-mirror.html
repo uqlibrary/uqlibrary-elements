@@ -43,7 +43,7 @@ Material design audio element
               <span id="remainder" hidden?="{{!showSeekControl}}">{{remainder}}</span>
             </div>
             <div hidden?="{{!showSeekControl}}">
-              <paper-slider flex  id="audio_slider" min="0" max="{{duration}}" value="{{currentTimeValue}}"></paper-slider>
+              <paper-slider flex  id="audio_slider" min="0" max="{{duration}}" value="{{currentTimeValue}}" on-change="{{changeCurrentTime}}"></paper-slider>
             </div>
       </div>
       <div self-center class="volume" hidden?="{{!showVolumeControls}}">
@@ -131,10 +131,6 @@ Material design audio element
         that.$.volume_slider.disabled = that.xaudio.$.volume_slider.disabled;
       });
 
-      this.xaudio.addEventListener('x-audio-currenttimechange', function (){
-        that.currentTimeValue = that.xaudio.currentTimeValue;
-      });
-
       this.xaudio.addEventListener('x-audio-ended', function (){
         that.remainder = that.xaudio.remainder;
         that.isPlaying = that.xaudio.isPlaying;
@@ -163,10 +159,9 @@ Material design audio element
       this.xaudio.immediateVolume = newValue;
   },
 
-  currentTimeValueChanged: function(oldValue, newValue) {
-
+  changeCurrentTime: function(e) {
     if(this.xaudio != null) {
-      this.xaudio.currentTimeValue = newValue;
+      this.xaudio.changeCurrentTime(e);
     }
   },
 
