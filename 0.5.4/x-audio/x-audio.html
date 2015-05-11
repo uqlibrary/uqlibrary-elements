@@ -94,6 +94,7 @@ Material design audio element
   isPlaying: false,
   audio: null,
   volume: 8,
+  isMuted: false,
   audioObjectSet: false,
   preload: 'none',
 
@@ -117,7 +118,11 @@ Material design audio element
   initAudio: function() {
     if(this.audio != null) {
       var that = this;
-      this.audio.volume = this.volume / 10;
+      if(!this.isMuted) {
+        this.audio.volume = this.volume / 10;
+      } else {
+        this.audio.volume = 0;
+      }
       this.audio.addEventListener("loadedmetadata", function() {
         if(this.duration) {
           that.remainder = that.toHHMMSS(this.duration);
@@ -251,9 +256,11 @@ Material design audio element
     if (this.audio.volume != 0) {
       this.$.mute.icon = "av:volume-off";
       this.audio.volume = 0;
+      this.isMuted = true;
       this.$.volume_slider.disabled = true;
     } else {
       this.audio.volume = this.volume / 10;
+      this.isMuted = false;
       this.$.volume_slider.disabled = false;
       this.$.mute.icon = "av:volume-up";
     }
