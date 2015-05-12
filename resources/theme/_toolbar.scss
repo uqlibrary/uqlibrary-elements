@@ -1,11 +1,11 @@
 @import "variables";
 
+// uqlibrary-toolbar specific styles
+
 uqlibrary-toolbar {
-  // uqlibrary-toolbar specific styles
 /deep/ {
 
   * {
-
     transition: $main-transition;
   }
   .turnWhite {
@@ -29,18 +29,19 @@ uqlibrary-toolbar {
     .glow {
       color: white;
       cursor: pointer;
-      transition: $main-transition;
       &:hover, &:focus, &:active {
         text-decoration: none;
         -webkit-filter: $glow-shadow;
-        transition: $main-transition;
       }
     }
     paper-dropdown core-menu {
-      margin: 8px;
+      margin: 2px;
       paper-item {
+        font-size: 14px;
+        transition: none;
         &:hover, &:focus {
-          background-color: $background-primary;
+          background-color: $item-hover;
+          transition: none;
         }
         a {
           font-size: 16px;
@@ -59,7 +60,6 @@ uqlibrary-toolbar {
         color: $uq-text-secondary;
         &:hover, &:active, &:focus {
           border-radius: 50%;
-          transition: $main-transition;
           background-color: $item-hover;
         }
         core-icon {

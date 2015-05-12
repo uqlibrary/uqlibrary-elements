@@ -1137,29 +1137,30 @@ uqlibrary-toolbar /deep/ core-toolbar {
     text-decoration: none; }
   uqlibrary-toolbar /deep/ core-toolbar .glow {
     color: white;
-    cursor: pointer;
-    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    cursor: pointer; }
     uqlibrary-toolbar /deep/ core-toolbar .glow:hover, uqlibrary-toolbar /deep/ core-toolbar .glow:focus, uqlibrary-toolbar /deep/ core-toolbar .glow:active {
       text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
-      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); }
   uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu {
-    margin: 8px; }
-    uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:hover, uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:focus {
-      background-color: #FAFAFA; }
-    uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item a {
-      font-size: 16px;
-      cursor: pointer;
-      color: #333333;
-      display: block;
-      text-decoration: none; }
+    margin: 2px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item {
+      font-size: 14px;
+      transition: none; }
+      uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:hover, uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:focus {
+        background-color: rgba(0, 0, 0, 0.05);
+        transition: none; }
+      uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item a {
+        font-size: 16px;
+        cursor: pointer;
+        color: #333333;
+        display: block;
+        text-decoration: none; }
   uqlibrary-toolbar /deep/ core-toolbar .invisible {
     opacity: 0; }
   uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button {
     color: #757575; }
     uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:focus, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:focus, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:focus {
       border-radius: 50%;
-      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
       background-color: rgba(0, 0, 0, 0.05); }
     uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button core-icon, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button core-icon, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button core-icon {
       color: #333333; }
