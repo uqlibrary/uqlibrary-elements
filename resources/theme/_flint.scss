@@ -61,6 +61,11 @@ uqlibrary-flint {
             background-color: $paper-hover;
           }
         }
+        .audio-holder {
+          /deep/ .playerButton {
+            padding: 0;
+          }
+        }
       }
       #closeButton {
         margin-right: 16px;

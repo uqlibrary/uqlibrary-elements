@@ -1417,6 +1417,8 @@ uqlibrary-flint /deep/ core-list li {
     margin-left: 16px; }
     uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:hover, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:focus, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:active {
       background-color: rgba(0, 0, 0, 0.1); }
+    uqlibrary-flint /deep/ core-list li .avatar .audio-holder /deep/ .playerButton {
+      padding: 0; }
   uqlibrary-flint /deep/ core-list li #closeButton {
     margin-right: 16px; }
 uqlibrary-flint /deep/ .list-item.header {
