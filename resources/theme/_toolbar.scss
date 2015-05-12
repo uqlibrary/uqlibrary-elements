@@ -14,6 +14,11 @@ uqlibrary-toolbar {
   core-toolbar {
     background: $dark-primary;
     color: white;
+    #hamburgerMenuIcon {
+      @media (min-width: $responsive-width*2) {
+        display: none;
+      }
+    }
     paper-icon-button {
       margin-top: 3px;
       color: white;

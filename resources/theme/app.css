@@ -1151,6 +1151,9 @@ uqlibrary-toolbar /deep/ .turnWhite {
 uqlibrary-toolbar /deep/ core-toolbar {
   background: #4a075f;
   color: white; }
+  @media (min-width: 1536px) {
+    uqlibrary-toolbar /deep/ core-toolbar #hamburgerMenuIcon {
+      display: none; } }
   uqlibrary-toolbar /deep/ core-toolbar paper-icon-button {
     margin-top: 3px;
     color: white;
