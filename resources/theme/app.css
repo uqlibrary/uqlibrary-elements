@@ -1529,6 +1529,8 @@ uqlibrary-flint /deep/ .currentlyPlayingTitle {
   padding: 0 8px; }
 uqlibrary-flint /deep/ #itemSection {
   background: white; }
+  uqlibrary-flint /deep/ #itemSection /deep/ .playerButton {
+    padding: 0; }
 uqlibrary-flint /deep/ #activePlayerWrapper {
   background: #FAFAFA;
   height: 83px;
