@@ -35,20 +35,20 @@
 
 <!--
 
-Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
-In this case only mouse or touch events will be handled, eg if user navigates to a link with keyboard and hits ENTER or SPACE, tap event will not fire:
+Reusable toolbar element that comes with search UI/UX
+Can include optional menu options
 
 ##### Example
 
-<uqlibrary-a11y-link>Click me or press Enter</uqlibrary-a11y-link>
+<uqlibrary-toolbar>Click me or press Enter</uqlibrary-toolbar>
 
-@element uqlibrary-a11y-link
-@blurb Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
+@element uqlibrary-toolbar
+@blurb Reusable toolbar containing common styling and dynamic attributes such as title and link, and context-relevant search
 @status alpha
-@homepage https://github.com/uqlibrary/uqlibrary-a11y-link
+@homepage https://github.com/uqlibrary/uqlibrary-toolbar
 -->
 
-<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink uqLinks">
+<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText">
     <!--<polymer-element name="uq-toolbar" attributes="pageTitle appTitle uq-links local-options site-search nav-menu">-->
 
     <template>
@@ -56,7 +56,7 @@ In this case only mouse or touch events will be handled, eg if user navigates to
 
             <!--Initial toolbar UI which is visible by default-->
             <!--TODO: bubble up this event so the scaffolding can use it-->
-            <div class="responsive-menu-icon" id="hamburgerMenuIcon">
+            <div id="hamburgerMenuIcon">
                 <paper-icon-button icon="menu"
                                    on-tap="{{menuClicked}}">
                 </paper-icon-button>
@@ -71,15 +71,15 @@ In this case only mouse or touch events will be handled, eg if user navigates to
             </div>
 
             <!--Search UI which is only visible after user clicks 'search'-->
-            <div hidden id="backArrow" class="offCanvas" on-tap="{{deactivateSearch}}">
+            <div hidden id="backArrow" on-tap="{{deactivateSearch}}">
                 <uqlibrary-a11y-link><paper-icon-button icon="arrow-back"></paper-icon-button></uqlibrary-a11y-link>
             </div>
-            <div hidden flex id="leftFlex" class="offCanvas">
-                <paper-input-decorator label="Search">
+            <div hidden flex id="leftFlex">
+                <paper-input-decorator label="{{searchPlaceholderText}}">
                     <input is="core-input" id="searchInputField" on-keypress="{{searchKeyPressed}}">
                 </paper-input-decorator>
             </div>
-            <div hidden id="rightFlex" class="offCanvas" on-tap="{{searchButtonClicked}}">
+            <div hidden id="rightFlex" on-tap="{{searchButtonClicked}}">
                 <uqlibrary-a11y-link><paper-icon-button icon="search" id="searchButton"></paper-icon-button></uqlibrary-a11y-link>
             </div>
 
@@ -97,20 +97,22 @@ In this case only mouse or touch events will be handled, eg if user navigates to
             <!--</template>-->
             <!--</ul>-->
             <!--</div>-->
-            <template if="{{appLinks}}">
-            <paper-menu-button id="responsive-menu-icon">
-                <paper-icon-button icon="more-vert"></paper-icon-button>
-                <paper-dropdown class="dropdown" halign="right">
-                    <core-menu class="menu">
-                        <template repeat="{{link in appLinks}}">
-                            <uqlibrary-a11y-link>
-                                <paper-item><a href="{{link.url}}">{{link.label}}</a></paper-item>
-                            </uqlibrary-a11y-link>
-                        </template>
-                    </core-menu>
-                </paper-dropdown>
-            </paper-menu-button>
-            </template>
+            <div id="appLinksIcon">
+                <template if="{{appLinks}}">
+                <paper-menu-button>
+                    <paper-icon-button icon="more-vert"></paper-icon-button>
+                    <paper-dropdown class="dropdown" halign="right">
+                        <core-menu class="menu">
+                            <template repeat="{{link in appLinks}}">
+                                <uqlibrary-a11y-link>
+                                    <paper-item><a href="{{link.url}}">{{link.label}}</a></paper-item>
+                                </uqlibrary-a11y-link>
+                            </template>
+                        </core-menu>
+                    </paper-dropdown>
+                </paper-menu-button>
+                </template>
+            </div>
         </core-toolbar>
 
         <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
@@ -122,9 +124,16 @@ In this case only mouse or touch events will be handled, eg if user navigates to
             animationFrameLength: 150,
 
             ready: function() {
-                // populate the element’s data model
-                // (the UQ Links array)
-                // TODO: data should come from some central location
+                console.log(this.appLinks);
+                console.log(this.searchPlaceholderText);
+                if (!this.searchPlaceholderText) {
+                    this.searchPlaceholderText = "Search";
+                }
+            },
+
+            created: function() {
+                // hint that appLinks is an array
+                this.appLinks = [];
             },
 
             // TODO: loop through a function to do this animation
@@ -137,12 +146,14 @@ In this case only mouse or touch events will be handled, eg if user navigates to
                     that.$.hamburgerMenuIcon.classList.toggle('invisible');
                     that.$.toolbarTitle.classList.toggle('invisible');
                     that.$.expandSearch.classList.toggle('invisible');
+                    that.$.appLinksIcon.classList.toggle('invisible');
                 }, 0);
 
                 setTimeout(function() {
                     that.$.hamburgerMenuIcon.setAttribute('hidden', true);
                     that.$.toolbarTitle.setAttribute('hidden', true);
                     that.$.expandSearch.setAttribute('hidden', true);
+                    that.$.appLinksIcon.setAttribute('hidden', true);
                     that.$.backArrow.removeAttribute('hidden');
                     that.$.leftFlex.removeAttribute('hidden');
                     that.$.rightFlex.removeAttribute('hidden');
@@ -157,6 +168,7 @@ In this case only mouse or touch events will be handled, eg if user navigates to
                     that.$.hamburgerMenuIcon.removeAttribute('hidden');
                     that.$.toolbarTitle.removeAttribute('hidden');
                     that.$.expandSearch.removeAttribute('hidden');
+                    that.$.appLinksIcon.removeAttribute('hidden');
                     that.$.backArrow.setAttribute('hidden', true);
                     that.$.leftFlex.setAttribute('hidden', true);
                     that.$.rightFlex.setAttribute('hidden', true);
@@ -167,6 +179,7 @@ In this case only mouse or touch events will be handled, eg if user navigates to
                     that.$.hamburgerMenuIcon.classList.toggle('invisible');
                     that.$.toolbarTitle.classList.toggle('invisible');
                     that.$.expandSearch.classList.toggle('invisible');
+                    that.$.appLinksIcon.classList.toggle('invisible');
                 }, that.animationFrameLength);
             },
 
