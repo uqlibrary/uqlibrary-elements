@@ -1,415 +1,667 @@
 {
   "responseHeader": {
     "status": 0,
-    "QTime": 5,
+    "QTime": 1,
     "params": {
-      "hl.requireFieldMatch": "false",
-      "hl.fragsize": "100",
-      "facet": "true",
+      "facet": "false",
       "sort": "",
-      "facet.mincount": "2",
-      "hl.fragmenter": "gap",
-      "hl.mergeContiguous": "true",
-      "facet.limit": "5",
-      "json.nl": "map",
-      "hl.fl": "content",
-      "wt": "json",
-      "hl": "true",
-      "rows": "50",
       "fl": "*",
-      "hl.snippets": "1",
-      "hl.useFastVectorHighlighter": "true",
-      "f.author_id_mi.facet.limit": "6",
       "start": "0",
-      "q": "(display_type_i:(263) AND object_type_i:(3) AND ismemberof_mt:(UQ\\:353627) AND status_i:(2))",
-      "f.author_id_mi_lookup_exact.facet.limit": "6",
-      "facet.field": [
-        "display_type_i",
-        "display_type_i_lookup_exact",
-        "keywords_mft",
-        "date_year_t",
-        "author_id_mi",
-        "author_id_mi_lookup_exact",
-        "author_mft",
-        "journal_name_t_ft",
-        "subject_mi",
-        "subject_mi_lookup_exact",
-        "ismemberof_mft",
-        "ismemberof_mt_lookup_exact",
-        "subtype_t_ft",
-        "scopus_doc_type_t_ft",
-        "scopus_doc_type_t_lookup_exact"
-      ]
+      "q": "(display_type_i:(263) AND object_type_i:(3) AND ismemberof_mt:(UQ\\:357493) AND status_i:(2))",
+      "json.nl": "map",
+      "wt": "json",
+      "rows": "5"
     }
   },
   "response": {
-    "numFound": 5,
+    "numFound": 2071,
     "start": 0,
     "docs": [
       {
-        "id": "UQ:353892",
+        "id": "UQ:358453",
         "object_type_i": 3,
         "display_type_i": 263,
-        "file_downloads_i": 3,
-        "created_date_dt": "2015-03-16T09:58:36Z",
+        "date_dt": "2015-05-12T00:00:00Z",
+        "date_year_t": "2015",
+        "file_downloads_i": 0,
+        "created_date_dt": "2015-05-12T10:10:31Z",
         "created_date_year_t": "2015",
-        "updated_date_dt": "2015-04-27T15:48:58Z",
+        "updated_date_dt": "2015-05-12T10:10:31Z",
         "updated_date_year_t": "2015",
-        "title_t": "Translation of \"I eat\".",
-        "depositor_i": 19929,
-        "pid_t": "UQ:353892",
-        "description_t": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960's. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, \"migrants\" and \"mother-tongue\" people from different ages, regions or socio-economic groups.",
+        "title_t": "Translation of \"I cough\"",
+        "depositor_i": 4379,
+        "pid_t": "UQ:358453",
+        "description_t": "This collection comprises written documents and recordings collected by Elwyn Flint, mostly as part of his long term research project in the 1960s, known as the Queensland Speech Survey. The survey includes recordings of Indigenous Languages spoken by Aboriginal people all over the state and those spoken in the Torres Strait Islands. It remains the largest and broadest collection of languages spoken in Queensland in the 20th century.",
         "sequence_i": 0,
-        "genre_t": "audio\/wav",
-        "views_i": 15,
+        "genre_t": "audio/wav",
+        "views_i": 0,
         "status_i": 2,
-        "depositor_affiliation_i": 1164,
-        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;I eat&amp;quot;.\" href=\"\/view\/UQ:353892\">Translation of &quot;I eat&quot;.<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"/list/author/Flint%2C+Elwyn+Henry/\">Flint, Elwyn Henry</a> (<span class=\"citation_date\">2015</span>) <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;I cough&amp;quot;\" href=\"/view/UQ:358453\">Translation of &quot;I cough&quot;</a>.  (<span class=\"citation_series\">Elwyn Flint Collection, UQFL 173</span>)",
         "object_type_i_lookup": "Record",
         "object_type_i_lookup_exact": "Record",
         "display_type_i_lookup": "Audio Document",
         "display_type_i_lookup_exact": "Audio Document",
         "status_i_lookup": "Published",
         "status_i_lookup_exact": "Published",
-        "open_access_t": "1",
-        "_authlister_t": "56573",
-        "_authcreator_t": "56550",
+        "_authlister_t": "11",
+        "_authcreator_t": "56368",
         "_autheditor_t": "56368",
+        "license_i": 453611,
+        "license_i_lookup": "Creative Commons Attribution noncommercial no derivatives",
+        "license_i_lookup_exact": "Creative Commons Attribution noncommercial no derivatives",
         "keywords_mt": [
-          "Queensland Speech Survey",
           "Aboriginal Australians -- Languages",
+          "Queensland Speech Survey",
+          "English Language -- Dialects – Australia"
+        ],
+        "transcript_t": "Researcher: ((coughs)). I cough.<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Participant: Yeah, that's easy. Easy there.<br /> Researcher: (Traditional Language). (unclear) (Traditional Language). Yes, (Traditional Language).<br /> Participant: Easy, that one. Just the one. <br /> Participant: (Traditional Language)<br /> Researcher: Yes.",
+        "advisory_statement_t": "Aboriginal and Torres Strait Islander material and information accessed on this site may be culturally sensitive for some individuals and communities. The University of Queensland has approval from descendants of the people who participated in Elwyn Flint’s Queensland Speech Survey in 1960s.",
+        "acknowledgements_t": "This project is supported by the Australian National Data Service (ANDS). ANDS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy Program.",
+        "date_recorded_dt": "1964-10-24T00:00:00Z",
+        "date_recorded_year_t": "1964",
+        "assigned_user_id_mt": [
+          "4379"
+        ],
+        "author_mt": [
+          "Flint, Elwyn Henry"
+        ],
+        "author_mt_exact": [
+          "Flint, Elwyn Henry"
+        ],
+        "contributor_mt": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_mt_exact": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_id_mi": [
+          0,
+          0
+        ],
+        "contributor_id_mi_lookup": [
+          "0",
+          "0"
+        ],
+        "contributor_id_mi_lookup_exact": [
+          "0",
+          "0"
+        ],
+        "series_t": "Elwyn Flint Collection, UQFL 173",
+        "identifier_mt": [
+          "Group 298"
+        ],
+        "subject_mi": [
+          453670
+        ],
+        "subject_mi_lookup": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_lookup_exact": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_cv_desc_lookup": [
+          "Qld SE54-05"
+        ],
+        "subject_mi_cv_id_lookup": [
+          "G34"
+        ],
+        "date_available_dt": "2015-01-01T00:00:00Z",
+        "date_available_year_t": "2015",
+        "language_mt": [
+          "eng"
+        ],
+        "file_attachment_name_mt": [
+          "UQFL173_b57_R298A_2862580.mp3",
+          "UQFL173_b57_R298A_2862580.wav",
+          "presmd_UQFL173_b57_R298A_2862580.xml",
+          "stream_UQFL173_b57_R298A_2862580.flv"
+        ],
+        "ismemberof_mt": [
+          "UQ:357493"
+        ],
+        "ismemberof_mt_lookup": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "ismemberof_mt_lookup_exact": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "rights_t": "Please contact the Fryer Library, The University of Queensland Library to inquire about this work.",
+        "first_author_in_document_derived_t": "Flint",
+        "source_t": "Elwyn Flint Collection, UQFL 173, Box 57, Tape R298A, 2862.58sec to 2871.94sec.",
+        "alternate_genre_mi": [
+          453667
+        ],
+        "alternate_genre_mi_lookup": [
           "Traditional language sentence"
         ],
-        "refereed_source_i": 453638,
-        "refereed_source_i_lookup": "Not yet assessed",
-        "refereed_source_i_lookup_exact": "Not yet assessed",
-        "transcript_t": "Researcher Speech Eat. I eat.<br \/>Participant Speech (L)<br \/>Researcher Speech (L)<br \/>Participant Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/>Researcher Speech (L)<br \/><br \/>",
-        "acknowledgements_t": "This project supported by the Australian National Data Service [MODC 23]",
-        "assigned_user_id_mt": ["19929"],
-        "author_mt": ["Flint, Elwyn Henry"],
-        "author_mt_exact": ["Flint, Elwyn Henry"],
-        "contributor_mt": ["Conway, Eddie"],
-        "contributor_mt_exact": ["Conway, Eddie"],
-        "series_t": "Elwyn Flint collection, UQFL173",
-        "identifier_mt": ["Group 329"],
-        "subject_mi": [453670],
-        "subject_mi_lookup": ["Yukulta \/ Gangalidda"],
-        "subject_mi_lookup_exact": ["Yukulta \/ Gangalidda"],
-        "date_available_dt": "2015-01-01T00:00:00Z",
-        "date_available_year_t": "2015",
-        "file_attachment_name_mt": [
-          "UQFL173_b41_R329_1112064.wav",
-          "presmd_UQFL173_b41_R329_1112064.xml",
-          "stream_UQFL173_b41_R329_1112064.flv"
+        "alternate_genre_mi_lookup_exact": [
+          "Traditional language sentence"
         ],
-        "ismemberof_mt": ["UQ:353627"],
-        "ismemberof_mt_lookup": ["Flint test"],
-        "ismemberof_mt_lookup_exact": ["Flint test"],
-        "first_author_in_document_derived_t": "Flint",
-        "source_t": "Elwyn Flint collection, UQFL173, Box 41, Tape R329,",
-        "alternate_genre_mi": [453663],
-        "alternate_genre_mi_lookup": ["Conversation"],
-        "alternate_genre_mi_lookup_exact": ["Conversation"],
-        "_version_": 1499667357095690240,
-        "timestamp": "2015-04-28T04:10:41.602Z"
+        "length_t": "9.36sec",
+        "location_mt": [
+          "Doomadgee"
+        ],
+        "_version_": 1500920615085801500,
+        "timestamp": "2015-05-12T00:10:41.569Z"
       },
       {
-        "id": "UQ:353641",
+        "id": "UQ:358463",
         "object_type_i": 3,
         "display_type_i": 263,
-        "file_downloads_i": 2,
-        "created_date_dt": "2015-03-11T15:36:41Z",
+        "date_dt": "2015-05-12T00:00:00Z",
+        "date_year_t": "2015",
+        "file_downloads_i": 0,
+        "created_date_dt": "2015-05-12T10:12:14Z",
         "created_date_year_t": "2015",
-        "updated_date_dt": "2015-04-27T15:49:52Z",
+        "updated_date_dt": "2015-05-12T10:12:14Z",
         "updated_date_year_t": "2015",
-        "title_t": "Translation of 'head' and 'hair (of head)'.",
-        "depositor_i": 19929,
-        "pid_t": "UQ:353641",
-        "description_t": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960's. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, \"migrants\" and \"mother-tongue\" people from different ages, regions or socio-economic groups.",
+        "title_t": "Translation of \"married couple\"",
+        "depositor_i": 4379,
+        "pid_t": "UQ:358463",
+        "description_t": "This collection comprises written documents and recordings collected by Elwyn Flint, mostly as part of his long term research project in the 1960s, known as the Queensland Speech Survey. The survey includes recordings of Indigenous Languages spoken by Aboriginal people all over the state and those spoken in the Torres Strait Islands. It remains the largest and broadest collection of languages spoken in Queensland in the 20th century.",
         "sequence_i": 0,
-        "genre_t": "audio\/wav",
-        "views_i": 23,
+        "genre_t": "audio/wav",
+        "views_i": 0,
         "status_i": 2,
-        "depositor_affiliation_i": 1164,
-        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of 'head' and 'hair (of head)'.\" href=\"\/view\/UQ:353641\">Translation of 'head' and 'hair (of head)'.<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"/list/author/Flint%2C+Elwyn+Henry/\">Flint, Elwyn Henry</a> (<span class=\"citation_date\">2015</span>) <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;married couple&amp;quot;\" href=\"/view/UQ:358463\">Translation of &quot;married couple&quot;</a>.  (<span class=\"citation_series\">Elwyn Flint Collection, UQFL 173</span>)",
         "object_type_i_lookup": "Record",
         "object_type_i_lookup_exact": "Record",
         "display_type_i_lookup": "Audio Document",
         "display_type_i_lookup_exact": "Audio Document",
         "status_i_lookup": "Published",
         "status_i_lookup_exact": "Published",
-        "open_access_t": "1",
-        "_authlister_t": "56573",
-        "_authcreator_t": "56550",
+        "_authlister_t": "11",
+        "_authcreator_t": "56368",
         "_autheditor_t": "56368",
+        "license_i": 453611,
+        "license_i_lookup": "Creative Commons Attribution noncommercial no derivatives",
+        "license_i_lookup_exact": "Creative Commons Attribution noncommercial no derivatives",
         "keywords_mt": [
           "Aboriginal Australians -- Languages",
           "Queensland Speech Survey",
+          "English Language -- Dialects – Australia"
+        ],
+        "transcript_t": "Researcher: Now, a word for husband and wife, you know, married per-, two married persons. Husband and wife. Is there a special word for that? (unclear).<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Researcher: (Traditional Language)",
+        "advisory_statement_t": "Aboriginal and Torres Strait Islander material and information accessed on this site may be culturally sensitive for some individuals and communities. The University of Queensland has approval from descendants of the people who participated in Elwyn Flint’s Queensland Speech Survey in 1960s.",
+        "acknowledgements_t": "This project is supported by the Australian National Data Service (ANDS). ANDS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy Program.",
+        "date_recorded_dt": "1964-10-24T00:00:00Z",
+        "date_recorded_year_t": "1964",
+        "assigned_user_id_mt": [
+          "4379"
+        ],
+        "author_mt": [
+          "Flint, Elwyn Henry"
+        ],
+        "author_mt_exact": [
+          "Flint, Elwyn Henry"
+        ],
+        "contributor_mt": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_mt_exact": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_id_mi": [
+          0,
+          0
+        ],
+        "contributor_id_mi_lookup": [
+          "0",
+          "0"
+        ],
+        "contributor_id_mi_lookup_exact": [
+          "0",
+          "0"
+        ],
+        "series_t": "Elwyn Flint Collection, UQFL 173",
+        "identifier_mt": [
+          "Group 298"
+        ],
+        "subject_mi": [
+          453670
+        ],
+        "subject_mi_lookup": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_lookup_exact": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_cv_desc_lookup": [
+          "Qld SE54-05"
+        ],
+        "subject_mi_cv_id_lookup": [
+          "G34"
+        ],
+        "date_available_dt": "2015-01-01T00:00:00Z",
+        "date_available_year_t": "2015",
+        "language_mt": [
+          "eng"
+        ],
+        "file_attachment_name_mt": [
+          "UQFL173_b57_R298B_117725.mp3",
+          "UQFL173_b57_R298B_117725.wav",
+          "presmd_UQFL173_b57_R298B_117725.xml",
+          "stream_UQFL173_b57_R298B_117725.flv"
+        ],
+        "ismemberof_mt": [
+          "UQ:357493"
+        ],
+        "ismemberof_mt_lookup": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "ismemberof_mt_lookup_exact": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "rights_t": "Please contact the Fryer Library, The University of Queensland Library to inquire about this work.",
+        "first_author_in_document_derived_t": "Flint",
+        "source_t": "Elwyn Flint Collection, UQFL 173, Box 57, Tape R298B, 117.725sec to 129.345sec.",
+        "alternate_genre_mi": [
+          453668
+        ],
+        "alternate_genre_mi_lookup": [
           "Traditional language word"
         ],
-        "refereed_source_i": 453638,
-        "refereed_source_i_lookup": "Not yet assessed",
-        "refereed_source_i_lookup_exact": "Not yet assessed",
-        "transcript_t": "Researcher Speech The word for head, you know, the whole of the head.<br \/>Participant Speech Yeah.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech That's the same as in Yidinji. []. Yes.<br \/>Participant Speech Well that's head.<br \/>Researcher Speech That's right.<br \/>Participant Speech This one<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech What is that, hair?<br \/>Participant Speech Mm, hair, that one. <br \/>Researcher Speech Now, I'll come to that in a moment, perhaps we (unclear) take it...<br \/>Participant Speech Mm, alright.<br \/>Researcher Speech Oh well, alright, hair of the head, yes?<br \/>Participant Speech Yeah, yeah.<br \/>Researcher Speech Yeah, yep, and you said what sorry?<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech The hair of the head, what was that sorry?<br \/>Participant Speech Oh.<br \/>Participant Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>Researcher Speech (Traditional Language)<br \/>",
-        "acknowledgements_t": "This project supported by the Australia National Data Service [MODC 23]",
-        "assigned_user_id_mt": ["19929"],
-        "author_mt": ["Flint, Elwyn Henry"],
-        "author_mt_exact": ["Flint, Elwyn Henry"],
-        "contributor_mt": ["Conway, Eddie"],
-        "contributor_mt_exact": ["Conway, Eddie"],
-        "series_t": "Elwyn Flint collection, UQFL173",
-        "identifier_mt": ["Group 329"],
-        "subject_mi": [453672],
-        "subject_mi_lookup": ["Kukatj"],
-        "subject_mi_lookup_exact": ["Kukatj"],
-        "date_available_dt": "2015-01-01T00:00:00Z",
-        "date_available_year_t": "2015",
-        "file_attachment_name_mt": [
-          "UQFL173_b41_R329_31604.wav",
-          "presmd_UQFL173_b41_R329_31604.xml",
-          "stream_UQFL173_b41_R329_31604.flv"
+        "alternate_genre_mi_lookup_exact": [
+          "Traditional language word"
         ],
-        "ismemberof_mt": ["UQ:353627"],
-        "ismemberof_mt_lookup": ["Flint test"],
-        "ismemberof_mt_lookup_exact": ["Flint test"],
-        "first_author_in_document_derived_t": "Flint",
-        "source_t": "Elwyn Flint collection, UQFL173, Box 41, Tape R329,",
-        "alternate_genre_mi": [453665],
-        "alternate_genre_mi_lookup": ["Session organisation"],
-        "alternate_genre_mi_lookup_exact": ["Session organisation"],
-        "_version_": 1500229597195665408,
-        "timestamp": "2015-05-04T09:07:00.335Z"
+        "length_t": "11.62sec",
+        "location_mt": [
+          "Doomadgee"
+        ],
+        "_version_": 1500920723980419000,
+        "timestamp": "2015-05-12T00:12:25.419Z"
       },
       {
-        "id": "UQ:353897",
+        "id": "UQ:358460",
         "object_type_i": 3,
         "display_type_i": 263,
-        "file_downloads_i": 4,
-        "created_date_dt": "2015-03-16T11:03:23Z",
+        "date_dt": "2015-05-12T00:00:00Z",
+        "date_year_t": "2015",
+        "file_downloads_i": 0,
+        "created_date_dt": "2015-05-12T10:11:42Z",
         "created_date_year_t": "2015",
-        "updated_date_dt": "2015-04-27T15:50:29Z",
+        "updated_date_dt": "2015-05-12T10:11:42Z",
         "updated_date_year_t": "2015",
-        "title_t": "Eddie Conway introduces himself and his language.",
-        "depositor_i": 19929,
-        "pid_t": "UQ:353897",
-        "description_t": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960's. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, \"migrants\" and \"mother-tongue\" people from different ages, regions or socio-economic groups.",
+        "title_t": "Translation of \"son/daughter\"",
+        "depositor_i": 4379,
+        "pid_t": "UQ:358460",
+        "description_t": "This collection comprises written documents and recordings collected by Elwyn Flint, mostly as part of his long term research project in the 1960s, known as the Queensland Speech Survey. The survey includes recordings of Indigenous Languages spoken by Aboriginal people all over the state and those spoken in the Torres Strait Islands. It remains the largest and broadest collection of languages spoken in Queensland in the 20th century.",
         "sequence_i": 0,
-        "genre_t": "audio\/wav",
-        "views_i": 27,
+        "genre_t": "audio/wav",
+        "views_i": 0,
         "status_i": 2,
-        "depositor_affiliation_i": 1164,
-        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Eddie Conway introduces himself and his language.\" href=\"\/view\/UQ:353897\">Eddie Conway introduces himself and his language.<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"/list/author/Flint%2C+Elwyn+Henry/\">Flint, Elwyn Henry</a> (<span class=\"citation_date\">2015</span>) <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;son/daughter&amp;quot;\" href=\"/view/UQ:358460\">Translation of &quot;son/daughter&quot;</a>.  (<span class=\"citation_series\">Elwyn Flint Collection, UQFL 173</span>)",
         "object_type_i_lookup": "Record",
         "object_type_i_lookup_exact": "Record",
         "display_type_i_lookup": "Audio Document",
         "display_type_i_lookup_exact": "Audio Document",
         "status_i_lookup": "Published",
         "status_i_lookup_exact": "Published",
-        "open_access_t": "1",
-        "_authlister_t": "56573",
-        "_authcreator_t": "56550",
+        "_authlister_t": "11",
+        "_authcreator_t": "56368",
         "_autheditor_t": "56368",
+        "license_i": 453611,
+        "license_i_lookup": "Creative Commons Attribution noncommercial no derivatives",
+        "license_i_lookup_exact": "Creative Commons Attribution noncommercial no derivatives",
         "keywords_mt": [
           "Aboriginal Australians -- Languages",
           "Queensland Speech Survey",
-          "Culture, stories, people"
+          "English Language -- Dialects – Australia"
         ],
-        "refereed_source_i": 453638,
-        "refereed_source_i_lookup": "Not yet assessed",
-        "refereed_source_i_lookup_exact": "Not yet assessed",
-        "transcript_t": "Researcher Speech Is it Wakka Wakka?<br \/>Researcher Speech Wakka, yeah, was Wakka<br \/>Participant Speech Yeah (unclear) Wakka Wakka<br \/>Researcher Speech You're Mr. What's your first name?<br \/>Participant Speech Eddie<br \/>Researcher Speech Eddie Conway, Eddie Conway<br \/>Researcher Speech And you speak Wakka Wakka. And where do you come from Eddie?<br \/>Participant Speech Springshore<br \/>Researcher Speech Springshore<br \/>Researcher Speech Oh yes, I better get this in the right place.<br \/>Researcher Speech You come from Springshore do you? Wakka Wakka. Oh yes. I see. Good.<br \/><br \/>",
-        "acknowledgements_t": "This project supported by the Australia National Data Service [MODC 23]",
-        "assigned_user_id_mt": ["19929"],
-        "author_mt": ["Flint, Elwyn Henry"],
-        "author_mt_exact": ["Flint, Elwyn Henry"],
-        "contributor_mt": ["Conway, Eddie"],
-        "contributor_mt_exact": ["Conway, Eddie"],
-        "series_t": "Elwyn Flint collection, UQFL173",
-        "identifier_mt": ["Group 329"],
-        "subject_mi": [453681],
-        "subject_mi_lookup": ["Kuku Yalanji \/ Gugu Yalandji"],
-        "subject_mi_lookup_exact": ["Kuku Yalanji \/ Gugu Yalandji"],
+        "transcript_t": "Researcher: Son. My son. My son. Your son. My son.<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Researcher: My daughter.<br /> Participant: (Traditional Language). Same.<br /> Researcher: The same, daughter.<br /> Participant: Mm.<br /> Researcher: (Traditional Language)<br /> Researcher: Same.",
+        "advisory_statement_t": "Aboriginal and Torres Strait Islander material and information accessed on this site may be culturally sensitive for some individuals and communities. The University of Queensland has approval from descendants of the people who participated in Elwyn Flint’s Queensland Speech Survey in 1960s.",
+        "acknowledgements_t": "This project is supported by the Australian National Data Service (ANDS). ANDS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy Program.",
+        "date_recorded_dt": "1964-10-24T00:00:00Z",
+        "date_recorded_year_t": "1964",
+        "assigned_user_id_mt": [
+          "4379"
+        ],
+        "author_mt": [
+          "Flint, Elwyn Henry"
+        ],
+        "author_mt_exact": [
+          "Flint, Elwyn Henry"
+        ],
+        "contributor_mt": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_mt_exact": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_id_mi": [
+          0,
+          0
+        ],
+        "contributor_id_mi_lookup": [
+          "0",
+          "0"
+        ],
+        "contributor_id_mi_lookup_exact": [
+          "0",
+          "0"
+        ],
+        "series_t": "Elwyn Flint Collection, UQFL 173",
+        "identifier_mt": [
+          "Group 298"
+        ],
+        "subject_mi": [
+          453670
+        ],
+        "subject_mi_lookup": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_lookup_exact": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_cv_desc_lookup": [
+          "Qld SE54-05"
+        ],
+        "subject_mi_cv_id_lookup": [
+          "G34"
+        ],
         "date_available_dt": "2015-01-01T00:00:00Z",
         "date_available_year_t": "2015",
-        "file_attachment_name_mt": [
-          "UQFL173_b41_R329_12818.wav",
-          "presmd_UQFL173_b41_R329_12818.xml",
-          "stream_UQFL173_b41_R329_12818.flv"
+        "language_mt": [
+          "eng"
         ],
-        "ismemberof_mt": ["UQ:353627"],
-        "ismemberof_mt_lookup": ["Flint test"],
-        "ismemberof_mt_lookup_exact": ["Flint test"],
+        "file_attachment_name_mt": [
+          "UQFL173_b57_R298B_62170.mp3",
+          "UQFL173_b57_R298B_62170.wav",
+          "presmd_UQFL173_b57_R298B_62170.xml",
+          "stream_UQFL173_b57_R298B_62170.flv"
+        ],
+        "ismemberof_mt": [
+          "UQ:357493"
+        ],
+        "ismemberof_mt_lookup": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "ismemberof_mt_lookup_exact": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "rights_t": "Please contact the Fryer Library, The University of Queensland Library to inquire about this work.",
         "first_author_in_document_derived_t": "Flint",
-        "source_t": "Elwyn Flint collection, UQFL173, Box 41, Tape R329,",
-        "_version_": 1500229597841588224,
-        "timestamp": "2015-05-04T09:07:00.335Z"
+        "source_t": "Elwyn Flint Collection, UQFL 173, Box 57, Tape R298B, 62.17sec to 81.84sec.",
+        "alternate_genre_mi": [
+          453668
+        ],
+        "alternate_genre_mi_lookup": [
+          "Traditional language word"
+        ],
+        "alternate_genre_mi_lookup_exact": [
+          "Traditional language word"
+        ],
+        "length_t": "19.67sec",
+        "location_mt": [
+          "Doomadgee"
+        ],
+        "_version_": 1500920691091832800,
+        "timestamp": "2015-05-12T00:11:54.041Z"
       },
       {
-        "id": "UQ:353898",
+        "id": "UQ:358457",
         "object_type_i": 3,
         "display_type_i": 263,
-        "file_downloads_i": 4,
-        "created_date_dt": "2015-03-16T11:16:17Z",
+        "date_dt": "2015-05-12T00:00:00Z",
+        "date_year_t": "2015",
+        "file_downloads_i": 0,
+        "created_date_dt": "2015-05-12T10:11:12Z",
         "created_date_year_t": "2015",
-        "updated_date_dt": "2015-05-06T14:02:12Z",
+        "updated_date_dt": "2015-05-12T10:11:12Z",
         "updated_date_year_t": "2015",
-        "title_t": "Song (untitled)",
-        "depositor_i": 19929,
-        "pid_t": "UQ:353898",
-        "description_t": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960's. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, \"migrants\" and \"mother-tongue\" people from different ages, regions or socio-economic groups.",
+        "title_t": "Translation of \"father's mother\"",
+        "depositor_i": 4379,
+        "pid_t": "UQ:358457",
+        "description_t": "This collection comprises written documents and recordings collected by Elwyn Flint, mostly as part of his long term research project in the 1960s, known as the Queensland Speech Survey. The survey includes recordings of Indigenous Languages spoken by Aboriginal people all over the state and those spoken in the Torres Strait Islands. It remains the largest and broadest collection of languages spoken in Queensland in the 20th century.",
         "sequence_i": 0,
-        "genre_t": "audio\/wav",
-        "views_i": 13,
+        "genre_t": "audio/wav",
+        "views_i": 0,
         "status_i": 2,
-        "depositor_affiliation_i": 1164,
-        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Song (untitled)\" href=\"\/view\/UQ:353898\">Song (untitled)<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"/list/author/Flint%2C+Elwyn+Henry/\">Flint, Elwyn Henry</a> (<span class=\"citation_date\">2015</span>) <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;father's mother&amp;quot;\" href=\"/view/UQ:358457\">Translation of &quot;father's mother&quot;</a>.  (<span class=\"citation_series\">Elwyn Flint Collection, UQFL 173</span>)",
         "object_type_i_lookup": "Record",
         "object_type_i_lookup_exact": "Record",
         "display_type_i_lookup": "Audio Document",
         "display_type_i_lookup_exact": "Audio Document",
         "status_i_lookup": "Published",
         "status_i_lookup_exact": "Published",
-        "open_access_t": "1",
-        "_authlister_t": "56573",
-        "_authcreator_t": "56550",
+        "_authlister_t": "11",
+        "_authcreator_t": "56368",
         "_autheditor_t": "56368",
+        "license_i": 453611,
+        "license_i_lookup": "Creative Commons Attribution noncommercial no derivatives",
+        "license_i_lookup_exact": "Creative Commons Attribution noncommercial no derivatives",
         "keywords_mt": [
-          "Queensland Speech Survey",
           "Aboriginal Australians -- Languages",
-          "Song"
+          "Queensland Speech Survey",
+          "English Language -- Dialects – Australia"
         ],
-        "refereed_source_i": 453638,
-        "refereed_source_i_lookup": "Not yet assessed",
-        "refereed_source_i_lookup_exact": "Not yet assessed",
-        "acknowledgements_t": "This project supported by the Australia National Data Service [MODC 23]",
-        "assigned_user_id_mt": ["19929"],
-        "author_mt": ["Flint, Elwyn Henry"],
-        "author_mt_exact": ["Flint, Elwyn Henry"],
-        "contributor_mt": ["Unknown participant"],
-        "contributor_mt_exact": ["Unknown participant"],
-        "series_t": "Elwyn Flint collection, UQFL173",
-        "subject_mi": [453687],
-        "subject_mi_lookup": ["Yanyuwa \/ Yanuwa \/ Yanyula"],
-        "subject_mi_lookup_exact": ["Yanyuwa \/ Yanuwa \/ Yanyula"],
-        "subject_mi_cv_desc_lookup": ["NT SE53-04"],
-        "subject_mi_cv_id_lookup": ["N153"],
+        "transcript_t": "Researcher: Father's mother, Alice. Father's mother.<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Researcher: (Traditional Language), is it?<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Participant: Yeah.<br /> Researcher: (Traditional Language)<br /> Researcher: Father's mother (Traditional Language).",
+        "advisory_statement_t": "Aboriginal and Torres Strait Islander material and information accessed on this site may be culturally sensitive for some individuals and communities. The University of Queensland has approval from descendants of the people who participated in Elwyn Flint’s Queensland Speech Survey in 1960s.",
+        "acknowledgements_t": "This project is supported by the Australian National Data Service (ANDS). ANDS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy Program.",
+        "date_recorded_dt": "1964-10-24T00:00:00Z",
+        "date_recorded_year_t": "1964",
+        "assigned_user_id_mt": [
+          "4379"
+        ],
+        "author_mt": [
+          "Flint, Elwyn Henry"
+        ],
+        "author_mt_exact": [
+          "Flint, Elwyn Henry"
+        ],
+        "contributor_mt": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_mt_exact": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_id_mi": [
+          0,
+          0
+        ],
+        "contributor_id_mi_lookup": [
+          "0",
+          "0"
+        ],
+        "contributor_id_mi_lookup_exact": [
+          "0",
+          "0"
+        ],
+        "series_t": "Elwyn Flint Collection, UQFL 173",
+        "identifier_mt": [
+          "Group 298"
+        ],
+        "subject_mi": [
+          453670
+        ],
+        "subject_mi_lookup": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_lookup_exact": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_cv_desc_lookup": [
+          "Qld SE54-05"
+        ],
+        "subject_mi_cv_id_lookup": [
+          "G34"
+        ],
         "date_available_dt": "2015-01-01T00:00:00Z",
         "date_available_year_t": "2015",
-        "file_attachment_name_mt": [
-          "UQFL173_b50_R193L_sideA_254090.wav",
-          "presmd_UQFL173_b50_R193L_sideA_254090.xml",
-          "stream_UQFL173_b50_R193L_sideA_254090.flv"
+        "language_mt": [
+          "eng"
         ],
-        "ismemberof_mt": ["UQ:353627"],
-        "ismemberof_mt_lookup": ["Flint test"],
-        "ismemberof_mt_lookup_exact": ["Flint test"],
+        "file_attachment_name_mt": [
+          "UQFL173_b57_R298B_21870.mp3",
+          "UQFL173_b57_R298B_21870.wav",
+          "presmd_UQFL173_b57_R298B_21870.xml",
+          "stream_UQFL173_b57_R298B_21870.flv"
+        ],
+        "ismemberof_mt": [
+          "UQ:357493"
+        ],
+        "ismemberof_mt_lookup": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "ismemberof_mt_lookup_exact": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "rights_t": "Please contact the Fryer Library, The University of Queensland Library to inquire about this work.",
         "first_author_in_document_derived_t": "Flint",
-        "source_t": "Elwyn Flint collection, UQFL173, Box 50, Tape R193L, side A,",
-        "alternate_genre_mi": [453668],
-        "alternate_genre_mi_lookup": ["Traditional language word"],
-        "alternate_genre_mi_lookup_exact": ["Traditional language word"],
-        "_version_": 1500466164549025792,
-        "timestamp": "2015-05-06T23:47:23.255Z"
+        "source_t": "Elwyn Flint Collection, UQFL 173, Box 57, Tape R298B, 21.87sec to 36.2sec.",
+        "alternate_genre_mi": [
+          453668
+        ],
+        "alternate_genre_mi_lookup": [
+          "Traditional language word"
+        ],
+        "alternate_genre_mi_lookup_exact": [
+          "Traditional language word"
+        ],
+        "length_t": "14.33sec",
+        "location_mt": [
+          "Doomadgee"
+        ],
+        "_version_": 1500920659895648300,
+        "timestamp": "2015-05-12T00:11:24.301Z"
       },
       {
-        "id": "UQ:353640",
+        "id": "UQ:358455",
         "object_type_i": 3,
         "display_type_i": 263,
-        "file_downloads_i": 2,
-        "created_date_dt": "2015-03-11T15:22:40Z",
+        "date_dt": "2015-05-12T00:00:00Z",
+        "date_year_t": "2015",
+        "file_downloads_i": 0,
+        "created_date_dt": "2015-05-12T10:10:54Z",
         "created_date_year_t": "2015",
-        "updated_date_dt": "2015-05-04T09:27:04Z",
+        "updated_date_dt": "2015-05-12T10:10:54Z",
         "updated_date_year_t": "2015",
-        "title_t": "Wakka Wakka elicitation",
-        "depositor_i": 19929,
-        "pid_t": "UQ:353640",
-        "description_t": "The Flint papers comprise written documents collected by Flint mostly as part of a long term research project in the 1960's. In the course of this Queensland speech survey, Flint recorded traditional Aboriginal Languages. This collection also documents the Yuulngu (Gupapuyngu) language. Other parts of the collection include journal articles of languages, correspondence with field-linguists and staff from academic institutions, Indonesian material, and documentation of the English spoken by Australian Aboriginal and Torres Strait Islander peoples, Australian and regional pidgins, \"migrants\" and \"mother-tongue\" people from different ages, regions or socio-economic groups.",
+        "title_t": "Translation of \"to scratch\"",
+        "depositor_i": 4379,
+        "pid_t": "UQ:358455",
+        "description_t": "This collection comprises written documents and recordings collected by Elwyn Flint, mostly as part of his long term research project in the 1960s, known as the Queensland Speech Survey. The survey includes recordings of Indigenous Languages spoken by Aboriginal people all over the state and those spoken in the Torres Strait Islands. It remains the largest and broadest collection of languages spoken in Queensland in the 20th century.",
         "sequence_i": 0,
-        "genre_t": "audio\/wav",
-        "views_i": 26,
+        "genre_t": "audio/wav",
+        "views_i": 0,
         "status_i": 2,
-        "depositor_affiliation_i": 1164,
-        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"\/list\/author\/Flint%2C+Elwyn+Henry\/\">Flint, Elwyn Henry<\/a> () <a class=\"citation_title\" title=\"Click to view Audio Document: Wakka Wakka elicitation\" href=\"\/view\/UQ:353640\">Wakka Wakka elicitation<\/a>. : . (<span class=\"citation_series\">Elwyn Flint collection, UQFL173<\/span>)",
+        "citation_t": "<a class=\"citation_author_name\" title=\"Browse by Author Name for Flint, Elwyn Henry\" href=\"/list/author/Flint%2C+Elwyn+Henry/\">Flint, Elwyn Henry</a> (<span class=\"citation_date\">2015</span>) <a class=\"citation_title\" title=\"Click to view Audio Document: Translation of &amp;quot;to scratch&amp;quot;\" href=\"/view/UQ:358455\">Translation of &quot;to scratch&quot;</a>.  (<span class=\"citation_series\">Elwyn Flint Collection, UQFL 173</span>)",
         "object_type_i_lookup": "Record",
         "object_type_i_lookup_exact": "Record",
         "display_type_i_lookup": "Audio Document",
         "display_type_i_lookup_exact": "Audio Document",
         "status_i_lookup": "Published",
         "status_i_lookup_exact": "Published",
-        "open_access_t": "1",
-        "_authlister_t": "56573",
-        "_authcreator_t": "56550",
+        "_authlister_t": "11",
+        "_authcreator_t": "56368",
         "_autheditor_t": "56368",
+        "license_i": 453611,
+        "license_i_lookup": "Creative Commons Attribution noncommercial no derivatives",
+        "license_i_lookup_exact": "Creative Commons Attribution noncommercial no derivatives",
         "keywords_mt": [
-          "Queensland Speech Survey",
           "Aboriginal Australians -- Languages",
-          "Session organisation"
+          "Queensland Speech Survey",
+          "English Language -- Dialects – Australia"
         ],
-        "refereed_source_i": 453638,
-        "refereed_source_i_lookup": "Not yet assessed",
-        "refereed_source_i_lookup_exact": "Not yet assessed",
-        "transcript_t": "Researcher Speech Group 329<br \/>Researcher Speech Using Dr. Cappell's questionnaire<br \/>Researcher Speech Elicitation in Wakka Wakka language<br \/>",
-        "acknowledgements_t": "This project supported by the Australia National Data Service [MODC 23]",
-        "assigned_user_id_mt": ["19929"],
-        "author_mt": ["Flint, Elwyn Henry"],
-        "author_mt_exact": ["Flint, Elwyn Henry"],
-        "contributor_mt": ["Conway, Eddie"],
-        "contributor_mt_exact": ["Conway, Eddie"],
-        "series_t": "Elwyn Flint collection, UQFL173",
-        "identifier_mt": ["Group 329"],
-        "subject_mi": [453684],
-        "subject_mi_lookup": ["Wakka Wakka \/ Waka Waka \/ Waga Waga"],
-        "subject_mi_lookup_exact": ["Wakka Wakka \/ Waka Waka \/ Waga Waga"],
-        "subject_mi_cv_desc_lookup": ["Qld SG56-10"],
-        "subject_mi_cv_id_lookup": ["E28"],
+        "transcript_t": "Researcher: To scratch. To scratch the skin. Scratch.<br /> Participant: (Traditional Language)<br /> Researcher: (Traditional Language)<br /> Participant: Mm.<br /> Researcher: (Traditional Language)<br /> Researcher: To scratch the skin. (Traditional Language) means...",
+        "advisory_statement_t": "Aboriginal and Torres Strait Islander material and information accessed on this site may be culturally sensitive for some individuals and communities. The University of Queensland has approval from descendants of the people who participated in Elwyn Flint’s Queensland Speech Survey in 1960s.",
+        "acknowledgements_t": "This project is supported by the Australian National Data Service (ANDS). ANDS is supported by the Australian Government through the National Collaborative Research Infrastructure Strategy Program.",
+        "date_recorded_dt": "1964-10-24T00:00:00Z",
+        "date_recorded_year_t": "1964",
+        "assigned_user_id_mt": [
+          "4379"
+        ],
+        "author_mt": [
+          "Flint, Elwyn Henry"
+        ],
+        "author_mt_exact": [
+          "Flint, Elwyn Henry"
+        ],
+        "contributor_mt": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_mt_exact": [
+          "Elwyn Flint",
+          "Alice Gilbert"
+        ],
+        "contributor_id_mi": [
+          0,
+          0
+        ],
+        "contributor_id_mi_lookup": [
+          "0",
+          "0"
+        ],
+        "contributor_id_mi_lookup_exact": [
+          "0",
+          "0"
+        ],
+        "series_t": "Elwyn Flint Collection, UQFL 173",
+        "identifier_mt": [
+          "Group 298"
+        ],
+        "subject_mi": [
+          453670
+        ],
+        "subject_mi_lookup": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_lookup_exact": [
+          "Yukulta / Gangalidda"
+        ],
+        "subject_mi_cv_desc_lookup": [
+          "Qld SE54-05"
+        ],
+        "subject_mi_cv_id_lookup": [
+          "G34"
+        ],
         "date_available_dt": "2015-01-01T00:00:00Z",
         "date_available_year_t": "2015",
-        "file_attachment_name_mt": [
-          "UQFL173_b41_R329_2971.wav",
-          "presmd_UQFL173_b41_R329_2971.xml",
-          "stream_UQFL173_b41_R329_2971.flv"
+        "language_mt": [
+          "eng"
         ],
-        "ismemberof_mt": ["UQ:353627"],
-        "ismemberof_mt_lookup": ["Flint test"],
-        "ismemberof_mt_lookup_exact": ["Flint test"],
+        "file_attachment_name_mt": [
+          "UQFL173_b57_R298A_2918940.mp3",
+          "UQFL173_b57_R298A_2918940.wav",
+          "presmd_UQFL173_b57_R298A_2918940.xml",
+          "stream_UQFL173_b57_R298A_2918940.flv"
+        ],
+        "ismemberof_mt": [
+          "UQ:357493"
+        ],
+        "ismemberof_mt_lookup": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "ismemberof_mt_lookup_exact": [
+          "Indigenous Languages recorded in the Queensland Speech Survey (secure)"
+        ],
+        "rights_t": "Please contact the Fryer Library, The University of Queensland Library to inquire about this work.",
         "first_author_in_document_derived_t": "Flint",
-        "source_t": "Elwyn Flint collection, UQFL173, Box 41, Tape R329,",
-        "length_t": "10 seconds",
-        "_version_": 1500466224562176000,
-        "timestamp": "2015-05-06T23:48:19.638Z"
+        "source_t": "Elwyn Flint Collection, UQFL 173, Box 57, Tape R298A, 2918.94sec to 2929.61sec.",
+        "alternate_genre_mi": [
+          453668
+        ],
+        "alternate_genre_mi_lookup": [
+          "Traditional language word"
+        ],
+        "alternate_genre_mi_lookup_exact": [
+          "Traditional language word"
+        ],
+        "length_t": "10.67sec",
+        "location_mt": [
+          "Doomadgee"
+        ],
+        "_version_": 1500920639815417900,
+        "timestamp": "2015-05-12T00:11:05.153Z"
       }
     ]
-  },
-  "facet_counts": {
-    "facet_queries": [],
-    "facet_fields": {
-      "display_type_i": {"263": 5},
-      "display_type_i_lookup_exact": {"Audio Document": 5},
-      "keywords_mft": {
-        "Aboriginal Australians -- Languages": 5,
-        "Queensland Speech Survey": 5
-      },
-      "date_year_t": [],
-      "author_id_mi": [],
-      "author_id_mi_lookup_exact": [],
-      "author_mft": {"Flint, Elwyn Henry": 5},
-      "journal_name_t_ft": [],
-      "subject_mi": [],
-      "subject_mi_lookup_exact": [],
-      "ismemberof_mft": {"UQ:353627": 5},
-      "ismemberof_mt_lookup_exact": {"Flint test": 5},
-      "subtype_t_ft": [],
-      "scopus_doc_type_t_ft": [],
-      "scopus_doc_type_t_lookup_exact": []
-    },
-    "facet_dates": [],
-    "facet_ranges": []
-  },
-  "highlighting": {
-    "UQ:353892": [],
-    "UQ:353641": [],
-    "UQ:353897": [],
-    "UQ:353898": [],
-    "UQ:353640": []
   }
 }

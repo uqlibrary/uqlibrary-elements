@@ -16,11 +16,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "b277523833",
+  "_release": "93c539363f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "b27752383316a36b7a9c13e0a27eea12d935e1f9"
+    "commit": "93c539363fcaa732671b23e53c9207ba958bcc9e"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-toolbar.git",
   "_target": "master",

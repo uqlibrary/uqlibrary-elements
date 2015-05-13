@@ -58,7 +58,8 @@ Element providing access to UQ Library's API.
           var that = this;
 
           var xobj = new XMLHttpRequest();
-          xobj.overrideMimeType("application/json");
+          if (xobj.overrideMimeType)
+            xobj.overrideMimeType("application/json");
 
           console.log('URI:' + this.uri);
 

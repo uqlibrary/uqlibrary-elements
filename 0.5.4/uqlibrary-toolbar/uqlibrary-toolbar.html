@@ -74,15 +74,36 @@ Can include optional menu options
             <div hidden id="backArrow" on-tap="{{deactivateSearch}}">
                 <uqlibrary-a11y-link><paper-icon-button icon="arrow-back"></paper-icon-button></uqlibrary-a11y-link>
             </div>
-            <div hidden flex id="leftFlex">
-                <paper-input-decorator label="{{searchPlaceholderText}}">
-                    <input is="core-input" id="searchInputField" on-keypress="{{searchKeyPressed}}">
+            <div hidden flex id="leftFlex" class="offCanvas">
+
+                <core-a11y-keys target="{{$.searchInputField}}"
+                                keys="up down enter esc"
+                                on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
+
+
+                <paper-input-decorator label="{{searchPlaceholderText}}" id="searchFieldWrapper">
+                    <input is="core-input" id="searchInputField" value="{{searchFieldValue}}" on-keyup="{{searchKeyPressed}}">
                 </paper-input-decorator>
+
+                <paper-dropdown id="autosuggest"
+                                class="no-padding"
+                                relatedTarget="{{$.searchFieldWrapper}}"
+                                autoFocusDisabled="true">
+                    <core-selector selected="{{selectedSuggestion}}"
+                                   selectedAttribute=""
+                                   id="suggestionSelector">
+                        <template repeat="{{suggestions as item}}">
+                            <paper-item on-tap="{{onTapSuggestion}}">
+                                <div class="{{type + ' truncate' + (recent ? ' recent' : '')}}">{{item.text}}</div>
+                            </paper-item>
+                        </template>
+                    </core-selector>
+                </paper-dropdown>
+
             </div>
             <div hidden id="rightFlex" on-tap="{{searchButtonClicked}}">
                 <uqlibrary-a11y-link><paper-icon-button icon="search" id="searchButton"></paper-icon-button></uqlibrary-a11y-link>
             </div>
-
             <!--<div flex>-->
             <!--<uq-search behaviour="[siteSearch, library.uq.edu.au]"></uq-search>-->
             <!--</div>-->
@@ -97,24 +118,25 @@ Can include optional menu options
             <!--</template>-->
             <!--</ul>-->
             <!--</div>-->
-            <div id="appLinksIcon">
-                <template if="{{appLinks}}">
-                <paper-menu-button>
-                    <paper-icon-button icon="more-vert"></paper-icon-button>
-                    <paper-dropdown class="dropdown" halign="right">
-                        <core-menu class="menu">
-                            <template repeat="{{link in appLinks}}">
-                                <uqlibrary-a11y-link>
-                                    <paper-item><a href="{{link.url}}">{{link.label}}</a></paper-item>
-                                </uqlibrary-a11y-link>
-                            </template>
-                        </core-menu>
-                    </paper-dropdown>
-                </paper-menu-button>
-                </template>
-            </div>
-        </core-toolbar>
 
+            <template if="{{(appLinks.length > 0)}}">
+                <div id="appLinksIcon">
+                    <paper-menu-button>
+                        <paper-icon-button icon="more-vert"></paper-icon-button>
+                        <paper-dropdown class="dropdown" halign="right">
+                            <core-menu class="menu">
+                                <template repeat="{{link in appLinks}}">
+                                    <uqlibrary-a11y-link>
+                                        <paper-item><a href="{{link.url}}">{{link.label}}</a></paper-item>
+                                    </uqlibrary-a11y-link>
+                                </template>
+                            </core-menu>
+                        </paper-dropdown>
+                    </paper-menu-button>
+                </div>
+            </template>
+
+        </core-toolbar>
         <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
     </template>
     <script>
@@ -122,18 +144,24 @@ Can include optional menu options
 
             // TODO: uqLinks variable should be set by the uqLinks attribute
             animationFrameLength: 150,
-
+            searchAutosuggestHandler: null,
+            searchFieldValue: '',
+            suggestions: [],
+            selectedSuggestion: 0,
+            skipValueChangeHandle: false,
+            previousKey: '',
             ready: function() {
-                console.log(this.appLinks);
-                console.log(this.searchPlaceholderText);
                 if (!this.searchPlaceholderText) {
                     this.searchPlaceholderText = "Search";
                 }
+
+                this.initAutosuggestHandler();
             },
 
             created: function() {
                 // hint that appLinks is an array
                 this.appLinks = [];
+
             },
 
             // TODO: loop through a function to do this animation
@@ -146,14 +174,18 @@ Can include optional menu options
                     that.$.hamburgerMenuIcon.classList.toggle('invisible');
                     that.$.toolbarTitle.classList.toggle('invisible');
                     that.$.expandSearch.classList.toggle('invisible');
-                    that.$.appLinksIcon.classList.toggle('invisible');
+                    if (that.$.appLinksIcon != undefined) {
+                        that.$.appLinksIcon.classList.toggle('invisible');
+                    }
                 }, 0);
 
                 setTimeout(function() {
                     that.$.hamburgerMenuIcon.setAttribute('hidden', true);
                     that.$.toolbarTitle.setAttribute('hidden', true);
                     that.$.expandSearch.setAttribute('hidden', true);
-                    that.$.appLinksIcon.setAttribute('hidden', true);
+                    if (that.$.appLinksIcon != undefined) {
+                        that.$.appLinksIcon.setAttribute('hidden', true);
+                    }
                     that.$.backArrow.removeAttribute('hidden');
                     that.$.leftFlex.removeAttribute('hidden');
                     that.$.rightFlex.removeAttribute('hidden');
@@ -168,7 +200,9 @@ Can include optional menu options
                     that.$.hamburgerMenuIcon.removeAttribute('hidden');
                     that.$.toolbarTitle.removeAttribute('hidden');
                     that.$.expandSearch.removeAttribute('hidden');
-                    that.$.appLinksIcon.removeAttribute('hidden');
+                    if (that.$.appLinksIcon != undefined) {
+                        that.$.appLinksIcon.removeAttribute('hidden');
+                    }
                     that.$.backArrow.setAttribute('hidden', true);
                     that.$.leftFlex.setAttribute('hidden', true);
                     that.$.rightFlex.setAttribute('hidden', true);
@@ -179,7 +213,9 @@ Can include optional menu options
                     that.$.hamburgerMenuIcon.classList.toggle('invisible');
                     that.$.toolbarTitle.classList.toggle('invisible');
                     that.$.expandSearch.classList.toggle('invisible');
-                    that.$.appLinksIcon.classList.toggle('invisible');
+                    if (that.$.appLinksIcon != undefined) {
+                        that.$.appLinksIcon.classList.toggle('invisible');
+                    }
                 }, that.animationFrameLength);
             },
 
@@ -190,9 +226,107 @@ Can include optional menu options
             searchButtonClicked: function() {
                 this.fire('uqlibrary-toolbar-search-button-clicked', {searchTerm: this.$.searchInputField.value});
             },
+
+            searchFieldValueChanged: function(oldValue, newValue) {
+                if(this.skipValueChangeHandle){
+                    this.skipValueChangeHandle = false;
+                    return;
+                }
+                this.fire('uqlibrary-toolbar-search-value-changed', {value: newValue});
+            },
+
             searchKeyPressed: function(e) {
-                this.fire('uqlibrary-toolbar-search-key-pressed', {searchTerm: this.$.searchInputField.value, keyPressed: e.keyCode});
+                this.fire('uqlibrary-toolbar-search-key-pressed', {searchTerm: this.searchFieldValue, keyPressed: e.keyCode});
+            },
+
+            initAutosuggestHandler: function() {
+                var that = this;
+                this.addEventListener('uqlibrary-toolbar-search-autosuggestions-loaded', function(e) {
+                    var _data = e.detail.data;
+                    if(_data.constructor === Array) {
+                        that.suggestions = _data;
+                        that.selectedSuggestion = -1;
+                        that.showSuggestions();
+                    }
+
+
+
+                });
+            },
+            onSearchKeys: function (ev) {
+                if (ev.detail.key === 'down' && this.selectedSuggestion < (this.suggestions.length-1)) {
+                    this.selectedSuggestion++;
+                }
+                else if (ev.detail.key === 'up') {
+                    if (this.selectedSuggestion > 0) {
+                        this.selectedSuggestion--;
+                    } else {
+                        this.selectedSuggestion = -1;
+                    }
+                }
+                else if (ev.detail.key === 'enter') {
+                    if (
+                            this.selectedSuggestion >= 0 &&
+                            this.previousKey &&
+                            (this.previousKey === 'up' || this.previousKey === 'down')
+                    ) {
+                        this.async(function () {
+                            this.suggestionSearch();
+                        }, 100);
+                    } else {
+                        this.search();
+                    }
+                }
+                else if (ev.detail.key === 'esc') {
+                    this.selectedSuggestion = -1;
+                    this.$.autosuggest.opened = false;
+                    this.$.filters.opened = false;
+                }
+                this.previousKey = ev.detail.key;
+            },
+
+            onTapSuggestion: function () {
+                this.async(function () {
+                    this.suggestionSearch();
+                }, 100);
+            },
+
+
+            suggestionSearch: function () {
+                var suggestion = this.suggestions[this.selectedSuggestion];
+
+                if(suggestion.hasOwnProperty('url')) {
+                    window.location.href = suggestion.url;
+                } else {
+                    this.skipValueChangeHandle = true;
+                    this.searchFieldValue = suggestion.text;
+                    this.search();
+                    this.$.autosuggest.opened = false;
+                }
+
+            },
+
+            search: function() {
+                this.fire('uqlibrary-toolbar-search-submit', {searchTerm: this.searchFieldValue});
+            },
+
+
+            showSuggestions: function () {
+                this.async(function () {
+                    if (this.suggestions.length > 1 && !this.searching) {
+                        this.$.autosuggest.opened = true;
+                    }
+                    else if (this.$.autosuggest.opened) {
+                        this.$.autosuggest.opened = false;
+                    }
+                }, 100);
+            },
+
+            clearSearchForm: function() {
+              this.skipValueChangeHandle = true;
+              this.searchFieldValue = '';
             }
+
         });
     </script>
 </polymer-element>
