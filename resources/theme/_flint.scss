@@ -265,6 +265,9 @@ uqlibrary-flint {
           @media (min-width: ($responsive-width + 1)) {
             vertical-align: super;
           }
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            vertical-align: middle;
+          }
         }
       }
     }
