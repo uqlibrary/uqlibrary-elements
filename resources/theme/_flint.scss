@@ -272,17 +272,6 @@ uqlibrary-flint {
   width: 44px;
   height: 44px;
 }
-.flint-responsive-menu-icon {
-  @media (min-width: ($responsive-width*2)) {
-    display: none;
-  }
-}
-.flint-responsive-menu-toggle-icon {
-  @media (min-width: ($responsive-width + 1)) {
-    display: none;
-  }
-}
-
 html /deep/ div.gmnoscreen {
   display: none;
 }
