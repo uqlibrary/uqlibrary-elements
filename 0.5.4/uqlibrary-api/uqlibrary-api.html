@@ -58,14 +58,9 @@ Element providing access to UQ Library's API.
           var that = this;
 
           var xobj = new XMLHttpRequest();
-//          if (xobj.overrideMimeType)
-//            xobj.overrideMimeType("application/json");
-
           console.log('URI:' + this.uri);
 
           var substringTo = this.uri.indexOf('?') > 0 ? this.uri.indexOf('?') : this.uri.length;
-
-          //var fileName = '../uqlibrary-api/mock/' + this.uri.substring(1, substringTo).replace(/([^a-z]\/)/gi, '_') + '_' + this.method.toLowerCase() + '.json';
           var fileName = this.resolvePath('mock/' + this.uri.substring(1, substringTo).replace(/([^a-z0-9]\/)/gi, '_') + '_' + this.method.toLowerCase() +'.json');
 
           console.log('Filename:' + fileName);

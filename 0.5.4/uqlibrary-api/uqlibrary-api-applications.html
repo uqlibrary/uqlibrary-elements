@@ -91,7 +91,6 @@ data is stored in /data/applications.json in following format (order is importan
           var that = this;
 
           var xobj = new XMLHttpRequest();
-          xobj.overrideMimeType("application/json");
           xobj.open('GET', this.resolvePath(this.baseApiUrl + this.url), true);
 
           xobj.onreadystatechange = function () {
