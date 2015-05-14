@@ -313,7 +313,7 @@ Can include optional menu options
 
             showSuggestions: function () {
                 this.async(function () {
-                    if (this.suggestions.length > 1 && !this.searching) {
+                    if (this.suggestions.length > 0 && !this.searching) {
                         this.$.autosuggest.opened = true;
                     }
                     else if (this.$.autosuggest.opened) {
