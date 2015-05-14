@@ -5,6 +5,12 @@
 
 uqlibrary-flint {
   /deep/ {
+    #animatedPages {
+//      width: 50%;
+    }
+    #animatedDrawerPages {
+//      width: 50%;
+    }
     paper-action-dialog {
       border-radius: 2px;
       max-width: 500px;
@@ -264,7 +270,16 @@ uqlibrary-flint {
     }
   }
 }
-
+.flint-responsive-menu-icon {
+  @media (min-width: ($responsive-width*2)) {
+    display: none;
+  }
+}
+.flint-responsive-menu-toggle-icon {
+  @media (min-width: ($responsive-width + 1)) {
+    display: none;
+  }
+}
 .flint-item-info {
   height: 112px;
   background-color: $background-primary;

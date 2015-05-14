@@ -1580,6 +1580,14 @@ uqlibrary-flint /deep/ [drawer] {
     uqlibrary-flint /deep/ [drawer] /deep/ #uq-library-logo-text {
       vertical-align: super; } }
 
+@media (min-width: 1536px) {
+  .flint-responsive-menu-icon {
+    display: none; } }
+
+@media (min-width: 769px) {
+  .flint-responsive-menu-toggle-icon {
+    display: none; } }
+
 .flint-item-info {
   height: 112px;
   background-color: #FAFAFA; }
