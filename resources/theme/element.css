@@ -1561,14 +1561,6 @@ uqlibrary-flint /deep/ [drawer] {
   width: 44px;
   height: 44px; }
 
-@media (min-width: 1536px) {
-  .flint-responsive-menu-icon {
-    display: none; } }
-
-@media (min-width: 769px) {
-  .flint-responsive-menu-toggle-icon {
-    display: none; } }
-
 html /deep/ div.gmnoscreen {
   display: none; }
 
