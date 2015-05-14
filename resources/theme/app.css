@@ -1563,6 +1563,9 @@ uqlibrary-flint /deep/ [drawer] {
     @media (max-width: 768px) {
       uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
         display: none; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
+        display: none; } }
   uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
     border-right: 1px solid white;
     margin-right: 10px;
@@ -1570,6 +1573,9 @@ uqlibrary-flint /deep/ [drawer] {
     @media (min-width: 769px) {
       uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
         display: none; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+        display: inline; } }
   @media (min-width: 769px) {
     uqlibrary-flint /deep/ [drawer] /deep/ #uq-library-logo-text {
       vertical-align: super; } }

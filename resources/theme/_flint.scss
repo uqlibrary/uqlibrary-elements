@@ -240,6 +240,9 @@ uqlibrary-flint {
           @media (max-width: $responsive-width) {
             display: none;
           }
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: none;
+          }
         }
         #uq-logo-text {
           border-right: 1px solid white;
@@ -247,6 +250,9 @@ uqlibrary-flint {
           padding-right: 14px;
           @media (min-width: ($responsive-width + 1)) {
             display: none;
+          }
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            display: inline;
           }
         }
         #uq-library-logo-text {
