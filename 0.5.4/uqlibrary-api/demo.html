@@ -248,9 +248,10 @@
         var flintCat = document.querySelector('uqlibrary-api-flint-categories');
         flintCat.addEventListener('uqlibrary-api-flint-categories-loaded', function(e) {
           document.getElementById('flintCategoriesLog').innerText += JSON.stringify(e.detail.groups);
+          document.getElementById('flintCategoriesLog').innerText += JSON.stringify(e.detail.items);
         });
         flintCat.get({ getVoices: true });
-        flintCat.get({ getLanguages: true });
+//        flintCat.get({ getLanguages: true });
 
         var flintRecords = document.querySelector('uqlibrary-api-flint-records');
         flintRecords.addEventListener('uqlibrary-api-flint-records-loaded', function(e) {

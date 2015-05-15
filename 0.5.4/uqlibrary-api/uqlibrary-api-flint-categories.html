@@ -60,7 +60,7 @@ Element providing list of languages or interviewees for Flint language survey
 
               //order data
               that.data.sort(function (item1, item2) {
-                if (item1.cvo_title < item2.cvo_title)
+                if (item1.cvo_title.toUpperCase() < item2.cvo_title.toUpperCase())
                   return -1;
                 else
                   return 1;
@@ -69,7 +69,7 @@ Element providing list of languages or interviewees for Flint language survey
               //create an index of letter/item count
               var letterCountList = [];
               data.forEach(function (item) {
-                var startLetter = item.cvo_title[0].toUpperCase();
+                var startLetter = item.cvo_title.toUpperCase()[0];
 
                 if (letterCountList[startLetter]) {
                   letterCountList[startLetter] = letterCountList[startLetter] + 1;
