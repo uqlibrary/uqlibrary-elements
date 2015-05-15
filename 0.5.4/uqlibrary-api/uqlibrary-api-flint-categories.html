@@ -46,7 +46,17 @@ Element providing list of languages or interviewees for Flint language survey
 
             if (e.detail) {
 
-              that.data = e.detail;
+              var data = e.detail.filter(function(item){
+                if (!item.cvo_title)
+                  item.cvo_title = item.rek_contributor;
+
+                if (!item.record_count)
+                  item.record_count = item.interviewee_count;
+
+                return item.record_count && item.record_count > 0;
+              });
+
+              that.data = data;
 
               //order data
               that.data.sort(function (item1, item2) {
@@ -58,13 +68,7 @@ Element providing list of languages or interviewees for Flint language survey
 
               //create an index of letter/item count
               var letterCountList = [];
-              that.data.forEach(function (item) {
-                if (!item.cvo_title)
-                  item.cvo_title = item.rek_contributor;
-
-                if (!item.record_count)
-                  item.record_count = item.interviewee_count;
-
+              data.forEach(function (item) {
                 var startLetter = item.cvo_title[0].toUpperCase();
 
                 if (letterCountList[startLetter]) {
