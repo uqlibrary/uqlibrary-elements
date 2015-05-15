@@ -82,7 +82,7 @@ Can include optional menu options
 
 
                 <paper-input-decorator label="{{searchPlaceholderText}}" id="searchFieldWrapper">
-                    <input is="core-input" id="searchInputField" value="{{searchFieldValue}}" on-keyup="{{searchKeyPressed}}">
+                    <input is="core-input" id="searchInputField" value="{{searchFieldValue}}">
                 </paper-input-decorator>
 
                 <paper-dropdown id="autosuggest"
@@ -104,20 +104,6 @@ Can include optional menu options
             <div hidden id="rightFlex" on-tap="{{searchButtonClicked}}">
                 <uqlibrary-a11y-link><paper-icon-button icon="search" id="searchButton"></paper-icon-button></uqlibrary-a11y-link>
             </div>
-            <!--<div flex>-->
-            <!--<uq-search behaviour="[siteSearch, library.uq.edu.au]"></uq-search>-->
-            <!--</div>-->
-
-            <!--<uqLinks></uqLinks>-->
-            <!--<localOptions></localOptions>-->
-
-            <!--<div hidden?="{{!uqLinks}}">-->
-            <!--<ul>-->
-            <!--<template repeat="{{l in links}}">-->
-            <!--<li><a href="{{l.url}}">{{l.label}}</a></li>-->
-            <!--</template>-->
-            <!--</ul>-->
-            <!--</div>-->
 
             <template if="{{(appLinks.length > 0)}}">
                 <div id="appLinksIcon">
@@ -220,11 +206,11 @@ Can include optional menu options
             },
 
             menuClicked: function() {
-                this.fire('uqlibrary-toolbar-menu-clicked');
+              this.fire('uqlibrary-toolbar-menu-clicked');
             },
 
             searchButtonClicked: function() {
-                this.fire('uqlibrary-toolbar-search-button-clicked', {searchTerm: this.$.searchInputField.value});
+              this.search();
             },
 
             searchFieldValueChanged: function(oldValue, newValue) {
@@ -235,13 +221,9 @@ Can include optional menu options
                 this.fire('uqlibrary-toolbar-search-value-changed', {value: newValue});
             },
 
-            searchKeyPressed: function(e) {
-                this.fire('uqlibrary-toolbar-search-key-pressed', {searchTerm: this.searchFieldValue, keyPressed: e.keyCode});
-            },
-
             initAutosuggestHandler: function() {
                 var that = this;
-                this.addEventListener('uqlibrary-toolbar-search-autosuggestions-loaded', function(e) {
+                this.addEventListener('uqlibrary-toolbar-search-suggestions-loaded', function(e) {
                     var _data = e.detail.data;
                     if(_data.constructor === Array) {
                         that.suggestions = _data;
@@ -291,7 +273,6 @@ Can include optional menu options
                 }, 100);
             },
 
-
             suggestionSearch: function () {
                 var suggestion = this.suggestions[this.selectedSuggestion];
 
@@ -307,7 +288,7 @@ Can include optional menu options
             },
 
             search: function() {
-                this.fire('uqlibrary-toolbar-search-submit', {searchTerm: this.searchFieldValue});
+                this.fire('uqlibrary-toolbar-search-submitted', {searchTerm: this.searchFieldValue});
             },
 
 

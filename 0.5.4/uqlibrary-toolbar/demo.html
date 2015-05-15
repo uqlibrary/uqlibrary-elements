@@ -23,8 +23,7 @@
     uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {console.log('menu was clicked!')});
     //uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-button-clicked', function(e) {console.log('searched for ' + e.detail.searchTerm)});
     //uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-key-pressed', function(e) {console.log('typed ' + e.detail.searchTerm)});
-    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-key-pressed', function(e) {console.log('key ' + e.detail.keyPressed)});
-    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-submit', function(e) {console.log('submitted ' + e.detail.searchTerm)});
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-submitted', function(e) {console.log('submitted ' + e.detail.searchTerm)});
 
 
     document.addEventListener('polymer-ready', function() {
@@ -32,7 +31,7 @@
     });
 
     document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
-      uqlibraryToolbar.fire('uqlibrary-toolbar-search-autosuggestions-loaded', {data: [ { text: 'suggestion 1 for '+ e.detail.value, url: '#' }, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
+      uqlibraryToolbar.fire('uqlibrary-toolbar-search-suggestions-loaded', {data: [ { text: 'suggestion 1 for '+ e.detail.value, url: '#' }, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
     });
 
 </script>
