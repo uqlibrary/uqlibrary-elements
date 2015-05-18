@@ -14,7 +14,7 @@ Element providing access to a list of applications based on user PType.
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-api
 
-@param - user - user details as returned by account api - required
+@param - user - user details as returned by account api - optional
 @param - app - application name to check if user has permissions - optional
 @param - checkDate - current date (or specific date) required to check current semestre enrollment for research students, optional, defaults to current date
 data is stored in /data/applications.json in following format (order is important for displaying menu)
@@ -35,7 +35,7 @@ data is stored in /data/applications.json in following format (order is importan
 ]
 -->
 
-<polymer-element name="uqlibrary-api-applications" attributes="user app checkDate">
+<polymer-element name="uqlibrary-api-applications" attributes="user url app checkDate">
 
   <template>
     <uqlibrary-api-term-dates id="termDates"></uqlibrary-api-term-dates>
@@ -53,6 +53,7 @@ data is stored in /data/applications.json in following format (order is importan
 
         ready: function() {
           var that = this;
+
           this.$.termDates.addEventListener("uqlibrary-api-term-dates", function (e) {
             that.executeRequest(e.detail);
           });
@@ -65,7 +66,9 @@ data is stored in /data/applications.json in following format (order is importan
          */
         get: function() {
           var that = this;
-          this.ptype = this.user.type;
+
+          if (this.user)
+            this.ptype = this.user.type;
 
           //for research students extra processing - get current term dates (to filter classes later)
           if (this.ptype == 2 || this.ptype == 22) {
@@ -82,14 +85,12 @@ data is stored in /data/applications.json in following format (order is importan
           } else {
             this.executeRequest();
           }
-
         },
 
         executeRequest: function(currentTerms) {
           var that = this;
 
           var xobj = new XMLHttpRequest();
-          xobj.overrideMimeType("application/json");
           xobj.open('GET', this.resolvePath(this.baseApiUrl + this.url), true);
 
           xobj.onreadystatechange = function () {

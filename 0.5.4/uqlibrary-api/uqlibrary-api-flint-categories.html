@@ -1,0 +1,114 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing list of languages or interviewees for Flint language survey
+
+##### Example
+
+    <uqlibrary-api-flint-categories></uqlibrary-api-flint-categories>
+
+@element uqlibrary-api-flint-categories
+@blurb Element providing list of languages or interviewees for Flint language survey
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-flint-categories" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="list"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-flint-categories', {
+
+        baseUri : {
+          languages: '/collection/flint/languages',
+          voices: '/collection/flint/voices'
+        },
+
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-flint-categories
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+
+          this.$.list.addEventListener('uqlibrary-api', function(e) {
+            that.data = [];
+            var groups = [];
+
+            if (e.detail) {
+
+              var data = e.detail.filter(function(item){
+                if (!item.cvo_title)
+                  item.cvo_title = item.rek_contributor;
+
+                if (!item.record_count)
+                  item.record_count = item.interviewee_count;
+
+                return item.record_count && item.record_count > 0;
+              });
+
+              that.data = data;
+
+              //order data
+              that.data.sort(function (item1, item2) {
+                if (item1.cvo_title.toUpperCase() < item2.cvo_title.toUpperCase())
+                  return -1;
+                else
+                  return 1;
+              });
+
+              //create an index of letter/item count
+              var letterCountList = [];
+              data.forEach(function (item) {
+                var startLetter = item.cvo_title.toUpperCase()[0];
+
+                if (letterCountList[startLetter]) {
+                  letterCountList[startLetter] = letterCountList[startLetter] + 1;
+                } else {
+                  letterCountList[startLetter] = 1;
+                }
+              });
+
+              //create a group structure
+              for (var letter in letterCountList) {
+                groups.push({
+                  length: letterCountList[letter],
+                  data: {
+                    label: letter
+                  }
+                });
+              }
+            }
+
+            that.fire('uqlibrary-api-flint-categories-loaded', { items: that.data, groups: groups });
+          });
+        },
+
+        /**
+         * Gets results
+         *
+         * @method get
+         */
+        get: function (args) {
+          if (args && args.getLanguages) {
+            this.$.list.uri = this.baseUri.languages;
+          } else if (args && args.getVoices) {
+            this.$.list.uri = this.baseUri.voices;
+          }
+
+          this.$.list.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

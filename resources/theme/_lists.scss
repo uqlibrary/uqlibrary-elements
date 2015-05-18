@@ -58,7 +58,9 @@
       padding-bottom: $single-line-list-item-padding-bottom;
       margin-right: $single-line-list-item-padding-right;
 
-      @include truncate-text();
+      div {
+        @include truncate-text();
+      }
     }
 
     &.header {
