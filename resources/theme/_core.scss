@@ -38,6 +38,12 @@ core-menu {
   background-color: $background-secondary;
   margin: 0;
   padding: 8px 0;
+  .core-selected {
+    color: $uq-blue;
+    core-icon {
+      color: $uq-blue;
+    }
+  }
   core-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
   }
@@ -391,7 +397,6 @@ paper-slider {
 // Drawer panel background colour and border (includes non chrome compatibility)
 core-drawer-panel [drawer] {
   background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 // Main content background colour

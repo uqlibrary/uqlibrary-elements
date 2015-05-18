@@ -1,0 +1,75 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing list of records for Flint language survey based on language/voice or search keyword
+
+##### Example
+
+    <uqlibrary-api-flint-records></uqlibrary-api-flint-records>
+
+@element uqlibrary-api-flint-records
+@blurb Element providing list of records for Flint language survey based on language/voice or search keyword
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-flint-records" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="list"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-flint-records', {
+
+        baseUri : {
+          keyword: '/collection/flint?search={{KEYWORD}}&start=0&rows=50',
+          language: '/collection/flint?language={{KEYWORD}}&start=0&rows=50',
+          voice: '/collection/flint?voice={{KEYWORD}}&start=0&rows=50'
+        },
+
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-flint-records
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.list.addEventListener('uqlibrary-api', function(e) {
+
+            that.data = [];
+
+            if (e.detail && e.detail.response && e.detail.response.docs) {
+                that.data = e.detail.response.docs;
+            }
+
+            that.fire('uqlibrary-api-flint-records-loaded', that.data);
+          });
+        },
+
+        /**
+         * Gets results
+         *
+         * @method get
+         */
+        get: function (args) {
+          if (args && args.keyword) {
+            this.$.list.uri = this.baseUri.keyword.replace('{{KEYWORD}}', args.keyword);
+          } else if (args && args.language) {
+            this.$.list.uri = this.baseUri.language.replace('{{KEYWORD}}', args.language);
+          } else if (args && args.voice) {
+            this.$.list.uri = this.baseUri.voice.replace('{{KEYWORD}}', args.voice);
+          }
+
+          this.$.list.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

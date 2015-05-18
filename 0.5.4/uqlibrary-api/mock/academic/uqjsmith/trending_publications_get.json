@@ -1,0 +1,140 @@
+{
+  "author_details": [
+    {
+      "aut_id": "0001",
+      "aut_org_username": "uqjsmith",
+      "aut_email": null,
+      "aut_display_name": "Smith, Jane ",
+      "aut_fname": "Jane",
+      "aut_mname": "",
+      "aut_lname": "Smith",
+      "aut_title": "Dr",
+      "aut_position": "",
+      "aut_function": null,
+      "aut_cv_link": "",
+      "aut_homepage_link": "",
+      "aut_researcher_id": null,
+      "aut_scopus_id": "",
+      "aut_mypub_url": "",
+      "aut_people_australia_id": null,
+      "aut_description": null,
+      "aut_orcid_id": null,
+      "aut_google_scholar_id": null,
+      "aut_rid_last_updated": null
+    }
+  ],
+  "altmetric": [
+    {
+      "id": "15328",
+      "count": "3",
+      "difference": "2.75",
+      "created": "1418720645",
+      "last_checked": "1431423963",
+      "citation_url": "http:\/\/www.altmetric.com\/details.php?citation_id=2942744",
+      "rek_pid": "UQ:346459",
+      "rek_date": "2014-12-02 00:00:00",
+      "title": "Early transcriptional changes in the reef-building coral Acropora aspera in response to thermal and nutrient stress",
+      "authors": "Rosic, Nedeljka;Smith, Jane;Chan, Kenneth..."
+    },
+    {
+      "id": "12795",
+      "count": "6",
+      "difference": "5.016",
+      "created": "1406606989",
+      "last_checked": "1431405941",
+      "citation_url": "http:\/\/www.altmetric.com\/details.php?citation_id=2537395",
+      "rek_pid": "UQ:323041",
+      "rek_date": "2014-02-01 00:00:00",
+      "title": "Implications of geometric plasticity for maximizing photosynthesis in branching corals",
+      "authors": "Smith, P.;Anthony, K. R. N.;Sampayo, E. M...."
+    },
+    {
+      "id": "14756",
+      "count": "2",
+      "difference": "1.25",
+      "created": "1415090136",
+      "last_checked": "1431421752",
+      "citation_url": "http:\/\/www.altmetric.com\/details.php?citation_id=2814823",
+      "rek_pid": "UQ:343481",
+      "rek_date": "2014-10-24 00:00:00",
+      "title": "Unfolding the secrets of coral-algal symbiosis",
+      "authors": "...Chan, Chon-Kit Kenneth;Lee, Chin Hong;Smith, Jane"
+    }
+  ],
+  "thomson": [
+    {
+      "id": "21571378",
+      "count": "38",
+      "difference": "1",
+      "created": "1431191124",
+      "last_checked": "1431191124",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/gateway.isiknowledge.com\/gateway\/Gateway.cgi?GWVersion=2&SrcApp=resolve1&DestLinkType=CitingArticles&DestApp=WOS_CPL&KeyUT=000305336600046&SrcAuth=uqueensland",
+      "rek_pid": "UQ:278688",
+      "rek_date": "2012-04-01 00:00:00",
+      "title": "Major cellular and physiological impacts of ocean acidification on a reef building coral",
+      "authors": "Smith, Jane;Campbell, Paul R.;Kline, David I...."
+    },
+    {
+      "id": "21564726",
+      "count": "44",
+      "difference": "1",
+      "created": "1429372571",
+      "last_checked": "1429372571",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/gateway.isiknowledge.com\/gateway\/Gateway.cgi?GWVersion=2&SrcApp=resolve1&DestLinkType=CitingArticles&DestApp=WOS_CPL&KeyUT=000286433100031&SrcAuth=uqueensland",
+      "rek_pid": "UQ:226907",
+      "rek_date": "2011-01-14 00:00:00",
+      "title": "Complex diel cycles of gene expression in coral-algal symbiosis",
+      "authors": "Levy, O.;Smith, P.;Alon, S...."
+    },
+    {
+      "id": "21559964",
+      "count": "14",
+      "difference": "1",
+      "created": "1429371133",
+      "last_checked": "1429371133",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/gateway.isiknowledge.com\/gateway\/Gateway.cgi?GWVersion=2&SrcApp=resolve1&DestLinkType=CitingArticles&DestApp=WOS_CPL&KeyUT=000272827800010&SrcAuth=uqueensland",
+      "rek_pid": "UQ:191122",
+      "rek_date": "2009-11-01 00:00:00",
+      "title": "Coral skeletons defend against ultraviolet radiation",
+      "authors": "Reef, Ruth;Smith, Jane;Hoegh-Guldberg, Ove"
+    }
+  ],
+  "scopus": [
+    {
+      "id": "15684946",
+      "count": "51",
+      "difference": "1",
+      "created": "1430583400",
+      "last_checked": "1430583400",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/www.scopus.com\/results\/citedbyresults.url?sort=plf-f&cite=2-s2.0-17644384093&src=s&sot=cite&sdt=a",
+      "rek_pid": "UQ:76158",
+      "rek_date": "2005-01-01 00:00:00",
+      "title": "Sexual selection for male dominance reduces opportunities for female mate choice in the European bitterling (Rhodeus sericeus)",
+      "authors": "...Ondrackova, M.;Davidova, M.;Smith, P."
+    },
+    {
+      "id": "15705074",
+      "count": "16",
+      "difference": "1",
+      "created": "1429979796",
+      "last_checked": "1429979796",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/www.scopus.com\/results\/citedbyresults.url?sort=plf-f&cite=2-s2.0-71049186865&src=s&sot=cite&sdt=a",
+      "rek_pid": "UQ:191122",
+      "rek_date": "2009-11-01 00:00:00",
+      "title": "Coral skeletons defend against ultraviolet radiation",
+      "authors": "Reef, Ruth;Smith, Jane;Hoegh-Guldberg, Ove"
+    },
+    {
+      "id": "15692570",
+      "count": "25",
+      "difference": "1",
+      "created": "1429979044",
+      "last_checked": "1429979044",
+      "citation_url": "http:\/\/ezproxy.library.uq.edu.au\/login?url=http:\/\/www.scopus.com\/results\/citedbyresults.url?sort=plf-f&cite=2-s2.0-33847180171&src=s&sot=cite&sdt=a",
+      "rek_pid": "UQ:128465",
+      "rek_date": "2007-01-01 00:00:00",
+      "title": "A possible evolutionary lag in the relationship between freshwater mussels and European bitterling",
+      "authors": "Reichard, M;Przybylski, M;Smith, P..."
+    }
+  ]
+}
