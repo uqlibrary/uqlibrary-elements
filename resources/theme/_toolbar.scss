@@ -4,7 +4,6 @@
 
 uqlibrary-toolbar {
 /deep/ {
-
   * {
     transition: $main-transition;
   }
@@ -15,7 +14,7 @@ uqlibrary-toolbar {
     background: $dark-primary;
     color: white;
     #hamburgerMenuIcon {
-      @media (min-width: $responsive-width*2) {
+      @media (min-width: $responsive-width) {
         display: none;
       }
     }
