@@ -8,7 +8,7 @@ function isIE() {
 }
 
 function hasSession() {
-  return document.cookie.indexOf("UQLID") >= 0 || document.cookie.indexOf("UQLMockData") >= 0;
+  return (typeof ignoreSession !== 'undefined' && ignoreSession) || document.cookie.indexOf("UQLID") >= 0 || document.cookie.indexOf("UQLMockData") >= 0;
 }
 
 if (!('registerElement' in document
@@ -61,7 +61,11 @@ function setUnsupported() {
       // this needs to be the old style getter as it needs to run in IE8/9
       var messageCard = document.getElementById('unsupportedBrowserSupportMessage');
       o.id = "browserDetailsOld";
-      o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary\'>the old version of MyLibrary<\/a>.";
+        if (typeof unsupportedRedirect !== 'undefined') {
+            o.innerHTML = "<br \/><br \/>Return to <a href='" + unsupportedRedirect.url + "'>" + unsupportedRedirect.title + " <\/a>.";
+        } else {
+            o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary\'>the old version of MyLibrary<\/a>.";
+        }
       messageCard.appendChild(o);
       document.getElementById('loader').style.display = 'none';
       document.getElementById('loadingTitle').innerHTML = 'Unsupported Browser';

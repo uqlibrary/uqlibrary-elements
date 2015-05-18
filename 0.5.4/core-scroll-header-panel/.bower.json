@@ -9,13 +9,13 @@
     "core-toolbar": "Polymer/core-toolbar#^0.5",
     "core-resizable": "Polymer/core-resizable#^0.5"
   },
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/Polymer/core-scroll-header-panel",
-  "_release": "0.5.5",
+  "_release": "0.5.6",
   "_resolution": {
     "type": "version",
-    "tag": "0.5.5",
-    "commit": "5c0eacab6b5d8b56c5debc7f44543af91829e39f"
+    "tag": "0.5.6",
+    "commit": "f08fb5f4437f0535f2ac7f55b36a160ea24900dd"
   },
   "_source": "git://github.com/Polymer/core-scroll-header-panel.git",
   "_target": "^0.5",

@@ -55,6 +55,7 @@ $main-transition: all $transition-duration $transition-function;
 $shadow-transition: box-shadow $transition-duration $transition-function;
 $background-transition: background-color $transition-duration $transition-function;
 $outline-transition: outline $transition-duration $transition-function;
+$glow-shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 $shadow-z-0: none;
 $shadow-z-1: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
 $shadow-z-2: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
@@ -170,6 +171,7 @@ $background-primary:    $grey-50;
 $background-secondary:  $white;
 $uq-text-primary:       hsl(0, 0%, 20%);
 $uq-text-secondary:     hsl(0, 0%, 46%);
+$uq-text-tertiary:      hsl(0, 0%, 91%);
 $uq-divider:            hsl(0, 0%, 80%);
 
 $uq-purple-1000: $dark-primary;
@@ -215,6 +217,8 @@ $accent-A400: $teal-A700;
 // Text / icons / dividers
 $divider:        $uq-divider;
 
+$item-hover:     rgba($black, .05);
+$paper-hover:    rgba($black, .1);
 $hint-text:      rgba($black, .26);
 $secondary-text: rgba($black, .54);
 $text:           rgba($black, .87);

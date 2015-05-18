@@ -1,0 +1,195 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icons/av-icons.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-slider/paper-slider.html">
+
+<!--
+Material design audio element
+
+##### Example
+
+    <x-audio src="example.mp3" name="Example"></x-audio>
+
+@element x-audio
+@blurb Material design audio element
+@status alpha
+@homepage https://github.com/tc-team/components/x-audio
+-->
+<polymer-element name="x-audio-mirror" attributes="xaudio disabled showName showVolumeControls showSeekControl">
+
+  <template>
+
+    <link rel="stylesheet" href="x-audio.css">
+
+    <div id="container" horizontal layout center>
+
+      <div self-center>
+        <core-a11y-keys id="playButtonKeys" target="{{$.playButton}}" keys="space enter" on-keys-pressed="{{ togglePlay }}"></core-a11y-keys>
+        <paper-icon-button id="playButton" on-click="{{togglePlay}}" icon="av:play-circle-outline" role="button" tabindex="20" aria-label="av:play-circle-outline"></paper-icon-button>
+      </div>
+
+      <div class="audio" flex  self-center >
+            <div id="info" horizontal layout justified>
+              <span id="name">{{ (showName ? name : '')}}</span>
+              <span id="remainder" hidden?="{{!showSeekControl}}">{{remainder}}</span>
+            </div>
+            <div hidden?="{{!showSeekControl}}">
+              <paper-slider flex  id="audio_slider" min="0" max="{{duration}}" value="{{currentTimeValue}}" on-change="{{changeCurrentTime}}"></paper-slider>
+            </div>
+      </div>
+      <div self-center class="volume" hidden?="{{!showVolumeControls}}">
+        <div horizontal layout center >
+          <core-a11y-keys id="muteKeys" target="{{$.mute}}" keys="space enter" on-keys-pressed="{{ mute }}"></core-a11y-keys>
+          <paper-icon-button id="mute" icon="av:volume-up" on-mouseout="{{mouseOut}}" on-mouseover="{{mouseOver}}" role="button" on-click="{{mute}}"></paper-icon-button>
+          <div flex>
+            <paper-slider id="volume_slider" min="0" max="10" immediateValue="{{immediateVolume}}"></paper-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+
+  Polymer({
+    /**
+   * The `xaudio` attribute determines x-audio element to be mirrored
+   *
+   * @attribute xaudio
+   * @type x-audio
+   * @default ''
+   */
+   xaudio: null,
+   showName: false,
+   showVolumeControls: false,
+   showSeekControl: false,
+   disabled : false,
+
+  ready: function () {
+    if (this.xaudio) {
+      this.initAttributes();
+      this.initListeners();
+    }
+  },
+  initAttributes: function() {
+    if(this.xaudio) {
+      //this.disabled = this.xaudio.disabled;
+      this.isPlaying = this.xaudio.isPlaying;
+      this.immediateVolume = this.xaudio.immediateVolume;
+      this.name = this.xaudio.name;
+      this.$.playButton.icon = this.xaudio.$.playButton.icon;
+      this.disabled = false;
+    }
+  },
+
+  initListeners: function() {
+    if(this.xaudio != null) {
+      var that = this;
+
+      this.xaudio.addEventListener("x-audio-loadedmetadata", function() {
+        that.remainder = that.xaudio.remainder;
+        that.currentTimeValue = that.xaudio.currentTimeValue;
+      });
+
+      this.xaudio.addEventListener('x-audio-play', function (){
+        that.$.playButton.icon = that.xaudio.$.playButton.icon;
+        that.isPlaying = that.xaudio.isPlaying;
+      });
+
+      this.xaudio.addEventListener('x-audio-pause', function (){
+        that.$.playButton.icon = that.xaudio.$.playButton.icon;
+        that.isPlaying = that.xaudio.isPlaying;
+      });
+
+      this.xaudio.addEventListener('x-audio-timeupdate', function (){
+        that.currentTimeValue = that.xaudio.currentTimeValue;
+        that.duration = that.xaudio.duration;
+        that.remainder =  that.xaudio.remainder;
+      });
+
+      this.xaudio.addEventListener('x-audio-volumechange', function (){
+        that.immediateVolume = that.xaudio.immediateVolume;
+        that.$.mute.icon = that.xaudio.$.mute.icon;
+      });
+
+      this.xaudio.addEventListener('x-audio-currenttimechange', function (){
+        that.currentTime = that.xaudio.currentTime;
+      });
+
+      this.xaudio.addEventListener('x-audio-mute', function (){
+        that.immediateVolume = that.xaudio.immediateVolume;
+        that.$.mute.icon = that.xaudio.$.mute.icon;
+        that.$.volume_slider.disabled = that.xaudio.$.volume_slider.disabled;
+      });
+
+      this.xaudio.addEventListener('x-audio-ended', function (){
+        that.remainder = that.xaudio.remainder;
+        that.isPlaying = that.xaudio.isPlaying;
+        that.currentTimeValue = that.xaudio.currentTimeValue
+        that.$.playButton.icon = that.xaudio.$.playButton.icon;
+      });
+
+    }
+  },
+
+  xaudioChanged: function (oldValue, newValue) {
+    this.initAttributes();
+    this.initListeners();
+  },
+
+  togglePlay: function () {
+    this.xaudio.togglePlay();
+  },
+
+  mute: function() {
+    this.xaudio.mute();
+  },
+
+  immediateVolumeChanged: function(oldValue, newValue) {
+    if(this.xaudio != null)
+      this.xaudio.immediateVolume = newValue;
+  },
+
+  changeCurrentTime: function(e) {
+    if(this.xaudio != null) {
+      this.xaudio.changeCurrentTime(e);
+    }
+  },
+
+  disabledChanged: function (oldValue, newValue) {
+    if (newValue === true) {
+      this.$.volume_slider.disabled = true;
+      this.$.audio_slider.disabled = true;
+      this.$.playButton.setAttribute('class', 'disabled');
+      this.$.playButton.setAttribute('disabled', 'true');
+      this.$.mute.setAttribute('class', 'disabled');
+      this.$.mute.setAttribute('disabled', 'true');
+      this.$.name.setAttribute('class', 'disabled');
+      this.$.remainder.setAttribute('class', 'disabled');
+
+    } else if (newValue === false) {
+      this.$.volume_slider.disabled = false;
+      this.$.audio_slider.disabled = false;
+      this.$.playButton.removeAttribute('class');
+      this.$.playButton.removeAttribute('disabled');
+      this.$.mute.removeAttribute('class');
+      this.$.mute.removeAttribute('disabled');
+      this.$.name.removeAttribute('class');
+      this.$.remainder.removeAttribute('class');
+
+    }
+  }
+
+
+}); 
+  </script>
+</polymer-element>

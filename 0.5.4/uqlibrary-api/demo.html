@@ -21,6 +21,9 @@
   <link rel="import" href="uqlibrary-api-papercut.html">
   <link rel="import" href="uqlibrary-api-academic-hindex.html">
   <link rel="import" href="uqlibrary-api-academic-stats.html">
+  <link rel="import" href="uqlibrary-api-flint-categories.html">
+  <link rel="import" href="uqlibrary-api-flint-records.html">
+  <link rel="import" href="uqlibrary-api-authors-search.html">
 
   <link href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500|Source+Code+Pro:400,500,700" rel="stylesheet">
   <style>
@@ -99,6 +102,19 @@
   <uqlibrary-api-applications></uqlibrary-api-applications>
   <h3>uqlibrary-api-applications</h3>
   <div id="applicationsLog">Apps for staff: </div>
+
+  <uqlibrary-api-flint-categories></uqlibrary-api-flint-categories>
+  <h3>uqlibrary-api-flint-categories</h3>
+  <div id="flintCategoriesLog"></div>
+
+  <uqlibrary-api-flint-records></uqlibrary-api-flint-records>
+  <h3>uqlibrary-api-flint-records</h3>
+  <div id="flintRecordsLog"></div>
+
+  <uqlibrary-api-authors-search></uqlibrary-api-authors-search>
+
+  <h3>uqlibrary-api-autors-search</h3>
+  <div id="authorsSearchLog"></div>
 
   <script>
     (function () {
@@ -234,6 +250,28 @@
         });
         apps.get();
 
+
+        var flintCat = document.querySelector('uqlibrary-api-flint-categories');
+        flintCat.addEventListener('uqlibrary-api-flint-categories-loaded', function(e) {
+          document.getElementById('flintCategoriesLog').innerText += JSON.stringify(e.detail.groups);
+          document.getElementById('flintCategoriesLog').innerText += JSON.stringify(e.detail.items);
+        });
+        flintCat.get({ getVoices: true });
+//        flintCat.get({ getLanguages: true });
+
+        var flintRecords = document.querySelector('uqlibrary-api-flint-records');
+        flintRecords.addEventListener('uqlibrary-api-flint-records-loaded', function(e) {
+          document.getElementById('flintRecordsLog').innerText = "Length: " + e.detail.length + " 1st Title: " + e.detail[0].title_t;
+        });
+
+        flintRecords.get({ language: 'english' });
+
+        var authorsSearch = document.querySelector('uqlibrary-api-authors-search');
+        authorsSearch.addEventListener('uqlibrary-api-authors-search-loaded', function(e) {
+          document.getElementById('authorsSearchLog').innerText = "Length: " + e.detail.length + " 1st item: " + JSON.stringify(e.detail[0]);
+        });
+
+        authorsSearch.get({ lookupName: 'camp' });
 
       });
 

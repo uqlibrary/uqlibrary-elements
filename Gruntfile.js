@@ -6,7 +6,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     replace: {
       cssUpdatePath: {
-        src: ['**/lib/vulcanized.html'],             // source files array (supports minimatch)
+        src: ['**/lib/vulcanized*.html'],             // source files array (supports minimatch)
         overwrite: true,                            // overwrite matched source files
         replacements: [{
           from: "../uqlibrary-elements/resources/theme/element.css",
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
       },
       html: {
         src: [
-          '../uqlibrary-elements/**/lib/vulcanized.html'
+          '../uqlibrary-elements/**/lib/vulcanized*.html'
         ]
       },
       css: {
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
       js: {
 
         src: [
-          '../uqlibrary-elements/**/lib/vulcanized.js',
+          '../uqlibrary-elements/**/lib/vulcanized*.js',
           '../uqlibrary-elements/**/webcomponentsjs/webcomponents.min.js'
         ]
       }

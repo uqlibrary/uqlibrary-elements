@@ -249,11 +249,12 @@ h1#toolbar-page-title {
     color: rgba(0, 0, 0, 0.87); }
     .single-line-list .list-item .content {
       padding-top: 16px;
-      padding-bottom: 20px;
-      margin-right: 16px;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis; }
+      padding-bottom: 16px;
+      margin-right: 16px; }
+      .single-line-list .list-item .content div {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
     .single-line-list .list-item.header {
       font-family: "Roboto";
       font-weight: 700;
@@ -262,7 +263,7 @@ h1#toolbar-page-title {
       color: rgba(0, 0, 0, 0.54);
       padding-top: 16px; }
     .single-line-list .list-item:last-child {
-      padding-bottom: 28px; }
+      padding-bottom: 24px; }
 
 .single-line-icon-list {
   list-style-type: none;
@@ -356,7 +357,7 @@ h1#toolbar-page-title {
       color: rgba(0, 0, 0, 0.54);
       padding-top: 16px; }
     .two-line-list .list-item:last-child {
-      padding-bottom: 28px; }
+      padding-bottom: 24px; }
 
 .two-line-icon-list {
   list-style-type: none;
@@ -703,6 +704,10 @@ core-menu {
   background-color: #ffffff;
   margin: 0;
   padding: 8px 0; }
+  core-menu .core-selected {
+    color: #2874d7; }
+    core-menu .core-selected core-icon {
+      color: #2874d7; }
   core-menu core-icon {
     margin: -3px 34px -3px -3px; }
   core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
@@ -879,8 +884,7 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff;
-  border-right: 1px solid rgba(0, 0, 0, 0.1); }
+  background-color: #ffffff; }
 
 .main {
   background-color: #FAFAFA; }
@@ -1140,6 +1144,73 @@ paper-icon-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 50%; }
 
+uqlibrary-toolbar /deep/ * {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+uqlibrary-toolbar /deep/ .turnWhite {
+  background: white; }
+uqlibrary-toolbar /deep/ core-toolbar {
+  background: #4a075f;
+  color: white; }
+  @media (min-width: 1536px) {
+    uqlibrary-toolbar /deep/ core-toolbar #hamburgerMenuIcon {
+      display: none; } }
+  uqlibrary-toolbar /deep/ core-toolbar paper-icon-button {
+    margin-top: 3px;
+    color: white;
+    border-radius: 50%; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar paper-icon-button:focus, uqlibrary-toolbar /deep/ core-toolbar paper-icon-button:active {
+      background-color: rgba(255, 255, 255, 0.12); }
+  uqlibrary-toolbar /deep/ core-toolbar .applicationName {
+    color: white;
+    text-decoration: none; }
+  uqlibrary-toolbar /deep/ core-toolbar .glow {
+    color: white;
+    cursor: pointer; }
+    uqlibrary-toolbar /deep/ core-toolbar .glow:hover, uqlibrary-toolbar /deep/ core-toolbar .glow:focus, uqlibrary-toolbar /deep/ core-toolbar .glow:active {
+      text-decoration: none;
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); }
+  uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu {
+    margin: 2px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item {
+      font-size: 14px;
+      transition: none; }
+      uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:hover, uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item:focus {
+        background-color: rgba(0, 0, 0, 0.05);
+        transition: none; }
+      uqlibrary-toolbar /deep/ core-toolbar paper-dropdown core-menu paper-item a {
+        font-size: 16px;
+        cursor: pointer;
+        color: #333333;
+        display: block;
+        text-decoration: none; }
+  uqlibrary-toolbar /deep/ core-toolbar .invisible {
+    opacity: 0; }
+  uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button {
+    color: #757575; }
+    uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button:focus, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button:focus, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:hover, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:active, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button:focus {
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.05); }
+    uqlibrary-toolbar /deep/ core-toolbar #leftFlex paper-icon-button core-icon, uqlibrary-toolbar /deep/ core-toolbar #rightFlex paper-icon-button core-icon, uqlibrary-toolbar /deep/ core-toolbar #backArrow paper-icon-button core-icon {
+      color: #333333; }
+  uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator {
+    color: #333333;
+    margin-bottom: 4px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator::shadow #focusedUnderline {
+      background-color: transparent !important; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator /deep/ ::-webkit-input-placeholder {
+      /* platform specific rules for placeholder text */
+      color: rgba(0, 0, 0, 0.26);
+      padding-top: 5px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator /deep/ ::-moz-placeholder {
+      color: rgba(0, 0, 0, 0.26);
+      padding-top: 4px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator /deep/ :-ms-input-placeholder {
+      color: rgba(0, 0, 0, 0.26);
+      padding-top: 4px; }
+    uqlibrary-toolbar /deep/ core-toolbar paper-input-decorator /deep/ .unfocused-underline {
+      /* line color when the input is unfocused */
+      background-color: transparent; }
+
 .group-label {
   margin-left: 32px; }
 
@@ -1336,6 +1407,204 @@ paper-dropdown::shadow #scroller {
     .responsiveCard {
       width: 100%;
       margin: 0; } }
+
+uqlibrary-flint /deep/ paper-action-dialog {
+  border-radius: 2px;
+  max-width: 500px; }
+uqlibrary-flint /deep/ paper-tabs {
+  z-index: 1; }
+uqlibrary-flint /deep/ core-drawer-panel {
+  background-color: white; }
+  uqlibrary-flint /deep/ core-drawer-panel /deep/ .main {
+    background-color: white;
+    z-index: 0; }
+uqlibrary-flint /deep/ .gm-style-iw {
+  cursor: pointer; }
+uqlibrary-flint /deep/ #infoSection {
+  background: white; }
+  uqlibrary-flint /deep/ #infoSection core-icon {
+    height: 60px;
+    width: 60px; }
+  uqlibrary-flint /deep/ #infoSection .body1 {
+    font-weight: 300; }
+  uqlibrary-flint /deep/ #infoSection ul li {
+    padding: 36px 14px;
+    height: 112px; }
+    uqlibrary-flint /deep/ #infoSection ul li .avatar {
+      margin-top: 0; }
+    uqlibrary-flint /deep/ #infoSection ul li .content {
+      font-size: 1.5em;
+      padding-top: 15px; }
+uqlibrary-flint /deep/ #feedbackButton {
+  margin-bottom: 12px; }
+uqlibrary-flint /deep/ core-list li {
+  background-color: white; }
+  uqlibrary-flint /deep/ core-list li:hover, uqlibrary-flint /deep/ core-list li:focus, uqlibrary-flint /deep/ core-list li:active {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05); }
+  uqlibrary-flint /deep/ core-list li .avatar {
+    margin-left: 16px; }
+    uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:hover, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:focus, uqlibrary-flint /deep/ core-list li .avatar paper-icon-button:active {
+      background-color: rgba(0, 0, 0, 0.1); }
+    uqlibrary-flint /deep/ core-list li .avatar .audio-holder /deep/ .playerButton {
+      padding: 0; }
+  uqlibrary-flint /deep/ core-list li #closeButton {
+    margin-right: 16px; }
+uqlibrary-flint /deep/ .list-item.header {
+  background-color: transparent;
+  padding-bottom: 12px; }
+  uqlibrary-flint /deep/ .list-item.header:hover, uqlibrary-flint /deep/ .list-item.header:focus, uqlibrary-flint /deep/ .list-item.header:active {
+    background-color: transparent;
+    cursor: default; }
+uqlibrary-flint /deep/ .three-line-icon-list .list-item {
+  padding-left: 0;
+  padding-right: 0;
+  transition: transform 100ms ease-in; }
+  uqlibrary-flint /deep/ .three-line-icon-list .list-item .content {
+    padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px; }
+uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded {
+  padding-left: 16px;
+  transition: transform 100ms ease-in; }
+  uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:hover, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:focus, uqlibrary-flint /deep/ .three-line-icon-list .list-item.expanded:active {
+    background-color: white;
+    cursor: text; }
+uqlibrary-flint /deep/ #itemDetailsCollapse {
+  padding-left: 72px;
+  padding-right: 16px; }
+uqlibrary-flint /deep/ #playButton {
+  padding: 0; }
+uqlibrary-flint /deep/ paper-icon-button {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  uqlibrary-flint /deep/ paper-icon-button[focused], uqlibrary-flint /deep/ paper-icon-button:hover, uqlibrary-flint /deep/ paper-icon-button:focus, uqlibrary-flint /deep/ paper-icon-button:active {
+    background-color: rgba(0, 0, 0, 0.1); }
+uqlibrary-flint /deep/ paper-icon {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  uqlibrary-flint /deep/ paper-icon[focused], uqlibrary-flint /deep/ paper-icon:hover, uqlibrary-flint /deep/ paper-icon:focus, uqlibrary-flint /deep/ paper-icon:active {
+    background-color: rgba(0, 0, 0, 0.1); }
+uqlibrary-flint /deep/ paper-slider {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  uqlibrary-flint /deep/ paper-slider:focus {
+    background-color: rgba(0, 0, 0, 0.1); }
+    uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderContainer.ring #sliderKnobInner, uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderContainer.ring #sliderKnobInner::before {
+      background-color: rgba(0, 0, 0, 0.26);
+      border-color: rgba(0, 0, 0, 0.26); }
+    uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderBar::shadow #progressContainer {
+      background-color: rgba(0, 0, 0, 0.26); }
+    uqlibrary-flint /deep/ paper-slider:focus::shadow #sliderBar::shadow #progressContainer {
+      background-color: rgba(0, 0, 0, 0.26); }
+uqlibrary-flint /deep/ #headerPlayerMirrorWrapper {
+  position: absolute;
+  right: -10px;
+  top: 112px;
+  z-index: 99999;
+  width: 70px;
+  background-color: #EEEEEE; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-slider {
+    display: none; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow .volume {
+    min-width: 40px; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button::shadow core-icon {
+    color: rgba(0, 0, 0, 0.54) !important;
+    width: 24px !important;
+    height: 24px !important; }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:hover, uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:active, uqlibrary-flint /deep/ #headerPlayerMirrorWrapper x-audio-mirror::shadow paper-icon-button:focus {
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(255, 255, 255, 0.12); }
+  uqlibrary-flint /deep/ #headerPlayerMirrorWrapper.ios {
+    width: 45px; }
+uqlibrary-flint /deep/ .playerButton::shadow core-icon {
+  color: rgba(0, 0, 0, 0.54);
+  width: 44px;
+  height: 44px; }
+uqlibrary-flint /deep/ .playerButton:hover, uqlibrary-flint /deep/ .playerButton:active, uqlibrary-flint /deep/ .playerButton:focus {
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(255, 255, 255, 0.12); }
+uqlibrary-flint /deep/ .currentlyPlayingTitle {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 0.85714em;
+  line-height: 1.1em;
+  color: rgba(0, 0, 0, 0.54);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 8px; }
+uqlibrary-flint /deep/ #itemSection {
+  background: white; }
+  uqlibrary-flint /deep/ #itemSection /deep/ .playerButton {
+    padding: 0; }
+uqlibrary-flint /deep/ #activePlayerWrapper {
+  background: #FAFAFA;
+  height: 83px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #cccccc; }
+  uqlibrary-flint /deep/ #activePlayerWrapper div {
+    margin: 3px; }
+uqlibrary-flint /deep/ [drawer] {
+  background-color: #FAFAFA;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
+  uqlibrary-flint /deep/ [drawer] /deep/ .glow {
+    color: white;
+    cursor: pointer;
+    transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+    uqlibrary-flint /deep/ [drawer] /deep/ .glow:hover, uqlibrary-flint /deep/ [drawer] /deep/ .glow:focus, uqlibrary-flint /deep/ [drawer] /deep/ .glow:active {
+      text-decoration: none;
+      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+      transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+  uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
+    height: 36px;
+    border-right: 1px solid white;
+    margin-right: 10px;
+    padding-right: 10px; }
+    @media (max-width: 768px) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
+        display: none; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo {
+        display: none; } }
+  uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+    border-right: 1px solid white;
+    margin-right: 10px;
+    padding-right: 14px; }
+    @media (min-width: 769px) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+        display: none; } }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      uqlibrary-flint /deep/ [drawer] /deep/ #uq-logo-text {
+        display: inline; } }
+  @media (min-width: 769px) {
+    uqlibrary-flint /deep/ [drawer] /deep/ #uq-library-logo-text {
+      vertical-align: super; } }
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    uqlibrary-flint /deep/ [drawer] /deep/ #uq-library-logo-text {
+      vertical-align: middle; } }
+
+@media (min-width: 1536px) {
+  .flint-responsive-menu-icon {
+    display: none; } }
+
+@media (min-width: 769px) {
+  .flint-responsive-menu-toggle-icon {
+    display: none; } }
+
+.flint-item-info {
+  height: 112px;
+  background-color: #FAFAFA; }
+  .flint-item-info h2 {
+    white-space: normal;
+    margin-left: 12px; }
+
+.flint-header-icon {
+  margin-left: 10px;
+  width: 44px;
+  height: 44px; }
+
+html /deep/ div.gmnoscreen {
+  display: none; }
 
 .home-icon {
   width: 44px;
