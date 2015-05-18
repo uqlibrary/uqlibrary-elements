@@ -63,6 +63,10 @@ Element providing access to UQ Library's API.
           var substringTo = this.uri.indexOf('?') > 0 ? this.uri.indexOf('?') : this.uri.length;
           var fileName = this.resolvePath('mock/' + this.uri.substring(1, substringTo).replace(/([^a-z0-9]\/)/gi, '_') + '_' + this.method.toLowerCase() +'.json');
 
+          if (this.uri.indexOf('/authors/search/') >= 0) {
+            fileName = this.resolvePath('mock/authors/search/' + this.method.toLowerCase() +'.json');
+          }
+
           console.log('Filename:' + fileName);
 
           xobj.open('GET', fileName, true);
