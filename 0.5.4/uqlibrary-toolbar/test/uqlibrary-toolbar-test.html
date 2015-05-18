@@ -13,9 +13,12 @@
 </head>
 <body>
 
-  <uqlibrary-toolbar>
-    Test Link
-  </uqlibrary-toolbar>
+<uqlibrary-toolbar
+  appTitle='Application Name'
+  appTitleLink='#'
+  appLinks='[{"label": "Switch back", "action": "#"}, {"label": "Help", "url": "#"}, {"label": "Feedback", "url": "#"}]'
+  searchPlaceholderText="Search">
+</uqlibrary-toolbar>
 
   <script>
     window.addEventListener('polymer-ready', function() {
@@ -23,9 +26,84 @@
 
       describe('uqlibrary-toolbar', function () {
         before(function () {
-            expect(myEl).not.to.be.null;
-            done();
         });
+
+
+        it('should display toolbar', function() {
+          expect(myEl).not.to.be.null;
+        });
+
+        it('should display toolbar icon buttons', function() {
+          // menu icon
+          var menuIcon = myEl.$.hamburgerMenuIcon.querySelector('paper-icon-button');
+          expect(menuIcon).not.to.be.null;
+
+          // search icon
+          var searchIcon = myEl.$.rightFlex.querySelector('paper-icon-button');
+          expect(searchIcon).not.to.be.null;
+
+          // search icon
+          var appLinksIcon = myEl.$.appLinksIcon.querySelector('paper-icon-button');
+          expect(appLinksIcon).not.to.be.null;
+
+        });
+
+        it('should display search input when search button is tapped', function(done) {
+          var searchIcon = myEl.$.expandSearch.querySelector('paper-icon-button');
+          searchIcon.fire('tap');
+
+
+          // Test search suggestions
+          document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
+            myEl.fire('uqlibrary-toolbar-search-suggestions-loaded', {data: [ { text: 'suggestion 1'}, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
+          });
+
+          // Search suggestion clicked - search submitted event handler
+          document.addEventListener('uqlibrary-toolbar-search-submitted', function(e) {
+            var searchTerm = e.detail.searchTerm;
+            expect(searchTerm).to.be.equal('suggestion 1');
+          });
+
+          setTimeout(function() {
+            myEl.searchFieldValue = 'test';
+
+            setTimeout(function() {
+              var suggestions = myEl.$.suggestionSelector.querySelectorAll('paper-item');
+              expect(suggestions).to.have.length(3);
+
+              suggestions[0].fire('tap');
+              // wait for search submit event fired
+              setTimeout(function() {
+                done();
+              }, 1000);
+
+            }, 1000);
+          }, 1000);
+
+        });
+
+        it('should fire event when menu button is tapped', function(done) {
+
+          var fired = false;
+          document.addEventListener('uqlibrary-toolbar-menu-clicked', function(e) {
+            fired = true;
+          });
+
+          setTimeout(function() {
+            var menuIcon = myEl.$.hamburgerMenuIcon.querySelector('paper-icon-button');
+            menuIcon.fire('tap');
+
+            //check if event has been fired
+            setTimeout(function() {
+              expect(fired).to.be.true;
+              done();
+            }, 1000);
+
+
+          }, 1000);
+
+        });
+
       });
     });
   </script>
