@@ -48,9 +48,4 @@ suite('timing', function() {
     player = document.body.animate([], { duration: NaN, easing: 'ease-out' });
     tick(300);
   });
-
-  test('can set fill:none on group', function() {
-    var timing = webAnimationsShared.makeTiming({fill: 'none'}, true);
-    assert.equal(timing.fill, 'none');
-  });
 });

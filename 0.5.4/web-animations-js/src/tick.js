@@ -87,7 +87,6 @@
   var pendingEffects = [];
   function applyPendingEffects() {
     pendingEffects.forEach(function(f) { f(); });
-    pendingEffects.length = 0;
   }
 
   var originalGetComputedStyle = window.getComputedStyle;
@@ -126,7 +125,7 @@
       return player._inTimeline;
     });
 
-    // FIXME: Should remove dupliactes from pendingEffects.
+    pendingEffects.length = 0;
     pendingEffects.push.apply(pendingEffects, newPendingClears);
     pendingEffects.push.apply(pendingEffects, newPendingEffects);
 

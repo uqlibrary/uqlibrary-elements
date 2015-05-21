@@ -62,10 +62,9 @@
     updating.sort(function(left, right) {
       return left._sequenceNumber - right._sequenceNumber;
     });
-    updating = updating.filter(function(callback) {
+    updating.filter(function(callback) {
       callback();
-      var playState = callback._player ? callback._player.playState : 'idle';
-      if (playState != 'running' && playState != 'pending')
+      if (!callback._player || callback._player.finished || callback._player.paused)
         callback._registered = false;
       return callback._registered;
     });
