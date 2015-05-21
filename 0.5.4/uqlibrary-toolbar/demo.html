@@ -15,24 +15,50 @@
           appTitle='Application Name'
           appTitleLink='#'
           appLinks='[{"label": "Switch back", "action": "#"}, {"label": "Help", "url": "#"}, {"label": "Feedback", "url": "#"}]'
-          searchPlaceholderText="">
+          searchPlaceholderText="Search for something">
   </uqlibrary-toolbar>
+
+  <div id="log">
+
+  </div>
 
 <script>
     var uqlibraryToolbar = document.querySelector('uqlibrary-toolbar');
-    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {console.log('menu was clicked!')});
-    //uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-button-clicked', function(e) {console.log('searched for ' + e.detail.searchTerm)});
-    //uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-key-pressed', function(e) {console.log('typed ' + e.detail.searchTerm)});
-    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-submitted', function(e) {console.log('submitted ' + e.detail.searchTerm)});
+    var divLog = document.querySelector('#log');
 
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {
+      console.log('menu was clicked')
+      divLog.innerHTML += 'menu was clicked <br>';
+    });
+
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-submitted', function(e) {
+      console.log('submitted term: ' + e.detail.searchTerm);
+      divLog.innerHTML += 'submitted term: ' + e.detail.searchTerm + "<br>";
+
+      if (e.detail.searchItem) {
+        console.log('submitted item: ' + e.detail.searchItem.value);
+        divLog.innerHTML += 'submitted item: ' + e.detail.searchItem.value + "<br>";
+      }
+    });
 
     document.addEventListener('polymer-ready', function() {
-    //  var toolbar = document.querySelector('uqlibrary-toolbar');
+      var toolbar = document.querySelector('uqlibrary-toolbar');
+
+      document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
+        if(e.detail.value.length > 2) {
+
+          var suggestions = [];
+
+            for (var i = 0; i < 10 - e.detail.value.length; i++) {
+              var item = {text: e.detail.value + " " + i, value: "00" + i};
+              suggestions.push(item);
+            }
+
+          uqlibraryToolbar.suggestions = suggestions;
+        }
+      });
     });
 
-    document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
-      uqlibraryToolbar.fire('uqlibrary-toolbar-search-suggestions-loaded', {data: [ { text: 'suggestion 1 for '+ e.detail.value, url: '#' }, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
-    });
 
 </script>
 
