@@ -86,7 +86,7 @@ Can include optional menu options
         </paper-input-decorator>
 
         <paper-dropdown id="autosuggest"
-                        opened="{{suggestions.length > 0}}"
+                        opened="{{openSuggestions}}"
                         class="no-padding"
                         relatedTarget="{{$.searchFieldWrapper}}"
                         autoFocusDisabled="true">
@@ -208,6 +208,10 @@ Can include optional menu options
         this.$.suggestionSelector.clearSelection();
         this.$.suggestionSelector.selected = null;
         this.suggestionIndex = -1;
+
+        this.async(function(){
+          this.openSuggestions = this.suggestions.length > 0;
+        }, 100);
       },
 
       suggestionIndexChanged: function(oldValue, newValue) {
