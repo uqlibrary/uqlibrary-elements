@@ -94,16 +94,7 @@
       this._tickCurrentTime((this._timeline.currentTime - this._startTime) * this.playbackRate);
       scope.invalidateEffects();
     },
-    get playbackRate() {
-      return this._playbackRate;
-    },
-    set playbackRate(value) {
-      var oldCurrentTime = this.currentTime;
-      this._playbackRate = value;
-      if (oldCurrentTime != null) {
-        this.currentTime = oldCurrentTime;
-      }
-    },
+    get playbackRate() { return this._playbackRate; },
     get finished() {
       return !this._idle && (this._playbackRate > 0 && this._currentTime >= this._totalDuration ||
           this._playbackRate < 0 && this._currentTime <= 0);

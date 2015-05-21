@@ -55,7 +55,7 @@
 
           // Test search suggestions
           document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
-            myEl.fire('uqlibrary-toolbar-search-suggestions-loaded', {data: [ { text: 'suggestion 1'}, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
+            myEl.suggestions = [ { text: 'suggestion 1'}, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }];
           });
 
           // Search suggestion clicked - search submitted event handler

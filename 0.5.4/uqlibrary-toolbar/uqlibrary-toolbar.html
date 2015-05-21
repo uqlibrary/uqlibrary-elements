@@ -48,18 +48,14 @@ Can include optional menu options
 @homepage https://github.com/uqlibrary/uqlibrary-toolbar
 -->
 
-<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText">
-  <!--<polymer-element name="uq-toolbar" attributes="pageTitle appTitle uq-links local-options site-search nav-menu">-->
+<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText suggestions">
 
   <template>
     <core-toolbar id="mainToolbar">
-
-      <!--Initial toolbar UI which is visible by default-->
-      <!--TODO: bubble up this event so the scaffolding can use it-->
-      <div id="hamburgerMenuIcon">
-        <paper-icon-button icon="menu"
-                           on-tap="{{menuClicked}}">
-        </paper-icon-button>
+      <div id="hamburgerMenuIcon" on-tap="{{menuClicked}}">
+        <uqlibrary-a11y-link>
+          <paper-icon-button icon="menu"></paper-icon-button>
+        </uqlibrary-a11y-link>
       </div>
 
       <div flex id="toolbarTitle">
@@ -81,7 +77,7 @@ Can include optional menu options
       <div hidden flex id="leftFlex" class="offCanvas">
 
         <core-a11y-keys target="{{$.searchInputField}}"
-                        keys="up down enter esc"
+                        keys="enter esc up down"
                         on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
 
 
@@ -90,22 +86,21 @@ Can include optional menu options
         </paper-input-decorator>
 
         <paper-dropdown id="autosuggest"
+                        opened="{{openSuggestions}}"
                         class="no-padding"
                         relatedTarget="{{$.searchFieldWrapper}}"
                         autoFocusDisabled="true">
-          <core-selector selected="{{selectedSuggestion}}"
-                         selectedAttribute=""
-                         id="suggestionSelector">
-            <template repeat="{{suggestions as item}}">
-              <paper-item on-tap="{{onTapSuggestion}}">
-                <div class="{{type + ' truncate' + (recent ? ' recent' : '')}}">{{item.text}}</div>
-              </paper-item>
+          <core-selector id="suggestionSelector" selected="{{suggestionIndex}}">
+            <template repeat="{{item, idx in suggestions}}">
+                <paper-item>
+                    <div flex class="truncate">{{item.text}}</div>
+                </paper-item>
             </template>
           </core-selector>
         </paper-dropdown>
 
       </div>
-      <div hidden id="rightFlex" on-tap="{{searchButtonClicked}}">
+      <div hidden id="rightFlex" on-tap="{{search}}">
         <uqlibrary-a11y-link>
           <paper-icon-button icon="search" id="searchButton"></paper-icon-button>
         </uqlibrary-a11y-link>
@@ -136,29 +131,17 @@ Can include optional menu options
   <script>
     Polymer('uqlibrary-toolbar', {
 
-      // TODO: uqLinks variable should be set by the uqLinks attribute
       animationFrameLength: 150,
-      searchAutosuggestHandler: null,
-      searchFieldValue: '',
-      suggestions: [],
-      selectedSuggestion: 0,
-      skipValueChangeHandle: false,
-      previousKey: '',
-      ready: function () {
-        if (!this.searchPlaceholderText) {
-          this.searchPlaceholderText = "Search";
-        }
-
-        this.initAutosuggestHandler();
-      },
 
       created: function () {
-        // hint that appLinks is an array
+        this.suggestions = [];
         this.appLinks = [];
-
+        this.searchPlaceholderText = "Search...";
+        this.ignoreIndexChanged = false;
       },
 
-      // TODO: loop through a function to do this animation
+      ready: function () {
+      },
 
       activateSearch: function () {
         var that = this;
@@ -217,105 +200,69 @@ Can include optional menu options
         this.fire('uqlibrary-toolbar-menu-clicked');
       },
 
-      searchButtonClicked: function () {
-        this.search();
-      },
-
       searchFieldValueChanged: function (oldValue, newValue) {
-        if (this.skipValueChangeHandle) {
-          this.skipValueChangeHandle = false;
-          return;
-        }
         this.fire('uqlibrary-toolbar-search-value-changed', {value: newValue});
       },
 
-      initAutosuggestHandler: function () {
-        var that = this;
-        this.addEventListener('uqlibrary-toolbar-search-suggestions-loaded', function (e) {
-          var _data = e.detail.data;
-          if (_data.constructor === Array) {
-            that.suggestions = _data;
-            that.selectedSuggestion = -1;
-            that.showSuggestions();
-          }
+      suggestionsChanged: function(oldValue, newValue) {
+        this.$.suggestionSelector.clearSelection();
+        this.$.suggestionSelector.selected = null;
+        this.suggestionIndex = -1;
 
-
-        });
+        this.async(function(){
+          this.openSuggestions = this.suggestions.length > 0;
+        }, 100);
       },
+
+      suggestionIndexChanged: function(oldValue, newValue) {
+        if (!this.ignoreIndexChanged && this.suggestionIndex != null && this.suggestionIndex >= 0) {
+          this.search({ searchItem: this.suggestions[this.suggestionIndex] });
+        }
+
+        this.ignoreIndexChanged = false;
+      },
+
       onSearchKeys: function (ev) {
-        if (ev.detail.key === 'down' && this.selectedSuggestion < (this.suggestions.length - 1)) {
-          this.selectedSuggestion++;
+        switch(ev.detail.key) {
+          case 'esc':
+            this.suggestions = [];
+            break;
+          case 'enter':
+            if (this.suggestionIndex >= 0) {
+              this.search({ searchItem: this.suggestions[this.suggestionIndex] });
+            } else {
+              this.search();
+            }
+            break;
+          case 'up':
+            this.ignoreIndexChanged = true;
+            this.suggestionIndex = this.suggestionIndex >= 0 ? this.suggestionIndex - 1 : -1;
+            break;
+          case 'down':
+            this.ignoreIndexChanged = true;
+            this.suggestionIndex = this.suggestions.length - 1 > this.suggestionIndex ? this.suggestionIndex + 1 : this.suggestionIndex;
+            break;
         }
-        else if (ev.detail.key === 'up') {
-          if (this.selectedSuggestion > 0) {
-            this.selectedSuggestion--;
-          } else {
-            this.selectedSuggestion = -1;
-          }
-        }
-        else if (ev.detail.key === 'enter') {
-          if (
-                  this.selectedSuggestion >= 0 &&
-                  this.previousKey &&
-                  (this.previousKey === 'up' || this.previousKey === 'down')
-          ) {
-            this.async(function () {
-              this.suggestionSearch();
-            }, 100);
-          } else {
-            this.search();
-          }
-        }
-        else if (ev.detail.key === 'esc') {
-          this.selectedSuggestion = -1;
-          this.$.autosuggest.opened = false;
-          this.$.filters.opened = false;
-        }
-        this.previousKey = ev.detail.key;
       },
 
-      onTapSuggestion: function () {
-        this.async(function () {
-          this.suggestionSearch();
-        }, 100);
-      },
+      search: function (data) {
 
-      suggestionSearch: function () {
-        var suggestion = this.suggestions[this.selectedSuggestion];
-
-        if (suggestion.hasOwnProperty('url')) {
-          window.location.href = suggestion.url;
-        } else {
-          this.skipValueChangeHandle = true;
-          this.searchFieldValue = suggestion.text;
-          this.search();
-          this.$.autosuggest.opened = false;
+        if (data && data.searchItem) {
+          this.fire('uqlibrary-toolbar-search-submitted', {searchItem: data.searchItem, searchTerm: data.searchItem.text});
+        }
+        else {
+          this.fire('uqlibrary-toolbar-search-submitted', {searchTerm: this.searchFieldValue});
         }
 
-      },
-
-      search: function () {
-        this.fire('uqlibrary-toolbar-search-submitted', {searchTerm: this.searchFieldValue});
-      },
-
-
-      showSuggestions: function () {
-        this.async(function () {
-          if (this.suggestions.length > 0 && !this.searching) {
-            this.$.autosuggest.opened = true;
-          }
-          else if (this.$.autosuggest.opened) {
-            this.$.autosuggest.opened = false;
-          }
-        }, 100);
+        this.suggestions = [];
       },
 
       clearSearchForm: function () {
-        this.skipValueChangeHandle = true;
-        this.searchFieldValue = '';
+          this.suggestions = [];
+          this.searchFieldValue = '';
       },
 
-      linkClicked: function(e, detail, sender) {
+      linkClicked: function (e, detail, sender) {
         var _id = sender.getAttribute('id');
         var _title = sender.getAttribute('data-title');
 
