@@ -44,16 +44,7 @@ Element providing list of records for Flint language survey based on language/vo
         ready: function () {
           var that = this;
           this.$.list.addEventListener('uqlibrary-api', function(e) {
-
-            that.data = [];
-
-            if (e.detail && e.detail.response && e.detail.response.docs) {
-                that.data = e.detail.response.docs;
-            }
-
-//            e.detail.response.numFound = 24
-//            e.detail.response.start = 0
-            that.fire('uqlibrary-api-flint-records-loaded', that.data);
+            that.fire('uqlibrary-api-flint-records-loaded', e.detail.response);
           });
         },
 
