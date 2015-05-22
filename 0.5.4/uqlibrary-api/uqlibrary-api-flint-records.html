@@ -25,10 +25,13 @@ Element providing list of records for Flint language survey based on language/vo
       Polymer('uqlibrary-api-flint-records', {
 
         baseUri : {
-          keyword: '/collection/flint?search={{KEYWORD}}&start=0&rows=50',
-          language: '/collection/flint?language={{KEYWORD}}&start=0&rows=50',
-          voice: '/collection/flint?voice={{KEYWORD}}&start=0&rows=50'
+          keyword: '/collection/flint?search={{KEYWORD}}&start={{START}}&rows={{ROWS}}',
+          language: '/collection/flint?language={{KEYWORD}}&start={{START}}&rows={{ROWS}}',
+          voice: '/collection/flint?voice={{KEYWORD}}&start={{START}}&rows={{ROWS}}'
         },
+
+        start: 0,
+        rows: 50,
 
         /**
          * Fired when the object has loaded.
@@ -48,6 +51,8 @@ Element providing list of records for Flint language survey based on language/vo
                 that.data = e.detail.response.docs;
             }
 
+//            e.detail.response.numFound = 24
+//            e.detail.response.start = 0
             that.fire('uqlibrary-api-flint-records-loaded', that.data);
           });
         },
@@ -58,13 +63,20 @@ Element providing list of records for Flint language survey based on language/vo
          * @method get
          */
         get: function (args) {
+          var uri;
+
           if (args && args.keyword) {
-            this.$.list.uri = this.baseUri.keyword.replace('{{KEYWORD}}', args.keyword);
+            uri = this.baseUri.keyword.replace('{{KEYWORD}}', args.keyword);
           } else if (args && args.language) {
-            this.$.list.uri = this.baseUri.language.replace('{{KEYWORD}}', args.language);
+            uri = this.baseUri.language.replace('{{KEYWORD}}', args.language);
           } else if (args && args.voice) {
-            this.$.list.uri = this.baseUri.voice.replace('{{KEYWORD}}', args.voice);
+            uri = this.baseUri.voice.replace('{{KEYWORD}}', args.voice);
           }
+
+          uri = uri.replace('{{START}}', args.start ? args.start : this.start);
+          uri = uri.replace('{{ROWS}}', args.rows ? args.rows : this.rows);
+
+          this.$.list.uri = uri;
 
           this.$.list.get();
         }
