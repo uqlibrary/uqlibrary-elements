@@ -14,6 +14,7 @@
     "core-elements": "Polymer/core-elements#0.5.4",
     "paper-elements": "Polymer/paper-elements#0.5.4",
     "swipeable-card": "PolymerLabs/swipeable-card#0.5.0",
+    "notification-elements": "PolymerLabs/notification-elements#0.5.0",
     "web-animations-js": "web-animations/web-animations-js",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#<branch>",
     "uqlibrary-search": "uqlibrary/uqlibrary-search#<branch>",
