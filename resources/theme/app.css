@@ -966,7 +966,6 @@ uqlibrary-persistent-footer .footerInfo {
   padding: 12px; }
 
 .persistentFooter {
-  position: fixed;
   height: 48px;
   bottom: 0;
   background-color: #ffffff;
