@@ -1012,6 +1012,18 @@ paper-icon-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 50%; }
 
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  top: 44px;
+  left: 50%;
+  margin-left: -15px;
+  border-width: 0 15px 15px;
+  border-bottom-color: #fff; }
+
 .card {
   background: white;
   box-sizing: border-box;

@@ -1,0 +1,20 @@
+<link rel="import" href="../../../../core-icon-button/core-icon-button.html">
+
+<polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}" noink>
+  <template>
+    <link rel="stylesheet" href="../../theme/component.css">
+    <shadow></shadow>
+    <div class="arrow" hidden?="{{! dropdown.opened}}"></div>
+    <content></content>
+  </template>
+  <script>
+    Polymer('x-trigger', {
+      toggle: function() {
+        if (!this.dropdown) {
+          this.dropdown = this.querySelector('paper-dropdown');
+        }
+        this.dropdown && this.dropdown.toggle();
+      }
+    });
+  </script>
+</polymer-element>
