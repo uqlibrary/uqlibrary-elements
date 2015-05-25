@@ -5,6 +5,11 @@
     right: 30px;
     top: 64px;
   }
+  @media screen and (max-width: 420px) {
+    html /deep/ x-trigger paper-dropdown.open-below {
+      right: 0px;
+    }
+  }
 </style>
 <polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}" noink>
   <template>
