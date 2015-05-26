@@ -23,42 +23,67 @@ https://www.polymer-project.org/docs/start/tutorial/intro.html
 
 https://www.polymer-project.org/docs/start/reusableelements.html
 
-Before pulling anything from this repo, you'll first want to create a folder in your main directory that will contain all the required component folders. You probably don't want to use your top-level development folder as it will quickly fill up with all sorts of web components. Instead, use something like:
+* UQLibrary elements
 
-    $ /path/to/development/uqlibrary
-    $ cd /path/to/development/uqlibrary
+Custom elements are reusable components that can be used in different web apps, eg uqlibrary-menu, uqlibrary-api). 
+To start custom elements development:
 
-Once in your chosen directory, you should pull the individual components that you want to work with (e.g. uqlibrary-booking) into this directory. Then do the following:
-
-    $ cd /path/to/development/uqlibrary/uqlibrary-{component-name}
+    # to create a new element
+    $ git clone https://github.com/uqlibrary/uqlibrary-element-template.git
+    
+    # to modify existing element
+    $ git clone https://github.com/uqlibrary/uqlibrary-{element-name}.git
+    
     $ bower install
+    $ git clone https://github.com/uqlibrary/uqlibrary-elements.git
+    
+Update all references to 'uqlibrary-element-template' to your element name, eg 'uqlibrary-special-button', run demo/index.html to test your custom element.
+These custom elements are assembled in uqlibrary-elements by vulcanization (more in 'Adding a component' section).
 
-Be sure to also pull any related components that are used by the component you want to work on. For example, uqlibrary-booking uses uqlibrary-timeline. If you experience any errors at this stage, check that the dependencies in the bower.json file are correct.
+Create custom element demo pages to help others understand how custom element looks like:
 
-Finally, you should install vulcanizer so that you can add your changes to this aggregate uqlibrary-elements repository:
+    $ git clone https://github.com/Polymer/tools.git
+    $ mkdir temp && cd temp && ../../tools/bin/gp.sh uqlibrary uqlibrary-{ELEMENT_NAME} && cd .. && rm -rf temp
 
-    $ npm install -g vulcanize
+* UQLibrary apps
 
-and polymer-tools
+UQLibrary apps use custom, core-, paper-, or other elements as building blocks for bigger application. To start apps development:
 
-https://github.com/Polymer/tools
-
-so you can update individual web component demo pages, thus helping others to understand and use them.
-
-    $ mkdir temp && cd temp && ../../tools/bin/gp.sh uqlibrary uqlibrary-ELEMENT_NAME && cd .. && rm -rf temp
-
-this will create a new gh-pages branch on the repo and let you link to its component page, and its demo page.
+    # to create a new app
+    $ git clone https://github.com/uqlibrary/uqlibrary-app-template.git
+    
+    # to modify existing element
+    $ git clone https://github.com/uqlibrary/uqlibrary-{app-name}.git
+    
+    $ git clone https://github.com/uqlibrary/uqlibrary-elements.git
+    
+All dependencies for applications are located as vulcanized/combined files in /uqlibrary-element/v/lib/vulcanized.html (therefore, bower install is not required).
 
 ### Adding a component
 
-To add a component, edit the bower.json file, and add the component as a dependency.
+When custom componenets are ready to be used in applications they are combined into a single file by the process of vulcanization.
+ Read more details on https://github.com/polymer/vulcanize
+Install vulcinize tools:
 
-Edit the index.html file in the root of the repo and include the component so it will be vulcanized.
+    $ npm install -g vulcanize
+
+To add a custom component, in path/to/uqlibrary-element/ add component as a dependency to the bower.json file:
+```
+    "uqlibrary-{custom-element}": "uqlibrary/uqlibrary-{custom-element}#<branch>"
+```
+
+Vulcanize is performed for 
+* each branch (master/uat/staging/production)
+* different applications 
+index.html - for UQ Library My library applications 
+index-flint.html - for UQ Library Voices application
+
+Edit appropriate index.html file in the root of the repo and include the component so it will be vulcanized.
 
 Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that
 can be included in your app:
 
-    $ cd /path/to/repo
+    $ cd /path/to/uqlibrary-element
     $ bin/elements.sh
 
 The script uses the Polymer version in bower.json to determine the directory components are installed into.
