@@ -509,8 +509,9 @@ uqlibrary-persistent-footer {
     padding: 12px;
   }
 }
+
 .persistentFooter {
-  position: fixed;
+//  position: fixed;
   height: $persistent-footer-height;
   bottom: 0;
   background-color: $white;
