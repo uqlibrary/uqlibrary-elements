@@ -34,10 +34,12 @@
 
 // temporary fix because Polymer 0.5.6 adds transform to #mainContainer, which
 // intereferes with 'position: fixed' used by persistent footer element
-html /deep/ #mainContainer {
+core-header-panel /deep/ #mainContainer {
   -webkit-transform: none !important;
   transform: none !important;
 }
+
+
 
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html

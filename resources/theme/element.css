@@ -206,7 +206,7 @@ h1#toolbar-page-title {
 * {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
-html /deep/ #mainContainer {
+core-header-panel /deep/ #mainContainer {
   -webkit-transform: none !important;
   transform: none !important; }
 
