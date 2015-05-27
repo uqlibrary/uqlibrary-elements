@@ -390,7 +390,8 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #fff; }
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37); }
 
 .main {
   background-color: #FAFAFA; }
@@ -472,6 +473,7 @@ uqlibrary-persistent-footer .footerInfo {
   padding: 12px; }
 
 .persistentFooter {
+  position: fixed;
   height: 48px;
   bottom: 0;
   background-color: #fff;
