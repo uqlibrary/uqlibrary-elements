@@ -700,10 +700,14 @@ h1#toolbar-page-title {
 * {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
+html /deep/ #mainContainer {
+  -webkit-transform: none !important;
+  transform: none !important; }
+
 core-menu {
   background-color: #fff;
   margin: 0;
-  padding: 8px 0; }
+  padding: 8px 0 24px 8px; }
   core-menu .core-selected {
     color: #2874d7; }
     core-menu .core-selected core-icon {
@@ -967,6 +971,7 @@ uqlibrary-persistent-footer .footerInfo {
   padding: 12px; }
 
 .persistentFooter {
+  position: fixed;
   height: 48px;
   bottom: 0;
   background-color: #fff;
