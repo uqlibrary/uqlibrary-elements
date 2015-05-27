@@ -32,12 +32,21 @@
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
+// temporary fix because Polymer 0.5.6 adds transform to #mainContainer, which
+// intereferes with 'position: fixed' used by persistent footer element
+core-header-panel /deep/ #mainContainer {
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+
+
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
 core-menu {
   background-color: $background-secondary;
   margin: 0;
-  padding: 8px 0;
+  padding: 8px 0 24px 8px;
   .core-selected {
     color: $uq-blue;
     core-icon {
@@ -397,6 +406,7 @@ paper-slider {
 // Drawer panel background colour and border (includes non chrome compatibility)
 core-drawer-panel [drawer] {
   background-color: $background-secondary;
+  box-shadow: $shadow-z-1;
 }
 
 // Main content background colour
@@ -508,6 +518,7 @@ uqlibrary-persistent-footer {
     padding: 12px;
   }
 }
+
 .persistentFooter {
   position: fixed;
   height: $persistent-footer-height;

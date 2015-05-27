@@ -1,0 +1,24 @@
+//This is the core component stylesheet
+//contains only styles relevant to all components
+
+
+@import "variables";
+@import "typography";
+@import "core";
+@import "lists";
+@import "buttons";
+@import "dropdown";
+@import "cards";
+
+
+:host,
+:host *,
+::content *
+{
+  box-sizing: border-box;
+  outline: none;
+}
+
+
+
+
