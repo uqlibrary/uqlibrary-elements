@@ -1,0 +1,56 @@
+<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+
+<!--
+
+Reusable search input
+
+##### Example
+
+<uqlibrary-search-input></uqlibrary-search-input>
+
+@element uqlibrary-search-input
+@blurb Reusable search input
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-search-input
+-->
+
+<polymer-element name="uqlibrary-search-input" attributes="narrow placeholderText">
+  <template>
+    <!--<link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">-->
+    <link rel="stylesheet" href="uqlibrary-search-input.css">
+
+    <!--back arrow is hidden if view is not narrow and if it's not in search mode-->
+    <div horizontal layout class="{{ {activateSearch: !searchIsHidden} | tokenList }}">
+      <core-icon-button icon="arrow-back" class="{{ {activateSearch: !searchIsHidden} | tokenList }}" on-tap="{{hideSearch}}" hidden?="{{searchIsHidden || !narrow}}"></core-icon-button>
+      <core-icon-button icon="search" class="{{ {white: !narrow} | tokenList }}" on-tap="{{clickedSearch}}" hidden?="{{narrow && !searchIsHidden}}"></core-icon-button>
+      <input flex id="searchInput" placeholder="{{placeholderText}}" is="core-input" hidden?="{{narrow && searchIsHidden}}">
+    </div>
+  </template>
+  <script>
+    Polymer('uqlibrary-search-input', {
+      searchIsHidden: true,
+      that: this,
+
+      ready: function () {
+      },
+      hideSearch: function() {
+//        console.log('clicking back while narrow!');
+        this.fire('uqlibrary-search-input-back');
+        this.searchIsHidden = true;
+        this.$.searchInput.focus();
+      },
+      clickedSearch: function() {
+        if (this.narrow) {
+//          console.log('its narrow!');
+          this.fire('uqlibrary-search-input-button-clicked-narrow');
+          this.searchIsHidden = false;
+          console.log(this.$.searchInput);
+        } else if (!this.narrow) {
+//          console.log('it isnt narrow!');
+          this.fire('uqlibrary-search-input-button-clicked');
+        }
+      }
+    });
+  </script>
+</polymer-element>

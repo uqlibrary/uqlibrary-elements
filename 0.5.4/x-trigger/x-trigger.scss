@@ -1,0 +1,16 @@
+@import "../uqlibrary-elements/resources/theme/variables";
+@import "../uqlibrary-elements/resources/theme/margins";
+
+/* specific styles for this element */
+
+html /deep/ x-trigger paper-dropdown.open-below {
+  position: fixed;
+  right: 30px;
+  top: 64px;
+}
+@media screen and (max-width: 420px) {
+  html /deep/ x-trigger paper-dropdown.open-below {
+    right: 0px;
+    width: 100%;
+  }
+}

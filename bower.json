@@ -15,10 +15,14 @@
     "paper-elements": "Polymer/paper-elements#0.5.4",
     "swipeable-card": "PolymerLabs/swipeable-card#0.5.0",
     "notification-elements": "PolymerLabs/notification-elements#0.5.0",
-    "web-animations-js": "web-animations/web-animations-js",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5",
+    "google-map": "GoogleWebComponents/google-map#^0.4.2",
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#<branch>",
     "uqlibrary-search": "uqlibrary/uqlibrary-search#<branch>",
     "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#<branch>",
+    "uqlibrary-ga": "x-trigger/x-trigger#<branch>",
     "uqlibrary-ga": "uqlibrary/uqlibrary-ga#<branch>",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#<branch>",
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#<branch>",
@@ -27,8 +31,11 @@
     "uqlibrary-toolbar": "uqlibrary/uqlibrary-toolbar#<branch>",
     "x-audio": "uqlibrary/x-audio#<branch>",
     "md-timepicker": "uqlibrary/md-timepicker#<branch>",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
-    "web-component-tester": "Polymer/web-component-tester#2.0.5",
-    "google-map": "GoogleWebComponents/google-map#^0.4.2"
+    "uqlibrary-account-button": "uqlibrary/uqlibrary-account-button#<branch>",
+    "uqlibrary-apps-button": "uqlibrary/uqlibrary-apps-button#<branch>",
+    "uqlibrary-chat-button": "uqlibrary/uqlibrary-chat-button#<branch>",
+    "uqlibrary-notifications-button": "uqlibrary/uqlibrary-notifications-button#<branch>",
+    "uqlibrary-search-input": "uqlibrary/uqlibrary-search-input#<branch>",
+    "uqlibrary-scaffold": "uqlibrary/uqlibrary-scaffold#<branch>"
   }
 }

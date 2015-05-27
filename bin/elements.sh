@@ -21,15 +21,13 @@ cp index*.html ${polymer}/lib/
 rm ${polymer}/lib/index-template.html # Remove this file as it shouldn't be vulcanized
 cd ${polymer}/lib/
 
-#vulcanize --config ../../vulcanize.conf -o vulcanized.html index.html
-#vulcanize --config ../../vulcanize.conf -csp -strip -o vulcanized.html index.html
-
 for filename in index*.html; do
   vulcanized_name="${filename/index/vulcanized}"
   echo "Vulcanizing ${filename}"
   vulcanize --config ../../vulcanize.conf --inline -csp -strip -o ${vulcanized_name} ${filename}
+  #vulcanize --config ../../vulcanize.conf -o ${vulcanized_name} ${filename}
+  #vulcanize --config ../../vulcanize.conf -csp -strip -o ${vulcanized_name} ${filename}
 done
-#vulcanize --config ../../vulcanize.conf --inline -csp -strip -o vulcanized*.html index*.html
 
 # updating path to css files after vulcanization
 grunt replace

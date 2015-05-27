@@ -2,6 +2,7 @@
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 <link rel="import" href="../core-icon/core-icon.html">
 <link rel="import" href="../core-toolbar/core-toolbar.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../core-icons/maps-icons.html">
 <link rel="import" href="../core-icons/hardware-icons.html">
@@ -66,22 +67,10 @@ Element providing the library main navigation menu using a responsive drawer pan
                       title="Skip navigation"
                       on-tap="{{handleSkipNavigation}}">Skip navigation</paper-button>
 
-        <template if="{{!account.hasSession}}">
-
-            <core-toolbar>
-                <div vertical layout center-justified>
-                    <div horizontal layout center-justified>
-                        <div align-self="center">
-                            <a href="http://www.uq.edu.au" class="glow">
-                                <img src="https://www.library.uq.edu.au/360Link/Current/uq-logo.svg" id="uq-logo">
-                            </a>
-                            <a href="http://www.uq.edu.au" id="uq-logo-text" class="glow">UQ</a>
-                            <a href="https://www.library.uq.edu.au" id="uq-library-logo-text" class="glow">Library</a>
-                        </div>
-                    </div>
-                </div>
-            </core-toolbar>
-        </template>
+        <core-toolbar>
+            <core-icon-button icon="menu" on-tap="{{onCloseMenu}}"></core-icon-button>
+            UQ | Library
+        </core-toolbar>
 
         <template if="{{account.hasSession}}">
             <div id="account">
@@ -138,6 +127,10 @@ Element providing the library main navigation menu using a responsive drawer pan
                     this.account = {
                         hasSession: false
                     };
+                },
+
+                onCloseMenu: function () {
+                    this.fire('uqlibrary-menu-close');
                 },
 
                 menuFileChanged: function(oldValue, newValue) {

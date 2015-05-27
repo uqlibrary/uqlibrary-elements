@@ -1,0 +1,36 @@
+/*search input uses white text colour and full width of a flex */
+#searchInput {
+  color: #fff;
+  width: 100%;
+  height: 41px;
+  /*
+  search input placeholder text should be weaker than user's input text,
+  this gives it material design level of transparency, across browsers
+  */ }
+  #searchInput::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.87); }
+  #searchInput::-webkit-input-placeholder {
+    /* WebKit browsers, Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.54); }
+  #searchInput:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: rgba(255, 255, 255, 0.87); }
+
+.activateSearch {
+  color: #999999 !important; }
+  .activateSearch core-icon {
+    color: #757575; }
+  .activateSearch #searchInput {
+    color: rgba(0, 0, 0, 0.87) !important; }
+    .activateSearch #searchInput::-webkit-input-placeholder {
+      /* WebKit browsers, Mozilla Firefox 19+ */
+      color: #999999; }
+    .activateSearch #searchInput::-moz-placeholder {
+      /* WebKit browsers, Mozilla Firefox 19+ */
+      color: #999999; }
+    .activateSearch #searchInput:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #999999; }
+
+/*# sourceMappingURL=uqlibrary-search-input.css.map */
