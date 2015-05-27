@@ -39,11 +39,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "cb64793c24",
+  "_release": "a6922c8c51",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "cb64793c2447698363683044d954225eaa3ffe02"
+    "commit": "a6922c8c515882ce2f6f55d5511bc01d86035939"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-notifications-button.git",
   "_target": "master",

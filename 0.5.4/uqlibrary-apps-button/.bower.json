@@ -38,11 +38,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "d432e19964",
+  "_release": "3c37227b1e",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "d432e1996440688f527c78f23b7c7087f62a390d"
+    "commit": "3c37227b1efd2aef211d44a30fb1631028901dc4"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-apps-button.git",
   "_target": "master",

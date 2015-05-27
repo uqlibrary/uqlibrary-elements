@@ -38,11 +38,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "215589ed63",
+  "_release": "2b89a59907",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "215589ed635e9eb57aea1ab6d28b7a5e27923c34"
+    "commit": "2b89a59907b13db058424550852da41f32666669"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-account-button.git",
   "_target": "master",

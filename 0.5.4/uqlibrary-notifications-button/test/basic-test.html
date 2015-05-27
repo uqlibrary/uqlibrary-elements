@@ -9,43 +9,30 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
 
-    <!-- Step 1: import the element to test -->
-    <link rel="import" href="../uqlibrary-notifications-button.html">
-  </head>
-  <body>
+  <!-- Step 1: import the element to test -->
+  <link rel="import" href="../uqlibrary-notifications-button.html">
+</head>
+<body>
 
-    <!-- You can use the document as a place to set up your fixtures. -->
-   <uqlibrary-notifications-button></uqlibrary-notifications-button>
+<!-- You can use the document as a place to set up your fixtures. -->
+<seed-element></seed-element>
 
-    <script>
-      var myEl = document.querySelector('uqlibrary-notifications-button');
-      var myElTrigger = document.querySelector('uqlibrary-notifications-button /deep/ x-trigger');
+<script>
+  var myEl = document.querySelector('uqlibrary-notifications-button');
 
-      suite('<uqlibrary-notifications-button>', function() {
+  suite('tests for uqlibrary-notifications-button', function() {
 
-        test('notifications button handles taps correctly', function() {
-          document.querySelector('html /deep/ x-trigger').fire('tap');
-          setTimeout(function() {
-            //check that paper dropdown menu appears
-            expect(document.querySelector('html /deep/ paper-dropdown').style.display).to.not.equal('none');
+    test('is should be tested', function() {
+    });
+  });
+</script>
 
-          }, 300);
-        });
-
-        test('notifications button appears correctly', function(done) {
-          assert.equal(myEl.nodeName.toLowerCase(), 'uqlibrary-notifications-button');
-          assert.equal(myElTrigger.icon, 'social:notifications-none');
-          done();
-        });
-      });
-    </script>
-
-  </body>
+</body>
 </html>

@@ -38,11 +38,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "950f853403",
+  "_release": "32687d75ac",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "950f8534030d3a0a45e1fca475615b378356f781"
+    "commit": "32687d75ac8f60723923bb9767d9afdd5019865c"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-chat-button.git",
   "_target": "master",
