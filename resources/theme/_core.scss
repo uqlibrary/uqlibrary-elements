@@ -397,6 +397,7 @@ paper-slider {
 // Drawer panel background colour and border (includes non chrome compatibility)
 core-drawer-panel [drawer] {
   background-color: $background-secondary;
+  box-shadow: $shadow-z-1;
 }
 
 // Main content background colour
@@ -508,7 +509,9 @@ uqlibrary-persistent-footer {
     padding: 12px;
   }
 }
+
 .persistentFooter {
+//  position: fixed;
   height: $persistent-footer-height;
   bottom: 0;
   background-color: $white;

@@ -43,10 +43,11 @@ $button-size-font: 1em;
 // Minimum human touch target size
 $touch-target-size: 44px;
 
-// Base unit
+// Base units and measurements
 $base-unit: 8px;
-
 $border-radius: 2px;
+$full-width: 100%;
+$toolbar-height: 51px;
 
 // Responsive width
 // using iPad landscape (768px) for now as
@@ -129,8 +130,8 @@ $uq-green-A200: rgba($uq-green-A700, .50);
 $uq-green-A400: rgba($uq-green-A700, .75);
 // End of Material Design specification colours
 
-$white: #ffffff;
-$black: #000000;
+$white: #fff;
+$black: #000;
 
 // Official UQ Palette v0.3
 //
@@ -157,7 +158,6 @@ $primary:               lighten($baseline-uq-purple,33%);
 $alpha-primary:         transparentize($primary, .3);
 $accent:                lighten($baseline-uq-green, 36%);
 $uq-aqua:               lighten($baseline-uq-aqua,31%); // Official UQ aqua
-//$uq-aqua:               hsl(192, 100%, 31%);
 $uq-aqua-600:           lighten($baseline-uq-aqua,25%);
 $uq-aqua-700:           lighten($baseline-uq-aqua,21%);
 
@@ -234,8 +234,8 @@ $inactive-icon:  rgba($black, .26);
 
 // Inverse text / icons / dividers
 $divider-inverse:        rgba($white, .12);
-$input-inverse:          rgba($white, ($base-unit*2));
-$input-inverse-hover:    rgba($white, ($base-unit*3));
+$input-inverse:          rgba($white, .16);
+$input-inverse-hover:    rgba($white, .24);
 $hint-text-inverse:      rgba($white, .26);
 $secondary-text-inverse: rgba($white, .54);
 $text-inverse:           rgba($white, .87);
