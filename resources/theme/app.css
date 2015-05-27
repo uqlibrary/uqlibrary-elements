@@ -682,7 +682,7 @@ h1#toolbar-page-title {
   display: block;
   border-radius: 2px;
   height: auto;
-  background: #ffffff;
+  background: #fff;
   width: 98%;
   max-width: 800px;
   margin: 16px auto; }
@@ -701,7 +701,7 @@ h1#toolbar-page-title {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
 
 core-menu {
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 0;
   padding: 8px 0; }
   core-menu .core-selected {
@@ -735,7 +735,7 @@ core-toolbar {
   background-color: #4a075f;
   color: rgba(255, 255, 255, 0.87); }
   core-toolbar core-icon {
-    color: #ffffff; }
+    color: #fff; }
     core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
@@ -810,7 +810,7 @@ paper-progress {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -884,7 +884,7 @@ paper-slider {
     width: 75px; }
 
 core-drawer-panel [drawer] {
-  background-color: #ffffff; }
+  background-color: #fff; }
 
 .main {
   background-color: #FAFAFA; }
@@ -968,7 +968,7 @@ uqlibrary-persistent-footer .footerInfo {
 .persistentFooter {
   height: 48px;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   border-top: 1px solid #EEEEEE;
   padding: 4px; }
@@ -1020,7 +1020,7 @@ uqlibrary-persistent-footer .footerInfo {
   position: fixed;
   height: 48px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: #fff;
   width: 100%;
   border-top: 1px solid #cccccc; }
   .persistent-footer .text-container {
@@ -1089,7 +1089,7 @@ paper-fab {
     position: fixed;
     right: 16px; }
   paper-fab core-icon {
-    color: #ffffff; }
+    color: #fff; }
 
 paper-button {
   transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1); }
@@ -1111,7 +1111,7 @@ paper-button .colored:hover {
 
 paper-button[raised] {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: #ffffff; }
+  background-color: #fff; }
   paper-button[raised]:hover {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #FAFAFA;
@@ -1119,7 +1119,7 @@ paper-button[raised] {
   paper-button[raised] .colored {
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: #007e9e;
-    color: #ffffff; }
+    color: #fff; }
     paper-button[raised] .colored:hover {
       transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
       background-color: #006680;
@@ -1217,7 +1217,7 @@ uqlibrary-toolbar /deep/ core-toolbar {
   padding-left: 56px; }
 
 .filterWrapper {
-  background-color: #ffffff;
+  background-color: #fff;
   margin-bottom: 30px; }
 
 md-timepicker::shadow #card {
@@ -1230,7 +1230,7 @@ md-timepicker::shadow #card {
     background-color: #007e9e !important;
     height: 80px;
     padding: 19.2px;
-    color: #ffffff;
+    color: #fff;
     font-size: 36.8px; }
     md-timepicker::shadow #card #display .digit {
       opacity: 0.7; }
@@ -1268,7 +1268,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .tabTitleNumber {
     margin-bottom: 4px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab::shadow #ink {
-    color: #ffffff; }
+    color: #fff; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab .dayOfWeek {
     text-align: center;
     width: 40px; }
@@ -1281,7 +1281,7 @@ uqlibrary-date-selector /deep/ paper-tabs {
     padding-top: 12px; }
   uqlibrary-date-selector /deep/ paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: #fff; }
 
 uqlibrary-time-selector /deep/ .items {
   margin: 0 10px;
@@ -1301,10 +1301,10 @@ uqlibrary-time-selector /deep/ .items {
     background-color: #EEEEEE; }
     uqlibrary-time-selector /deep/ .items paper-button.item.occupied-true {
       background-color: #BDBDBD;
-      color: #ffffff; }
+      color: #fff; }
     uqlibrary-time-selector /deep/ .items paper-button.item.selected-true {
       background-color: #007e9e;
-      color: #ffffff; }
+      color: #fff; }
 
 uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
   padding-top: 20px; }
@@ -1682,7 +1682,7 @@ uqlibrary-home paper-icon-button.huge #icon {
 
 paper-tabs {
   color: rgba(0, 0, 0, 0.87);
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
   paper-tabs::shadow #selectionBar {
     background-color: #8db800; }
@@ -1701,7 +1701,7 @@ paper-tabs {
     padding-top: 12px; }
   paper-tabs paper-tab.core-selected .date {
     background-color: #007e9e;
-    color: #ffffff; }
+    color: #fff; }
 
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
