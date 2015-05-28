@@ -1216,52 +1216,6 @@ uqlibrary-toolbar /deep/ core-toolbar {
       /* line color when the input is unfocused */
       background-color: transparent; }
 
-#expandLibraryList, #expandLibraryList::shadow {
-  padding: 0px; }
-  #expandLibraryList:active, #expandLibraryList:focus, #expandLibraryList:hover, #expandLibraryList::shadow:active, #expandLibraryList::shadow:focus, #expandLibraryList::shadow:hover {
-    background-color: rgba(0, 0, 0, 0.26); }
-
-#availability {
-  margin-top: 8px;
-  padding: 16px; }
-
-#branchSelect {
-  padding: 7px;
-  width: 100%; }
-
-#branches {
-  width: 100%; }
-
-.available {
-  color: #38852e; }
-
-.unavailable {
-  color: #ce4627; }
-
-.booked {
-  color: #cccccc; }
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important; }
-
-#branchWrapper {
-  width: 96%;
-  max-width: 96%;
-  margin: 8px;
-  transition: 300ms ease-in-out;
-  padding: 6px; }
-  #branchWrapper:hover {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3); }
-
-.availability-item {
-  border-bottom: 1px solid #F5F5F5;
-  padding: 4px;
-  line-height: 1.2; }
-  .availability-item .totals {
-    float: right;
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.54); }
-
 .listItemSection.listItemTitle {
   padding-bottom: 16px; }
 .listItemSection.listItemAuthor {
