@@ -1191,36 +1191,6 @@ uqlibrary-toolbar /deep/ core-toolbar {
       /* line color when the input is unfocused */
       background-color: transparent; }
 
-.listItemSection.listItemTitle {
-  padding-bottom: 16px; }
-.listItemSection.listItemAuthor {
-  font-style: italic;
-  padding-bottom: 16px; }
-.listItemSection.listItemType {
-  color: #7b0c9d;
-  font-style: italic; }
-.listItemSection.listItemNotes {
-  font-style: italic;
-  padding-bottom: 16px; }
-.listItemSection.listItemNoResultsMessage {
-  font-style: italic; }
-
-.responsiveCard {
-  background: white;
-  box-sizing: border-box;
-  padding: 18px 32px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
-  max-height: 400px; }
-  @media screen and (min-width: 768px) {
-    .responsiveCard {
-      width: 86%;
-      max-width: 600px;
-      margin: 16px auto; } }
-  @media screen and (max-width: 768px) {
-    .responsiveCard {
-      width: 100%;
-      margin: 0; } }
-
 uqlibrary-flint /deep/ paper-action-dialog {
   border-radius: 2px;
   max-width: 500px; }
