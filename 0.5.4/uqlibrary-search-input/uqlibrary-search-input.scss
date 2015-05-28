@@ -22,9 +22,9 @@
 }
 
 .activateSearch {
-  color: $uq-placeholder-inverse !important;
+  color: $text !important;
   core-icon {
-    color: $uq-text-secondary;
+    color: $text;
   }
   #searchInput {
     color: $text !important;

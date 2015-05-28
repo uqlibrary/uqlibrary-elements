@@ -25,6 +25,7 @@ Reusable search input
       <core-icon-button icon="arrow-back" class="{{ {activateSearch: !searchIsHidden} | tokenList }}" on-tap="{{hideSearch}}" hidden?="{{searchIsHidden || !narrow}}"></core-icon-button>
       <core-icon-button icon="search" class="{{ {white: !narrow} | tokenList }}" on-tap="{{clickedSearch}}" hidden?="{{narrow && !searchIsHidden}}"></core-icon-button>
       <input flex id="searchInput" placeholder="{{placeholderText}}" is="core-input" hidden?="{{narrow && searchIsHidden}}">
+      <core-icon-button icon="search" class="{{ {activateSearch: !searchIsHidden} | tokenList }}" on-tap="{{clickedSearch}}" hidden?="{{searchIsHidden || !narrow}}"></core-icon-button>
     </div>
   </template>
   <script>
