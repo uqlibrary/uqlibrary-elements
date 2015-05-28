@@ -38,6 +38,9 @@ To start custom elements development:
     $ git clone https://github.com/uqlibrary/uqlibrary-elements.git
     
 Update all references to 'uqlibrary-element-template' to your element name, eg 'uqlibrary-special-button', run demo/index.html to test your custom element.
+
+Any element specific styles should be added to uqlibrary-{element-name}.scss, if a style can be reused in other elements, it should be added to common styles in uqlibrary-elements.
+
 These custom elements are assembled in uqlibrary-elements by vulcanization (more in 'Adding a component' section).
 
 Create custom element demo pages to help others understand how custom element looks like:
@@ -59,10 +62,12 @@ UQLibrary apps use custom, core-, paper-, or other elements as building blocks f
     
 All dependencies for applications are located as vulcanized/combined files in /uqlibrary-element/v/lib/vulcanized.html (therefore, bower install is not required).
 
+Any app specific styles should be added to uqlibrary-{app-name}.scss, if a style can be reused in other elements/apps, it should be added to common styles in uqlibrary-elements.
+
 ### Adding a component
 
-When custom componenets are ready to be used in applications they are combined into a single file by the process of vulcanization.
- Read more details on https://github.com/polymer/vulcanize
+When custom componenets are ready to be used in applications they are combined into a single file by the process of vulcanization (Read more details on https://github.com/polymer/vulcanize)
+
 Install vulcinize tools:
 
     $ npm install -g vulcanize
@@ -74,11 +79,12 @@ To add a custom component, in path/to/uqlibrary-element/ add component as a depe
 
 Vulcanize is performed for 
 * each branch (master/uat/staging/production)
-* different applications 
-index.html - for UQ Library My library applications 
-index-flint.html - for UQ Library Voices application
+* different applications:
+    - index.html - for UQ Library My library applications 
+    - index-flint.html - for UQ Library Voices application
+    - if a new application requires a sub-set of custom elements, a new vulcanized config index.html file is created
 
-Edit appropriate index.html file in the root of the repo and include the component so it will be vulcanized.
+Edit corresponding to the app vulcanized config (eg index.html) file in the root of the repo and include the component so it will be vulcanized.
 
 Next run the elements.sh script in the bin directory locally, which will generate a vulcanized file that
 can be included in your app:

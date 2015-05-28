@@ -23,24 +23,21 @@ uqlibrary-flint {
       cursor: pointer;
     }
     #infoSection {
-      background: white;
-      core-icon {
-        height: 60px;
-        width: 60px;
-      }
-      .body1 {
-        font-weight: 300;
-      }
-      ul {
-        li {
-          padding: 36px 14px;
-          height: 112px;
-          .avatar {
-            margin-top: 0;
+      ul li {
+        padding-left: 8px;
+        .avatar {
+          white-space: nowrap;
+          core-icon {
+            width: 32px;
+            height: 32px;
           }
-          .content {
-            font-size: 1.5em;
-            padding-top: 15px;
+        }
+        .content {
+          margin-left: 0;
+          padding-bottom: 0;
+          div {
+            white-space: normal;
+            text-overflow: initial;
           }
         }
       }

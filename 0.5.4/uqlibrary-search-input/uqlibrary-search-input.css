@@ -18,9 +18,9 @@
     color: rgba(255, 255, 255, 0.87); }
 
 .activateSearch {
-  color: #999999 !important; }
+  color: #333 !important; }
   .activateSearch core-icon {
-    color: #757575; }
+    color: #333; }
   .activateSearch #searchInput {
     color: rgba(0, 0, 0, 0.87) !important; }
     .activateSearch #searchInput::-webkit-input-placeholder {
