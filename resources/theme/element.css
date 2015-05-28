@@ -1387,38 +1387,6 @@ uqlibrary-flint /deep/ [drawer] {
 html /deep/ div.gmnoscreen {
   display: none; }
 
-.open {
-  color: #38852e !important; }
-
-.closed {
-  color: #ce4627 !important; }
-
-.list-margin {
-  margin-bottom: 38px; }
-
-paper-tabs {
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #fff;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2); }
-  paper-tabs::shadow #selectionBar {
-    background-color: #8db800; }
-  paper-tabs paper-tab .tabTitleNumber {
-    margin-bottom: 4px; }
-  paper-tabs paper-tab::shadow #ink {
-    color: #8db800; }
-  paper-tabs paper-tab .dayOfWeek {
-    width: 40px; }
-  paper-tabs paper-tab .date {
-    height: 40px;
-    width: 40px;
-    font-size: 1.14286em;
-    text-align: center;
-    border-radius: 50%;
-    padding-top: 12px; }
-  paper-tabs paper-tab.core-selected .date {
-    background-color: #007e9e;
-    color: #fff; }
-
 uqlibrary-research::shadow uqlibrary-research-trending::shadow .coming-soon,
 uqlibrary-research::shadow uqlibrary-research-metrics::shadow .coming-soon {
   color: #cccccc; }
