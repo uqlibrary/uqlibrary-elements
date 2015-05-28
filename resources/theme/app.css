@@ -1216,31 +1216,6 @@ uqlibrary-toolbar /deep/ core-toolbar {
       /* line color when the input is unfocused */
       background-color: transparent; }
 
-uqlibrary-holds::shadow uqlibrary-borrowing-list::shadow .date {
-  padding-top: 20px; }
-
-uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .title {
-  padding-top: 20px;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 1em;
-  line-height: 1.1em;
-  color: #7b0c9d; }
-uqlibrary-fines::shadow uqlibrary-borrowing-list::shadow .content {
-  margin-left: 64px; }
-
-.attentionIcon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  padding-left: 16px;
-  height: 32px;
-  overflow: hidden;
-  width: 100%; }
-  .attentionIcon paper-icon {
-    width: 24px;
-    height: 24px; }
-
 #expandLibraryList, #expandLibraryList::shadow {
   padding: 0px; }
   #expandLibraryList:active, #expandLibraryList:focus, #expandLibraryList:hover, #expandLibraryList::shadow:active, #expandLibraryList::shadow:focus, #expandLibraryList::shadow:hover {
