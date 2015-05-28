@@ -1400,21 +1400,19 @@ uqlibrary-flint /deep/ core-drawer-panel {
     z-index: 0; }
 uqlibrary-flint /deep/ .gm-style-iw {
   cursor: pointer; }
-uqlibrary-flint /deep/ #infoSection {
-  background: white; }
-  uqlibrary-flint /deep/ #infoSection core-icon {
-    height: 60px;
-    width: 60px; }
-  uqlibrary-flint /deep/ #infoSection .body1 {
-    font-weight: 300; }
-  uqlibrary-flint /deep/ #infoSection ul li {
-    padding: 36px 14px;
-    height: 112px; }
-    uqlibrary-flint /deep/ #infoSection ul li .avatar {
-      margin-top: 0; }
-    uqlibrary-flint /deep/ #infoSection ul li .content {
-      font-size: 1.5em;
-      padding-top: 15px; }
+uqlibrary-flint /deep/ #infoSection ul li {
+  padding-left: 8px; }
+  uqlibrary-flint /deep/ #infoSection ul li .avatar {
+    white-space: nowrap; }
+    uqlibrary-flint /deep/ #infoSection ul li .avatar core-icon {
+      width: 32px;
+      height: 32px; }
+  uqlibrary-flint /deep/ #infoSection ul li .content {
+    margin-left: 0;
+    padding-bottom: 0; }
+    uqlibrary-flint /deep/ #infoSection ul li .content div {
+      white-space: normal;
+      text-overflow: initial; }
 uqlibrary-flint /deep/ #feedbackButton {
   margin-bottom: 12px; }
 uqlibrary-flint /deep/ core-list li {
