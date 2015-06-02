@@ -18,7 +18,6 @@ sed -i -e "s#${branch}#<branch>#g" bower.json
 rm -f bower.json-e
 mkdir ${polymer}/lib
 cp index*.html ${polymer}/lib/
-rm ${polymer}/lib/index-template.html # Remove this file as it shouldn't be vulcanized
 cd ${polymer}/lib/
 
 for filename in index*.html; do
