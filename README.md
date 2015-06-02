@@ -70,7 +70,9 @@ When custom componenets are ready to be used in applications they are combined i
 
 Install vulcinize tools:
 
-    $ npm install -g vulcanize
+    $ npm install -g vulcanize@0.7.1
+    
+Note: Polymer 0.5.x will only work with vulcanize version 0.7.1. If you want to upgrade to Polymer 1.0+ you can use vulcanize 1.8.1+, but only then.
 
 To add a custom component, in path/to/uqlibrary-element/ add component as a dependency to the bower.json file:
 ```
