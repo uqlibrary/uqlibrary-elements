@@ -64,11 +64,14 @@ All dependencies for applications are located as vulcanized/combined files in /u
 
 Any app specific styles should be added to uqlibrary-{app-name}.scss, if a style can be reused in other elements/apps, it should be added to common styles in uqlibrary-elements.
 
+* PHPStorm IDE settings
+Ensure that your SCSS File Watcher is configured to exclude recursively the uqlibrary-elements '0.5.4' directory or you will get SCSS compilation errors.
+
 ### Adding a component
 
 When custom componenets are ready to be used in applications they are combined into a single file by the process of vulcanization (Read more details on https://github.com/polymer/vulcanize)
 
-Install vulcinize tools:
+Install vulcanize tools:
 
     $ npm install -g vulcanize@0.7.1
     
