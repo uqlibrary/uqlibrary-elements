@@ -40,11 +40,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "800a18e3dd",
+  "_release": "3da0045151",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "800a18e3dd88abfe51047bbc11ce712f4e74b43b"
+    "commit": "3da004515131c8c1822f856ea586f8642d732940"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-scaffold.git",
   "_target": "master",

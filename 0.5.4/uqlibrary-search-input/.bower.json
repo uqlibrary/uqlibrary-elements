@@ -35,11 +35,11 @@
     "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "b07842fb36",
+  "_release": "baa70a0b55",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "b07842fb3687f57accf2d9a9389b9981f6fbb84f"
+    "commit": "baa70a0b5565cd8f6653d2a11d4e19d9281406ab"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-search-input.git",
   "_target": "master",
