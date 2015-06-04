@@ -261,7 +261,7 @@
 
         var flintRecords = document.querySelector('uqlibrary-api-flint-records');
         flintRecords.addEventListener('uqlibrary-api-flint-records-loaded', function(e) {
-          document.getElementById('flintRecordsLog').innerText = "Length: " + e.detail.length + " 1st Title: " + e.detail[0].title_t;
+          document.getElementById('flintRecordsLog').innerText = "Length: " + e.detail.numFound + " 1st Title: " + e.detail.docs[0].title_t;
         });
 
         flintRecords.get({ language: 'english' });
