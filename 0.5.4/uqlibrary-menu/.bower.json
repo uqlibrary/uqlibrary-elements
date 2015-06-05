@@ -16,8 +16,8 @@
     "core-menu": "Polymer/core-menu#0.5.4",
     "core-ajax": "Polymer/core-ajax#0.5.4",
     "core-label": "Polymer/core-label#0.5.4",
-    "uqlibrary-ga": "uqlibrary/uqlibrary-ga#master",
-    "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
+    "uqlibrary-ga": "uqlibrary/uqlibrary-ga#staging",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#staging",
     "paper-dialog": "Polymer/paper-dialog#0.5.4",
     "paper-input": "Polymer/paper-input#0.5.4",
     "paper-button": "Polymer/paper-button#0.5.4",
@@ -29,13 +29,13 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "f956cb35c1",
+  "_release": "5419276f6b",
   "_resolution": {
     "type": "branch",
-    "branch": "master",
-    "commit": "f956cb35c1132a7042e43ecc37aeaffbfd787bd2"
+    "branch": "staging",
+    "commit": "5419276f6b29bcc070f0359352206b195e3b03e9"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-menu.git",
-  "_target": "master",
+  "_target": "staging",
   "_originalSource": "uqlibrary/uqlibrary-menu"
 }

@@ -46,8 +46,8 @@ Element providing library search.
 
     <paper-shadow id="searchWrapper" class="card" z="1" horizontal layout center>
 
-      <div id="searchIcon" relative>
-        <core-icon-button icon="search" on-tap="{{onTapSearchIcon}}">
+      <div relative>
+        <core-icon-button icon="search" on-tap="{{onTapSearchIcon}}" id="searchIcon">
           <core-icon icon="{{$.filters.opened ? 'arrow-drop-up' : 'arrow-drop-down'}}"></core-icon>
         </core-icon-button>
 
@@ -301,21 +301,21 @@ Element providing library search.
           }
           else {
             var filter = this.filters[this.selectedFilter];
-            var coursePattern = new RegExp(/^[a-z]{4}[0-9]{1}/i);
-
-            if (
-              filter.type !== 'exam_papers' &&
-              filter.type !== 'learning_resources' &&
-              coursePattern.test(this.searchText)
-            ) {
-              // course code detected, switch to past exam papers search
-              for (var i = 0; i < this.filters.length; i++) {
-                if (this.filters[i].type === 'exam_papers') {
-                  this.selectedFilter = i;
-                  filter = this.filters[this.selectedFilter];
-                }
-              }
-            }
+//            var coursePattern = new RegExp(/^[a-z]{4}[0-9]{1}/i);
+//
+//            if (
+//              filter.type !== 'exam_papers' &&
+//              filter.type !== 'learning_resources' &&
+//              coursePattern.test(this.searchText)
+//            ) {
+//              // course code detected, switch to past exam papers search
+//              for (var i = 0; i < this.filters.length; i++) {
+//                if (this.filters[i].type === 'exam_papers') {
+//                  this.selectedFilter = i;
+//                  filter = this.filters[this.selectedFilter];
+//                }
+//              }
+//            }
 
             this.$.filters.opened = false;
             if (filter.autoSuggest) {

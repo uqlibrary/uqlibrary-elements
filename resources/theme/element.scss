@@ -6,6 +6,18 @@
 @import "cards";
 @import "containers";
 @import "forms";
+@import "toolbar";
+
+// App-specific styles
+@import "booking";
+@import "borrowing";
+@import "computers";
+@import "courses";
+@import "flint";
+@import "home";
+@import "hours";
+@import "researcher";
+@import "search";
 
 :host,
 :host *,

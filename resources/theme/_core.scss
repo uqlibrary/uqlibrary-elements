@@ -1,8 +1,85 @@
 @import "variables";
 @import "margins";
 
+// Core styles used across UQ My Library
 
+//    ____ ___  ____  _____      _____ _     _____ __  __ _____ _   _ _____ ____
+//   / ___/ _ \|  _ \| ____|    | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |  | | | | |_) |  _| _____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  | |___ |_| |  _ <| |________| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//   \____\___/|_| \_\_____|    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
+
+
+//<link rel="import" href="../core-drawer-panel/core-drawer-panel.html">
+//<link rel="import" href="../core-dropdown/core-dropdown.html">
+//<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+//<link rel="import" href="../core-header-panel/core-header-panel.html">
+//<link rel="import" href="../core-icon-button/core-icon-button.html">
+//<link rel="import" href="../core-icons/core-icons.html">
+//<link rel="import" href="../core-image/core-image.html">
+//<link rel="import" href="../core-input/core-input.html">
+//<link rel="import" href="../core-item/core-item.html">
+//<link rel="import" href="../core-label/core-label.html">
+//<link rel="import" href="../core-list/core-list.html">
+//<link rel="import" href="../core-media-query/core-media-query.html">
+//<link rel="import" href="../core-menu/core-menu.html">
+//<link rel="import" href="../core-overlay/core-overlay.html">
+//<link rel="import" href="../core-toolbar/core-toolbar.html">
+//<link rel="import" href="../core-tooltip/core-tooltip.html">
+
+* {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+// temporary fix because Polymer 0.5.6 adds transform to #mainContainer, which
+// intereferes with 'position: fixed' used by persistent footer element
+core-header-panel /deep/ #mainContainer {
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+
+
+// Core menu using Material Design specs from
+// http://www.google.com/design/spec/patterns/navigation-drawer.html
+core-menu {
+  background-color: $background-secondary;
+  margin: 0;
+  padding: 8px 0 24px 8px;
+  .core-selected {
+    color: $uq-blue;
+    core-icon {
+      color: $uq-blue;
+    }
+  }
+  core-icon {
+    margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
+  }
+  paper-item {
+    &:hover, &:focus, &:active {
+     background-color: $background-primary;
+    }
+  }
+  a {
+    color: $text;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &.divider, .divider {
+    border-bottom: 1px solid $uq-divider;
+  }
+}
+
+// Core icons all defined according to MD spec
 core-icon {
+
+  .big-icon {
+    height: 40px;
+    width: 40px;
+  }
+
   color: $active-icon;
 
   &.inactive {
@@ -16,139 +93,47 @@ core-icon {
   }
 }
 
-core-menu {
-  margin: 0;
-  core-icon {
-    margin-right: 2em;
-  }
-}
-
-core-toolbar {
-  background-color: $white;
-
-  core-icon {
-    color: $white;
-  }
-}
-
-core-drawer-panel {
-  background-color: $background-secondary;
-}
-
-core-header-panel {
-  background-color: $background-primary;
-}
-
+// Core toolbar background, font colour, and icon colour
 core-toolbar {
   background-color: $dark-primary;
   color: $text-inverse;
-}
-#drawer {
-  background-color: $background-secondary;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-#main {
-  background-color: $background-primary;
-}
-
-core-menu {
-  margin: 0;
-}
-
-paper-progress::shadow #activeProgress {
-  background-color: $dark-accent;
-}
-
-paper-tabs {
-  //height: 64px;
-  color: $text;
-  background-color: $white;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-  &::shadow #selectionBar {
-    background-color: $accent;
-  }
-  paper-tab {
-    .tabTitleNumber {
-      margin-bottom: 4px;
-    }
-
-    &::shadow #ink {
-      color: $accent;
-    }
-
-  }
-}
-
-#askLogout, #askLogout::shadow {
-  height: 44px;
-  width: 44px;
-  color: $background-primary;
-  bottom: 8px;
-  right: 5px;
-}
-
-#account {
-  font-size: 0.875em;
-  background-color: $primary;
-  border-bottom: 1px solid $uq-divider;
-
   core-icon {
-    height: 26px;
-    width: 26px;
-    color: $background-primary;
-  }
-
-  #details {
-    padding: 110px 14px 14px 14px;
-  }
-
-  #name {
-    //    font-weight: 400;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  #mail {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    color: $white;
+    &:focus, &:active, &:hover {
+      outline: 1px solid $hint-text-inverse;
+    }
   }
 }
 
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: $primary;
+#toolBarLeftButton, #toolBarRightButton {
+  &:focus, &:hover {
+    background-color: $hint-text-inverse;
+  }
 }
 
-/* Icon Button */
-.icon-button {
-  position: relative;
-  display: inline-block;
-  width: 56px;
-  height: 56px;
-}
-
-.icon-button > core-icon {
-  margin: 16px;
-  transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-button:hover > core-icon {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-}
-
+// Used to enable the correct behaviour with regard to the
+// menu drawer toggle button and back button on complex apps
 .responsiveToolbarButton {
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $responsive-width) {
     display:none;
   }
 }
 
-// provides a polished effect for tooltips
+core-overlay {
+  &#timepickerDialog::shadow {
+    #actions {
+      display: none;
+    }
+    #main {
+      padding: 0;
+    }
+  }
+}
+
+// TODO: sassify tooltip styles
+// TODO: revisit when tooltips become more easily customisable
+// see: http://www.google.com/design/spec/components/tooltips.html#
+// Provides a polished effect for tooltips
 core-tooltip.fancy::shadow .core-tooltip {
   opacity: 0;
   -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
@@ -164,671 +149,40 @@ core-tooltip.fancy:focus::shadow .core-tooltip {
   transform: translate3d(0, 0, 0);
 }
 
-
-// for firefox/non-chrome styles:
-uqlibrary-home #account core-icon {
-  height: 26px;
-  width: 26px;
-  color: $background-primary;
-}
-
-// persistent footer styles//
-.persistentFooter {
-  position: fixed;
-  height: $persistent-footer-height;
-  bottom: 0;
-  background-color: $white;
-  width: 100%;
-  border-top: 1px solid $grey-A200;
-
-  .contentWrapper{
-    padding: 0;
-  }
-  .footerInfo {
-    padding: 18px;
-  }
-  .footerButtons {
-    padding-top: 8px;
-  }
-  .actionButtonsWrapper{
-    padding-right: 16px;
-    margin-top: 4px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .persistentFooter {
-    left: 0;
-    z-index: 1;
-  }
-}
-
-.event-item {
-  transition: opacity 2000ms;
-}
-
-.event-item-hidden {
+// Provides a polished effect for tooltips
+core-tooltip.fancyLeft::shadow .core-tooltip {
   opacity: 0;
+  -webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
 }
 
-paper-dropdown {
-  min-width: 150px;
+core-tooltip.fancyLeft:hover::shadow .core-tooltip,
+core-tooltip.fancyLeft:focus::shadow .core-tooltip {
+  opacity: 1;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
 }
 
-paper-dropdown::shadow #scroller {
-  width: 100% !important;
-}
+//   ____   _    ____  _____ ____       _____ _     _____ __  __ _____ _   _ _____ ____
+//  |  _ \ / \  |  _ \| ____|  _ \     | ____| |   | ____|  \/  | ____| \ | |_   _/ ___|
+//  | |_) / _ \ | |_) |  _| | |_) |____|  _| | |   |  _| | |\/| |  _| |  \| | | | \___ \
+//  |  __/ ___ \|  __/| |___|  _ <_____| |___| |___| |___| |  | | |___| |\  | | |  ___) |
+//  |_| /_/   \_\_|   |_____|_| \_\    |_____|_____|_____|_|  |_|_____|_| \_| |_| |____/
+//
 
-.card {
-  background: white;
-  box-sizing: border-box;
-  padding: 6px;
-}
-
-#searchIcon {
-  core-icon {
-    margin-left: -10px;
-  }
-}
-
-#search {
-  margin-left: 10px;
-}
-
-#searchInput {
-  width: 100%;
-}
-
-#searchWrapper {
-  width: 96%;
-  margin: 8px;
-  transition: 300ms ease-in-out;
-}
-
-#autosuggest,
-#filters {
-  top: 55px;
-  left: 0;
-  right: 0;
-  width: 100%;
-}
-
-#filters {
-  top: 71px;
-  paper-item {
-    padding-left: 0;
-    border-bottom: 1px solid $divider;
-
-    &.last {
-      border-bottom: none;
-    }
-
-    &.core-selected {
-      color: $text;
-    }
-  }
-}
-
-.truncate {
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.recent {
-  color: $primary-700;
-}
-
-core-menu {
-  padding: 8px 0;
-  margin: 0;
-
-  &.divider {
-    border-bottom: 1px solid $uq-divider;
-  }
-}
-
-paper-item {
-  @include gmd-type-style(menu, gmd-alpha-color($black, text));
-}
-
-#account {
-  font-size: 0.875em;
-  background-color: $primary;
-  border-bottom: 1px solid $uq-divider;
-  background: 100%;
-  background-size: cover;
-  background-image: url("https://app.library.uq.edu.au/assets/images/uq-menu/st-lucia.jpg");
-
-  #gradient {
-    background: -moz-linear-gradient(top, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
-  }
-
-  #details {
-    padding: 110px 14px 14px 14px;
-  }
-
-  #name {
-    //    font-weight: 400;
-    margin-bottom: 2px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  #mail {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-}
-.masqueradeCard {
-  width: 86%;
-  padding: 18px 32px;
-}
-.masqueradeCard core-tooltip {
-  display: flex;
-}
-.masqueradeCard paper-checkbox {
-  margin: 0 20px 0 0;
-}
-.masqueradeCard paper-input-decorator {
-  margin-bottom: 20px;
-}
-.masqueradeCard #masqueradeButton {
-  margin-top: 24px;
-}
-
-#feedbackCard {
-  width: 86%;
-  padding: 18px 32px;
-}
-#feedbackCard core-tooltip {
-  display: flex;
-}
-#feedbackCard paper-checkbox {
-  margin: 0 20px 0 0;
-}
-#feedbackCard paper-input-decorator {
-  margin-bottom: 20px;
-}
-#feedbackCard #feedbackButtons {
-  margin-top: 24px;
-}
-
-.open {
-  color: $dark-accent !important;
-}
-
-.closed {
-  color: $uq-warm-red !important;
-}
-
-.list-margin {
-  margin-bottom: 38px;
-}
-#masquerade {
-  margin: 16px;
-}
-
-#booking {
-  margin: 16px;
-}
-
-.apps {
-  margin-top: 10px;
-}
-
-#homePage {
-  text-align: -moz-center;
-}
-
-.app {
-  width: 100px;
-  height: 90px;
-  text-align: center;
-}
-.home-icon {
-  width: 44px;
-  height: 44px;
-  color: $primary;
-  padding: 0;
-}
-paper-icon-button.huge::shadow #icon {
-  width: 44px;
-  height: 44px;
-}
-uqlibrary-home paper-icon-button.huge #icon {
-  color: $primary;
-}
-.iconLabel {
-  margin: 0;
-  text-align: center;
-  color: $secondary-text;
-  font-size: 14px;
-}
-
-
-.items{
-  margin: 0 10px;
-  list-style-type: none;
-  font-size: 0;
-  line-height: 0;
-}
-
-.item{
-  text-align: center;
-  display: inline-block;
-  margin: 1px;
-  min-width: 30px;
-  padding: 15px 1px;
-  font-size: 13px;
-  line-height: 1.1;
-  text-transform: uppercase;
-  background-color: $fbs-available-time;
-
-  &.occupied-true {
-    background-color: $fbs-unavailable-time;
-    color: $white;
-  }
-
-  &.selected-true {
-    background-color: $fbs-selected-time;
-    color: $white;
-  }
-}
-.selectedDate {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 0;
-}
-
-paper-tabs {
-  background-color: $white;
-  height: 60px;
-}
-
-paper-tab {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-
-  & .dayOfWeek {
-    width: 40px;
-  }
-
-  & .date {
-    height: 40px;
-    width: 40px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 50%;
-    padding-top: 12px;
-  }
-
-  &.core-selected .date{
-    background-color: $fbs-selected-date;
-    color: $white;
-  }
-}
-
-
-//uqlibrary-courses
-
-paper-tabs {
-  color: $text;
-  background-color: $white;
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.2);
-  &::shadow #selectionBar {
-    background-color: $accent;
-  }
-  paper-tab {
-    .tabTitleNumber {
-      margin-bottom: 4px;
-    }
-
-    &::shadow #ink {
-      color: $accent;
-    }
-
-  }
-}
-
-.listItemSection {
-
-  &.listItemTitle {
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemAuthor {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemType {
-    color: $primary;
-    font-style: italic;
-  }
-  &.listItemNotes {
-    font-style: italic;
-    padding-bottom: $single-line-list-item-padding-top;
-  }
-  &.listItemNoResultsMessage {
-    font-style: italic;
-  }
-
-}
-.listItemLink {
-  core-icon {
-    margin-right: 0;
-  }
-}
-
+//TODO: investigate whether #loadingOverlay is still necessary
+// Loading styles
 #loadingOverlay {
-  //background-color: $primary;
   background-color: transparent;
   width: 64px;
   height: 64px;
-
   paper-spinner{
     &::shadow .circle {
       border-color: $primary;
     }
   }
-
-}
-
-
-// uqlibrary-computers
-
-paper-progress {
-  height: 20px;
-  width: 100%;
-}
-
-#availability {
-  margin-top: $list-item-gap;
-  padding: $text-padding;
-}
-
-#branchSelect {
-  padding: 7px;
-  width: 100%;
-}
-
-#branches {
-  width: 100%;
-}
-
-.available {
-  color: $uq-green-A700;
-}
-
-.unavailable {
-  color: $uq-warm-red;
-}
-
-paper-dropdown::shadow #scroller {
-  width: 100% !important;
-}
-
-#branchWrapper {
-  width: 96%;
-  margin: $list-item-gap;
-  transition: 300ms ease-in-out;
-  padding: 6px;
-}
-
-.availability-item {
-  border-bottom: 1px solid $grey-A100;
-  padding: 4px;
-  line-height: 1.2;
-
-  .totals {
-    float: right;
-    font-size: 14px;
-    color: $secondary-text;
-  }
-}
-
-//uqlibrary-borrowing
-
-uqlibrary-holds {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .date {
-          padding-top: $three-line-list-item-padding-top;
-        }
-      }
-    }
-  }
-}
-
-uqlibrary-fines {
-  &::shadow {
-    uqlibrary-borrowing-list {
-      &::shadow {
-        .title {
-          padding-top: $three-line-list-item-padding-top;
-          @include gmd-type-style(body1, $primary);
-        }
-
-        // For fines with 3 digits we need a bit more space
-        .content {
-          margin-left: $three-line-list-icon-item-text-padding-left - $three-line-list-icon-item-icon-padding-left + 8;
-
-        }
-      }
-    }
-  }
-}
-
-.attentionIcon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  padding-left: 16px;
-  height: 32px;
-  overflow: hidden;
-  width: 100%;
-  paper-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  &.warning{
-
-  }
-  &.error{
-
-  }
-
-}
-.tooltip {
-  margin-right: 4px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
-}
-
-// booking
-
-// filter group
-
-
-
-.group-label {
-  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
-}
-.group-content {
-  padding-left: $form-icon-padding-left - $form-padding;
-}
-
-
-// filter-form
-
-$timepickerRatio: 0.9;
-
-$inputColor: $secondary-text;
-$textColor: $secondary-text;
-
-
-
-.filterWrapper {
-  background-color: $white;
-  margin-bottom: 30px;
-}
-
-
-uqlibrary-filter-group {
-  div.groupContentWrapper[horizontal] {
-    paper-dropdown-menu {
-      min-width: 150px;
-      margin-right: 20px;
-      &:last-child{
-        margin-right: 0;
-      }
-    }
-  }
-  &:last-child {
-    border-bottom: none;
-  }
-}
-
-paper-dropdown-menu {
-  display: block;
-  width: 100%;
-  &[disabled] {
-    &::shadow {
-      #label, #arrow, #ripple {
-        color: $grey-A400;
-      }
-    }
-  }
-  paper-dropdown {
-    paper-item {
-      &:hover {
-        background-color: $grey-A100;
-      }
-    }
-  }
-}
-
-paper-input-decorator {
-  &::shadow {
-    #focusedUnderline
-    {
-      background-color: $button !important;
-    }
-  }
-}
-
-paper-input {
-  display: block;
-
-  &::shadow {
-    input {
-      color: $inputColor;
-    }
-  }
-  &#time{
-    display: block;
-    width: 100%;
-  }
-
-}
-
-md-timepicker {
-  &::shadow {
-    #card {
-      border: 1px solid $divider;
-      margin-top: 0;
-      margin-bottom: 0;
-      height: 400px * $timepickerRatio;
-      width: 250px * $timepickerRatio;
-
-      #display {
-        background-color: $button !important;
-        height: 120px * $timepickerRatio;
-        padding: 24px * $timepickerRatio;
-        color: $white;
-        font-size: 46px * $timepickerRatio;
-        .digit{
-          opacity: 0.7;
-          &[active] {
-            opacity: 1;
-          }
-        }
-      }
-
-      #keypad {
-        font-size: 42px * $timepickerRatio;
-
-        .digit {
-          flex-basis: 63px * $timepickerRatio;
-          -webkit-flex-basis: 63px * $timepickerRatio;
-        }
-
-      }
-    }
-
-    paper-button {
-      font-size: 14px * $timepickerRatio;
-    }
-
-
-  }
-}
-
-paper-slider {
-  width: 100%;
-  &::shadow {
-    #sliderBar {
-      box-sizing: content-box;
-      &::shadow {
-        #activeProgress {
-          background-color: $button;
-        }
-      }
-    }
-
-    #sliderKnobInner {
-      background-color: $button;
-
-      &::before {
-        background-color: $button;
-        display: block !important;
-      }
-
-      &::after {
-      }
-
-    }
-
-  }
-  &#timePeriod {
-    width: 50%;
-  }
-
-  &#capacity {
-
-  }
-}
-
-.sliderWrapper {
-  color: $text;
-  margin-top: 20pt;
-
-  .durationText {
-    width: 75px;
-  }
-
 }
 
 paper-checkbox {
@@ -841,16 +195,7 @@ paper-checkbox {
   }
 }
 
-
-.equipment-item {
-  margin-bottom: 10pt;
-  color: $textColor;
-  core-icon {
-    margin-right: 10pt;
-  }
-
-}
-
+// TODO: consider whether this is needed because toast has built in style
 paper-toast {
   &#infoToast {
     position: fixed;
@@ -859,23 +204,371 @@ paper-toast {
   }
 }
 
-.error {
-  border-bottom: 1px solid $error-color;
+// Paper-item should be consistent
+paper-item {
+  @include gmd-type-style(menu, gmd-alpha-color($black, text));
+  &:hover, &:focus, &:active {
+    background-color: $background-primary;
+  }
+}
+
+
+
+// Paper progress bars should all look consistent
+paper-progress {
+  height: $subhead-size-font-device;
+  width: 100%;
   &::shadow {
-    #label {
-      color: $error-color;
+    #activeProgress {
+      background-color: $dark-accent;
     }
   }
 }
 
-core-overlay {
+//   ____                            _        _
+//  |  _ \ __ _ _ __   ___ _ __     | |_ __ _| |__  ___
+//  | |_) / _` | '_ \ / _ \ '__|____| __/ _` | '_ \/ __|
+//  |  __/ (_| | |_) |  __/ | |_____| |_ (_| | |_) \__ \
+//  |_|   \__,_| .__/ \___|_|        \__\__,_|_.__/|___/
+//             |_|
+$inputColor: $secondary-text;
+$textColor: $secondary-text;
 
-  &#timepickerDialog::shadow {
-    #actions {
-      display: none;
+// Paper tabs should all look consistent
+paper-tabs {
+  color: $text;
+  background-color: $white;
+  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
+  &::shadow #selectionBar {
+    background-color: $accent;
+  }
+  #finesTab {
+    padding: 0 34px;
+  }
+  paper-tab {
+    .tabTitleNumber {
+      margin-bottom: 4px;
     }
-    #main {
-      padding: 0;
+    &::shadow #ink {
+      color: $accent;
     }
   }
+}
+uqlibrary-filter-group {
+  div.groupContentWrapper[horizontal] {
+    paper-dropdown-menu {
+      min-width: 150px;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+//   ____                                _                     _
+//  |  _ \ __ _ _ __   ___ _ __       __| |_ __ ___  _ __   __| | _____      ___ __
+//  | |_) / _` | '_ \ / _ \ '__|____ / _` | '__/ _ \| '_ \ / _` |/ _ \ \ /\ / / '_ \
+//  |  __/ (_| | |_) |  __/ | |_____| (_| | | | (_) | |_) | (_| | (_) \ V  V /| | | |
+//  |_|   \__,_| .__/ \___|_|        \__,_|_|  \___/| .__/ \__,_|\___/ \_/\_/ |_| |_|
+//             |_|                                  |_|
+
+// Paper-dropdowns should be consistent
+// they shouldn't get too small
+// see http://www.google.com/design/spec/components/menus.html#menus-specs
+
+
+paper-dropdown {
+  font-family: "Roboto", sans-serif !important;
+  min-width: 150px;
+  &::shadow #scroller {
+    width: 100% !important;
+  }
+}
+paper-dropdown-menu {
+  display: block;
+  width: 100%;
+
+  &[disabled] {
+    &::shadow {
+      #label, #arrow, #ripple {
+        color: $grey-A400;
+      }
+    }
+  }
+
+  border-top: 1px solid transparent;
+
+  &:focus {
+    border-top: 0px solid transparent;
+    border-bottom: 2px solid $uq-aqua;
+  }
+
+  paper-dropdown {
+    paper-item {
+      &:focus, &:hover {
+        background-color: $grey-A100;
+      }
+    }
+  }
+}
+
+//   ____                            _                   _
+//  |  _ \ __ _ _ __   ___ _ __     (_)_ __  _ __  _   _| |_
+//  | |_) / _` | '_ \ / _ \ '__|____| | '_ \| '_ \| | | | __|
+//  |  __/ (_| | |_) |  __/ | |_____| | | | | |_) | |_| | |_
+//  |_|   \__,_| .__/ \___|_|       |_|_| |_| .__/ \__,_|\__|
+//             |_|                          |_|
+paper-input-decorator {
+  .mirror-text {
+    padding: 0.8em 0 0.25em;
+  }
+  &::shadow {
+    #focusedUnderline
+    {
+      background-color: $button !important;
+    }
+  }
+}
+paper-input {
+  display: block;
+  &::shadow {
+    input {
+      color: $inputColor;
+    }
+  }
+  &#time{
+    display: block;
+    width: 100%;
+  }
+}
+
+//   ____                                _ _     _
+//  |  _ \ __ _ _ __   ___ _ __      ___| (_) __| | ___ _ __
+//  | |_) / _` | '_ \ / _ \ '__|____/ __| | |/ _` |/ _ \ '__|
+//  |  __/ (_| | |_) |  __/ | |_____\__ \ | | (_| |  __/ |
+//  |_|   \__,_| .__/ \___|_|       |___/_|_|\__,_|\___|_|
+//             |_|
+//
+paper-slider {
+  &:focus {
+    background-color: $grey-A100 !important;
+  }
+
+  width: 100%;
+  &::shadow {
+    #sliderBar {
+      box-sizing: content-box;
+
+      &::shadow {
+        #activeProgress {
+          background-color: $button;
+        }
+      }
+    }
+    #sliderKnobInner {
+      background-color: $button;
+      border: 2px solid $button;
+
+      &::before {
+        background-color: $button;
+        display: block !important;
+      }
+      &::after {
+      }
+    }
+  }
+  &#timePeriod {
+    width: 50%;
+  }
+  &#capacity {
+  }
+}
+.sliderWrapper {
+  color: $text;
+  margin-top: 20pt;
+  .durationText {
+    width: 75px;
+  }
+}
+
+
+//   ____                                ____                  _
+//  |  _ \ _ __ __ ___      _____ _ __  |  _ \ __ _ _ __   ___| |
+//  | | | | '__/ _` \ \ /\ / / _ \ '__| | |_) / _` | '_ \ / _ \ |
+//  | |_| | | | (_| |\ V  V /  __/ |    |  __/ (_| | | | |  __/ |
+//  |____/|_|  \__,_| \_/\_/ \___|_|    |_|   \__,_|_| |_|\___|_|
+//
+// Drawer panel background colour and border (includes non chrome compatibility)
+core-drawer-panel [drawer] {
+  background-color: $background-secondary;
+  box-shadow: $shadow-z-1;
+}
+
+// Main content background colour
+.main {
+  background-color: $background-primary;
+}
+// User account section of drawer panel
+// includes optimised image and gradient cover for text legibility
+// all margins based on UQ and material design specs where necessary
+#account {
+  font-size: $caption-size-font;
+  background-color: $primary;
+  border-bottom: 1px solid $uq-divider;
+  background: 100%;
+  background-size: cover;
+  background-image: url("https://app.library.uq.edu.au/assets/images/uq-menu/st-lucia.jpg");
+
+  // gradient compatibility for all browsers
+  #gradient {
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 30%,rgba(0,0,0,1) 100%); /* W3C */
+  }
+  // user account details container
+  #details {
+    padding: 110px 14px 14px 16px;
+  }
+  // user full name
+  // TODO: Only show name without prefix (e.g. "Mr.", "Miss", etc)
+  #name {
+    margin-bottom: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  // user logged-in email address
+  #mail {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  core-icon {
+    color: $background-primary;
+    height: 24px;
+    width: 24px;
+  }
+}
+// the lock paper-icon-button allowing users to logout
+#askLogout, #askLogout::shadow {
+  color: $background-primary;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  &:active, &:focus, &:hover {
+    background-color: $hint-text-inverse;
+  }
+}
+//Logout dialog affirmative button colour
+uqlibrary-menu /deep/ [autofocus] {
+  color: $uq-aqua;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+body /deep/ #logoutDialog,
+body /deep/ #infoDialog {
+  a {
+    color: $text;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .colored {
+    color: $uq-aqua;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  paper-button{
+    &:hover {
+      background-color: $background-primary;
+      text-decoration: none;
+    }
+
+    &:focus {
+      box-shadow: $shadow-z-1;
+      color: $button;
+      background-color: $background-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+//   ____               _     _             _     _____           _
+//  |  _ \ ___ _ __ ___(_)___| |_ ___ _ __ | |_  |  ___|__   ___ | |_ ___ _ __
+//  | |_) / _ \ '__/ __| / __| __/ _ \ '_ \| __| | |_ / _ \ / _ \| __/ _ \ '__|
+//  |  __/  __/ |  \__ \ \__ \ |_  __/ | | | |_  |  _| (_) | (_) | |_  __/ |
+//  |_|   \___|_|  |___/_|___/\__\___|_| |_|\__| |_|  \___/ \___/ \__\___|_|
+//
+// persistent footer styles
+uqlibrary-persistent-footer {
+  .footerInfo {
+    padding: 12px;
+  }
+}
+
+.persistentFooter {
+  position: fixed;
+  height: $persistent-footer-height;
+  bottom: 0;
+  background-color: $white;
+  width: 100%;
+  border-top: 1px solid $grey-A200;
+  padding: 4px;
+//  margin: 16px 0 16px 16px;
+
+  .footerInfo{
+    padding: 12px;
+  }
+}
+// Keeps persistent footer above drawer panel when responsive mode engaged
+@media screen and (min-width: $responsive-width) {
+  .persistentFooter {
+    left: 0;
+    z-index: 1;
+  }
+}
+
+
+//   _____                 _     ___ _
+//  | ____|_   _____ _ __ | |_  |_ _| |_ ___ _ __ ___  ___
+//  |  _| \ \ / / _ \ '_ \| __|  | || __/ _ \ '_ ` _ \/ __|
+//  | |___ \ V /  __/ | | | |_   | || |_  __/ | | | | \__ \
+//  |_____| \_/ \___|_| |_|\__| |___|\__\___|_| |_| |_|___/
+//
+// used to animate the creation and removal of event items
+.event-item {
+  transition: opacity 2000ms;
+}
+.event-item-hidden {
+  opacity: 0;
+}
+
+//   _____             _ _                _
+//  |  ___|__  ___  __| | |__   __ _  ___| | __
+//  | |_ / _ \/ _ \/ _` | '_ \ / _` |/ __| |/ /
+//  |  _|  __/  __/ (_| | |_) | (_| | (__|   <
+//  |_|  \___|\___|\__,_|_.__/ \__,_|\___|_|\_\
+//
+// Feedback app styles
+#feedbackIncludeContactCheckbox {
+  padding-right: 12px;
+}
+
+
+.no-margin {
+  margin: 0 !important;
+  width: 100% !important;
 }

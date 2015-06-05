@@ -1,0 +1,49 @@
+<link href="../polymer/polymer.html" rel="import">
+<link href="../core-a11y-keys/core-a11y-keys.html" rel="import">
+
+<!--
+
+Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
+In this case only mouse or touch events will be handled, eg if user navigates to a link with keyboard and hits ENTER or SPACE, tap event will not fire:
+
+##### Example
+
+<uqlibrary-a11y-link>Click me or press Enter</uqlibrary-a11y-link>
+
+@element uqlibrary-a11y-link
+@blurb Accessible version of a link located in on-tap area in case navigation is handled by Javascript.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-a11y-link
+-->
+
+<polymer-element name="uqlibrary-a11y-link" role="link">
+
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+
+    <a href="{{javascriptPlaceholder}}">
+      <content></content>
+    </a>
+
+    <core-a11y-keys keys="{{activationKeys}}" target="{{}}" on-keys-pressed="{{_activate}}"></core-a11y-keys>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      javascriptPlaceholder: 'javascript:;',
+
+      activationKeys: 'space enter',
+
+      _activate: function() {
+        this.click();
+        this.fire('tap');
+      }
+
+    });
+
+  </script>
+
+</polymer-element>

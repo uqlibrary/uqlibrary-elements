@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-timeline</title>
+
+  <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../moment/min/moment.min.js"></script>
+
+  <link rel="import" href="../uqlibrary-a11y-link.html">
+</head>
+<body>
+
+  <uqlibrary-a11y-link>
+    Test Link
+  </uqlibrary-a11y-link>
+
+  <script>
+    window.addEventListener('polymer-ready', function() {
+      var myEl = document.querySelector('uqlibrary-a11y-link');
+
+      describe('uqlibrary-a11y-link', function () {
+        before(function () {
+        });
+
+        it('should handle on tap event', function(done) {
+          setTimeout(function() {
+
+            var processTap = function(event) {
+              setTimeout(function() {
+                expect(event).not.to.be.null;
+                done();
+              }, 2000);
+            };
+            myEl.addEventListener("on-tap", processTap);
+            myEl.fire('on-tap');
+
+          }, 1000);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

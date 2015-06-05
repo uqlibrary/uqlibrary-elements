@@ -1,0 +1,159 @@
+@import "variables";
+@import "margins";
+
+$timepickerRatio: 0.8;
+
+
+//   ____              _    _
+//  | __ )  ___   ___ | | ___)_ __   __ _
+//  |  _ \ / _ \ / _ \| |/ / | '_ \ / _` |
+//  | |_) | (_) | (_) |   <| | | | | (_| |
+//  |____/ \___/ \___/|_|\_\_|_| |_|\__, |
+//                                  |___/
+//
+// UQ My Library Booking app
+
+// filter group
+.group-label {
+  margin-left: $form-icon-padding-left - $form-padding - $form-icon-size;
+}
+.group-content {
+  padding-left: $form-icon-padding-left - $form-padding;
+}
+
+// filter-form
+
+.filterWrapper {
+  background-color: $white;
+  margin-bottom: 30px;
+}
+
+md-timepicker {
+  &::shadow {
+    #card {
+
+      border: 1px solid $divider;
+      margin-top: 30px;
+      margin-bottom: 0;
+      height: 360px * $timepickerRatio;
+      width: 250px * $timepickerRatio;
+
+      #display {
+        background-color: $button !important;
+        height: 100px * $timepickerRatio;
+        padding: 24px * $timepickerRatio;
+        color: $white;
+        font-size: 46px * $timepickerRatio;
+        .digit{
+          opacity: 0.7;
+          &[active] {
+            opacity: 1;
+          }
+        }
+      }
+      #keypad {
+        font-size: 42px * $timepickerRatio;
+        .digit {
+          flex-basis: 63px * $timepickerRatio;
+          -webkit-flex-basis: 63px * $timepickerRatio;
+        }
+      }
+    }
+    paper-button {
+      font-size: 14px * $timepickerRatio;
+    }
+  }
+}
+.equipment-item {
+  margin-bottom: 10pt;
+  color: $textColor;
+  core-icon {
+    margin-right: 10pt;
+  }
+}
+.error {
+  border-bottom: 1px solid $error-color;
+  &::shadow {
+    #label {
+      color: $error-color;
+    }
+  }
+}
+
+// date-selector styles
+
+uqlibrary-date-selector /deep/ {
+
+  .selectedDate {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+
+  paper-tabs {
+    color: $text;
+    background-color: transparent;
+    height: 60px;
+    box-shadow: none;
+
+    paper-tab {
+      .tabTitleNumber {
+        margin-bottom: 4px;
+      }
+
+      &::shadow #ink {
+        color: $white;
+      }
+
+      & .dayOfWeek {
+        text-align: center;
+        width: 40px;
+      }
+      & .date {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 50%;
+        padding-top: 12px;
+      }
+      &.core-selected .date {
+        background-color: $fbs-selected-date;
+        color: $white;
+      }
+    }
+  }
+}
+
+// time-selector styles
+uqlibrary-time-selector /deep/ .items {
+  margin: 0 10px;
+  list-style-type: none;
+  font-size: 0;
+  line-height: 0;
+
+  paper-button.item {
+    text-align: center;
+    display: inline-block;
+    margin: 1px;
+    min-width: 30px;
+    width: 71px;
+    padding: 15px 1px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background-color: $fbs-available-time;
+
+    &.occupied-true {
+      background-color: $fbs-unavailable-time;
+      color: $white;
+    }
+
+    &.selected-true {
+      background-color: $fbs-selected-time;
+      color: $white;
+    }
+  }
+
+}

@@ -2,9 +2,13 @@
 @import "margins";
 
 paper-fab {
-
+  transition: $shadow-transition,$background-transition;
   background-color: $button;
-
+  &:hover {
+    transition: $shadow-transition,$background-transition;
+    background-color: $uq-aqua-600;
+    box-shadow: $shadow-z-2;
+  }
   &.bottom-fixed {
     bottom: $action-button-padding;
     position: fixed;
@@ -16,22 +20,64 @@ paper-fab {
   }
 }
 
-paper-button.colored {
-  color: $uq-aqua;
+paper-button {
+  transition: $background-transition;
+  &:hover {
+    transition: $background-transition;
+    background-color: $background-primary;
+  }
+  &.colored {
+    color: $button;
+  }
 }
 
-paper-button[raised].colored {
-  background: $uq-aqua;
-  color: $background-secondary;
+paper-button[autofocus] {
+    color: $button !important;
+}
+
+paper-button {
+  &.topUpButton {
+    margin-top: 16px;
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .colored {
+    &:hover {
+      background: $background-primary !important;
+    }
+  }
+}
+
+paper-button[raised] {
+  transition: $shadow-transition;
+  background-color: $background-secondary;
   &:hover {
-    background-color: $button-hover;
-  }
-  &:active {
-    background-color: $button-click;
-  }
-  &:disabled {
+    transition: $shadow-transition, $background-transition;
     background-color: $background-primary;
-    color: $uq-divider;
+    box-shadow: $shadow-z-2;
+  }
+  .colored {
+    transition: $shadow-transition, $background-transition;
+    background-color: $button;
+    color: $background-secondary;
+    &:hover {
+      transition: $shadow-transition, $background-transition;
+      background-color: $button-hover;
+      box-shadow: $shadow-z-2;
+    }
+    &:active {
+      transition: $shadow-transition, $background-transition;
+      background-color: $button-click;
+      box-shadow: $shadow-z-2;
+    }
+    &:disabled {
+      transition: $shadow-transition, $background-transition;
+      color: $uq-divider;
+    }
   }
 }
 
@@ -42,4 +88,9 @@ paper-button[disabled] {
     background-color: $background-primary;
     color: $uq-divider;
   }
+}
+
+paper-icon-button {
+  transition: $background-transition;
+  border-radius: 50%;
 }

@@ -1,0 +1,80 @@
+* {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+#unsupportedBrowser {
+    background-color: #fafafa;
+    font-size: 14px;
+}
+
+#unsupportedBrowserHeader {
+    font-size: 1.5em;
+    font-weight: 200;
+    margin: 16px;
+    padding: 5px;
+    color: white;
+}
+
+#loadingTitle {
+    font-size: 1.5em;
+    line-height: 1.1em;
+    font-weight: bold;
+}
+
+#unsupportedBrowser a {
+    color: #007e9e;
+}
+
+#unsupportedBrowser a:hover {
+    text-decoration: underline;
+    color: #7B1FA2;
+}
+
+#unsupportedBrowserBanner {
+    height: 64px;
+    background-color: #4a075f;
+    color: white;
+    margin: -10px -15px 0 -15px;
+    padding: 10px 15px 0 15px;
+}
+
+#unsupportedBrowserSupportMessage {
+    max-width: 300px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 20px;
+    box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    font-size: 0.875em;
+}
+
+/* Loader animation that looks and acts like the paper-spinner*/
+
+#loader {
+    margin: 0 auto 16px auto;
+    width: 32px;
+    height: 32px;
+    zoom: 1;
+}
+
+#loader .circular {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    position: relative;
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

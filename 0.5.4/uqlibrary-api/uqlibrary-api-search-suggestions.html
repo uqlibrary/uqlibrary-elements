@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing search suggestions.
+
+##### Example
+
+    <uqlibrary-api-search-suggestions></uqlibrary-api-search-suggestions>
+
+@element uqlibrary-api-search-suggestions
+@blurb Element providing search suggestions.
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-search-suggestions" extends="uqlibrary-api" attributes="type">
+
+  <template>
+    <uqlibrary-api id="suggestions"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-search-suggestions', {
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-search-suggestions-loaded
+         */
+
+        baseUri : '/search_suggestions',
+        type: '',
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.suggestions.addEventListener('uqlibrary-api', function(e) {
+            that.fire('uqlibrary-api-search-suggestions-loaded', e.detail);
+          });
+        },
+
+        /**
+         * Gets the search suggestions.
+         *
+         * @method get
+         */
+        get: function (text) {
+          if(this.type != '' && typeof(text) !== 'undefined' && text.trim() != '' ) {
+            this.$.suggestions.uri = this.baseUri + '?type='+this.type+'&prefix=' + text;
+            this.$.suggestions.get();
+          }
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

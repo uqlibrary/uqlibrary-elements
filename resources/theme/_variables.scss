@@ -1,3 +1,87 @@
+// Base font-size is 14sp = 1em = 14px
+
+// Quick explanation about font size specifications:
+// Em is traditionally defined as the width of the uppercase M in the current face and point size.
+// It is more properly defined as simply the current point size.
+// For example, in 12-point type, em is a distance of 12 points.
+// see: http://stackoverflow.com/questions/15827038/what-does-css-measurement-unit-em-actually-stand-for
+
+// Sp = scalable pixel; not yet used in web but em is closest approximation
+// Material Design spec is given in sp, so we convert to em for a completely scalable and responsive interface.
+
+// DO NOT DELETE - KEEP FOR REFERENCE
+//$display4-size-font: 112sp;
+//$display3-size-font: 56sp;
+//$display2-size-font: 45sp;
+//$display1-size-font: 34sp;
+//$headline-size-font: 24sp;
+//$title-size-font: 20sp;
+//$subhead-size-font-device: 16sp;
+//$subhead-size-font-desktop: 15sp;
+//$body2-size-font-device: 14sp;
+//$body2-size-font-desktop: 13sp;
+//$body1-size-font-device: 14sp;
+//$body1-size-font-desktop: 13sp;
+//$caption-size-font: 12sp;
+//$button-size-font: 14sp;
+
+$display4-size-font: 8em;
+$display3-size-font: 4em;
+$display2-size-font: 3.4em;
+$display1-size-font: 2.6em;
+$headline-size-font: 1.8em;
+$title-size-font: 1.42857143em;
+$subhead-size-font-device: 1.14285714em;
+$subhead-size-font-desktop: 1.071em;
+$body2-size-font-device: 1em;
+$body2-size-font-desktop: 0.929em;
+$body1-size-font-device: 1em;
+$body1-size-font-desktop: 0.929em;
+$caption-size-font: 0.85714286em;
+$button-size-font: 1em;
+
+// Minimum human touch target size
+$touch-target-size: 44px;
+
+// Responsive width
+// using iPad landscape (768px) for now as
+// this seems like a sensible default
+// and allows us to showcase the effect easily
+$responsive-width: 768px;
+
+$transition-duration: 280ms;
+$transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+$main-transition: all $transition-duration $transition-function;
+$shadow-transition: box-shadow $transition-duration $transition-function;
+$background-transition: background-color $transition-duration $transition-function;
+$outline-transition: outline $transition-duration $transition-function;
+$glow-shadow: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+$shadow-z-0: none;
+$shadow-z-1: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+$shadow-z-2: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-3: 0 13px 25px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-4: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+$shadow-z-5: 0 27px 55px 0 rgba(0, 0, 0, 0.3);
+
+@mixin material-shadow($level:1){
+// from https://gist.github.com/destan/b9ccfa6243eab53460d2
+  @if $level == 1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  @else if $level == 2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  @else if $level == 3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  @else if $level == 4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  @else if $level == 5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+}
+
 
 // Colours from Material Design specifications
 $deep-purple-50:   #ede7f6;
@@ -10,18 +94,6 @@ $deep-purple-600:  #5e35b1;
 $deep-purple-700:  #512da8;
 $deep-purple-800:  #4527a0;
 $deep-purple-900:  #311b92;
-
-$uq-purple-1000: #49075E;
-$uq-purple-50:   rgba($uq-purple-1000, .05);
-$uq-purple-100:  rgba($uq-purple-1000, .10);
-$uq-purple-200:  rgba($uq-purple-1000, .20);
-$uq-purple-300:  rgba($uq-purple-1000, .30);
-$uq-purple-400:  rgba($uq-purple-1000, .40);
-$uq-purple-500:  rgba($uq-purple-1000, .50);
-$uq-purple-600:  rgba($uq-purple-1000, .60);
-$uq-purple-700:  rgba($uq-purple-1000, .70);
-$uq-purple-800:  rgba($uq-purple-1000, .80);
-$uq-purple-900:  rgba($uq-purple-1000, .90);
 
 $blue-A100: #82B1FF;
 $blue-A200: #448AFF;
@@ -99,7 +171,20 @@ $background-primary:    $grey-50;
 $background-secondary:  $white;
 $uq-text-primary:       hsl(0, 0%, 20%);
 $uq-text-secondary:     hsl(0, 0%, 46%);
+$uq-text-tertiary:      hsl(0, 0%, 91%);
 $uq-divider:            hsl(0, 0%, 80%);
+
+$uq-purple-1000: $dark-primary;
+$uq-purple-50:   rgba($uq-purple-1000, .05);
+$uq-purple-100:  rgba($uq-purple-1000, .10);
+$uq-purple-200:  rgba($uq-purple-1000, .20);
+$uq-purple-300:  rgba($uq-purple-1000, .30);
+$uq-purple-400:  rgba($uq-purple-1000, .40);
+$uq-purple-500:  rgba($uq-purple-1000, .50);
+$uq-purple-600:  rgba($uq-purple-1000, .60);
+$uq-purple-700:  rgba($uq-purple-1000, .70);
+$uq-purple-800:  rgba($uq-purple-1000, .80);
+$uq-purple-900:  rgba($uq-purple-1000, .90);
 
 $_gmd-alphas: (
   dividers: .12,
@@ -132,6 +217,8 @@ $accent-A400: $teal-A700;
 // Text / icons / dividers
 $divider:        $uq-divider;
 
+$item-hover:     rgba($black, .05);
+$paper-hover:    rgba($black, .1);
 $hint-text:      rgba($black, .26);
 $secondary-text: rgba($black, .54);
 $text:           rgba($black, .87);

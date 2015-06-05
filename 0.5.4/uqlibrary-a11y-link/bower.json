@@ -1,0 +1,19 @@
+{
+  "name": "uqlibrary-a11y-link",
+  "description": "Accessible version of a link",
+  "main": "uqlibrary-a11y-link.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-a11y-link/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  }
+}

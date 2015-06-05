@@ -1,0 +1,40 @@
+<link href="../polymer/polymer.html" rel="import">
+<link href="uqlibrary-a11y-link.html" rel="import">
+
+<polymer-element name="uqlibrary-a11y-link-test">
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+
+    <style>
+
+      a:focus {
+        text-decoration: underline;
+      }
+
+      div {
+        padding: 10px;
+      }
+
+    </style>
+
+    <div id="clickMeContainer" style="border: 1px solid black; width: 400px; margin: auto;" on-tap="{{tap}}">
+      <div> TAB to these links: </div>
+      <div class="body1"><uqlibrary-a11y-link>A11Y LINK (Enter/Space works!)</uqlibrary-a11y-link></div>
+      <div><a href="javascript:void(0);">Not so available (Enter/Space will not work)</a></div>
+
+      <div>Tab to "A11Y LINK" and hit ENTER or SPACE</div>
+      <div>or click anywhere in the box...</div>
+    </div>
+  </template>
+
+  <script>
+
+    Polymer({
+      tap: function(event) {
+        alert('Tap or keyboard press works!');
+      }
+    });
+
+  </script>
+
+</polymer-element>

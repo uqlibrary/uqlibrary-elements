@@ -1,21 +1,34 @@
 @import "variables";
 @import "margins";
 
-$default-card-width: 320px;
+$default-card-width: 98%;
 
 .card {
+  background: white;
+  box-sizing: border-box;
   display: block;
   border-radius: 2px;
-  box-sizing: border-box;
   height: auto;
   background: $background-secondary;
   width: $default-card-width;
+  max-width: 800px;
   margin: $card-margin auto;
+
+  core-icon {
+    margin-right: 4px;
+    margin-top: -2px;
+    margin-bottom: 2px;
+  }
 
   .cardSection {
     border-bottom: 1px solid $divider;
     padding: $card-title-padding;
     display: block;
+
+    &.noBorder {
+      border: 0px;
+    }
+
   }
 
   .cardTitle {

@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 <link rel="import" href="../core-icon/core-icon.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../core-icons/maps-icons.html">
@@ -17,6 +18,8 @@
 <link rel="import" href="../paper-dialog/paper-action-dialog.html">
 <link rel="import" href="../uqlibrary-ga/uqlibrary-ga.html">
 <link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-applications.html">
+
 <!--
 Element providing the library main navigation menu using a responsive drawer panel
 
@@ -29,16 +32,45 @@ Element providing the library main navigation menu using a responsive drawer pan
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-menu
 -->
-<polymer-element name="uqlibrary-menu" attributes="account">
-
+<polymer-element name="uqlibrary-menu" attributes="account" role=”navigation”>
   <template>
     <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
-    <uqlibrary-api-feedback id="feedbackApi"></uqlibrary-api-feedback>
+
+    <style>
+      #skipNavigation {
+        position: fixed;
+        z-index: 99999999999;
+        left: -200px;
+        top: -200px;
+
+        margin: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      #skipNavigation:focus {
+        position: fixed;
+        z-index: 99999999999;
+        left: 0px;
+        top: 0px;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+    </style>
+
     <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
+    <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
+
     <template if="{{account.hasSession}}">
+      <paper-button id="skipNavigation" aria-label="skip navigation"
+                    title="Skip navigation"
+                    on-tap="{{handleSkipNavigation}}">Skip navigation</paper-button>
+
       <div id="account">
         <div id="gradient" reverse horizontal layout end flex>
-          <paper-icon-button icon="lock" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+
+          <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
+          <paper-icon-button icon="lock" aria-label="Logout" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+
           <div id="details" flex>
             <div id="name" class="body2 inverse">{{account.name}}</div>
             <div id="mail" class="body1 inverse">{{account.mail}}</div>
@@ -46,32 +78,35 @@ Element providing the library main navigation menu using a responsive drawer pan
         </div>
       </div>
 
-      <core-menu selectedAttribute="" class="divider">
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/home" id="MyLibrary"><core-icon icon="dashboard"></core-icon> My Library</paper-item>
-        <paper-item on-tap="{{go}}" link="https://www.library.uq.edu.au" id="LibraryHome"><core-icon icon="home"></core-icon> UQ Library Home</paper-item>
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/feedback"><core-icon icon="communication:comment"></core-icon> Feedback</paper-item>
+      <core-menu selectedAttribute="">
+        <template repeat="{{ applications as app }}">
+          <template if="{{app.isDivider}}">
+            <div class="divider"></div>
+          </template>
+          <template if="{{!app.isDivider}}">
+            <paper-item id="{{ app.app }}">
+              <core-icon alt="{{ app.description }}" icon="{{ app.icon }}"></core-icon>
+              <a href="{{ app.link }}" on-click="{{ linkClicked }}" data-title="{{app.title}}" >{{app.title}}</a>
+            </paper-item>
+          </template>
+        </template>
       </core-menu>
+
     </template>
 
-    <core-menu selectedAttribute="">
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/booking" id="Booking"><core-icon icon="event"></core-icon> Booking</paper-item>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/borrowing" id="showLoansPage"><core-icon icon="maps:local-library"></core-icon> Borrowing</paper-item>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/computers" id="showAvailabilityPage"><core-icon icon="hardware:desktop-mac"></core-icon> Computers</paper-item>
-      <template if="{{account.classes.length}}">
-        <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/courses" id="showCoursesPage"><core-icon icon="social:school"></core-icon> Courses</paper-item>
-      </template>
-      <paper-item on-tap="{{go}}" link="https://app.library.uq.edu.au/v1/hours"  id="showHoursPage"><core-icon icon="schedule"></core-icon> Hours</paper-item>
-      <!--<paper-item><a href="#"><core-icon icon="communication:live-help"></core-icon> Help chat</a></paper-item>-->
-    </core-menu>
-
-          <!--Logout dialog-->
-          <!--Prevents users from accidentally logging out-->
-
-    <paper-action-dialog id="logoutDialog" heading="Are you sure you wish to logout?" transition="core-transition-bottom" backdrop>
-      <p>This will log you out of all your UQ website sessions.</p>
-      <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
-      <paper-button affirmative autofocus class="colored" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout">Logout</paper-button>
+    <!--Logout dialog-->
+    <!--Prevents users from accidentally logging out-->
+    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+        <p>Are you sure you want to log out?</p>
+        <p>This will log you out of all your UQ website sessions.</p>
+        <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
+        <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
     </paper-action-dialog>
+
+    <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
+
+  </template>
+
 
   </template>
 
@@ -85,28 +120,36 @@ Element providing the library main navigation menu using a responsive drawer pan
           };
         },
 
-        ready: function () {
-//          var fullName = that.user.name;
-//          var splitName = fullName.split(' ');
-//          splitName.splice(0,1);
-        },
-
-        toggleLogout: function () {
-          this.$.logoutDialog.toggle();
-        },
-
-        go: function (e, _, el) {
-          var _id = el.getAttribute('id');
-          if(_id) {
-            this.$.ga.addEvent('Menu Item Clicked', _id);
+        accountChanged: function() {
+          if (this.account.hasSession) {
+            this.$.apiApplications.get();
           }
-          document.location.href = el.attributes.link.value;
+        },
+
+        ready: function () {
+          var that = this;
+
+          this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
+            that.applications = e.detail;
+            that.fire('uqlibrary-menu-loaded');
+          });
+
+        },
+
+        handleSkipNavigation: function(e) {
+          this.$.content.focus();
+        },
+
+        toggleLogout: function (e) {
+          this.$.logoutDialog.toggle();
         },
 
         linkClicked: function(e, detail, sender) {
           var _id = sender.getAttribute('id');
-          if(_id) {
-            this.$.ga.addEvent('Link Clicked', _id);
+          var _title = sender.getAttribute('data-title');
+
+          if(_id || _title) {
+            this.$.ga.addEvent('Link Clicked', _id ? _id : _title);
           }
         }
 

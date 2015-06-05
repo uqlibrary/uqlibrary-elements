@@ -1,0 +1,54 @@
+@import "variables";
+@import "margins";
+
+
+
+//    ____
+//   / ___|___  _   _ _ __ ___  ___ ___
+//  | |   / _ \| | | | '__/ __|/ _ \ __|
+//  | |___ (_) | |_| | |  \__ \  __\__ \
+//   \____\___/ \__,_|_|  |___/\___|___/
+//
+//UQ My Library Courses app
+
+.listItemSection {
+
+  &.listItemTitle {
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemAuthor {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemType {
+    color: $primary;
+    font-style: italic;
+  }
+  &.listItemNotes {
+    font-style: italic;
+    padding-bottom: $single-line-list-item-padding-top;
+  }
+  &.listItemNoResultsMessage {
+    font-style: italic;
+  }
+
+}
+
+// .card and .responsiveCard should be the same, really. At some point, card should just do what responsiveCard does
+
+.responsiveCard {
+  background: white;
+  box-sizing: border-box;
+  padding: 18px 32px;
+  box-shadow: $shadow-z-1;
+  max-height: 400px;
+  @media screen and (min-width: $responsive-width) {
+    width: 86%;
+    max-width: 600px;
+    margin: 16px auto;
+  }
+  @media screen and (max-width: $responsive-width) {
+    width: 100%;
+    margin: 0;
+  }
+}

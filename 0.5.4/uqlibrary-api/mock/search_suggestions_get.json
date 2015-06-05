@@ -1,0 +1,82 @@
+[
+  {
+    "name": "ECHO7004",
+    "url": "http://lr.library.uq.edu.au/lists/01289785-AECC-C71A-D799-FD992A0C56EB",
+    "type": "learning_resource",
+    "course_title": "Echocardiography: Care of the critically ill",
+    "campus": "Herston",
+    "period": "Semester 2 2014"
+  },
+  {
+    "name": "CRIM1000",
+    "url": "http://lr.library.uq.edu.au/lists/F23CF3F3-B826-3F0D-91E5-9A84401167B0",
+    "type": "learning_resource",
+    "course_title": "Introduction to Criminology",
+    "campus": "St Lucia",
+    "period": "Semester 2 2014"
+  },
+  {
+    "name": "LAWS2114",
+    "url": "http://lr.library.uq.edu.au/lists/49AAEE0D-4490-0C71-9BBD-D4F8C65FF86E",
+    "type": "learning_resource",
+    "course_title": "Criminal Law & Procedure B",
+    "campus": "St Lucia",
+    "period": "Semester 2 2014"
+  },
+  {
+    "name": "IMED7008",
+    "url": "http://lr.library.uq.edu.au/lists/128FEC1C-F347-C4FC-FB1A-E487989E5BFB",
+    "type": "learning_resource",
+    "course_title": "Critical Thinking & Research Principles",
+    "campus": "Herston",
+    "period": "Semester 1 2015"
+  },
+  {
+    "name": "TOUR6033",
+    "url": "http://lr.library.uq.edu.au/lists/26F1FA0F-3F77-1E43-AB51-83767FC7158B",
+    "type": "learning_resource",
+    "course_title": "Critical Issues in Tourism, Hospitality & Events",
+    "campus": "St Lucia",
+    "period": "Semester 1 2015"
+  },
+  {
+    "name": "ARCA3100",
+    "url": "http://lr.library.uq.edu.au/lists/738C0A4A-7FF8-54DC-04B8-ED4ED0C30CE2",
+    "type": "learning_resource",
+    "course_title": "Critical Studies in World Prehistory",
+    "campus": "St Lucia",
+    "period": "Semester 1 2015"
+  },
+  {
+    "name": "BIOM3020",
+    "url": "http://lr.library.uq.edu.au/lists/B9B58AE3-1B42-6DC0-C9F4-5D291093B8ED",
+    "type": "learning_resource",
+    "course_title": "Integrated Endocrinology",
+    "campus": "St Lucia",
+    "period": "Semester 1 2015"
+  },
+  {
+    "name": "LAWS2113",
+    "url": "http://lr.library.uq.edu.au/lists/0B5B7585-FBF3-A54B-BFB5-179FFA88DA60",
+    "type": "learning_resource",
+    "course_title": "Criminal Law & Procedure A",
+    "campus": "St Lucia",
+    "period": "Semester 1 2015"
+  },
+  {
+    "name": "CRIM2080",
+    "url": "http://lr.library.uq.edu.au/lists/B29F8263-8C8E-23A4-F435-9CCD195A0F0E",
+    "type": "learning_resource",
+    "course_title": "Drugs & Crime",
+    "campus": "St Lucia",
+    "period": "Semester 2 2014"
+  },
+  {
+    "name": "CRIM3050",
+    "url": "http://lr.library.uq.edu.au/lists/81D7D31D-B0A8-D8B4-933B-5726D7DAA513",
+    "type": "learning_resource",
+    "course_title": "Independent Study in Criminology",
+    "campus": "St Lucia",
+    "period": "Semester 2 2014"
+  }
+]
