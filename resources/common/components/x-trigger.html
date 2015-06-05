@@ -1,0 +1,33 @@
+<link rel="import" href="../../../../core-icon-button/core-icon-button.html">
+<style>
+  html /deep/ x-trigger paper-dropdown.open-below {
+    position: fixed;
+    right: 30px;
+    top: 64px;
+  }
+  @media screen and (max-width: 420px) {
+    html /deep/ x-trigger paper-dropdown.open-below {
+      right: 0px;
+      width: 100%;
+    }
+  }
+</style>
+<polymer-element name="x-trigger" extends="core-icon-button" relative on-tap="{{toggle}}" noink>
+  <template>
+
+    <link rel="stylesheet" href="../../theme/component.css">
+    <shadow></shadow>
+    <div class="arrow" hidden?="{{! dropdown.opened}}"></div>
+    <content></content>
+  </template>
+  <script>
+    Polymer('x-trigger', {
+      toggle: function() {
+        if (!this.dropdown) {
+          this.dropdown = this.querySelector('paper-dropdown');
+        }
+        this.dropdown && this.dropdown.toggle();
+      }
+    });
+  </script>
+</polymer-element>

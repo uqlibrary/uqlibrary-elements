@@ -51,6 +51,9 @@ Can include optional menu options
 <polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText suggestions">
 
   <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <link rel="stylesheet" href="uqlibrary-toolbar.css">
+
     <core-toolbar id="mainToolbar">
       <div id="hamburgerMenuIcon" on-tap="{{menuClicked}}">
         <uqlibrary-a11y-link>
@@ -126,7 +129,6 @@ Can include optional menu options
       </template>
 
     </core-toolbar>
-    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
   </template>
   <script>
     Polymer('uqlibrary-toolbar', {
