@@ -33,7 +33,8 @@
 
   <uqlibrary-api-account id="account"></uqlibrary-api-account>
 
-  <uqlibrary-menu></uqlibrary-menu>
+  <uqlibrary-menu menuFile="flint.json"></uqlibrary-menu>
+  <!--<uqlibrary-menu></uqlibrary-menu>-->
 
   <script>
     (function () {
@@ -43,16 +44,22 @@
       window.addEventListener('polymer-ready', function() {
         var menu = document.querySelector('uqlibrary-menu');
         var api = document.querySelector('uqlibrary-api-account');
-        var apiApps = document.querySelector('uqlibrary-api-applications');
 
         api.addEventListener('uqlibrary-api-account-loaded', function(e) {
           if (e.detail.hasSession) {
             menu.account = e.detail;
           } else {
-            api.login(windows.location.href);
+            api.login(window.location.href);
           }
         });
-        api.get();
+
+        menu.addEventListener('uqlibrary-menu-link-clicked', function(e) {
+          console.log(e.detail);
+        });
+
+
+//        api.get();
+
       })
     }());
    </script>

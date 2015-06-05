@@ -118,67 +118,69 @@
           }
         });
 
-
-        describe('menu-items-unit', function () {
-
-          it('should have a menu user with a details set', function (done) {
-            var menuLoadListener = function() {
-              // Wait 2 second for mock data to be loaded
-              setTimeout(function () {
-                checkMenu(menu);
-                done();
-              }, 1000);
-            };
-            menu.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
-            menuLoadedEventListeners.push(menuLoadListener);
-            menu.fire('uqlibrary-api-account-loaded', localAccount);
-          });
+        test('should have a menu user with a details set', function (done) {
+          var menuLoadListener = function() {
+            // Wait 2 second for mock data to be loaded
+            setTimeout(function () {
+              checkMenu(menu);
+              done();
+            }, 1000);
+          };
+          menu.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
+          menuLoadedEventListeners.push(menuLoadListener);
+          menu.fire('uqlibrary-api-account-loaded', localAccount);
         });
 
-          test('menu structure is correct and contains user name and email', function(done) {
-              setTimeout(function () {
-                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#name').innerText).to.not.equal("");
-                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#mail').innerText).to.not.equal("");
-                  done();
-              }, 1000);
-          });
+        test('menu structure is correct and contains user name and email', function(done) {
+            setTimeout(function () {
+                expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#name').innerText).to.not.equal("");
+                expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('#details').querySelector('#mail').innerText).to.not.equal("");
+                done();
+            }, 1000);
+        });
 
-          test('menu structure is correct and contains logout button', function(done) {
-              setTimeout(function () {
-                  expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('paper-icon-button').title).to.be.equal("Logout");
-                  done();
-              }, 1000);
-          });
+        test('menu structure is correct and contains logout button', function(done) {
+            setTimeout(function () {
+                expect(menu.shadowRoot.querySelector('#account').querySelector('#gradient').querySelector('paper-icon-button').title).to.be.equal("Logout");
+                done();
+            }, 1000);
+        });
 
-          test('menu list of links are present', function(done) {
-              setTimeout(function () {
-                var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
-                console.log(menuLinks);
-                expect(menuLinks.length).to.be.equal(1);
-                  done();
-              }, 1000);
-          });
+        test('menu list of links are present', function(done) {
+            setTimeout(function () {
+              var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
+              console.log(menuLinks);
+              expect(menuLinks.length).to.be.equal(1);
+                done();
+            }, 1000);
+        });
 
-          test('menu links are not null and accessible', function(done) {
-              setTimeout(function () {
-                var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
-                var numMenuLinks = 0;
-                  while (numMenuLinks < menuLinks.length) {
-                      var listOfLinks = menuLinks[numMenuLinks].querySelectorAll('paper-item');
-                      var numListsOfLinks = 0;
-                      while (numListsOfLinks < listOfLinks.length) {
-                          listOfLinks[numListsOfLinks].querySelector('core-icon');
-                          expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.have.property('alt');
-                          expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.not.equal("");
-                          numListsOfLinks++;
-                      }
-                      numMenuLinks++;
-                  }
-                  done();
-              }, 1000);
-          });
+        test('menu links are not null and accessible', function(done) {
+            setTimeout(function () {
+              var menuLinks = menu.shadowRoot.querySelectorAll('core-menu');
+              var numMenuLinks = 0;
+                while (numMenuLinks < menuLinks.length) {
+                    var listOfLinks = menuLinks[numMenuLinks].querySelectorAll('paper-item');
+                    var numListsOfLinks = 0;
+                    while (numListsOfLinks < listOfLinks.length) {
+                        listOfLinks[numListsOfLinks].querySelector('core-icon');
+                        expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.have.property('alt');
+                        expect(listOfLinks[numListsOfLinks].querySelector('core-icon')).to.not.equal("");
+                        numListsOfLinks++;
+                    }
+                    numMenuLinks++;
+                }
+                done();
+            }, 1000);
+        });
 
-
+        test('menu file changed', function(done) {
+          menu.menuFile = "flint.json";
+          setTimeout(function () {
+            expect(menu.menuFile).to.be.equal("flint.json");
+            done();
+            }, 1000);
+      });
       });
 
     });

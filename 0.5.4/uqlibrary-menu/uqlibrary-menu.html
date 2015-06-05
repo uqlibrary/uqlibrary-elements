@@ -1,6 +1,8 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 <link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
 <link rel="import" href="../core-icons/core-icons.html">
 <link rel="import" href="../core-icons/maps-icons.html">
 <link rel="import" href="../core-icons/hardware-icons.html">
@@ -32,129 +34,143 @@ Element providing the library main navigation menu using a responsive drawer pan
 @status alpha
 @homepage https://github.com/uqlibrary/uqlibrary-menu
 -->
-<polymer-element name="uqlibrary-menu" attributes="account" role=”navigation”>
-  <template>
-    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+<polymer-element name="uqlibrary-menu" attributes="account menuFile" role=”navigation”>
+    <template>
+        <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
 
-    <style>
-      #skipNavigation {
-        position: fixed;
-        z-index: 99999999999;
-        left: -200px;
-        top: -200px;
+        <style>
+            #skipNavigation {
+                position: fixed;
+                z-index: 99999999999;
+                left: -200px;
+                top: -200px;
 
-        margin: 5px;
-        background-color: rgba(255, 255, 255, 0.2);
-      }
+                margin: 5px;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
 
-      #skipNavigation:focus {
-        position: fixed;
-        z-index: 99999999999;
-        left: 0px;
-        top: 0px;
-        background-color: rgba(255, 255, 255, 0.9);
-      }
+            #skipNavigation:focus {
+                position: fixed;
+                z-index: 99999999999;
+                left: 0px;
+                top: 0px;
+                background-color: rgba(255, 255, 255, 0.9);
+            }
 
-    </style>
+        </style>
 
-    <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
-    <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
+        <uqlibrary-ga id="ga" appName="{{appName}}"></uqlibrary-ga>
+        <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
 
-    <template if="{{account.hasSession}}">
-      <paper-button id="skipNavigation" aria-label="skip navigation"
-                    title="Skip navigation"
-                    on-tap="{{handleSkipNavigation}}">Skip navigation</paper-button>
+        <!-- accessibility "Skip navigation" anchor -->
+        <paper-button id="skipNavigation" aria-label="skip navigation"
+                      title="Skip navigation"
+                      on-tap="{{handleSkipNavigation}}">Skip navigation</paper-button>
 
-      <div id="account">
-        <div id="gradient" reverse horizontal layout end flex>
+        <core-toolbar>
+            <core-icon-button icon="menu" on-tap="{{onCloseMenu}}"></core-icon-button>
+            UQ | Library
+        </core-toolbar>
 
-          <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
-          <paper-icon-button icon="lock" aria-label="Logout" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
+        <template if="{{account.hasSession}}">
+            <div id="account">
+                <div id="gradient" reverse horizontal layout end flex>
 
-          <div id="details" flex>
-            <div id="name" class="body2 inverse">{{account.name}}</div>
-            <div id="mail" class="body1 inverse">{{account.mail}}</div>
-          </div>
-        </div>
-      </div>
+                    <core-a11y-keys keys="enter space" target="{{$.askLogout}}" on-keys-pressed="{{toggleLogout}}"></core-a11y-keys>
+                    <paper-icon-button icon="lock" aria-label="Logout" title="Logout" on-tap="{{toggleLogout}}" id="askLogout"></paper-icon-button>
 
-      <core-menu selectedAttribute="">
-        <template repeat="{{ applications as app }}">
-          <template if="{{app.isDivider}}">
-            <div class="divider"></div>
-          </template>
-          <template if="{{!app.isDivider}}">
-            <paper-item id="{{ app.app }}">
-              <core-icon alt="{{ app.description }}" icon="{{ app.icon }}"></core-icon>
-              <a href="{{ app.link }}" on-click="{{ linkClicked }}" data-title="{{app.title}}" >{{app.title}}</a>
-            </paper-item>
-          </template>
+                    <div id="details" flex>
+                        <div id="name" class="body2 inverse">{{account.name}}</div>
+                        <div id="mail" class="body1 inverse">{{account.mail}}</div>
+                    </div>
+                </div>
+            </div>
         </template>
-      </core-menu>
+
+        <core-menu selectedAttribute="">
+            <template repeat="{{ applications as app }}">
+                <template if="{{app.isDivider}}">
+                    <div class="divider"></div>
+                </template>
+                <template if="{{!app.isDivider}}">
+                    <paper-item id="{{ app.app }}">
+                        <core-icon alt="{{ app.description }}" icon="{{ app.icon }}"></core-icon>
+                        <a href="{{ app.link }}" on-click="{{ linkClicked }}" data-title="{{app.title}}" >{{app.title}}</a>
+                    </paper-item>
+                </template>
+            </template>
+        </core-menu>
+
+        <template if="{{account.hasSession}}">
+            <!--Logout dialog-->
+            <!--Prevents users from accidentally logging out-->
+            <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+                <p>Are you sure you want to log out?</p>
+                <p>This will log you out of all your UQ website sessions.</p>
+                <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
+                <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
+            </paper-action-dialog>
+        </template>
+
+        <!-- accessibility "Skip navigation" anchor -->
+        <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
 
     </template>
 
-    <!--Logout dialog-->
-    <!--Prevents users from accidentally logging out-->
-    <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
-        <p>Are you sure you want to log out?</p>
-        <p>This will log you out of all your UQ website sessions.</p>
-        <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
-        <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
-    </paper-action-dialog>
+    <script>
+        (function() {
+            Polymer('uqlibrary-menu', {
 
-    <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
+                menuFile: '',
 
-  </template>
+                created: function () {
+                    this.account = {
+                        hasSession: false
+                    };
+                },
 
+                onCloseMenu: function () {
+                    this.fire('uqlibrary-menu-close');
+                },
 
-  </template>
+                menuFileChanged: function(oldValue, newValue) {
+                    this.$.apiApplications.url = this.menuFile;
+                    this.$.apiApplications.get();
+                },
 
-  <script>
-    (function() {
-      Polymer('uqlibrary-menu', {
+                accountChanged: function(oldValue, newValue) {
+                    this.$.apiApplications.get();
+                },
 
-        created: function () {
-          this.account = {
-            hasSession: false
-          };
-        },
+                ready: function () {
+                    var that = this;
+                    this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
+                        that.applications = e.detail;
+                        that.fire('uqlibrary-menu-loaded');
+                    });
+                },
 
-        accountChanged: function() {
-          if (this.account.hasSession) {
-            this.$.apiApplications.get();
-          }
-        },
+                handleSkipNavigation: function(e) {
+                    this.$.content.focus();
+                },
 
-        ready: function () {
-          var that = this;
+                toggleLogout: function (e) {
+                    this.$.logoutDialog.toggle();
+                },
 
-          this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
-            that.applications = e.detail;
-            that.fire('uqlibrary-menu-loaded');
-          });
+                linkClicked: function(e, detail, sender) {
+                    var _id = sender.getAttribute('id');
+                    var _title = sender.getAttribute('data-title');
 
-        },
+                    if(_id || _title) {
+                        this.$.ga.addEvent('Link Clicked', _id ? _id : _title);
+                    }
 
-        handleSkipNavigation: function(e) {
-          this.$.content.focus();
-        },
+                    this.fire('uqlibrary-menu-link-clicked', sender.getAttribute('href'));
+                }
 
-        toggleLogout: function (e) {
-          this.$.logoutDialog.toggle();
-        },
-
-        linkClicked: function(e, detail, sender) {
-          var _id = sender.getAttribute('id');
-          var _title = sender.getAttribute('data-title');
-
-          if(_id || _title) {
-            this.$.ga.addEvent('Link Clicked', _id ? _id : _title);
-          }
-        }
-
-      });
-    })();
-  </script>
+            });
+        })();
+    </script>
 
 </polymer-element>
