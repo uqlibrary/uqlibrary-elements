@@ -19,7 +19,8 @@ license that can be found in the LICENSE file.
   <li><a href="#sllist">Single line list</a></li>
   <li><a href="#twollist">Two-line list</a></li>
   <li><a href="#threellist">Three-line list</a></li>
-  <li><a href="#containers">Containers</a></li>
+  <li><a href="#containers">Containers (image, text containers, cards, etc)</a></li>
+  <li><a href="#footer">Persistent Footer</a></li>
 </ul>
 
 <a name="colours"></a>
@@ -444,21 +445,38 @@ license that can be found in the LICENSE file.
   Body2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis auctor tortor eu lobortis. Nullam non felis vel velit ultrices volutpat vitae ac risus. Praesent varius arcu urna, ut lacinia erat malesuada id. Nam aliquet porta egestas. Nullam nec justo magna. Ut mattis rhoncus felis elementum porttitor. Cras vitae mi et ligula pulvinar rhoncus sed eget nisl.
 </div>
 
-<p class="title"> Text alignment classes </p>
+<div class="card">
+  <paper-shadow z="1">
+    <div class="subhead cardSection cardTitle">Card container</div>
+    <div class="body1 cardSection">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis auctor tortor eu lobortis. Nullam non felis vel velit ultrices volutpat vitae ac risus. Praesent varius arcu urna, ut lacinia erat malesuada id. Nam aliquet porta egestas. Nullam nec justo magna. Ut mattis rhoncus felis elementum porttitor. Cras vitae mi et ligula pulvinar rhoncus sed eget nisl.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lobortis auctor tortor eu lobortis. Nullam non felis vel velit ultrices volutpat vitae ac risus. Praesent varius arcu urna, ut lacinia erat malesuada id. Nam aliquet porta egestas. Nullam nec justo magna. Ut mattis rhoncus felis elementum porttitor. Cras vitae mi et ligula pulvinar rhoncus sed eget nisl.
+    </div>
+  </paper-shadow>
+</div>
+
+
+<p class="title">Text alignment classes </p>
 <p class="text-container text-left body1"> class="text-left" - left aligned text </p>
 <p class="text-container text-center body1"> class="text-center" center aligned text </p>
 <p class="text-container text-right body1"> class="text-right" right aligned text </p>
 <p class="text-container text-nowrap body1"> class="text-nowrap" Flannel slow-carb bitters, four loko 3 wolf moon locavore pour-over yr four dollar toast Pitchfork hoodie American Apparel. Sustainable photo booth tattooed, Vice actually ethical shabby chic keytar deep v post-ironic ugh Pinterest polaroid. Selvage jean shorts sartorial, Blue Bottle salvia fashion axe narwhal cliche art party mixtape chillwave VHS meh asymmetrical Vice. Try-hard Intelligentsia Echo Park McSweeney's photo booth Bushwick, bitters Etsy raw denim scenester wayfarers.</p>
 
+<a name="footer"></a>
+<p class="title">Persistent footer</p>
 
-<!--persistent footer styles, embedded in element, not for separate use-->
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<!--<div class="persistent-footer">-->
-  <!--<div class="text-container" flex>Some text in the footer</div>-->
-  <!--<div class="buttons-container">-->
-    <!--<div class="button">Same me</div>-->
-  <!--</div>-->
-<!--</div>-->
+<div class="persistent-footer">
+  <div class="text-container" flex>Persistent Footer: Some text in the footer</div>
+  <div class="buttons-container">
+    <div class="button">Same me</div>
+  </div>
+</div>
 
 </body>
 </html>

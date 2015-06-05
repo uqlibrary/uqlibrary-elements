@@ -8,10 +8,15 @@ module.exports = function (grunt) {
       cssUpdatePath: {
         src: ['**/lib/vulcanized*.html'],             // source files array (supports minimatch)
         overwrite: true,                            // overwrite matched source files
-        replacements: [{
-          from: "../uqlibrary-elements/resources/theme/element.css",
-          to: "../../resources/theme/element.css"
-        }]
+        replacements: [
+          {
+            from: "../uqlibrary-elements/resources/theme/element.css",
+            to: "../../resources/theme/element.css"
+          },
+          {
+            from: "../uqlibrary-elements/resources/theme/component.css",
+            to: "../../resources/theme/component.css"
+          }]
       }
     },
 
