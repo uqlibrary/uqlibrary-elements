@@ -1,0 +1,67 @@
+@import "../uqlibrary-elements/resources/theme/variables";
+@import "../uqlibrary-elements/resources/theme/margins";
+
+//   ____                      _
+//  / ___|  ___  __ _ _ __ ___| |__
+//  \___ \ / _ \/ _` | '__/ __| '_ \
+//   ___) |  __/ (_| | | | (__| | | |
+//  |____/ \___|\__,_|_|  \___|_| |_|
+//
+// Library Search paper-input styles
+#search {
+  margin-left: 8px;
+}
+#searchInput {
+  width: 100%;
+}
+#searchIcon {
+  color: $uq-text-primary;
+}
+#searchWrapper {
+  width: 96%;
+  max-width: 96%;
+  height: 54px;
+  padding-left: 8px;
+  transition: 300ms ease-in-out;
+  &:hover {
+    box-shadow: $shadow-z-2;
+  }
+  &:active, &:focus {
+    box-shadow: $shadow-z-2;
+  }
+}
+#filters {
+  top: 56px;
+  width:100%;
+  left: 0!important;
+  box-shadow: $shadow-z-2;
+  paper-item {
+    padding-left: 0;
+    border-bottom: 1px solid $divider;
+    &.last {
+      border-bottom: none;
+    }
+    &.core-selected {
+      color: $text;
+    }
+    .button-content {
+      text-align: left;
+    }
+  }
+}
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "Roboto";
+}
+.recent {
+  color: $primary-700;
+}
+#autosuggest {
+  box-shadow: $shadow-z-3;
+  top: 56px;
+  width:100%;
+  left: 0!important;
+}
