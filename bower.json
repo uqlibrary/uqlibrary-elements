@@ -22,7 +22,6 @@
     "uqlibrary-timeline": "uqlibrary/uqlibrary-timeline#<branch>",
     "uqlibrary-search": "uqlibrary/uqlibrary-search#<branch>",
     "uqlibrary-date-selector": "uqlibrary/uqlibrary-date-selector#<branch>",
-    "uqlibrary-ga": "x-trigger/x-trigger#<branch>",
     "uqlibrary-ga": "uqlibrary/uqlibrary-ga#<branch>",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#<branch>",
     "uqlibrary-menu": "uqlibrary/uqlibrary-menu#<branch>",
@@ -37,5 +36,8 @@
     "uqlibrary-notifications-button": "uqlibrary/uqlibrary-notifications-button#<branch>",
     "uqlibrary-search-input": "uqlibrary/uqlibrary-search-input#<branch>",
     "uqlibrary-scaffold": "uqlibrary/uqlibrary-scaffold#<branch>"
+  },
+  "resolutions": {
+    "web-animations-js": "1.0.5"
   }
 }

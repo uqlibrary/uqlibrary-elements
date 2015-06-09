@@ -10,24 +10,7 @@
     "title": "My Library",
     "description": "Return to My Library",
     "icon": "dashboard",
-    "link": "../home",
+    "link": "https://app.library.uq.edu.au/v1/home",
     "ga": "UQ My Library"
-  },
-  {
-    "title": "About this collection",
-    "description": "Learn about the Flint Collection",
-    "icon": "info",
-    "link": "#about",
-    "ga": "About"
-  },
-  {
-    "isDivider": true
-  },
-  {
-    "title": "Help & Feedback",
-    "description": "Get help or leave feedback to improve this collection",
-    "icon": "help",
-    "link": "#",
-    "ga": "Feedback"
   }
 ]
