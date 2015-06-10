@@ -210,43 +210,42 @@ core-header-panel /deep/ #mainContainer {
   -webkit-transform: none !important;
   transform: none !important; }
 
-core-menu {
+iron-menu-behavior {
   background-color: #fff;
-  margin: 0;
-  padding: 8px 0 24px 8px; }
-  core-menu .core-selected {
+  margin: 0; }
+  iron-menu-behavior .core-selected {
     color: #2874d7; }
-    core-menu .core-selected core-icon {
+    iron-menu-behavior .core-selected iron-icon {
       color: #2874d7; }
-  core-menu core-icon {
+  iron-menu-behavior iron-icon {
     margin: -3px 34px -3px -3px; }
-  core-menu paper-item:hover, core-menu paper-item:focus, core-menu paper-item:active {
+  iron-menu-behavior paper-item:hover, iron-menu-behavior paper-item:focus, iron-menu-behavior paper-item:active, iron-menu-behavior paper-item[focused] {
     background-color: #FAFAFA; }
-  core-menu a {
+  iron-menu-behavior a {
     color: rgba(0, 0, 0, 0.87); }
-    core-menu a:hover {
+    iron-menu-behavior a:hover, iron-menu-behavior a[focused] {
       text-decoration: none; }
-  core-menu.divider, core-menu .divider {
+  iron-menu-behavior.divider, iron-menu-behavior .divider {
     border-bottom: 1px solid #cccccc; }
 
-core-icon {
+iron-icon {
   color: rgba(0, 0, 0, 0.54); }
-  core-icon .big-icon {
+  iron-icon .big-icon {
     height: 40px;
     width: 40px; }
-  core-icon.inactive {
+  iron-icon.inactive {
     color: rgba(0, 0, 0, 0.26); }
-  core-icon.active-inverse {
+  iron-icon.active-inverse {
     color: white; }
-  core-icon.inactive-inverse {
+  iron-icon.inactive-inverse {
     color: rgba(255, 255, 255, 0.3); }
 
-core-toolbar {
-  background-color: #4a075f;
-  color: rgba(255, 255, 255, 0.87); }
-  core-toolbar core-icon {
+paper-toolbar {
+  --paper-toolbar-background: #4a075f;
+  --paper-toolbar-color: rgba(255, 255, 255, 0.87); }
+  paper-toolbar iron-icon {
     color: #fff; }
-    core-toolbar core-icon:focus, core-toolbar core-icon:active, core-toolbar core-icon:hover {
+    paper-toolbar iron-icon:focus, paper-toolbar iron-icon:active, paper-toolbar iron-icon:hover {
       outline: 1px solid rgba(255, 255, 255, 0.26); }
 
 #toolBarLeftButton:focus, #toolBarLeftButton:hover, #toolBarRightButton:focus, #toolBarRightButton:hover {

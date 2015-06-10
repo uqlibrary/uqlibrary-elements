@@ -25,21 +25,22 @@ core-header-panel /deep/ #mainContainer {
 
 // Core menu using Material Design specs from
 // http://www.google.com/design/spec/patterns/navigation-drawer.html
-core-menu {
+iron-menu-behavior {
   background-color: $background-secondary;
   margin: 0;
-  padding: 8px 0 24px 8px;
   .core-selected {
     color: $uq-blue;
-    core-icon {
+    iron-icon {
       color: $uq-blue;
     }
   }
-  core-icon {
+  iron-icon {
     margin: $nav-drawer-icon $nav-drawer-text $nav-drawer-icon $nav-drawer-icon;
   }
+
+
   paper-item {
-    &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active, &[focused] {
      background-color: $background-primary;
     }
   }
@@ -55,7 +56,7 @@ core-menu {
 }
 
 // Core icons all defined according to MD spec
-core-icon {
+iron-icon {
 
   .big-icon {
     height: 40px;
@@ -76,10 +77,14 @@ core-icon {
 }
 
 // Core toolbar background, font colour, and icon colour
-core-toolbar {
-  background-color: $dark-primary;
-  color: $text-inverse;
-  core-icon {
+
+
+
+paper-toolbar {
+  --paper-toolbar-background: $dark-primary;
+  --paper-toolbar-color: $text-inverse;
+
+  iron-icon {
     color: $white;
     &:focus, &:active, &:hover {
       outline: 1px solid $hint-text-inverse;
