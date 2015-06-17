@@ -1124,6 +1124,9 @@ paper-checkbox::shadow #ink {
 paper-checkbox::shadow #checkbox {
   border-color: #cccccc; }
 
+paper-autogrow-textarea {
+  min-height: 16px; }
+
 :host,
 :host *,
 ::content * {
