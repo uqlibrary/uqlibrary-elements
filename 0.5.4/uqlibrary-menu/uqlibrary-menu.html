@@ -101,16 +101,14 @@ Element providing the library main navigation menu using a responsive drawer pan
             </template>
         </core-menu>
 
-        <template if="{{account.hasSession}}">
-            <!--Logout dialog-->
-            <!--Prevents users from accidentally logging out-->
-            <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
-                <p>Are you sure you want to log out?</p>
-                <p>This will log you out of all your UQ website sessions.</p>
-                <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
-                <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
-            </paper-action-dialog>
-        </template>
+        <!--Logout dialog-->
+        <!--Prevents users from accidentally logging out-->
+        <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop>
+            <p>Are you sure you want to log out?</p>
+            <p>This will log you out of all your UQ website sessions.</p>
+            <paper-button affirmative on-tap="{{toggleLogout}}">Cancel</paper-button>
+            <paper-button affirmative autofocus on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
+        </paper-action-dialog>
 
         <!-- accessibility "Skip navigation" anchor -->
         <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
