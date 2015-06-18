@@ -19,3 +19,7 @@ paper-checkbox::shadow #ink {
 paper-checkbox::shadow #checkbox {
   border-color: $uq-divider;
 }
+
+paper-autogrow-textarea {
+  min-height: $text-padding;
+}
