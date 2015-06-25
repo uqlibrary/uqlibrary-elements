@@ -815,10 +815,23 @@
         <!-- accessibility "Skip navigation" anchor -->
         <paper-button id="skipNavigation" aria-label="skip navigation" title="Skip navigation" on-tap="{{handleSkipNavigation}}">Skip navigation</paper-button>
 
-        <core-toolbar>
-            <core-icon-button icon="menu" on-tap="{{onCloseMenu}}"></core-icon-button>
-            UQ | Library
-        </core-toolbar>
+        <template if="{{!account.hasSession}}">
+
+            <core-toolbar>
+                <div vertical="" layout="" center-justified="">
+                    <div horizontal="" layout="" center-justified="">
+                        <div align-self="center">
+                            <a href="http://www.uq.edu.au" class="glow">
+                                <img src="https://www.library.uq.edu.au/360Link/Current/uq-logo.svg" id="uq-logo">
+                            </a>
+                            <a href="http://www.uq.edu.au" id="uq-logo-text" class="glow">UQ</a>
+                            <a href="https://www.library.uq.edu.au" id="uq-library-logo-text" class="glow">Library</a>
+                        </div>
+                    </div>
+                </div>
+            </core-toolbar>
+        </template>
+
 
         <template if="{{account.hasSession}}">
             <div id="account">
@@ -849,16 +862,14 @@
             </template>
         </core-menu>
 
-        <template if="{{account.hasSession}}">
-            <!--Logout dialog-->
-            <!--Prevents users from accidentally logging out-->
-            <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop="">
-                <p>Are you sure you want to log out?</p>
-                <p>This will log you out of all your UQ website sessions.</p>
-                <paper-button affirmative="" on-tap="{{toggleLogout}}">Cancel</paper-button>
-                <paper-button affirmative="" autofocus="" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
-            </paper-action-dialog>
-        </template>
+        <!--Logout dialog-->
+        <!--Prevents users from accidentally logging out-->
+        <paper-action-dialog id="logoutDialog" heading="Logout" transition="core-transition-bottom" backdrop="">
+            <p>Are you sure you want to log out?</p>
+            <p>This will log you out of all your UQ website sessions.</p>
+            <paper-button affirmative="" on-tap="{{toggleLogout}}">Cancel</paper-button>
+            <paper-button affirmative="" autofocus="" on-tap="{{go}}" link="https://www.library.uq.edu.au/logout"><a class="colored" href="https://www.library.uq.edu.au/logout">Logout</a></paper-button>
+        </paper-action-dialog>
 
         <!-- accessibility "Skip navigation" anchor -->
         <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
