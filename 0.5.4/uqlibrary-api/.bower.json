@@ -17,6 +17,7 @@
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "_release": "d7b6f208e8",
   "_resolution": {
     "type": "branch",
@@ -29,8 +30,15 @@
     "branch": "master",
     "commit": "d8d617d2310eda9cacf7db97a0c7a782439440a5"
 >>>>>>> master
+=======
+  "_release": "6c5def2005",
+  "_resolution": {
+    "type": "branch",
+    "branch": "staging",
+    "commit": "6c5def20056bd2ab957ae347d5ab590a41f3252f"
+>>>>>>> origin/staging
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-api.git",
-  "_target": "uat",
+  "_target": "staging",
   "_originalSource": "uqlibrary/uqlibrary-api"
 }
