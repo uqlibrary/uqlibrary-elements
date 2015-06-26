@@ -19,10 +19,10 @@
   "_release": "8f7bacf77e",
   "_resolution": {
     "type": "branch",
-    "branch": "staging",
+    "branch": "uat",
     "commit": "8f7bacf77e5f3fcbf169a013be86e784d6682aec"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-toolbar.git",
-  "_target": "staging",
+  "_target": "uat",
   "_originalSource": "uqlibrary/uqlibrary-toolbar"
 }

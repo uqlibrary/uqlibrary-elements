@@ -30,10 +30,10 @@
   "_release": "25661d8f60",
   "_resolution": {
     "type": "branch",
-    "branch": "staging",
+    "branch": "uat",
     "commit": "25661d8f607a3f2e9afa940a85c1362503d52bd4"
   },
   "_source": "git://github.com/uqlibrary/x-audio.git",
-  "_target": "staging",
+  "_target": "uat",
   "_originalSource": "uqlibrary/x-audio"
 }
