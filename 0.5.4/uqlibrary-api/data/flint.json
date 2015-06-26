@@ -7,11 +7,14 @@
     "ga": "UQ Library"
   },
   {
-    "title": "My Library",
-    "description": "Return to My Library",
+    "title": "UQ Fryer Library",
+    "description": "Return to The Fryer Library",
     "icon": "dashboard",
-    "link": "../home",
-    "ga": "UQ My Library"
+    "link": "https://www.library.uq.edu.au/fryer-library/fryer-collections",
+    "ga": "UQ Fryer Library"
+  },
+  {
+    "isDivider": true
   },
   {
     "title": "About this collection",
@@ -19,15 +22,5 @@
     "icon": "info",
     "link": "#about",
     "ga": "About"
-  },
-  {
-    "isDivider": true
-  },
-  {
-    "title": "Help & Feedback",
-    "description": "Get help or leave feedback to improve this collection",
-    "icon": "help",
-    "link": "#",
-    "ga": "Feedback"
   }
 ]
