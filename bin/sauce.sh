@@ -8,7 +8,7 @@ case "$branch" in
 "master")
   wct --plugin local --local "chrome"
   wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
-  --sauce "ios 8.2/safari@8.0" \
+  --sauce "ios 8.2/safari@8.0/iPad Simulator" \
   ;;
 "uat")
   wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
