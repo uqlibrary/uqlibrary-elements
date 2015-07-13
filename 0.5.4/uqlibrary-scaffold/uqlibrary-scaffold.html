@@ -27,7 +27,7 @@ Reusable scaffold
 @homepage https://github.com/uqlibrary/uqlibrary-scaffold
 -->
 
-<polymer-element name="uqlibrary-scaffold" attributes="appTitle appMenuFile">
+<polymer-element name="uqlibrary-scaffold" attributes="appTitle appMenuFile enableSearchSuggestions">
   <template>
     <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <link rel="stylesheet" href="uqlibrary-scaffold.css">
@@ -46,6 +46,7 @@ Reusable scaffold
 
           <div flex?="{{!isNarrow || searchIsActive}}" id="searchContainer" class="{{ {openSearch: !isNarrow} | tokenList }}">
             <uqlibrary-search-input
+              enableSearchSuggestions="{{enableSearchSuggestions}}"
               placeholderText="Search"
               narrow="{{isNarrow}}"
               id="search"></uqlibrary-search-input>
@@ -80,6 +81,7 @@ Reusable scaffold
       width: '256px',
       drawerIsOpen: false,
       searchIsActive: false,
+      enableSearchSuggestions: false,
 
       ready: function () {
         that = this;

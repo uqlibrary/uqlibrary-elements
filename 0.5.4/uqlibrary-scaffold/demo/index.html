@@ -13,7 +13,24 @@
 <body fullbleed unresolved>
 
 <uqlibrary-scaffold appTitle="My Library"
-                    appMenuFile="flint.json"></uqlibrary-scaffold>
+                    appMenuFile="flint.json"
+                    enableSearchSuggestions
+  ></uqlibrary-scaffold>
+
+
+<script>
+  var uqlibraryScaffold = document.querySelector('uqlibrary-scaffold');
+  document.addEventListener('uqlibrary-search-input-search-value-changed', function(e) {
+    uqlibraryScaffold.fire('uqlibrary-search-input-search-suggestions-loaded', {data: [ { text: 'suggestion 1 for '+ e.detail.value, url: '#' }, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
+  });
+
+  document.addEventListener('uqlibrary-search-input-search-submitted', function(e) {
+    console.log('search-submitted ' + e.detail.searchTerm);
+  });
+
+
+
+</script>
 
 </body>
 </html>

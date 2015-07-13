@@ -1083,6 +1083,9 @@ paper-checkbox::shadow #ink {
 paper-checkbox::shadow #checkbox {
   border-color: #cccccc; }
 
+paper-autogrow-textarea {
+  min-height: 16px; }
+
 paper-fab {
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1), background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #007e9e; }
