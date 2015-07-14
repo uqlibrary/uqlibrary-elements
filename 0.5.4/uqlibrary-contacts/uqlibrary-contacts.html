@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+Element providing the library contacts component
+
+##### Example
+
+    <uqlibrary-contacts></uqlibrary-contacts>
+@element uqlibrary-contacts
+@blurb Element providing the library chat
+@status alpha
+@homepage http://uqlibrary.github.io/uqlibrary-contacts
+-->
+
+<script src="uqlibrary-contacts.js"></script>
+
+<polymer-element name="uqlibrary-contacts" layout center>
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <link rel="stylesheet" href="uqlibrary-contacts.css">
+
+    <swipeable-card class="card no-margin" disableSwipe>
+      <paper-shadow z="1">
+        <div class="subhead cardSection cardTitle">Library Contacts</div>
+        <template repeat="{{item in data}}">
+          <a class="link"
+             href="{{item.link}}" target="_blank">
+            <div class="cardSection">
+              <div class="link listItemLink">
+                <core-icon class="link" icon="{{item.icon}}" aria-label></core-icon>
+                {{item.name}}
+              </div>
+            </div>
+          </a>
+        </template>
+      </paper-shadow>
+    </swipeable-card>
+  </template>
+
+</polymer-element>

@@ -35,7 +35,8 @@
     "uqlibrary-chat-button": "uqlibrary/uqlibrary-chat-button#<branch>",
     "uqlibrary-notifications-button": "uqlibrary/uqlibrary-notifications-button#<branch>",
     "uqlibrary-search-input": "uqlibrary/uqlibrary-search-input#<branch>",
-    "uqlibrary-scaffold": "uqlibrary/uqlibrary-scaffold#<branch>"
+    "uqlibrary-scaffold": "uqlibrary/uqlibrary-scaffold#<branch>",
+    "uqlibrary-contacts": "uqlibrary/uqlibrary-contacts#<branch>"
   },
   "resolutions": {
     "web-animations-js": "1.0.5"

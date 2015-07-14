@@ -1,70 +1,58 @@
-* {
-  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1); }
+/*
+Error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/variables.
+       Load paths:
+         
+        on line 1 of uqlibrary-toolbar.scss
 
-.turnWhite {
-  background: white; }
+1: @import "../uqlibrary-elements/resources/theme/variables";
+2: 
+3: * {
+4:   transition: $main-transition;
+5: }
+6: .turnWhite {
 
-core-toolbar {
-  background: #4a075f;
-  color: white; }
-  @media (min-width: 768px) {
-    core-toolbar #hamburgerMenuIcon {
-      display: none; } }
-  core-toolbar paper-icon-button {
-    margin-top: 3px;
-    color: white;
-    border-radius: 50%; }
-    core-toolbar paper-icon-button:hover, core-toolbar paper-icon-button:focus, core-toolbar paper-icon-button:active {
-      background-color: rgba(255, 255, 255, 0.12); }
-  core-toolbar .applicationName {
-    color: white;
-    text-decoration: none; }
-  core-toolbar .glow {
-    color: white;
-    cursor: pointer; }
-    core-toolbar .glow:hover, core-toolbar .glow:focus, core-toolbar .glow:active {
-      text-decoration: none;
-      -webkit-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); }
-  core-toolbar paper-dropdown core-menu {
-    margin: 2px; }
-    core-toolbar paper-dropdown core-menu paper-item {
-      font-size: 14px;
-      transition: none; }
-      core-toolbar paper-dropdown core-menu paper-item:hover, core-toolbar paper-dropdown core-menu paper-item:focus {
-        background-color: rgba(0, 0, 0, 0.05);
-        transition: none; }
-      core-toolbar paper-dropdown core-menu paper-item a {
-        font-size: 16px;
-        cursor: pointer;
-        color: #333333;
-        display: block;
-        text-decoration: none; }
-  core-toolbar .invisible {
-    opacity: 0; }
-  core-toolbar #leftFlex paper-icon-button, core-toolbar #rightFlex paper-icon-button, core-toolbar #backArrow paper-icon-button {
-    color: #757575; }
-    core-toolbar #leftFlex paper-icon-button:hover, core-toolbar #leftFlex paper-icon-button:active, core-toolbar #leftFlex paper-icon-button:focus, core-toolbar #rightFlex paper-icon-button:hover, core-toolbar #rightFlex paper-icon-button:active, core-toolbar #rightFlex paper-icon-button:focus, core-toolbar #backArrow paper-icon-button:hover, core-toolbar #backArrow paper-icon-button:active, core-toolbar #backArrow paper-icon-button:focus {
-      border-radius: 50%;
-      background-color: rgba(0, 0, 0, 0.05); }
-    core-toolbar #leftFlex paper-icon-button core-icon, core-toolbar #rightFlex paper-icon-button core-icon, core-toolbar #backArrow paper-icon-button core-icon {
-      color: #333333; }
-  core-toolbar paper-input-decorator {
-    color: #333333;
-    margin-bottom: 4px; }
-    core-toolbar paper-input-decorator::shadow #focusedUnderline {
-      background-color: transparent !important; }
-    core-toolbar paper-input-decorator /deep/ ::-webkit-input-placeholder {
-      /* platform specific rules for placeholder text */
-      color: rgba(0, 0, 0, 0.26);
-      padding-top: 5px; }
-    core-toolbar paper-input-decorator /deep/ ::-moz-placeholder {
-      color: rgba(0, 0, 0, 0.26);
-      padding-top: 4px; }
-    core-toolbar paper-input-decorator /deep/ :-ms-input-placeholder {
-      color: rgba(0, 0, 0, 0.26);
-      padding-top: 4px; }
-    core-toolbar paper-input-decorator /deep/ .unfocused-underline {
-      /* line color when the input is unfocused */
-      background-color: transparent; }
-
-/*# sourceMappingURL=uqlibrary-toolbar.css.map */
+Backtrace:
+uqlibrary-toolbar.scss:1
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin.rb:82:in `update_stylesheets'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:361:in `watch_or_update'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
+/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
+/usr/local/share/gems/gems/sass-3.4.13/bin/scss:13:in `<top (required)>'
+/usr/local/bin/scss:23:in `load'
+/usr/local/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/variables.\A        Load paths:\A          \A         on line 1 of uqlibrary-toolbar.scss\A \A 1: @import \"../uqlibrary-elements/resources/theme/variables\";\A 2: \A 3: * {\A 4:   transition: $main-transition;\A 5: }\A 6: .turnWhite {"; }
