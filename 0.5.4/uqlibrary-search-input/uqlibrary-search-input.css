@@ -1,58 +1,40 @@
-/*
-Error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/variables.
-       Load paths:
-         
-        on line 1 of uqlibrary-search-input.scss
+/*search input uses white text colour and full width of a flex */
+#searchInput {
+  color: white;
+  width: 100%;
+  height: 41px;
+  /*
+  search input placeholder text should be weaker than user's input text,
+  this gives it material design level of transparency, across browsers
+  */ }
+  #searchInput::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.87); }
+  #searchInput::-webkit-input-placeholder {
+    /* WebKit browsers, Mozilla Firefox 19+ */
+    color: rgba(255, 255, 255, 0.54); }
+  #searchInput:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: rgba(255, 255, 255, 0.87); }
 
-1: @import "../uqlibrary-elements/resources/theme/variables";
-2: 
-3: /*search input uses white text colour and full width of a flex *\/
-4: 
-5: #searchInput {
-6:   color: $white;
+.activateSearch {
+  color: rgba(0, 0, 0, 0.87) !important; }
+  .activateSearch core-icon {
+    color: rgba(0, 0, 0, 0.87); }
+  .activateSearch #searchInput {
+    color: rgba(0, 0, 0, 0.87) !important; }
+    .activateSearch #searchInput::-webkit-input-placeholder {
+      /* WebKit browsers, Mozilla Firefox 19+ */
+      color: #999999; }
+    .activateSearch #searchInput::-moz-placeholder {
+      /* WebKit browsers, Mozilla Firefox 19+ */
+      color: #999999; }
+    .activateSearch #searchInput:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #999999; }
 
-Backtrace:
-uqlibrary-search-input.scss:1
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/plugin.rb:82:in `update_stylesheets'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:361:in `watch_or_update'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/base.rb:52:in `parse'
-/usr/local/share/gems/gems/sass-3.4.13/lib/sass/exec/base.rb:19:in `parse!'
-/usr/local/share/gems/gems/sass-3.4.13/bin/scss:13:in `<top (required)>'
-/usr/local/bin/scss:23:in `load'
-/usr/local/bin/scss:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../uqlibrary-elements/resources/theme/variables.\A        Load paths:\A          \A         on line 1 of uqlibrary-search-input.scss\A \A 1: @import \"../uqlibrary-elements/resources/theme/variables\";\A 2: \A 3: /*search input uses white text colour and full width of a flex */\A 4: \A 5: #searchInput {\A 6:   color: $white;"; }
+#searchSuggestions {
+  width: 100%; }
+
+paper-item {
+  color: rgba(0, 0, 0, 0.87); }
