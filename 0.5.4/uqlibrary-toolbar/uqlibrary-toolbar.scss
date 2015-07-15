@@ -10,7 +10,7 @@ core-toolbar {
   background: $dark-primary;
   color: white;
   #hamburgerMenuIcon {
-    @media (min-width: $responsive-width) {
+    @media (min-width: $responsive-width+1) {
       display: none;
     }
   }

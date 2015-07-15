@@ -7,7 +7,7 @@
 core-toolbar {
   background: #4a075f;
   color: white; }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     core-toolbar #hamburgerMenuIcon {
       display: none; } }
   core-toolbar paper-icon-button {
