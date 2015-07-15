@@ -768,13 +768,13 @@
     transform: none;
   }
 </core-style><core-transition-pages id="slide-from-right" scopeclass="slide-from-right"></core-transition-pages><polymer-element name="x-trigger" extends="core-icon-button" relative="" on-tap="{{toggle}}" noink="" assetpath="../x-trigger/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
 
     <shadow></shadow>
     <div class="arrow" hidden?="{{! dropdown.opened}}"></div>
     <content></content>
   </template></polymer-element><polymer-element name="uqlibrary-a11y-link" role="link" assetpath="../uqlibrary-a11y-link/"><template>
-    <link rel="stylesheet" href="../../resources/theme/element.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
 
     <a href="{{javascriptPlaceholder}}">
       <content></content>
@@ -805,7 +805,7 @@
   </div>
 
 </template></polymer-element><polymer-element name="uqlibrary-ga" attributes="webPropertyId isLocal appName" assetpath="../uqlibrary-ga/"></polymer-element><polymer-element name="uqlibrary-menu" attributes="account menuFile" role="”navigation”" assetpath="../uqlibrary-menu/"><template>
-        <link rel="stylesheet" href="../../resources/theme/element.css">
+        <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
 
         <style>#skipNavigation{position:fixed;z-index:99999999999;left:-200px;top:-200px;margin:5px;background-color:rgba(255,255,255,.2)}#skipNavigation:focus{position:fixed;z-index:99999999999;left:0;top:0;background-color:rgba(255,255,255,.9)}</style>
 
@@ -875,7 +875,7 @@
         <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
 
     </template></polymer-element><polymer-element name="uqlibrary-account-button" assetpath="../uqlibrary-account-button/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <style>.open-below{top:51px}</style>
 
     <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
@@ -892,7 +892,7 @@
       </paper-dropdown>
     </x-trigger>
   </template></polymer-element><polymer-element name="uqlibrary-apps-button" assetpath="../uqlibrary-apps-button/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <style>#apps{width:320px;margin:24px 0 24px 24px}.app{text-align:center;margin:8px 2px}.open-below{top:51px}@media screen and (max-width:420px){#apps{width:100%;margin:0}}</style>
 
     <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
@@ -915,7 +915,7 @@
       </paper-dropdown>
     </x-trigger>
   </template></polymer-element><polymer-element name="uqlibrary-chat-button" assetpath="../uqlibrary-chat-button/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <style>.open-below{top:51px}#apps{margin:24px 0 24px 24px}.app{text-align:center;margin:8px 2px}</style>
 
     <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
@@ -933,7 +933,7 @@
       </paper-dropdown>
     </x-trigger>
   </template></polymer-element><polymer-element name="notification-alert" assetpath="../notification-elements/"></polymer-element><polymer-element name="uqlibrary-notifications-button" attributes="allowDesktopNotifications" assetpath="../uqlibrary-notifications-button/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <style>.open-below{top:51px}</style>
 
     <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
@@ -952,7 +952,7 @@
     <!--<core-icon-button icon="social:notifications-none" on-tap="{{notify}}"></core-icon-button>-->
     <notification-alert hidden?="!allowDesktopNotifications" id="notification" header="This is an example notification" message="Your room booking for Group Room 3 starts in 15 minutes." name="UQLibrary Notification" autoclose="0" icon="http://www.library.uq.edu.au" on-notification-dismissed="{{dismissed}}"></notification-alert>
   </template></polymer-element><polymer-element name="uqlibrary-search-input" attributes="narrow placeholderText enableSearchSuggestions" assetpath="../uqlibrary-search-input/"><template>
-    <!--<link rel="stylesheet" href="../../resources/theme/component.css">-->
+    <!--<link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">-->
     <style>#searchInput{color:#fff;width:100%;height:41px}#searchInput::-moz-placeholder{color:rgba(255,255,255,.87)}#searchInput::-webkit-input-placeholder{color:rgba(255,255,255,.54)}#searchInput:-ms-input-placeholder{color:rgba(255,255,255,.87)}.activateSearch{color:rgba(0,0,0,.87)!important}.activateSearch core-icon{color:rgba(0,0,0,.87)}.activateSearch #searchInput{color:rgba(0,0,0,.87)!important}.activateSearch #searchInput::-webkit-input-placeholder{color:#999}.activateSearch #searchInput::-moz-placeholder{color:#999}.activateSearch #searchInput:-ms-input-placeholder{color:#999}#searchSuggestions{width:100%}paper-item{color:rgba(0,0,0,.87)}</style>
 
     <!--back arrow is hidden if view is not narrow and if it's not in search mode-->
@@ -980,7 +980,7 @@
       <core-icon-button icon="search" class="{{ {activateSearch: !searchIsHidden} | tokenList }}" on-tap="{{clickedSearch}}" hidden?="{{searchIsHidden || !narrow}}"></core-icon-button>
     </div>
   </template></polymer-element><polymer-element name="uqlibrary-scaffold" attributes="appTitle appMenuFile enableSearchSuggestions" assetpath="../uqlibrary-scaffold/"><template>
-    <link rel="stylesheet" href="../../resources/theme/component.css">
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
     <style>#coreScaffold /deep/ #mainToolbar{width:100%;white-space:nowrap}#coreScaffold /deep/ .hidden{opacity:0;visibility:hidden}#coreScaffold /deep/ .visible{opacity:1!important;visibility:visible!important}#coreScaffold /deep/ .openSearch{margin:0 24px;background-color:rgba(255,255,255,.16);border-radius:2px;cursor:text}#coreScaffold /deep/ .openSearch:hover{background-color:rgba(255,255,255,.24)}#coreScaffold /deep/ .turnWhite{background-color:#fff;border-radius:2px}#coreScaffold /deep/ #searchContainer{overflow:hidden}#coreScaffold /deep/ #drawerPanel #menuButton{display:none}#coreScaffold /deep/ #drawerPanel core-toolbar{background-color:#4a075f}</style>
 
     <core-media-query query="max-width:768px" querymatches="{{isNarrow}}"></core-media-query>
