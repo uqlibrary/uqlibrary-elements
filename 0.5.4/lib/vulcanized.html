@@ -1172,4 +1172,23 @@
         </template>
       </div>
     </div>
+  </template></polymer-element><polymer-element name="uqlibrary-contacts" layout="" center="" assetpath="../uqlibrary-contacts/"><template>
+    <link rel="stylesheet" href="../../resources/theme/element.css">
+    <style>uqlibrary-contacts.listItemTitle{padding-bottom:16px}uqlibrary-contacts.listItemAuthor{font-style:italic;padding-bottom:16px}uqlibrary-contacts.listItemType{color:#7b0c9d;font-style:italic}uqlibrary-contacts.listItemNotes{font-style:italic;padding-bottom:16px}uqlibrary-contacts.listItemNoResultsMessage{font-style:italic}</style>
+
+    <swipeable-card class="card no-margin" disableswipe="">
+      <paper-shadow z="1">
+        <div class="subhead cardSection cardTitle">Library Contacts</div>
+        <template repeat="{{item in data}}">
+          <a class="link" href="{{item.link}}" target="_blank">
+            <div class="cardSection">
+              <div class="link listItemLink">
+                <core-icon class="link" icon="{{item.icon}}" aria-label=""></core-icon>
+                {{item.name}}
+              </div>
+            </div>
+          </a>
+        </template>
+      </paper-shadow>
+    </swipeable-card>
   </template></polymer-element></div><script src="vulcanized.js"></script></body></html>
