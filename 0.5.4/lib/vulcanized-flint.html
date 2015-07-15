@@ -794,7 +794,7 @@
 </template></polymer-element><polymer-element name="uqlibrary-api-account" extends="uqlibrary-api" assetpath="../uqlibrary-api/"><template>
     <uqlibrary-api id="account" uri="{{uri}}"></uqlibrary-api>
   </template></polymer-element><polymer-element name="uqlibrary-menu" attributes="account menuFile" role="”navigation”" assetpath="../uqlibrary-menu/"><template>
-        <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+        <link rel="stylesheet" href="../../resources/theme/element.css">
 
         <style>#skipNavigation{position:fixed;z-index:99999999999;left:-200px;top:-200px;margin:5px;background-color:rgba(255,255,255,.2)}#skipNavigation:focus{position:fixed;z-index:99999999999;left:0;top:0;background-color:rgba(255,255,255,.9)}</style>
 
@@ -864,7 +864,7 @@
         <div tabindex="0" style="opacity: 0;" id="content" aria-label="Start of content">Start of content</div>
 
     </template></polymer-element><polymer-element name="uqlibrary-a11y-link" role="link" assetpath="../uqlibrary-a11y-link/"><template>
-    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <link rel="stylesheet" href="../../resources/theme/element.css">
 
     <a href="{{javascriptPlaceholder}}">
       <content></content>
@@ -873,7 +873,7 @@
     <core-a11y-keys keys="{{activationKeys}}" target="{{}}" on-keys-pressed="{{_activate}}"></core-a11y-keys>
 
   </template></polymer-element><polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText suggestions" assetpath="../uqlibrary-toolbar/"><template>
-    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <link rel="stylesheet" href="../../resources/theme/element.css">
     <style>*{transition:all 280ms cubic-bezier(0.4,0,.2,1)}.turnWhite{background:#fff}core-toolbar{background:#4a075f;color:#fff}@media (min-width:769px){core-toolbar #hamburgerMenuIcon{display:none}}core-toolbar paper-icon-button{margin-top:3px;color:#fff;border-radius:50%}core-toolbar paper-icon-button:hover,core-toolbar paper-icon-button:focus,core-toolbar paper-icon-button:active{background-color:rgba(255,255,255,.12)}core-toolbar .applicationName{color:#fff;text-decoration:none}core-toolbar .glow{color:#fff;cursor:pointer}core-toolbar .glow:hover,core-toolbar .glow:focus,core-toolbar .glow:active{text-decoration:none;-webkit-filter:drop-shadow(0 0 2px rgba(255,255,255,.5))}core-toolbar paper-dropdown core-menu{margin:2px}core-toolbar paper-dropdown core-menu paper-item{font-size:14px;transition:none}core-toolbar paper-dropdown core-menu paper-item:hover,core-toolbar paper-dropdown core-menu paper-item:focus{background-color:rgba(0,0,0,.05);transition:none}core-toolbar paper-dropdown core-menu paper-item a{font-size:16px;cursor:pointer;color:#333;display:block;text-decoration:none}core-toolbar .invisible{opacity:0}core-toolbar #leftFlex paper-icon-button,core-toolbar #rightFlex paper-icon-button,core-toolbar #backArrow paper-icon-button{color:#757575}core-toolbar #leftFlex paper-icon-button:hover,core-toolbar #leftFlex paper-icon-button:active,core-toolbar #leftFlex paper-icon-button:focus,core-toolbar #rightFlex paper-icon-button:hover,core-toolbar #rightFlex paper-icon-button:active,core-toolbar #rightFlex paper-icon-button:focus,core-toolbar #backArrow paper-icon-button:hover,core-toolbar #backArrow paper-icon-button:active,core-toolbar #backArrow paper-icon-button:focus{border-radius:50%;background-color:rgba(0,0,0,.05)}core-toolbar #leftFlex paper-icon-button core-icon,core-toolbar #rightFlex paper-icon-button core-icon,core-toolbar #backArrow paper-icon-button core-icon{color:#333}core-toolbar paper-input-decorator{color:#333;margin-bottom:4px}core-toolbar paper-input-decorator::shadow #focusedUnderline{background-color:transparent!important}core-toolbar paper-input-decorator /deep/ ::-webkit-input-placeholder{color:rgba(0,0,0,.26);padding-top:5px}core-toolbar paper-input-decorator /deep/ ::-moz-placeholder{color:rgba(0,0,0,.26);padding-top:4px}core-toolbar paper-input-decorator /deep/ :-ms-input-placeholder{color:rgba(0,0,0,.26);padding-top:4px}core-toolbar paper-input-decorator /deep/ .unfocused-underline{background-color:transparent}</style>
 
     <core-toolbar id="mainToolbar">
