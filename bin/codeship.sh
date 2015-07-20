@@ -25,6 +25,11 @@ find ../uqlibrary-elements -type f -regex "../uqlibrary-elements/[0-9].*" ! -nam
 cd ..
 cp -R ${base} "${base/uqlibrary-/}"
 
+# set up directory aliases
+if [ ${base} = "uqlibrary-chat" ]; then
+  ln -s ${base} contact
+fi
+
 # Use env vars to set AWS config
 set +x
 cd uqlibrary-elements
