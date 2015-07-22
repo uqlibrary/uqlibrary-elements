@@ -19,7 +19,7 @@
     "title": "Contact Us",
     "description": "Contact the library for help",
     "icon": "question-answer",
-    "link": "../chat",
+    "link": "../contact",
     "ga": "chat"
   },
   {
