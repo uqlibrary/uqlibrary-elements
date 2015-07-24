@@ -29,12 +29,7 @@
   window.addEventListener('polymer-ready', function () {
     var parent = document.querySelector('uqlibrary-api-academic-stats');
 
-    suite('uqlibrary-api-academic-stats tests', function () {
-
-      afterEach(function () {
-      });
-
-      test('url should return the mock data', function (done) {
+    test('url should return the mock data', function (done) {
         var appLoaded = function (result) {
           var expected = {
             stats: {
@@ -62,8 +57,6 @@
 
       });
 
-
-    });
   });
 </script>
 

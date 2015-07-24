@@ -29,12 +29,7 @@
     window.addEventListener('polymer-ready', function() {
       var parent = document.querySelector('uqlibrary-api-authors-search');
 
-      suite('uqlibrary-api-authors-search tests', function() {
-
-        afterEach(function () {
-        });
-
-        test('url should return the mock data', function (done) {
+      test('url should return the mock data', function (done) {
             var appLoaded = function(result) {
 
                 assert.equal(16, result.detail.length);
@@ -52,9 +47,6 @@
 
         });
 
-
-
-      });
     });
   </script>
 

@@ -55,70 +55,63 @@
       ];
 
 
-      suite('uqlibrary-time-selector', function() {
+      element.bookingTimeslots = bookingTimeslots;
+      element.maxBookingLength = maxBookingLength;
 
-        before(function () {
-          element = document.querySelector('uqlibrary-time-selector');
+      //properties unit tests
+      test('defines bookingTimeslots property', function () {
+        assert.equal(element.bookingTimeslots.length, bookingTimeslots.length);
+      });
 
-          element.bookingTimeslots = bookingTimeslots;
-          element.maxBookingLength = maxBookingLength;
-        });
-
-        //properties unit tests
-        test('defines bookingTimeslots property', function () {
-          assert.equal(element.bookingTimeslots.length, bookingTimeslots.length);
-        });
-
-        test('defines maxBookingLength property', function () {
-          assert.equal(element.maxBookingLength, maxBookingLength);
-        });
+      test('defines maxBookingLength property', function () {
+        assert.equal(element.maxBookingLength, maxBookingLength);
+      });
 
 
-        //methods unit tests
-        test('isTimeslotChangeValid - validate selection of unselectable time slot', function () {
-          //invalid - select (selectable = false) time slot
-          assert.isFalse(element.isTimeslotChangeValid(4));
-        });
+      //methods unit tests
+      test('isTimeslotChangeValid - validate selection of unselectable time slot', function () {
+        //invalid - select (selectable = false) time slot
+        assert.isFalse(element.isTimeslotChangeValid(4));
+      });
 
-        test('isTimeslotChangeValid - validate selection of first time slot', function () {
-          //valid - select first time slot
-          assert.isTrue(element.isTimeslotChangeValid(0));
-        });
+      test('isTimeslotChangeValid - validate selection of first time slot', function () {
+        //valid - select first time slot
+        assert.isTrue(element.isTimeslotChangeValid(0));
+      });
 
-        test('isTimeslotChangeValid - validate selection of consecutive time slot', function () {
-          element.bookingTimeslots[0].selected = true;
-          assert.isTrue(element.isTimeslotChangeValid(1));
-        });
+      test('isTimeslotChangeValid - validate selection of consecutive time slot', function () {
+        element.bookingTimeslots[0].selected = true;
+        assert.isTrue(element.isTimeslotChangeValid(1));
+      });
 
-        test('isTimeslotChangeValid - validate selection of not consecutive time slot', function () {
-          element.bookingTimeslots[0].selected = true;
-          assert.isFalse(element.isTimeslotChangeValid(2));
-        });
+      test('isTimeslotChangeValid - validate selection of not consecutive time slot', function () {
+        element.bookingTimeslots[0].selected = true;
+        assert.isFalse(element.isTimeslotChangeValid(2));
+      });
 
 
-        test('isTimeslotChangeValid - validate selection exceeding max booking length', function () {
-          element.bookingTimeslots[0].selected = true;
-          element.bookingTimeslots[1].selected = true;
-          element.bookingTimeslots[2].selected = true;
+      test('isTimeslotChangeValid - validate selection exceeding max booking length', function () {
+        element.bookingTimeslots[0].selected = true;
+        element.bookingTimeslots[1].selected = true;
+        element.bookingTimeslots[2].selected = true;
 
-          assert.isFalse(element.isTimeslotChangeValid(3));
-        });
+        assert.isFalse(element.isTimeslotChangeValid(3));
+      });
 
-        test('isTimeslotChangeValid - validate de-selection in the edge of selection', function () {
-          element.bookingTimeslots[0].selected = true;
-          element.bookingTimeslots[1].selected = true;
-          element.bookingTimeslots[2].selected = true;
+      test('isTimeslotChangeValid - validate de-selection in the edge of selection', function () {
+        element.bookingTimeslots[0].selected = true;
+        element.bookingTimeslots[1].selected = true;
+        element.bookingTimeslots[2].selected = true;
 
-          assert.isTrue(element.isTimeslotChangeValid(2));
-        });
+        assert.isTrue(element.isTimeslotChangeValid(2));
+      });
 
-        test('isTimeslotChangeValid - validate de-selection in the middle of selection', function () {
-          element.bookingTimeslots[0].selected = true;
-          element.bookingTimeslots[1].selected = true;
-          element.bookingTimeslots[2].selected = true;
+      test('isTimeslotChangeValid - validate de-selection in the middle of selection', function () {
+        element.bookingTimeslots[0].selected = true;
+        element.bookingTimeslots[1].selected = true;
+        element.bookingTimeslots[2].selected = true;
 
-          assert.isFalse(element.isTimeslotChangeValid(1));
-        });
+        assert.isFalse(element.isTimeslotChangeValid(1));
       });
     });
   </script>

@@ -143,14 +143,14 @@
       }
     ];
 
-    suite('uqlibrary-api tests', function() {
-
-      afterEach(function () {
-        //remove all previous listeners
-        loadedEventListeners.forEach(function(listener){
-          parent.removeEventListener("uqlibrary-api-applications-loaded", listener);
-        });
-      });
+//    suite('uqlibrary-api tests', function() {
+//
+//      afterEach(function () {
+//        //remove all previous listeners
+//        loadedEventListeners.forEach(function(listener){
+//          parent.removeEventListener("uqlibrary-api-applications-loaded", listener);
+//        });
+//      });
 
       ptypeApps.forEach(function(item, index, array) {
                 item.ptype.forEach(function(ptype, indexP, arrayP){
@@ -186,6 +186,11 @@
                           console.log("TST: " + definedApps);
                         }
 
+                        //remove all previous listeners
+                        loadedEventListeners.forEach(function(listener){
+                          parent.removeEventListener("uqlibrary-api-applications-loaded", listener);
+                        });
+
                         assert.equal(apps, definedApps);
 
                         done();
@@ -205,7 +210,7 @@
               }
       );
 
-    });
+//    });
   });
 </script>
 

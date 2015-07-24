@@ -36,48 +36,43 @@
         "cut_off": "2015-02-01"
       };
 
-      suite('uqlibrary-api-term-dates tests', function() {
+      test('date is in boundaries of a term', function (done) {
 
-        afterEach(function () {
-        });
+        var date = new Date("2015-01-02");
+        var isTermDate = parent.isTermDate(term, date);
+        assert.equal(true, isTermDate);
 
-        test('date is in boundaries of a term', function (done) {
+        date = new Date("2014-12-24");
+        isTermDate = parent.isTermDate(term, date);
+        assert.equal(true, isTermDate);
 
-          var date = new Date("2015-01-02");
-          var isTermDate = parent.isTermDate(term, date);
-          assert.equal(true, isTermDate);
+        date = new Date("2015-03-31");
+        isTermDate = parent.isTermDate(term, date);
+        assert.equal(true, isTermDate);
 
-          date = new Date("2014-12-24");
-          isTermDate = parent.isTermDate(term, date);
-          assert.equal(true, isTermDate);
+        date = new Date("2015-04-07");
+        isTermDate = parent.isTermDate(term, date);
+        assert.equal(true, isTermDate);
 
-          date = new Date("2015-03-31");
-          isTermDate = parent.isTermDate(term, date);
-          assert.equal(true, isTermDate);
+        done();
 
-          date = new Date("2015-04-07");
-          isTermDate = parent.isTermDate(term, date);
-          assert.equal(true, isTermDate);
+      });
 
-          done();
+      test('date is not in boundaries of a term', function (done) {
 
-        });
+        var date = new Date("2014-12-01");
+        var isTermDate = parent.isTermDate(term, date);
+        assert.equal(false, isTermDate);
 
-        test('date is not in boundaries of a term', function (done) {
+        date = new Date("2015-04-08");
+        isTermDate = parent.isTermDate(term, date);
+        assert.equal(false, isTermDate);
 
-          var date = new Date("2014-12-01");
-          var isTermDate = parent.isTermDate(term, date);
-          assert.equal(false, isTermDate);
+        done();
 
-          date = new Date("2015-04-08");
-          isTermDate = parent.isTermDate(term, date);
-          assert.equal(false, isTermDate);
+      });
 
-          done();
-
-        });
-
-        test('semester data is extracted from code', function (done) {
+      test('semester data is extracted from code', function (done) {
 
           var termData = parent.getYearSemesterByCode(term.code);
 
@@ -87,7 +82,7 @@
           done();
 
         });
-      });
+
     });
   </script>
 

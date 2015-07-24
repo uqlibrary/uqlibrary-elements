@@ -20,11 +20,11 @@
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^1.6.1"
   },
-  "_release": "f6c71769fa",
+  "_release": "323c0b81c4",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f6c71769fac419f44cf27f1dc8c8dca2671b87ee"
+    "commit": "323c0b81c40c4eb6bd69c23d5ff3fe778bb4233b"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-date-selector.git",
   "_target": "master",

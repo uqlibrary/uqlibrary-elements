@@ -13,48 +13,43 @@
 </head>
 <body>
 
-  <!-- You use the document as a place to set up your fixtures. -->
-  <uqlibrary-ga></uqlibrary-ga>
+<!-- You use the document as a place to set up your fixtures. -->
+<uqlibrary-ga></uqlibrary-ga>
 
-  <script>
-    window.addEventListener('polymer-ready', function() {
+<script>
+  window.addEventListener('polymer-ready', function() {
 
-      var element = document.querySelector('uqlibrary-ga');
-      var trackingId = 'UA-12345-6';
-      var websiteUrl = 'http://test.uq.edu.au/app';
-      var cookieDomain = 'test.uq.edu.au';
-      var appName = 'TEST';
+    var element = document.querySelector('uqlibrary-ga');
+    var trackingId = 'UA-12345-6';
+    var websiteUrl = 'http://test.uq.edu.au/app';
+    var cookieDomain = 'test.uq.edu.au';
+    var appName = 'TEST';
 
-      suite('uqlibrary-ga', function() {
+    element = document.querySelector('uqlibrary-ga');
+    element.trackingId = trackingId;
+    element.websiteUrl = websiteUrl;
+    element.cookieDomain = cookieDomain;
+    element.appName = appName;
 
-        before(function () {
-          element = document.querySelector('uqlibrary-ga');
-          element.trackingId = trackingId;
-          element.websiteUrl = websiteUrl;
-          element.cookieDomain = cookieDomain;
-          element.appName = appName;
-        });
-
-        //properties unit tests
-        test('defines tracking Id property', function () {
-          assert.equal(element.trackingId, trackingId);
-        });
-
-        test('defines website url property', function () {
-          assert.equal(element.websiteUrl, websiteUrl);
-        });
-
-        test('defines cookie domain property', function () {
-          assert.equal(element.cookieDomain, cookieDomain);
-        });
-
-        test('defines application name property', function () {
-          assert.equal(element.appName, appName);
-        });
-
-      });
+    //properties unit tests
+    test('defines tracking Id property', function () {
+      assert.equal(element.trackingId, trackingId);
     });
-  </script>
+
+    test('defines website url property', function () {
+      assert.equal(element.websiteUrl, websiteUrl);
+    });
+
+    test('defines cookie domain property', function () {
+      assert.equal(element.cookieDomain, cookieDomain);
+    });
+
+    test('defines application name property', function () {
+      assert.equal(element.appName, appName);
+    });
+
+  });
+</script>
 
 </body>
 </html>
