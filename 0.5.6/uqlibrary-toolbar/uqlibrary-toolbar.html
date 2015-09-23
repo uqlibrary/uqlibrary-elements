@@ -1,0 +1,276 @@
+<link href="../polymer/polymer.html" rel="import">
+<link rel="import" href="../core-dropdown/core-dropdown.html">
+<link rel="import" href="../core-dropdown-menu/core-dropdown-menu.html">
+<link rel="import" href="../core-header-panel/core-header-panel.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<link rel="import" href="../core-input/core-input.html">
+<link rel="import" href="../core-item/core-item.html">
+<link rel="import" href="../core-label/core-label.html">
+<link rel="import" href="../core-layout-grid/core-layout-grid.html">
+<link rel="import" href="../core-layout-trbl/core-layout-trbl.html">
+<link rel="import" href="../core-media-query/core-media-query.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-menu/core-submenu.html">
+<link rel="import" href="../core-menu-button/core-menu-button.html">
+<link rel="import" href="../core-selection/core-selection.html">
+<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../core-shared-lib/core-shared-lib.html">
+<link rel="import" href="../core-style/core-style.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+
+<!-- POLYMER PAPER ELEMENTS -->
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-input-decorator.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-progress/paper-progress.html">
+<link rel="import" href="../uqlibrary-a11y-link/uqlibrary-a11y-link.html">
+
+<!-- MATERIAL DESIGN -->
+<link rel="import" href="../font-roboto/roboto.html">
+
+<!--
+
+Reusable toolbar element that comes with search UI/UX
+Can include optional menu options
+
+##### Example
+
+<uqlibrary-toolbar>Click me or press Enter</uqlibrary-toolbar>
+
+@element uqlibrary-toolbar
+@blurb Reusable toolbar containing common styling and dynamic attributes such as title and link, and context-relevant search
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-toolbar
+-->
+
+<polymer-element name="uqlibrary-toolbar" attributes="appTitle appTitleLink appLinks searchPlaceholderText suggestions">
+
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/element.css">
+    <link rel="stylesheet" href="uqlibrary-toolbar.css">
+
+    <core-toolbar id="mainToolbar">
+      <div id="hamburgerMenuIcon" on-tap="{{menuClicked}}">
+        <uqlibrary-a11y-link>
+          <paper-icon-button icon="menu"></paper-icon-button>
+        </uqlibrary-a11y-link>
+      </div>
+
+      <div flex id="toolbarTitle">
+        <a href="{{appTitleLink}}" class="glow applicationName">{{appTitle}}</a>
+      </div>
+
+      <div id="expandSearch" on-tap="{{activateSearch}}">
+        <uqlibrary-a11y-link>
+          <paper-icon-button icon="search"></paper-icon-button>
+        </uqlibrary-a11y-link>
+      </div>
+
+      <!--Search UI which is only visible after user clicks 'search'-->
+      <div hidden id="backArrow" on-tap="{{deactivateSearch}}">
+        <uqlibrary-a11y-link>
+          <paper-icon-button icon="arrow-back"></paper-icon-button>
+        </uqlibrary-a11y-link>
+      </div>
+      <div hidden flex id="leftFlex" class="offCanvas">
+
+        <core-a11y-keys target="{{$.searchInputField}}"
+                        keys="enter esc up down"
+                        on-keys-pressed="{{onSearchKeys}}"></core-a11y-keys>
+
+
+        <paper-input-decorator label="{{searchPlaceholderText}}" id="searchFieldWrapper">
+          <input is="core-input" id="searchInputField" value="{{searchFieldValue}}">
+        </paper-input-decorator>
+
+        <paper-dropdown id="autosuggest"
+                        opened="{{openSuggestions}}"
+                        class="no-padding"
+                        relatedTarget="{{$.searchFieldWrapper}}"
+                        autoFocusDisabled="true">
+          <core-selector id="suggestionSelector" selected="{{suggestionIndex}}">
+            <template repeat="{{item, idx in suggestions}}">
+                <paper-item>
+                    <div flex class="truncate">{{item.text}}</div>
+                </paper-item>
+            </template>
+          </core-selector>
+        </paper-dropdown>
+
+      </div>
+      <div hidden id="rightFlex" on-tap="{{search}}">
+        <uqlibrary-a11y-link>
+          <paper-icon-button icon="search" id="searchButton"></paper-icon-button>
+        </uqlibrary-a11y-link>
+      </div>
+
+      <template if="{{(appLinks.length > 0)}}">
+        <div id="appLinksIcon">
+          <paper-menu-button>
+            <paper-icon-button icon="more-vert"></paper-icon-button>
+            <paper-dropdown class="dropdown" halign="right">
+              <core-menu class="menu">
+                <template repeat="{{link in appLinks}}">
+                  <uqlibrary-a11y-link>
+                    <paper-item>
+                      <a href="{{link.url}}" on-click="{{ linkClicked }}" data-title="{{link.label}}">{{link.label}}</a>
+                    </paper-item>
+                  </uqlibrary-a11y-link>
+                </template>
+              </core-menu>
+            </paper-dropdown>
+          </paper-menu-button>
+        </div>
+      </template>
+
+    </core-toolbar>
+  </template>
+  <script>
+    Polymer('uqlibrary-toolbar', {
+
+      animationFrameLength: 150,
+
+      created: function () {
+        this.suggestions = [];
+        this.appLinks = [];
+        this.searchPlaceholderText = "Search...";
+        this.ignoreIndexChanged = false;
+      },
+
+      ready: function () {
+      },
+
+      activateSearch: function () {
+        var that = this;
+
+        setTimeout(function () {
+          that.$.mainToolbar.classList.toggle('turnWhite');
+          that.$.hamburgerMenuIcon.classList.toggle('invisible');
+          that.$.toolbarTitle.classList.toggle('invisible');
+          that.$.expandSearch.classList.toggle('invisible');
+          if (that.$.appLinksIcon != undefined) {
+            that.$.appLinksIcon.classList.toggle('invisible');
+          }
+        }, 0);
+
+        setTimeout(function () {
+          that.$.hamburgerMenuIcon.setAttribute('hidden', true);
+          that.$.toolbarTitle.setAttribute('hidden', true);
+          that.$.expandSearch.setAttribute('hidden', true);
+          if (that.$.appLinksIcon != undefined) {
+            that.$.appLinksIcon.setAttribute('hidden', true);
+          }
+          that.$.backArrow.removeAttribute('hidden');
+          that.$.leftFlex.removeAttribute('hidden');
+          that.$.rightFlex.removeAttribute('hidden');
+          that.$.searchInputField.focus();
+        }, that.animationFrameLength);
+      },
+
+      deactivateSearch: function () {
+        var that = this;
+
+        setTimeout(function () {
+          that.$.hamburgerMenuIcon.removeAttribute('hidden');
+          that.$.toolbarTitle.removeAttribute('hidden');
+          that.$.expandSearch.removeAttribute('hidden');
+          if (that.$.appLinksIcon != undefined) {
+            that.$.appLinksIcon.removeAttribute('hidden');
+          }
+          that.$.backArrow.setAttribute('hidden', true);
+          that.$.leftFlex.setAttribute('hidden', true);
+          that.$.rightFlex.setAttribute('hidden', true);
+        }, 0);
+
+        setTimeout(function () {
+          that.$.mainToolbar.classList.toggle('turnWhite');
+          that.$.hamburgerMenuIcon.classList.toggle('invisible');
+          that.$.toolbarTitle.classList.toggle('invisible');
+          that.$.expandSearch.classList.toggle('invisible');
+          if (that.$.appLinksIcon != undefined) {
+            that.$.appLinksIcon.classList.toggle('invisible');
+          }
+        }, that.animationFrameLength);
+      },
+
+      menuClicked: function () {
+        this.fire('uqlibrary-toolbar-menu-clicked');
+      },
+
+      searchFieldValueChanged: function (oldValue, newValue) {
+        this.fire('uqlibrary-toolbar-search-value-changed', {value: newValue});
+      },
+
+      suggestionsChanged: function(oldValue, newValue) {
+        this.$.suggestionSelector.clearSelection();
+        this.$.suggestionSelector.selected = null;
+        this.suggestionIndex = -1;
+
+        this.async(function(){
+          this.openSuggestions = this.suggestions.length > 0;
+        }, 100);
+      },
+
+      suggestionIndexChanged: function(oldValue, newValue) {
+        if (!this.ignoreIndexChanged && this.suggestionIndex != null && this.suggestionIndex >= 0) {
+          this.search({ searchItem: this.suggestions[this.suggestionIndex] });
+        }
+
+        this.ignoreIndexChanged = false;
+      },
+
+      onSearchKeys: function (ev) {
+        switch(ev.detail.key) {
+          case 'esc':
+            this.suggestions = [];
+            break;
+          case 'enter':
+            if (this.suggestionIndex >= 0) {
+              this.search({ searchItem: this.suggestions[this.suggestionIndex] });
+            } else {
+              this.search();
+            }
+            break;
+          case 'up':
+            this.ignoreIndexChanged = true;
+            this.suggestionIndex = this.suggestionIndex >= 0 ? this.suggestionIndex - 1 : -1;
+            break;
+          case 'down':
+            this.ignoreIndexChanged = true;
+            this.suggestionIndex = this.suggestions.length - 1 > this.suggestionIndex ? this.suggestionIndex + 1 : this.suggestionIndex;
+            break;
+        }
+      },
+
+      search: function (data) {
+
+        if (data && data.searchItem) {
+          this.fire('uqlibrary-toolbar-search-submitted', {searchItem: data.searchItem, searchTerm: data.searchItem.text});
+        }
+        else {
+          this.fire('uqlibrary-toolbar-search-submitted', {searchTerm: this.searchFieldValue});
+        }
+
+        this.suggestions = [];
+      },
+
+      clearSearchForm: function () {
+          this.suggestions = [];
+          this.searchFieldValue = '';
+      },
+
+      linkClicked: function (e, detail, sender) {
+        var _id = sender.getAttribute('id');
+        var _title = sender.getAttribute('data-title');
+
+        this.fire('uqlibrary-toolbar-link-clicked', sender.getAttribute('href'));
+      }
+
+    });
+  </script>
+</polymer-element>

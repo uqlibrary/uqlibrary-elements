@@ -1,0 +1,28 @@
+{
+  "name": "uqlibrary-persistent-footer",
+  "description": "Element providing a persistent footer with set of action buttons",
+  "main": "uqlibrary-persistent-footer.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-persistent-footer",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "paper-button": "Polymer/paper-button#0.5.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "ea56d6247e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ea56d6247ed89b85b6efbbbe68bce17799bf244d"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-persistent-footer.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-persistent-footer"
+}

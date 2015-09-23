@@ -1,0 +1,47 @@
+{
+  "name": "uqlibrary-search-input",
+  "description": "Reusable search input component",
+  "authors": [
+    "The University of Queensland Library"
+  ],
+  "keywords": [
+    "uq",
+    "uqlibrary",
+    "library",
+    "search",
+    "input",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "main": "uqlibrary-search-input.html",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uqlibrary/uqlibrary-search-input"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-search-input",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "core-elements": "Polymer/core-elements#0.5.4",
+    "paper-elements": "Polymer/paper-elements#0.5.4"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  },
+  "_release": "baa70a0b55",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "baa70a0b5565cd8f6653d2a11d4e19d9281406ab"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-search-input.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-search-input"
+}

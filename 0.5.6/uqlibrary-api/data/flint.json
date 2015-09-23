@@ -1,0 +1,26 @@
+[
+  {
+    "title": "UQ Library Home",
+    "description": "Return to UQ Library Home",
+    "icon": "home",
+    "link": "https://www.library.uq.edu.au/",
+    "ga": "UQ Library"
+  },
+  {
+    "title": "UQ Fryer Library",
+    "description": "Return to The Fryer Library",
+    "icon": "dashboard",
+    "link": "https://www.library.uq.edu.au/fryer-library/fryer-collections",
+    "ga": "UQ Fryer Library"
+  },
+  {
+    "isDivider": true
+  },
+  {
+    "title": "About this collection",
+    "description": "Learn about the Flint Collection",
+    "icon": "info",
+    "link": "#about",
+    "ga": "About"
+  }
+]

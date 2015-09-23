@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-toolbar demo</title>
+
+  <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="uqlibrary-toolbar.html">
+
+  <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/app.css">
+</head>
+<body fullbleed unresolved>
+  <uqlibrary-toolbar
+          appTitle='Application Name'
+          appTitleLink='#'
+          appLinks='[{"label": "Switch back", "action": "#"}, {"label": "Help", "url": "#"}, {"label": "Feedback", "url": "#"}]'
+          searchPlaceholderText="Search for something">
+  </uqlibrary-toolbar>
+
+  <div id="log">
+
+  </div>
+
+<script>
+    var uqlibraryToolbar = document.querySelector('uqlibrary-toolbar');
+    var divLog = document.querySelector('#log');
+
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-menu-clicked', function() {
+      console.log('menu was clicked')
+      divLog.innerHTML += 'menu was clicked <br>';
+    });
+
+    uqlibraryToolbar.addEventListener('uqlibrary-toolbar-search-submitted', function(e) {
+      console.log('submitted term: ' + e.detail.searchTerm);
+      divLog.innerHTML += 'submitted term: ' + e.detail.searchTerm + "<br>";
+
+      if (e.detail.searchItem) {
+        console.log('submitted item: ' + e.detail.searchItem.value);
+        divLog.innerHTML += 'submitted item: ' + e.detail.searchItem.value + "<br>";
+      }
+    });
+
+    document.addEventListener('polymer-ready', function() {
+      var toolbar = document.querySelector('uqlibrary-toolbar');
+
+      document.addEventListener('uqlibrary-toolbar-search-value-changed', function(e) {
+        if(e.detail.value.length > 2) {
+
+          var suggestions = [];
+
+            for (var i = 0; i < 10 - e.detail.value.length; i++) {
+              var item = {text: e.detail.value + " " + i, value: "00" + i};
+              suggestions.push(item);
+            }
+
+          uqlibraryToolbar.suggestions = suggestions;
+        }
+      });
+    });
+
+
+</script>
+
+</body>
+</html>

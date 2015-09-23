@@ -1,0 +1,78 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+<link rel="import" href="uqlibrary-api.html">
+
+<!--
+Element providing list of records for Flint language survey based on language/voice or search keyword
+
+##### Example
+
+    <uqlibrary-api-flint-records></uqlibrary-api-flint-records>
+
+@element uqlibrary-api-flint-records
+@blurb Element providing list of records for Flint language survey based on language/voice or search keyword
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-api
+-->
+<polymer-element name="uqlibrary-api-flint-records" extends="uqlibrary-api">
+
+  <template>
+    <uqlibrary-api id="list"></uqlibrary-api>
+  </template>
+
+  <script>
+    (function() {
+      Polymer('uqlibrary-api-flint-records', {
+
+        baseUri : {
+          keyword: '/collection/flint?search={{KEYWORD}}&start={{START}}&rows={{ROWS}}',
+          language: '/collection/flint?language={{KEYWORD}}&start={{START}}&rows={{ROWS}}',
+          voice: '/collection/flint?voice={{KEYWORD}}&start={{START}}&rows={{ROWS}}'
+        },
+
+        start: 0,
+        rows: 50,
+
+        /**
+         * Fired when the object has loaded.
+         *
+         * @event uqlibrary-api-flint-records
+         */
+        created: function () {
+        },
+
+        ready: function () {
+          var that = this;
+          this.$.list.addEventListener('uqlibrary-api', function(e) {
+            that.fire('uqlibrary-api-flint-records-loaded', e.detail.response);
+          });
+        },
+
+        /**
+         * Gets results
+         *
+         * @method get
+         */
+        get: function (args) {
+          var uri;
+
+          if (args && args.keyword) {
+            uri = this.baseUri.keyword.replace('{{KEYWORD}}', args.keyword);
+          } else if (args && args.language) {
+            uri = this.baseUri.language.replace('{{KEYWORD}}', args.language);
+          } else if (args && args.voice) {
+            uri = this.baseUri.voice.replace('{{KEYWORD}}', args.voice);
+          }
+
+          uri = uri.replace('{{START}}', args.start ? args.start : this.start);
+          uri = uri.replace('{{ROWS}}', args.rows ? args.rows : this.rows);
+
+          this.$.list.uri = uri;
+
+          this.$.list.get();
+        }
+      });
+    })();
+  </script>
+
+</polymer-element>

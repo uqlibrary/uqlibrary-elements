@@ -1,0 +1,50 @@
+{
+  "name": "uqlibrary-account-button",
+  "description": "Reusable account button component",
+  "authors": [
+    "The University of Queensland Library"
+  ],
+  "keywords": [
+    "uq",
+    "uqlibrary",
+    "library",
+    "account",
+    "button",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "main": "uqlibrary-account-button.html",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uqlibrary/uqlibrary-account-button"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-account-button",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.4",
+    "core-elements": "Polymer/core-elements#0.5.4",
+    "paper-elements": "Polymer/paper-elements#0.5.4",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
+    "x-trigger": "uqlibrary/x-trigger#master",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  },
+  "_release": "2b89a59907",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2b89a59907b13db058424550852da41f32666669"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-account-button.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-account-button"
+}

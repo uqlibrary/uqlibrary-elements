@@ -1,0 +1,17 @@
+#apps {
+  width: 320px;
+  margin: 24px 0 24px 24px; }
+
+.app {
+  text-align: center;
+  margin: 8px 2px; }
+
+.open-below {
+  top: 51px; }
+
+@media screen and (max-width: 420px) {
+  #apps {
+    width: 100%;
+    margin: 0; } }
+
+/*# sourceMappingURL=uqlibrary-apps-button.css.map */

@@ -1,0 +1,130 @@
+<link href="../polymer/polymer.html" rel="import">
+<link rel="import" href="../core-scaffold/core-scaffold.html">
+<link rel="import" href="../core-header-panel/core-header-panel.html">
+<link rel="import" href="../core-menu/core-menu.html">
+<link rel="import" href="../core-item/core-item.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+<link rel="import" href="../core-menu/core-submenu.html">
+<link rel="import" href="../uqlibrary-account-button/uqlibrary-account-button.html">
+<link rel="import" href="../uqlibrary-apps-button/uqlibrary-apps-button.html">
+<link rel="import" href="../uqlibrary-chat-button/uqlibrary-chat-button.html">
+<link rel="import" href="../uqlibrary-menu/uqlibrary-menu.html">
+<link rel="import" href="../uqlibrary-notifications-button/uqlibrary-notifications-button.html">
+<link rel="import" href="../uqlibrary-search-input/uqlibrary-search-input.html">
+
+
+<!--
+Reusable scaffold
+
+##### Example
+
+<uqlibrary-scaffold></uqlibrary-scaffold>
+
+@element uqlibrary-scaffold
+@blurb Reusable scaffold containing common styling and dynamic attributes
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-scaffold
+-->
+
+<polymer-element name="uqlibrary-scaffold" attributes="appTitle appMenuFile enableSearchSuggestions">
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
+    <link rel="stylesheet" href="uqlibrary-scaffold.css">
+
+    <core-media-query query="max-width:768px" queryMatches="{{isNarrow}}"></core-media-query>
+    <core-scaffold id="coreScaffold" responsiveWidth="{{width}}">
+      <core-header-panel mode="seamed" id="coreHeaderPanel" navigation flex>
+        <uqlibrary-menu menuFile="{{appMenuFile}}"></uqlibrary-menu>
+      </core-header-panel>
+      <div tool id="mainToolbar" class="{{ {turnWhite: searchIsActive} | tokenList }}">
+        <div horizontal layout>
+          <div flex?="{{isNarrow}}" id="scaffoldLeft">
+            <core-icon-button icon="menu" class="{{ {hidden: drawerIsOpen, visible: isNarrow} | tokenList }}" on-tap="{{onOpenMenu}}"></core-icon-button>
+            {{appTitle}}
+          </div>
+
+          <div flex?="{{!isNarrow || searchIsActive}}" id="searchContainer" class="{{ {openSearch: !isNarrow} | tokenList }}">
+            <uqlibrary-search-input
+              enableSearchSuggestions="{{enableSearchSuggestions}}"
+              placeholderText="Search"
+              narrow="{{isNarrow}}"
+              id="search"></uqlibrary-search-input>
+          </div>
+
+          <div id="scaffoldRight" horizontal layout>
+
+            <uqlibrary-chat-button
+              flex
+              hidden?="{{isNarrow}}"></uqlibrary-chat-button>
+
+            <uqlibrary-apps-button
+              flex
+              hidden?="{{searchIsActive}}"></uqlibrary-apps-button>
+
+            <uqlibrary-notifications-button
+              allowDesktopNotifications
+              flex hidden?="{{searchIsActive}}"></uqlibrary-notifications-button>
+
+            <uqlibrary-account-button
+              flex
+              hidden?="{{searchIsActive || isNarrow}}"></uqlibrary-account-button>
+
+          </div>
+        </div>
+      </div>
+      <div><content></content></div>
+    </core-scaffold>
+  </template>
+  <script>
+    Polymer('uqlibrary-scaffold', {
+      width: '256px',
+      drawerIsOpen: false,
+      searchIsActive: false,
+      enableSearchSuggestions: false,
+
+      ready: function () {
+        that = this;
+        this.addEventListener('uqlibrary-menu-close', this.onCloseMenu);
+        this.$.coreScaffold.closeDrawer();
+        if (! this.isNarrow) {
+          this.width = '9999px';
+        }
+        this.$.search.addEventListener('uqlibrary-search-input-button-clicked', function(e) {
+          console.log('clicked search!');
+        });
+        this.$.search.addEventListener('uqlibrary-search-input-button-clicked-narrow', function(e) {
+          console.log('clicked search while narrow!');
+          that.$.scaffoldLeft.setAttribute('hidden', 'true');
+          that.$.scaffoldRight.setAttribute('hidden', 'true');
+          that.searchIsActive = true;
+          document.querySelector('#coreScaffold /deep/ #drawerPanel core-toolbar').style.backgroundColor = "#fff";
+        });
+
+        this.$.search.addEventListener('uqlibrary-search-input-back', function(e) {
+          console.log('clicked back while narrow!');
+          that.$.scaffoldLeft.removeAttribute('hidden');
+          that.$.scaffoldRight.removeAttribute('hidden');
+          that.searchIsActive = false;
+          document.querySelector('#coreScaffold /deep/ #drawerPanel core-toolbar').style.backgroundColor = "#4a075f";
+        });
+      },
+
+      onOpenMenu: function () {
+        if (! this.isNarrow) {
+          this.width = '256px';
+        }
+        this.$.coreScaffold.openDrawer();
+        this.drawerIsOpen = true;
+      },
+
+      onCloseMenu: function () {
+        this.$.coreScaffold.closeDrawer();
+        if (! this.isNarrow) {
+          this.width = '9999px';
+        }
+        this.drawerIsOpen = false;
+      }
+    });
+  </script>
+</polymer-element>
