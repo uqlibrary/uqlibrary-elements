@@ -11,5 +11,5 @@
   "devDependencies": {
     "paper-fab": "Polymer/paper-fab#master"
   },
-  "version": "0.5.7"
+  "version": "0.5.6"
 }
