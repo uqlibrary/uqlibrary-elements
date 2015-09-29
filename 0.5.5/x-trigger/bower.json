@@ -1,0 +1,40 @@
+{
+  "name": "x-trigger",
+  "version": "0.5",
+  "description": "x-trigger element, helper for drop down lists",
+  "authors": [
+    "The University of Queensland Library"
+  ],
+  "keywords": [
+    "uq",
+    "uqlibrary",
+    "library",
+    "chat",
+    "button",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "main": "x-trigger.html",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uqlibrary/x-trigger"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uqlibrary/x-trigger",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-elements": "Polymer/core-elements#0.5.5",
+    "paper-elements": "Polymer/paper-elements#0.5.5",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.5",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  }
+}

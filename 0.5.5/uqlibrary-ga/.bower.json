@@ -1,0 +1,27 @@
+{
+  "name": "uqlibrary-ga",
+  "description": "Element for Google Analytics",
+  "main": "uqlibrary-ga.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-ga/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^1.6.1"
+  },
+  "_release": "b1f596f98f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "production",
+    "commit": "b1f596f98f5b44c478ed76edf4ecf318dd3a0006"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-ga.git",
+  "_target": "production",
+  "_originalSource": "uqlibrary/uqlibrary-ga"
+}

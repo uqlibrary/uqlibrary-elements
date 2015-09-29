@@ -1,0 +1,39 @@
+{
+  "name": "x-audio",
+  "authors": [
+    "tc-team"
+  ],
+  "description": "Audio Element",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "audio",
+    "x-audio"
+  ],
+  "main": "x-audio.html",
+  "license": "MIT",
+  "homepage": "https://github.com/tc-team/components/x-audio/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "paper-slider": "Polymer/paper-slider#^0.5.5",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.5",
+    "core-icon": "Polymer/core-icon#0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "_release": "868794fb1f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "production",
+    "commit": "868794fb1feda288170b85f029479972d2ed69f5"
+  },
+  "_source": "git://github.com/uqlibrary/x-audio.git",
+  "_target": "production",
+  "_originalSource": "uqlibrary/x-audio"
+}

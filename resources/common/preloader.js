@@ -17,7 +17,7 @@ if (!('registerElement' in document
     && 'content' in document.createElement('template'))) {
   // IE 8 and 9 throw errors if you try to include webcomponents.js, which prevents other user messages working
   if (!isIE() || isIE() > 9) {
-    document.write('<script src="../uqlibrary-elements/0.5.4/webcomponentsjs/webcomponents.min.js"><\/script>');
+    document.write('<script src="../uqlibrary-elements/0.5.5/webcomponentsjs/webcomponents.min.js"><\/script>');
   }
   document.write('<script type="text/javascript" src="../uqlibrary-elements/resources/common/PgwBrowser/pgwbrowser.min.js"><\/script>');
 }

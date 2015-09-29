@@ -1,0 +1,32 @@
+{
+  "name": "uqlibrary-menu",
+  "description": "Element providing a the library main apps menu.",
+  "main": "uqlibrary-menu.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-menu/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-icon": "Polymer/core-icon#0.5.5",
+    "core-icons": "Polymer/core-icons#0.5.5",
+    "core-menu": "Polymer/core-menu#0.5.5",
+    "core-ajax": "Polymer/core-ajax#0.5.5",
+    "core-label": "Polymer/core-label#0.5.5",
+    "uqlibrary-ga": "uqlibrary/uqlibrary-ga#master",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master",
+    "paper-dialog": "Polymer/paper-dialog#0.5.5",
+    "paper-input": "Polymer/paper-input#0.5.5",
+    "paper-button": "Polymer/paper-button#0.5.5",
+    "paper-toast": "Polymer/paper-toast#0.5.5",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.5",
+    "paper-checkbox": "Polymer/paper-checkbox#0.5.5",
+    "paper-item": "Polymer/paper-item#0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  }
+}
