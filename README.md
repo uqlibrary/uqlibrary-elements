@@ -15,6 +15,14 @@ Follow the quick start guide for UQLApp described here to ensure you have the re
 Continue the quick start guide onto the frontend development guide to ensure you have the required package management tools:
 https://github.com/uqlibrary/uqlapp/blob/master/docs/quick_start/frontend.md
 
+Install bower:
+
+    $ npm install -g bower
+
+Install grunt:
+
+    $ npm install -g grunt-cli
+
 ### Frontend development
 
 If this is your first time using Polymer, be sure to start with these guides:
@@ -69,7 +77,7 @@ Ensure that your SCSS File Watcher is configured to exclude recursively the uqli
 
 ### Adding a component
 
-When custom componenets are ready to be used in applications they are combined into a single file by the process of vulcanization (Read more details on https://github.com/polymer/vulcanize)
+When custom components are ready to be used in applications they are combined into a single file by the process of vulcanization (Read more details on https://github.com/polymer/vulcanize)
 
 Install vulcanize tools:
 

@@ -1,0 +1,29 @@
+{
+  "name": "uqlibrary-timeline",
+  "description": "Element providing a simple timeline.",
+  "main": "uqlibrary-timeline.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-timeline/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.5",
+    "core-collapse": "Polymer/core-collapse#0.5.5",
+    "moment": "~2.8.4"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#1.6.1"
+  },
+  "_release": "45decd66fe",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "45decd66fe11fc34c5112ab2bef65f83d95e7407"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-timeline.git",
+  "_target": "uat",
+  "_originalSource": "uqlibrary/uqlibrary-timeline"
+}

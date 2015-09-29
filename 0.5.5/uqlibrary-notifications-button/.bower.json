@@ -1,0 +1,51 @@
+{
+  "name": "uqlibrary-notifications-button",
+  "description": "Reusable notifications button component",
+  "authors": [
+    "The University of Queensland Library"
+  ],
+  "keywords": [
+    "uq",
+    "uqlibrary",
+    "library",
+    "notifications",
+    "button",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "main": "uqlibrary-notifications-button.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uqlibrary/uqlibrary-notifications-button"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-notifications-button",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-elements": "Polymer/core-elements#0.5.5",
+    "paper-elements": "Polymer/paper-elements#0.5.5",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
+    "notification-elements": "PolymerLabs/notification-elements#0.5",
+    "x-trigger": "uqlibrary/x-trigger#master",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.5",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  },
+  "_release": "fd873aed69",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "fd873aed69558e7318f5bf40d2ad548b4d8053cb"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-notifications-button.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-notifications-button"
+}
