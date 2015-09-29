@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <title>uqlibrary-scaffold demo</title>
+  <script>
+    document.cookie = "UQLMockData=enabled";
+  </script>
+  <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+  <link rel="import" href="../uqlibrary-scaffold.html">
+</head>
+<body fullbleed unresolved>
+
+<uqlibrary-scaffold appTitle="My Library"
+                    appMenuFile="flint.json"
+                    enableSearchSuggestions
+  ></uqlibrary-scaffold>
+
+
+<script>
+  var uqlibraryScaffold = document.querySelector('uqlibrary-scaffold');
+  document.addEventListener('uqlibrary-search-input-search-value-changed', function(e) {
+    uqlibraryScaffold.fire('uqlibrary-search-input-search-suggestions-loaded', {data: [ { text: 'suggestion 1 for '+ e.detail.value, url: '#' }, { text: 'suggestion 2' }, { text: 'suggestion 3', url: 'http://google.com' }] })
+  });
+
+  document.addEventListener('uqlibrary-search-input-search-submitted', function(e) {
+    console.log('search-submitted ' + e.detail.searchTerm);
+  });
+
+
+
+</script>
+
+</body>
+</html>

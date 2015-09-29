@@ -1,0 +1,27 @@
+#coreScaffold /deep/ #mainToolbar {
+  width: 100%;
+  white-space: nowrap; }
+#coreScaffold /deep/ .hidden {
+  opacity: 0;
+  visibility: hidden; }
+#coreScaffold /deep/ .visible {
+  opacity: 1 !important;
+  visibility: visible !important; }
+#coreScaffold /deep/ .openSearch {
+  margin: 0 24px;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 2px;
+  cursor: text; }
+#coreScaffold /deep/ .openSearch:hover {
+  background-color: rgba(255, 255, 255, 0.24); }
+#coreScaffold /deep/ .turnWhite {
+  background-color: #fff;
+  border-radius: 2px; }
+#coreScaffold /deep/ #searchContainer {
+  overflow: hidden; }
+#coreScaffold /deep/ #drawerPanel #menuButton {
+  display: none; }
+#coreScaffold /deep/ #drawerPanel core-toolbar {
+  background-color: #4a075f; }
+
+/*# sourceMappingURL=uqlibrary-scaffold.css.map */

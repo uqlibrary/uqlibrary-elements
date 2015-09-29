@@ -1,0 +1,40 @@
+@import "../uqlibrary-elements/resources/theme/variables";
+
+#coreScaffold /deep/ {
+  #mainToolbar {
+    width: $full-width;
+    white-space: nowrap;
+  }
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .openSearch {
+    margin: 0 ($base-unit*3);
+    background-color: $input-inverse;
+    border-radius: $border-radius;
+    cursor: text;
+  }
+  .openSearch:hover {
+    background-color: $input-inverse-hover;
+  }
+  .turnWhite {
+    background-color: $white;
+    border-radius: $border-radius;
+  }
+  #searchContainer {
+    overflow: hidden;
+  }
+  #drawerPanel {
+    #menuButton {
+      display: none;
+    }
+    core-toolbar {
+      background-color: $dark-primary;
+    }
+  }
+}

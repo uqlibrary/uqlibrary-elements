@@ -6,26 +6,14 @@ else
 fi
 case "$branch" in
 "master")
-  case "$PIPE_NUM" in
-  "1")
-    wct --plugin local --local "chrome"
-    ;;
-  "2")
-    wct --plugin local --local "firefox"
-    ;;
-  esac
+  wct --plugin local --local "chrome"
+  wct --plugin local --local "firefox"
   ;;
 "uat")
-  case "$PIPE_NUM" in
-  "1")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
     --sauce "OSX 10.10/safari@8.0"
-    ;;
-  "2")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
     --sauce "Windows 8.1/chrome@43.0"
-    ;;
-  esac
   ;;
 "staging")
   case "$PIPE_NUM" in

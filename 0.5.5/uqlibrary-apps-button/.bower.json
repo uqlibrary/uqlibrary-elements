@@ -1,0 +1,50 @@
+{
+  "name": "uqlibrary-apps-button",
+  "description": "Reusable apps button component",
+  "authors": [
+    "The University of Queensland Library"
+  ],
+  "keywords": [
+    "uq",
+    "uqlibrary",
+    "library",
+    "apps",
+    "button",
+    "web-components",
+    "web-component",
+    "polymer"
+  ],
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "main": "uqlibrary-apps-button.html",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uqlibrary/uqlibrary-apps-button"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uqlibrary/uqlibrary-apps-button",
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-elements": "Polymer/core-elements#0.5.5",
+    "paper-elements": "Polymer/paper-elements#0.5.5",
+    "web-animations-js": "web-animations/web-animations-js#1.0.5",
+    "x-trigger": "uqlibrary/x-trigger#master",
+    "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.5",
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  },
+  "_release": "f05cd422fc",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f05cd422fc2a41dcf48b1f9ad34886d9572186e6"
+  },
+  "_source": "git://github.com/uqlibrary/uqlibrary-apps-button.git",
+  "_target": "master",
+  "_originalSource": "uqlibrary/uqlibrary-apps-button"
+}

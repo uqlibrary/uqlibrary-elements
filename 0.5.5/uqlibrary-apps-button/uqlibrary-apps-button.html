@@ -1,0 +1,68 @@
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-applications.html">
+<link rel="import" href="../x-trigger/x-trigger.html">
+
+<!--
+
+Reusable apps button
+
+##### Example
+
+<uqlibrary-apps-button></uqlibrary-apps-button>
+
+@element uqlibrary-apps-button
+@blurb Reusable apps button
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-apps-button
+-->
+
+<polymer-element name="uqlibrary-apps-button">
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
+    <link rel="stylesheet" href="uqlibrary-apps-button.css">
+
+    <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
+    <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
+    <x-trigger icon="apps">
+      <paper-dropdown halign="right" class="open-below" id="appsDropdown">
+        <div flex class="apps" id="apps" horizontal layout wrap>
+          <template repeat="{{ applications as app }}">
+            <template if="{{!app.isDivider && app.app}}">
+              <a href="{{app.link}}" class="app" id="{{app.app}}">
+                <paper-button>
+                  <core-icon alt="{{app.description}}" icon="{{app.icon}}" class="huge home-icon"></core-icon>
+                </paper-button>
+                <p class="iconLabel" for>{{app.title}}</p>
+              </a>
+            </template>
+          </template>
+        </div>
+
+      </paper-dropdown>
+    </x-trigger>
+  </template>
+  <script>
+    Polymer('uqlibrary-apps-button', {
+      ready: function () {
+        var that = this;
+
+        this.$.apiAccount.addEventListener('uqlibrary-api-account-loaded', function(e) {
+          that.account = e.detail;
+        });
+
+        this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
+          that.applications = e.detail;
+        });
+
+        this.$.apiAccount.get();
+      },
+
+      accountChanged: function(oldValue, newValue) {
+        this.$.apiApplications.get();
+      }
+    });
+  </script>
+</polymer-element>

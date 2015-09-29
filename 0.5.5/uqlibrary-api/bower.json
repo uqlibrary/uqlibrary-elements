@@ -1,0 +1,19 @@
+{
+  "name": "uqlibrary-api",
+  "description": "Elements providing access to a UQ Library's API.",
+  "main": "uqlibrary-api.html",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/uqlibrary/uqlibrary-api/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-ajax": "Polymer/core-ajax#0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#2.0.5"
+  }
+}

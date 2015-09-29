@@ -1,0 +1,64 @@
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../core-icons/communication-icons.html">
+<link rel="import" href="../paper-dropdown/paper-dropdown.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-account.html">
+<link rel="import" href="../uqlibrary-api/uqlibrary-api-applications.html">
+<link rel="import" href="../x-trigger/x-trigger.html">
+
+<!--
+
+Reusable chat button
+
+##### Example
+
+<uqlibrary-chat-button></uqlibrary-chat-button>
+
+@element uqlibrary-chat-button
+@blurb Reusable chat button
+@status alpha
+@homepage https://github.com/uqlibrary/uqlibrary-chat-button
+-->
+
+<polymer-element name="uqlibrary-chat-button">
+  <template>
+    <link rel="stylesheet" href="../uqlibrary-elements/resources/theme/component.css">
+    <link rel="stylesheet" href="uqlibrary-chat-button.css">
+
+    <uqlibrary-api-account id="apiAccount" user="{{account}}"></uqlibrary-api-account>
+    <uqlibrary-api-applications id="apiApplications" user="{{account}}"></uqlibrary-api-applications>
+    <x-trigger icon="communication:live-help">
+      <paper-dropdown halign="right" class="open-below">
+
+        <div flex horizontal layout wrap center-justified>
+          <a href="#" class="app">
+            <p class="iconLabel" for>Ask a Librarian</p>
+            <p>Live help available now</p>
+          </a>
+        </div>
+
+      </paper-dropdown>
+    </x-trigger>
+  </template>
+  <script>
+    Polymer('uqlibrary-chat-button', {
+      ready: function () {
+        var that = this;
+
+        this.$.apiAccount.addEventListener('uqlibrary-api-account-loaded', function(e) {
+          that.account = e.detail;
+        });
+
+        this.$.apiApplications.addEventListener('uqlibrary-api-applications-loaded', function(e) {
+          that.applications = e.detail;
+        });
+
+        this.$.apiAccount.get();
+      },
+
+      accountChanged: function(oldValue, newValue) {
+        this.$.apiApplications.get();
+      }
+    });
+  </script>
+</polymer-element>
