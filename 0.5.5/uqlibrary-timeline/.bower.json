@@ -10,18 +10,18 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.4",
-    "core-collapse": "Polymer/core-collapse#0.5.4",
+    "polymer": "Polymer/polymer#^0.5.5",
+    "core-collapse": "Polymer/core-collapse#0.5.5",
     "moment": "~2.8.4"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "4a2ebf3eed",
+  "_release": "45decd66fe",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4a2ebf3eedf2d8593923c86efd881427afcb8584"
+    "commit": "45decd66fe11fc34c5112ab2bef65f83d95e7407"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-timeline.git",
   "_target": "master",

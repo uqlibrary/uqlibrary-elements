@@ -10,16 +10,16 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.4"
+    "polymer": "Polymer/polymer#^0.5.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^1.6.1"
   },
-  "_release": "0fa29a7475",
+  "_release": "b1f596f98f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0fa29a7475bab1a07cb4394ed07bb05decde384e"
+    "commit": "b1f596f98f5b44c478ed76edf4ecf318dd3a0006"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-ga.git",
   "_target": "master",

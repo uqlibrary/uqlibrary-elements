@@ -10,17 +10,17 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.4",
-    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.4"
+    "polymer": "Polymer/polymer#^0.5.5",
+    "core-a11y-keys": "Polymer/core-a11y-keys#0.5.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "174ea26cee",
+  "_release": "c9e36100d6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "174ea26cee9283626fe5d141a62b83c6de314b04"
+    "commit": "c9e36100d684139917cfcf64cb394e8bedc4efd1"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-toolbar.git",
   "_target": "master",

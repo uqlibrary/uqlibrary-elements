@@ -10,8 +10,8 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.4",
-    "core-collapse": "Polymer/core-collapse#0.5.4",
+    "polymer": "Polymer/polymer#^0.5.5",
+    "core-collapse": "Polymer/core-collapse#0.5.5",
     "moment": "~2.8.4"
   },
   "devDependencies": {

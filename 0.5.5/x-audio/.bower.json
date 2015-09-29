@@ -19,19 +19,19 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5.4",
-    "paper-slider": "Polymer/paper-slider#^0.5.4",
-    "paper-icon-button": "Polymer/paper-icon-button#0.5.4",
-    "core-icon": "Polymer/core-icon#0.5.4"
+    "polymer": "Polymer/polymer#0.5.5",
+    "paper-slider": "Polymer/paper-slider#^0.5.5",
+    "paper-icon-button": "Polymer/paper-icon-button#0.5.5",
+    "core-icon": "Polymer/core-icon#0.5.5"
   },
   "devDependencies": {
     "web-component-tester": "*"
   },
-  "_release": "25661d8f60",
+  "_release": "868794fb1f",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "25661d8f607a3f2e9afa940a85c1362503d52bd4"
+    "commit": "868794fb1feda288170b85f029479972d2ed69f5"
   },
   "_source": "git://github.com/uqlibrary/x-audio.git",
   "_target": "master",

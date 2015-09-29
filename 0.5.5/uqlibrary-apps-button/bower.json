@@ -28,15 +28,15 @@
   "license": "MIT",
   "homepage": "https://github.com/uqlibrary/uqlibrary-apps-button",
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5.4",
-    "core-elements": "Polymer/core-elements#0.5.4",
-    "paper-elements": "Polymer/paper-elements#0.5.4",
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-elements": "Polymer/core-elements#0.5.5",
+    "paper-elements": "Polymer/paper-elements#0.5.5",
     "web-animations-js": "web-animations/web-animations-js#1.0.5",
     "x-trigger": "uqlibrary/x-trigger#master",
     "uqlibrary-api": "uqlibrary/uqlibrary-api#master"
   },
   "devDependencies": {
-    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.4",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.5.5",
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   }
 }

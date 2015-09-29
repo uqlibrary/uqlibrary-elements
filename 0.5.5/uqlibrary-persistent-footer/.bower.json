@@ -10,17 +10,17 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5.4",
-    "paper-button": "Polymer/paper-button#0.5.4"
+    "polymer": "Polymer/polymer#0.5.5",
+    "paper-button": "Polymer/paper-button#0.5.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#1.6.1"
   },
-  "_release": "ea56d6247e",
+  "_release": "ed84cb4a42",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ea56d6247ed89b85b6efbbbe68bce17799bf244d"
+    "commit": "ed84cb4a42b44dc989a5d12f2d263e25f8d42268"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-persistent-footer.git",
   "_target": "master",

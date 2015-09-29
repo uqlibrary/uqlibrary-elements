@@ -10,17 +10,17 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#0.5.4",
-    "core-ajax": "Polymer/core-ajax#0.5.4"
+    "polymer": "Polymer/polymer#0.5.5",
+    "core-ajax": "Polymer/core-ajax#0.5.5"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#2.0.5"
   },
-  "_release": "3a5a0dd2e7",
+  "_release": "1c18bb14d6",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "3a5a0dd2e7d05e751250e5cc4ba9247b6c15f2fb"
+    "commit": "1c18bb14d6c6d78c16b06c95cc533723e2fcc9ba"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-api.git",
   "_target": "master",

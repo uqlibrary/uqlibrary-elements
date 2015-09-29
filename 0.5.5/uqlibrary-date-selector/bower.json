@@ -10,10 +10,10 @@
     "/tests/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^0.5.4",
-    "paper-tabs": "Polymer/paper-tabs#^0.5.4",
-    "paper-button": "Polymer/paper-button#^0.5.4",
-    "core-animation": "Polymer/core-animation#^0.5.4",
+    "polymer": "Polymer/polymer#^0.5.5",
+    "paper-tabs": "Polymer/paper-tabs#^0.5.5",
+    "paper-button": "Polymer/paper-button#^0.5.5",
+    "core-animation": "Polymer/core-animation#^0.5.5",
     "web-animations-js": "web-animations/web-animations-js#1.0.5",
     "moment": "~2.8.4"
   },
