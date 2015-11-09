@@ -64,7 +64,7 @@ function setUnsupported() {
         if (typeof unsupportedRedirect !== 'undefined') {
             o.innerHTML = "<br \/><br \/>Return to <a href='" + unsupportedRedirect.url + "'>" + unsupportedRedirect.title + " <\/a>.";
         } else {
-            o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary\'>the old version of MyLibrary<\/a>.";
+            o.innerHTML = "<br \/><br \/>You can still use <a href=\'https:\/\/www.library.uq.edu.au\/mylibrary?unsupported=1\'>the old version of MyLibrary<\/a>.";
         }
       messageCard.appendChild(o);
       document.getElementById('loader').style.display = 'none';
