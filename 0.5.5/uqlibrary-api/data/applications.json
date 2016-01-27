@@ -117,7 +117,7 @@
     "title": "Feedback",
     "description": "Leave feedback for my library",
     "icon": "communication:comment",
-    "link": "../feedback",
+    "link": "https://www.library.uq.edu.au/contact-us/feedback",
     "ga": "Feedback"
   }
 ]
