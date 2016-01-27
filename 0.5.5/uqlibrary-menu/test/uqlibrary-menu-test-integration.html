@@ -36,6 +36,30 @@
 <uqlibrary-menu autoload="false"></uqlibrary-menu>
 <script>
   (function () {
+    /**
+     * Wrapper-Class for done-function
+     * @param {Function} fn
+     * @class {Done}
+     */
+    function Done(fn) {
+      var self   = this;
+      var called = false;
+
+      /**
+       *
+       * @param {*} params...
+       */
+      this.trigger = function (params) {
+        if(called) {
+          // do nothing and return
+          return;
+        }
+
+        fn.apply(self, arguments);
+        called = true;
+      };
+    }
+
     window.addEventListener('polymer-ready', function() {
       var menuLoadedEventListeners = [];
       var menu = document.querySelector('uqlibrary-menu');
@@ -61,21 +85,22 @@
 
         describe('menu-items-api', function () {
 
-          it('should have a menu user with a details set from the uqlibrary-api', function (done) {
+          it('should have a menu user with a details set from the uqlibrary-api', function (fn) {
+            var doneWrap = new Done(fn);
             var menuLoadListener = function() {
               // Wait 2 second for mock data to be loaded
               setTimeout(function () {
                 checkMenu(menu);
-                done();
-              }, 2000);
+                doneWrap.trigger();
+              }, 4000);
             }
             api.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
             menuLoadedEventListeners.push(menuLoadListener);
             api.fire('uqlibrary-api-account-loaded', api.$.account);
           });
 
-          it('user ptype change should show/hide menu items', function (done) {
-
+          it('user ptype change should show/hide menu items', function (fn) {
+            var doneWrap = new Done(fn);
             var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
             assert.isNull(masqueradeId);
 
@@ -89,9 +114,8 @@
               setTimeout(function () {
                 var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
                 assert.isNotNull(masqueradeId);
-
-                done();
-              }, 2000);
+                doneWrap.trigger();
+              }, 4000);
           });
         });
 
