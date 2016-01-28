@@ -37,8 +37,7 @@
 <script>
   (function () {
     /**
-     * Wrapper-Class for done-function to avoid multiple calls on Firefox +35
-     * Solution based on: https://github.com/mochajs/mocha/issues/1066#issuecomment-164714206
+     * Wrapper-Class for done-function
      * @param {Function} fn
      * @class {Done}
      */
@@ -93,7 +92,7 @@
               setTimeout(function () {
                 checkMenu(menu);
                 doneWrap.trigger();
-              }, 2000);
+              }, 4000);
             }
             api.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
             menuLoadedEventListeners.push(menuLoadListener);
@@ -111,12 +110,12 @@
 
             menu.accountChanged();
 
-              // Wait 2 second for mock data to be loaded
-              setTimeout(function () {
-                var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
-                assert.isNotNull(masqueradeId);
-                doneWrap.trigger();
-              }, 2000);
+            // Wait 2 second for mock data to be loaded
+            setTimeout(function () {
+              var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
+              assert.isNotNull(masqueradeId);
+              doneWrap.trigger();
+            }, 4000);
           });
         });
 
