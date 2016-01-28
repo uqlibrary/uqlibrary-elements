@@ -14,11 +14,11 @@
     "web-component-tester": "Polymer/web-component-tester#^1.6.1"
   },
   "homepage": "https://github.com/uqlibrary/uqlibrary-contacts",
-  "_release": "a14069dc12",
+  "_release": "b0075ae9db",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "a14069dc1251cf27733d73a0072a192fb4cdd782"
+    "commit": "b0075ae9db40fce47715c7b09414482ed65d5629"
   },
   "_source": "git://github.com/uqlibrary/uqlibrary-contacts.git",
   "_target": "master",
