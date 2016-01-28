@@ -12,9 +12,9 @@
     }
 
     if (! ('registerElement' in document
-            && 'createShadowRoot' in HTMLElement.prototype
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template'))) {
+        && 'createShadowRoot' in HTMLElement.prototype
+        && 'import' in document.createElement('link')
+        && 'content' in document.createElement('template'))) {
       // IE 8 and 9 throw errors if you try to include webcomponents.js, which prevents other user messages working
       if (!isIE() || isIE () > 9) {
         document.write('<script src="../../webcomponentsjs/webcomponents.min.js"><\/script>');
@@ -37,7 +37,8 @@
 <script>
   (function () {
     /**
-     * Wrapper-Class for done-function
+     * Wrapper-Class for done-function to avoid multiple calls on Firefox +35
+     * Solution based on: https://github.com/mochajs/mocha/issues/1066#issuecomment-164714206
      * @param {Function} fn
      * @class {Done}
      */
@@ -92,7 +93,7 @@
               setTimeout(function () {
                 checkMenu(menu);
                 doneWrap.trigger();
-              }, 4000);
+              }, 2000);
             }
             api.addEventListener('uqlibrary-api-account-loaded', menuLoadListener);
             menuLoadedEventListeners.push(menuLoadListener);
@@ -115,7 +116,7 @@
                 var masqueradeId = menu.shadowRoot.querySelector('paper-item#uqlibrary-masquerade');
                 assert.isNotNull(masqueradeId);
                 doneWrap.trigger();
-              }, 4000);
+              }, 2000);
           });
         });
 
