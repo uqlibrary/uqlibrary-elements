@@ -13,7 +13,7 @@ case "$branch" in
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
     --sauce "OSX 10.10/safari@8.0"
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
-    --sauce "Windows 8.1/chrome@43.0"
+    --sauce "Windows 8.1/chrome@47.0"
   ;;
 "staging")
   case "$PIPE_NUM" in
@@ -23,7 +23,7 @@ case "$branch" in
     ;;
   "2")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
-    --sauce "Windows 8.1/chrome@43.0"
+    --sauce "Windows 8.1/chrome@47.0"
     ;;
   "3")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
@@ -48,7 +48,7 @@ case "$branch" in
     ;;
   "2")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
-    --sauce "Windows 8.1/chrome@43.0"
+    --sauce "Windows 8.1/chrome@47.0"
     ;;
   "3")
     wct --plugin sauce --sauce-username=${SAUCE_USERNAME} --sauce-access-key=${SAUCE_ACCESS_KEY} \
