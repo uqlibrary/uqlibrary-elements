@@ -4,8 +4,8 @@
       {
         'icon': 'communication:email',
         'title': 'Email',
-        'link': 'mailto:ask@library.uq.edu.au',
-        'name': 'ask@library.uq.edu.au'
+        'link': 'mailto:askus@library.uq.edu.au',
+        'name': 'askus@library.uq.edu.au'
       },
       {
         'icon': 'communication:phone',
