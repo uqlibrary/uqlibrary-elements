@@ -20,7 +20,7 @@ fi
 # Gzip component files
 cd ${src}
 find . -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
-find ../uqlibrary-elements/resources -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
+find ../uqlibrary-elements/resources -type f ! -name '*.gz' -exec gzip "{}" \; -exec mv -f "{}.gz" "{}" \;
 find ../uqlibrary-elements -type f -regex "../uqlibrary-elements/[0-9].*" ! -name '*.gz' -exec gzip "{}" \; -exec mv "{}.gz" "{}" \;
 cd ..
 cp -R ${base} "${base/uqlibrary-/}"
