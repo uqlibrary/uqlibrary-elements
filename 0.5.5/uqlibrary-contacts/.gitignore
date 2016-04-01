@@ -2,3 +2,5 @@
 .tmp
 .idea
 *.map
+.idea
+bower_components
