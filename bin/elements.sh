@@ -23,7 +23,7 @@ cd ${polymer}/lib/
 for filename in index*.html; do
   vulcanized_name="${filename/index/vulcanized}"
   echo "Vulcanizing ${filename}"
-  vulcanize --config ../../vulcanize.conf --inline -csp -strip -o ${vulcanized_name} ${filename}
+  vulcanize --config ../../vulcanize.conf --inline -o ${vulcanized_name} ${filename}
   #vulcanize --config ../../vulcanize.conf -o ${vulcanized_name} ${filename}
   #vulcanize --config ../../vulcanize.conf -csp -strip -o ${vulcanized_name} ${filename}
 done
