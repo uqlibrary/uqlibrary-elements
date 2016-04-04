@@ -7,6 +7,12 @@ function isIE() {
   return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
 }
 
+function isEdge() {
+  var myNav = navigator.userAgent.toLowerCase();
+  console.log(myNav);
+  return (myNav.indexOf('edge') != -1);
+}
+
 function hasSession() {
   return (typeof ignoreSession !== 'undefined' && ignoreSession) || document.cookie.indexOf("UQLID") >= 0 || document.cookie.indexOf("UQLMockData") >= 0;
 }
@@ -15,14 +21,14 @@ if (!('registerElement' in document
     && 'createShadowRoot' in HTMLElement.prototype
     && 'import' in document.createElement('link')
     && 'content' in document.createElement('template'))) {
-  // IE 8 and 9 throw errors if you try to include webcomponents.js, which prevents other user messages working
-  if (!isIE() || isIE() > 9) {
+
+  if ((!isIE() || isIE() > 9) && !isEdge()) {
     document.write('<script src="../uqlibrary-elements/0.5.5/webcomponentsjs/webcomponents.min.js"><\/script>');
   }
   document.write('<script type="text/javascript" src="../uqlibrary-elements/resources/common/PgwBrowser/pgwbrowser.min.js"><\/script>');
 }
 if (!hasSession()){
-  if (!isIE() || isIE() > 9) {
+  if ((!isIE() || isIE() > 9) && !isEdge()) {
     document.location.href = "https://www.library.uq.edu.au/uqlais/login?return=" + window.btoa(window.location.href);
   } else {
     // btoa (and this app) don't work in IE8, IE9.
@@ -91,6 +97,11 @@ catch (e) {
       var messageCard = document.querySelector('#unsupportedBrowserSupportMessage');
       var e = document.createElement("p");
       e.id = "browserDetails";
+
+      if (isEdge()) {
+        pgwBrowser.browser.group = 'Edge';
+      }
+
       switch (pgwBrowser.os.group) {
         case 'iOS':
           if (pgwBrowser.os.majorVersion < 6) {
@@ -173,6 +184,11 @@ catch (e) {
                 e.innerHTML = '<br \/><br \/>You are currently using an unsupported version of Firefox. We can only support Firefox 15 and above.';
                 setUnsupported();
               }
+              break;
+            case 'Edge':
+                console.log("EDGE");
+                e.innerHTML = '<br /><br />Microsoft Edge is currently not supported by the Library. A new version of My Library is rolling out at the end of April that supports Edge.';
+                setUnsupported();
               break;
           }
           break;
