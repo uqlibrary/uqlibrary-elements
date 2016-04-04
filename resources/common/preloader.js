@@ -9,7 +9,6 @@ function isIE() {
 
 function isEdge() {
   var myNav = navigator.userAgent.toLowerCase();
-  console.log(myNav);
   return (myNav.indexOf('edge') != -1);
 }
 
@@ -186,7 +185,6 @@ catch (e) {
               }
               break;
             case 'Edge':
-                console.log("EDGE");
                 e.innerHTML = '<br /><br />Microsoft Edge is currently not supported by the Library. A new version of My Library is rolling out at the end of April that supports Edge.';
                 setUnsupported();
               break;
